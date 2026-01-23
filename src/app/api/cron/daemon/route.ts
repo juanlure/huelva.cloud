@@ -6,6 +6,8 @@ import { reviewDraft } from '@/lib/agents/editor';
 import { generateHeaderImage } from '@/lib/agents/designer';
 import { logAgentAction } from '@/lib/logger';
 import { optimizeSeo } from '@/lib/agents/seo';
+import { classifyContent } from '@/lib/agents/classifier';
+import { scrapeArticle } from '@/lib/agents/scraper';
 
 // Evitar cacheo en Vercel
 export const dynamic = 'force-dynamic';
@@ -46,10 +48,7 @@ export async function GET(req: NextRequest) {
     
     await logAgentAction('Editor', 'Approved', { score: review.score });
 
-// ... imports
-import { classifyContent } from '@/lib/agents/classifier';
 
-// ... inside GET
 
     // 3.5. SEO (Nuevo paso)
     const seoData = await optimizeSeo(draft);
