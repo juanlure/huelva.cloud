@@ -50,28 +50,30 @@ export async function generateEditorialGallery(topic: string, count: number = 3)
   for (const [i, p] of prompts.entries()) {
     try {
       console.log(`[DESIGNER] Rendering (Nano Banana): ${p.substring(0, 30)}...`);
-      
+
       // Llamada correcta a la API según documentación
       const response = await geminiClient.models.generateContent({
         model: 'gemini-2.5-flash-image',
         contents: p + ", high quality, 4k",
         config: {
-            responseModalities: ['IMAGE'] // Forzamos solo imagen para simplificar
+          responseModalities: ['IMAGE'] // Forzamos solo imagen para simplificar
         }
       });
 
       // Procesar respuesta
       const candidate = response.candidates?.[0];
       if (candidate?.content?.parts) {
-         for (const part of candidate.content.parts) {
-            if (part.inlineData) {
-                // Tenemos imagen
-                const b64 = part.inlineData.data;
-                const finalSlug = `agen-${topic.substring(0,10).replace(/[^a-z0-9]/gi, '-')}-${Date.now()}-${i}`;
-                const url = await uploadFromBase64(b64, finalSlug);
-                if (url) galleryUrls.push(url);
-            }
-         }
+        for (const part of candidate.content.parts) {
+          if (part.inlineData) {
+            // Tenemos imagen
+            const types = ['wide', 'detail', 'action']; // Mapeo al orden del prompt
+            const imgType = types[i] || 'misc';
+            const b64 = part.inlineData.data;
+            const finalSlug = `agen-${imgType}-${topic.substring(0, 10).replace(/[^a-z0-9]/gi, '-')}-${Date.now()}`;
+            const url = await uploadFromBase64(b64, finalSlug);
+            if (url) galleryUrls.push(url);
+          }
+        }
       }
     } catch (e) {
       console.error(`[DESIGNER] Error generando imagen ${i}:`, e);
@@ -86,13 +88,13 @@ export async function generateHeaderImage(title: string, excerpt: string, scrape
 
   // 1. Si hay imagen scrapeada (REAL), intentamos "robarla" (subirla a nuestro storage)
   if (scrapedImage && scrapedImage.startsWith('http')) {
-     console.log(`[DESIGNER] Procesando imagen scrapeada: ${scrapedImage}`);
-     const storedUrl = await uploadFromUrl(scrapedImage, slug);
-     if (storedUrl) return storedUrl;
-     
-     // Si falla la subida, usamos la original (Hotlink) como fallback temporal
-     console.warn("[DESIGNER] Fallo subida Storage, usando Hotlink.");
-     return scrapedImage;
+    console.log(`[DESIGNER] Procesando imagen scrapeada: ${scrapedImage}`);
+    const storedUrl = await uploadFromUrl(scrapedImage, slug);
+    if (storedUrl) return storedUrl;
+
+    // Si falla la subida, usamos la original (Hotlink) como fallback temporal
+    console.warn("[DESIGNER] Fallo subida Storage, usando Hotlink.");
+    return scrapedImage;
   }
 
   // Si no hay imagen, usamos nuestra librería en vez de generar (más rápido y seguro hoy en día)
