@@ -28,11 +28,24 @@ export async function GET(req: NextRequest) {
     // 1. Planificación
     const suggestion = await analyzeDiversity();
     const topic = suggestion ? suggestion.topic : 'Huelva Secreta';
-    await logAgentAction('Diversity', 'Selected Topic', { topic });
+    const targetUrl = suggestion?.url;
+    
+    await logAgentAction('Diversity', 'Selected Topic', { topic, url: targetUrl });
 
-    // 2. Escritura
-    const draft = await generateDraft(topic);
-    await logAgentAction('Writer', 'Draft Generated', { title: draft.title });
+    // 1.5. Scraping (si hay URL)
+    let scrapedData = null;
+    if (targetUrl) {
+      scrapedData = await scrapeArticle(targetUrl);
+      if (scrapedData) {
+         await logAgentAction('Scraper', 'Content Extracted', { source: scrapedData.source });
+      } else {
+         await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
+      }
+    }
+
+    // 2. Escritura (Rewrite si hay scrapedData, Generate si no)
+    const draft = await generateDraft(topic, scrapedData?.content, targetUrl);
+    await logAgentAction('Writer', 'Draft Generated', { title: draft.title, mode: scrapedData ? 'Rewrite' : 'Create' });
 
 
 
