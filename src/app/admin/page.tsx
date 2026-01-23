@@ -102,9 +102,13 @@ export default function AdminDashboard() {
 
       if (res.ok) {
         if (data.count > 0) {
-          alert(`✅ ¡Éxito! Se han creado e inyectado ${data.count} imágenes nuevas.`);
+          const parts = [];
+          if (data.visuals > 0) parts.push(`${data.visuals} imágenes`);
+          if (data.interactive > 0) parts.push(`${data.interactive} componente interactivo`);
+
+          alert(`✅ ¡Éxito! Se han añadido: ${parts.join(' y ')}.`);
         } else {
-          alert('⚠️ El proceso terminó, pero no se generaron imágenes nuevas (¿quizás no se detectaron secciones aptas?).');
+          alert('⚠️ El proceso terminó, pero no se generaron mejoras nuevas.');
         }
         fetchArticles(); // Refresh mainly to ensure list is alive
       } else {
