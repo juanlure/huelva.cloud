@@ -144,6 +144,26 @@
     font-style: italic;
 }
 
+/* Pro Tip Boxes (Guías) */
+.prose .tip-box {
+    background: #f3f4f6;
+    border-left: 4px solid var(--accent-secondary);
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.prose .tip-box strong {
+    color: var(--accent-primary);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
 /* Author Box Styles */
 .authorSection {
     margin-top: 4rem;
