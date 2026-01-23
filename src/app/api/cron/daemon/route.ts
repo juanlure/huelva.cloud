@@ -10,6 +10,7 @@ import { classifyContent } from '@/lib/agents/classifier';
 import { scrapeArticle } from '@/lib/agents/scraper';
 import { uploadBatch } from '@/lib/storage';
 import { performWebResearch } from '@/lib/agents/researcher';
+import { generateInteractiveData } from '@/lib/agents/generator';
 
 // Evitar cacheo en Vercel
 export const dynamic = 'force-dynamic';
@@ -94,24 +95,34 @@ export async function GET(req: NextRequest) {
     const seoData = await optimizeSeo(draft);
     await logAgentAction('SEO', 'Optimized', { slug: seoData.slug, metaTitle: seoData.metaTitle });
 
+    import { generateInteractiveData } from '@/lib/agents/generator';
+
     // 3.6. Interactive Classifier (Nuevo paso)
     let finalContent = draft.content;
     const interactiveData = await classifyContent({ ...draft, slug: seoData.slug });
 
     if (interactiveData.interactive) {
-      await logAgentAction('Classifier', 'Interactive Content', {
-        type: interactiveData.component_type,
-        name: interactiveData.component_name
-      });
+      // Generar datos reales para el componente
+      const richData = await generateInteractiveData(draft.title, interactiveData);
 
-      // Inyectar datos en el contenido
-      const scriptBlock = `
-         <div id="interactive-root" data-component="${interactiveData.component_type}" style="display:none;"></div>
-         <script type="application/json" id="interactive-data">
-           ${JSON.stringify(interactiveData)}
-         </script>
-       `;
-      finalContent += scriptBlock;
+      if (richData) {
+        await logAgentAction('Generator', 'Data Created', {
+          type: interactiveData.component_type,
+          title: richData.title
+        });
+
+        // Inyectar datos en el contenido
+        const scriptBlock = `
+           <div id="interactive-root" data-component="${interactiveData.component_type}" style="display:none;"></div>
+           <script type="application/json" id="interactive-data">
+             ${JSON.stringify(richData)}
+           </script>
+         `;
+        finalContent += scriptBlock;
+      } else {
+        await logAgentAction('Generator', 'Failed', { reason: "Returned null" });
+        // Fallback a static context log if generation failed
+      }
     } else {
       await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
     }
