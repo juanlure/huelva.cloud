@@ -1,3 +1,5 @@
+import { generateContent, isAiEnabled } from '../gemini';
+
 export interface Draft {
   title: string;
   content: string;
