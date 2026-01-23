@@ -34,6 +34,10 @@ export async function POST(request: Request) {
         const newVisuals = await enhanceArticleVisuals(article.content, slug);
         visualCount = newVisuals.length;
 
+        function escapeRegExp(string: string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
         for (const visual of newVisuals) {
             const figureHtml = `
         <figure>
@@ -41,7 +45,9 @@ export async function POST(request: Request) {
           <figcaption>Vista de ${visual.header} (Generada por AI)</figcaption>
         </figure>
       `;
-            const regex = new RegExp(`(<h2.*?>${visual.header}<\/h2>)`, 'i');
+            // Escape special chars in header (like '?', '(', ')') so regex matches literal text
+            const safeHeader = escapeRegExp(visual.header);
+            const regex = new RegExp(`(<h2.*?>${safeHeader}<\/h2>)`, 'i');
             updatedContent = updatedContent.replace(regex, `$1${figureHtml}`);
         }
 
