@@ -45,8 +45,7 @@ export async function generateEditorialGallery(topic: string, count: number = 3)
   // 2. Generate Images & Upload
   const galleryUrls: string[] = [];
 
-  // 2. Generate Images & Upload
-  const galleryUrls: string[] = [];
+
 
   for (const [i, p] of prompts.entries()) {
     try {
@@ -97,7 +96,7 @@ export async function generateHeaderImage(title: string, excerpt: string, scrape
   }
 
   // Si no hay imagen, usamos nuestra librería en vez de generar (más rápido y seguro hoy en día)
-  const [fallback] = await searchEditorialImages(title, 1);
+  const [fallback] = await generateEditorialGallery(title, 1);
   const storedFallback = await uploadFromUrl(fallback, slug);
   return storedFallback || fallback;
 }

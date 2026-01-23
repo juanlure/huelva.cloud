@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
     const suggestion = await analyzeDiversity();
     const topic = suggestion ? suggestion.topic : 'Huelva Secreta';
     const targetUrl = suggestion?.url;
-    
+
     await logAgentAction('Diversity', 'Selected Topic', { topic, url: targetUrl });
 
 
@@ -47,15 +47,15 @@ export async function GET(req: NextRequest) {
       // MODO CURADOR (Existe noticia real)
       scrapedData = await scrapeArticle(targetUrl);
       if (scrapedData) {
-         await logAgentAction('Scraper', 'Content Extracted', { source: scrapedData.source, gallerySize: scrapedData.gallery?.length || 0 });
-         
-         if (scrapedData.gallery && scrapedData.gallery.length > 0) {
-            const tempSlug = topic.substring(0, 20).toLowerCase().replace(/[^a-z0-9]/g, '-');
-            uploadedGallery = await uploadBatch(scrapedData.gallery, `gallery-${tempSlug}`);
-            await logAgentAction('Storage', 'Batch Upload', { count: uploadedGallery.length });
-         }
+        await logAgentAction('Scraper', 'Content Extracted', { source: scrapedData.source, gallerySize: scrapedData.gallery?.length || 0 });
+
+        if (scrapedData.gallery && scrapedData.gallery.length > 0) {
+          const tempSlug = topic.substring(0, 20).toLowerCase().replace(/[^a-z0-9]/g, '-');
+          uploadedGallery = await uploadBatch(scrapedData.gallery, `gallery-${tempSlug}`);
+          await logAgentAction('Storage', 'Batch Upload', { count: uploadedGallery.length });
+        }
       } else {
-         await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
+        await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
       }
     } else {
       // MODO CREADOR (Guía desde cero)
@@ -76,7 +76,7 @@ export async function GET(req: NextRequest) {
 
 
 
-// ... (dentro de la función GET)
+    // ... (dentro de la función GET)
 
     // 3. Edición
     const review = await reviewDraft(draft);
@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
       await logAgentAction('Editor', 'Rejected', { reason: review.feedback });
       return NextResponse.json({ status: 'skipped', reason: 'rejected_by_editor' });
     }
-    
+
     await logAgentAction('Editor', 'Approved', { score: review.score });
 
 
@@ -97,23 +97,23 @@ export async function GET(req: NextRequest) {
     // 3.6. Interactive Classifier (Nuevo paso)
     let finalContent = draft.content;
     const interactiveData = await classifyContent({ ...draft, slug: seoData.slug });
-    
+
     if (interactiveData.interactive) {
-       await logAgentAction('Classifier', 'Interactive Content', { 
-         type: interactiveData.component_type, 
-         name: interactiveData.component_name 
-       });
-       
-       // Inyectar datos en el contenido
-       const scriptBlock = `
+      await logAgentAction('Classifier', 'Interactive Content', {
+        type: interactiveData.component_type,
+        name: interactiveData.component_name
+      });
+
+      // Inyectar datos en el contenido
+      const scriptBlock = `
          <div id="interactive-root" data-component="${interactiveData.component_type}" style="display:none;"></div>
          <script type="application/json" id="interactive-data">
            ${JSON.stringify(interactiveData)}
          </script>
        `;
-       finalContent += scriptBlock;
+      finalContent += scriptBlock;
     } else {
-       await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
+      await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
     }
 
     // 4. Diseño (Generate or Scrape & Upload)
@@ -127,16 +127,28 @@ export async function GET(req: NextRequest) {
     }
 
     // 5. Publicación (Insertar en Supabase usando Admin Client)
-    const { error } = await supabaseAdmin.from('articles').insert({
-      slug: seoData.slug,
-      title: draft.title,
-      content: finalContent, // Contenido con payload interactivo
-      excerpt: seoData.metaDescription,
-      category: draft.category,
-      image_url: imageUrl,
-      author: draft.author,
-      is_ai: true
-    });
+    // 5. Publicación (Insertar en Supabase usando Admin Client)
+    let error = null;
+
+    if (process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('placeholder')) {
+      console.log("---- [MOCK DB INSERT] ----");
+      console.log(`Slug: ${seoData.slug}`);
+      console.log(`Title: ${draft.title}`);
+      console.log(`Image: ${imageUrl}`);
+      console.log("--------------------------");
+    } else {
+      const res = await supabaseAdmin.from('articles').insert({
+        slug: seoData.slug,
+        title: draft.title,
+        content: finalContent, // Contenido con payload interactivo
+        excerpt: seoData.metaDescription,
+        category: draft.category,
+        image_url: imageUrl,
+        author: draft.author,
+        is_ai: true
+      });
+      error = res.error;
+    }
 
     if (error) {
       await logAgentAction('Daemon', 'Error Saving', { error: error.message });

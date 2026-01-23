@@ -5,6 +5,11 @@ export async function logAgentAction(agent: string, action: string, details: any
     console.log(`[${agent.toUpperCase()}] ${action}`, details);
     
     // Escribir en DB sin esperar (fire and forget para no bloquear ejecución)
+    if (process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('placeholder')) {
+      // Skip DB write in mock mode
+      return;
+    }
+
     supabaseAdmin.from('agent_logs').insert({
       agent_name: agent,
       action: action,
