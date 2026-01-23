@@ -3,6 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
 import { generateDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
+import { generateHeaderImage } from '@/lib/agents/designer';
 import { logAgentAction } from '@/lib/logger';
 
 // Evitar cacheo en Vercel
@@ -40,14 +41,23 @@ export async function GET(req: NextRequest) {
     
     await logAgentAction('Editor', 'Approved', { score: review.score });
 
-    // 4. Publicación (Insertar en Supabase usando Admin Client)
+    // 4. Diseño (Generar Imagen)
+    let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800';
+    try {
+      imageUrl = await generateHeaderImage(draft.title, draft.excerpt);
+      await logAgentAction('Designer', 'Image Generated', { url: imageUrl });
+    } catch (e) {
+      await logAgentAction('Designer', 'Error', { error: String(e) });
+    }
+
+    // 5. Publicación (Insertar en Supabase usando Admin Client)
     const { error } = await supabaseAdmin.from('articles').insert({
       slug: draft.slug,
       title: draft.title,
       content: draft.content,
       excerpt: `Un artículo sobre ${topic} generado por IA.`,
       category: draft.category,
-      image_url: 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800', // Placeholder
+      image_url: imageUrl,
       author: draft.author,
       is_ai: true
     });
