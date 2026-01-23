@@ -42,11 +42,10 @@ export async function generateHeaderImage(title: string, excerpt: string): Promi
   const imagePrompt = await generateContent(promptDesign, 0.7) || `Andalusia landscape, Huelva, ${title}, photorealistic`;
   console.log(`[DESIGNER] Prompt generado: "${imagePrompt.trim()}"`);
 
-  // 2. Generar Imagen con Imagen 3 (via Gemini API)
+  // 2. Generar Imagen con Nano Banana (Gemini 2.5 Flash Image)
   try {
-    // Nota: El modelo para imágenes en la nueva API suele ser 'imagen-3.0-generate-001'
     const response = await geminiClient.models.generateImage({
-      model: 'imagen-3.0-generate-001', 
+      model: 'gemini-2.5-flash-image', 
       prompt: imagePrompt.trim(),
       config: {
         number_of_images: 1,

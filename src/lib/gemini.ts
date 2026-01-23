@@ -23,7 +23,7 @@ export async function generateContent(prompt: string, temperature = 0.7): Promis
 
   try {
     const response = await client.models.generateContent({
-      model: 'gemini-2.0-flash', // Usando la última versión disponible en nuevo SDK
+      model: 'gemini-3-flash-preview', 
       contents: prompt,
       config: {
         temperature: temperature,
