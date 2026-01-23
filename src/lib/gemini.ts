@@ -13,7 +13,7 @@ if (apiKey) {
   console.warn("⚠️ GEMINI_API_KEY no definida.");
 }
 
-export async function generateContent(prompt: string, temperature = 0.7): Promise<string | null> {
+export async function generateContent(prompt: string, temperature = 0.7, useSearch = false): Promise<string | null> {
   if (!apiKey) {
     await logAgentAction('System', 'AI Error', { error: 'GEMINI_API_KEY Missing' });
     return null;
@@ -22,12 +22,18 @@ export async function generateContent(prompt: string, temperature = 0.7): Promis
   if (!client) return null;
 
   try {
+    const config: any = {
+      temperature: temperature,
+    };
+
+    if (useSearch) {
+      config.tools = [{ googleSearch: {} }];
+    }
+
     const response = await client.models.generateContent({
-      model: 'gemini-3-flash-preview', 
+      model: 'gemini-2.0-flash', // Usar modelo que soporte search (2.0 Flash es excelente para esto)
       contents: prompt,
-      config: {
-        temperature: temperature,
-      }
+      config: config
     });
 
     return response.text;

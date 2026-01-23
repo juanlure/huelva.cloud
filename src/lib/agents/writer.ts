@@ -11,7 +11,7 @@ export interface Draft {
   sourceUrl?: string; // Nuevo campo para atribución
 }
 
-export async function generateDraft(topic: string, baseContent?: string, sourceUrl?: string, gallery: string[] = []): Promise<Draft> {
+export async function generateDraft(topic: string, baseContent?: string, sourceUrl?: string, gallery: string[] = [], researchContext?: string): Promise<Draft> {
   console.log(`[WRITER] ${baseContent ? 'Reescribiendo' : 'Generando'} artículo sobre: ${topic}...`);
   
   // Fallback Mock
@@ -29,16 +29,23 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
 
   const galleryInstructions = gallery.length > 0
     ? `
-    TIENES DISPONIBLES LAS SIGUIENTES IMÁGENES REALES DEL EVENTO/LUGAR:
+    TIENES DISPONIBLES LAS SIGUIENTES IMÁGENES REALES DEL EVENTO/LUGAR (Úsalas obligatoriamente):
     ${JSON.stringify(gallery)}
     
     INSTRUCCIÓN MULTIMEDIA (IMPORTANTE):
-    - Debes intercalar estas imágenes en el contenido HTML donde tengan sentido semántico (ej: si hablas del escenario, pon la foto del escenario).
+    - Debes intercalar estas imágenes en el contenido HTML donde tengan sentido semántico.
     - Usa la etiqueta: <figure><img src="URL_DE_LA_LISTA" alt="Descripción breve" /><figcaption>Pie de foto con gracia</figcaption></figure>
-    - Intenta usar al menos 2 o 3 imágenes si el texto es largo.
-    - No inventes URLs, usa SOLO las de la lista.
+    - Intenta usar al menos 2 o 3 imágenes.
     `
-    : "No hay imágenes adicionales disponibles. Solo genera texto.";
+    : "No hay imágenes adicionales disponibles.";
+
+  const researchInstructions = researchContext 
+    ? `
+    DATOS REALES DE INVESTIGACIÓN (IMPORTANTE: ÚSALOS):
+    Aquí tienes información actualizada investigada de internet. Úsala para dar datos precisos de precios, horarios y nombres.
+    "${researchContext}"
+    `
+    : "";
 
   const prompt = baseContent ? 
     // MODO REWRITER (Curador)
@@ -73,10 +80,12 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     Eres "El Choco", redactor senior de Huelva.is.
     Tu misión: Escribir la GUÍA DEFINITIVA sobre: "${topic}".
     
+    ${researchInstructions}
+
     ESTRUCTURA OBLIGATORIA (Estilo Málaga.is):
     1. **El Gancho**: Nada de "en este artículo vamos a ver". Empieza con una verdad dolorosa o una curiosidad.
     2. **Capítulos**: Usa <h2> para dividir temas (ej: "La Etiqueta", "Los Imprescindibles", "La Dolorosa").
-    3. **Pro Tips**: Intercala consejos de experto usando este HTML:
+    3. **Pro Tips**: Intercala consejos de experto (basados en la investigación) usando este HTML:
        <div class="tip-box">💡 <strong>Consejo Pro:</strong> [Tu consejo aquí]</div>
     4. **Diccionario Local**: Si aplica, añade una sección de vocabulario usando <ul> o <dl>.
     

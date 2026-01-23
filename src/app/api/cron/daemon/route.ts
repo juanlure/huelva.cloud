@@ -35,9 +35,14 @@ export async function GET(req: NextRequest) {
 
 
 
+import { performWebResearch } from '@/lib/agents/researcher';
+
+// ...
+
     // 1.5. Scraping (si hay URL)
     let scrapedData = null;
     let uploadedGallery: string[] = []; // Fotos subidas a nuestro storage
+    let researchContext: string | null = null; // Datos de investigación web
 
     if (targetUrl) {
       // MODO CURADOR (Existe noticia real)
@@ -54,18 +59,21 @@ export async function GET(req: NextRequest) {
          await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
       }
     } else {
-      // MODO CREADOR (Guía desde cero) - Generación Visual Real (Imagen 3)
-      // Generamos imágenes únicas y las subimos
+      // MODO CREADOR (Guía desde cero)
+      // 1. Investigación Visual Real (Imagen 3 / Nano Banana)
       uploadedGallery = await generateEditorialGallery(topic, 3);
       if (uploadedGallery.length > 0) {
         await logAgentAction('Designer', 'AI Gallery Generated', { count: uploadedGallery.length });
       }
+
+      // 2. Investigación Web Real (Google Search Grounding)
+      researchContext = await performWebResearch(topic);
     }
 
     // 2. Escritura (Rewrite si hay scrapedData, Generate si no)
-    // Pasamos uploadedGallery al escritor para que la use en el cuerpo
-    const draft = await generateDraft(topic, scrapedData?.content, targetUrl, uploadedGallery);
-    await logAgentAction('Writer', 'Draft Generated', { title: draft.title, mode: scrapedData ? 'Rewrite' : 'Create' });
+    // Pasamos uploadedGallery y researchContext al escritor
+    const draft = await generateDraft(topic, scrapedData?.content, targetUrl, uploadedGallery, researchContext || undefined);
+    await logAgentAction('Writer', 'Draft Generated', { title: draft.title, mode: scrapedData ? 'Rewrite' : 'Create (+Research)' });
 
 
 
