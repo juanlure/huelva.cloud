@@ -9,7 +9,8 @@ let model: any = null;
 
 if (apiKey) {
   const genAI = new GoogleGenerativeAI(apiKey);
-  model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  // Usamos gemini-pro que es el más estable/común si flash da 404
+  model = genAI.getGenerativeModel({ model: "gemini-pro" });
 } else {
   console.warn("⚠️ GEMINI_API_KEY no definida.");
   // No podemos loguear a DB aquí fácilmente porque logger importa supabase que podría no estar listo, 
