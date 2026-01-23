@@ -1,0 +1,141 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0 60px;
+    background: var(--bg-primary);
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.highlight {
+    color: var(--accent-primary);
+}
+
+.quizCard,
+.resultCard {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-card);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    /* Sombra más suave */
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.progress {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.question {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+}
+
+.options {
+    display: grid;
+    gap: 1rem;
+}
+
+.optionBtn {
+    background: var(--bg-primary);
+    border: 2px solid transparent;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-ui);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+.optionBtn:hover {
+    background: white;
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.emoji {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.resultTitle {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+
+.resultDesc {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.retryBtn,
+.homeBtn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: opacity 0.2s;
+}
+
+.retryBtn {
+    background: var(--text-primary);
+    color: white;
+    border: none;
+}
+
+.homeBtn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.retryBtn:hover,
+.homeBtn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .quizCard {
+        padding: 1.5rem;
+    }
+
+    .question {
+        font-size: 1.5rem;
+    }
+
+    .optionBtn {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}

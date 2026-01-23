@@ -1,27 +1,36 @@
+/* 
+  Huelva.is - Design System "Mediterráneo Onubense"
+  Inspirado por la estética de malaga.is
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Fondos */
+  --bg-primary: #f8f9fa;      /* Blanco cálido */
+  --bg-secondary: #ffffff;
+  
+  /* Texto */
+  --text-primary: #1e293b;    /* Azul marino profundo (Slate 800-900) */
+  --text-secondary: #64748b;  /* Slate 500 */
+  --text-muted: #94a3b8;
+  
+  /* Acento - Naranja Huelva (atardeceres de Doñana / Marismas) */
+  --accent-primary: #d45e35;  /* Terracotta/Naranja cálido */
+  --accent-hover: #b84d2a;
+  
+  /* Tipografía */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Espaciado y bordes */
+  --radius-card: 1.5rem;
+  --radius-ui: 0.75rem;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-header: 0 2px 10px rgba(0,0,0,0.05);
+  
+  /* Layout */
+  --max-width: 1280px;
 }
 
 * {
@@ -30,13 +39,32 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h1, h2, h3, h4, .serif {
+  font-family: var(--font-serif);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main {
+  min-height: 100vh;
 }

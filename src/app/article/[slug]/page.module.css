@@ -1,0 +1,131 @@
+.main {
+    min-height: 100vh;
+}
+
+.header {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.heroImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+    z-index: 0;
+}
+
+.headerContent {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 3rem;
+    width: 100%;
+}
+
+.category {
+    display: inline-block;
+    background: var(--accent-primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.dot {
+    opacity: 0.5;
+}
+
+.aiBadge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bodyContainer {
+    padding-bottom: 5rem;
+}
+
+.contentWrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.lead {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    font-family: var(--font-serif);
+}
+
+.prose {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.prose p {
+    margin-bottom: 1.5rem;
+}
+
+.prose h3 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.prose blockquote {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 20px;
+    margin: 2rem 0;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 50vh;
+    }
+}
