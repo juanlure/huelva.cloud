@@ -7,10 +7,11 @@ export interface Draft {
   author: string;
   slug: string;
   excerpt: string;
+  sourceUrl?: string; // Nuevo campo para atribución
 }
 
-export async function generateDraft(topic: string): Promise<Draft> {
-  console.log(`[WRITER] Generando borrador sobre: ${topic}...`);
+export async function generateDraft(topic: string, baseContent?: string, sourceUrl?: string): Promise<Draft> {
+  console.log(`[WRITER] ${baseContent ? 'Reescribiendo' : 'Generando'} artículo sobre: ${topic}...`);
   
   // Fallback Mock
   if (!isAiEnabled) {
@@ -20,11 +21,39 @@ export async function generateDraft(topic: string): Promise<Draft> {
         content: `<p>Contenido Mock sobre ${topic}</p>`,
         category: 'Comer',
         excerpt: `Resumen simulado sobre ${topic}`,
-        author: 'Agente Mock'
+        author: 'Agente Mock',
+        sourceUrl
      };
   }
 
-  const prompt = `
+  const prompt = baseContent ? 
+    // MODO REWRITER (Curador)
+    `
+    Eres "El Choco", redactor de Huelva.is.
+    Tu tarea es reescribir la siguiente noticia real para nuestra audiencia.
+    
+    FUENTE ORIGINAL:
+    "${baseContent.substring(0, 3000)}..."
+
+    DIRECTRICES DE ESTILO (Marca Huelva.is):
+    - Tono: Honesto, directo, local ("choquero"). 
+    - Evita el lenguaje periodístico aburrido ("según fuentes", "ha declarado"). Ve al grano.
+    - Útil: ¿Qué significa esto para el lector? ¿Cómo le afecta?
+    - Si es una recomendación: Sé crítico.
+    - Título: Hazlo atractivo, no clickbait barato, pero sí con gancho.
+    
+    ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO):
+    {
+      "title": "Nuevo Título con Gancho",
+      "content": "HTML del cuerpo (<p>, <h2>, <blockquote>)...",
+      "excerpt": "Resumen picante de 2 líneas.",
+      "category": "Noticias, Comer, Eventos, o Guías",
+      "author": "El Choco"
+    }
+    ` 
+    : 
+    // MODO GENERADOR (Fallback si no hay scrapeo)
+    `
     Eres "El Choco", redactor senior de Huelva.is.
     Escribe un artículo sobre: "${topic}".
     
@@ -42,12 +71,11 @@ export async function generateDraft(topic: string): Promise<Draft> {
       "category": "Una de: Comer, Eventos, Alojarse, Guías, Noticias",
       "author": "El Choco"
     }
-  `;
+    `;
 
-  const response = await generateContent(prompt, 0.8);
+  const response = await generateContent(prompt, 0.7);
   
   try {
-    // Limpiar bloques de código markdown si los hay
     const cleanJson = response?.replace(/```json/g, '').replace(/```/g, '').trim() || '{}';
     const data = JSON.parse(cleanJson);
     
@@ -57,7 +85,8 @@ export async function generateDraft(topic: string): Promise<Draft> {
       category: data.category || 'Noticias',
       author: data.author || 'Huelva.is AI',
       slug: (data.title || topic).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
-      excerpt: data.excerpt || `Artículo sobre ${topic}`
+      excerpt: data.excerpt || `Artículo sobre ${topic}`,
+      sourceUrl
     };
   } catch (e) {
     console.error("Error parsing AI response", e);

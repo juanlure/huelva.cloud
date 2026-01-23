@@ -11,8 +11,14 @@ const UNSPLASH_IMAGES = [
   'https://images.unsplash.com/photo-1551095900-589578278216?q=80&w=800', // Semana Santa
 ];
 
-export async function generateHeaderImage(title: string, excerpt: string): Promise<string> {
+export async function generateHeaderImage(title: string, excerpt: string, scrapedImage?: string): Promise<string> {
   console.log(`[DESIGNER] Diseñando imagen para: "${title}"`);
+
+  // 0. Si hay imagen scrapeada (REAL), usarla
+  if (scrapedImage && scrapedImage.startsWith('http')) {
+     console.log(`[DESIGNER] Usando imagen scrapeada oficial: ${scrapedImage}`);
+     return scrapedImage;
+  }
 
   if (!isAiEnabled || !geminiClient) {
      return UNSPLASH_IMAGES[Math.floor(Math.random() * UNSPLASH_IMAGES.length)];
