@@ -14,7 +14,7 @@ export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
     .order('published_at', { ascending: false })
     .limit(10);
 
-  const history = articles?.map(a => `- ${a.title} (${a.category})`).join('\n') || "Ninguno.";
+  const history = articles?.map((a: any) => `- ${a.title} (${a.category})`).join('\n') || "Ninguno.";
 
   // 2. Si hay Mock, saltar a lógica simple
   if (!isAiEnabled) {
