@@ -7,28 +7,32 @@
 
 :root {
   /* Fondos */
-  --bg-primary: #f8f9fa;      /* Blanco cálido */
+  --bg-primary: #f8f9fa;
+  /* Blanco cálido */
   --bg-secondary: #ffffff;
-  
+
   /* Texto */
-  --text-primary: #1e293b;    /* Azul marino profundo (Slate 800-900) */
-  --text-secondary: #64748b;  /* Slate 500 */
+  --text-primary: #1e293b;
+  /* Azul marino profundo (Slate 800-900) */
+  --text-secondary: #64748b;
+  /* Slate 500 */
   --text-muted: #94a3b8;
-  
+
   /* Acento - Naranja Huelva (atardeceres de Doñana / Marismas) */
-  --accent-primary: #d45e35;  /* Terracotta/Naranja cálido */
+  --accent-primary: #d45e35;
+  /* Terracotta/Naranja cálido */
   --accent-hover: #b84d2a;
-  
+
   /* Tipografía */
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Inter', sans-serif;
-  
+
   /* Espaciado y bordes */
   --radius-card: 1.5rem;
   --radius-ui: 0.75rem;
-  --shadow-card: 0 4px 20px rgba(0,0,0,0.08);
-  --shadow-header: 0 2px 10px rgba(0,0,0,0.05);
-  
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.05);
+
   /* Layout */
   --max-width: 1280px;
 }
@@ -55,7 +59,11 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, .serif {
+h1,
+h2,
+h3,
+h4,
+.serif {
   font-family: var(--font-serif);
 }
 

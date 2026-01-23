@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
+import WeatherWidget from '@/components/widgets/WeatherWidget';
+import TimeWidget from '@/components/widgets/TimeWidget';
 
 const Navigation = [
     { name: 'Comer', href: '/comer' },
@@ -14,32 +16,11 @@ const Navigation = [
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
-    const [time, setTime] = useState('');
-    const [temp, setTemp] = useState('--');
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
-
-        // Simple Clock
-        const timer = setInterval(() => {
-            const now = new Date();
-            setTime(now.toLocaleTimeString('es-ES', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-            }));
-        }, 1000);
-
-        // Weather Fetch (Huelva coords: 37.25, -6.95)
-        fetch('https://api.open-meteo.com/v1/forecast?latitude=37.25&longitude=-6.95&current_weather=true')
-            .then(res => res.json())
-            .then(data => setTemp(Math.round(data.current_weather.temperature).toString()));
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            clearInterval(timer);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -65,13 +46,11 @@ export default function Header() {
                     </div>
 
                     <div className={styles.widget}>
-                        <span className={styles.icon}>☀️</span>
-                        {temp}°C <span className={styles.loc}>Huelva</span>
+                        <WeatherWidget />
                     </div>
 
                     <div className={styles.widget}>
-                        <span className={styles.icon}>🕒</span>
-                        {time}
+                        <TimeWidget />
                     </div>
                 </div>
             </div>
