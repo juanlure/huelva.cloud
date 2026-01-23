@@ -50,9 +50,7 @@ const mockSupabase = {
   })
 };
 
-export const supabase = isMock 
-  ? (mockSupabase as any) 
-  : createClient(supabaseUrl, supabaseKey);
+
 
 // Interfaces para nuestras tablas
 export interface ArticleDB {
