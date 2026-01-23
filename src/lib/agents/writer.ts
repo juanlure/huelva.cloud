@@ -6,6 +6,7 @@ export interface Draft {
   category: string;
   author: string;
   slug: string;
+  excerpt: string;
 }
 
 export async function generateDraft(topic: string): Promise<Draft> {
