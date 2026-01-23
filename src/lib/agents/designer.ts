@@ -9,49 +9,63 @@ const UNSPLASH_IMAGES = [
 ];
 
 // Curated Stock Library for Huelva (high quality Unsplash URLs)
-const STOCK_LIBRARY: Record<string, string[]> = {
-  'food': [
-    'https://images.unsplash.com/photo-1515443961218-a51367888e4b?q=80&w=1200', // Seafood generic
-    'https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=1200', // Paella/Rice
-    'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=1200', // Gambas (Classic)
-    'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=1200', // Jamon
-    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200', // Tapas vibe
-    'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200', // Restaurant interior
-  ],
-  'beach': [
-    'https://images.unsplash.com/photo-1582264537750-f8af596ed52f?q=80&w=1200', // Matalascañas vague
-    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200', // Beach vibes
-    'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1200', // Sunset water
-    'https://images.unsplash.com/photo-1471922694854-ff1b63b20054?q=80&w=1200', // Beach day
-  ],
-  'nature': [
-    'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200', // Doñana landscape
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200', // Forest/Sierra
-    'https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=1200', // Mountains
-  ],
-  'city': [
-    'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?q=80&w=1200', // Spanish architecture
-    'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200', // Street vibe
-    'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200', // Plaza
-    'https://images.unsplash.com/photo-1551095900-589578278216?q=80&w=1200', // Tradition
-  ]
-};
+export async function generateEditorialGallery(topic: string, count: number = 3): Promise<string[]> {
+  if (!isAiEnabled || !geminiClient) {
+    console.warn("AI disabled, using fallback gallery");
+    return [
+      'https://images.unsplash.com/photo-1515443961218-a51367888e4b?q=80&w=1200',
+      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200'
+    ];
+  }
 
-export async function searchEditorialImages(topic: string, count: number = 4): Promise<string[]> {
-  const t = topic.toLowerCase();
-  let category = 'city'; // default
+  console.log(`[DESIGNER] Generando Galería Editorial AI para: "${topic}"`);
 
-  if (t.includes('gamba') || t.includes('tapa') || t.includes('comer') || t.includes('restaurante') || t.includes('jamón')) category = 'food';
-  else if (t.includes('playa') || t.includes('mar') || t.includes('punta') || t.includes('matalascañas') || t.includes('mazagón')) category = 'beach';
-  else if (t.includes('sierra') || t.includes('doñana') || t.includes('aracena') || t.includes('sendero')) category = 'nature';
+  // 1. Brainstorm Prompts
+  const brainPrompt = `
+    Generate ${count} distinct image prompts for a travel magazine article about "${topic}" in Huelva, Spain.
+    Style: Photorealistic, cinematic 4k, natural lighting.
+    
+    1. A wide establishing shot.
+    2. A close-up detail (food, texture, object).
+    3. An action shot or atmospheric angle.
+    
+    Return ONLY a JSON array of strings. Example: ["Wide shot of...", "Close up of..."]
+  `;
 
-  console.log(`[DESIGNER] Visual Research para "${topic}" -> Categoría: ${category}`);
+  let prompts: string[] = [];
+  try {
+    const res = await generateContent(brainPrompt, 0.7);
+    const clean = res?.replace(/```json/g, '').replace(/```/g, '').trim() || '[]';
+    prompts = JSON.parse(clean);
+  } catch (e) {
+    prompts = [`Photorealistic ${topic} in Huelva`, `Detail of ${topic}`, `Cinematic shot of ${topic}`];
+  }
 
-  // Shuffle and pick
-  const pool = STOCK_LIBRARY[category] || STOCK_LIBRARY['city'];
-  const shuffled = [...pool].sort(() => 0.5 - Math.random());
-  
-  return shuffled.slice(0, count);
+  // 2. Generate Images & Upload
+  const galleryUrls: string[] = [];
+
+  for (const [i, p] of prompts.entries()) {
+    try {
+      console.log(`[DESIGNER] Rendering: ${p.substring(0, 30)}...`);
+      const response = await geminiClient.models.generateImage({
+        model: 'gemini-2.5-flash-image', // Ajustar modelo según disponibilidad
+        prompt: p + ", high quality, 4k",
+        config: { number_of_images: 1 }
+      });
+
+      if (response.image) {
+        // Upload immediately using a temp slug base
+        const slug = `gen-${topic.substring(0,10).replace(/\s/g,'-')}-${Date.now()}-${i}`;
+        const url = await uploadFromBase64(response.image.imageBytes, slug);
+        if (url) galleryUrls.push(url);
+      }
+    } catch (e) {
+      console.error(`[DESIGNER] Error generando imagen ${i}:`, e);
+    }
+  }
+
+  return galleryUrls;
 }
 
 export async function generateHeaderImage(title: string, excerpt: string, scrapedImage?: string, slug: string = 'draft'): Promise<string> {

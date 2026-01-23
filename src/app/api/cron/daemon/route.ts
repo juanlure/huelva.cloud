@@ -3,7 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
 import { generateDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
-import { generateHeaderImage, searchEditorialImages } from '@/lib/agents/designer';
+import { generateHeaderImage, generateEditorialGallery } from '@/lib/agents/designer';
 import { logAgentAction } from '@/lib/logger';
 import { optimizeSeo } from '@/lib/agents/seo';
 import { classifyContent } from '@/lib/agents/classifier';
@@ -54,13 +54,11 @@ export async function GET(req: NextRequest) {
          await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
       }
     } else {
-      // MODO CREADOR (Guía desde cero) - Investigación Visual Artificial
-      // Si el tópico huele a "Guía" (no tiene URL), buscamos fotos de stock para enriquecerlo
-      const stockImages = await searchEditorialImages(topic, 4);
-      if (stockImages.length > 0) {
-        const tempSlug = topic.substring(0, 20).toLowerCase().replace(/[^a-z0-9]/g, '-');
-        uploadedGallery = await uploadBatch(stockImages, `stock-${tempSlug}`);
-        await logAgentAction('Designer', 'Visual Research Completed', { count: uploadedGallery.length });
+      // MODO CREADOR (Guía desde cero) - Generación Visual Real (Imagen 3)
+      // Generamos imágenes únicas y las subimos
+      uploadedGallery = await generateEditorialGallery(topic, 3);
+      if (uploadedGallery.length > 0) {
+        await logAgentAction('Designer', 'AI Gallery Generated', { count: uploadedGallery.length });
       }
     }
 
