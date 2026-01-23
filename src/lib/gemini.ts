@@ -1,20 +1,16 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { google } from '@google/genai';
 import { logAgentAction } from './logger';
 
 const apiKey = process.env.GEMINI_API_KEY;
 
 export const isAiEnabled = !!apiKey;
 
-let model: any = null;
+let client: any = null;
 
 if (apiKey) {
-  const genAI = new GoogleGenerativeAI(apiKey);
-  // Usamos gemini-pro que es el más estable/común si flash da 404
-  model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  client = new google.genai.Client({ apiKey: apiKey });
 } else {
   console.warn("⚠️ GEMINI_API_KEY no definida.");
-  // No podemos loguear a DB aquí fácilmente porque logger importa supabase que podría no estar listo, 
-  // pero el runtime log ayudará si miran Vercel logs.
 }
 
 export async function generateContent(prompt: string, temperature = 0.7): Promise<string | null> {
@@ -23,16 +19,18 @@ export async function generateContent(prompt: string, temperature = 0.7): Promis
     return null;
   }
   
-  if (!model) return null;
+  if (!client) return null;
 
   try {
-    const result = await model.generateContent({
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature,
+    const response = await client.models.generateContent({
+      model: 'gemini-2.0-flash', // Usando la última versión disponible en nuevo SDK
+      contents: prompt,
+      config: {
+        temperature: temperature,
       }
     });
-    return result.response.text();
+
+    return response.text();
   } catch (error: any) {
     console.error("❌ Error generando contenido con Gemini:", error);
     await logAgentAction('System', 'AI Critical Error', { 
@@ -42,3 +40,6 @@ export async function generateContent(prompt: string, temperature = 0.7): Promis
     return null;
   }
 }
+
+// Exportar cliente para uso directo en otros agentes (ej: designer)
+export { client as geminiClient };
