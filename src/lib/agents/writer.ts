@@ -19,6 +19,7 @@ export async function generateDraft(topic: string): Promise<Draft> {
         slug: topic.toLowerCase().replace(/ /g, '-'),
         content: `<p>Contenido Mock sobre ${topic}</p>`,
         category: 'Comer',
+        excerpt: `Resumen simulado sobre ${topic}`,
         author: 'Agente Mock'
      };
   }
