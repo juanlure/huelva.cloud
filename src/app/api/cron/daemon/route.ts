@@ -8,6 +8,7 @@ import { logAgentAction } from '@/lib/logger';
 import { optimizeSeo } from '@/lib/agents/seo';
 import { classifyContent } from '@/lib/agents/classifier';
 import { scrapeArticle } from '@/lib/agents/scraper';
+import { uploadBatch } from '@/lib/storage';
 
 // Evitar cacheo en Vercel
 export const dynamic = 'force-dynamic';
@@ -32,11 +33,7 @@ export async function GET(req: NextRequest) {
     
     await logAgentAction('Diversity', 'Selected Topic', { topic, url: targetUrl });
 
-import { uploadBatch } from '@/lib/storage';
 
-// ... (imports)
-
-// ... (inside GET)
 
     // 1.5. Scraping (si hay URL)
     let scrapedData = null;
