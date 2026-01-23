@@ -1,18 +1,5 @@
 /*
   Huelva.is - Agente Diseñador
-  Proveedor: Banana.dev (Nano Banana) / Replicate
-*/
-import { generateContent, isAiEnabled } from '../gemini';
-
-// Fallback images
-const UNSPLASH_IMAGES = [
-  'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800', // Gambas
-  'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800', // Doñana
-  'https://images.unsplash.com/photo-1551095900-589578278216?q=80&w=800', // Semana Santa
-];
-
-/*
-  Huelva.is - Agente Diseñador
   Proveedor: Google GenAI (Imagen 3 / "Nano Banana")
 */
 import { generateContent, isAiEnabled, geminiClient } from '../gemini';
