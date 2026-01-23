@@ -44,7 +44,14 @@ export async function generateHeaderImage(title: string, excerpt: string): Promi
        // Para servirla en la web necesitamos subirla o convertirla a Data URI.
        // Data URI es pesado para HTML, pero viable para Serverless sin bucket externo por ahora.
        const b64 = response.image.imageBytes;
-       return `data:image/jpeg;base64,${b64}`;
+       const b64Str = `data:image/jpeg;base64,${b64}`;
+       console.log(`[DESIGNER] Imagen generada. Size: ${Math.round(b64Str.length / 1024)} KB`);
+       
+       if (b64Str.length > 5 * 1024 * 1024) {
+          console.warn("[DESIGNER] Imagen demasiado grande (>5MB). Usando fallback por seguridad.");
+          throw new Error("Image too large");
+       }
+       return b64Str;
     }
   } catch (e) {
     console.error("[DESIGNER] Fallo generando imagen con Gemini/Imagen", e);
