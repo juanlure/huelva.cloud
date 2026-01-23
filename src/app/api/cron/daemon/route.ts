@@ -31,6 +31,10 @@ export async function GET(req: NextRequest) {
     const draft = await generateDraft(topic);
     await logAgentAction('Writer', 'Draft Generated', { title: draft.title });
 
+import { optimizeSeo } from '@/lib/agents/seo';
+
+// ... (dentro de la función GET)
+
     // 3. Edición
     const review = await reviewDraft(draft);
 
@@ -41,7 +45,11 @@ export async function GET(req: NextRequest) {
     
     await logAgentAction('Editor', 'Approved', { score: review.score });
 
-    // 4. Diseño (Generar Imagen)
+    // 3.5. SEO (Nuevo paso)
+    const seoData = await optimizeSeo(draft);
+    await logAgentAction('SEO', 'Optimized', { slug: seoData.slug, metaTitle: seoData.metaTitle });
+
+    // 4. Diseño (Generar Imagen) - Usamos el título original o el SEO para contexto
     let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800';
     try {
       imageUrl = await generateHeaderImage(draft.title, draft.excerpt);
@@ -52,14 +60,15 @@ export async function GET(req: NextRequest) {
 
     // 5. Publicación (Insertar en Supabase usando Admin Client)
     const { error } = await supabaseAdmin.from('articles').insert({
-      slug: draft.slug,
-      title: draft.title,
+      slug: seoData.slug, // Usar slug optimizado
+      title: draft.title, // Mantenemos título original en H1, o usa seoData.metaTitle si prefieres
       content: draft.content,
-      excerpt: `Un artículo sobre ${topic} generado por IA.`,
+      excerpt: seoData.metaDescription, // Usamos la meta descripción como excerpt mejorado
       category: draft.category,
       image_url: imageUrl,
       author: draft.author,
       is_ai: true
+      // TODO: Guardar keywords si tuviéramos campo tags
     });
 
     if (error) {
