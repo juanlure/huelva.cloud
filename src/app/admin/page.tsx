@@ -10,15 +10,15 @@ export default function AdminDashboard() {
 
   // Fetch logs logic
   const fetchLogs = async () => {
-     try {
-       const res = await fetch('/api/admin/logs');
-       if (res.ok) {
-         const data = await res.json();
-         setDbLogs(data);
-       }
-     } catch (e) {
-       console.error("Log fetch error", e);
-     }
+    try {
+      const res = await fetch('/api/admin/logs');
+      if (res.ok) {
+        const data = await res.json();
+        setDbLogs(data);
+      }
+    } catch (e) {
+      console.error("Log fetch error", e);
+    }
   };
 
   // Fetch articles logic
@@ -44,12 +44,12 @@ export default function AdminDashboard() {
 
   const triggerDaemon = async () => {
     if (!confirm('¿Seguro que quieres forzar a los agentes a trabajar?')) return;
-    
+
     setLoading(true);
     try {
       const res = await fetch('/api/cron/daemon', {
         headers: {
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_CRON_SECRET || 'test_secret'}` 
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_CRON_SECRET || 'test_secret'}`
         }
       });
       const data = await res.json();
@@ -85,23 +85,53 @@ export default function AdminDashboard() {
     }
   };
 
+  const handleEnhance = async (slug: string) => {
+    if (!confirm(`¿Mejorar visualmente el artículo "${slug}"?\nEsto generará imágenes AI específicas para sus secciones.`)) return;
+
+    // Small local loading indication
+    alert("Iniciando mejora de diseño... Esto puede tardar unos 20-30 segundos.");
+
+    try {
+      const res = await fetch('/api/admin/enhance', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        if (data.count > 0) {
+          alert(`✅ ¡Éxito! Se han creado e inyectado ${data.count} imágenes nuevas.`);
+        } else {
+          alert('⚠️ El proceso terminó, pero no se generaron imágenes nuevas (¿quizás no se detectaron secciones aptas?).');
+        }
+        fetchArticles(); // Refresh mainly to ensure list is alive
+      } else {
+        alert('❌ Error mejorando: ' + (data.error || 'Desconocido'));
+      }
+    } catch (e) {
+      alert('❌ Error de conexión al intentar mejorar');
+    }
+  };
+
   return (
     <div style={{ padding: '2rem', fontFamily: 'system-ui', maxWidth: '1200px', margin: '0 auto' }}>
       <h1>🎛️ Panel de Control - Huelva.is AI</h1>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem', marginTop: '2rem' }}>
-        
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <div style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px' }}>
             <h2>🤖 Control de Agentes</h2>
             <p>Estado del sistema: 🟢 Operativo</p>
-            <button 
-              style={{ 
-                padding: '0.5rem 1rem', 
-                background: loading ? '#ccc' : '#d45e35', 
-                color: 'white', 
-                border: 'none', 
-                borderRadius: '4px', 
+            <button
+              style={{
+                padding: '0.5rem 1rem',
+                background: loading ? '#ccc' : '#d45e35',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
                 cursor: loading ? 'wait' : 'pointer',
                 width: '100%'
               }}
@@ -115,13 +145,13 @@ export default function AdminDashboard() {
           <div style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', maxHeight: '400px', overflowY: 'auto' }}>
             <h2>📜 Últimos Logs</h2>
             <ul style={{ listStyle: 'none', padding: 0 }}>
-              {dbLogs.length === 0 && <li style={{color: '#999'}}>Cargando logs o base de datos vacía...</li>}
+              {dbLogs.length === 0 && <li style={{ color: '#999' }}>Cargando logs o base de datos vacía...</li>}
               {dbLogs.map((log) => (
                 <li key={log.id} style={{ padding: '0.5rem 0', borderBottom: '1px solid #eee', fontSize: '0.85rem' }}>
-                  <span style={{ color: '#999', display:'block', fontSize: '0.75rem' }}>
+                  <span style={{ color: '#999', display: 'block', fontSize: '0.75rem' }}>
                     {new Date(log.created_at).toLocaleTimeString()}
                   </span>
-                  <strong style={{ color: '#d45e35' }}>[{log.agent_name}]</strong> 
+                  <strong style={{ color: '#d45e35' }}>[{log.agent_name}]</strong>
                   {' '} {log.action}
                 </li>
               ))}
@@ -165,20 +195,36 @@ export default function AdminDashboard() {
                       </span>
                     </td>
                     <td style={{ padding: '0.5rem' }}>
-                      <button 
-                        onClick={() => handleDelete(article.slug)}
-                        style={{ 
-                          background: 'transparent', 
-                          border: '1px solid #ff4444', 
-                          color: '#ff4444', 
-                          padding: '4px 8px', 
-                          borderRadius: '4px', 
-                          cursor: 'pointer',
-                          fontSize: '0.8rem'
-                        }}
-                      >
-                        Eliminar
-                      </button>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <button
+                          onClick={() => handleEnhance(article.slug)}
+                          style={{
+                            background: 'transparent',
+                            border: '1px solid #10b981',
+                            color: '#10b981',
+                            padding: '4px 8px',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            fontSize: '0.8rem'
+                          }}
+                        >
+                          ✨ Mejorar
+                        </button>
+                        <button
+                          onClick={() => handleDelete(article.slug)}
+                          style={{
+                            background: 'transparent',
+                            border: '1px solid #ff4444',
+                            color: '#ff4444',
+                            padding: '4px 8px',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            fontSize: '0.8rem'
+                          }}
+                        >
+                          Eliminar
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
