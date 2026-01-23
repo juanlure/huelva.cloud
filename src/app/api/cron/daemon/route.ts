@@ -77,11 +77,12 @@ import { classifyContent } from '@/lib/agents/classifier';
        await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
     }
 
-    // 4. Diseño (Generar Imagen) - Usamos el título original o el SEO para contexto
+    // 4. Diseño (Generate or Scrape & Upload)
     let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800';
     try {
-      imageUrl = await generateHeaderImage(draft.title, draft.excerpt); // Corregido llamada a designer
-      await logAgentAction('Designer', 'Image Generated', { url: imageUrl });
+      // Pasamos seoData.slug para nombrar el archivo correctamente en Storage
+      imageUrl = await generateHeaderImage(draft.title, draft.excerpt, scrapedData?.image, seoData.slug);
+      await logAgentAction('Designer', 'Image Ready', { url: imageUrl });
     } catch (e) {
       await logAgentAction('Designer', 'Error', { error: String(e) });
     }

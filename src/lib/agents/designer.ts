@@ -1,8 +1,5 @@
-/*
-  Huelva.is - Agente Diseñador
-  Proveedor: Google GenAI (Imagen 3 / "Nano Banana")
-*/
 import { generateContent, isAiEnabled, geminiClient } from '../gemini';
+import { uploadFromUrl, uploadFromBase64 } from '../storage';
 
 // Fallback images
 const UNSPLASH_IMAGES = [
@@ -11,12 +8,17 @@ const UNSPLASH_IMAGES = [
   'https://images.unsplash.com/photo-1551095900-589578278216?q=80&w=800', // Semana Santa
 ];
 
-export async function generateHeaderImage(title: string, excerpt: string, scrapedImage?: string): Promise<string> {
+export async function generateHeaderImage(title: string, excerpt: string, scrapedImage?: string, slug: string = 'draft'): Promise<string> {
   console.log(`[DESIGNER] Diseñando imagen para: "${title}"`);
 
-  // 0. Si hay imagen scrapeada (REAL), usarla
+  // 1. Si hay imagen scrapeada (REAL), intentamos "robarla" (subirla a nuestro storage)
   if (scrapedImage && scrapedImage.startsWith('http')) {
-     console.log(`[DESIGNER] Usando imagen scrapeada oficial: ${scrapedImage}`);
+     console.log(`[DESIGNER] Procesando imagen scrapeada: ${scrapedImage}`);
+     const storedUrl = await uploadFromUrl(scrapedImage, slug);
+     if (storedUrl) return storedUrl;
+     
+     // Si falla la subida, usamos la original (Hotlink) como fallback temporal
+     console.warn("[DESIGNER] Fallo subida Storage, usando Hotlink.");
      return scrapedImage;
   }
 
@@ -24,7 +26,7 @@ export async function generateHeaderImage(title: string, excerpt: string, scrape
      return UNSPLASH_IMAGES[Math.floor(Math.random() * UNSPLASH_IMAGES.length)];
   }
 
-  // 1. Crear Prompt Visual con Gemini (Texto)
+  // 2. Crear Prompt Visual con Gemini
   const promptDesign = `
     Create a very short prompt (max 20 words) for an AI image generator.
     Subject: A photorealistic image about "${title}" in Huelva, Spain.
@@ -35,7 +37,7 @@ export async function generateHeaderImage(title: string, excerpt: string, scrape
   const imagePrompt = await generateContent(promptDesign, 0.7) || `Andalusia landscape, Huelva, ${title}, photorealistic`;
   console.log(`[DESIGNER] Prompt generado: "${imagePrompt.trim()}"`);
 
-  // 2. Generar Imagen con Nano Banana (Gemini 2.5 Flash Image)
+  // 3. Generar Imagen con Nano Banana
   try {
     const response = await geminiClient.models.generateImage({
       model: 'gemini-2.5-flash-image', 
@@ -46,24 +48,20 @@ export async function generateHeaderImage(title: string, excerpt: string, scrape
     });
 
     if (response.image) {
-       // La API devuelve la imagen en base64 en response.image.imageBytes o similar
-       // Para servirla en la web necesitamos subirla o convertirla a Data URI.
-       // Data URI es pesado para HTML, pero viable para Serverless sin bucket externo por ahora.
        const b64 = response.image.imageBytes;
-       const b64Str = `data:image/jpeg;base64,${b64}`;
-       console.log(`[DESIGNER] Imagen generada. Size: ${Math.round(b64Str.length / 1024)} KB`);
        
-       if (b64Str.length > 5 * 1024 * 1024) {
-          console.warn("[DESIGNER] Imagen demasiado grande (>5MB). Usando fallback por seguridad.");
-          throw new Error("Image too large");
-       }
-       return b64Str;
+       // Subir a Storage
+       const storedUrl = await uploadFromBase64(b64, slug);
+       if (storedUrl) return storedUrl;
+
+       console.warn("[DESIGNER] Fallo subida Storage (Base64).");
+       throw new Error("Storage Upload Failed");
     }
   } catch (e) {
-    console.error("[DESIGNER] Fallo generando imagen con Gemini/Imagen", e);
+    console.error("[DESIGNER] Fallo generando/guardando imagen", e);
   }
 
-  // Fallback si falla
+  // Fallback final
   console.log("[DESIGNER] Usando Unsplash Fallback");
   return `https://source.unsplash.com/800x600/?huelva,${encodeURIComponent(title.split(' ')[0])}`;
 }
