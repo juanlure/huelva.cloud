@@ -95,7 +95,7 @@ export async function GET(req: NextRequest) {
     const seoData = await optimizeSeo(draft);
     await logAgentAction('SEO', 'Optimized', { slug: seoData.slug, metaTitle: seoData.metaTitle });
 
-    import { generateInteractiveData } from '@/lib/agents/generator';
+
 
     // 3.6. Interactive Classifier (Nuevo paso)
     let finalContent = draft.content;
