@@ -77,3 +77,22 @@ export async function uploadFromBase64(base64Data: string, slug: string): Promis
     return null;
   }
 }
+
+/**
+ * Upload multiple images in parallel.
+ * Returns array of successfully uploaded URLs.
+ */
+export async function uploadBatch(imageUrls: string[], slugBase: string): Promise<string[]> {
+  console.log(`[STORAGE] Iniciando subida batch de ${imageUrls.length} imágenes...`);
+  
+  const uploadPromises = imageUrls.map(async (url, index) => {
+    const uniqueSlug = `${slugBase}-${index + 1}`;
+    return await uploadFromUrl(url, uniqueSlug);
+  });
+
+  const results = await Promise.all(uploadPromises);
+  const successUrls = results.filter((url): url is string => url !== null);
+  
+  console.log(`[STORAGE] Batch completado. ${successUrls.length}/${imageUrls.length} subidas.`);
+  return successUrls;
+}
