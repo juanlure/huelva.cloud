@@ -45,20 +45,34 @@ export async function generateEditorialGallery(topic: string, count: number = 3)
   // 2. Generate Images & Upload
   const galleryUrls: string[] = [];
 
+  // 2. Generate Images & Upload
+  const galleryUrls: string[] = [];
+
   for (const [i, p] of prompts.entries()) {
     try {
-      console.log(`[DESIGNER] Rendering: ${p.substring(0, 30)}...`);
-      const response = await geminiClient.models.generateImage({
-        model: 'gemini-2.5-flash-image', // Ajustar modelo según disponibilidad
-        prompt: p + ", high quality, 4k",
-        config: { number_of_images: 1 }
+      console.log(`[DESIGNER] Rendering (Nano Banana): ${p.substring(0, 30)}...`);
+      
+      // Llamada correcta a la API según documentación
+      const response = await geminiClient.models.generateContent({
+        model: 'gemini-2.5-flash-image',
+        contents: p + ", high quality, 4k",
+        config: {
+            responseModalities: ['IMAGE'] // Forzamos solo imagen para simplificar
+        }
       });
 
-      if (response.image) {
-        // Upload immediately using a temp slug base
-        const slug = `gen-${topic.substring(0,10).replace(/\s/g,'-')}-${Date.now()}-${i}`;
-        const url = await uploadFromBase64(response.image.imageBytes, slug);
-        if (url) galleryUrls.push(url);
+      // Procesar respuesta
+      const candidate = response.candidates?.[0];
+      if (candidate?.content?.parts) {
+         for (const part of candidate.content.parts) {
+            if (part.inlineData) {
+                // Tenemos imagen
+                const b64 = part.inlineData.data;
+                const finalSlug = `agen-${topic.substring(0,10).replace(/[^a-z0-9]/gi, '-')}-${Date.now()}-${i}`;
+                const url = await uploadFromBase64(b64, finalSlug);
+                if (url) galleryUrls.push(url);
+            }
+         }
       }
     } catch (e) {
       console.error(`[DESIGNER] Error generando imagen ${i}:`, e);
