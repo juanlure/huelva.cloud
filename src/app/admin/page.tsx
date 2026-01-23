@@ -1,12 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AdminDashboard() {
   const [loading, setLoading] = useState(false);
-  const [logs, setLogs] = useState<string[]>([
-    "Esperando conexión con logs..."
-  ]);
+  const [dbLogs, setDbLogs] = useState<any[]>([]);
+
+  // Fetch logs logic
+  const fetchLogs = async () => {
+     try {
+       const res = await fetch('/api/admin/logs');
+       if (res.ok) {
+         const data = await res.json();
+         setDbLogs(data);
+       }
+     } catch (e) {
+       console.error("Log fetch error", e);
+     }
+  };
+
+  // Poll logs every 5s
+  useEffect(() => {
+    fetchLogs();
+    const interval = setInterval(fetchLogs, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const triggerDaemon = async () => {
     if (!confirm('¿Seguro que quieres forzar a los agentes a trabajar?')) return;
@@ -20,6 +38,7 @@ export default function AdminDashboard() {
       });
       const data = await res.json();
       alert(`Resultado: ${JSON.stringify(data)}`);
+      fetchLogs(); // Refresh logs immediately
     } catch (e) {
       alert('Error ejecutando daemon: ' + e);
     } finally {
@@ -52,31 +71,6 @@ export default function AdminDashboard() {
           </button>
         </div>
 
-  // Fetch logs on mount and every 5 seconds
-  import { useEffect } from 'react';
-
-  // State for logs (typed)
-  const [dbLogs, setDbLogs] = useState<any[]>([]);
-
-  const fetchLogs = async () => {
-     try {
-       const res = await fetch('/api/admin/logs');
-       if (res.ok) {
-         const data = await res.json();
-         setDbLogs(data);
-       }
-     } catch (e) {
-       console.error("Log fetch error", e);
-     }
-  };
-
-  useEffect(() => {
-    fetchLogs();
-    const interval = setInterval(fetchLogs, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // ... (inside JSX)
         <div style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', maxHeight: '400px', overflowY: 'auto' }}>
           <h2>📜 Últimos Logs</h2>
           <ul style={{ listStyle: 'none', padding: 0 }}>
