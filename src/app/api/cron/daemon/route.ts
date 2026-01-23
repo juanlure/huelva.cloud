@@ -3,7 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
 import { generateDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
-import { generateHeaderImage } from '@/lib/agents/designer';
+import { generateHeaderImage, searchEditorialImages } from '@/lib/agents/designer';
 import { logAgentAction } from '@/lib/logger';
 import { optimizeSeo } from '@/lib/agents/seo';
 import { classifyContent } from '@/lib/agents/classifier';
@@ -40,19 +40,27 @@ export async function GET(req: NextRequest) {
     let uploadedGallery: string[] = []; // Fotos subidas a nuestro storage
 
     if (targetUrl) {
+      // MODO CURADOR (Existe noticia real)
       scrapedData = await scrapeArticle(targetUrl);
       if (scrapedData) {
          await logAgentAction('Scraper', 'Content Extracted', { source: scrapedData.source, gallerySize: scrapedData.gallery?.length || 0 });
          
-         // 1.6 Subir Galería a Storage (Batch)
          if (scrapedData.gallery && scrapedData.gallery.length > 0) {
             const tempSlug = topic.substring(0, 20).toLowerCase().replace(/[^a-z0-9]/g, '-');
             uploadedGallery = await uploadBatch(scrapedData.gallery, `gallery-${tempSlug}`);
             await logAgentAction('Storage', 'Batch Upload', { count: uploadedGallery.length });
          }
-
       } else {
          await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
+      }
+    } else {
+      // MODO CREADOR (Guía desde cero) - Investigación Visual Artificial
+      // Si el tópico huele a "Guía" (no tiene URL), buscamos fotos de stock para enriquecerlo
+      const stockImages = await searchEditorialImages(topic, 4);
+      if (stockImages.length > 0) {
+        const tempSlug = topic.substring(0, 20).toLowerCase().replace(/[^a-z0-9]/g, '-');
+        uploadedGallery = await uploadBatch(stockImages, `stock-${tempSlug}`);
+        await logAgentAction('Designer', 'Visual Research Completed', { count: uploadedGallery.length });
       }
     }
 
