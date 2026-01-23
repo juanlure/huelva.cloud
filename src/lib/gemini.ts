@@ -1,4 +1,4 @@
-import { google } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
 import { logAgentAction } from './logger';
 
 const apiKey = process.env.GEMINI_API_KEY;
@@ -8,7 +8,7 @@ export const isAiEnabled = !!apiKey;
 let client: any = null;
 
 if (apiKey) {
-  client = new google.genai.Client({ apiKey: apiKey });
+  client = new GoogleGenAI({ apiKey: apiKey });
 } else {
   console.warn("⚠️ GEMINI_API_KEY no definida.");
 }
