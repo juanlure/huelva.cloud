@@ -52,13 +52,45 @@ export default function AdminDashboard() {
           </button>
         </div>
 
-        <div style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px' }}>
+  // Fetch logs on mount and every 5 seconds
+  import { useEffect } from 'react';
+
+  // State for logs (typed)
+  const [dbLogs, setDbLogs] = useState<any[]>([]);
+
+  const fetchLogs = async () => {
+     try {
+       const res = await fetch('/api/admin/logs');
+       if (res.ok) {
+         const data = await res.json();
+         setDbLogs(data);
+       }
+     } catch (e) {
+       console.error("Log fetch error", e);
+     }
+  };
+
+  useEffect(() => {
+    fetchLogs();
+    const interval = setInterval(fetchLogs, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // ... (inside JSX)
+        <div style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', maxHeight: '400px', overflowY: 'auto' }}>
           <h2>📜 Últimos Logs</h2>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-             {/* TODO: Connect to real Supabase logs */}
-             <li style={{ padding: '0.5rem 0', borderBottom: '1px solid #eee' }}>
-              <span style={{ color: '#666' }}>[DEMO]</span> Conecta Logs aquí
-            </li>
+            {dbLogs.length === 0 && <li style={{color: '#999'}}>Cargando logs o base de datos vacía...</li>}
+            {dbLogs.map((log) => (
+              <li key={log.id} style={{ padding: '0.5rem 0', borderBottom: '1px solid #eee', fontSize: '0.9rem' }}>
+                <span style={{ color: '#999', marginRight: '8px' }}>
+                  {new Date(log.created_at).toLocaleTimeString()}
+                </span>
+                <strong style={{ color: '#d45e35' }}>[{log.agent_name}]</strong> 
+                {' '} {log.action}
+                {log.details && <pre style={{fontSize: '0.7rem', color:'#666', margin:0}}>{JSON.stringify(log.details).slice(0, 100)}</pre>}
+              </li>
+            ))}
           </ul>
         </div>
 

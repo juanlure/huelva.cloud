@@ -3,6 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
 import { generateDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
+import { logAgentAction } from '@/lib/logger';
 
 // Evitar cacheo en Vercel
 export const dynamic = 'force-dynamic';
@@ -18,22 +19,26 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    console.log("[DAEMON] Iniciando ciclo de publicación automática...");
+    await logAgentAction('Daemon', 'Start Cycle');
 
     // 1. Planificación
     const suggestion = await analyzeDiversity();
     const topic = suggestion ? suggestion.topic : 'Huelva Secreta';
+    await logAgentAction('Diversity', 'Selected Topic', { topic });
 
     // 2. Escritura
     const draft = await generateDraft(topic);
+    await logAgentAction('Writer', 'Draft Generated', { title: draft.title });
 
     // 3. Edición
     const review = await reviewDraft(draft);
 
     if (!review.approved) {
-      console.log("[DAEMON] Artículo rechazado por el editor.");
+      await logAgentAction('Editor', 'Rejected', { reason: review.feedback });
       return NextResponse.json({ status: 'skipped', reason: 'rejected_by_editor' });
     }
+    
+    await logAgentAction('Editor', 'Approved', { score: review.score });
 
     // 4. Publicación (Insertar en Supabase usando Admin Client)
     const { error } = await supabaseAdmin.from('articles').insert({
@@ -48,16 +53,15 @@ export async function GET(req: NextRequest) {
     });
 
     if (error) {
-      // Si falla (ej. slug duplicado), loguear error
-      console.error("[DAEMON] Error guardando en DB:", error);
+      await logAgentAction('Daemon', 'Error Saving', { error: error.message });
       return NextResponse.json({ status: 'error', error: error.message }, { status: 500 });
     }
 
-    console.log(`[DAEMON] ¡Artículo publicado! Slug: ${draft.slug}`);
+    await logAgentAction('Daemon', 'Published', { slug: draft.slug, title: draft.title });
     return NextResponse.json({ status: 'published', slug: draft.slug });
 
   } catch (err: any) {
-    console.error("[DAEMON] Fallo crítico:", err);
+    await logAgentAction('Daemon', 'Critical Failure', { error: err.message });
     return NextResponse.json({ status: 'error', message: err.message }, { status: 500 });
   }
 }
