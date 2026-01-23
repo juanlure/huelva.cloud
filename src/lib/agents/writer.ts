@@ -112,7 +112,14 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
   const response = await generateContent(prompt, 0.7);
 
   try {
-    const cleanJson = response?.replace(/```json/g, '').replace(/```/g, '').trim() || '{}';
+    // Robust JSON extraction
+    const jsonStart = response?.indexOf('{');
+    const jsonEnd = response?.lastIndexOf('}');
+
+    let cleanJson = '{}';
+    if (response && jsonStart !== undefined && jsonEnd !== undefined && jsonStart !== -1 && jsonEnd !== -1) {
+      cleanJson = response.substring(jsonStart, jsonEnd + 1);
+    }
     const data = JSON.parse(cleanJson);
 
     return {
