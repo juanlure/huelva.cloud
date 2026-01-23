@@ -32,19 +32,36 @@ export async function GET(req: NextRequest) {
     
     await logAgentAction('Diversity', 'Selected Topic', { topic, url: targetUrl });
 
+import { uploadBatch } from '@/lib/storage';
+
+// ... (imports)
+
+// ... (inside GET)
+
     // 1.5. Scraping (si hay URL)
     let scrapedData = null;
+    let uploadedGallery: string[] = []; // Fotos subidas a nuestro storage
+
     if (targetUrl) {
       scrapedData = await scrapeArticle(targetUrl);
       if (scrapedData) {
-         await logAgentAction('Scraper', 'Content Extracted', { source: scrapedData.source });
+         await logAgentAction('Scraper', 'Content Extracted', { source: scrapedData.source, gallerySize: scrapedData.gallery?.length || 0 });
+         
+         // 1.6 Subir Galería a Storage (Batch)
+         if (scrapedData.gallery && scrapedData.gallery.length > 0) {
+            const tempSlug = topic.substring(0, 20).toLowerCase().replace(/[^a-z0-9]/g, '-');
+            uploadedGallery = await uploadBatch(scrapedData.gallery, `gallery-${tempSlug}`);
+            await logAgentAction('Storage', 'Batch Upload', { count: uploadedGallery.length });
+         }
+
       } else {
          await logAgentAction('Scraper', 'Failed/Skipped', { url: targetUrl });
       }
     }
 
     // 2. Escritura (Rewrite si hay scrapedData, Generate si no)
-    const draft = await generateDraft(topic, scrapedData?.content, targetUrl);
+    // Pasamos uploadedGallery al escritor para que la use en el cuerpo
+    const draft = await generateDraft(topic, scrapedData?.content, targetUrl, uploadedGallery);
     await logAgentAction('Writer', 'Draft Generated', { title: draft.title, mode: scrapedData ? 'Rewrite' : 'Create' });
 
 

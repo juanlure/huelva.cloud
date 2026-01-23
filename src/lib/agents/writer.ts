@@ -1,5 +1,3 @@
-import { generateContent, isAiEnabled } from '../gemini';
-
 export interface Draft {
   title: string;
   content: string;
@@ -10,7 +8,7 @@ export interface Draft {
   sourceUrl?: string; // Nuevo campo para atribución
 }
 
-export async function generateDraft(topic: string, baseContent?: string, sourceUrl?: string): Promise<Draft> {
+export async function generateDraft(topic: string, baseContent?: string, sourceUrl?: string, gallery: string[] = []): Promise<Draft> {
   console.log(`[WRITER] ${baseContent ? 'Reescribiendo' : 'Generando'} artículo sobre: ${topic}...`);
   
   // Fallback Mock
@@ -25,6 +23,19 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
         sourceUrl
      };
   }
+
+  const galleryInstructions = gallery.length > 0
+    ? `
+    TIENES DISPONIBLES LAS SIGUIENTES IMÁGENES REALES DEL EVENTO/LUGAR:
+    ${JSON.stringify(gallery)}
+    
+    INSTRUCCIÓN MULTIMEDIA (IMPORTANTE):
+    - Debes intercalar estas imágenes en el contenido HTML donde tengan sentido semántico (ej: si hablas del escenario, pon la foto del escenario).
+    - Usa la etiqueta: <figure><img src="URL_DE_LA_LISTA" alt="Descripción breve" /><figcaption>Pie de foto con gracia</figcaption></figure>
+    - Intenta usar al menos 2 o 3 imágenes si el texto es largo.
+    - No inventes URLs, usa SOLO las de la lista.
+    `
+    : "No hay imágenes adicionales disponibles. Solo genera texto.";
 
   const prompt = baseContent ? 
     // MODO REWRITER (Curador)
@@ -42,10 +53,12 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     - Si es una recomendación: Sé crítico.
     - Título: Hazlo atractivo, no clickbait barato, pero sí con gancho.
     
+    ${galleryInstructions}
+
     ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO):
     {
       "title": "Nuevo Título con Gancho",
-      "content": "HTML del cuerpo (<p>, <h2>, <blockquote>)...",
+      "content": "HTML del cuerpo (<p>, <h2>, <figure>...)...",
       "excerpt": "Resumen picante de 2 líneas.",
       "category": "Noticias, Comer, Eventos, o Guías",
       "author": "El Choco"
@@ -63,6 +76,8 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     - Longitud: 400-600 palabras.
     - Formato: HTML básico (<p>, <h2>, <ul>, <blockquote>). NO uses Markdown.
     
+    ${galleryInstructions}
+
     ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO):
     {
       "title": "Título con gancho (ej: 'Por qué las coquinas de X son las mejores')",
