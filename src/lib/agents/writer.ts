@@ -1,4 +1,5 @@
 import { generateContent, isAiEnabled } from '../gemini';
+import { getAuthorForCategory } from '../authors';
 
 export interface Draft {
   title: string;
@@ -100,9 +101,9 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
       title: data.title || topic,
       content: data.content || `<p>Error generando contenido.</p>`,
       category: data.category || 'Noticias',
-      author: data.author || 'Huelva.is AI',
       slug: (data.title || topic).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
       excerpt: data.excerpt || `Artículo sobre ${topic}`,
+      author: getAuthorForCategory(data.category || 'Noticias').name, // Override with specific persona
       sourceUrl
     };
   } catch (e) {
