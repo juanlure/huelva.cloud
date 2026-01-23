@@ -56,7 +56,8 @@ export async function generateDraft(topic: string): Promise<Draft> {
       content: data.content || `<p>Error generando contenido.</p>`,
       category: data.category || 'Noticias',
       author: data.author || 'Huelva.is AI',
-      slug: (data.title || topic).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+      slug: (data.title || topic).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+      excerpt: data.excerpt || `Artículo sobre ${topic}`
     };
   } catch (e) {
     console.error("Error parsing AI response", e);
