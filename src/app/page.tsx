@@ -2,6 +2,9 @@ import styles from './page.module.css';
 import ArticleCard from '@/components/ArticleCard';
 import { getArticles } from '@/lib/api';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function Home() {
   const articles = await getArticles();
 

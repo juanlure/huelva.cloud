@@ -5,6 +5,7 @@ import { generateDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
 import { generateHeaderImage } from '@/lib/agents/designer';
 import { logAgentAction } from '@/lib/logger';
+import { optimizeSeo } from '@/lib/agents/seo';
 
 // Evitar cacheo en Vercel
 export const dynamic = 'force-dynamic';
@@ -31,7 +32,7 @@ export async function GET(req: NextRequest) {
     const draft = await generateDraft(topic);
     await logAgentAction('Writer', 'Draft Generated', { title: draft.title });
 
-import { optimizeSeo } from '@/lib/agents/seo';
+
 
 // ... (dentro de la función GET)
 
