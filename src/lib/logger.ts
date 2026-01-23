@@ -9,8 +9,8 @@ export async function logAgentAction(agent: string, action: string, details: any
       agent_name: agent,
       action: action,
       details: details
-    }).then(({ error }) => {
-      if (error) console.error("Error writing log to DB:", error);
+    }).then((response: any) => {
+      if (response.error) console.error("Error writing log to DB:", response.error);
     });
 
   } catch (e) {
