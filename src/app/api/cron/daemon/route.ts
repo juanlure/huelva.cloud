@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
 import { generateDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
@@ -35,8 +35,8 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ status: 'skipped', reason: 'rejected_by_editor' });
     }
 
-    // 4. Publicación (Insertar en Supabase)
-    const { error } = await supabase.from('articles').insert({
+    // 4. Publicación (Insertar en Supabase usando Admin Client)
+    const { error } = await supabaseAdmin.from('articles').insert({
       slug: draft.slug,
       title: draft.title,
       content: draft.content,

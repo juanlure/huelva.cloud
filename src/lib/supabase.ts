@@ -2,12 +2,26 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 const isMock = !supabaseUrl || supabaseUrl.includes('placeholder');
 
 if (isMock) {
   console.warn("⚠️ Usando MOCK Supabase Client (Credenciales placeholder detectadas)");
 }
+
+// Cliente público (Lectura)
+export const supabase = isMock 
+  ? (mockSupabase as any) 
+  : createClient(supabaseUrl, supabaseKey);
+
+// Cliente Admin (Escritura - Agentes)
+export const supabaseAdmin = isMock
+  ? (mockSupabase as any)
+  : (supabaseServiceKey 
+      ? createClient(supabaseUrl, supabaseServiceKey)
+      : createClient(supabaseUrl, supabaseKey) // Fallback peligroso, pero mejor que crash
+    );
 
 // Mock Database State
 const MOCK_DB = {
