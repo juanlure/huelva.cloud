@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './page.module.css';
 import { getArticleBySlug } from '@/lib/api';
 import { notFound } from 'next/navigation';
+import { AUTHORS } from '@/lib/authors';
 
 interface PageProps {
   params: {
@@ -16,6 +17,8 @@ export default async function ArticlePage({ params }: PageProps) {
   if (!article) {
     notFound(); 
   }
+
+  const authorData = AUTHORS[article.author] || AUTHORS['El Choco'];
 
   return (
     <main className={styles.main}>
@@ -51,6 +54,30 @@ export default async function ArticlePage({ params }: PageProps) {
                 dangerouslySetInnerHTML={{ __html: article.content }} 
               />
             )}
+
+            {/* Author Box */}
+            <div className={styles.authorSection}>
+               <div className={styles.authorBox}>
+                  <img src={authorData.avatar} alt={authorData.name} className={styles.authorAvatar} />
+                  <div className={styles.authorInfo}>
+                    <h3>{authorData.name}</h3>
+                    <div className={styles.authorMeta}>
+                       <span className={styles.authorRole}>{authorData.role}</span>
+                       <span className={styles.aiBadge}>AI Editorial Persona · Synthetic Profile</span>
+                    </div>
+                    <p className={styles.authorBio}>{authorData.bio}</p>
+                  </div>
+               </div>
+
+               {/* AI Disclosure */}
+               <div className={styles.aiDisclosure}>
+                  <p>
+                    <strong>Transparencia IA:</strong> Este artículo ha sido generado automáticamente por inteligencia artificial 
+                    y curado por sistemas autónomos. <a href="/ai-disclosure">Saber más</a>.
+                  </p>
+               </div>
+            </div>
+
           </div>
         </section>
       </article>

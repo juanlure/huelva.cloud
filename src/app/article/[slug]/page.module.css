@@ -116,10 +116,124 @@
     padding-left: 20px;
     margin: 2rem 0;
     color: var(--text-secondary);
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Inline Images & Figures */
+.prose figure {
+    margin: 2.5rem 0;
+    width: 100%;
+}
+
+.prose img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+.prose figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.8rem;
+    font-family: var(--font-sans);
+    font-style: italic;
+}
+
+/* Author Box Styles */
+.authorSection {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.authorBox {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    background: #fff;
+}
+
+.authorAvatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f5f5f5;
+}
+
+.authorInfo h3 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 0;
+    font-family: var(--font-serif);
+    color: var(--text-primary);
+}
+
+.authorMeta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.authorRole {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.authorBio {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.aiBadge {
+    background: #f0f0f0;
+    color: #666;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    border: 1px solid #e0e0e0;
+}
+
+.aiDisclosure {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #888;
+    text-align: center;
+    border: 1px dashed #ddd;
+}
+
+.aiDisclosure a {
+    color: var(--text-primary);
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
     .header {
         height: 50vh;
+    }
+
+    .authorBox {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .authorMeta {
+        justify-content: center;
     }
 }
