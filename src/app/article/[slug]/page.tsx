@@ -21,9 +21,11 @@ export default async function ArticlePage({ params }: PageProps) {
     <main className={styles.main}>
       <article className={styles.article}>
         {/* Hero de Artículo */}
-        <header className={styles.header}>
+        <header 
+          className={styles.header} 
+          style={{ backgroundImage: `url(${article.image || '/images/placeholder.jpg'})` }}
+        >
           <div className={styles.imageOverlay}></div>
-          <img src={article.image} alt={article.title} className={styles.heroImage} />
           
           <div className={`container ${styles.headerContent}`}>
             <span className={styles.category}>{article.category}</span>
