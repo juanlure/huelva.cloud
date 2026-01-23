@@ -9,6 +9,7 @@ import { optimizeSeo } from '@/lib/agents/seo';
 import { classifyContent } from '@/lib/agents/classifier';
 import { scrapeArticle } from '@/lib/agents/scraper';
 import { uploadBatch } from '@/lib/storage';
+import { performWebResearch } from '@/lib/agents/researcher';
 
 // Evitar cacheo en Vercel
 export const dynamic = 'force-dynamic';
@@ -35,9 +36,7 @@ export async function GET(req: NextRequest) {
 
 
 
-import { performWebResearch } from '@/lib/agents/researcher';
 
-// ...
 
     // 1.5. Scraping (si hay URL)
     let scrapedData = null;
