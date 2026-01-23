@@ -1,51 +1,69 @@
 import { supabaseAdmin } from '../supabase';
-import { generateContent, isAiEnabled } from '../gemini';
+import Parser from 'rss-parser';
+
+// Feeds locales de Huelva
+const RSS_FEEDS = [
+  'https://www.diariodehuelva.es/rss/all', 
+  'https://www.huelvainformacion.es/rss/huelva',
+  'https://www.huelvabuenasnoticias.com/feed/',
+];
 
 export interface TopicSuggestion {
-  topic: string;
+  topic: string; // Título de la noticia
+  url?: string;  // URL original para scrapear
   priority: 'high' | 'medium';
 }
 
 export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
-  // 1. Obtener historial reciente
+  const parser = new Parser();
+
+  // 1. Obtener historial reciente para no repetir (por URL o Título)
   const { data: articles } = await supabaseAdmin
     .from('articles')
-    .select('title, category')
+    .select('title')
     .order('published_at', { ascending: false })
-    .limit(10);
+    .limit(20);
 
-  const history = articles?.map((a: any) => `- ${a.title} (${a.category})`).join('\n') || "Ninguno.";
+  const existingTitles = new Set(articles?.map((a: any) => a.title.toLowerCase()) || []);
 
-  // 2. Si hay Mock, saltar a lógica simple
-  if (!isAiEnabled) {
-    console.log("[DIVERSITY] Modo Mock (sin Gemini Key)");
-    return { topic: 'Romería del Rocío (Mock)', priority: 'medium' };
+  // 2. Leer un feed aleatorio
+  const randomFeed = RSS_FEEDS[Math.floor(Math.random() * RSS_FEEDS.length)];
+  console.log(`[DIVERSITY] Leyendo feed: ${randomFeed}`);
+
+  try {
+    const feed = await parser.parseURL(randomFeed);
+    
+    // 3. Filtrar noticias
+    const freshItems = feed.items.filter(item => {
+      if (!item.title || !item.link) return false;
+      // Evitar deportes o sucesos trágicos (opcional, ajustamos por keywords)
+      const titleLower = item.title.toLowerCase();
+      const forbidden = ['muerto', 'fallece', 'accidente', 'herido', 'detenido', 'sucesos'];
+      if (forbidden.some(word => titleLower.includes(word))) return false;
+      
+      // Evitar repetidos
+      if (existingTitles.has(titleLower)) return false;
+
+      return true;
+    });
+
+    if (freshItems.length === 0) {
+      console.log("[DIVERSITY] No hay noticias frescas válidas en este feed.");
+      return null;
+    }
+
+    // 4. Seleccionar una noticia
+    const chosen = freshItems[0]; // La más reciente válida
+    console.log(`[DIVERSITY] Noticia seleccionada: ${chosen.title}`);
+
+    return {
+      topic: chosen.title || 'Noticia sin título',
+      url: chosen.link,
+      priority: 'high'
+    };
+
+  } catch (e) {
+    console.error("[DIVERSITY] Error leyendo RSS", e);
+    return null;
   }
-
-  // 3. Consultar a Gemini
-  console.log("[DIVERSITY] Brainstorming con Gemini...");
-  const prompt = `
-    Eres el Jefe de Diversidad de 'Huelva.is', una revista digital local.
-    
-    ÚLTIMOS ARTÍCULOS PUBLICADOS:
-    ${history}
-    
-    TU MISIÓN:
-    Propone UN (1) tema nuevo para un artículo que cumpla:
-    1. No repite lo que ya se ha publicado recientemente.
-    2. Es ultra-local de Huelva (provincia).
-    3. Es específico (ej: no "Comer en Huelva", sino "Los mejores caracoles de la Barriada del Carmen").
-    4. Prioriza temas culturales, naturaleza oculta o curiosidades históricas si hay mucha comida.
-    
-    Devuelve SOLO el título del tema propuesto, sin comillas ni explicaciones.
-  `;
-
-  const suggestedTopic = await generateContent(prompt);
-  
-  if (!suggestedTopic) return { topic: 'Atardecer en Muelle del Tinto', priority: 'medium' };
-
-  return {
-    topic: suggestedTopic.trim(),
-    priority: 'high'
-  };
 }
