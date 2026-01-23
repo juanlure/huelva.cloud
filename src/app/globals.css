@@ -3,8 +3,6 @@
   Inspirado por la estética de malaga.is
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
 :root {
   /* Fondos */
   --bg-primary: #f8f9fa;
@@ -23,9 +21,9 @@
   /* Terracotta/Naranja cálido */
   --accent-hover: #b84d2a;
 
-  /* Tipografía */
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  /* Tipografía (Injected via Next.js Font Optimization) */
+  --font-serif: var(--font-serif), serif;
+  --font-sans: var(--font-sans), sans-serif;
 
   /* Espaciado y bordes */
   --radius-card: 1.5rem;
