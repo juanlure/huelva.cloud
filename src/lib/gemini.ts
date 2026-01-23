@@ -30,7 +30,7 @@ export async function generateContent(prompt: string, temperature = 0.7): Promis
       }
     });
 
-    return response.text();
+    return response.text;
   } catch (error: any) {
     console.error("❌ Error generando contenido con Gemini:", error);
     await logAgentAction('System', 'AI Critical Error', { 
