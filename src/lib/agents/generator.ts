@@ -30,6 +30,8 @@ export async function generateInteractiveData(
     2. ITINERARY ({ title, itineraries: { style_id: { day1: [{ time, title, description, emoji }], day2: ... } } })
        - Styles IDs: 'classic', 'foodie', 'nature', 'relaxed'
     3. QUIZ ({ title, subtitle, questions: [{ question, options: [{ text, points }] }], results: [{ minPoints, maxPoints, title, description, emoji }] })
+    4. CARDS ({ title, items: [{ name, attributes: [{ label, value, better: boolean }] }], winner: index (optional) })
+    5. CHECKLIST ({ title, items: [{ id, label, category }] })
 
     ## Output
     JSON válido con los datos específicos de Huelva, incluyendo:

@@ -41,7 +41,7 @@ export async function classifyContent(draft: Draft): Promise<InteractiveData> {
     ## Output (JSON VÁLIDO)
     {
       "interactive": true/false,
-      "component_type": "translator|itinerary|quiz|map|timeline|cards|calculator",
+      "component_type": "translator|itinerary|quiz|map|timeline|cards|calculator|checklist",
       "component_name": "NombrePascalCase",
       "rationale": "Por qué este componente es adecuado",
       "data_schema": { ... estructura de datos específica ... },
@@ -54,8 +54,9 @@ export async function classifyContent(draft: Draft): Promise<InteractiveData> {
     3. QUIZ: Engagement lúdico (ej: "¿Cuánto sabes de...?", "Choquero o Turista")
     4. MAP: Geografía esencial (ej: "Mejores playas", "Ruta de tapas")
     5. TIMELINE: Historia/Evolución
-    6. CARDS: Comparación (ej: "Tipos de gambas", "Playas")
-    7. CALCULATOR: Variables numéricas
+    6. CARDS: Comparación "Versus" (ej: "Matalascañas vs Punta Umbría", "Jamón vs Paleta")
+    7. CHECKLIST: Listas de verificación (ej: "Mochila Romería", "Imprescindibles")
+    8. CALCULATOR: Variables numéricas
 
     Analiza el tema y devuelve SOLO el JSON.
   `;
