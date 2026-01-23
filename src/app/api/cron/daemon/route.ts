@@ -46,14 +46,41 @@ export async function GET(req: NextRequest) {
     
     await logAgentAction('Editor', 'Approved', { score: review.score });
 
+// ... imports
+import { classifyContent } from '@/lib/agents/classifier';
+
+// ... inside GET
+
     // 3.5. SEO (Nuevo paso)
     const seoData = await optimizeSeo(draft);
     await logAgentAction('SEO', 'Optimized', { slug: seoData.slug, metaTitle: seoData.metaTitle });
 
+    // 3.6. Interactive Classifier (Nuevo paso)
+    let finalContent = draft.content;
+    const interactiveData = await classifyContent({ ...draft, slug: seoData.slug });
+    
+    if (interactiveData.interactive) {
+       await logAgentAction('Classifier', 'Interactive Content', { 
+         type: interactiveData.component_type, 
+         name: interactiveData.component_name 
+       });
+       
+       // Inyectar datos en el contenido
+       const scriptBlock = `
+         <div id="interactive-root" data-component="${interactiveData.component_type}" style="display:none;"></div>
+         <script type="application/json" id="interactive-data">
+           ${JSON.stringify(interactiveData)}
+         </script>
+       `;
+       finalContent += scriptBlock;
+    } else {
+       await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
+    }
+
     // 4. Diseño (Generar Imagen) - Usamos el título original o el SEO para contexto
     let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800';
     try {
-      imageUrl = await generateHeaderImage(draft.title, draft.excerpt);
+      imageUrl = await generateHeaderImage(draft.title, draft.excerpt); // Corregido llamada a designer
       await logAgentAction('Designer', 'Image Generated', { url: imageUrl });
     } catch (e) {
       await logAgentAction('Designer', 'Error', { error: String(e) });
@@ -61,15 +88,14 @@ export async function GET(req: NextRequest) {
 
     // 5. Publicación (Insertar en Supabase usando Admin Client)
     const { error } = await supabaseAdmin.from('articles').insert({
-      slug: seoData.slug, // Usar slug optimizado
-      title: draft.title, // Mantenemos título original en H1, o usa seoData.metaTitle si prefieres
-      content: draft.content,
-      excerpt: seoData.metaDescription, // Usamos la meta descripción como excerpt mejorado
+      slug: seoData.slug,
+      title: draft.title,
+      content: finalContent, // Contenido con payload interactivo
+      excerpt: seoData.metaDescription,
       category: draft.category,
       image_url: imageUrl,
       author: draft.author,
       is_ai: true
-      // TODO: Guardar keywords si tuviéramos campo tags
     });
 
     if (error) {
