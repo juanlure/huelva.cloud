@@ -63,7 +63,7 @@ export async function classifyContent(draft: Draft): Promise<InteractiveData> {
 
   try {
     const response = await generateContent(prompt, 0.2);
-    const data = safeJsonParse(response, { interactive: false, confidence: 0 });
+    const data = safeJsonParse<any>(response, { interactive: false, confidence: 0 });
 
     const confidence = data.confidence || 0;
     const isHighConfidence = confidence >= 80;
