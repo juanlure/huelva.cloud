@@ -141,33 +141,53 @@ export async function generateHeaderImage(title: string, excerpt: string, scrape
   return generated;
 }
 
+const HUELVA_AESTHETICS = `
+  VISUAL STYLE GUIDE (HUELVA PROVINCE, SPAIN):
+  - Lighting: Warm Atlantic light, golden hour, bright but soft.
+  - Landscape: Sand dunes, pine forests (Stone pine), marshes (marismas), flat beaches, white villages.
+  - Architecture: Whitewashed Andalusian houses, colonial details (British legacy), simple lines.
+  - Colors: Ochre, albero (yellow sand), white, green (pine), blue (ocean).
+  - PROHIBITED: Caribbean palms, rocky steep cliffs (like Algarve/North), skyscrapers (except generic city), snow, tropical vibes.
+`;
+
 export async function enhanceArticleVisuals(content: string, slug: string): Promise<{ header: string, imageUrl: string }[]> {
   if (!isAiEnabled || !geminiClient) return [];
 
   console.log(`[DESIGNER] Enhancing visuals for slug: ${slug}`);
 
-  // 1. Extract H2 headers from content simple regex
-  const h2Matches = [...content.matchAll(/<h2.*?>(.*?)<\/h2>/g)];
-  const headers = h2Matches.map(m => m[1]);
+  // 1. Extract H2 headers AND their following context
+  // Regex looks for <h2>Header</h2> followed by optional whitespace and <p>Context</p>
+  // We capture the header term and the first 200 chars of context
+  const regex = /<h2.*?>(.*?)<\/h2>[\s\S]*?<p>(.*?)<\/p>/gi;
+  const matches = [...content.matchAll(regex)];
 
-  if (headers.length === 0) {
-    console.log("[DESIGNER] No headers found to enhance.");
+  if (matches.length === 0) {
+    console.log("[DESIGNER] No suitable sections (H2 + P) found to enhance.");
     return [];
   }
 
-  // 2. Decide which sections need images (Limit to 2 max to save tokens/time for MVP)
-  // In a real scenario, we'd check if an <img> already exists near the header.
-  const headersToEnhance = headers.slice(0, 3);
+  // 2. Decide which sections need images
+  const sectionsToEnhance = matches.slice(0, 3).map(m => ({
+    header: m[1],
+    context: m[2].replace(/<[^>]*>/g, '').substring(0, 300) // Plain text, max 300 chars
+  }));
 
   const newImages: { header: string, imageUrl: string }[] = [];
 
-  for (const header of headersToEnhance) {
-    // Generate prompt based on header
-    // We use the header text itself as the core of the prompt
-    console.log(`[DESIGNER] Generating visual for section: "${header}"`);
+  for (const section of sectionsToEnhance) {
+    console.log(`[DESIGNER] Generating visual for section: "${section.header}"`);
 
     try {
-      const p = `Photorealistic, cinematic 4k, travel photography shot of "${header}" in Huelva context. Natural lighting, vibrant colors.`;
+      // Prompt engineered for specific context + aesthetics
+      const p = `
+        Create a Photorealistic, cinematic 4k image.
+        SUBJECT: ${section.header} (Context: ${section.context}).
+        LOCATION: Huelva, Spain (Andalusia).
+        
+        ${HUELVA_AESTHETICS}
+        
+        Ensure the image perfectly matches the context described.
+      `;
 
       const response = await geminiClient.models.generateContent({
         model: 'gemini-2.5-flash-image',
@@ -178,15 +198,15 @@ export async function enhanceArticleVisuals(content: string, slug: string): Prom
       const candidate = response.candidates?.[0];
       if (candidate?.content?.parts?.[0]?.inlineData) {
         const b64 = candidate.content.parts[0].inlineData.data;
-        const imgSlug = `enhance-${slug}-${header.substring(0, 10).replace(/[^a-z0-9]/gi, '-')}-${Date.now()}`;
+        const imgSlug = `enhance-${slug}-${section.header.substring(0, 10).replace(/[^a-z0-9]/gi, '-')}-${Date.now()}`;
         const url = await uploadFromBase64(b64, imgSlug);
 
         if (url) {
-          newImages.push({ header, imageUrl: url });
+          newImages.push({ header: section.header, imageUrl: url });
         }
       }
     } catch (e) {
-      console.error(`[DESIGNER] Failed to generate image for "${header}"`, e);
+      console.error(`[DESIGNER] Failed to generate image for "${section.header}"`, e);
     }
   }
 

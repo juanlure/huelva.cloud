@@ -6,11 +6,11 @@ export async function performWebResearch(topic: string): Promise<string | null> 
 
   const prompt = `
     Actúa como un investigador local en Huelva.
-    Busca información ACTUALIZADA y REAL en internet sobre: "${topic}".
+    Busca información ACTUALIZADA y REAL en internet sobre: "${topic}" (Contexto: Provincia de Huelva, España).
     
     Necesito DATOS CONCRETOS para escribir una guía útil:
     - Nombres oficiales de lugares/restaurantes.
-    - Direcciones o ubicaciones precisas.
+    - Direcciones o ubicaciones precisas (evita homónimos en México/Argentina).
     - Precios aproximados (2024/2025/2026).
     - Horarios de apertura (si aplica).
     - Cualquier dato curioso o "secreto" reciente.
@@ -41,10 +41,10 @@ export async function findSourceUrl(topic: string): Promise<string | null> {
   const prompt = `
     Find the single BEST, most authoritative public URL for the location or topic: "${topic}" in Huelva, Spain.
     
-    Preference order:
-    1. Official tourism website (andalucia.org, huelva.es) specific page.
-    2. Wikipedia page (ES).
-    3. A high-quality travel blog/guide with photos.
+    Strict constraints:
+    - MUST be related to Huelva, Andalusia, Spain. NOT Argentina or elsewhere.
+    - Preference: Official tourism (andalucia.org, huelva.es) OR reputable travel blogs (site:.es).
+    - Avoid generic aggregators (TripAdvisor listings) if a specific article exists.
     
     Return ONLY the URL string. No text, no markdown.
   `;

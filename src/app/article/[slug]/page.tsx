@@ -86,11 +86,9 @@ export default async function ArticlePage({ params }: PageProps) {
               <InteractiveContainer type={interactiveType} data={interactiveData} />
             )}
 
+            {/* Article Body (React Hydrated) */}
             {cleanedContent && (
-              <div
-                className={styles.prose}
-                dangerouslySetInnerHTML={{ __html: cleanedContent }}
-              />
+              <ArticleRenderer content={cleanedContent} />
             )}
 
             {/* Author Box */}
