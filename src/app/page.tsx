@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { getArticles } from '@/lib/api';
-import ArticleGrid from '@/components/articles/ArticleGrid';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -77,13 +76,18 @@ export default async function Home() {
             </div>
           )}
 
-          <ArticleGrid articles={regularArticles.map(a => ({
-            ...a,
-            imageUrl: a.image,
-            author: { name: a.author },
-            publishedAt: a.date,
-            readTime: parseInt(a.readTime)
-          }))} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularArticles.map((article) => (
+              <ArticleCard
+                key={article.slug}
+                {...article}
+                imageUrl={article.image}
+                author={{ name: article.author }}
+                publishedAt={article.date}
+                readTime={parseInt(article.readTime)}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

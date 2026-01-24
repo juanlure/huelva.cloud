@@ -16,10 +16,12 @@
     "cheerio": "^1.2.0",
     "dotenv": "^17.2.3",
     "html-react-parser": "^5.2.12",
+    "jsdom": "^24.0.0",
     "next": "16.1.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "whatwg-mimetype": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
