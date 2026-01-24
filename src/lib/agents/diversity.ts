@@ -26,68 +26,92 @@ export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
 
   const existingTitles = new Set(articles?.map((a: any) => a.title.toLowerCase()) || []);
 
-  // 2. Leer un feed aleatorio
-  const randomFeed = RSS_FEEDS[Math.floor(Math.random() * RSS_FEEDS.length)];
-  console.log(`[DIVERSITY] Leyendo feed: ${randomFeed}`);
+  const EVERGREEN_TOPICS = [
+    "La leyenda del Muelle del Tinto", "Ruta de las Tapas por el Centro de Huelva",
+    "Atardecer en el Muelle de las Carabelas", "Senderismo en la Sierra de Aracena",
+    "Los mejores chocos fritos de la capital", "Guía de playas de Huelva para perros",
+    "Historia del Barrio Obrero", "El legado inglés en Huelva", "De compras por el Mercado del Carmen",
+    "Ruta de los Castillos de Huelva", "El Rocío para principiantes", "Gastronomía de Cuaresma en Huelva",
+    "Las mejores confiterías de Huelva", "Paseo por el Parque Moret", "Visita a las Marismas del Odiel",
+    "Descubriendo la Gruta de las Maravillas", "Las playas vírgenes de Doñana",
+    "Guía de vinos del Condado de Huelva", "La historia de Colón y La Rábida",
+    "Dónde ver flamencos en Huelva", "Ruta minera por Riotinto", "El Jamón de Jabugo: Guía de compra",
+    "Los mejores atardeceres de la Costa de la Luz", "Escapada a Almonaster la Real",
+    "Feria de la Gamba de Punta Umbría", "Historia del Recreativo de Huelva (El Decano)",
+    "Visita al Dolmen de Soto", "Senderismo por los acantilados del Asperillo",
+    "Gastronomía de la Sierra: Setas y Gurumelos", "La Saca de las Yeguas: Tradición ancestral",
+    "Guía de chiringuitos en Punta Umbría", "El encanto de Moguer y Juan Ramón Jiménez",
+    "Niebla y su muralla medieval", "Playas familiares en Matalascañas",
+    "Dónde comer el mejor marisco en Isla Cristina"
+  ];
 
-  try {
-    const feed = await parser.parseURL(randomFeed);
+  export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
+    const parser = new Parser();
 
-    // 3. Filtrar noticias
-    const freshItems = feed.items.filter(item => {
-      if (!item.title || !item.link) return false;
-      // Evitar deportes o sucesos trágicos (opcional, ajustamos por keywords)
-      const titleLower = item.title.toLowerCase();
-      const forbidden = ['muerto', 'fallece', 'accidente', 'herido', 'detenido', 'sucesos'];
-      if (forbidden.some(word => titleLower.includes(word))) return false;
+    // 1. Obtener historial reciente
+    const { data: articles } = await supabaseAdmin
+      .from('articles')
+      .select('title')
+      .order('published_at', { ascending: false })
+      .limit(100); // Increased history check
 
-      // Evitar repetidos
-      if (existingTitles.has(titleLower)) return false;
+    const existingTitles = new Set(articles?.map((a: any) => a.title.toLowerCase()) || []);
 
-      return true;
-    });
+    // 2. Intentar RSS (Fail-safe)
+    let freshItem: any = null;
+    const randomFeed = RSS_FEEDS[Math.floor(Math.random() * RSS_FEEDS.length)];
+    console.log(`[DIVERSITY] Intentando feed: ${randomFeed}`);
 
-    // 4. Seleccionar una noticia
-    if (freshItems.length > 0) {
-      const chosen = freshItems[0];
-      console.log(`[DIVERSITY] Noticia seleccionada (RSS): ${chosen.title}`);
+    try {
+      const feed = await parser.parseURL(randomFeed);
+      const validItems = feed.items.filter(item => {
+        if (!item.title || !item.link) return false;
+        const titleLower = item.title.toLowerCase();
+        const forbidden = ['muerto', 'fallece', 'accidente', 'herido', 'detenido', 'sucesos', 'luto', 'funeral'];
+        if (forbidden.some(word => titleLower.includes(word))) return false;
+        if (existingTitles.has(titleLower)) return false;
+        return true;
+      });
+
+      if (validItems.length > 0) {
+        freshItem = validItems[0];
+      }
+    } catch (e) {
+      console.warn(`[DIVERSITY] Fallo al leer RSS (${randomFeed}). Saltando a Evergreen.`, e);
+    }
+
+    // 3. Resultado RSS Prioritario
+    if (freshItem) {
+      console.log(`[DIVERSITY] Noticia fresca encontrada: ${freshItem.title}`);
       return {
-        topic: chosen.title || 'Noticia Huelva',
-        url: chosen.link,
+        topic: freshItem.title,
+        url: freshItem.link,
         priority: 'high'
       };
     }
 
-    // 5. FALLBACK: Temas Evergreen (Si no hay noticias frescas)
-    console.log("[DIVERSITY] Sin noticias RSS válidas. Buscando tema Evergreen...");
+    // 4. Fallback Evergreen
+    console.log("[DIVERSITY] Buscando tema Evergreen...");
 
-    // Lista de temas atemporales para rellenar
-    const EVERGREEN_TOPICS = [
-      "La leyenda del Muelle del Tinto", "Ruta de las Tapas por el Centro de Huelva",
-      "Atardecer en el Muelle de las Carabelas", "Senderismo en la Sierra de Aracena",
-      "Los mejores chocos fritos de la capital", "Guía de playas de Huelva para perros",
-      "Historia del Barrio Obrero", "El legado inglés en Huelva", "De compras por el Mercado del Carmen",
-      "Ruta de los Castillos de Huelva", "El Rocío para principiantes", "Gastronomía de Cuaresma en Huelva",
-      "Las mejores confiterías de Huelva", "Paseo por el Parque Moret", "Visita a las Marismas del Odiel"
-    ];
-
-    // Filtrar temas ya usados
+    // Temas nuevos (no publicados)
     const availableEvergreen = EVERGREEN_TOPICS.filter(t => !existingTitles.has(t.toLowerCase()));
 
     if (availableEvergreen.length > 0) {
-      const randomTopic = availableEvergreen[Math.floor(Math.random() * availableEvergreen.length)];
-      console.log(`[DIVERSITY] Tema Evergreen seleccionado: ${randomTopic}`);
+      const topic = availableEvergreen[Math.floor(Math.random() * availableEvergreen.length)];
+      console.log(`[DIVERSITY] Tema Evergreen seleccionado: ${topic}`);
       return {
-        topic: randomTopic,
+        topic: topic,
         priority: 'medium'
       };
     }
 
-    console.log("[DIVERSITY] ¡Agotación de temas! Se recomienda pausar.");
-    return null;
+    // 5. Modo "Reciclaje" (Si se acaban los temas, repetimos uno antiguo pero reescrito)
+    // Esto asegura que el daemon NUNCA se detenga.
+    const recycledTopic = EVERGREEN_TOPICS[Math.floor(Math.random() * EVERGREEN_TOPICS.length)];
+    console.log(`[DIVERSITY] Reciclando tema (Modo Supervivencia): ${recycledTopic}`);
 
-  } catch (e) {
-    console.error("[DIVERSITY] Error leyendo RSS", e);
-    return null;
+    return {
+      topic: recycledTopic,
+      priority: 'medium' // Le damos medium para que lo procese igual
+    };
   }
-}
