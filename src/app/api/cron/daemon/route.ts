@@ -66,11 +66,8 @@ export async function GET(req: NextRequest) {
       }
     } else {
       // MODO CREADOR (Guía desde cero)
-      // 1. Investigación Visual Real (Imagen 3 / Nano Banana)
-      uploadedGallery = await generateEditorialGallery(topic, 3);
-      if (uploadedGallery.length > 0) {
-        await logAgentAction('Designer', 'AI Gallery Generated', { count: uploadedGallery.length });
-      }
+      // 1. Investigación Visual Real (Desactivada la generación AI por petición de usuario)
+      uploadedGallery = [];
 
       // 2. Investigación Web Real (Google Search Grounding)
       researchContext = await performWebResearch(topic);

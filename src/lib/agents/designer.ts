@@ -91,15 +91,18 @@ import { scrapeArticle } from './scraper';
 export async function generateHeaderImage(title: string, excerpt: string, scrapedImage?: string, slug: string = 'draft'): Promise<string> {
   console.log(`[DESIGNER] Diseñando imagen para: "${title}"`);
 
-  // 1. Si hay imagen scrapeada (REAL) explícita (Modo Curator), intentamos "robarla"
+  // 1. PRIORIDAD ABSOLUTA: Imagen scrapeada (REAL)
   if (scrapedImage && scrapedImage.startsWith('http')) {
-    console.log(`[DESIGNER] Procesando imagen scrapeada (Curator): ${scrapedImage}`);
+    console.log(`[DESIGNER] Usando imagen REAL scrapeada: ${scrapedImage}`);
     const storedUrl = await uploadFromUrl(scrapedImage, slug);
     if (storedUrl) return storedUrl;
-    return scrapedImage; // Fallback hotlink
+
+    // Fallback: Si falla la subida, usamos la original aunque sea hotlinking
+    // El usuario prefiere realidad a "cagadas" de IA.
+    return scrapedImage;
   }
 
-  // 2. ESTRATEGIA REAL IMAGE (Modo Creator - Landscape/Place)
+  // 2. ESTRATEGIA REAL IMAGE (Si no hubo scrapeo directo, buscamos)
   // Heurística simple: Si el título suena a lugar, intentamos buscar foto real
   // O preguntamos a Gemini si es un lugar físico
 
