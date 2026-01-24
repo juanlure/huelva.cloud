@@ -56,7 +56,7 @@ export async function optimizeSeo(draft: Draft): Promise<SeoOptimization> {
 
   try {
     const response = await generateContent(prompt, 0.3);
-    const data = safeJsonParse(response, {});
+    const data = safeJsonParse<any>(response, {});
 
     return {
       originalTitle: draft.title,
