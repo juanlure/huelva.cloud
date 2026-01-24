@@ -57,26 +57,25 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     Tu tarea es reescribir la siguiente noticia real para nuestra audiencia.
     
     FUENTE ORIGINAL:
-  "${baseContent.substring(0, 3000)}..."
+    "${baseContent.substring(0, 3000)}..."
 
-    DIRECTRICES DE ESTILO(Marca Huelva.is):
-  - Tono: Honesto, directo, local("choquero"). 
-    - Evita el lenguaje periodístico aburrido("según fuentes", "ha declarado").Ve al grano.
-    - Útil: ¿Qué significa esto para el lector ? ¿Cómo le afecta ?
-    - Si es una recomendación: Sé crítico.
-    - Título: Hazlo atractivo, no clickbait barato, pero sí con gancho.
+    DIRECTRICES DE ESTILO (Marca Huelva.is - CRÍTICO):
+    - Tono: Local ("choquero"), directo y sin rodeos.
+    - **ANTI-AI**: Prohibido "joya escondida", "un tapiz de", "mezcla de tradición", "un viaje a través".
+    - Útil: ¿Cómo le afecta al lector de Huelva?
+    - Título: Hazlo atractivo y real.
 
     ${galleryInstructions}
 
-    ESTRUCTURA DE RESPUESTA(DEVUELVE SOLO ESTE JSON VÁLIDO):
-  {
-    "title": "Nuevo Título con Gancho",
+    ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO):
+    {
+      "title": "Nuevo Título con Gancho",
       "content": "HTML del cuerpo (<p>, <h2>, <figure>...)...",
-        "excerpt": "Resumen picante de 2 líneas.",
-          "category": "Noticias, Comer, Eventos, o Guías",
-            "author": "El Choco"
-  }
-  `
+      "excerpt": "Resumen picante de 2 líneas.",
+      "category": "Noticias, Comer, Eventos, o Guías",
+      "author": "El Choco"
+    }
+    `
     :
     // MODO GENERADOR (Fallback o Guía)
     `
