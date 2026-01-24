@@ -49,75 +49,62 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <main className="flex-1 bg-cream/30">
-      <article className="relative">
-        {/* Header Section */}
-        <header className="relative h-[70vh] min-h-[500px] flex items-end pb-20 px-6">
-          <div
-            className="absolute inset-0 bg-cover bg-center z-0"
-            style={{ backgroundImage: `url(${article.image || '/images/placeholder.jpg'})` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-80 z-10" />
-
-          <div className="max-w-4xl mx-auto w-full relative z-20 text-white">
-            <Link
-              href="/"
-              className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors group"
-            >
-              <ArrowLeft size={18} className="mr-2 transition-transform group-hover:-translate-x-1" />
-              <span>Volver al inicio</span>
-            </Link>
-
-            <div className="flex items-center space-x-3 mb-6">
-              <span className="px-3 py-1 bg-terracotta text-white text-[10px] uppercase tracking-widest font-bold rounded-full">
-                {article.category}
+    <main className="min-h-screen bg-white pt-32 pb-20">
+      <article className="max-w-7xl mx-auto px-6">
+        {/* Editorial Header - Centered & Clean */}
+        <header className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+          <div className="flex items-center space-x-3 mb-8">
+            <span className="px-4 py-1.5 bg-green-50 text-green-800 text-xs font-bold uppercase tracking-widest rounded-full border border-green-100">
+              {article.category}
+            </span>
+            {article.isAi && (
+              <span className="text-xs font-medium text-navy/40 flex items-center border border-navy/10 px-3 py-1.5 rounded-full">
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2" />
+                Curado con IA
               </span>
-              {article.isAi && (
-                <span className="text-xs font-semibold text-white/60 flex items-center">
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2" />
-                  Curado con IA
-                </span>
-              )}
+            )}
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight">
+            {article.title}
+          </h1>
+
+          <div className="flex items-center text-navy/60 text-sm font-medium space-x-4">
+            <div className="flex items-center">
+              <span className="font-bold text-navy mr-2">{article.author}</span>
             </div>
-
-            <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-8">
-              {article.title}
-            </h1>
-
-            <div className="flex items-center justify-between border-t border-white/10 pt-8">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-sm">
-                  {article.author.split(' ').map(n => n[0]).join('')}
-                </div>
-                <div>
-                  <p className="text-sm font-bold">{article.author}</p>
-                  <div className="flex items-center text-xs text-white/60 space-x-3">
-                    <span>{article.date}</span>
-                    <span>•</span>
-                    <div className="flex items-center">
-                      <Clock size={12} className="mr-1" />
-                      <span>{article.readTime} lectura</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all">
-                <Share2 size={20} />
-              </button>
+            <span>•</span>
+            <span>{article.date}</span>
+            <span>•</span>
+            <div className="flex items-center">
+              <Clock size={14} className="mr-1.5" />
+              <span>{parseInt(article.readTime) || 5} min lectura</span>
             </div>
           </div>
         </header>
 
-        {/* Content Section */}
-        <section className="max-w-3xl mx-auto px-6 py-16">
-          <p className="text-2xl md:text-3xl font-display italic text-navy/80 mb-12 leading-relaxed border-l-4 border-terracotta pl-8">
+        {/* Contained Hero Image */}
+        <div className="max-w-5xl mx-auto mb-20 relative">
+          <div className="aspect-[16/9] w-full relative rounded-3xl overflow-hidden shadow-2xl shadow-navy/5">
+            <img
+              src={article.image || '/images/placeholder.jpg'}
+              alt={article.title}
+              className="object-cover w-full h-full"
+            />
+            {/* Gradient Overlay for texture */}
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Content Column */}
+        <div className="max-w-[720px] mx-auto">
+          <p className="text-2xl md:text-3xl font-display text-navy leading-relaxed mb-12 first-letter:text-5xl first-letter:font-bold first-letter:text-terracotta first-letter:mr-1">
             {article.excerpt}
           </p>
 
-          <div className="prose prose-lg prose-navy max-w-none">
+          <div className="prose prose-lg prose-navy prose-headings:font-display prose-headings:font-bold prose-p:leading-8 prose-p:text-navy/80 hover:prose-a:text-terracotta transition-all max-w-none">
             {interactiveType && interactiveData && (
-              <div className="my-12">
+              <div className="my-12 p-1 border-t border-b border-navy/5">
                 <InteractiveContainer type={interactiveType} data={interactiveData} />
               </div>
             )}
@@ -129,11 +116,24 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
           </div>
 
-          <div className="mt-20 pt-10 border-t border-navy/10">
+          {/* Footer / Author */}
+          <div className="mt-24 pt-12 border-t border-navy/10">
+            <div className="flex items-center justify-between mb-12">
+              <Link href="/" className="group flex items-center text-navy/60 hover:text-navy transition-colors font-medium">
+                <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+                Volver al inicio
+              </Link>
+              <button className="p-4 rounded-full bg-cream hover:bg-terracotta/10 text-navy transition-colors">
+                <Share2 size={20} />
+              </button>
+            </div>
             <AuthorBox author={authorData} />
           </div>
-        </section>
+        </div>
       </article>
+
+      {/* Read Next Section */}
+      {/* Could add generic read next here later */}
     </main>
   );
 }
