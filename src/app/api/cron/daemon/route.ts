@@ -104,43 +104,53 @@ export async function GET(req: NextRequest) {
 
 
     // 3.6. Interactive Classifier (Nuevo paso)
+    // 3.6. Interactive Classifier (Safe Wrap)
     let finalContent = draft.content;
-    const interactiveData = await classifyContent({ ...draft, slug: seoData.slug });
+    try {
+      const interactiveData = await classifyContent({ ...draft, slug: seoData.slug });
 
-    if (interactiveData.interactive) {
-      // Generar datos reales para el componente
-      const richData = await generateInteractiveData(draft.title, interactiveData);
+      if (interactiveData.interactive) {
+        const richData = await generateInteractiveData(draft.title, interactiveData);
 
-      if (richData) {
-        await logAgentAction('Generator', 'Data Created', {
-          type: interactiveData.component_type,
-          title: richData.title
-        });
+        if (richData) {
+          await logAgentAction('Generator', 'Data Created', {
+            type: interactiveData.component_type,
+            title: richData.title
+          });
 
-        // Inyectar datos en el contenido
-        const scriptBlock = `
-           <div id="interactive-root" data-component="${interactiveData.component_type}" style="display:none;"></div>
-           <script type="application/json" id="interactive-data">
-             ${JSON.stringify(richData)}
-           </script>
-         `;
-        finalContent += scriptBlock;
+          // Inyectar datos en el contenido
+          const scriptBlock = `
+             <div id="interactive-root" data-component="${interactiveData.component_type}" style="display:none;"></div>
+             <script type="application/json" id="interactive-data">
+               ${JSON.stringify(richData)}
+             </script>
+           `;
+          finalContent += scriptBlock;
+        } else {
+          await logAgentAction('Generator', 'Failed', { reason: "Returned null data" });
+        }
       } else {
-        await logAgentAction('Generator', 'Failed', { reason: "Returned null" });
-        // Fallback a static context log if generation failed
+        await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
       }
-    } else {
-      await logAgentAction('Classifier', 'Static Content', { reason: interactiveData.rationale });
+    } catch (e) {
+      console.error("[DAEMON] Interactive logic failed", e);
+      await logAgentAction('System', 'Interactive Skip', { error: String(e) });
+      // Continue with static content
     }
 
-    // 4. Diseño (Generate or Scrape & Upload)
-    let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800';
+    // 4. Diseño (Safe Wrap - Generate or Scrape)
+    let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800'; // Hard fallback
     try {
       // Pasamos seoData.slug para nombrar el archivo correctamente en Storage
-      imageUrl = await generateHeaderImage(draft.title, draft.excerpt, scrapedData?.image, seoData.slug);
-      await logAgentAction('Designer', 'Image Ready', { url: imageUrl });
+      const designResult = await generateHeaderImage(draft.title, draft.excerpt, scrapedData?.image, seoData.slug);
+      if (designResult) {
+        imageUrl = designResult;
+        await logAgentAction('Designer', 'Image Ready', { url: imageUrl });
+      }
     } catch (e) {
-      await logAgentAction('Designer', 'Error', { error: String(e) });
+      console.error("[DAEMON] Design logic failed", e);
+      await logAgentAction('Designer', 'Fallback Used', { error: String(e) });
+      // Continue with fallback image
     }
 
     // 5. Publicación (Insertar en Supabase usando Admin Client)

@@ -11,16 +11,16 @@ export interface ScrapedArticle {
 
 export async function scrapeArticle(url: string): Promise<ScrapedArticle | null> {
   console.log(`[SCRAPER] Extrayendo: ${url}`);
-  
+
   try {
     const res = await fetch(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; Huelva.is/1.0; +https://huelva.is)' // Ser educados
       }
     });
-    
+
     if (!res.ok) throw new Error(`Status ${res.status}`);
-    
+
     const html = await res.text();
     const $ = cheerio.load(html);
 
@@ -32,23 +32,23 @@ export async function scrapeArticle(url: string): Promise<ScrapedArticle | null>
     // 1.5 Extract Gallery (Search for imgs in content areas before removing elements)
     const gallery: string[] = [];
     const contentSelectors = ['article', 'main', '.entry-content', '.post-content', '#content', '.gallery', 'figure'];
-    
+
     // Create a temporary cheerio instance for content selection to avoid messing up with original DOM too early if needed
     // But here we are just searching.
     const potentialImages = new Set<string>();
 
     contentSelectors.forEach(sel => {
-        $(sel).find('img').each((_, el) => {
-            const src = $(el).attr('src') || $(el).attr('data-src');
-            if (src && src.startsWith('http') && !src.includes('pixel') && !src.includes('analytics')) {
-                // Filter small icons based on dimensions if available
-                const w = parseInt($(el).attr('width') || '0');
-                const h = parseInt($(el).attr('height') || '0');
-                if ((w === 0 || w > 300) && (h === 0 || h > 200)) { // Simple heuristic
-                    potentialImages.add(src);
-                }
-            }
-        });
+      $(sel).find('img').each((_, el) => {
+        const src = $(el).attr('src') || $(el).attr('data-src');
+        if (src && src.startsWith('http') && !src.includes('pixel') && !src.includes('analytics')) {
+          // Filter small icons based on dimensions if available
+          const w = parseInt($(el).attr('width') || '0');
+          const h = parseInt($(el).attr('height') || '0');
+          if ((w === 0 || w > 300) && (h === 0 || h > 200)) { // Simple heuristic
+            potentialImages.add(src);
+          }
+        }
+      });
     });
 
     // Also add the og:image if not present
@@ -63,10 +63,10 @@ export async function scrapeArticle(url: string): Promise<ScrapedArticle | null>
     $('script, style, nav, header, footer, .ad, .comments, .cookie-banner').remove();
 
     let content = '';
-    
+
     // Intentar selectores de contenido típicos
     const selectors = ['article', 'main', '.entry-content', '.post-content', '#content'];
-    
+
     for (const sel of selectors) {
       if ($(sel).length > 0) {
         content = $(sel).first().text().trim();
@@ -76,15 +76,22 @@ export async function scrapeArticle(url: string): Promise<ScrapedArticle | null>
 
     // Fallback: Body text
     if (content.length < 200) {
-      content = $('body').text().replace(/\s+/g, ' ').trim().substring(0, 5000); // Limite por seguridad
+      const metaDescription = $('meta[name="description"]').attr('content') || $('meta[property="og:description"]').attr('content') || '';
+
+      if (metaDescription.length > 50) {
+        console.log("[SCRAPER] Usando Meta Description como fallback de contenido.");
+        content = metaDescription;
+      } else {
+        content = $('body').text().replace(/\s+/g, ' ').trim().substring(0, 5000);
+      }
     } else {
-       // Limpiar espacios extra
-       content = content.replace(/\s+/g, ' ').trim();
+      // Limpiar espacios extra
+      content = content.replace(/\s+/g, ' ').trim();
     }
 
     if (!title || content.length < 50) {
-        console.warn("[SCRAPER] Contenido insuficiente o título vacío.");
-        return null;
+      console.warn("[SCRAPER] Contenido insuficiente o título vacío.");
+      return null;
     }
 
     return {
