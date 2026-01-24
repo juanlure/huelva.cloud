@@ -30,8 +30,14 @@ export async function GET(req: NextRequest) {
 
     // 1. Planificación
     const suggestion = await analyzeDiversity();
-    const topic = suggestion ? suggestion.topic : 'Huelva Secreta';
-    const targetUrl = suggestion?.url;
+
+    if (!suggestion) {
+      await logAgentAction('Diversity', 'Skipped', { reason: 'No fresh or evergreen topics found' });
+      return NextResponse.json({ status: 'skipped', reason: 'no_topics' });
+    }
+
+    const topic = suggestion.topic;
+    const targetUrl = suggestion.url;
 
     await logAgentAction('Diversity', 'Selected Topic', { topic, url: targetUrl });
 

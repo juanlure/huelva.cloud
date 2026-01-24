@@ -3,7 +3,7 @@ import Parser from 'rss-parser';
 
 // Feeds locales de Huelva
 const RSS_FEEDS = [
-  'https://www.diariodehuelva.es/rss/all', 
+  'https://www.diariodehuelva.es/rss/all',
   'https://www.huelvainformacion.es/rss/huelva',
   'https://www.huelvabuenasnoticias.com/feed/',
 ];
@@ -22,7 +22,7 @@ export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
     .from('articles')
     .select('title')
     .order('published_at', { ascending: false })
-    .limit(20);
+    .limit(50);
 
   const existingTitles = new Set(articles?.map((a: any) => a.title.toLowerCase()) || []);
 
@@ -32,7 +32,7 @@ export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
 
   try {
     const feed = await parser.parseURL(randomFeed);
-    
+
     // 3. Filtrar noticias
     const freshItems = feed.items.filter(item => {
       if (!item.title || !item.link) return false;
@@ -40,27 +40,51 @@ export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
       const titleLower = item.title.toLowerCase();
       const forbidden = ['muerto', 'fallece', 'accidente', 'herido', 'detenido', 'sucesos'];
       if (forbidden.some(word => titleLower.includes(word))) return false;
-      
+
       // Evitar repetidos
       if (existingTitles.has(titleLower)) return false;
 
       return true;
     });
 
-    if (freshItems.length === 0) {
-      console.log("[DIVERSITY] No hay noticias frescas válidas en este feed.");
-      return null;
+    // 4. Seleccionar una noticia
+    if (freshItems.length > 0) {
+      const chosen = freshItems[0];
+      console.log(`[DIVERSITY] Noticia seleccionada (RSS): ${chosen.title}`);
+      return {
+        topic: chosen.title || 'Noticia Huelva',
+        url: chosen.link,
+        priority: 'high'
+      };
     }
 
-    // 4. Seleccionar una noticia
-    const chosen = freshItems[0]; // La más reciente válida
-    console.log(`[DIVERSITY] Noticia seleccionada: ${chosen.title}`);
+    // 5. FALLBACK: Temas Evergreen (Si no hay noticias frescas)
+    console.log("[DIVERSITY] Sin noticias RSS válidas. Buscando tema Evergreen...");
 
-    return {
-      topic: chosen.title || 'Noticia sin título',
-      url: chosen.link,
-      priority: 'high'
-    };
+    // Lista de temas atemporales para rellenar
+    const EVERGREEN_TOPICS = [
+      "La leyenda del Muelle del Tinto", "Ruta de las Tapas por el Centro de Huelva",
+      "Atardecer en el Muelle de las Carabelas", "Senderismo en la Sierra de Aracena",
+      "Los mejores chocos fritos de la capital", "Guía de playas de Huelva para perros",
+      "Historia del Barrio Obrero", "El legado inglés en Huelva", "De compras por el Mercado del Carmen",
+      "Ruta de los Castillos de Huelva", "El Rocío para principiantes", "Gastronomía de Cuaresma en Huelva",
+      "Las mejores confiterías de Huelva", "Paseo por el Parque Moret", "Visita a las Marismas del Odiel"
+    ];
+
+    // Filtrar temas ya usados
+    const availableEvergreen = EVERGREEN_TOPICS.filter(t => !existingTitles.has(t.toLowerCase()));
+
+    if (availableEvergreen.length > 0) {
+      const randomTopic = availableEvergreen[Math.floor(Math.random() * availableEvergreen.length)];
+      console.log(`[DIVERSITY] Tema Evergreen seleccionado: ${randomTopic}`);
+      return {
+        topic: randomTopic,
+        priority: 'medium'
+      };
+    }
+
+    console.log("[DIVERSITY] ¡Agotación de temas! Se recomienda pausar.");
+    return null;
 
   } catch (e) {
     console.error("[DIVERSITY] Error leyendo RSS", e);
