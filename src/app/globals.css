@@ -5,16 +5,18 @@
 
 :root {
   /* Fondos */
-  --bg-primary: #f8f9fa;
-  /* Blanco cálido */
+  --bg-primary: #faf9f6;
+  /* Paper White - Más cálido y elegante */
+  /* Blanco puro */
   --bg-secondary: #ffffff;
 
   /* Texto */
-  --text-primary: #1e293b;
-  /* Azul marino profundo (Slate 800-900) */
-  --text-secondary: #64748b;
-  /* Slate 500 */
-  --text-muted: #94a3b8;
+  --text-primary: #2d3748;
+  /* Cool Gray 800 - Menos duro que el negro */
+  /* Azul grisáceo */
+  --text-secondary: #4a5568;
+  /* Slate 400 */
+  --text-muted: #cbd5e0;
 
   /* Acento - Naranja Huelva (atardeceres de Doñana / Marismas) */
   --accent-primary: #d45e35;
