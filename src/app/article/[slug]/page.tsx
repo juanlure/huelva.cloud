@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styles from './page.module.css';
 import { getArticleBySlug } from '@/lib/api';
@@ -5,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { AUTHORS } from '@/lib/authors';
 import InteractiveContainer from '@/components/InteractiveContainer';
 import AuthorBox from '@/components/AuthorBox';
+import ArticleRenderer from '@/components/article/ArticleRenderer';
 
 interface PageProps {
   params: {
@@ -70,7 +72,11 @@ export default async function ArticlePage({ params }: PageProps) {
               <span className={styles.dot}>•</span>
               <span>{article.readTime} lectura</span>
               <span className={styles.dot}>•</span>
-              {article.isAi && <span className={styles.aiBadge}>Curado con IA</span>}
+              {article.isAi && (
+                <Link href="/ai-disclosure" className={styles.aiBadge}>
+                  Curado con IA
+                </Link>
+              )}
             </div>
           </div>
         </header>
