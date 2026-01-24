@@ -1,0 +1,49 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 4rem 1rem;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--foreground-rgb);
+    /* simplified */
+}
+
+.label {
+    display: block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-family: var(--font-serif);
+}
+
+.dot {
+    color: #ea580c;
+    /* Orange-600 */
+}
+
+.content {
+    padding: 2rem 1rem;
+    flex: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+}
