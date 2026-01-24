@@ -44,10 +44,17 @@ export default async function CategoryPage({ params }: PageProps) {
           <div className={styles.grid}>
             {articles.length > 0 ? (
               articles.map((article, idx) => (
-                <ArticleCard key={idx} {...article} />
+                <ArticleCard
+                  key={idx}
+                  {...article}
+                  imageUrl={article.image}
+                  publishedAt={article.date}
+                  readTime={parseInt(article.readTime)}
+                  author={{ name: article.author }}
+                />
               ))
             ) : (
-                <p>No hay artículos en esta categoría aún.</p>
+              <p>No hay artículos en esta categoría aún.</p>
             )}
           </div>
         </div>
