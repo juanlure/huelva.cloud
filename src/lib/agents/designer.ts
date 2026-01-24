@@ -153,8 +153,13 @@ const HUELVA_AESTHETICS = `
   - PROHIBITED: Caribbean palms, rocky steep cliffs (like Algarve/North), skyscrapers (except generic city), snow, tropical vibes.
 `;
 
-export async function enhanceArticleVisuals(content: string, slug: string): Promise<{ header: string, imageUrl: string }[]> {
+export async function enhanceArticleVisuals(content: string, slug: string, category: string = ''): Promise<{ header: string, imageUrl: string }[]> {
   if (!isAiEnabled || !geminiClient) return [];
+
+  if (category.toLowerCase().includes('noticia')) {
+    console.log(`[DESIGNER] Skipping visuals enhancement for NEWS article: ${slug}`);
+    return [];
+  }
 
   console.log(`[DESIGNER] Enhancing visuals for slug: ${slug}`);
 

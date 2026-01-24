@@ -30,8 +30,8 @@ export async function POST(request: Request) {
         let interactiveCount = 0;
 
         // 2. Call Designer Agent (Visuals)
-        console.log(`[ADMIN] Enhancing visuals for: ${article.title}`);
-        const newVisuals = await enhanceArticleVisuals(article.content, slug);
+        console.log(`[ADMIN] Enhancing visuals for: ${article.title} (Category: ${article.category})`);
+        const newVisuals = await enhanceArticleVisuals(article.content, slug, article.category);
         visualCount = newVisuals.length;
 
         function escapeRegExp(string: string) {

@@ -33,6 +33,7 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     ${JSON.stringify(gallery)}
     
     INSTRUCCIÓN MULTIMEDIA (IMPORTANTE - Placement Contextual):
+    - Si la categoría del artículo es "Noticias", usa SOLO LA PRIMERA imagen de la lista arriba.
     - Las URLs de las imágenes contienen pistas sobre su contenido: "wide", "detail", "action".
     - **Wide**: Úsala al principio o para introducir una sección importante.
     - **Detail**: Úsala cerca de descripciones de comida, texturas u objetos específicos.
@@ -97,7 +98,7 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     - Autoridad absoluta. Tú eres de aquí, sabes dónde se ponen los mejores caracoles y cuándo empieza a apretar el calor de verdad.
     - Honestidad brutal. Si un sitio es una trampa para turistas o el parking es un infierno, dilo sin rodeos.
     - **ANTIAI FILTER**: No uses nunca "descubre los encantos", "sumérgete en la cultura" ni "un rincón lleno de magia". Habla claro: "vete allí", "está guapo", "esto es una castaña".
-    - Vocabulario: "Niña", "Miarma", "Choco", "Cabezazo": Úsalos con naturalidad, no forzados.
+    - Vocabulario: "Niña", "Choco", "Cabezazo": Úsalos con naturalidad, no forzados.
 
     ESTRUCTURA DE RESPUESTA(DEVUELVE SOLO ESTE JSON VÁLIDO):
   {
