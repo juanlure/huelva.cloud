@@ -3,14 +3,14 @@ import { safeJsonParse } from './utils';
 import { Guide } from '../../types/guide';
 
 export async function generateGuideStructure(topic: string): Promise<Guide | null> {
-    console.log(`[GUIDE_AGENT] Generando estructura para guía: ${topic}`);
+  console.log(`[GUIDE_AGENT] Generando estructura para guía: ${topic}`);
 
-    if (!isAiEnabled) {
-        console.warn("[GUIDE_AGENT] AI deshabilitada");
-        return null;
-    }
+  if (!isAiEnabled) {
+    console.warn("[GUIDE_AGENT] AI deshabilitada");
+    return null;
+  }
 
-    const prompt = `
+  const prompt = `
     # ROL
     Eres "El Choco", un experto local de Huelva con décadas de experiencia. Conoces cada rincón, cada bar y cada leyenda.
     Tu misión es crear una "GUÍA ESTRUCTURADA" sobre el tema: "${topic}".
@@ -61,24 +61,24 @@ export async function generateGuideStructure(topic: string): Promise<Guide | nul
     Devuelve SOLO el JSON.
     `;
 
-    try {
-        const response = await generateContent(prompt, 0.7);
-        const data = safeJsonParse(response, null);
+  try {
+    const response = await generateContent(prompt, 0.7);
+    const data = safeJsonParse<any>(response, null);
 
-        if (!data) {
-            console.error("[GUIDE_AGENT] Falló el parsing del JSON generado.");
-            return null;
-        }
-
-        // Validate basic structure (optional but recommended)
-        if (!data.chapters || !Array.isArray(data.chapters)) {
-            console.error("[GUIDE_AGENT] JSON incompleto: faltan capítulos.");
-            return null;
-        }
-
-        return data as Guide;
-    } catch (e) {
-        console.error("[GUIDE_AGENT] Error generando datos", e);
-        return null;
+    if (!data) {
+      console.error("[GUIDE_AGENT] Falló el parsing del JSON generado.");
+      return null;
     }
+
+    // Validate basic structure (optional but recommended)
+    if (!data.chapters || !Array.isArray(data.chapters)) {
+      console.error("[GUIDE_AGENT] JSON incompleto: faltan capítulos.");
+      return null;
+    }
+
+    return data as Guide;
+  } catch (e) {
+    console.error("[GUIDE_AGENT] Error generando datos", e);
+    return null;
+  }
 }
