@@ -73,9 +73,22 @@ export async function GET(req: NextRequest) {
       researchContext = await performWebResearch(topic);
     }
 
+    // 1.7. Investigación de Datos en Tiempo Real (Clima/Calidad del Aire)
+    let realTimeData = "";
+    try {
+      const dataSearch = await performWebResearch("Clima y calidad del aire hoy en Huelva capital");
+      if (dataSearch) {
+        realTimeData = `\nDATOS TIEMPO REAL HUELVA:\n${dataSearch}\n`;
+        console.log("[DAEMON] Datos tiempo real obtenidos");
+      }
+    } catch (e) {
+      console.warn("[DAEMON] Error buscando datos tiempo real", e);
+    }
+
     // 2. Escritura (Rewrite si hay scrapedData, Generate si no)
-    // Pasamos uploadedGallery y researchContext al escritor
-    const draft = await generateDraft(topic, scrapedData?.content, targetUrl, uploadedGallery, researchContext || undefined);
+    // Pasamos realTimeData junto con researchContext
+    const fullContext = (researchContext || "") + realTimeData;
+    const draft = await generateDraft(topic, scrapedData?.content, targetUrl, uploadedGallery, fullContext || undefined);
     await logAgentAction('Writer', 'Draft Generated', { title: draft.title, mode: scrapedData ? 'Rewrite' : 'Create (+Research)' });
 
 

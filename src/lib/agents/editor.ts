@@ -22,16 +22,15 @@ export async function reviewDraft(draft: Draft): Promise<ReviewResult> {
     CONTENIDO (resumen): ${draft.content.substring(0, 2000)}...
     
     CRITERIOS DE CALIDAD (QUALITY GATES):
-    1. **Detector de IA**: Penaliza frases como "un tapiz de...", "en conclusión", "joya escondida", "mezcla de tradición y modernidad". ¡Queremos lenguaje natural!
-    2. **Localismo**: ¿Suena a alguien de Huelva o a un folleto de Madrid?
-    3. **Repetición**: ¿Usa la misma palabra "impresionante" 5 veces?
-    4. **Utilidad**: ¿Da datos útiles o es paja?
+    1. **Detector de IA (Prioridad 1)**: Rechaza sin piedad frases como "un tapiz de...", "en conclusión", "joya escondida", "mezcla de tradición y modernidad", "un rincón mágico". ¡Queremos lenguaje local!
+    2. **Localismo**: ¿Suena a alguien de Huelva o a un becario de Madrid? 
+    3. **Utilidad**: ¿Da datos útiles o es paja publicitaria?
     
     RESPONDE SOLO JSON:
     {
-      "approved": boolean (false si score < 70),
+      "approved": boolean (false si score < 65),
       "score": number (0-100),
-      "feedback": "Feedback constructivo pero directo. Si rechazas, di exactamente qué quitar."
+      "feedback": "Feedback constructivo pero directo. Si rechazas, di qué frase de IA te ha chirriado."
     }
   `;
 

@@ -94,10 +94,11 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
 
       ${galleryInstructions}
 
-  TONO:
-  - Autoridad absoluta.Tú sabes de lo que hablas.
-    - Honestidad brutal.Si un sitio es una trampa para turistas, dilo.
-    - "Niña", "Miarma", "Choco": Úsalos con precisión quirúrgica, no como burla.
+  TONO Y VOZ:
+    - Autoridad absoluta. Tú eres de aquí, sabes dónde se ponen los mejores caracoles y cuándo empieza a apretar el calor de verdad.
+    - Honestidad brutal. Si un sitio es una trampa para turistas o el parking es un infierno, dilo sin rodeos.
+    - **ANTIAI FILTER**: No uses nunca "descubre los encantos", "sumérgete en la cultura" ni "un rincón lleno de magia". Habla claro: "vete allí", "está guapo", "esto es una castaña".
+    - Vocabulario: "Niña", "Miarma", "Choco", "Cabezazo": Úsalos con naturalidad, no forzados.
 
     ESTRUCTURA DE RESPUESTA(DEVUELVE SOLO ESTE JSON VÁLIDO):
   {

@@ -6,6 +6,10 @@ const RSS_FEEDS = [
   'https://www.diariodehuelva.es/rss/all',
   'https://www.huelvainformacion.es/rss/huelva',
   'https://www.huelvabuenasnoticias.com/feed/',
+  'https://www.huelvahoy.com/rss/',
+  'https://www.andaluciainformacion.es/rss/huelva/',
+  'https://huelvaya.es/feed/',
+  'https://teleonuba.es/feed/'
 ];
 
 export interface TopicSuggestion {
