@@ -48,7 +48,7 @@ export default function ArticleRenderer({ content }: ArticleRendererProps) {
         },
     };
 
-    return <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-p:text-slate-700 prose-a:text-orange-600">
+    return <div className="prose">
         {parse(content, options)}
     </div>;
 }

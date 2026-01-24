@@ -16,6 +16,7 @@ const Navigation = [
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -23,16 +24,23 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+
     return (
-        <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+        <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuOpen : ''}`}>
             <div className={`container ${styles.container}`}>
-                <Link href="/" className={styles.logo}>
+                <Link href="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
                     Huelva<span className={styles.dot}>.is</span>
                 </Link>
 
-                <nav className={styles.nav}>
+                <nav className={`${styles.nav} ${menuOpen ? styles.active : ''}`}>
                     {Navigation.map((item) => (
-                        <Link key={item.name} href={item.href} className={styles.navLink}>
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className={styles.navLink}
+                            onClick={() => setMenuOpen(false)}
+                        >
                             {item.name}
                         </Link>
                     ))}
@@ -53,6 +61,14 @@ export default function Header() {
                         <TimeWidget />
                     </div>
                 </div>
+
+                <button
+                    className={styles.menuButton}
+                    onClick={toggleMenu}
+                    aria-label="Menu"
+                >
+                    <span className={styles.hamburger}></span>
+                </button>
             </div>
         </header>
     );
