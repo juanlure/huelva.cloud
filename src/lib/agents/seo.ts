@@ -1,5 +1,6 @@
 import { generateContent, isAiEnabled } from '../gemini';
 import { Draft } from './writer';
+import { safeJsonParse } from './utils';
 
 export interface SeoOptimization {
   originalTitle: string;
@@ -7,6 +8,7 @@ export interface SeoOptimization {
   metaDescription: string;
   slug: string;
   keywords: string[];
+  schemaOrg?: any; // JSON-LD
 }
 
 export async function optimizeSeo(draft: Draft): Promise<SeoOptimization> {
@@ -23,39 +25,46 @@ export async function optimizeSeo(draft: Draft): Promise<SeoOptimization> {
   }
 
   const prompt = `
-    Actúa como un experto SEO especializado en medios digitales locales.
-    Optimiza los metadatos para el siguiente artículo de "Huelva.is".
+    Actúa como un experto SEO y desarrollador Web Semántica.
+    Optimiza los metadatos y genera datos estructurados para el siguiente artículo de "Huelva.is".
 
     TÍTULO ACTUAL: "${draft.title}"
     RESUMEN: "${draft.excerpt}"
-    CONTENIDO (snippet): "${draft.content.substring(0, 500)}..."
+    CONTENIDO (snippet): "${draft.content.substring(0, 800)}..."
+    CATEGORÍA: "${draft.category}"
 
     TAREA:
-    1. Genera un **Slug** (URL friendly): Corto, minúsculas, guiones, sin stopwords (ej: 'mejores-playas-huelva').
-    2. Genera un **Meta Title**: Atractivo, < 60 caracteres.
-    3. Genera una **Meta Description**: < 160 caracteres, incitando al clic.
-    4. Extrae 5 **Keywords** principales.
+    1. **Slug**: URL friendly, corto (ej: 'mejores-playas-huelva').
+    2. **Meta Title**: < 60 chars, atractivo.
+    3. **Meta Description**: < 160 chars, CTR alto.
+    4. **Keywords**: 5-8 términos long-tail locales.
+    5. **Schema.org (JSON-LD)**: Genera el objeto JSON-LD válido.
+       - Si es noticia/guía: "Article" o "NewsArticle".
+       - Si es sobre un lugar específico (restaurante, playa): "Place" o "Restaurant".
+       - Si es una lista: "ItemList".
+       - Incluye propiedades como "headline", "description", "author", "datePublished" (usa placeholders).
 
     SALIDA JSON VÁLIDO:
     {
       "slug": "...",
       "metaTitle": "...",
       "metaDescription": "...",
-      "keywords": ["tag1", "tag2"...]
+      "keywords": ["..."],
+      "schemaOrg": { "@context": "https://schema.org", ... }
     }
   `;
 
   try {
-    const response = await generateContent(prompt, 0.3); // Baja temperatura para precisión
-    const cleanJson = response?.replace(/```json/g, '').replace(/```/g, '').trim() || '{}';
-    const data = JSON.parse(cleanJson);
+    const response = await generateContent(prompt, 0.3);
+    const data = safeJsonParse(response, {});
 
     return {
       originalTitle: draft.title,
       metaTitle: data.metaTitle || draft.title,
       metaDescription: data.metaDescription || draft.excerpt,
       slug: data.slug || draft.slug,
-      keywords: data.keywords || []
+      keywords: data.keywords || [],
+      schemaOrg: data.schemaOrg || null
     };
 
   } catch (e) {
