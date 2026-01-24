@@ -14,7 +14,7 @@ export default function PlaceCard({ place, index }: PlaceCardProps) {
                 {/* Image Section */}
                 <div className="md:w-2/5 h-48 md:h-auto relative overflow-hidden">
                     {place.images && place.images.length > 0 ? (
-                        <RichImage
+                        <img
                             src={place.images[0]}
                             alt={place.name}
                             className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
