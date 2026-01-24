@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getArticles } from '@/lib/api';
 import ArticleGrid from '@/components/articles/ArticleGrid';
-import ArticleCard from '@/components/articles/ArticleCard';
+import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
@@ -23,7 +23,7 @@ export default async function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl">
-            <motion_div_layout> {/* Note: Using layout wrapper for future animations if needed */}
+            <div> {/* Note: Using layout wrapper for future animations if needed */}
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-navy/5 border border-navy/10 text-xs font-bold text-navy/60 mb-6 uppercase tracking-widest">
                 <Sparkles size={14} className="text-terracotta" />
                 <span>La guía más honesta de Huelva</span>
@@ -46,7 +46,7 @@ export default async function Home() {
                   ¿Eres Choquero o Guiri?
                 </a>
               </div>
-            </motion_div_layout>
+            </div>
           </div>
         </div>
       </section>
