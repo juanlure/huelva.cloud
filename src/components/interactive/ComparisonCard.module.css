@@ -1,0 +1,113 @@
+.comparisonWrapper {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #111827;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.cardWinner {
+    border-color: #22c55e;
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 0 0 4px #f0fdf4;
+}
+
+.cardNormal:hover {
+    border-color: #e5e7eb;
+}
+
+.winnerBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #22c55e;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-bottom-left-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    z-index: 20;
+}
+
+.imagePlaceholder {
+    height: 12rem;
+    background-color: #e5e7eb;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.itemName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.attributeRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 0.5rem;
+}
+
+.attributeRow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.attributeLabel {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.attributeValue {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.attributeBetter {
+    color: #16a34a;
+}

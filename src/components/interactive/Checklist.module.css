@@ -1,0 +1,123 @@
+.checklistWrapper {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.count {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.percentage {
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.progressBar {
+    height: 0.5rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: #22c55e;
+    transition: all 0.3s ease-out;
+}
+
+.itemsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.itemButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.itemChecked {
+    background-color: #f0fdf4;
+    color: #15803d;
+}
+
+.itemUnchecked {
+    color: #374151;
+}
+
+.itemUnchecked:hover {
+    background-color: #f9fafb;
+}
+
+.checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+    border: 2px solid #d1d5db;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.checkboxChecked {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
+
+.checkboxUnchecked {
+    border-color: #d1d5db;
+}
+
+.itemButton:hover .checkboxUnchecked {
+    border-color: #9ca3af;
+}
+
+.checkMark {
+    color: white;
+    font-size: 0.875rem;
+}
+
+.label {
+    flex: 1;
+    font-weight: 500;
+}
+
+.labelChecked {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
