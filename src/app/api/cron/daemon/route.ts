@@ -100,7 +100,11 @@ export async function GET(req: NextRequest) {
 
     if (!review.approved) {
       await logAgentAction('Editor', 'Rejected', { reason: review.feedback });
-      return NextResponse.json({ status: 'skipped', reason: 'rejected_by_editor' });
+      return NextResponse.json({
+        status: 'skipped',
+        reason: 'rejected_by_editor',
+        feedback: review.feedback // Exponer feedback para depuración
+      });
     }
 
     await logAgentAction('Editor', 'Approved', { score: review.score });
