@@ -3,7 +3,7 @@ import { logAgentAction } from '../logger';
 
 export async function performWebResearch(topic: string): Promise<string | null> {
   console.log(`[RESEARCHER] Iniciando investigación sobre: "${topic}"`);
-  
+
   const prompt = `
     Actúa como un investigador local en Huelva.
     Busca información ACTUALIZADA y REAL en internet sobre: "${topic}".
@@ -22,7 +22,7 @@ export async function performWebResearch(topic: string): Promise<string | null> 
   try {
     // Usamos search habilitado
     const result = await generateContent(prompt, 0.4, true);
-    
+
     if (result) {
       console.log(`[RESEARCHER] Investigación completada. Longitud: ${result.length} chars.`);
       await logAgentAction('Researcher', 'Search Completed', { topic, resultLength: result.length });
@@ -32,5 +32,35 @@ export async function performWebResearch(topic: string): Promise<string | null> 
     console.error("[RESEARCHER] Fallo en investigación:", e);
   }
 
+  return null;
+}
+
+export async function findSourceUrl(topic: string): Promise<string | null> {
+  console.log(`[RESEARCHER] Buscando URL oficial/definitive para: "${topic}"`);
+
+  const prompt = `
+    Find the single BEST, most authoritative public URL for the location or topic: "${topic}" in Huelva, Spain.
+    
+    Preference order:
+    1. Official tourism website (andalucia.org, huelva.es) specific page.
+    2. Wikipedia page (ES).
+    3. A high-quality travel blog/guide with photos.
+    
+    Return ONLY the URL string. No text, no markdown.
+  `;
+
+  try {
+    const result = await generateContent(prompt, 0.1, true);
+    if (result) {
+      const url = result.trim();
+      // Basic validation
+      if (url.startsWith('http')) {
+        console.log(`[RESEARCHER] URL encontrada: ${url}`);
+        return url;
+      }
+    }
+  } catch (e) {
+    console.error("[RESEARCHER] Fallo buscando URL:", e);
+  }
   return null;
 }

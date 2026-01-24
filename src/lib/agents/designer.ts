@@ -83,24 +83,62 @@ export async function generateEditorialGallery(topic: string, count: number = 3)
   return galleryUrls;
 }
 
+import { findSourceUrl } from './researcher';
+import { scrapeArticle } from './scraper';
+
+// ... (UNSPLASH_IMAGES and generateEditorialGallery remain same)
+
 export async function generateHeaderImage(title: string, excerpt: string, scrapedImage?: string, slug: string = 'draft'): Promise<string> {
   console.log(`[DESIGNER] Diseñando imagen para: "${title}"`);
 
-  // 1. Si hay imagen scrapeada (REAL), intentamos "robarla" (subirla a nuestro storage)
+  // 1. Si hay imagen scrapeada (REAL) explícita (Modo Curator), intentamos "robarla"
   if (scrapedImage && scrapedImage.startsWith('http')) {
-    console.log(`[DESIGNER] Procesando imagen scrapeada: ${scrapedImage}`);
+    console.log(`[DESIGNER] Procesando imagen scrapeada (Curator): ${scrapedImage}`);
     const storedUrl = await uploadFromUrl(scrapedImage, slug);
     if (storedUrl) return storedUrl;
-
-    // Si falla la subida, usamos la original (Hotlink) como fallback temporal
-    console.warn("[DESIGNER] Fallo subida Storage, usando Hotlink.");
-    return scrapedImage;
+    return scrapedImage; // Fallback hotlink
   }
 
-  // Si no hay imagen, usamos nuestra librería en vez de generar (más rápido y seguro hoy en día)
-  const [fallback] = await generateEditorialGallery(title, 1);
-  const storedFallback = await uploadFromUrl(fallback, slug);
-  return storedFallback || fallback;
+  // 2. ESTRATEGIA REAL IMAGE (Modo Creator - Landscape/Place)
+  // Heurística simple: Si el título suena a lugar, intentamos buscar foto real
+  // O preguntamos a Gemini si es un lugar físico
+
+  let isPlace = false;
+  try {
+    // Small classifier for "Physical Place"
+    const placeCheck = await generateContent(
+      `Is "${title}" in Huelva a specific physical place (beach, monument, town, restaurant)? 
+           Return TRUE or FALSE.`,
+      0.1
+    );
+    isPlace = placeCheck?.trim().toUpperCase().includes('TRUE') || false;
+  } catch (e) {
+    // Fallback benigno
+  }
+
+  if (isPlace) {
+    console.log(`[DESIGNER] Detectado LUGAR FÍSICO. Intentando conseguir foto real...`);
+    try {
+      const sourceUrl = await findSourceUrl(title);
+      if (sourceUrl) {
+        const scrapedData = await scrapeArticle(sourceUrl);
+        if (scrapedData && scrapedData.image) {
+          console.log(`[DESIGNER] ¡Foto real encontrada en ${sourceUrl}!`);
+          const storedUrl = await uploadFromUrl(scrapedData.image, `real-${slug}`);
+          if (storedUrl) return storedUrl;
+        }
+      }
+    } catch (e) {
+      console.warn("[DESIGNER] Falló la estrategia de foto real, volviendo a AI.", e);
+    }
+  }
+
+  // 3. Fallback: AI Generation (Nano Banana)
+  // Si no es lugar físico, o falló la búsqueda, generamos.
+  console.log(`[DESIGNER] Generando imagen AI (Nano Banana)...`);
+  const [generated] = await generateEditorialGallery(title, 1);
+  // generateEditorialGallery already uploads to storage
+  return generated;
 }
 
 export async function enhanceArticleVisuals(content: string, slug: string): Promise<{ header: string, imageUrl: string }[]> {
