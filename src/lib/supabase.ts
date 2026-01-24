@@ -16,39 +16,59 @@ const MOCK_DB = {
 };
 
 // Mock Client Implementation
-const mockSupabase = {
-  from: (table: string) => ({
-    select: (columns: string) => ({
-      order: () => ({
-        limit: () => Promise.resolve({ data: MOCK_DB[table as keyof typeof MOCK_DB] || [], error: null })
-      }),
-      eq: (col: string, val: any) => ({
-        single: () => Promise.resolve({ data: (MOCK_DB[table as keyof typeof MOCK_DB] || []).find((r:any) => r[col] === val), error: null })
-      }),
-      ilike: (col: string, val: any) => Promise.resolve({ data: [], error: null })
-    }),
+// Mock Client Implementation
+const mockBuilder = (results: any[], table?: string) => {
+  const builder: any = {
+    select: () => builder,
+    order: () => builder,
+    limit: () => builder,
+    eq: (col: string, val: any) => {
+      // Simple filter for mock
+      const filtered = results.filter(r => r[col] === val);
+      return mockBuilder(filtered, table);
+    },
+    ilike: (col: string, val: any) => {
+      // Simple case-insensitive filter
+      const pattern = val.replace(/%/g, '').toLowerCase();
+      const filtered = results.filter(r => String(r[col]).toLowerCase().includes(pattern));
+      return mockBuilder(filtered, table);
+    },
+    single: () => Promise.resolve({ data: results[0] || null, error: null }),
     insert: (row: any) => {
-      console.log(`[MOCK DB] Insertando en '${table}':`, row.title);
+      console.log(`[MOCK DB] Insertando en '${table}':`, row.title || 'row');
       if (table === 'articles') {
-        MOCK_DB.articles.push({ ...row, created_at: new Date().toISOString() });
+        // @ts-ignore
+        if (typeof MOCK_DB !== 'undefined' && MOCK_DB.articles) {
+          // @ts-ignore
+          MOCK_DB.articles.push({ ...row, created_at: new Date().toISOString() });
+        }
       }
-      return Promise.resolve({ error: null });
+      return Promise.resolve({ error: null, data: [row] });
+    },
+    // Make it thenable to act like a Promise
+    then: (resolve: Function, reject: Function) => {
+      resolve({ data: results, error: null });
     }
-  })
+  };
+  return builder;
+};
+
+const mockSupabase = {
+  from: (table: string) => mockBuilder(MOCK_DB[table as keyof typeof MOCK_DB] || [], table)
 };
 
 // Cliente público (Lectura)
-export const supabase = isMock 
-  ? (mockSupabase as any) 
+export const supabase = isMock
+  ? (mockSupabase as any)
   : createClient(supabaseUrl, supabaseKey);
 
 // Cliente Admin (Escritura - Agentes)
 export const supabaseAdmin = isMock
   ? (mockSupabase as any)
-  : (supabaseServiceKey 
-      ? createClient(supabaseUrl, supabaseServiceKey)
-      : createClient(supabaseUrl, supabaseKey) // Fallback peligroso, pero mejor que crash
-    );
+  : (supabaseServiceKey
+    ? createClient(supabaseUrl, supabaseServiceKey)
+    : createClient(supabaseUrl, supabaseKey) // Fallback peligroso, pero mejor que crash
+  );
 
 
 
