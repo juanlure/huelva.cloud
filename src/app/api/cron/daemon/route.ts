@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
-import { generateDraft } from '@/lib/agents/writer';
+import { generateDraft, refineDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
 import { generateHeaderImage, generateEditorialGallery } from '@/lib/agents/designer';
 import { logAgentAction } from '@/lib/logger';
@@ -95,36 +95,42 @@ export async function GET(req: NextRequest) {
 
     // ... (dentro de la función GET)
 
-    // 3. Edición
-    const review = await reviewDraft(draft);
+    // 3. Edición y Refinamiento Iterativo
+    let currentDraft = draft;
+    let review = await reviewDraft(currentDraft);
 
     if (!review.approved) {
-      await logAgentAction('Editor', 'Rejected', { reason: review.feedback });
-      return NextResponse.json({
-        status: 'skipped',
-        reason: 'rejected_by_editor',
-        feedback: review.feedback // Exponer feedback para depuración
-      });
+      await logAgentAction('Editor', 'Refining', { reason: review.feedback });
+      currentDraft = await refineDraft(currentDraft, review.feedback);
+      review = await reviewDraft(currentDraft); // Una segunda oportunidad
+
+      if (!review.approved) {
+        await logAgentAction('Editor', 'Final Rejected (Best Effort Proceeding)', { reason: review.feedback });
+      } else {
+        await logAgentAction('Editor', 'Approved after refinement', { score: review.score });
+      }
+    } else {
+      await logAgentAction('Editor', 'Approved', { score: review.score });
     }
 
-    await logAgentAction('Editor', 'Approved', { score: review.score });
+    const finalDraft = currentDraft;
 
 
 
     // 3.5. SEO (Nuevo paso)
-    const seoData = await optimizeSeo(draft);
+    const seoData = await optimizeSeo(finalDraft);
     await logAgentAction('SEO', 'Optimized', { slug: seoData.slug, metaTitle: seoData.metaTitle });
 
 
 
     // 3.6. Interactive Classifier (Nuevo paso)
     // 3.6. Interactive Classifier (Safe Wrap)
-    let finalContent = draft.content;
+    let finalContent = finalDraft.content;
     try {
-      const interactiveData = await classifyContent({ ...draft, slug: seoData.slug });
+      const interactiveData = await classifyContent({ ...finalDraft, slug: seoData.slug });
 
       if (interactiveData.interactive) {
-        const richData = await generateInteractiveData(draft.title, interactiveData);
+        const richData = await generateInteractiveData(finalDraft.title, interactiveData);
 
         if (richData) {
           await logAgentAction('Generator', 'Data Created', {
@@ -156,7 +162,7 @@ export async function GET(req: NextRequest) {
     let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800'; // Hard fallback
     try {
       // Pasamos seoData.slug para nombrar el archivo correctamente en Storage
-      const designResult = await generateHeaderImage(draft.title, draft.excerpt, scrapedData?.image, seoData.slug);
+      const designResult = await generateHeaderImage(finalDraft.title, finalDraft.excerpt, scrapedData?.image, seoData.slug);
       if (designResult) {
         imageUrl = designResult;
         await logAgentAction('Designer', 'Image Ready', { url: imageUrl });
@@ -174,18 +180,18 @@ export async function GET(req: NextRequest) {
     if (process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('placeholder')) {
       console.log("---- [MOCK DB INSERT] ----");
       console.log(`Slug: ${seoData.slug}`);
-      console.log(`Title: ${draft.title}`);
+      console.log(`Title: ${finalDraft.title}`);
       console.log(`Image: ${imageUrl}`);
       console.log("--------------------------");
     } else {
       const res = await supabaseAdmin.from('articles').insert({
         slug: seoData.slug,
-        title: draft.title,
+        title: finalDraft.title,
         content: finalContent, // Contenido con payload interactivo
         excerpt: seoData.metaDescription,
-        category: draft.category,
+        category: finalDraft.category,
         image_url: imageUrl,
-        author: draft.author,
+        author: finalDraft.author,
         is_ai: true
       });
       error = res.error;
@@ -196,7 +202,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ status: 'error', error: error.message }, { status: 500 });
     }
 
-    await logAgentAction('Daemon', 'Published', { slug: draft.slug, title: draft.title });
+    await logAgentAction('Daemon', 'Published', { slug: finalDraft.slug, title: finalDraft.title });
     return NextResponse.json({ status: 'published', slug: draft.slug });
 
   } catch (err: any) {

@@ -19,17 +19,21 @@ async function getLogs() {
     const { data, error } = await supabase
         .from('agent_logs')
         .select('*')
-        .eq('agent_name', 'Editor')
-        .eq('action', 'Rejected')
         .order('created_at', { ascending: false })
-        .limit(5);
+        .limit(20);
 
     if (error) {
         console.error(error);
         return;
     }
 
-    console.log(JSON.stringify(data, null, 2));
+    data.forEach(log => {
+        console.log(`[${log.created_at}] ${log.agent_name} - ${log.action}`);
+        if (log.details) {
+            console.log(`DETAILS: ${JSON.stringify(log.details, null, 2)}`);
+        }
+        console.log('---');
+    });
 }
 
 getLogs();

@@ -136,3 +136,58 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     throw new Error("Writer AI failed output format.");
   }
 }
+
+export async function refineDraft(draft: Draft, feedback: string): Promise<Draft> {
+  console.log(`[WRITER] Refinando borrador: "${draft.title}" basado en feedback del editor...`);
+
+  const prompt = `
+    Eres "El Choco", redactor jefe de Huelva.is. 
+    Tu borrador anterior ha sido revisado por el Editor y necesita ajustes obligatorios.
+    
+    BORRADOR ACTUAL:
+    Título: ${draft.title}
+    Contenido: ${draft.content}
+    
+    FEEDBACK DEL EDITOR (SÍGUELO A RAJATABLA):
+    "${feedback}"
+    
+    INSTRUCCIONES DE REFINAMIENTO:
+    1. Corrige los errores de tono (menos IA, más "choquero").
+    2. Añade los detalles específicos que pide el editor (datos, infraestructuras, nombres reales).
+    3. Mantén el formato HTML (<p>, <h2>, <figure>, <div class="tip-box">).
+    4. Prohibido usar frases poéticas vacías o clichés de IA.
+    
+    ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO):
+    {
+      "title": "Título Refinado",
+      "content": "HTML corregido...",
+      "excerpt": "Resumen actualizado.",
+      "category": "${draft.category}",
+      "author": "${draft.author}"
+    }
+  `;
+
+  const response = await generateContent(prompt, 0.5);
+
+  try {
+    const jsonStart = response?.indexOf('{');
+    const jsonEnd = response?.lastIndexOf('}');
+
+    let cleanJson = '{}';
+    if (response && jsonStart !== undefined && jsonEnd !== undefined && jsonStart !== -1 && jsonEnd !== -1) {
+      cleanJson = response.substring(jsonStart, jsonEnd + 1);
+    }
+    const data = JSON.parse(cleanJson);
+
+    return {
+      ...draft,
+      title: data.title || draft.title,
+      content: data.content || draft.content,
+      excerpt: data.excerpt || draft.excerpt,
+      slug: (data.title || draft.title).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+    };
+  } catch (e) {
+    console.error("Error parsing refined AI response", e);
+    return draft; // Return original if refine fails
+  }
+}
