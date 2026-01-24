@@ -1,44 +1,73 @@
 import Link from 'next/link';
-import styles from './Footer.module.css';
+import { cn } from '@/lib/utils';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={`container ${styles.container}`}>
-
-        <div className={styles.top}>
-          <div className={styles.brand}>
-            <span className={styles.logo}>Huelva.is</span>
-            <p className={styles.tagline}>
-              Descubriendo Huelva con inteligencia (artificial) y corazón.
+    <footer className="bg-sand pt-20 pb-10 px-6 border-t border-navy/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          {/* Brand Section */}
+          <div className="md:col-span-2">
+            <Link href="/" className="text-3xl font-display font-bold text-navy tracking-tight mb-6 block">
+              Huelva<span className="text-terracotta">.is</span>
+            </Link>
+            <p className="text-navy/70 text-lg leading-relaxed max-w-sm mb-6">
+              Tu compañero local inteligente. Descubriendo Huelva con honestidad,
+              humor y un poquito de arte.
             </p>
-            {/* Privacy Pledge */}
-            <div className="mt-4 px-3 py-1 bg-green-50 text-green-800 text-xs font-bold rounded-full inline-block border border-green-200">
-              🌱 Sin cookies. Sin rastreo. Solo Huelva.
+            <div className="inline-flex items-center px-4 py-2 bg-white/50 backdrop-blur-sm border border-navy/5 rounded-full text-xs font-medium text-navy/60">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              🌱 100% Sin rastreadores · Solo Huelva
             </div>
           </div>
 
-          <div className={styles.links}>
-            <h4>Explora</h4>
-            <Link href="/comer">Comer</Link>
-            <Link href="/eventos">Eventos</Link>
-            <Link href="/alojarse">Alojarse</Link>
-            <Link href="/guias">Guías</Link>
+          {/* Links Section 1 */}
+          <div>
+            <h4 className="font-display text-xl font-bold text-navy mb-6">Explora</h4>
+            <ul className="space-y-4">
+              {['Comer', 'Eventos', 'Alojarse', 'Guías', 'Noticias'].map((item) => (
+                <li key={item}>
+                  <Link
+                    href={`/${item.toLowerCase().replace('í', 'i')}`}
+                    className="text-navy/60 hover:text-terracotta transition-colors"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className={styles.links}>
-            <h4>Transparencia</h4>
-            <Link href="/ai-disclosure">Cómo funciona (IA)</Link>
-            <Link href="/privacy">Privacidad</Link>
-            <Link href="/legal">Aviso Legal</Link>
-            <Link href="/admin">Admin Area</Link>
+          {/* Links Section 2 */}
+          <div>
+            <h4 className="font-display text-xl font-bold text-navy mb-6">Transparencia</h4>
+            <ul className="space-y-4">
+              {[
+                { name: 'Cómo funciona (IA)', href: '/ai-disclosure' },
+                { name: 'Privacidad', href: '/privacy' },
+                { name: 'Aviso Legal', href: '/legal' },
+                { name: 'Admin Area', href: '/admin' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-navy/60 hover:text-terracotta transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className={styles.bottom}>
-          <p>© {new Date().getFullYear()} Huelva.is · Made with ❤️ & 🤖 in Huelva.</p>
+        {/* Bottom Section */}
+        <div className="pt-10 border-t border-navy/10 flex flex-col md:flex-row justify-between items-center text-sm text-navy/40">
+          <p>© {new Date().getFullYear()} Huelva.is · Hecho con ❤️ y 🤖 en Huelva.</p>
+          <div className="mt-4 md:mt-0 space-x-6">
+            <span className="italic">"Porque Huelva es mu bonita y hay que decir las cosas claras."</span>
+          </div>
         </div>
-
       </div>
     </footer>
   );

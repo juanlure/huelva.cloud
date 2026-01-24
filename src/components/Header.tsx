@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import styles from './Header.module.css';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Cloud, Clock } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import WeatherWidget from '@/components/widgets/WeatherWidget';
 import TimeWidget from '@/components/widgets/TimeWidget';
 
-const Navigation = [
+const NAVIGATION_ITEMS = [
     { name: 'Comer', href: '/comer' },
     { name: 'Eventos', href: '/eventos' },
     { name: 'Alojarse', href: '/alojarse' },
@@ -17,63 +19,106 @@ const Navigation = [
 
 export default function Header() {
     const pathname = usePathname();
-    const [scrolled, setScrolled] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    const isArticlePage = pathname?.startsWith('/article/');
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => setIsScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+    // Close menu on route change
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [pathname]);
 
     return (
-        <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuOpen : ''} ${isArticlePage ? styles.inverted : ''}`}>
-            <div className={`container ${styles.container}`}>
-                <Link href="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
-                    Huelva<span className={styles.dot}>.is</span>
+        <header
+            className={cn(
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
+                isScrolled ? 'bg-cream/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
+            )}
+        >
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+                {/* Logo */}
+                <Link
+                    href="/"
+                    className="text-2xl font-display font-bold text-navy tracking-tight"
+                >
+                    Huelva<span className="text-terracotta">.is</span>
                 </Link>
 
-                <nav className={`${styles.nav} ${menuOpen ? styles.active : ''}`}>
-                    {Navigation.map((item) => (
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center space-x-8">
+                    {NAVIGATION_ITEMS.map((item) => (
                         <Link
-                            key={item.name}
+                            key={item.href}
                             href={item.href}
-                            className={styles.navLink}
-                            onClick={() => setMenuOpen(false)}
+                            className={cn(
+                                'text-sm font-medium transition-colors hover:text-terracotta',
+                                pathname === item.href ? 'text-terracotta' : 'text-navy/70'
+                            )}
                         >
                             {item.name}
                         </Link>
                     ))}
                 </nav>
 
-                <div className={styles.widgets}>
-                    <div className={styles.langToggle}>
-                        <span className={styles.activeLang}>ES</span>
-                        <span className={styles.sep}>|</span>
-                        <span className={styles.inactiveLang}>EN</span>
-                    </div>
-
-                    <div className={styles.widget}>
+                {/* Widgets & Menu Toggle */}
+                <div className="flex items-center space-x-6">
+                    <div className="hidden lg:flex items-center space-x-4 border-l border-navy/10 pl-6">
+                        <div className="flex items-center text-xs font-semibold text-navy/40 space-x-2">
+                            <span className="text-terracotta">ES</span>
+                            <span>|</span>
+                            <span className="hover:text-navy/60 cursor-pointer">EN</span>
+                        </div>
+                        <div className="h-4 w-px bg-navy/10" />
                         <WeatherWidget />
-                    </div>
-
-                    <div className={styles.widget}>
+                        <div className="h-4 w-px bg-navy/10" />
                         <TimeWidget />
                     </div>
-                </div>
 
-                <button
-                    className={styles.menuButton}
-                    onClick={toggleMenu}
-                    aria-label="Menu"
-                >
-                    <span className={styles.hamburger}></span>
-                </button>
+                    <button
+                        className="md:hidden p-2 text-navy hover:text-terracotta transition-colors"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label="Alternar menú"
+                    >
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Navigation Mesh */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="absolute top-full left-0 right-0 bg-cream shadow-xl border-t border-navy/5 md:hidden"
+                    >
+                        <nav className="flex flex-col p-6 space-y-4">
+                            {NAVIGATION_ITEMS.map((item) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={cn(
+                                        'text-lg font-display font-medium py-2',
+                                        pathname === item.href ? 'text-terracotta' : 'text-navy'
+                                    )}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                            <div className="pt-6 border-t border-navy/5 flex items-center justify-between text-navy/60">
+                                <WeatherWidget />
+                                <TimeWidget />
+                            </div>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 }

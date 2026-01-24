@@ -26,7 +26,8 @@ export async function generateInteractiveData(
     ## ESQUEMAS ESTRICTOS (Sigue el que corresponda)
 
     1. **TRANSLATOR**
-       { "title": "Diccionario Choquero", "subtitle": "...", "items": [{ "id": "1", "name": "Termino", "ratio": "Traducción", "description": "Uso...", "tip": "Consejo", "price_range": "€" }] }
+       { "title": "Diccionario Choquero", "subtitle": "...", "items": [{ "id": "1", "name": "Termino", "ratio": 80, "description": "Uso...", "tip": "Consejo", "price_range": "€" }] }
+       *ratio: grado de "choquerismo" (0-100).
 
     2. **ITINERARY**
        { "title": "Ruta X", "itineraries": { "classic": { "day1": [{ "time": "10:00", "title": "Lugar", "description": "...", "emoji": "📍" }] } } }
@@ -40,6 +41,9 @@ export async function generateInteractiveData(
 
     5. **CHECKLIST**
        { "title": "Mochila para X", "items": [{ "id": "1", "label": "Gafas", "category": "Ropa" }] }
+
+    6. **SCORECARD**
+       { "title": "Puntuación de X", "items": [{ "id": "1", "label": "Calidad", "icon": "🦐" }] }
 
     ## Output
     JSON válido. Sin markdown, sin comentarios. Solo el objeto JSON.

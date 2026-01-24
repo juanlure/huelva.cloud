@@ -1,0 +1,135 @@
+.translatorWrapper {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border: 1px solid #f3f4f6;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.subtitle {
+    color: #4b5563;
+    margin-top: 0.5rem;
+}
+
+.visualDisplay {
+    background: linear-gradient(to bottom right, #fffbeb, #fff7ed);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+}
+
+.selectedName {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #78350f;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ratioBar {
+    display: flex;
+    height: 2rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    background-color: #fef3c7;
+}
+
+.ratioFill {
+    background-color: #92400e;
+    transition: all 0.5s ease-out;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: #374151;
+    min-height: 3rem;
+    text-align: center;
+}
+
+.tipBox {
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tipIcon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.tipText {
+    font-size: 0.875rem;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.priceRange {
+    margin-top: 1rem;
+    color: #92400e;
+    font-weight: 700;
+    text-align: center;
+}
+
+.selectorGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .selectorGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .selectorGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.selectorButton {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.activeButton {
+    background-color: #d97706;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.inactiveButton {
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+.inactiveButton:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}

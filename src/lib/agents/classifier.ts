@@ -4,7 +4,7 @@ import { safeJsonParse } from './utils';
 
 export interface InteractiveData {
   interactive: boolean;
-  component_type: 'translator' | 'itinerary' | 'quiz' | 'map' | 'timeline' | 'cards' | 'calculator' | 'checklist' | null;
+  component_type: 'translator' | 'itinerary' | 'quiz' | 'cards' | 'checklist' | 'scorecard' | null;
   component_name: string | null;
   rationale: string;
   data_schema: any;
@@ -44,12 +44,13 @@ export async function classifyContent(draft: Draft): Promise<InteractiveData> {
     3. **QUIZ**: Tests de conocimiento o de personalidad.
     4. **CARDS**: Comparaciones directas "A vs B" (ej: playas, restaurantes).
     5. **CHECKLIST**: Listas de verificación útiles (ej: qué llevar al Rocío).
+    6. **SCORECARD**: Puntuación de lugares o productos basándose en criterios.
     
     ## Output (JSON)
     {
       "interactive": boolean,
       "confidence": number (0-100),
-      "component_type": "translator|itinerary|quiz|cards|checklist" (o null),
+      "component_type": "translator|itinerary|quiz|cards|checklist|scorecard" (o null),
       "component_name": "NombrePascalCase" (ej: "ItinerarioSemanaSanta"),
       "rationale": "Razón técnica y de UX para elegir esto. Sé escéptico.",
       "data_schema": { ... estructura vacía o ejemplo breve ... }
@@ -66,7 +67,7 @@ export async function classifyContent(draft: Draft): Promise<InteractiveData> {
     const data = safeJsonParse<any>(response, { interactive: false, confidence: 0 });
 
     const confidence = data.confidence || 0;
-    const isHighConfidence = confidence >= 80;
+    const isHighConfidence = confidence >= 85;
 
     if (data.interactive && isHighConfidence) {
       console.log(`[CLASSIFIER] Oportunidad detectada (${confidence}%): ${data.component_type}`);

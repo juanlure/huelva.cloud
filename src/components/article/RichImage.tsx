@@ -1,27 +1,29 @@
 'use client';
 
 import React from 'react';
+import styles from './RichImage.module.css';
 
 interface RichImageProps {
     src: string;
     alt: string;
+    caption?: string;
 }
 
-export default function RichImage({ src, alt }: RichImageProps) {
+export default function RichImage({ src, alt, caption }: RichImageProps) {
     return (
-        <figure className="my-12 group w-full relative">
-            <div className="relative overflow-hidden rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] transition-all duration-700 group-hover:scale-[1.01] group-hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.2)] bg-gray-100">
+        <figure className={styles.figure}>
+            <div className={styles.imageContainer}>
                 <img
                     src={src}
                     alt={alt}
-                    className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105"
+                    className={styles.image}
                     loading="lazy"
                 />
-                <div className="absolute inset-0 border border-black/5 rounded-xl pointer-events-none shadow-inner"></div>
+                <div className={styles.border}></div>
             </div>
-            {alt && (
-                <figcaption className="mt-4 text-center text-sm text-gray-500 font-serif italic tracking-wide opacity-80 max-w-2xl mx-auto">
-                    {alt}
+            {(caption || alt) && (
+                <figcaption className={styles.caption}>
+                    {caption || alt}
                 </figcaption>
             )}
         </figure>

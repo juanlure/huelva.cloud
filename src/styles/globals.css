@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 30, 58, 95;
+    /* navy-800 */
+    --background-rgb: 250, 247, 242;
+    /* cream */
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-playfair), serif;
+        @apply font-semibold tracking-tight;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-terracotta text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-terracotta-600 active:scale-95;
+    }
+
+    .nav-link {
+        @apply text-navy/70 hover:text-navy transition-colors duration-200 font-medium;
+    }
+}

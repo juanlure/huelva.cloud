@@ -89,10 +89,10 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
   1. ** El Gancho **: Nada de "en este artículo vamos a ver".Empieza con una verdad dolorosa o una curiosidad.
     2. ** Capítulos **: Usa < h2 > para dividir temas(ej: "La Etiqueta", "Los Imprescindibles", "La Dolorosa").
     3. ** Pro Tips **: Intercala consejos de experto(basados en la investigación) usando este HTML:
-  <div class="tip-box" >💡 <strong>Consejo Pro: </strong> [Tu consejo aquí]</div >
+  <div class="tip-box" ><strong>Consejo Pro: </strong> [Tu consejo aquí]</div >
     4. ** Diccionario Local **: Si aplica, añade una sección de vocabulario usando < ul > o <dl>.
 
-      ${galleryInstructions}
+       ${galleryInstructions}
 
   TONO Y VOZ:
     - Autoridad absoluta. Tú eres de aquí, sabes dónde se ponen los mejores caracoles y cuándo empieza a apretar el calor de verdad.
@@ -105,7 +105,7 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     "title": "Título Épico (ej: 'Manual de Supervivencia: Gambas')",
       "content": "HTML estructurado...",
         "excerpt": "La verdad sobre ${topic} que nadie te cuenta.",
-          "category": "Guías",
+          "category": "Noticias|Comer|Eventos|Guías",
             "author": "Rocío Limón"
   }
   `;
@@ -123,13 +123,22 @@ export async function generateDraft(topic: string, baseContent?: string, sourceU
     }
     const data = JSON.parse(cleanJson);
 
+    // Category validation
+    const validCategories = ['Noticias', 'Comer', 'Eventos', 'Guías'];
+    let category = data.category || 'Noticias';
+    if (!validCategories.includes(category)) {
+      // Find closest match or fallback
+      const found = validCategories.find(c => category.includes(c));
+      category = found || 'Noticias';
+    }
+
     return {
       title: data.title || topic,
       content: data.content || `<p>Error generando contenido.</p>`,
-      category: data.category || 'Noticias',
+      category: category,
       slug: (data.title || topic).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
       excerpt: data.excerpt || `Artículo sobre ${topic}`,
-      author: getAuthorForCategory(data.category || 'Noticias').name, // Override with specific persona
+      author: getAuthorForCategory(category).name, // Override with specific persona
       sourceUrl
     };
   } catch (e) {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import styles from './TranslatorComponent.module.css';
 
 export default function TranslatorComponent({
     title,
@@ -18,40 +19,40 @@ export default function TranslatorComponent({
     if (!items || items.length === 0) return null;
 
     return (
-        <div className="translator-wrapper bg-white rounded-2xl shadow-lg p-8 my-12 border border-gray-100">
+        <div className={styles.translatorWrapper}>
             {/* Header */}
-            <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
-                <p className="text-gray-600 mt-2">{subtitle}</p>
+            <div className={styles.header}>
+                <h2 className={styles.title}>{title}</h2>
+                <p className={styles.subtitle}>{subtitle}</p>
             </div>
 
             {/* Visual Display */}
-            <div className="visual-display bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 mb-8 transition-all duration-300">
+            <div className={styles.visualDisplay}>
                 <div className="text-center">
-                    <h3 className="text-4xl font-bold text-amber-900 mb-4">
+                    <h3 className={styles.selectedName}>
                         {selectedItem.name}
                     </h3>
 
                     {visualType === 'ratio' && selectedItem.ratio !== undefined && (
-                        <div className="ratio-bar flex h-8 rounded-full overflow-hidden mb-4 shadow-inner bg-amber-200">
+                        <div className={styles.ratioBar}>
                             <div
-                                className="bg-amber-800 transition-all duration-500 ease-out"
+                                className={styles.ratioFill}
                                 style={{ width: `${selectedItem.ratio}%` }}
                             />
                         </div>
                     )}
 
-                    <p className="text-lg text-gray-700 min-h-[3rem]">{selectedItem.description}</p>
+                    <p className={styles.description}>{selectedItem.description}</p>
 
                     {selectedItem.tip && (
-                        <div className="tip-box mt-4 bg-white/80 rounded-lg p-4 inline-block shadow-sm">
-                            <span className="text-2xl mr-2">💡</span>
-                            <span className="text-sm text-gray-600 font-medium">{selectedItem.tip}</span>
+                        <div className={styles.tipBox}>
+                            <span className={styles.tipIcon}>💡</span>
+                            <span className={styles.tipText}>{selectedItem.tip}</span>
                         </div>
                     )}
 
                     {selectedItem.price_range && (
-                        <div className="mt-4 text-amber-800 font-bold">
+                        <div className={styles.priceRange}>
                             💰 {selectedItem.price_range}
                         </div>
                     )}
@@ -59,16 +60,16 @@ export default function TranslatorComponent({
             </div>
 
             {/* Selector Buttons */}
-            <div className="selector-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+            <div className={styles.selectorGrid}>
                 {items.map((item) => (
                     <button
                         key={item.id}
                         onClick={() => setSelectedItem(item)}
                         className={`
-              px-4 py-3 rounded-xl font-medium transition-all duration-200
+              ${styles.selectorButton}
               ${selectedItem.id === item.id
-                                ? 'bg-amber-600 text-white shadow-lg scale-105 transform'
-                                : 'bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow'
+                                ? styles.activeButton
+                                : styles.inactiveButton
                             }
             `}
                     >

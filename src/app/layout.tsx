@@ -4,8 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-sans' });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-serif' });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
   title: "Huelva.is | Tu compañero local inteligente",
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans bg-cream text-navy min-h-screen flex flex-col`}>
         <Header />
         {children}
         <Footer />

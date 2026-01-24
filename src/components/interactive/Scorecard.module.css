@@ -1,0 +1,168 @@
+.scorecardContainer {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border: 1px solid #ffedd5;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    position: relative;
+}
+
+.decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -25%);
+    width: 16rem;
+    height: 16rem;
+    background-color: #fff7ed;
+    border-radius: 9999px;
+    filter: blur(64px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.itemsList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.scoreItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.itemInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.itemIcon {
+    font-size: 1.5rem;
+    background-color: #fff7ed;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}
+
+.itemLabel {
+    font-weight: 700;
+    color: #374151;
+}
+
+.scoreValue {
+    color: #ea580c;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.rangeContainer {
+    position: relative;
+    height: 1rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.rangeInput {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.rangeTrack {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(to right, #fb923c, #ea580c);
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+    z-index: 10;
+}
+
+.handle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border: 4px solid #f97316;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.rangeContainer:hover .handle {
+    transform: translateY(-50%) scale(1);
+}
+
+.footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f3f4f6;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.totalBadge {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    background: linear-gradient(to bottom right, #f97316, #dc2626);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s;
+}
+
+.totalBadge:hover {
+    transform: scale(1.05);
+}
+
+.totalText {
+    display: block;
+    color: #ffedd5;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+
+.totalScore {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+}
+
+.disclaimer {
+    margin-top: 1.5rem;
+    color: #6b7280;
+    font-style: italic;
+    font-size: 0.875rem;
+}

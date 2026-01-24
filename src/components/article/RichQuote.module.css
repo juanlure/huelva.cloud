@@ -1,0 +1,33 @@
+.quote {
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-style: italic;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: #1f2937;
+    line-height: 1.625;
+    border-left: 6px solid rgba(249, 115, 22, 0.8);
+}
+
+@media (min-width: 768px) {
+    .quote {
+        font-size: 1.875rem;
+    }
+}
+
+.mark {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    font-size: 6rem;
+    color: rgba(249, 115, 22, 0.1);
+    font-family: var(--font-serif);
+    line-height: 1;
+    z-index: -10;
+    font-weight: 900;
+}

@@ -1,0 +1,33 @@
+.tipBox {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #fffaf0;
+    border-left: 4px solid #f97316;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: transform 0.2s ease;
+}
+
+.tipBox:hover {
+    transform: scale(1.01);
+}
+
+.icon {
+    font-size: 1.5rem;
+    padding-top: 0.25rem;
+}
+
+.content {
+    max-width: none;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.content :global(p) {
+    margin: 0;
+}
