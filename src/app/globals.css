@@ -101,8 +101,8 @@
   --accent-hover: #b84d2a;
 
   /* Tipografía (Injected via Next.js Font Optimization) */
-  --font-serif: var(--font-serif), serif;
-  --font-sans: var(--font-sans), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
 
   /* Espaciado y bordes */
   --radius-card: 1.5rem;
@@ -141,7 +141,7 @@ h2,
 h3,
 h4,
 .serif {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
 }
 
 .container {
