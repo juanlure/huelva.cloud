@@ -7,6 +7,7 @@ const ItineraryBuilder = dynamic(() => import('./interactive/ItineraryBuilder'))
 const QuizComponent = dynamic(() => import('./interactive/QuizComponent'));
 const ComparisonCard = dynamic(() => import('./interactive/ComparisonCard'));
 const Checklist = dynamic(() => import('./interactive/Checklist'));
+const Scorecard = dynamic(() => import('./interactive/Scorecard'));
 
 export default function InteractiveContainer({ type, data }: { type: string, data: any }) {
     if (!data) return null;
@@ -22,6 +23,8 @@ export default function InteractiveContainer({ type, data }: { type: string, dat
             return <ComparisonCard {...data} />;
         case 'checklist':
             return <Checklist {...data} />;
+        case 'scorecard':
+            return <Scorecard {...data} />;
         default:
             return null;
     }

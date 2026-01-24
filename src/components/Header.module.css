@@ -9,6 +9,12 @@
     background: transparent;
     display: flex;
     align-items: center;
+    color: var(--text-primary);
+}
+
+.inverted:not(.scrolled) {
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .scrolled {
@@ -30,7 +36,7 @@
     font-family: var(--font-serif);
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: inherit;
     transition: transform 0.3s ease;
 }
 
@@ -42,6 +48,11 @@
     color: var(--accent-primary);
 }
 
+.inverted:not(.scrolled) .dot {
+    color: white;
+    opacity: 0.8;
+}
+
 .nav {
     display: flex;
     gap: 2.5rem;
@@ -49,7 +60,7 @@
 
 .navLink {
     font-weight: 600;
-    color: var(--text-primary);
+    color: inherit;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -111,7 +122,7 @@
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--text-primary);
+    background: currentColor;
     position: relative;
     transition: background 0.3s;
 }
@@ -122,7 +133,7 @@
     position: absolute;
     width: 24px;
     height: 2px;
-    background: var(--text-primary);
+    background: currentColor;
     transition: all 0.3s;
 }
 

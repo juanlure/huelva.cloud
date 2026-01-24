@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
+import { usePathname } from 'next/navigation';
 import WeatherWidget from '@/components/widgets/WeatherWidget';
 import TimeWidget from '@/components/widgets/TimeWidget';
 
@@ -15,8 +16,11 @@ const Navigation = [
 ];
 
 export default function Header() {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const isArticlePage = pathname?.startsWith('/article/');
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -27,7 +31,7 @@ export default function Header() {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuOpen : ''}`}>
+        <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuOpen : ''} ${isArticlePage ? styles.inverted : ''}`}>
             <div className={`container ${styles.container}`}>
                 <Link href="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
                     Huelva<span className={styles.dot}>.is</span>
