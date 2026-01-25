@@ -1,33 +1,59 @@
+/* TipBox - Callout box with character */
 .tipBox {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: #fffaf0;
-    border-left: 4px solid #f97316;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    transition: transform 0.2s ease;
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #FFFBF0 0%, #FFF5EB 100%);
+  border-left: 3px solid #D4553A;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 16px rgba(212, 85, 58, 0.08);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
 }
 
-.tipBox:hover {
-    transform: scale(1.01);
+.tipBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at top right, rgba(212, 85, 58, 0.08), transparent 70%);
+  pointer-events: none;
 }
 
 .icon {
-    font-size: 1.5rem;
-    padding-top: 0.25rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  padding-top: 0.125rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .content {
-    max-width: none;
-    color: #1f2937;
-    font-weight: 500;
+  flex: 1;
+  color: #1A2A3A;
+  line-height: 1.6;
 }
 
 .content :global(p) {
-    margin: 0;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.content :global(strong) {
+  color: #D4553A;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .tipBox {
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .content :global(p) {
+    font-size: 1rem;
+  }
 }

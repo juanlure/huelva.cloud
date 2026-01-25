@@ -1,0 +1,172 @@
+/* ProseContent - Editorial typography for article bodies */
+
+.proseContent {
+  max-width: 100%;
+}
+
+/* Paragraphs */
+.proseContent p {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #1A2A3A;
+  margin-bottom: 1.75em;
+  font-weight: 400;
+}
+
+.proseContent p.contentParagraph {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Drop cap for first paragraph */
+.proseContent p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.1rem;
+  color: #D4553A;
+  font-weight: 600;
+}
+
+/* Headings */
+.proseContent h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0F1A24;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.proseContent h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1A2A3A;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.proseContent h2.contentHeading,
+.proseContent h3.contentHeading {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Lists */
+.proseContent ul,
+.proseContent ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.proseContent li {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #1A2A3A;
+  margin-bottom: 0.75rem;
+}
+
+.proseContent ul li {
+  list-style-type: disc;
+}
+
+.proseContent ol li {
+  list-style-type: decimal;
+}
+
+.proseContent li::marker {
+  color: #D4553A;
+  font-weight: 600;
+}
+
+/* Links */
+.proseContent a {
+  color: #D4553A;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+.proseContent a:hover {
+  color: #B8432A;
+  text-decoration-thickness: 2px;
+}
+
+/* Inline elements */
+.proseContent strong {
+  font-weight: 600;
+  color: #0F1A24;
+}
+
+.proseContent em {
+  font-style: italic;
+  color: #3A4A5A;
+}
+
+.proseContent code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: #E8EBF0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: #1A2A3A;
+}
+
+.proseContent pre {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  background: #0F1A24;
+  color: #FAF8F3;
+  padding: 1.5rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .proseContent p {
+    font-size: 1.125rem;
+  }
+
+  .proseContent h2 {
+    font-size: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .proseContent h3 {
+    font-size: 1.625rem;
+    margin-top: 3rem;
+  }
+
+  .proseContent ul,
+  .proseContent ol {
+    padding-left: 2rem;
+  }
+
+  .proseContent li {
+    font-size: 1.125rem;
+  }
+}
+
+/* Print */
+@media print {
+  .proseContent p {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  .proseContent a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
