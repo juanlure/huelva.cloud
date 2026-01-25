@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Bus, Coffee, AlertTriangle, Sunset, MapPin, Star, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Ticket from '@/components/ui/Ticket';
 
 interface Section {
   id: string;
@@ -43,12 +44,20 @@ const sections: Section[] = [
               </div>
             ))}
           </div>
-          <div className="mt-6 p-4 bg-white/50 rounded-xl">
-            <p className="text-sm text-navy-60">
-              <strong>Precio:</strong> Viaje sencillo ~1,20€ | Bonobús 10 viajes ~9€<br/>
-              <strong>Horario:</strong> Lunes a viernes 7:00-22:00 | Sábados 8:00-15:00
-            </p>
-          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Ticket
+            title="Tarifas TUsa"
+            variant="transport"
+            icon={<Bus size={18} />}
+            items={[
+              { label: 'Viaje sencillo', price: '1,20€' },
+              { label: 'Bonobús 10 viajes', price: '9,00€' },
+              { label: 'Bonobús 20 viajes', price: '16,50€' },
+            ]}
+            total="Desde 0,90€/viaje"
+          />
         </div>
 
         <div className="flex items-start gap-4 p-6 bg-orange-50 rounded-3xl border border-orange-100">
@@ -149,6 +158,21 @@ const sections: Section[] = [
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Ticket
+            title="Precios orientativos"
+            variant="restaurant"
+            icon={<Coffee size={18} />}
+            items={[
+              { label: 'Tapa', price: '3-5€' },
+              { label: 'Media ración', price: '6-10€' },
+              { label: 'Ración completa', price: '12-18€' },
+              { label: 'Menú del día', price: '12-15€' },
+            ]}
+            total="Varía según establecimiento"
+          />
         </div>
 
         <div className="bg-gradient-to-br from-sand to-orange-50 rounded-3xl p-6 border border-orange-100">

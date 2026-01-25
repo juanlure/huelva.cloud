@@ -20,7 +20,7 @@ export default async function Home() {
     {
       title: 'Guía de Supervivencia en Huelva',
       subtitle: 'Transporte, horarios, slang y secretos locales',
-      image: 'https://images.unsplash.com/photos/cobblestone-street-lined-with-white-buildings-under-blue-sky--dKb_Bj_h_I?w=1200&q=80', // Carmona, Andalusia - perfect white buildings
+      image: 'https://images.unsplash.com/photos/cobblestone-street-lined-with-white-buildings-under-blue-sky--dKb_Bj_h_I?w=1200&q=80',
       icon: <Compass size={24} />,
       href: '/guias/supervivencia',
       badge: 'Lo más leído'
@@ -28,7 +28,7 @@ export default async function Home() {
     {
       title: '48 Horas en Huelva',
       subtitle: 'Un finsemana perfecto: comida, cultura y mar',
-      image: 'https://images.unsplash.com/photos/cityscape-with-historic-buildings-and-blue-sky-TGeob-v7JAU?w=1200&q=80', // Sevilla skyline - represents Andalusian cities
+      image: 'https://images.unsplash.com/photos/cityscape-with-historic-buildings-and-blue-sky-TGeob-v7JAU?w=1200&q=80',
       icon: <Clock size={24} />,
       href: '/guias/48-horas',
       badge: 'Itinerario'
@@ -36,9 +36,33 @@ export default async function Home() {
     {
       title: 'Traductor de Choco',
       subtitle: 'Aprende a pedir como un verdadero choquero',
-      image: 'https://images.unsplash.com/photo-1599487483441-df3f705139fb?w=1200&q=80', // Fried calamari - perfect for choco guide
+      image: 'https://images.unsplash.com/photo-1599487483441-df3f705139fb?w=1200&q=80',
       icon: <Users size={24} />,
       href: '/guias/choco',
+      badge: 'Interactivo'
+    },
+    {
+      title: 'Traductor de Jamón',
+      subtitle: 'Bellota, Cebo de Campo, Cebo. Las diferencias.',
+      image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=1200&q=80',
+      icon: <Users size={24} />,
+      href: '/guias/jamon',
+      badge: 'Nuevo'
+    },
+    {
+      title: 'Traductor de Café',
+      subtitle: 'Solo, Cortado, Mitad, Manchado...',
+      image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80',
+      icon: <Users size={24} />,
+      href: '/guias/cafe',
+      badge: 'Nuevo'
+    },
+    {
+      title: 'Barrios de Huelva',
+      subtitle: 'Encuentra tu barrio perfecto',
+      image: 'https://images.unsplash.com/photo-1578436296977-ebdb117f5547?w=1200&q=80',
+      icon: <Compass size={24} />,
+      href: '/guias/barrios',
       badge: 'Interactivo'
     },
   ];
@@ -133,7 +157,7 @@ export default async function Home() {
             <div className="flex items-center gap-3 mb-4">
               <TrendingUp size={20} className="text-terracotta" />
               <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                Lo que la gente está leyendo esta semana
+                Lo más leído esta semana
               </span>
             </div>
 
@@ -217,7 +241,7 @@ export default async function Home() {
             </div>
 
             {/* Guide Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
               {interactiveGuides.map((guide, idx) => (
                 <Link
                   key={idx}

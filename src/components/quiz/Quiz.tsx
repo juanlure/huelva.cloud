@@ -11,7 +11,7 @@ const QUESTIONS = [
         question: "¿Cómo pides un café con mucha leche y poco café?",
         options: [
             { id: 'a', text: 'Un manchado', value: 0 },
-            { id: 'b', text: 'Una nube', value: 10 }, // This is more Malaga, let's adapt to Huelva
+            { id: 'b', text: 'Una nube', value: 10 },
             { id: 'c', text: 'Un cortado largo de leche', value: 5 },
             { id: 'd', text: 'Póngame lo que usted quiera, jefe', value: 2 }
         ]
@@ -36,7 +36,6 @@ const QUESTIONS = [
             { id: 'd', text: 'Si es del súper', value: 0 }
         ]
     }
-    // Add more questions as needed
 ];
 
 export default function Quiz() {
