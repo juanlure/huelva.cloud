@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Star, Coffee, Waves, Tree, Building2, Navigation, X, Filter } from 'lucide-react';
+import { MapPin, Star, Coffee, Waves, Trees, Building2, Navigation, X, Filter } from 'lucide-react';
 
 interface Neighborhood {
   id: string;
