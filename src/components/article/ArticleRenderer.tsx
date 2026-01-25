@@ -57,14 +57,14 @@ export default function ArticleRenderer({ content }: ArticleRendererProps) {
 
     try {
         return (
-            <div className="prose prose-lg prose-navy prose-headings:font-display prose-headings:font-bold prose-p:leading-8 prose-p:text-navy/80 hover:prose-a:text-terracotta transition-all">
+            <div className="prose prose-lg prose-navy prose-headings:font-display prose-headings:font-bold prose-p:leading-8 prose-p:text-navy/80 prose-img:w-full prose-img:rounded-xl prose-headings:mt-12 prose-headings:mb-6 hover:prose-a:text-terracotta transition-all prose-max-w-none">
                 {parse(content, options)}
             </div>
         );
     } catch (error) {
         console.error("Error parsing article content:", error);
         return (
-            <div className="prose prose-lg">
+            <div className="prose prose-lg prose-max-w-none">
                 <p className="text-red-500 bg-red-50 p-4 rounded-lg border border-red-100 italic">
                     Lo sentimos, ha habido un problema cargando parte del contenido.
                     Estamos trabajando en ello (seguramente algo se nos ha escapao).
