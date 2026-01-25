@@ -36,11 +36,11 @@ export default function Header() {
     return (
         <header
             className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 py-4',
                 isScrolled ? 'bg-cream/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
             )}
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
                 {/* Logo */}
                 <Link
                     href="/"
