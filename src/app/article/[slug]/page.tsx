@@ -49,11 +49,11 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20">
+    <main className="min-h-screen bg-white pt-40 pb-20">
       <article className="max-w-7xl mx-auto px-6">
         {/* Editorial Header - Centered & Clean */}
         <header className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <div className="flex items-center space-x-3 mb-8">
+          <div className="flex items-center space-x-3 mb-8 flex-wrap justify-center gap-2">
             <span className="px-4 py-1.5 bg-green-50 text-green-800 text-xs font-bold uppercase tracking-widest rounded-full border border-green-100">
               {article.category}
             </span>
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight">
             {article.title}
           </h1>
 
