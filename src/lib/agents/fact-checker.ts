@@ -324,7 +324,7 @@ Return JSON only:
 
   try {
     const response = await generateContent(prompt, 0.1, true);
-    return safeJsonParse<PlaceCheck>(response, null);
+    return safeJsonParse<PlaceCheck>(response, null as unknown as PlaceCheck);
   } catch (e) {
     console.error("[FACT_CHECKER] Error verificando lugar:", e);
     return null;
@@ -366,7 +366,7 @@ Return JSON only:
 
   try {
     const response = await generateContent(prompt, 0.1, true);
-    return safeJsonParse<FactCheck>(response, null);
+    return safeJsonParse<FactCheck>(response, null as unknown as FactCheck);
   } catch (e) {
     console.error("[FACT_CHECKER] Error verificando hecho:", e);
     return null;

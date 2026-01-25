@@ -48,7 +48,8 @@ export async function GET(req: NextRequest) {
     // 1.5. Scraping (si hay URL)
     let scrapedData = null;
     let uploadedGallery: string[] = []; // Fotos subidas a nuestro storage
-    let researchContext: string | null = null; // Datos de investigación web
+    let researchContext: string | null = null; // Datos de investigación web (serializado)
+    let researchResult: import('@/lib/agents/researcher').ResearchResult | null = null; // Resultado estructurado
 
     if (targetUrl) {
       // MODO CURADOR (Existe noticia real)
@@ -70,15 +71,23 @@ export async function GET(req: NextRequest) {
       uploadedGallery = [];
 
       // 2. Investigación Web Real (Google Search Grounding)
-      researchContext = await performWebResearch(topic);
+      researchResult = await performWebResearch(topic);
+      // Serializar el resultado para pasarlo al Writer como string
+      if (researchResult) {
+        researchContext = JSON.stringify({
+          facts: researchResult.facts,
+          places: researchResult.places,
+          sources: researchResult.sources
+        });
+      }
     }
 
     // 1.7. Investigación de Datos en Tiempo Real (Clima/Calidad del Aire)
     let realTimeData = "";
     try {
-      const dataSearch = await performWebResearch("Clima y calidad del aire hoy en Huelva capital");
-      if (dataSearch) {
-        realTimeData = `\nDATOS TIEMPO REAL HUELVA:\n${dataSearch}\n`;
+      const dataSearchResult = await performWebResearch("Clima y calidad del aire hoy en Huelva capital");
+      if (dataSearchResult) {
+        realTimeData = `\nDATOS TIEMPO REAL HUELVA:\n${JSON.stringify(dataSearchResult.facts)}\n`;
         console.log("[DAEMON] Datos tiempo real obtenidos");
       }
     } catch (e) {

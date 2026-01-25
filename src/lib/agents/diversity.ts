@@ -57,7 +57,7 @@ export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
 
   try {
     const feed = await parser.parseURL(randomFeed);
-    const validItems = feed.items.filter(item => {
+    const validItems = feed.items.filter((item: any) => {
       if (!item.title || !item.link) return false;
       const titleLower = item.title.toLowerCase();
       const forbidden = ['muerto', 'fallece', 'accidente', 'herido', 'detenido', 'sucesos', 'luto', 'funeral'];

@@ -420,8 +420,8 @@ CATEGORÍA: "${draft.category}"
 
   try {
     const response = await generateContent(prompt, 0.3);
-    const jsonStart = response?.indexOf('{');
-    const jsonEnd = response?.lastIndexOf('}');
+    const jsonStart = response?.indexOf('{') ?? -1;
+    const jsonEnd = response?.lastIndexOf('}') ?? -1;
 
     if (response && jsonStart !== -1 && jsonEnd !== -1) {
       const cleanJson = response.substring(jsonStart, jsonEnd + 1);

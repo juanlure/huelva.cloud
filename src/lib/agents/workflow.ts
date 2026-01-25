@@ -122,8 +122,10 @@ export async function generateArticle(
     if (!finalTopic) {
       onProgress?.({ step: 'diversity', message: 'Analizando diversidad de contenido...' });
       topicSource = await analyzeDiversity();
-      finalTopic = topicSource.topic;
-      onProgress?.({ step: 'diversity', message: `Tema seleccionado: ${finalTopic}`, data: topicSource });
+      if (topicSource) {
+        finalTopic = topicSource.topic;
+        onProgress?.({ step: 'diversity', message: `Tema seleccionado: ${finalTopic}`, data: topicSource });
+      }
     }
 
     if (!finalTopic) {
@@ -139,7 +141,7 @@ export async function generateArticle(
     const research = await performWebResearch(finalTopic);
     result.research = research || undefined;
 
-    if (research?.warnings?.length > 0) {
+    if (research?.warnings && research.warnings.length > 0) {
       result.warnings.push(...research.warnings);
     }
 
