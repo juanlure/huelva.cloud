@@ -101,7 +101,7 @@ export default async function ArticlePage({ params }: PageProps) {
             {article.excerpt}
           </p>
 
-          <div className="prose prose-lg prose-navy prose-headings:font-display prose-headings:font-bold prose-p:leading-8 prose-p:text-navy/80 hover:prose-a:text-terracotta transition-all">
+          <div className="editorial-content">
             {interactiveType && interactiveData && (
               <div className="my-12 p-1 border-t border-b border-navy/5">
                 <InteractiveContainer type={interactiveType} data={interactiveData} />
@@ -109,9 +109,7 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
 
             {cleanedContent && (
-              <div className="editorial-content">
-                <ArticleRenderer content={cleanedContent} />
-              </div>
+              <ArticleRenderer content={cleanedContent} />
             )}
           </div>
 
