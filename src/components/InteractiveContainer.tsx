@@ -8,6 +8,7 @@ const QuizComponent = dynamic(() => import('./interactive/QuizComponent'));
 const ComparisonCard = dynamic(() => import('./interactive/ComparisonCard'));
 const Checklist = dynamic(() => import('./interactive/Checklist'));
 const Scorecard = dynamic(() => import('./interactive/Scorecard'));
+const Map = dynamic(() => import('./interactive/Map'), { ssr: false });
 
 export default function InteractiveContainer({ type, data }: { type: string, data: any }) {
     if (!data) return null;
@@ -25,6 +26,8 @@ export default function InteractiveContainer({ type, data }: { type: string, dat
             return <Checklist {...data} />;
         case 'scorecard':
             return <Scorecard {...data} />;
+        case 'map':
+            return <Map {...data} />;
         default:
             return null;
     }

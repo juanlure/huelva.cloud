@@ -28,7 +28,7 @@ export default async function Home() {
                 <span>La guía más honesta de Huelva</span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-navy mb-8 tracking-tight leading-[1.1]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-navy mb-8 tracking-tight leading-[1.1] max-w-4xl">
                 Huelva como <span className="text-terracotta">nunca</span> te la habían contado.
               </h1>
 

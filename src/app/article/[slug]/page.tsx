@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight max-w-5xl mx-auto">
             {article.title}
           </h1>
 
