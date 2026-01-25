@@ -2,21 +2,9 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 import { useEffect } from 'react';
 
-// Fix for Leaflet default icon not found in Next.js
-const fixLeafletIcons = () => {
-    // @ts-ignore
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-        iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    });
-};
-
-interface MarkerData {
+interface Marker {
     id: string;
     lat: number;
     lng: number;
@@ -27,7 +15,7 @@ interface MapProps {
     title?: string;
     center?: [number, number];
     zoom?: number;
-    markers?: MarkerData[];
+    markers?: Marker[];
 }
 
 export default function Map({
@@ -38,7 +26,16 @@ export default function Map({
 }: MapProps) {
 
     useEffect(() => {
-        fixLeafletIcons();
+        (async function init() {
+            const L = (await import('leaflet')).default;
+            // @ts-ignore
+            delete L.Icon.Default.prototype._getIconUrl;
+            L.Icon.Default.mergeOptions({
+                iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+            });
+        })();
     }, []);
 
     return (
@@ -58,8 +55,8 @@ export default function Map({
                     style={{ height: '100%', width: '100%' }}
                 >
                     <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     />
                     {markers.map((marker) => (
                         <Marker key={marker.id} position={[marker.lat, marker.lng]}>

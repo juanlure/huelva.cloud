@@ -4,9 +4,8 @@ export const config = {
   matcher: ['/admin/:path*'],
 };
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const basicAuth = req.headers.get('authorization');
-  const url = req.nextUrl;
 
   if (basicAuth) {
     const authValue = basicAuth.split(' ')[1];
@@ -20,7 +19,6 @@ export function middleware(req: NextRequest) {
     }
   }
 
-  url.pathname = '/api/auth';
   return new NextResponse('Auth Required', {
     status: 401,
     headers: {

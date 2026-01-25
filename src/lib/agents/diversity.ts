@@ -1,5 +1,5 @@
 import { supabaseAdmin } from '../supabase';
-import Parser from 'rss-parser';
+const Parser = require('rss-parser');
 
 // Feeds locales de Huelva
 const RSS_FEEDS = [
@@ -39,7 +39,7 @@ const EVERGREEN_TOPICS = [
 ];
 
 export async function analyzeDiversity(): Promise<TopicSuggestion | null> {
-  const parser = new Parser();
+  const parser = new Parser() as any;
 
   // 1. Obtener historial reciente
   const { data: articles } = await supabaseAdmin

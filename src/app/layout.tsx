@@ -1,15 +1,36 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Instrument_Serif, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
+// Premium typography system - avoiding generic Inter/Playfair
+const instrument = Instrument_Serif({
+  subsets: ["latin"],
+  variable: '--font-display',
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  adjustFontFallback: true,
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: '--font-body',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: '--font-mono',
+  weight: ['400', '500'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "Huelva.is | Tu compañero local inteligente",
-  description: "Descubre Huelva de forma auténtica, honesta y directa. Guía local curada con IA y guiada por valores choqueros.",
+  title: "Huelva.is | La guía honesta de Huelva",
+  description: "Descubre Huelva sin turismos. Guía local escrita por choqueros para quienes quieren vivir Huelva de verdad.",
   icons: {
     icon: '/favicon.ico',
   },
@@ -21,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`${inter.variable} ${playfair.variable} font-sans bg-cream text-navy min-h-screen flex flex-col`}>
+    <html lang="es" className="scroll-smooth">
+      <body className={`${instrument.variable} ${dmSans.variable} ${jetbrains.variable} font-body bg-cream text-navy antialiased`}>
         <Header />
         {children}
         <Footer />

@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }: PageProps) {
     <main className="min-h-screen bg-white pt-40 pb-20">
       <article className="max-w-7xl mx-auto px-6">
         {/* Editorial Header - Centered & Clean */}
-        <header className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+        <header className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center space-x-3 mb-8 flex-wrap gap-2">
             <span className="px-4 py-1.5 bg-green-50 text-green-800 text-xs font-bold uppercase tracking-widest rounded-full border border-green-100">
               {article.category}
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-navy leading-[1.1] mb-8 tracking-tight max-w-4xl mx-auto">
             {article.title}
           </h1>
 
@@ -84,21 +84,20 @@ export default async function ArticlePage({ params }: PageProps) {
         </header>
 
         {/* Contained Hero Image */}
-        <div className="max-w-5xl mx-auto mb-20 relative">
-          <div className="aspect-[16/9] w-full relative rounded-3xl overflow-hidden shadow-2xl shadow-navy/5">
+        <div className="max-w-4xl mx-auto mb-20 relative">
+          <div className="aspect-[16/9] w-full relative rounded-2xl overflow-hidden shadow-xl shadow-navy/5">
             <img
               src={article.image || '/images/placeholder.jpg'}
               alt={article.title}
               className="object-cover w-full h-full"
             />
-            {/* Gradient Overlay for texture */}
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent pointer-events-none" />
           </div>
         </div>
 
         {/* Content Column */}
-        <div className="max-w-[720px] mx-auto">
-          <p className="text-2xl md:text-3xl font-display text-navy leading-relaxed mb-12 first-letter:text-5xl first-letter:font-bold first-letter:text-terracotta first-letter:mr-1">
+        <div className="max-w-2xl mx-auto">
+          {/* Excerpt - Serif, centered, elegant */}
+          <p className="text-xl md:text-2xl font-display text-navy leading-relaxed mb-12 text-center italic border-b border-navy/5 pb-10">
             {article.excerpt}
           </p>
 
@@ -117,14 +116,14 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           {/* Footer / Author */}
-          <div className="mt-24 pt-12 border-t border-navy/10">
-            <div className="flex items-center justify-between mb-12">
-              <Link href="/" className="group flex items-center text-navy/60 hover:text-navy transition-colors font-medium">
-                <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          <div className="mt-20 pt-10 border-t border-navy/10">
+            <div className="flex items-center justify-between mb-10">
+              <Link href="/" className="group flex items-center text-navy/60 hover:text-navy transition-colors font-medium text-sm">
+                <ArrowLeft size={18} className="mr-2 group-hover:-translate-x-1 transition-transform" />
                 Volver al inicio
               </Link>
-              <button className="p-4 rounded-full bg-cream hover:bg-terracotta/10 text-navy transition-colors">
-                <Share2 size={20} />
+              <button className="p-3 rounded-full bg-cream hover:bg-terracotta/10 text-navy transition-colors">
+                <Share2 size={18} />
               </button>
             </div>
             <AuthorBox author={authorData} />

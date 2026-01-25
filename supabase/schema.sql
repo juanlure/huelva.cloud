@@ -6,11 +6,13 @@ create table public.articles (
   slug text unique not null,
   title text not null,
   excerpt text,
-  content text, 
+  content text,
   category text not null,
-  image_url text, 
+  image_url text,
   author text default 'Huelva.is AI',
   is_ai boolean default true,
+  tags text[] default '{}',
+  featured boolean default false,
   published_at timestamp with time zone default now(),
   created_at timestamp with time zone default now()
 );
