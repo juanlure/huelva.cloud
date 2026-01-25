@@ -28,20 +28,20 @@ export default async function Home() {
                 <span>La guía más honesta de Huelva</span>
               </div>
 
-              <h1 className="text-hero font-display font-bold text-navy mb-8">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-navy mb-8 tracking-tight leading-[1.1]">
                 Huelva como <span className="text-terracotta">nunca</span> te la habían contado.
               </h1>
 
-              <p className="text-xl text-navy/70 leading-relaxed mb-10 max-w-2xl">
+              <p className="text-lg md:text-xl text-navy/70 leading-relaxed mb-10 max-w-2xl">
                 Sin rodeos, sin trampas para turistas. Solo lo mejor de nuestra tierra
                 contado por gente que sabe lo que es un buen plato de chocos.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <a href="#articulos" className="btn-primary">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#articulos" className="btn-primary text-center justify-center">
                   Empezar a leer
                 </a>
-                <a href="#test" className="px-8 py-4 rounded-full border border-navy/20 font-medium hover:bg-white transition-all">
+                <a href="#test" className="px-8 py-4 rounded-full border border-navy/20 font-medium hover:bg-white transition-all text-center">
                   ¿Eres Choquero o Guiri?
                 </a>
               </div>
