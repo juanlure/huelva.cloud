@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Coffee, Info, Sparkles, Clock, Droplets, Sun, Cup } from 'lucide-react';
+import { Coffee, Info, Sparkles, Clock, Droplets, Sun, CupSoda } from 'lucide-react';
 
 // Imágenes de café - Unsplash (free stock photos)
 const COFFEE_IMAGES = {
@@ -332,7 +332,7 @@ export default function CoffeeTranslator() {
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Cup size={16} className="text-amber-600 mt-0.5" />
+                        <CupSoda size={16} className="text-amber-600 mt-0.5" />
                         <div>
                           <p className="font-medium text-stone-800">Cómo pedirlo</p>
                           <p className="text-stone-600 text-sm">{selectedCoffee.instructions}</p>
