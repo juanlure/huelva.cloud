@@ -127,9 +127,7 @@ export default function GuidesPage() {
                     </div>
 
                     {/* Icon */}
-                    <div className="absolute bottom-4 left-4 w-14 h-14 rounded-2xl bg-gradient-to-br flex items-center justify-center text-white shadow-lg"
-                         style={{ backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))` }}
-                         className={guide.color}>
+                    <div className={`absolute bottom-4 left-4 w-14 h-14 rounded-2xl bg-gradient-to-br flex items-center justify-center text-white shadow-lg ${guide.color}`}>
                       {guide.icon}
                     </div>
                   </div>
