@@ -400,7 +400,7 @@ export default function WeatherWidget({ compact = false, variant = 'default' }: 
                     <p className="text-xs text-slate-400 mb-3">{formatDate(date)}</p>
 
                     <div className="text-terracotta mb-3 text-slate-600 flex justify-center">
-                      {React.cloneElement(dayWeather.icon as React.ReactElement, { size: 28 })}
+                      {React.cloneElement(dayWeather.icon as any, { size: 28 })}
                     </div>
 
                     <div className="flex items-center gap-2 text-sm">
