@@ -2,7 +2,16 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Star, Coffee, Waves, Trees, Building2, Navigation, X, Filter } from 'lucide-react';
+import { MapPin, Star, Coffee, Waves, Trees, Building2, Navigation, X, Filter, Camera } from 'lucide-react';
+
+// Imágenes reales de Huelva - Unsplash (Andalucía/Huelva area)
+const NEIGHBORHOOD_IMAGES = {
+  center: 'https://images.unsplash.com/photo-1559599746-8823b38544c6?q=80&w=1200', // Andalusian old town
+  reinaVictoria: 'https://images.unsplash.com/photo-1578436296977-ebdb117f5547?q=80&w=1200', // Spanish coastal city
+  paseo: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200', // Seaside promenade
+  moret: 'https://images.unsplash.com/photo-1578436890157-4ea7e8acb577?q=80&w=1200', // Spanish city market
+  source: 'Unsplash - Free stock photos'
+};
 
 interface Neighborhood {
   id: string;
@@ -22,6 +31,7 @@ interface Neighborhood {
   bestFor: string[];
   highlights: string[];
   color: string;
+  image: string;
 }
 
 const NEIGHBORHOODS: Neighborhood[] = [
@@ -36,7 +46,8 @@ const NEIGHBORHOODS: Neighborhood[] = [
     transport: ['Todo cerca', 'Bus L1-L4'],
     bestFor: ['Primera visita', 'Amantes de la historia', 'Foodies'],
     highlights: ['Catedral', 'Plaza de las Monjas', 'Casa Colón', 'Barrio de la Merced'],
-    color: 'from-amber-500 to-orange-500'
+    color: 'from-amber-500 to-orange-500',
+    image: NEIGHBORHOOD_IMAGES.center
   },
   {
     id: 'reina-victoria',
@@ -49,7 +60,8 @@ const NEIGHBORHOODS: Neighborhood[] = [
     transport: ['20 min andando', 'Bus L2', 'Taxi ~6€'],
     bestFor: ['Amantes de la arquitectura', 'Fotógrafos', 'Quienes buscan tranquilidad'],
     highlights: ['Casas británicas', 'Vistas al río', 'BIC desde 2002', 'Atardeceres'],
-    color: 'from-purple-500 to-pink-500'
+    color: 'from-purple-500 to-pink-500',
+    image: NEIGHBORHOOD_IMAGES.reinaVictoria
   },
   {
     id: 'paseo',
@@ -62,7 +74,8 @@ const NEIGHBORHOODS: Neighborhood[] = [
     transport: ['10 min andando', 'Bus L2-L4'],
     bestFor: ['Paseos', 'Deportistas', 'Familias', 'Atardeceres'],
     highlights: ['Vistas al Muelle del Tinto', 'Monumento a Colón', 'Zonas de ejercicio', 'Chiringuitos'],
-    color: 'from-cyan-500 to-blue-500'
+    color: 'from-cyan-500 to-blue-500',
+    image: NEIGHBORHOOD_IMAGES.paseo
   },
   {
     id: 'moret',
@@ -75,7 +88,8 @@ const NEIGHBORHOODS: Neighborhood[] = [
     transport: ['15 min andando', 'Bus L1-L3'],
     bestFor: ['Viajeros con presupuesto', 'Quienes buscan autenticidad', 'Compra local'],
     highlights: ['Mercado de Abastos', 'Comercios locales', 'Bares de precíos honestos'],
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-green-500 to-emerald-500',
+    image: NEIGHBORHOOD_IMAGES.moret
   },
   {
     id: 'las-colombinas',
@@ -88,7 +102,8 @@ const NEIGHBORHOODS: Neighborhood[] = [
     transport: ['En autobús', 'Taxi ~8€', 'Coche recomendado'],
     bestFor: ['Compras', 'Estancias largas', 'Familias'],
     highlights: ['Centro comercial', 'Zona nueva', 'Aparcamiento fácil'],
-    color: 'from-stone-500 to-zinc-500'
+    color: 'from-stone-500 to-zinc-500',
+    image: NEIGHBORHOOD_IMAGES.moret
   },
   {
     id: 'polvorin',
@@ -101,7 +116,8 @@ const NEIGHBORHOODS: Neighborhood[] = [
     transport: ['Bus L4', 'Coche recomendado'],
     bestFor: ['Presupuesto ajustado', 'Estancias largas', 'Quienes buscan tranquilidad'],
     highlights: ['Zona residencial', 'Precios bajos', 'Autenticidad'],
-    color: 'from-lime-500 to-green-500'
+    color: 'from-lime-500 to-green-500',
+    image: NEIGHBORHOOD_IMAGES.moret
   },
 ];
 
@@ -246,10 +262,13 @@ export default function NeighborhoodsGuide() {
                 onClick={() => setSelectedNeighborhood(hood)}
                 className="bg-white rounded-3xl overflow-hidden border border-stone-200 hover:border-amber-400 hover:shadow-xl transition-all cursor-pointer group"
               >
-                {/* Header */}
-                <div className={`h-32 bg-gradient-to-br ${hood.color} p-6 relative`}>
-                  <div className="absolute inset-0 bg-black/10" />
-                  <div className="relative z-10">
+                {/* Header with Image */}
+                <div className="h-32 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${hood.image})` }}>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${hood.color}/70`} />
+                    <div className="absolute inset-0 bg-black/10" />
+                  </div>
+                  <div className="relative z-10 h-full">
                     <div className="w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center text-3xl font-bold text-stone-800 mb-2 group-hover:scale-110 transition-transform">
                       {hood.letter}
                     </div>
@@ -338,25 +357,31 @@ export default function NeighborhoodsGuide() {
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-auto"
             >
-              {/* Header */}
-              <div className={`h-40 bg-gradient-to-br ${selectedNeighborhood.color} p-8 relative`}>
+              {/* Header with Image */}
+              <div className="h-48 relative overflow-hidden">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${selectedNeighborhood.image})` }}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${selectedNeighborhood.color}/80`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </div>
                 <button
                   onClick={() => setSelectedNeighborhood(null)}
-                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white"
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white z-10"
                 >
                   <X size={20} />
                 </button>
 
-                <div className="flex items-end gap-4">
-                  <div className="w-20 h-20 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center text-4xl font-bold text-stone-800">
-                    {selectedNeighborhood.letter}
-                  </div>
-                  <div className="text-white">
-                    <h2 className="text-3xl font-bold">{selectedNeighborhood.name}</h2>
-                    <p className="text-white/80 flex items-center gap-2">
-                      <Navigation size={16} />
-                      {selectedNeighborhood.distance}
-                    </p>
+                <div className="relative z-10 h-full flex items-end p-8">
+                  <div className="flex items-end gap-4">
+                    <div className="w-20 h-20 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center text-4xl font-bold text-stone-800">
+                      {selectedNeighborhood.letter}
+                    </div>
+                    <div className="text-white">
+                      <h2 className="text-3xl font-bold">{selectedNeighborhood.name}</h2>
+                      <p className="text-white/80 flex items-center gap-2">
+                        <Navigation size={16} />
+                        {selectedNeighborhood.distance}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -431,6 +456,15 @@ export default function NeighborhoodsGuide() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Image Source */}
+      <div className="container pb-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-xs text-stone-500">
+            Imágenes: {NEIGHBORHOOD_IMAGES.source}
+          </p>
+        </div>
+      </div>
 
       {/* Author Note */}
       <div className="container pb-12">
