@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
-import WeatherWidget from '@/components/WeatherWidget';
 import { ArrowRight, TrendingUp, Compass, Clock, Users, Sparkles } from 'lucide-react';
 import TrendingLabel from '@/components/ui/TrendingLabel';
 
@@ -146,30 +145,6 @@ export default async function Home() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in delay-600">
           <div className="w-6 h-10 rounded-full border-2 border-navy-20 flex items-start justify-center p-2">
             <div className="w-1 h-2 bg-terracotta rounded-full animate-bounce" />
-          </div>
-        </div>
-      </section>
-
-      {/* Weather Section */}
-      <section className="editorial-section bg-sand">
-        <div className="container">
-          <div className="max-w-content mx-auto">
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3">
-                <Clock size={20} className="text-terracotta" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                  El tiempo ahora
-                </span>
-              </div>
-              <Link
-                href="/tiempo"
-                className="text-sm text-terracotta hover:underline flex items-center gap-1"
-              >
-                Ver previsión 7 días
-                <ArrowRight size={14} />
-              </Link>
-            </div>
-            <WeatherWidget variant="card" />
           </div>
         </div>
       </section>
