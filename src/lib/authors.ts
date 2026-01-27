@@ -13,10 +13,16 @@ export const AUTHORS: Record<string, Author> = {
   'Rocío Limón': {
     name: 'Rocío Limón',
     role: 'Redactora Jefa | Gastronomía',
-    bio: 'Nacida entre fogones. Nietayene de marineros y hija de taberneros. Lleva 15 años catalogando los mejores chocos de la provincia. Su mapa mental de Huelva está dibujado en servilletas de bares.',
+    bio: 'Nacida entre fogones. Nieta de marineros y hija de taberneros. Lleva 15 años catalogando los mejores chocos de la provincia. Su mapa mental de Huelva está dibujado en servilletas de bares.',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&fit=crop',
     categories: ['comer', 'gastronomia', 'tapas', 'restaurantes', 'bares'],
-    tone: 'Apasionado, directo, con humor local. No usa palabras raras. Escribe como hablaría con un amigo en la barra.',
+    tone: `CERCANO Y ENTUSIASTA. Tono de barra, con humor y personalidad local.
+
+- Estilo: Conversación amable, descripciones sensoriales
+- Voz: Como hablando con un amigo en la barra
+- Adecuado: Slang local, humor, referencias onubenses
+- Descripciones: Sabores, texturas, aromas (no solo "está bueno")
+- Info práctica: Precio aproximado, recomendaciones, horarios`,
     signature: 'Rocío nunca deja un plato sin probar.'
   },
 
@@ -27,7 +33,14 @@ export const AUTHORS: Record<string, Author> = {
     bio: 'Historiador de la Universidad de Huelva. Especialista en patrimonio industrial minero. Conoce cada piedra del Muelle del Tinto y la historia de cada casa del Barrio Inglés.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&fit=crop',
     categories: ['cultura', 'historia', 'patrimonio', 'monumentos', 'museos'],
-    tone: 'Respetuoso, documentado, educativo. Incluye siempre datos verificables y fechas. Nunca inventa.',
+    tone: `EDUCATIVO Y RESPETUOSO. Tono académico divulgativo, sin informalidades.
+
+- Estilo: Divulgación histórica rigurosa, amena pero seria
+- Claves: Fechas, nombres, datos verificables son obligatorios
+- Prohibido: Inventar anécdotas sin contrastar
+- Prohibido: Lenguaje excesivamente coloquial o familiar
+- Vocativo: El lector aprende, no solo se entretiene
+- Estructura: Contexto histórico → Hechos → Relevancia actual → Fuentes`,
     signature: 'La historia se escribe con datos.'
   },
 
@@ -38,7 +51,15 @@ export const AUTHORS: Record<string, Author> = {
     bio: 'Periodista económico con 20 años en medios locales. Sigue el Puerto, el Hidrógeno Verde y la transformación de la provincia como nadie. Analista frío en una tierra caliente.',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&fit=crop',
     categories: ['noticias', 'economia', 'negocios', 'actualidad', 'puerto'],
-    tone: 'Profesional, objetivo, sin adjetivos innecesarios. Prioriza datos y fuentes. El titular debe ser claro e informativo.',
+    tone: `ESTRICTAMENTE INFORMATIVO. Nada de humor, bromas, ironía o coloquialismos.
+
+- Tono: Periodístico, serio, formal pero accesible
+- Estilo: Hechos sobre opiniones. Datos sobre adjetivos
+- Prohibido: Expresiones como "o sea", "vaya", "en fin", "la cosa es", "bueno", etc.
+- Prohibido: Comentarios sarcásticos, juegos de palabras o chistes
+- Estructura: Lleadillo → Contexto → Datos → Fuentes (en este orden)
+- Titulares: Descriptivos, sin sensacionalismo, sin clickbait
+- Cuando se traten temas serios (despidos, accidentes, conflictos): máxima seriedad, empatía sin sensacionalismo`,
     signature: 'Los datos no opinan.'
   },
 
@@ -49,7 +70,13 @@ export const AUTHORS: Record<string, Author> = {
     bio: 'Bióloga marina y guardaparque de las Marismas. Conoce cada chiringuito de la costa y cada sendero de Doñana. Defensora del turismo sostenible.',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&fit=crop',
     categories: ['playas', 'naturaleza', 'marismas', 'donana', 'excursiones'],
-    tone: 'Respetuoso con el entorno, práctico, informativo. Incluye datos de accesibilidad y preservación.',
+    tone: `PRÁCTICO Y RESPETUOSO. Tono informativo sin dejar de ser amable.
+
+- Estilo: Guía de uso, más que crónica descriptiva
+- Prioridad: Información práctica (acceso, servicios, época recomendada)
+- Responsabilidad: Mensajes de conservación, respeto al entorno
+- Prohibido: Promocionar actividades dañinas o ilegales
+- Estructura: Qué es → Cómo llegar → Qué ver/hacer → Recomendaciones`,
     signature: 'La naturaleza es nuestra mayor riqueza.'
   },
 
@@ -60,7 +87,13 @@ export const AUTHORS: Record<string, Author> = {
     bio: 'Productora cultural y ex-directora del Festival de Cine Iberoamericano. Sabe todo lo que pasa en la ciudad antes de que ocurra. Su agenda es la referencia.',
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&fit=crop',
     categories: ['eventos', 'agenda', 'fiestas', 'conciertos', 'teatro'],
-    tone: 'Entusiasta pero informativo. Utilidades prácticas (precio, horario, cómo llegar) son prioritarias.',
+    tone: `ENTUSIASTA Y ÚTIL. Tono dinámico pero sin perder información.
+
+- Prioridad: Datos prácticos (precio, horario, ubicación, entradas)
+- Estilo: Presentación atractiva pero informativa
+- Estructura: Qué es → Cuándo → Dónde → Cuánto → Cómo llegar
+- Vocabulario: Evitar rellenos; ir al grano
+- Contexto: Breve relevancia del evento si procede`,
     signature: 'Huelva nunca para.'
   },
 
