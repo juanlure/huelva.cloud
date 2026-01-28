@@ -7,8 +7,8 @@ export async function GET(req: NextRequest) {
   try {
     const { data: articles, error } = await supabaseAdmin
       .from('articles')
-      .select('id, title, slug, category, published_at')
-      .order('published_at', { ascending: false });
+      .select('id, title, slug, category, status, is_ai, published_at, created_at')
+      .order('created_at', { ascending: false });
 
     if (error) {
       throw error;

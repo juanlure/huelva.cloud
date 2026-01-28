@@ -201,7 +201,8 @@ export async function GET(req: NextRequest) {
         category: finalDraft.category,
         image_url: imageUrl,
         author: finalDraft.author,
-        is_ai: true
+        is_ai: true,
+        status: 'pending_review' // Cola de revisión pre-publicación
       });
       error = res.error;
     }
@@ -211,8 +212,8 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ status: 'error', error: error.message }, { status: 500 });
     }
 
-    await logAgentAction('Daemon', 'Published', { slug: finalDraft.slug, title: finalDraft.title });
-    return NextResponse.json({ status: 'published', slug: draft.slug });
+    await logAgentAction('Daemon', 'Queued for Review', { slug: seoData.slug, title: finalDraft.title });
+    return NextResponse.json({ status: 'queued', slug: seoData.slug });
 
   } catch (err: any) {
     await logAgentAction('Daemon', 'Critical Failure', { error: err.message });

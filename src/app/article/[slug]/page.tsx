@@ -70,6 +70,14 @@ export default async function ArticlePage({ params }: PageProps) {
             <Clock size={14} />
             {parseInt(article.readTime) || 5} min
           </span>
+          {article.isAi && (
+            <>
+              <span>•</span>
+              <span className="text-xs text-muted-foreground opacity-70">
+                Generado con asistencia de IA
+              </span>
+            </>
+          )}
         </div>
 
         <h1 className={styles.articleTitle}>

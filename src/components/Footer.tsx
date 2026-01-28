@@ -60,6 +60,16 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* AI Transparency Badge */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-terracotta/10 rounded-full">
+            <span className="w-2 h-2 bg-terracotta rounded-full animate-pulse" />
+            <span className="text-xs text-terracotta font-medium">
+              Curado con IA. Guiado por valores onubenses.
+            </span>
+          </div>
+        </div>
+
         {/* Bottom Section */}
         <div className="pt-10 border-t border-navy/10 flex flex-col md:flex-row justify-between items-center text-sm text-navy/40">
           <p>© {new Date().getFullYear()} Huelva.is · Hecho con ❤️ y 🤖 en Huelva.</p>

@@ -37,27 +37,20 @@ export async function getArticles(category?: string): Promise<Article[]> {
   let query = supabase
     .from('articles')
     .select('*')
+    .eq('status', 'published')
     .order('published_at', { ascending: false });
 
   if (category) {
-    // Buscar case-insensitive en una columna normal requiere configuración extra o ilike
-    // Por simplicidad en demo, asumimos que 'Category' se guarda capitalizado correctamente en DB
-    // O usamos ilike si category es texto entrante
-    query = query.ilike('category', category); 
+    query = query.ilike('category', category);
   }
 
-  // Forzar que la query no cachee (para ver resultados al instante en demo)
-  const { data, error } = await query; // Supabase client handles cache differently usually, but let's check config
-
-  // Ojo: En Next.js App Router, la cache depende de cómo se llame a esta función.
-  // Si es un Server Component, es estático por defecto.
+  const { data, error } = await query;
 
   if (error) {
     console.error("Error fetching articles:", error);
     return [];
   }
-  
-  // Return typed data
+
   return (data as ArticleDB[]).map(mapArticle);
 }
 
@@ -66,6 +59,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | undefine
     .from('articles')
     .select('*')
     .eq('slug', slug)
+    .eq('status', 'published')
     .single();
 
   if (error || !data) {

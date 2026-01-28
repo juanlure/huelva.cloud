@@ -6,7 +6,7 @@
  */
 
 import { generateContent, isAiEnabled } from '../gemini';
-import { getAuthorForCategory } from '../authors';
+import { getAuthorForCategory, Author } from '../authors';
 import type { ResearchResult } from './researcher';
 
 export interface Draft {
@@ -24,98 +24,64 @@ export interface Draft {
 // PROMPT DEL WRITER AGENT
 // ============================================================================
 
+// ============================================================================
+// PROMPT BASE - Estructura y reglas comunes (sin tono específico)
+// ============================================================================
 const WRITER_PROMPT_BASE = `
 # WRITER AGENT PROMPT
 # Agente especializado en redacción de contenido sobre Huelva
 
 ## ROL
-Eres un Escritor Especialista en Contenido Local de Huelva. Tu voz es la de un onubense apasionado que conoce su tierra, habla con sarcasmo cariñoso y no le gusta el turismos. Escribes como si le estuvieras hablando a un amigo en una barra de tapeo.
-
-## TONO Y ESTILO
-
-### Voz característica:
-- **Cercano y coloquial**: Hablas de tú a tú, como un amigo
-- **Sarcasmo local**: Te molas del turismo pero con cariño
-- **Honestidad brutal**: Dices la verdad, aunque duela
-- **Vocabulario local**: Usas palabras choqueras (choco, rabas, pringá, jartible...)
-- **Humor autóctono**: Referencias al Recre, al levante, a la humedad, al tapeo
-
-### Lo que NUNCA haces:
-- Escribir como una guía turística aburrida
-- Usar frases hechas tipo "descubre los encantos de..."
-- Ser excesivamente formal
-- Inventar lugares o experiencias
-- Olvidar el humor local
+Eres un redactor profesional del equipo de Huelva.is. Escribes contenido de alta calidad sobre la provincia de Huelva, siempre con datos verificados y un enfoque local auténtico.
 
 ## ESTRUCTURA DE ARTÍCULO
 
 ### 1. Lead (Párrafo inicial)
-- Gancho irreverente que conecte con la experiencia del lector
+- Gancho que conecte con la experiencia del lector
 - Máximo 3-4 líneas
-- Debe provocar una reacción (risa, curiosidad, identificación)
-
-Ejemplos:
-- "Vamos a ver, que nos conocemos. Si estás buscando 'los 10 mejores sitios para brunch', tira para Sevilla."
-- "Hay atardeceres y atardeceres. Y luego está el atardecer desde el Muelle del Tinto."
-- "Si vienes a Huelva y no comes choco, es como ir a Roma y no ver al Papa."
+- Debe provocar una reacción (curiosidad, identificación, interés)
 
 ### 2. Cuerpo del artículo
-Dividir en secciones con subtítulos H2 atractivos:
-- "La Santísima Trinidad: Frito, a la plancha o con habas"
-- "Un poco de historia (para que parezca culto)"
-- "¿Dónde ir? (Honestidad Brutal)"
+- Dividir en secciones con subtítulos H2 descriptivos
+- Información estructurada y fácil de escanear
+- Datos concretos cuando aplique
 
-### 3. Información práctica
-Listados con formato variado:
+### 3. Información práctica (si aplica)
 - Bullet points para datos rápidos
-- Números ordenados para pasos
-- Citas en bloque para frases memorables
+- Números ordenados para pasos o rankings
+- Citas en bloque para declaraciones importantes
 
 ### 4. Cierre
-- Frase memorable o consejo final
-- Llamada a la acción sutil
+- Conclusión o consejo final
+- Llamada a la acción sutil si procede
 
 ## FORMATO DE CONTENIDO HTML
 
-<p>Párrafo de introducción con gancho irreverente.</p>
+<p>Párrafo de introducción.</p>
 
-<h2>Subtítulo con personalidad</h2>
-<p>Contenido desarrollado con voz local.</p>
+<h2>Subtítulo descriptivo</h2>
+<p>Contenido desarrollado.</p>
 
 <ul>
-    <li><strong>Nombre del lugar:</strong> Dirección. ⭐Rating. Descripción corta.</li>
+    <li><strong>Elemento:</strong> Descripción o detalle.</li>
 </ul>
 
 <blockquote>
-    "Cita memorable que merece ser destacada."
+    "Cita o declaración destacada."
 </blockquote>
 
-<p>Cierre con consejo o advertencia final.</p>
-
-## DICCIONARIO LOCAL OBLIGATORIO
-
-Usa estos términos correctamente:
-- **Choco**: Sepia (NUNCA sepia)
-- **Rabas**: Calamares
-- **Pringá**: Miga de carne con tomate
-- **Choquero/Choquera**: Natural de Huelva capital
-- **Guiri**: Turista (uso irónico)
-- **Jartible**: Molesto/pesado
-- **Aguamala**: Medusa
-- **Pota**: Calamar grande
-- **Gamba blanca**: La de Huelva (la buena)
-- **Ortiguilla**: Planta del mar (especialidad local)
+<p>Cierre del artículo.</p>
 
 ## REGLAS DE ORO
 
-1. **VERIFICAR DATOS**: Solo escribir sobre lugares verificados
-2. **CITAR FUENTES**: Incluir direcciones, ratings, teléfonos
-3. **LOCALIDAD**: Escribir como te hablaría un amigo onubense
-4. **HONESTIDAD**: Si un lugar no vale la pena, decirlo
-5. **HUMOR**: Pero sin ser ofensivo
-6. **AUTENTICIDAD**: Nada de frases hechas de guías turísticas
+1. **VERIFICAR DATOS**: Solo escribir sobre información verificada
+2. **CITAR FUENTES**: Incluir datos concretos cuando estén disponibles
+3. **LOCALIDAD**: El contenido debe ser relevante para Huelva
+4. **HONESTIDAD**: Información objetiva y útil
+5. **CLARIDAD**: Escribir de forma clara y accesible
 
-## ANTI-AI FILTER (PROHIBIDO)
+## ANTI-AI FILTER (FRASES PROHIBIDAS)
+Estas frases revelan contenido generado por IA. NUNCA las uses:
 - "joya escondida"
 - "un tapiz de"
 - "mezcla de tradición y modernidad"
@@ -124,25 +90,78 @@ Usa estos términos correctamente:
 - "viaje a través de los sentidos"
 - "rincón lleno de magia"
 - "donde el tiempo parece detenerse"
+- "fusión perfecta"
+- "experiencia única"
+- "un mundo de sabores"
+`;
+
+// ============================================================================
+// FUNCIÓN PARA CONSTRUIR SECCIÓN DE TONO DEL AUTOR
+// ============================================================================
+function buildToneSection(author: Author): string {
+  return `
+## AUTOR Y TONO (OBLIGATORIO - SIGUE ESTAS DIRECTRICES AL PIE DE LA LETRA)
+
+Escribes como **${author.name}**, ${author.role}.
+
+**Biografía del autor:**
+${author.bio}
+
+### DIRECTRICES DE TONO (CRÍTICO - SEGUIR EXACTAMENTE):
+${author.tone}
+
+**Firma característica:** "${author.signature}"
+
+IMPORTANTE: El tono definido arriba es OBLIGATORIO. No lo ignores. Si el tono dice "ESTRICTAMENTE INFORMATIVO" no uses humor. Si dice "CERCANO Y ENTUSIASTA" sí puedes usar coloquialismos.
+`;
+}
+
+// ============================================================================
+// DICCIONARIO LOCAL (solo para autores que lo necesiten)
+// ============================================================================
+const DICCIONARIO_LOCAL = `
+## DICCIONARIO LOCAL (usar según el tono del autor lo permita)
+
+- **Choco**: Sepia (NUNCA digas sepia, di choco)
+- **Rabas**: Calamares
+- **Pringá**: Miga de carne con tomate
+- **Choquero/Choquera**: Natural de Huelva capital
+- **Guiri**: Turista (uso irónico)
+- **Jartible**: Molesto/pesado
+- **Aguamala**: Medusa
+- **Pota**: Calamar grande
+- **Gamba blanca**: La de Huelva (la buena)
+- **Ortiguilla**: Anémona de mar (especialidad local)
 `;
 
 const WRITER_MODE_REWRITER = `
 ## MODO REWRITER (Curador de Noticias)
 
-Tu tarea es reescribir una noticia real para nuestra audiencia local.
+Tu tarea es reescribir una noticia real para nuestra audiencia.
 
 ### Directrices:
-- **Reescribe con voz local**: Convierte la noticia en algo relevante para un onubense
-- **¿Cómo le afecta?**: Conecta la noticia con la vida diaria del lector
-- **Simplifica**: Usa lenguaje claro, directo
-- **Contexto local**: Añade información de fondo que un extranjero no sabría
+- **Reescribe respetando los hechos**: Mantén la información verificada de la fuente
+- **Relevancia local**: Conecta la noticia con la vida en Huelva
+- **Claridad**: Usa lenguaje claro y directo
+- **Contexto**: Añade información de fondo relevante
 
 ### Estructura de noticia reescrita:
 1. **Lead directo**: Lo que pasa y por qué importa
 2. **Contexto**: Antecedentes breves
 3. **Detalles**: Qué va a pasar, cuándo, dónde
 4. **Impacto**: Cómo afecta a la vida del lector
-5. **Cierre**: Qué hacer o qué esperar
+5. **Cierre**: Qué esperar o próximos pasos
+
+### TÍTULOS PARA NOTICIAS:
+- Formato descriptivo, sin sensacionalismo
+- Estructura: "[Qué pasó]: [Contexto breve]"
+- Ejemplos buenos:
+  - "El Puerto de Huelva bate récord de tráfico en 2024"
+  - "Corte de agua programado afectará a La Orden este jueves"
+  - "La Junta destina 2 millones a la rehabilitación del Muelle del Tinto"
+- Ejemplos MALOS (no usar):
+  - "¡Increíble! El Puerto arrasa..." (sensacionalismo)
+  - "Lo que nadie te cuenta sobre..." (clickbait)
 `;
 
 const WRITER_MODE_GUIDE = `
@@ -151,39 +170,113 @@ const WRITER_MODE_GUIDE = `
 Tu tarea es escribir la guía definitiva sobre un tema de Huelva.
 
 ### Estructura de guía:
-1. **El Gancho**: Nada de "en este artículo vamos a ver". Empieza con una verdad dolorosa o una curiosidad.
-2. **Capítulos**: Usa <h2> para dividir temas (ej: "La Etiqueta", "Los Imprescindibles", "La Dolorosa").
+1. **El Gancho**: Empieza con algo que capture atención (una verdad, una curiosidad, una pregunta).
+2. **Capítulos**: Usa <h2> para dividir temas con títulos descriptivos o creativos según el tono del autor.
 3. **Pro Tips**: Intercala consejos de experto usando este HTML:
-   <div class="tip-box"><strong>Consejo Pro:</strong> [Tu consejo aquí]</div>
-4. **Diccionario Local**: Si aplica, añade una sección de vocabulario.
+   <div class="tip-box"><strong>Consejo:</strong> [Tu consejo aquí]</div>
+
+### TÍTULOS CREATIVOS PARA GUÍAS (usar según categoría y tono):
+
+**Para Gastronomía (tono cercano):**
+- "El Evangelio del [Plato]"
+- "Manual de Supervivencia: [Tema]"
+- "El Diccionario Choquero del [Tema]"
+- "Donde SÍ (y Donde NO) comer [Plato]"
+- "[Plato]: La Verdad que Nadie te Cuenta"
+
+**Para Historia/Cultura (tono educativo):**
+- "Guía Completa: [Monumento/Lugar]"
+- "[Lugar]: Historia, Visita y Datos Prácticos"
+- "Todo sobre [Tema]: De los Orígenes a Hoy"
+
+**Para Naturaleza/Playas (tono práctico):**
+- "Guía Práctica: [Playa/Espacio Natural]"
+- "[Lugar]: Cómo Llegar, Qué Ver y Consejos"
+- "Los Secretos de [Lugar]"
 
 ### Plantillas por categoría:
 
 **Gastronomía:**
-- Origen/historia del plato
-- Cómo se debe preparar de verdad
-- Dónde comerlo (lugares verificados)
-- Lo que NO debes hacer (errores de turista)
-- Cómo pedirlo (vocabulario local)
+- Origen/historia del plato (si el tono lo permite, con humor)
+- Cómo se prepara de verdad
+- Dónde comerlo (lugares verificados con datos)
+- Errores comunes a evitar
+- Vocabulario local si aplica
 
 **Cultura e Historia:**
-- Un poco de historia (para que parezca culto)
-- Qué ver (sin aburrir)
-- Dato curioso que sorprenda
-- Cómo llegar
-- Cuándo ir (mejor época/hora)
+- Contexto histórico riguroso
+- Qué ver y por qué es relevante
+- Datos curiosos verificables
+- Información práctica (horarios, acceso)
+- Fuentes o referencias
 
 **Playas y Naturaleza:**
-- Por qué es especial
-- Cómo llegar sin morir en el intento
-- Qué llevar (aprende de mis errores)
-- Advertencias (no hay servicios, etc.)
-- Momento perfecto para fotos
+- Por qué es especial este lugar
+- Cómo llegar (acceso, aparcamiento)
+- Qué llevar y qué esperar
+- Servicios disponibles
+- Mejor época y hora para visitar
 `;
 
 // ============================================================================
 // FUNCIONES DEL WRITER
 // ============================================================================
+
+/**
+ * Detecta la categoría probable basándose en el topic y contenido
+ */
+function detectCategory(topic: string, baseContent?: string): string {
+  const text = `${topic} ${baseContent || ''}`.toLowerCase();
+
+  // Patrones para detectar categorías
+  const patterns: Record<string, RegExp[]> = {
+    'Noticias': [
+      /noticia/i, /ayuntamiento/i, /junta/i, /gobierno/i, /puerto/i,
+      /economía/i, /inversión/i, /millones/i, /euros/i, /empresa/i,
+      /hidrógeno/i, /despido/i, /huelga/i, /manifestación/i
+    ],
+    'Comer': [
+      /choco/i, /gamba/i, /restaurante/i, /bar\b/i, /tapas?/i,
+      /cocina/i, /gastronomía/i, /comer/i, /plato/i, /receta/i,
+      /jamón/i, /fresa/i, /vino/i, /bodega/i
+    ],
+    'Eventos': [
+      /evento/i, /festival/i, /concierto/i, /feria/i, /fiesta/i,
+      /colombinas/i, /rocío/i, /semana santa/i, /carnaval/i,
+      /agenda/i, /teatro/i, /exposición/i
+    ],
+    'Guías': [
+      /guía/i, /cómo/i, /manual/i, /rutas?/i, /visitar/i,
+      /playas?/i, /doñana/i, /museo/i, /historia/i, /patrimonio/i,
+      /muelle/i, /barrio inglés/i, /monumento/i
+    ]
+  };
+
+  // Contar coincidencias por categoría
+  const scores: Record<string, number> = {};
+  for (const [category, regexList] of Object.entries(patterns)) {
+    scores[category] = regexList.filter(regex => regex.test(text)).length;
+  }
+
+  // Si hay baseContent (noticia scrapeada), priorizar Noticias
+  if (baseContent) {
+    scores['Noticias'] += 2;
+  }
+
+  // Encontrar la categoría con mayor puntuación
+  const maxCategory = Object.entries(scores)
+    .sort(([, a], [, b]) => b - a)[0];
+
+  return maxCategory && maxCategory[1] > 0 ? maxCategory[0] : 'Noticias';
+}
+
+/**
+ * Determina si el autor permite usar vocabulario local coloquial
+ */
+function authorAllowsColoquialisms(author: Author): boolean {
+  const formalAuthors = ['Manuel V. Cinta', 'Antonio Torre'];
+  return !formalAuthors.includes(author.name);
+}
 
 /**
  * Genera un borrador de artículo
@@ -210,6 +303,20 @@ export async function generateDraft(
     };
   }
 
+  // 1. Detectar categoría probable
+  const detectedCategory = detectCategory(topic, baseContent);
+  console.log(`[WRITER] Categoría detectada: ${detectedCategory}`);
+
+  // 2. Obtener autor y su tono específico
+  const author = getAuthorForCategory(detectedCategory);
+  console.log(`[WRITER] Autor asignado: ${author.name}`);
+
+  // 3. Construir sección de tono
+  const toneSection = buildToneSection(author);
+
+  // 4. Determinar si incluir diccionario local
+  const includeDiccionario = authorAllowsColoquialisms(author);
+
   const galleryInstructions = gallery.length > 0
     ? `
     ## IMÁGENES DISPONIBLES (OBLIGATORIO USARLAS)
@@ -223,7 +330,7 @@ export async function generateDraft(
     - **Detail**: Cerca de descripciones de comida/texturas.
     - **Action**: Donde describas ambiente/gente.
     - **NO** las pongas todas juntas al final. Distribúyelas.
-    - Usa: <figure><img src="URL" alt="Descripción" /><figcaption>Pie con gracia</figcaption></figure>
+    - Usa: <figure><img src="URL" alt="Descripción" /><figcaption>Pie descriptivo</figcaption></figure>
     `
     : "No hay imágenes disponibles.";
 
@@ -235,9 +342,10 @@ export async function generateDraft(
     `
     : "";
 
+  // 5. Construir prompt con tono específico
   const prompt = baseContent
-    ? buildRewriterPrompt(topic, baseContent, galleryInstructions, researchInstructions)
-    : buildGuidePrompt(topic, galleryInstructions, researchInstructions);
+    ? buildRewriterPrompt(topic, baseContent, galleryInstructions, researchInstructions, toneSection)
+    : buildGuidePrompt(topic, galleryInstructions, researchInstructions, toneSection, includeDiccionario);
 
   const response = await generateContent(prompt, 0.7);
 
@@ -251,12 +359,16 @@ export async function generateDraft(
     }
     const data = JSON.parse(cleanJson);
 
+    // Validar y normalizar categoría
     const validCategories = ['Noticias', 'Comer', 'Eventos', 'Guías'];
-    let category = data.category || 'Noticias';
+    let category = data.category || detectedCategory;
     if (!validCategories.includes(category)) {
       const found = validCategories.find(c => category.includes(c));
-      category = found || 'Noticias';
+      category = found || detectedCategory;
     }
+
+    // Re-obtener autor si la categoría cambió
+    const finalAuthor = getAuthorForCategory(category);
 
     return {
       title: data.title || topic,
@@ -264,7 +376,7 @@ export async function generateDraft(
       category: category,
       slug: (data.title || topic).toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
       excerpt: data.excerpt || `Artículo sobre ${topic}`,
-      author: getAuthorForCategory(category).name,
+      author: finalAuthor.name,
       sourceUrl
     };
   } catch (e) {
@@ -273,9 +385,17 @@ export async function generateDraft(
   }
 }
 
-function buildRewriterPrompt(topic: string, baseContent: string, galleryInstructions: string, researchInstructions: string): string {
+function buildRewriterPrompt(
+  topic: string,
+  baseContent: string,
+  galleryInstructions: string,
+  researchInstructions: string,
+  toneSection: string
+): string {
   return `
 ${WRITER_PROMPT_BASE}
+
+${toneSection}
 
 ${WRITER_MODE_REWRITER}
 
@@ -288,20 +408,31 @@ ${researchInstructions}
 
 ## ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO)
 {
-  "title": "Nuevo Título con Gancho",
+  "title": "Título descriptivo siguiendo las directrices de tono",
   "content": "HTML del cuerpo (<p>, <h2>, <figure>...)...",
-  "excerpt": "Resumen picante de 2 líneas.",
-  "category": "Noticias|Comer|Eventos|Guías",
-  "author": "El Choco"
+  "excerpt": "Resumen de 2 líneas.",
+  "category": "Noticias|Comer|Eventos|Guías"
 }
 `;
 }
 
-function buildGuidePrompt(topic: string, galleryInstructions: string, researchInstructions: string): string {
+function buildGuidePrompt(
+  topic: string,
+  galleryInstructions: string,
+  researchInstructions: string,
+  toneSection: string,
+  includeDiccionario: boolean
+): string {
+  const diccionarioSection = includeDiccionario ? DICCIONARIO_LOCAL : '';
+
   return `
 ${WRITER_PROMPT_BASE}
 
+${toneSection}
+
 ${WRITER_MODE_GUIDE}
+
+${diccionarioSection}
 
 TEMA: "${topic}"
 
@@ -309,18 +440,12 @@ ${galleryInstructions}
 
 ${researchInstructions}
 
-## TONO Y VOZ ADICIONAL:
-- Autoridad absoluta. Tú eres de aquí, sabes dónde están los mejores caracoles.
-- Honestidad brutal. Si un sitio es una trampa para turistas, dilo sin rodeos.
-- Vocabulario: "Niña", "Choco", "Cabezazo": Úsalos con naturalidad.
-
 ## ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO)
 {
-  "title": "Título Épico (ej: 'Manual de Supervivencia: Gambas')",
+  "title": "Título siguiendo las directrices de tono y plantillas sugeridas",
   "content": "HTML estructurado...",
-  "excerpt": "La verdad sobre ${topic} que nadie te cuenta.",
-  "category": "Noticias|Comer|Eventos|Guías",
-  "author": "Rocío Limón"
+  "excerpt": "Resumen atractivo de 2 líneas.",
+  "category": "Noticias|Comer|Eventos|Guías"
 }
 `;
 }
@@ -331,8 +456,14 @@ ${researchInstructions}
 export async function refineDraft(draft: Draft, feedback: string): Promise<Draft> {
   console.log(`[WRITER] Refinando borrador: "${draft.title}" basado en feedback del editor...`);
 
+  // Obtener autor y su tono
+  const author = getAuthorForCategory(draft.category);
+  const toneSection = buildToneSection(author);
+
   const prompt = `
 ${WRITER_PROMPT_BASE}
+
+${toneSection}
 
 ## MODO REFINAMIENTO
 
@@ -346,18 +477,18 @@ FEEDBACK DEL EDITOR (SÍGUELO A RAJATABLA):
 "${feedback}"
 
 ## INSTRUCCIONES DE REFINAMIENTO:
-1. Corrige los errores de tono (menos IA, más "choquero").
-2. Añade los detalles específicos que pide el editor (datos, infraestructuras, nombres reales).
+1. Corrige los problemas señalados por el editor.
+2. Añade los detalles específicos que pide (datos, nombres reales, fuentes).
 3. Mantén el formato HTML (<p>, <h2>, <figure>, <div class="tip-box">).
-4. Prohibido usar frases poéticas vacías o clichés de IA.
+4. Respeta el TONO del autor definido arriba.
+5. Prohibido usar frases vacías o clichés de IA.
 
 ## ESTRUCTURA DE RESPUESTA (DEVUELVE SOLO ESTE JSON VÁLIDO)
 {
   "title": "Título Refinado",
   "content": "HTML corregido...",
   "excerpt": "Resumen actualizado.",
-  "category": "${draft.category}",
-  "author": "${draft.author}"
+  "category": "${draft.category}"
 }
 `;
 
