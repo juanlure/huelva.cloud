@@ -24,7 +24,7 @@ const sections: Section[] = [
       <div className="space-y-6">
         <div className="aspect-video rounded-3xl overflow-hidden relative mb-6">
           <img
-            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg/1024px-Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg"
             alt="Transporte en Huelva"
             className="w-full h-full object-cover"
           />
@@ -91,7 +91,7 @@ const sections: Section[] = [
       <div className="space-y-6">
         <div className="aspect-video rounded-3xl overflow-hidden relative mb-6 border border-navy-10">
           <img
-            src="https://images.unsplash.com/photo-1515443961218-1523678885b8?q=80&w=1200&auto=format&fit=crop"
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Choco_frito.jpg?width=800"
             alt="Gastronomía de Huelva"
             className="w-full h-full object-cover"
           />
@@ -219,7 +219,7 @@ const sections: Section[] = [
       <div className="space-y-6">
         <div className="aspect-[21/9] rounded-3xl overflow-hidden relative mb-6">
           <img
-            src="https://images.unsplash.com/photo-1599487483441-df3f705139fb?q=80&w=1200&auto=format&fit=crop"
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Tapas_variadas.jpg?width=800"
             alt="Slang de Huelva"
             className="w-full h-full object-cover"
           />
@@ -284,7 +284,7 @@ const sections: Section[] = [
           <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
             <div className="aspect-[21/9] overflow-hidden relative">
               <img
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000"
                 alt="Muelle del Tinto"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -312,7 +312,7 @@ const sections: Section[] = [
           <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
             <div className="aspect-[21/9] overflow-hidden relative">
               <img
-                src="https://images.unsplash.com/photo-1578436296977-ebdb117f5547?q=80&w=1200&auto=format&fit=crop"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Barrio_Obrero_Huelva.jpg?width=1000"
                 alt="Barrio Reina Victoria"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -340,7 +340,7 @@ const sections: Section[] = [
           <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
             <div className="aspect-[21/9] overflow-hidden relative">
               <img
-                src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1200&auto=format&fit=crop"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Flamencos_Marismas_del_Odiel.jpg?width=1000"
                 alt="Marismas del Odiel"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

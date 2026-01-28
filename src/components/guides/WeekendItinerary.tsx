@@ -13,6 +13,15 @@ const vibes: { id: VibeType; name: string; icon: string; desc: string; color: st
   { id: 'mixto', name: 'Mixto', icon: '🎯', desc: 'Lo mejor de cada mundo', color: 'bg-green-50 border-green-200' },
 ];
 
+const WIKI_IMAGES = [
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Choco_frito.jpg?width=800',
+  'https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000',
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Barrio_Obrero_Huelva.jpg?width=1000',
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Tapas_variadas.jpg?width=800',
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Cuesta_de_Maneli_R07.jpg?width=1000',
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Flamencos_Marismas_del_Odiel.jpg?width=1000'
+];
+
 // Lugares reales y verificados de Huelva
 const itineraries: Record<VibeType, { day: string; activities: { time: string; what: string; where: string; address?: string; icon: any; verified?: boolean }[] }[]> = {
   cultural: [
@@ -163,8 +172,8 @@ export default function WeekendItinerary() {
               whileTap={{ scale: 0.98 }}
               onClick={() => handleVibeSelect(vibe.id)}
               className={`p-8 rounded-3xl border-2 transition-all text-left group ${selectedVibe === vibe.id
-                  ? 'border-terracotta bg-terracotta/5 shadow-lg'
-                  : `border-navy-10 ${vibe.color} hover:border-terracotta/30 hover:shadow-md`
+                ? 'border-terracotta bg-terracotta/5 shadow-lg'
+                : `border-navy-10 ${vibe.color} hover:border-terracotta/30 hover:shadow-md`
                 }`}
             >
               <span className="text-4xl mb-4 block">{vibe.icon}</span>
@@ -257,7 +266,7 @@ export default function WeekendItinerary() {
                                 {/* Image Placeholder or actual image if we had it */}
                                 <div className="w-full lg:w-48 aspect-video lg:aspect-square rounded-2xl overflow-hidden bg-navy-10">
                                   <img
-                                    src={`https://images.unsplash.com/photo-1599487483441-df3f705139fb?q=80&w=400&auto=format&fit=crop&sig=${dayIndex}-${actIndex}`}
+                                    src={WIKI_IMAGES[(dayIndex + actIndex) % WIKI_IMAGES.length]}
                                     alt={activity.what}
                                     className="w-full h-full object-cover grayscale opacity-80 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
                                   />

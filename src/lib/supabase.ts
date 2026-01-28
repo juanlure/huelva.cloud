@@ -11,8 +11,73 @@ if (isMock) {
 }
 
 // Mock Database State
+const IMAGES = {
+  choco: 'https://commons.wikimedia.org/wiki/Special:FilePath/Choco_frito.jpg?width=800',
+  playa: 'https://commons.wikimedia.org/wiki/Special:FilePath/Cuesta_de_Maneli_R07.jpg?width=1000',
+  tapas: 'https://commons.wikimedia.org/wiki/Special:FilePath/Tapas_variadas.jpg?width=800',
+  architecture: 'https://commons.wikimedia.org/wiki/Special:FilePath/Barrio_Obrero_Huelva.jpg?width=1000',
+  muelle: 'https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000',
+  nature: 'https://commons.wikimedia.org/wiki/Special:FilePath/Flamencos_Marismas_del_Odiel.jpg?width=1000',
+};
+
 const MOCK_DB = {
-  articles: [] as any[]
+  articles: [
+    {
+      slug: 'ruta-del-choco',
+      title: 'La Ruta del Choco: Donde el Choco es Religión',
+      excerpt: 'Si vienes a Huelva y no comes choco, es como ir a Roma y no ver al Papa. O peor, como ir a la playa y que haya levante.',
+      content: '<p>Contenido del artículo sobre el choco...</p>',
+      category: 'Gastronomía',
+      image_url: IMAGES.choco,
+      author: 'Rocío Limón',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    },
+    {
+      slug: 'muelle-del-tinto-atardecer',
+      title: 'El Muelle del Tinto: El Atardecer más Fotogénico',
+      excerpt: '1.165 metros de hierro industrial sobre el Río Odiel. El lugar perfecto para ver el sol morir.',
+      content: '<p>Contenido del muelle...</p>',
+      category: 'Playa y Naturaleza',
+      image_url: IMAGES.muelle,
+      author: 'Juan María "El Experto"',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    },
+    {
+      slug: 'playas-huelva-ocultas',
+      title: 'Playas que los turistas no conocen',
+      excerpt: 'Todo el mundo va a Punta Umbría. Pero el verdadero tesoro está en Cuesta Maneli.',
+      content: '<p>Contenido playero...</p>',
+      category: 'Playa y Naturaleza',
+      image_url: IMAGES.playa,
+      author: 'María "La Sirena"',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    },
+    {
+      slug: 'barrio-britanico-reina-victoria',
+      title: 'El Barrio Inglés que parece Londres',
+      excerpt: 'Casas victorianas y jardines. Un barrio minero convertido en patrimonio.',
+      content: '<p>Contenido barrio...</p>',
+      category: 'Cultura y Historia',
+      image_url: IMAGES.architecture,
+      author: 'Pedro García',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    },
+    {
+      slug: 'marismas-odeli-flamencos',
+      title: 'Marismas del Odiel: Flamencos reales',
+      excerpt: '2.700 hectáreas de marismas y 300 especies de aves.',
+      content: '<p>Contenido marismas...</p>',
+      category: 'Playa y Naturaleza',
+      image_url: IMAGES.nature,
+      author: 'Ana Romero',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    }
+  ] as any[]
 };
 
 // Mock Client Implementation
