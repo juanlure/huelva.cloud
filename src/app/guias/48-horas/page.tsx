@@ -32,7 +32,8 @@ export default function WeekendItineraryPage() {
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            backgroundImage: 'url(https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000)'
+            style={{
+              backgroundImage: 'url(https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000)'
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-terracotta/90 via-terracotta/70 to-terracotta/20" />
