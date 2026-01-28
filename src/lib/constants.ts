@@ -5,11 +5,11 @@
 
 export const CATEGORY_MAP: Record<string, string> = {
     'comer': 'Gastronomía',
-    'eventos': 'Agenda y Eventos',
+    'eventos': 'Eventos',
     'alojarse': 'Alojamiento',
     'guias': 'Guías Locales',
     'noticias': 'Noticias',
-    'rutas': 'Playa y Naturaleza', // O una categoría más genérica si existe
+    'rutas': 'Playa y Naturaleza', // Matches seed data
     'cultura': 'Cultura y Historia'
 };
 

@@ -87,6 +87,28 @@ const MOCK_DB = {
       author: 'Ana Romero',
       is_ai: true,
       published_at: new Date().toISOString()
+    },
+    {
+      slug: 'festival-cine-iberoamericano',
+      title: 'Todo listo para el Festival de Cine Iberoamericano',
+      excerpt: 'La Casa Colón se viste de gala para la edición de este año.',
+      content: '<p>El festival más antiguo de España...</p>',
+      category: 'Eventos',
+      image_url: IMAGES.architecture,
+      author: 'Agenda Cultural',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    },
+    {
+      slug: 'hotel-colon-gran-melia',
+      title: 'Dormir en un palacio andaluz',
+      excerpt: 'El mejor hotel para desconectar en el centro de la ciudad.',
+      content: '<p>Lujo y tradición se unen...</p>',
+      category: 'Alojamiento',
+      image_url: IMAGES.architecture,
+      author: 'Travel Huelva',
+      is_ai: true,
+      published_at: new Date().toISOString()
     }
   ] as any[]
 };
