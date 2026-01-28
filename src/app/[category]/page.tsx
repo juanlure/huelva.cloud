@@ -13,6 +13,12 @@ export function generateStaticParams() {
   }));
 }
 
+interface PageProps {
+  params: Promise<{
+    category: string;
+  }>;
+}
+
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   const title = CATEGORY_TITLES[category.toLowerCase()] || category;
