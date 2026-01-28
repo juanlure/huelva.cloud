@@ -46,7 +46,6 @@ export default function Footer() {
                 { name: 'Cómo funciona (IA)', href: '/ai-disclosure' },
                 { name: 'Privacidad', href: '/privacy' },
                 { name: 'Aviso Legal', href: '/legal' },
-                { name: 'Admin Area', href: '/admin' }
               ].map((link) => (
                 <li key={link.name}>
                   <Link
