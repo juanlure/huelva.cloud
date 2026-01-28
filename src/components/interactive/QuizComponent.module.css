@@ -1,11 +1,11 @@
 .quizResult {
-    background: linear-gradient(to bottom right, #ecfdf5, #f0fdfa);
+    background: linear-gradient(to bottom right, var(--color-cream), var(--color-sage));
     border-radius: 1rem;
     padding: 2rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: center;
-    border: 1px solid #ccfbf1;
+    border: 1px solid var(--color-terracotta-100);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     animation: fadeIn 0.5s ease-out;
 }
@@ -20,12 +20,12 @@
 .resultTitle {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--color-navy);
     margin-bottom: 0.5rem;
 }
 
 .resultDescription {
-    color: #4b5563;
+    color: var(--color-navy-600);
     font-size: 1.125rem;
     margin-bottom: 2rem;
     max-width: 32rem;
@@ -41,42 +41,45 @@
 
 .primaryButton {
     padding: 0.75rem 1.5rem;
-    background-color: #0d9488;
+    background-color: var(--color-terracotta);
     color: white;
     border-radius: 9999px;
     font-weight: 500;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(212, 85, 58, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     border: none;
     cursor: pointer;
 }
 
 .primaryButton:hover {
-    background-color: #0f766e;
+    background-color: var(--color-terracotta-600);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -3px rgba(212, 85, 58, 0.35);
 }
 
 .secondaryButton {
     padding: 0.75rem 1.5rem;
     background-color: white;
-    color: #0d9488;
+    color: var(--color-terracotta);
     border-radius: 9999px;
     font-weight: 500;
-    border: 2px solid #0d9488;
-    transition: background-color 0.2s;
+    border: 2px solid var(--color-terracotta);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
 }
 
 .secondaryButton:hover {
-    background-color: #f0fdfa;
+    background-color: var(--color-terracotta-100);
+    transform: translateY(-2px);
 }
 
 .quizWrapper {
-    background: linear-gradient(to bottom right, #f5f3ff, #faf5ff);
+    background: linear-gradient(to bottom right, var(--color-cream), var(--color-sand));
     border-radius: 1rem;
     padding: 2rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    border: 1px solid #ede9fe;
+    border: 1px solid var(--color-terracotta-100);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -88,11 +91,11 @@
 .title {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--color-navy);
 }
 
 .subtitle {
-    color: #4b5563;
+    color: var(--color-navy-600);
     margin-top: 0.5rem;
 }
 
@@ -105,7 +108,7 @@
     justify-content: space-between;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #7c3aed;
+    color: var(--color-terracotta);
     margin-bottom: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -119,7 +122,7 @@
 }
 
 .progressFill {
-    background-color: #7c3aed;
+    background: linear-gradient(90deg, var(--color-terracotta), var(--color-terracotta-600));
     height: 0.75rem;
     border-radius: 9999px;
     transition: all 0.5s ease-out;
@@ -134,7 +137,7 @@
 
 .questionMeta {
     font-size: 0.875rem;
-    color: #7c3aed;
+    color: var(--color-terracotta);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.025em;
@@ -143,7 +146,7 @@
 .questionText {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--color-navy);
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
 }
@@ -158,10 +161,10 @@
     width: 100%;
     padding: 1rem;
     text-align: left;
-    background-color: #f9fafb;
+    background-color: var(--color-cream);
     border-radius: 0.75rem;
     border: 2px solid transparent;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -169,26 +172,29 @@
 }
 
 .optionButton:hover {
-    background-color: #f5f3ff;
-    border-color: #ddd6fe;
+    background-color: var(--color-terracotta-100);
+    border-color: var(--color-terracotta-200);
+    transform: translateX(4px);
 }
 
 .optionText {
-    color: #111827;
+    color: var(--color-navy);
 }
 
 .optionButton:hover .optionText {
-    color: #4c1d95;
+    color: var(--color-terracotta-900);
 }
 
 .arrow {
     opacity: 0;
-    color: #8b5cf6;
-    transition: opacity 0.2s;
+    color: var(--color-terracotta);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-4px);
 }
 
 .optionButton:hover .arrow {
     opacity: 1;
+    transform: translateX(0);
 }
 
 @keyframes fadeIn {

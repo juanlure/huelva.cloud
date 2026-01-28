@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
+import HeroSection from '@/components/HeroSection';
 import { ArrowRight, TrendingUp, Compass, Clock, Users, Sparkles } from 'lucide-react';
-import TrendingLabel from '@/components/ui/TrendingLabel';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -69,85 +69,8 @@ export default async function Home() {
 
   return (
     <main className="w-full">
-      {/* Hero Section - Editorial Layout */}
-      <section className="relative min-h-screen flex items-center bg-cream overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-grid opacity-30" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-terracotta/5 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-navy/5 to-transparent rounded-full blur-3xl" />
-
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center py-24">
-            {/* Badge */}
-            <div className="flex justify-center mb-8 opacity-0 animate-fade-in-up">
-              <TrendingLabel />
-            </div>
-
-            {/* Decorative Element */}
-            <div className="flex justify-center mb-8 opacity-0 animate-fade-in-up delay-100">
-              <div className="decorative-line" />
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-display font-semibold text-navy mb-8 opacity-0 animate-fade-in-up delay-200" style={{ lineHeight: 0.95 }}>
-              Huelva como{' '}
-              <span className="relative inline-block">
-                <span className="text-terracotta italic">nunca</span>
-                <svg className="absolute -bottom-3 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
-                  <path d="M2 8C50 2 150 2 198 8" stroke="#D4553A" strokeWidth="4" strokeLinecap="round" />
-                </svg>
-              </span>
-              {' '}te la habían contado
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-navy-60 leading-relaxed max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up delay-300">
-              Sin rodeos, sin turismos. Solo lo mejor de nuestra tierra
-              contado por gente que sabe lo que es un buen plato de chocos.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up delay-400">
-              <a
-                href="#trending"
-                className="btn btn-primary group"
-              >
-                Empezar a leer
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#guias"
-                className="btn btn-outline"
-              >
-                Explorar guías
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap items-center justify-center gap-8 mt-16 pt-8 border-t border-navy-10 opacity-0 animate-fade-in delay-500">
-              <div className="flex items-center gap-2 text-sm text-navy-40">
-                <Sparkles size={16} className="text-terracotta" />
-                <span>+50 guías locales</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-navy-40">
-                <Users size={16} className="text-terracotta" />
-                <span>Escrito por onubenses</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-navy-40">
-                <Clock size={16} className="text-terracotta" />
-                <span>Actualizado semanalmente</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in delay-600">
-          <div className="w-6 h-10 rounded-full border-2 border-navy-20 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-terracotta rounded-full animate-bounce" />
-          </div>
-        </div>
-      </section>
+      {/* Hero Section - Dynamic with Framer Motion */}
+      <HeroSection />
 
       {/* Trending Section */}
       <section id="trending" className="editorial-section bg-white">
