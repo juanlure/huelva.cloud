@@ -64,7 +64,31 @@ const guides = [
   }
 ];
 
-export default function GuidesPage() {
+import { getArticles } from '@/lib/api';
+import ArticleCard from '@/components/ArticleCard';
+
+async function DynamicGuidesGrid() {
+  const articles = await getArticles('guias'); // 'guias' maps to 'Guías Locales'
+
+  if (articles.length === 0) return null;
+
+  return (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {articles.map((article, idx) => (
+        <ArticleCard
+          key={idx}
+          {...article}
+          imageUrl={article.image} // Adapter: api returns 'image', component expects 'imageUrl'
+          publishedAt={article.date}
+          readTime={parseInt(article.readTime)}
+          author={{ name: article.author }}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default async function GuidesPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-cream to-white">
       {/* Header */}
@@ -156,8 +180,36 @@ export default function GuidesPage() {
         </div>
       </div>
 
+      {/* Dynamic Guides Section - Articles from DB */}
+      <section className="bg-sand/30 py-20 border-t border-navy-10">
+        <div className="container">
+          <div className="max-w-content mx-auto">
+            <div className="flex items-center justify-between mb-12">
+              <div>
+                <h2 className="text-display text-4xl font-semibold text-navy mb-4">
+                  Más Guías Locales
+                </h2>
+                <p className="text-navy-60 text-lg">
+                  Artículos y recomendaciones escritas por nuestros expertos locales.
+                </p>
+              </div>
+              <Link
+                href="/guias"
+                className="hidden md:flex items-center gap-2 text-terracotta font-medium hover:gap-3 transition-all"
+              >
+                Ver todo <ArrowRight size={20} />
+              </Link>
+            </div>
+
+            {/* Requires fetching data - We need to make the component async and fetch articles */}
+            {/* Note: In Next.js App Router, page components are server components by default */}
+            <DynamicGuidesGrid />
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <div className="container pb-20">
+      <div className="container py-20">
         <div className="max-w-content mx-auto">
           <div className="bg-gradient-to-r from-terracotta to-orange-600 rounded-3xl p-8 md:p-12 text-center text-white">
             <h2 className="text-display text-2xl md:text-3xl font-semibold mb-4">
