@@ -56,6 +56,17 @@ const MOCK_DB = {
       published_at: new Date().toISOString()
     },
     {
+      slug: 'nuevo-mercado-gastronomico',
+      title: 'Abre el nuevo mercado gastronómico en el centro',
+      excerpt: 'El antiguo mercado del Carmen se reinventa con puestos gourmet y productos locales.',
+      content: '<p>Huelva sigue apostando por su gastronomía...</p>',
+      category: 'Noticias',
+      image_url: IMAGES.tapas,
+      author: 'Redacción Huelva.is',
+      is_ai: true,
+      published_at: new Date().toISOString()
+    },
+    {
       slug: 'barrio-britanico-reina-victoria',
       title: 'El Barrio Inglés que parece Londres',
       excerpt: 'Casas victorianas y jardines. Un barrio minero convertido en patrimonio.',

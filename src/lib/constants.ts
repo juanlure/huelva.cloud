@@ -8,7 +8,7 @@ export const CATEGORY_MAP: Record<string, string> = {
     'eventos': 'Agenda y Eventos',
     'alojarse': 'Alojamiento',
     'guias': 'Guías Locales',
-    'noticias': 'Actualidad',
+    'noticias': 'Noticias',
     'rutas': 'Playa y Naturaleza', // O una categoría más genérica si existe
     'cultura': 'Cultura y Historia'
 };
@@ -18,7 +18,7 @@ export const CATEGORY_TITLES: Record<string, string> = {
     'eventos': 'Agenda y Eventos',
     'alojarse': 'Dónde Dormir',
     'guias': 'Guías Locales',
-    'noticias': 'Actualidad',
+    'noticias': 'Últimas Noticias',
     'rutas': 'Rutas y Escapadas',
     'cultura': 'Historia y Cultura'
 };
