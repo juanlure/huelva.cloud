@@ -162,11 +162,10 @@ export default function WeekendItinerary() {
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleVibeSelect(vibe.id)}
-              className={`p-8 rounded-3xl border-2 transition-all text-left group ${
-                selectedVibe === vibe.id
+              className={`p-8 rounded-3xl border-2 transition-all text-left group ${selectedVibe === vibe.id
                   ? 'border-terracotta bg-terracotta/5 shadow-lg'
                   : `border-navy-10 ${vibe.color} hover:border-terracotta/30 hover:shadow-md`
-              }`}
+                }`}
             >
               <span className="text-4xl mb-4 block">{vibe.icon}</span>
               <h3 className="text-display text-xl font-semibold text-navy mb-2">{vibe.name}</h3>
@@ -218,36 +217,50 @@ export default function WeekendItinerary() {
                       {/* Timeline line */}
                       <div className="absolute left-[15px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-terracotta/20 via-terracotta/10 to-transparent" />
 
-                      <div className="space-y-6">
+                      <div className="space-y-12">
                         {day.activities.map((activity, actIndex) => (
-                          <div key={actIndex} className="relative flex items-start gap-5">
-                            <div className="relative z-10 w-8 h-8 rounded-full bg-terracotta flex items-center justify-center mt-1 shadow-sm">
-                              <activity.icon size={16} className="text-white" />
+                          <div key={actIndex} className="relative flex flex-col md:flex-row gap-6 group/item">
+                            {/* Time & Icon */}
+                            <div className="flex md:flex-col items-center gap-4 md:w-20 pt-1">
+                              <span className="text-xs font-mono text-terracotta font-bold uppercase tracking-wider md:text-center w-12 md:w-auto">
+                                {activity.time}
+                              </span>
+                              <div className="relative z-10 w-10 h-10 rounded-full bg-white border-2 border-terracotta flex items-center justify-center shadow-sm group-hover/item:scale-110 transition-transform">
+                                <activity.icon size={18} className="text-terracotta" />
+                              </div>
                             </div>
-                            <div className="flex-1 pb-6">
-                              <div className="flex items-start justify-between gap-4">
+
+                            {/* Activity Content */}
+                            <div className="flex-1 bg-sand/30 rounded-3xl p-6 border border-transparent hover:border-terracotta/20 hover:bg-white transition-all group-hover/item:shadow-md">
+                              <div className="flex flex-col lg:flex-row gap-6">
                                 <div className="flex-1">
-                                  <div className="flex items-center gap-3 mb-1">
-                                    <span className="text-xs font-mono text-terracotta font-bold uppercase tracking-wider">
-                                      {activity.time}
-                                    </span>
+                                  <div className="flex items-center gap-2 mb-2">
                                     {activity.verified && (
-                                      <Star size={12} className="text-terracotta fill-terracotta" />
+                                      <span className="px-2 py-0.5 bg-terracotta/10 text-terracotta text-[10px] font-bold rounded-full flex items-center gap-1">
+                                        <Star size={10} className="fill-terracotta" />
+                                        VERIFICADO
+                                      </span>
                                     )}
                                   </div>
-                                  <h4 className="text-display font-semibold text-navy text-lg">
+                                  <h4 className="text-display font-semibold text-navy text-xl mb-2">
                                     {activity.what}
                                   </h4>
-                                  <div className="flex items-center gap-2 mt-1 text-sm text-navy-60">
+                                  <div className="flex items-center gap-2 text-sm text-navy-60">
                                     <MapPin size={14} className="text-terracotta/60" />
-                                    <span>{activity.where}</span>
+                                    <span className="font-medium">{activity.where}</span>
                                     {activity.address && (
-                                      <>
-                                        <span>•</span>
-                                        <span className="text-navy-40">{activity.address}</span>
-                                      </>
+                                      <span className="text-navy-30 hidden sm:inline">{activity.address}</span>
                                     )}
                                   </div>
+                                </div>
+
+                                {/* Image Placeholder or actual image if we had it */}
+                                <div className="w-full lg:w-48 aspect-video lg:aspect-square rounded-2xl overflow-hidden bg-navy-10">
+                                  <img
+                                    src={`https://images.unsplash.com/photo-1599487483441-df3f705139fb?q=80&w=400&auto=format&fit=crop&sig=${dayIndex}-${actIndex}`}
+                                    alt={activity.what}
+                                    className="w-full h-full object-cover grayscale opacity-80 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
+                                  />
                                 </div>
                               </div>
                             </div>

@@ -5,31 +5,17 @@ import { ArrowLeft, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-// Mapa de slugs a títulos amigables
-const categoryTitles: Record<string, string> = {
-  'comer': 'Comer y Beber',
-  'eventos': 'Agenda y Eventos',
-  'alojarse': 'Dónde Dormir',
-  'guias': 'Guías Locales',
-  'noticias': 'Actualidad',
-  'rutas': 'Rutas y Escapadas'
-};
-
-interface PageProps {
-  params: {
-    category: string;
-  };
-}
+import { CATEGORY_TITLES } from '@/lib/constants';
 
 export function generateStaticParams() {
-  return Object.keys(categoryTitles).map((category) => ({
+  return Object.keys(CATEGORY_TITLES).map((category) => ({
     category,
   }));
 }
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
-  const title = categoryTitles[category] || category;
+  const title = CATEGORY_TITLES[category.toLowerCase()] || category;
   const articles = await getArticles(category);
 
   return (

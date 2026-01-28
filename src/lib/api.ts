@@ -33,6 +33,8 @@ function mapArticle(dbArticle: ArticleDB): Article {
   };
 }
 
+import { CATEGORY_MAP } from './constants';
+
 export async function getArticles(category?: string): Promise<Article[]> {
   let query = supabase
     .from('articles')
@@ -41,7 +43,8 @@ export async function getArticles(category?: string): Promise<Article[]> {
     .order('published_at', { ascending: false });
 
   if (category) {
-    query = query.ilike('category', category);
+    const dbCategory = CATEGORY_MAP[category.toLowerCase()] || category;
+    query = query.ilike('category', dbCategory);
   }
 
   const { data, error } = await query;

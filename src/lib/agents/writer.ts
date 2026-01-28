@@ -80,19 +80,51 @@ Eres un redactor profesional del equipo de Huelva.is. Escribes contenido de alta
 4. **HONESTIDAD**: Información objetiva y útil
 5. **CLARIDAD**: Escribir de forma clara y accesible
 
-## ANTI-AI FILTER (FRASES PROHIBIDAS)
-Estas frases revelan contenido generado por IA. NUNCA las uses:
-- "joya escondida"
-- "un tapiz de"
+## ANTI-AI FILTER (FRASES ABSOLUTAMENTE PROHIBIDAS)
+Estas frases REVELAN que el texto es generado por IA. Si las usas, el artículo será rechazado:
+
+### CLICHÉS TURÍSTICOS:
+- "joya escondida" / "hidden gem"
+- "un tapiz de" / "un mosaico de"
 - "mezcla de tradición y modernidad"
 - "sumérgete en la cultura"
 - "descubre los encantos"
-- "viaje a través de los sentidos"
 - "rincón lleno de magia"
 - "donde el tiempo parece detenerse"
+- "paraíso terrenal"
+- "oasis de tranquilidad"
+
+### FRASES VACÍAS DE IA:
 - "fusión perfecta"
-- "experiencia única"
+- "experiencia única" / "experiencia inolvidable"
 - "un mundo de sabores"
+- "viaje a través de los sentidos"
+- "deleitará tu paladar"
+- "acaricia el paladar"
+- "sinfonía de sabores"
+- "danza de texturas"
+- "despertar los sentidos"
+
+### ESTRUCTURAS TÍPICAS DE IA:
+- "No es solo X, es Y" (estructura pretenciosa)
+- "Más que un X, es un Y"
+- "X es mucho más que..."
+- "Si hay algo que caracteriza a..."
+- "No cabe duda de que..."
+- "Es importante destacar que..."
+- "Vale la pena mencionar que..."
+- "En definitiva, X es..."
+
+### ADJETIVOS VACÍOS (no usar sin justificar):
+- "impresionante" / "espectacular" / "increíble"
+- "maravilloso" / "extraordinario" / "excepcional"
+- "pintoresco" / "encantador" / "idílico"
+- "auténtico" (usado como comodín)
+- "tradicional" (sin explicar qué tradición)
+
+### REGLA DE ORO:
+Si una frase podría aparecer en cualquier guía turística genérica, NO LA USES.
+Escribe como escribiría un local que conoce el sitio de verdad.
 `;
 
 // ============================================================================
@@ -120,18 +152,37 @@ IMPORTANTE: El tono definido arriba es OBLIGATORIO. No lo ignores. Si el tono di
 // DICCIONARIO LOCAL (solo para autores que lo necesiten)
 // ============================================================================
 const DICCIONARIO_LOCAL = `
-## DICCIONARIO LOCAL (usar según el tono del autor lo permita)
+## DICCIONARIO CHOQUERO (usar según el tono del autor lo permita)
 
-- **Choco**: Sepia (NUNCA digas sepia, di choco)
-- **Rabas**: Calamares
-- **Pringá**: Miga de carne con tomate
-- **Choquero/Choquera**: Natural de Huelva capital
-- **Guiri**: Turista (uso irónico)
-- **Jartible**: Molesto/pesado
-- **Aguamala**: Medusa
-- **Pota**: Calamar grande
-- **Gamba blanca**: La de Huelva (la buena)
-- **Ortiguilla**: Anémona de mar (especialidad local)
+### GASTRONOMÍA (OBLIGATORIO usar estos términos):
+- **Choco**: Sepia. SIEMPRE di "choco", NUNCA "sepia". Es la regla de oro.
+- **Rabas**: Calamares fritos en aros
+- **Pota**: Calamar grande (diferente de las rabas)
+- **Gamba blanca**: La de Huelva, la buena, la que no necesita apellido
+- **Ortiguilla**: Anémona de mar frita, especialidad local
+- **Pringá**: Carne de puchero deshilachada con tomate
+- **Pipirrana**: Ensalada de tomate, pimiento, pepino y atún
+- **Mojama**: Lomo de atún curado, se come con almendras
+- **Coquinas**: Almejas pequeñas típicas de la zona
+- **Cabrilla**: Pescado de roca para caldos
+- **Chocos con habas**: Plato típico, el choco se hace con habitas tiernas
+
+### VOCABULARIO LOCAL:
+- **Choquero/Choquera**: Natural de Huelva capital (con orgullo)
+- **Onubense**: Natural de la provincia de Huelva
+- **Guiri**: Turista, especialmente extranjero (uso irónico, sin malicia)
+- **Jartible**: Algo o alguien pesado, molesto, insoportable
+- **Levante**: El viento del este que trae calor y pone nervioso
+- **Poniente**: El viento bueno, el que refresca
+- **Marisma**: Zona húmeda entre tierra y mar (Doñana)
+- **Chiringuito**: Bar de playa
+- **Aguamala/Aguaviva**: Medusa (¡cuidado al bañarte!)
+
+### EXPRESIONES:
+- "Eso está mu güeno" (muy bueno)
+- "Vaya tela" (expresión de sorpresa)
+- "Venga ya" (incredulidad)
+- "¿Qué pasa, borde?" (saludo informal)
 `;
 
 const WRITER_MODE_REWRITER = `
@@ -224,50 +275,74 @@ Tu tarea es escribir la guía definitiva sobre un tema de Huelva.
 
 /**
  * Detecta la categoría probable basándose en el topic y contenido
+ * IMPORTANTE: Devuelve categorías en formato capitalizado para display,
+ * pero getAuthorForCategory las normaliza a minúsculas para el mapeo
  */
 function detectCategory(topic: string, baseContent?: string): string {
   const text = `${topic} ${baseContent || ''}`.toLowerCase();
 
-  // Patrones para detectar categorías
-  const patterns: Record<string, RegExp[]> = {
-    'Noticias': [
-      /noticia/i, /ayuntamiento/i, /junta/i, /gobierno/i, /puerto/i,
-      /economía/i, /inversión/i, /millones/i, /euros/i, /empresa/i,
-      /hidrógeno/i, /despido/i, /huelga/i, /manifestación/i
-    ],
-    'Comer': [
-      /choco/i, /gamba/i, /restaurante/i, /bar\b/i, /tapas?/i,
-      /cocina/i, /gastronomía/i, /comer/i, /plato/i, /receta/i,
-      /jamón/i, /fresa/i, /vino/i, /bodega/i
-    ],
-    'Eventos': [
-      /evento/i, /festival/i, /concierto/i, /feria/i, /fiesta/i,
-      /colombinas/i, /rocío/i, /semana santa/i, /carnaval/i,
-      /agenda/i, /teatro/i, /exposición/i
-    ],
-    'Guías': [
-      /guía/i, /cómo/i, /manual/i, /rutas?/i, /visitar/i,
-      /playas?/i, /doñana/i, /museo/i, /historia/i, /patrimonio/i,
-      /muelle/i, /barrio inglés/i, /monumento/i
-    ]
+  // Patrones para detectar categorías (más específicos primero)
+  const patterns: Record<string, { regexes: RegExp[], weight: number }> = {
+    'Comer': {
+      regexes: [
+        /choco/i, /gamba/i, /restaurante/i, /\bbar\b/i, /tapas?/i,
+        /cocina/i, /gastronomía/i, /comer/i, /plato/i, /receta/i,
+        /jamón/i, /fresa/i, /vino/i, /bodega/i, /mariscos?/i,
+        /pescado/i, /fritura/i, /chiringuito/i, /taberna/i,
+        /rabas/i, /ortiguilla/i, /mojama/i, /pringá/i
+      ],
+      weight: 1.5  // Priorizar gastronomía si hay match
+    },
+    'Noticias': {
+      regexes: [
+        /noticia/i, /ayuntamiento/i, /junta/i, /gobierno/i, /puerto/i,
+        /economía/i, /inversión/i, /millones/i, /euros/i, /empresa/i,
+        /hidrógeno/i, /despido/i, /huelga/i, /manifestación/i,
+        /aprueba/i, /anuncia/i, /presenta/i, /inaugura/i,
+        /dimite/i, /nombra/i, /denuncia/i, /alcalde/i, /concejal/i
+      ],
+      weight: 1
+    },
+    'Eventos': {
+      regexes: [
+        /evento/i, /festival/i, /concierto/i, /feria/i, /fiesta/i,
+        /colombinas/i, /rocío/i, /semana santa/i, /carnaval/i,
+        /agenda/i, /teatro/i, /exposición/i, /actuación/i,
+        /programación/i, /entrada/i, /horario/i
+      ],
+      weight: 1.2
+    },
+    'Guías': {
+      regexes: [
+        /guía/i, /cómo/i, /manual/i, /rutas?/i, /visitar/i,
+        /playas?/i, /doñana/i, /museo/i, /historia/i, /patrimonio/i,
+        /muelle/i, /barrio inglés/i, /monumento/i, /senderismo/i,
+        /excursión/i, /qué ver/i, /dónde ir/i, /mejores/i
+      ],
+      weight: 1
+    }
   };
 
-  // Contar coincidencias por categoría
+  // Contar coincidencias por categoría con peso
   const scores: Record<string, number> = {};
-  for (const [category, regexList] of Object.entries(patterns)) {
-    scores[category] = regexList.filter(regex => regex.test(text)).length;
+  for (const [category, config] of Object.entries(patterns)) {
+    const matches = config.regexes.filter(regex => regex.test(text)).length;
+    scores[category] = matches * config.weight;
   }
 
-  // Si hay baseContent (noticia scrapeada), priorizar Noticias
+  // Si hay baseContent (noticia scrapeada), priorizar Noticias fuertemente
   if (baseContent) {
-    scores['Noticias'] += 2;
+    scores['Noticias'] += 3;
   }
 
   // Encontrar la categoría con mayor puntuación
-  const maxCategory = Object.entries(scores)
-    .sort(([, a], [, b]) => b - a)[0];
+  const sortedCategories = Object.entries(scores)
+    .sort(([, a], [, b]) => b - a);
 
-  return maxCategory && maxCategory[1] > 0 ? maxCategory[0] : 'Noticias';
+  const [topCategory, topScore] = sortedCategories[0] || ['Noticias', 0];
+
+  // Solo devolver la categoría si tiene al menos una coincidencia
+  return topScore > 0 ? topCategory : 'Noticias';
 }
 
 /**

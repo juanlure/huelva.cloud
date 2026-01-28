@@ -22,11 +22,20 @@ const sections: Section[] = [
     subtitle: 'Transporte urbano verificado',
     content: (
       <div className="space-y-6">
+        <div className="aspect-video rounded-3xl overflow-hidden relative mb-6">
+          <img
+            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop"
+            alt="Transporte en Huelva"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+        </div>
+
         <p className="text-navy-70 leading-relaxed">
           Huelva cuenta con un sistema de autobuses urbanos gestionado por <strong className="text-navy">TUsa</strong> (Transportes Urbanos de Huelva, S.A.).
         </p>
 
-        <div className="bg-sand rounded-3xl p-8 border border-navy-10">
+        <div className="bg-white rounded-3xl p-8 border border-navy-10 shadow-sm">
           <h4 className="text-display font-semibold text-navy mb-6 flex items-center gap-3">
             <MapPin size={20} className="text-terracotta" />
             Líneas Principales Verificadas
@@ -65,7 +74,7 @@ const sections: Section[] = [
           <div>
             <p className="font-semibold text-navy mb-2">Taxi verificado</p>
             <p className="text-sm text-navy-70">
-              Servicio de taxi: <span className="font-mono">+34 959 25 00 00</span><br/>
+              Servicio de taxi: <span className="font-mono">+34 959 25 00 00</span><br />
               <span className="text-xs mt-2 block">Radio Taxi Huelva opera 24h. Los fines de semana por la noche puede haber espera.</span>
             </p>
           </div>
@@ -80,6 +89,15 @@ const sections: Section[] = [
     subtitle: 'Bares y restaurantes verificados con reviews reales',
     content: (
       <div className="space-y-6">
+        <div className="aspect-video rounded-3xl overflow-hidden relative mb-6 border border-navy-10">
+          <img
+            src="https://images.unsplash.com/photo-1515443961218-1523678885b8?q=80&w=1200&auto=format&fit=crop"
+            alt="Gastronomía de Huelva"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+        </div>
+
         <p className="text-navy-70 leading-relaxed">
           Lugares verificados con opiniones reales de clientes en TripAdvisor y Google Reviews.
         </p>
@@ -189,7 +207,7 @@ const sections: Section[] = [
             ))}
           </div>
         </div>
-      </div>
+      </div >
     )
   },
   {
@@ -199,6 +217,15 @@ const sections: Section[] = [
     subtitle: 'Palabras recopiladas del Palabrario de Huelva (600+ términos)',
     content: (
       <div className="space-y-6">
+        <div className="aspect-[21/9] rounded-3xl overflow-hidden relative mb-6">
+          <img
+            src="https://images.unsplash.com/photo-1599487483441-df3f705139fb?q=80&w=1200&auto=format&fit=crop"
+            alt="Slang de Huelva"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+        </div>
+
         <p className="text-navy-70 leading-relaxed">
           El dialecto onubense o <strong>"choquero"</strong> (del choco, producto estrella de Huelva) tiene más de 600 vocablos recopilados
           por el historiador Gustavo Castillo Rey. Estos son algunos de los más característicos:
@@ -247,128 +274,92 @@ const sections: Section[] = [
     title: 'Lugares que no te puedes perder',
     subtitle: 'Monumentos y parajes naturales verificados',
     content: (
-      <div className="space-y-6">
+      <div className="space-y-8">
         <p className="text-navy-70 leading-relaxed">
           Lugares reales con historias verificadas. Cada uno existe y puedes visitarlo hoy mismo.
         </p>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {/* Muelle del Tinto */}
-          <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl p-6 border border-orange-200 group">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center flex-shrink-0">
-                <Sunset size={28} className="text-orange-500" />
-              </div>
-              <div className="flex-1">
-                <h4 className="text-display font-semibold text-navy text-xl mb-2 flex items-center gap-2">
-                  Muelle del Tinto
-                  <span className="text-xs font-normal px-2 py-1 bg-orange-100 text-orange-700 rounded-full">1874</span>
-                </h4>
-                <p className="text-sm text-navy-60 mb-3">
-                  Monumento industrial de 1.165 metros construido por la Río Tinto Company. Siguiendo las enseñanzas de Eiffel,
-                  este muelle fue el corazón de la exportación de mineral hasta 1975.
-                </p>
-                <div className="flex items-center gap-4 text-xs text-navy-50">
-                  <span>📍 Río Odiel, frente a la Punta del Sebo</span>
-                  <span>🌅 Atardeceres espectaculares</span>
-                  <span>📸 Iónico y fotogénico</span>
-                </div>
-              </div>
+          <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
+            <div className="aspect-[21/9] overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop"
+                alt="Muelle del Tinto"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
             </div>
-          </div>
-
-          {/* Casa Colón */}
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-6 border border-blue-200 group">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <MapPin size={28} className="text-blue-500" />
-              </div>
-              <div className="flex-1">
-                <h4 className="text-display font-semibold text-navy text-xl mb-2 flex items-center gap-2">
-                  Casa Colón
-                  <span className="text-xs font-normal px-2 py-1 bg-blue-100 text-blue-700 rounded-full">1883</span>
+            <div className="p-6">
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <h4 className="text-display font-semibold text-navy text-xl group-hover:text-terracotta transition-colors">
+                  Muelle del Tinto
                 </h4>
-                <p className="text-sm text-navy-60 mb-3">
-                  Antiguo Hotel Colón, promovido por Guillermo Sundheim. Albergó el IV Centenario del Descubrimiento.
-                  Hoy es auditorio y sede del Festival de Cine Iberoamericano.
-                </p>
-                <div className="flex items-center gap-4 text-xs text-navy-50">
-                  <span>📍 Alameda Sundheim</span>
-                  <span>🎬 Festival de Cine</span>
-                  <span>🏛️ Arquitectura victoriana</span>
-                </div>
+                <span className="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-700 rounded-full">1874</span>
+              </div>
+              <p className="text-sm text-navy-60 mb-4 leading-relaxed">
+                Monumento industrial de 1.165 metros construido por la Río Tinto Company. Siguiendo las enseñanzas de Eiffel,
+                este muelle fue el corazón de la exportación de mineral hasta 1975.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-navy-40">
+                <span className="flex items-center gap-1"><MapPin size={14} /> Río Odiel</span>
+                <span className="flex items-center gap-1"><Sunset size={14} /> Atardecer épico</span>
               </div>
             </div>
           </div>
 
           {/* Barrio Reina Victoria */}
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-6 border border-purple-200 group">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center flex-shrink-0">
-                <Bus size={28} className="text-purple-500" />
-              </div>
-              <div className="flex-1">
-                <h4 className="text-display font-semibold text-navy text-xl mb-2 flex items-center gap-2">
+          <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
+            <div className="aspect-[21/9] overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1578436296977-ebdb117f5547?q=80&w=1200&auto=format&fit=crop"
+                alt="Barrio Reina Victoria"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+            </div>
+            <div className="p-6">
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <h4 className="text-display font-semibold text-navy text-xl group-hover:text-terracotta transition-colors">
                   Barrio Reina Victoria
-                  <span className="text-xs font-normal px-2 py-1 bg-purple-100 text-purple-700 rounded-full">1916</span>
                 </h4>
-                <p className="text-sm text-navy-60 mb-3">
-                  Barrio obrero construido por la Río Tinto Company para sus trabajadores. Mezcla única de arquitectura
-                  británica, andaluza y neomudéjar. Declarado Bien de Interés Cultural en 2002.
-                </p>
-                <div className="flex items-center gap-4 text-xs text-navy-50">
-                  <span>📍 Calle Reina Victoria</span>
-                  <span>🏠 71 casas originales</span>
-                  <span>🇬🇧 "Parece Londres"</span>
-                </div>
+                <span className="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-700 rounded-full">1916</span>
+              </div>
+              <p className="text-sm text-navy-60 mb-4 leading-relaxed">
+                Barrio obrero construido por la Río Tinto Company. Mezcla única de arquitectura
+                británica, andaluza y neomudéjar. Declarado Bien de Interés Cultural en 2002.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-navy-40">
+                <span className="flex items-center gap-1"><MapPin size={14} /> Calle Reina Victoria</span>
+                <span className="flex items-center gap-1"><Bus size={14} /> Guía británica</span>
               </div>
             </div>
           </div>
 
           {/* Marismas del Odiel */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 border border-green-200 group">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0">
-                <Sunset size={28} className="text-green-500" />
-              </div>
-              <div className="flex-1">
-                <h4 className="text-display font-semibold text-navy text-xl mb-2 flex items-center gap-2">
-                  Marismas del Odiel
-                  <span className="text-xs font-normal px-2 py-1 bg-green-100 text-green-700 rounded-full">Paraje Natural</span>
-                </h4>
-                <p className="text-sm text-navy-60 mb-3">
-                  Paraje Natural de más de 2.700 hectáreas. Hogar de más de 300 especies de aves, incluidos los flamencos.
-                  Centro de visitantes Anastasio Senra.
-                </p>
-                <div className="flex items-center gap-4 text-xs text-navy-50">
-                  <span>🦩 Flamencos garantizados</span>
-                  <span>🚂 Ruta en tren disponible</span>
-                  <span>🥾 Rutas señalizadas</span>
-                </div>
-              </div>
+          <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
+            <div className="aspect-[21/9] overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1200&auto=format&fit=crop"
+                alt="Marismas del Odiel"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
             </div>
-          </div>
-
-          {/* Monumento a Colón */}
-          <div className="bg-gradient-to-r from-navy-50 to-slate-50 rounded-3xl p-6 border border-navy-200 group">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-navy-100 flex items-center justify-center flex-shrink-0">
-                <MapPin size={28} className="text-navy-500" />
-              </div>
-              <div className="flex-1">
-                <h4 className="text-display font-semibold text-navy text-xl mb-2 flex items-center gap-2">
-                  Monumento a la Fe Descubridora
-                  <span className="text-xs font-normal px-2 py-1 bg-navy-100 text-navy-700 rounded-full">1929</span>
+            <div className="p-6">
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <h4 className="text-display font-semibold text-navy text-xl group-hover:text-terracotta transition-colors">
+                  Marismas del Odiel
                 </h4>
-                <p className="text-sm text-navy-60 mb-3">
-                  Monumento de 37 metros en la confluencia de los ríos Tinto y Odiel. Escultura cubista dedicada a Colón
-                  y al descubrimiento de América. Vista panorámica de la ciudad.
-                </p>
-                <div className="flex items-center gap-4 text-xs text-navy-50">
-                  <span>📍 Punta del Sebo</span>
-                  <span>🔭 Mirador panorámico</span>
-                  <span>37 metros de altura</span>
-                </div>
+                <span className="text-xs font-bold px-3 py-1 bg-green-100 text-green-700 rounded-full">Natural</span>
+              </div>
+              <p className="text-sm text-navy-60 mb-4 leading-relaxed">
+                Paraje Natural de más de 2.700 hectáreas. Hogar de más de 300 especies de aves, incluidos los flamencos.
+                Reserva de la Biosfera por la UNESCO.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-navy-40">
+                <span className="flex items-center gap-1"><MapPin size={14} /> Ctra. del Espigón</span>
+                <span className="flex items-center gap-1"><Sunset size={14} /> Observación aves</span>
               </div>
             </div>
           </div>
