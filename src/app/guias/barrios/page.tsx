@@ -13,10 +13,11 @@ export default function NeighborhoodsPage() {
       {/* Header */}
       <div className="relative bg-gradient-to-br from-stone-800 via-stone-700 to-amber-900 pt-32 pb-32 px-6 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20h20v20H20zM0 0h20v20H0z'/%3E%3C/g%3E%3C/svg%3E")`,
+        <div className="absolute inset-0 opacity-100">
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+            backgroundImage: `url("/images/guides/barrio-reina-victoria-hero.jpg")`,
           }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-stone-900/90 via-stone-800/80 to-stone-900/90" />
         </div>
 
         <div className="container relative z-10">

@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Coffee, Info, Sparkles, Clock, Droplets, Sun, CupSoda } from 'lucide-react';
 
-// Imágenes de café - Unsplash (free stock photos)
+// Imágenes de café - Usando imágenes de Wikimedia y Stock de alta calidad
 const COFFEE_IMAGES = {
-  hero: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600',
-  cortado: 'https://images.unsplash.com/photo-1511537630588-b7b8e7f0d263?q=80&w=800',
-  bar: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800',
-  source: 'Unsplash - Free stock photos'
+  hero: '/images/guides/huelva-estacion-sevilla-hero.jpg',
+  glass_coffee: '/images/guides/cafe-vaso-huelva.jpg', // Aproximación visual al café en vaso/taza
+  source: 'Wikimedia Commons'
 };
 
 const COFFEE_TYPES = [
@@ -20,12 +19,13 @@ const COFFEE_TYPES = [
     shortName: 'Solo',
     icon: '☕',
     ratio: { coffee: 100, milk: 0 },
-    color: '#78716C',
-    description: 'La esencia pura. Solo café, sin additions. El despertar clásico.',
-    when: 'Cualquier momento del día.',
+    color: '#3C2F2F',
+    description: 'La esencia pura. Solo café, sin aditivos. Potente y directo. En otros sitios le llaman "espresso", aquí es café y punto.',
+    when: 'Al despertar o después de comer para espabilar.',
     instructions: 'Pides "un café" o "un solo".',
-    tip: 'En Huelva, un "café" es siempre un café solo por defecto.',
-    price: '~1,20€'
+    tip: 'En Huelva, un "café" se asume solo por defecto si no dices nada más.',
+    price: '~1,20€',
+    caffeine: 4
   },
   {
     id: 'cortado',
@@ -34,12 +34,13 @@ const COFFEE_TYPES = [
     shortName: 'Cortado',
     icon: '☕',
     ratio: { coffee: 75, milk: 25 },
-    color: '#A8A29E',
-    description: 'La proporción perfecta. Café cortado con un poco de leche para suavizar.',
-    when: 'Desayuno o media mañana.',
+    color: '#6F4E37',
+    description: 'Café con un toque de lecha ("cortado" con leche) para quitarle acidez pero mantener la fuerza.',
+    when: 'Media mañana o después de comer.',
     instructions: 'Pides "un cortado".',
-    tip: 'El nombre viene por "cortar" la intensidad del café.',
-    price: '~1,50€'
+    tip: 'Se suele servir en vaso pequeño de cristal si lo pides en barra.',
+    price: '~1,30€',
+    caffeine: 3
   },
   {
     id: 'mitad',
@@ -48,12 +49,13 @@ const COFFEE_TYPES = [
     shortName: 'Mitad',
     icon: '☕',
     ratio: { coffee: 50, milk: 50 },
-    color: '#D6D3D1',
-    description: 'El equilibrio exacto. Mitad café, mitad leche caliente.',
-    when: 'Para quienes quieren el sabor del café con menos intensidad.',
-    instructions: 'Pides "una mitad".',
-    tip: 'Algunos lo llaman "mitad y mitad" para ser más claros.',
-    price: '~1,80€'
+    color: '#A0785A',
+    description: 'El equilibrio perfecto. 50% café, 50% leche. Ni muy fuerte ni muy leche.',
+    when: 'Desayuno (con tostada) o merienda.',
+    instructions: 'Pides "una mitad" o "mitad y mitad".',
+    tip: 'La medida estándar del desayuno onubense.',
+    price: '~1,40€',
+    caffeine: 2
   },
   {
     id: 'largo',
@@ -62,12 +64,13 @@ const COFFEE_TYPES = [
     shortName: 'Largo',
     icon: '☕',
     ratio: { coffee: 100, water: 20 },
-    color: '#E7E5E4',
-    description: 'Misma cantidad de café pero con más agua. Más suave, mismo cafeína.',
-    when: 'Cuando quieres tomarlo despacio sin tanta carga.',
+    color: '#4A3B32',
+    description: 'Misma cantidad de café pero con más agua. Menos concentrado pero misma cafeína.',
+    when: 'Para tomar con calma leyendo el periódico.',
     instructions: 'Pides "un largo".',
-    tip: 'No confundir con el manchado - el largo no lleva leche.',
-    price: '~1,50€'
+    tip: 'No confundir con el americano (que es agua sucia para un local).',
+    price: '~1,30€',
+    caffeine: 3
   },
   {
     id: 'manchado',
@@ -76,40 +79,43 @@ const COFFEE_TYPES = [
     shortName: 'Manchado',
     icon: '🥛',
     ratio: { coffee: 10, milk: 90 },
-    color: '#FAFAF9',
-    description: 'Leche caliente con un café que apenas la tiñe. Suave y dulzón.',
-    when: 'Merienda o quienes no les gusta el café fuerte.',
-    instructions: 'Pides "un manchado" o "leche manchada".',
-    tip: 'En Huelva se sirve en vaso de vidrio, nunca en taza.',
-    price: '~2,00€'
+    color: '#F5E6D3',
+    description: 'Vaso de leche caliente con literalmente una "mancha" de café. Sabe a leche con aroma de café.',
+    when: 'Merienda o para estómagos delicados.',
+    instructions: 'Pides "un manchado".',
+    tip: 'Imprescindible pedirlo en vaso de cristal.',
+    price: '~1,50€',
+    caffeine: 1
   },
   {
     id: 'sombra',
     name: 'Sombra',
     fullName: 'Café Sombra',
     shortName: 'Sombra',
-    icon: '🥛',
-    ratio: { coffee: 5, milk: 95 },
-    color: '#FEFEFE',
-    description: 'Aún más suave que el manchado. El café apenas hace sombra.',
-    when: 'Para acompañar postres o media tarde.',
+    icon: '☁️',
+    ratio: { coffee: 20, milk: 80 },
+    color: '#E8DCC9',
+    description: 'Un poco más de café que el manchado, pero sigue mandando la leche. Color "café con leche clarito".',
+    when: 'Desayuno suave.',
     instructions: 'Pides "una sombra".',
-    tip: 'Popular después de comer en algunos barrios tradicionales.',
-    price: '~2,00€'
+    tip: 'Término muy específico de la zona occidental de Andalucía.',
+    price: '~1,50€',
+    caffeine: 1
   },
   {
     id: 'nube',
     name: 'Nube',
     fullName: 'Leche con Nube',
     shortName: 'Nube',
-    icon: '☁️',
-    ratio: { coffee: 3, milk: 97 },
-    color: '#FFFFFF',
-    description: 'Leche dominante con apenas una nube de café. Parece chocolates.',
-    when: 'Para niños o quienes quieren algo muy suave.',
+    icon: '🥛',
+    ratio: { coffee: 5, milk: 95 },
+    color: '#FFF8F0',
+    description: 'Prácticamente leche sola con una gota de café para darle color.',
+    when: 'Para niños o antes de dormir.',
     instructions: 'Pides "una nube".',
-    tip: 'Más de uno ha pedido una nube esperando chocolates.',
-    price: '~2,00€'
+    tip: 'Si te ponen más café del debido, te quejas.',
+    price: '~1,50€',
+    caffeine: 0
   },
   {
     id: 'bombon',
@@ -119,315 +125,211 @@ const COFFEE_TYPES = [
     icon: '🍬',
     ratio: { coffee: 50, condensed: 50 },
     color: '#D4A574',
-    description: 'Café con leche condensada, sin leche normal. El dulce más onubense.',
-    when: 'Desayuno o merienda dulce.',
+    description: 'Café con leche condensada. Una bomba dulce y energética.',
+    when: 'Cuando necesitas un extra de azúcar.',
     instructions: 'Pides "un bombón".',
-    tip: 'Acompañado con picos o churros es gloria bendita.',
-    price: '~2,50€'
+    tip: 'Mira las capas separadas antes de remover. Es hipnótico.',
+    price: '~1,80€',
+    caffeine: 3
   },
-  {
-    id: 'carajillo',
-    name: 'Carajillo',
-    fullName: 'Café Carajillo',
-    shortName: 'Carajillo',
-    icon: '🔥',
-    ratio: { coffee: 70, spirit: 30 },
-    color: '#B45309',
-    description: 'Café con un chupito de aguardiente o brandy. Para animarse.',
-    when: 'Después de comer o días festivos.',
-    instructions: 'Pides "un carajillo".',
-    tip: 'En algunos lugares se flamea el aguardiente con azúcar.',
-    price: '~3,00€'
-  }
 ];
 
 const LOCAL_PLACES = [
-  { name: 'Cafetería Plaza', specialty: 'Bombones y meriendas', area: 'Plaza de las Monjas' },
-  { name: 'Cafetería San José', specialty: 'Desayuno de oficinistas', area: 'Calle San José' },
-  { name: 'Café del Coto', specialty: 'Specialty coffee', area: 'Polígono El Coto' },
-  { name: 'Cafetería Roma', specialty: 'Clásico de toda la vida', area: 'Calle Rico' },
+  { name: 'Café de las Brujas', specialty: 'Café de especialidad', area: 'Centro', verified: true },
+  { name: 'Cafetería Tanka\'s', specialty: 'Vianés en vaso de cristal', area: 'Centro', verified: true },
+  { name: 'Churrería Miguel', specialty: 'El mejor chocolate con churros', area: 'Mercado del Carmen', verified: true },
+  { name: 'Mandala', specialty: 'Vistas al atardecer', area: 'El Conquero', verified: true },
 ];
 
 const ETIQUETTE = [
-  { icon: '🧍', rule: 'El café se bebe de pie', explanation: 'En la barra es más rápido y auténtico.' },
-  { icon: '🗣️', rule: 'No digas "espresso"', explanation: 'Aquí es "café solo". Espresso suena a turista.' },
-  { icon: '🍞', rule: 'El pitufo acompaña', explanation: 'Una media de pan tostada con el café de la mañana.' },
-  { icon: '💳', rule: 'Pagas al ir', explanation: 'Pides, tomas, y luego pagas en caja. No al revés.' },
-  { icon: '😊', rule: 'El camarero te ve', explanation: 'Si vas a menudo, recordarán tu café habitual.' },
-  { icon: '⌚', rule: 'El café es ritual', explanation: 'No te prives. Disfruta el momento de pausa.' },
+  { icon: '🥛', rule: 'En vaso sabe mejor', explanation: 'Muchos locales prefieren el café en vaso de cristal (de caña o de tubo) para ver el color y mantener el calor.' },
+  { icon: '💶', rule: 'Pagar al salir', explanation: 'En la mayoría de bares tradicionales, pides, consumes y pagas al marcharte. Confianza ciega.' },
+  { icon: '🥐', rule: 'La tostá es sagrada', explanation: 'El café no va solo. Va con media (o entera) de aceite y jamón, o mantequilla.' },
+  { icon: '🧊', rule: '¿Con hielo?', explanation: 'Si pides "con hielo", te traerán el café caliente y un vaso aparte con hielos grandes.' },
 ];
 
 export default function CoffeeTranslator() {
   const [selectedCoffee, setSelectedCoffee] = useState(COFFEE_TYPES[0]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-stone-50 via-amber-50/30 to-white">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden border-b border-stone-200">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${COFFEE_IMAGES.hero})` }}>
-            <div className="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-900/60 to-stone-900/90" />
-          </div>
-        </div>
+    <div className="bg-stone-50 min-h-screen font-sans text-stone-900">
 
-        <div className="container relative z-10 py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8"
-            >
-              <Coffee size={16} className="text-amber-400" />
-              <span className="text-sm font-bold text-white uppercase tracking-widest">
-                Guía Interactiva
-              </span>
-            </motion.div>
-
-            <h1 className="text-display text-6xl md:text-7xl font-bold text-white mb-6">
-              Traductor de
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-stone-400">
-                Café de Huelva
-              </span>
-            </h1>
-
-            <p className="text-xl text-stone-300 max-w-2xl mx-auto leading-relaxed mb-6">
-              Solo, Cortado, Mitad, Manchado, Sombra, Nube, Bombón, Carajillo.
-              Aprende los ratios sagrados del café onubense.
-            </p>
-
-            <p className="text-xs text-stone-500">
-              Imagen: {COFFEE_IMAGES.source}
+      {/* Ratio Selector UI */}
+      <section className="py-12 md:py-24 px-6 container mx-auto">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-amber-600 font-bold tracking-widest uppercase text-sm mb-4 block">La Ciencia del Café Onubense</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-stone-900 mb-6">Elige tu Dosis</h2>
+            <p className="text-xl text-stone-600 max-w-2xl mx-auto">
+              En Huelva no se pide "un café con leche". Se pide con precisión milimétrica.
             </p>
           </div>
-        </div>
-      </div>
 
-      {/* Ratio Selector */}
-      <div className="container py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-stone-800 mb-3">Los 9 Tipos Sagrados</h2>
-            <p className="text-stone-600">Selecciona un tipo para ver sus características</p>
-          </div>
-
-          <div className="grid grid-cols-3 md:grid-cols-9 gap-3 mb-16">
+          {/* Interactive Selector */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
             {COFFEE_TYPES.map((coffee) => (
               <button
                 key={coffee.id}
                 onClick={() => setSelectedCoffee(coffee)}
-                className={`relative p-4 rounded-2xl border-2 transition-all duration-300 ${
-                  selectedCoffee.id === coffee.id
-                    ? 'border-amber-500 bg-amber-50 shadow-lg scale-105'
-                    : 'border-stone-200 bg-white hover:border-amber-300'
-                }`}
+                className={`relative group px-6 py-4 rounded-2xl border transition-all duration-300 flex flex-col items-center gap-2 min-w-[100px] ${selectedCoffee.id === coffee.id
+                  ? 'bg-stone-900 text-white border-stone-900 shadow-xl scale-110 z-10'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-amber-400 hover:text-amber-600'
+                  }`}
               >
-                <div className="text-2xl mb-1">{coffee.icon}</div>
-                <p className={`text-xs font-bold ${
-                  selectedCoffee.id === coffee.id ? 'text-amber-800' : 'text-stone-700'
-                }`}>
-                  {coffee.shortName}
-                </p>
+                <span className="text-2xl">{coffee.icon}</span>
+                <span className="text-sm font-bold">{coffee.name}</span>
                 {selectedCoffee.id === coffee.id && (
-                  <motion.div
-                    layoutId="coffeeSelection"
-                    className="absolute -top-2 -right-2 w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center"
-                  >
-                    <Sparkles size={12} className="text-white" />
-                  </motion.div>
+                  <motion.div layoutId="active-pill" className="absolute inset-0 border-2 border-stone-900 rounded-2xl" />
                 )}
               </button>
             ))}
           </div>
 
-          {/* Detail Card */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedCoffee.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden border border-stone-200"
-            >
-              {/* Header with Ratio Visual */}
-              <div className="h-48 relative overflow-hidden" style={{ backgroundColor: selectedCoffee.color }}>
-                <div className="absolute inset-0 bg-black/5" />
+          {/* Main Display Card */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Visual Representation (Cup) */}
+            <div className="relative aspect-square max-w-md mx-auto w-full bg-white rounded-[3rem] shadow-2xl p-12 border border-stone-100 flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-stone-50 rounded-b-[3rem] -z-10" />
 
-                {/* Cup Visualization */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <motion.div
-                      key={selectedCoffee.id}
-                      initial={{ scale: 0.8 }}
-                      animate={{ scale: 1 }}
-                      className="text-6xl mb-2"
-                    >
-                      {selectedCoffee.icon}
-                    </motion.div>
-                    <h3 className="text-2xl font-bold text-stone-800">{selectedCoffee.fullName}</h3>
-                    <p className="text-stone-600 text-sm font-mono mt-1">{selectedCoffee.price}</p>
-                  </div>
-                </div>
+              {/* Liquid Container */}
+              <div className="relative w-48 h-64 border-4 border-stone-200 rounded-b-3xl rounded-t-lg bg-white overflow-hidden shadow-inner flex flex-col-reverse relative">
+                {/* Glass reflections */}
+                <div className="absolute top-0 right-4 w-2 h-full bg-white/30 z-20 rounded-full blur-[1px]" />
+                <div className="absolute top-0 left-4 w-1 h-full bg-white/20 z-20 rounded-full blur-[1px]" />
 
-                {/* Ratio Visualization */}
-                <div className="absolute bottom-0 left-0 right-0 h-2 flex">
-                  {selectedCoffee.ratio.milk !== undefined && (
-                    <div
-                      style={{ width: `${selectedCoffee.ratio.milk}%` }}
-                      className="h-full bg-stone-100"
-                    />
-                  )}
-                  {selectedCoffee.ratio.condensed !== undefined && (
-                    <div
-                      style={{ width: `${selectedCoffee.ratio.condensed}%` }}
-                      className="h-full bg-amber-200"
-                    />
-                  )}
-                  {selectedCoffee.ratio.water !== undefined && (
-                    <div
-                      style={{ width: `${selectedCoffee.ratio.water}%` }}
-                      className="h-full bg-blue-100"
-                    />
-                  )}
-                  <div
-                    style={{ width: `${selectedCoffee.ratio.coffee}%` }}
-                    className="h-full bg-amber-800"
+                {/* Layers */}
+                {selectedCoffee.ratio.condensed && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: `${selectedCoffee.ratio.condensed}%` }}
+                    transition={{ duration: 0.8, ease: "circOut" }}
+                    className="w-full bg-[#E5CBAF] z-10 border-t border-white/20"
                   />
-                </div>
+                )}
+                <motion.div
+                  initial={{ height: 0 }}
+                  animate={{ height: `${selectedCoffee.ratio.coffee}%` }}
+                  transition={{ duration: 0.8, ease: "circOut", delay: 0.1 }}
+                  className="w-full bg-[#3C2F2F] z-10 border-t border-white/10"
+                />
+                {selectedCoffee.ratio.milk && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: `${selectedCoffee.ratio.milk}%` }}
+                    transition={{ duration: 0.8, ease: "circOut", delay: 0.2 }}
+                    className="w-full bg-[#FFF8F0]"
+                  />
+                )}
+                {selectedCoffee.ratio.water && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: `${selectedCoffee.ratio.water}%` }}
+                    transition={{ duration: 0.8, ease: "circOut", delay: 0.2 }}
+                    className="w-full bg-blue-50/50"
+                  />
+                )}
               </div>
 
-              {/* Content */}
-              <div className="p-8">
-                <p className="text-stone-600 leading-relaxed mb-8">{selectedCoffee.description}</p>
+              {/* Smoke/Steam Animation */}
+              <div className="absolute top-20 left-1/2 -translate-x-1/2 -translate-y-full flex gap-2 opacity-50">
+                <motion.div
+                  animate={{ y: [-10, -30], opacity: [0, 1, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+                  className="w-2 h-8 bg-stone-200 rounded-full blur-md"
+                />
+                <motion.div
+                  animate={{ y: [-15, -40], opacity: [0, 1, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+                  className="w-2 h-10 bg-stone-200 rounded-full blur-md"
+                />
+              </div>
+            </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="font-bold text-stone-800 mb-4 flex items-center gap-2">
-                      <Droplets size={20} className="text-amber-600" />
-                      Composición
-                    </h4>
-                    <div className="bg-stone-50 rounded-xl p-4 font-mono text-sm">
-                      {selectedCoffee.ratio.milk !== undefined && (
-                        <p>{selectedCoffee.ratio.coffee}% café · {selectedCoffee.ratio.milk}% leche</p>
-                      )}
-                      {selectedCoffee.ratio.condensed !== undefined && (
-                        <p>{selectedCoffee.ratio.coffee}% café · {selectedCoffee.ratio.condensed}% leche condensada</p>
-                      )}
-                      {selectedCoffee.ratio.water !== undefined && (
-                        <p>Café + {selectedCoffee.ratio.water}% más agua</p>
-                      )}
+            {/* Info Panel */}
+            <div>
+              <motion.div
+                key={selectedCoffee.id}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                  <Sparkles size={12} />
+                  {selectedCoffee.fullName}
+                </div>
+                <h3 className="text-4xl font-display font-bold text-stone-900 mb-6">{selectedCoffee.name}</h3>
+                <p className="text-xl text-stone-600 leading-relaxed mb-8">{selectedCoffee.description}</p>
+
+                <div className="space-y-6">
+                  <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-stone-100">
+                    <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-700 h-fit"><Clock size={20} /></div>
+                    <div>
+                      <h4 className="font-bold text-stone-900 text-sm uppercase tracking-wide mb-1">El Momento</h4>
+                      <p className="text-stone-600 font-medium">{selectedCoffee.when}</p>
                     </div>
                   </div>
 
-                  <div>
-                    <h4 className="font-bold text-stone-800 mb-4 flex items-center gap-2">
-                      <Info size={20} className="text-amber-600" />
-                      Detalles
-                    </h4>
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <Sun size={16} className="text-amber-600 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-stone-800">Cuándo tomarlo</p>
-                          <p className="text-stone-600 text-sm">{selectedCoffee.when}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CupSoda size={16} className="text-amber-600 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-stone-800">Cómo pedirlo</p>
-                          <p className="text-stone-600 text-sm">{selectedCoffee.instructions}</p>
-                        </div>
-                      </div>
+                  <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-stone-100">
+                    <div className="mt-1 bg-stone-100 p-2 rounded-lg text-stone-700 h-fit"><CupSoda size={20} /></div>
+                    <div>
+                      <h4 className="font-bold text-stone-900 text-sm uppercase tracking-wide mb-1">Cómo Pedirlo</h4>
+                      <p className="text-stone-600 font-medium italic">"{selectedCoffee.instructions}"</p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-gradient-to-r from-stone-900 to-stone-800 text-white rounded-2xl shadow-lg mt-8">
+                    <div className="flex items-start gap-3">
+                      <Info size={20} className="text-amber-400 mt-1 flex-shrink-0" />
+                      <p className="text-sm leading-relaxed"><span className="text-amber-400 font-bold uppercase text-xs tracking-wider block mb-1">Consejo Local</span> {selectedCoffee.tip}</p>
                     </div>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                {/* Local Tip */}
-                <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
-                  <p className="text-stone-700 text-sm">
-                    <span className="font-bold">💡 Tip local:</span> {selectedCoffee.tip}
-                  </p>
+      {/* Recommended Places */}
+      <section className="bg-white py-24 px-6 border-t border-stone-100">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-display font-bold text-center mb-16">Templos del Café</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {LOCAL_PLACES.map((place, idx) => (
+              <div key={idx} className="group p-8 rounded-3xl bg-stone-50 hover:bg-white border border-transparent hover:border-stone-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 mb-6 group-hover:scale-110 transition-transform">
+                  <Coffee size={24} />
                 </div>
+                <h3 className="font-bold text-lg text-stone-900 mb-2">{place.name}</h3>
+                <p className="text-amber-700 text-sm font-medium mb-1">{place.specialty}</p>
+                <p className="text-stone-400 text-xs uppercase tracking-wider">{place.area}</p>
               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* Local Places */}
-      <div className="container pb-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-stone-800 text-center mb-10">
-            Cafeterías de Referencia en Huelva
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {LOCAL_PLACES.map((place, index) => (
-              <motion.div
-                key={place.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 border border-stone-200 hover:border-amber-300 hover:shadow-lg transition-all"
-              >
-                <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-                  <Coffee size={24} className="text-amber-700" />
-                </div>
-                <h4 className="font-bold text-stone-800 mb-1">{place.name}</h4>
-                <p className="text-amber-700 text-sm mb-2">{place.specialty}</p>
-                <p className="text-stone-500 text-xs">{place.area}</p>
-              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Etiquette */}
-      <div className="container pb-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-stone-800 text-center mb-10">
-            Reglas del Café en Huelva
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {ETIQUETTE.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-2xl p-5 border border-stone-200 hover:border-amber-200 transition-all"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">{item.icon}</span>
-                  <div>
-                    <h4 className="font-bold text-stone-800 mb-1">{item.rule}</h4>
-                    <p className="text-stone-600 text-sm">{item.explanation}</p>
+      {/* Etiquette Grid */}
+      <section className="py-24 px-6 container mx-auto max-w-6xl">
+        <div className="bg-stone-900 rounded-[3rem] p-12 md:p-24 text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-600/20 rounded-full blur-[100px] -mr-32 -mt-32" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16">Mandamientos Cafeteros</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {ETIQUETTE.map((item, idx) => (
+                <div key={idx} className="text-center">
+                  <div className="text-4xl mb-6 bg-white/5 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto hover:bg-white/10 transition-colors cursor-default">
+                    {item.icon}
                   </div>
+                  <h4 className="font-bold text-lg mb-3">{item.rule}</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.explanation}</p>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Author */}
-      <div className="container pb-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-4 px-8 py-5 bg-white rounded-2xl border border-stone-200 shadow-lg">
-            <div className="w-14 h-14 rounded-full overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&fit=crop" alt="Rocío Limón" className="w-full h-full object-cover" />
-            </div>
-            <div className="text-left">
-              <p className="font-bold text-stone-800">Rocío Limón</p>
-              <p className="text-sm text-stone-500">Redactora Jefe | Gastronomía</p>
-              <p className="text-xs text-stone-400 italic mt-1">"Rocío nunca deja un plato sin probar."</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

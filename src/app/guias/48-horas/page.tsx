@@ -29,14 +29,11 @@ export default function WeekendItineraryPage() {
       {/* Header with Image Background */}
       <div className="relative pt-32 pb-32 px-6 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000)'
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-terracotta/90 via-terracotta/70 to-terracotta/20" />
+        <div className="absolute inset-0 opacity-100">
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+            backgroundImage: `url("/images/guides/muelle-tinto-sunset.jpg")`,
+          }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-900/90 via-amber-900/80 to-transparent" />
         </div>
 
         <div className="absolute inset-0">

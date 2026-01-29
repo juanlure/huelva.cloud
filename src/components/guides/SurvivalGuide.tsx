@@ -8,12 +8,12 @@ import Ticket from '@/components/ui/Ticket';
 // --- Assets Reales (Wikimedia/Commons) ---
 // Evitamos Unsplash/IA para autenticidad máxima
 const IMAGES = {
-  hero: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Huelva_-_Plaza_de_las_monjas.jpg/1920px-Huelva_-_Plaza_de_las_monjas.jpg",
-  transport: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg/1280px-Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg",
-  food: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gambas_blancas_de_Huelva.jpg/1280px-Gambas_blancas_de_Huelva.jpg", // Gamba blanca real
-  slang: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Choquitos_fritos.jpg/1280px-Choquitos_fritos.jpg", // Choco real
-  muelle: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Muelle_del_Tinto%2C_Huelva%2C_Espa%C3%B1a%2C_2015-12-09%2C_DD_26.JPG/1920px-Muelle_del_Tinto%2C_Huelva%2C_Espa%C3%B1a%2C_2015-12-09%2C_DD_26.JPG",
-  barrio: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Barrio_Reina_Victoria_Huelva.jpg/1280px-Barrio_Reina_Victoria_Huelva.jpg"
+  hero: "/images/guides/huelva-plaza-las-monjas.jpg",
+  transport: "/images/guides/huelva-estacion-sevilla.jpg",
+  food: "/images/guides/gambas-blancas-huelva.jpg", // Gamba blanca real
+  slang: "/images/guides/choquitos-fritos.jpg", // Choco real
+  muelle: "/images/guides/muelle-tinto-huelva.jpg",
+  barrio: "/images/guides/barrio-reina-victoria.jpg"
 };
 
 const SectionHeader = ({ title, subtitle, index }: { title: string, subtitle: string, index: string }) => (

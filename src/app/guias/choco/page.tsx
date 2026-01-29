@@ -17,7 +17,7 @@ export default function ChocoTranslatorPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1599487483441-df3f705139fb?w=1600&q=80)'
+              backgroundImage: 'url(/images/guides/choco-frito-hero.jpg)'
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-terracotta/90 via-terracotta/70 to-orange-50" />
