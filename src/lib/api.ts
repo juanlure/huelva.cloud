@@ -13,6 +13,36 @@ export interface Article {
   isAi: boolean;
 }
 
+// Helper to fix broken/hotlinked images from DB
+function fixImageUrl(url: string): string {
+  if (!url) return '/images/guides/huelva-plaza-las-monjas.jpg'; // Fallback
+
+  // Local images are already good
+  if (url.startsWith('/') || url.startsWith('http://localhost')) return url;
+
+  const mapping: Record<string, string> = {
+    'Plaza_de_las_monjas': 'huelva-plaza-las-monjas.jpg',
+    'Estación_de_Sevilla': 'estacion-neomudejar.jpg',
+    'Calle_Berdigón': 'calle-berdigon.jpg',
+    'Gambas_blancas': 'gambas-blancas-huelva.jpg',
+    'Choco_frito': 'choco-frito-tapa.jpg',
+    'Muelle_del_Tinto': 'muelle-tinto-huelva.jpg',
+    'Barrio_Reina_Victoria': 'barrio-reina-victoria.jpg',
+    'Barrio_Obrero': 'barrio-reina-victoria-hero.jpg',
+    'Coquinas': 'coquinas-huelva.jpg',
+    'Jamón': 'jamon-iberico-bellota.jpg',
+    'Jamon': 'jamon-iberico-bellota.jpg',
+  };
+
+  for (const [key, filename] of Object.entries(mapping)) {
+    if (url.includes(key)) {
+      return `/images/guides/${filename}`;
+    }
+  }
+
+  return url;
+}
+
 // Mapper de DB a Frontend
 function mapArticle(dbArticle: ArticleDB): Article {
   // Calculo simple de tiempo lectura: 200 palabras / min
@@ -25,7 +55,7 @@ function mapArticle(dbArticle: ArticleDB): Article {
     excerpt: dbArticle.excerpt,
     content: dbArticle.content,
     category: dbArticle.category,
-    image: dbArticle.image_url,
+    image: fixImageUrl(dbArticle.image_url),
     date: new Date(dbArticle.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
     readTime,
     author: dbArticle.author,
