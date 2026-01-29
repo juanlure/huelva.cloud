@@ -31,7 +31,7 @@ export default function WeekendItineraryPage() {
         {/* Background Image */}
         <div className="absolute inset-0 opacity-100">
           <div className="absolute inset-0 bg-cover bg-center" style={{
-            backgroundImage: `url("/images/guides/muelle-tinto-sunset.jpg")`,
+            backgroundImage: 'url(https://images.unsplash.com/photo-1620733723572-11c52f7c2fd5?auto=format&fit=crop&w=1920&q=80)',
           }} />
           <div className="absolute inset-0 bg-gradient-to-br from-orange-900/90 via-amber-900/80 to-transparent" />
         </div>
