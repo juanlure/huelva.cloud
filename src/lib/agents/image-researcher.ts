@@ -6,6 +6,7 @@
  */
 
 import { generateContent, isAiEnabled } from '../gemini';
+import { scrapeArticle } from './scraper';
 
 // ============================================================================
 // INTERFACES
@@ -21,7 +22,7 @@ export interface ImageResult {
   query_used: string;
   selected_image: {
     url: string;
-    source: 'unsplash' | 'pexels' | 'pixabay';
+    source: 'unsplash' | 'pexels' | 'pixabay' | 'web';
     photographer?: string;
     description: string;
     keywords: string[];
@@ -246,6 +247,19 @@ export async function searchImage(topic: string, category?: string): Promise<Ima
   // Determinar categoría
   const cat = category || classifyTopic(topic);
 
+  // ESTRATEGIA: Para monumentos, lugares, O si dice explícitamente "Huelva", intentamos PRIMERO scraping web
+  if (['architecture', 'nature', 'beaches'].includes(cat) ||
+    topic.toLowerCase().includes('monumento') ||
+    topic.toLowerCase().includes('plaza') ||
+    topic.toLowerCase().includes('huelva') // Broaden search for authenticity
+  ) {
+    const realImage = await searchRealWebImage(topic);
+    if (realImage) {
+      return realImage;
+    }
+    console.log(`[IMAGE_RESEARCHER] No se encontró imagen real para ${topic}, cayendo en fallback AI/Stock.`);
+  }
+
   const prompt = `
 ${IMAGE_RESEARCHER_PROMPT}
 
@@ -324,29 +338,92 @@ Devuelve SOLO el JSON.
 }
 
 /**
+ * Busca una imagen REAL en la web (scraping) para lugares específicos
+ * Evita Unsplash y AI para garantizar autenticidad en monumentos/lugares
+ */
+export async function searchRealWebImage(topic: string): Promise<ImageResult | null> {
+  console.log(`[IMAGE_RESEARCHER] Intentando obtener imagen real web para: "${topic}"`);
+
+  // 1. Buscar una URL relevante usando Google Search
+  const searchPrompt = `
+      Busca una página web oficial, artículo de noticias o guía de turismo fiable sobre "${topic}" en Huelva.
+      Prioriza sitios como: huelvainformacion.es, aytodehuelva.es, andalucia.org, tripadvisor.es, u otras fuentes locales.
+      NO uses pinterest, stock photos, ni redes sociales.
+      
+      Devuelve SOLO un JSON con este formato:
+      { "url": "https://..." }
+    `;
+
+  try {
+    const response = await generateContent(searchPrompt, 0.1, true);
+    const jsonStart = response?.indexOf('{') ?? -1;
+    const jsonEnd = response?.lastIndexOf('}') ?? -1;
+
+    if (response && jsonStart !== -1 && jsonEnd !== -1) {
+      const jsonStr = response.substring(jsonStart, jsonEnd + 1);
+      const { url } = JSON.parse(jsonStr);
+
+      if (url) {
+        console.log(`[IMAGE_RESEARCHER] URL encontrada para scraping: ${url}`);
+        const articleData = await scrapeArticle(url);
+
+        if (articleData && (articleData.image || (articleData.gallery && articleData.gallery.length > 0))) {
+          const finalImage = articleData.image || articleData.gallery![0];
+
+          // Validar que sea una URL de imagen válida
+          if (finalImage.startsWith('http')) {
+            return {
+              topic,
+              query_used: `web_scraping: ${url}`,
+              selected_image: {
+                url: finalImage,
+                source: 'web',
+                photographer: articleData.source || new URL(url).hostname,
+                description: articleData.title || `Imagen real de ${topic}`,
+                keywords: [topic, 'huelva', 'real', 'scraped'],
+                resolution: 'web-optimized',
+                relevance_score: 1.0
+              },
+              alternatives: articleData.gallery?.slice(1, 4).map(img => ({
+                url: img,
+                reason: 'Galería extraida de la misma fuente'
+              })) || []
+            };
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.error(`[IMAGE_RESEARCHER] Fallo al buscar imagen real:`, e);
+  }
+
+  return null;
+}
+
+/**
  * Clasifica el tema en una categoría visual
  */
 function classifyTopic(topic: string): keyof typeof QUERIES_BY_CATEGORY {
   const lower = topic.toLowerCase();
 
   if (lower.includes('comer') || lower.includes('restaurante') || lower.includes('tapas') ||
-      lower.includes('choco') || lower.includes('gamba') || lower.includes('calamares')) {
+    lower.includes('choco') || lower.includes('gamba') || lower.includes('calamares')) {
     return 'gastronomy';
   }
   if (lower.includes('playa') || lower.includes('mar') || lower.includes('costa') ||
-      lower.includes('baño') || lower.includes('orilla')) {
+    lower.includes('baño') || lower.includes('orilla')) {
     return 'beaches';
   }
   if (lower.includes('monumento') || lower.includes('catedral') || lower.includes('iglesia') ||
-      lower.includes('barrio') || lower.includes('edificio') || lower.includes('arquitectura')) {
+    lower.includes('barrio') || lower.includes('edificio') || lower.includes('arquitectura')) {
     return 'architecture';
   }
   if (lower.includes('parque') || lower.includes('marisma') || lower.includes('flamenco') ||
-      lower.includes('ave') || lower.includes('naturaleza') || lower.includes('bosque')) {
+    lower.includes('ave') || lower.includes('naturaleza') || lower.includes('bosque')) {
     return 'nature';
   }
   if (lower.includes('atardecer') || lower.includes('sunset') || lower.includes('puesta') ||
-      lower.includes('amanecer') || lower.includes('amanecer')) {
+    lower.includes('amanecer') || lower.includes('amanecer')) {
     return 'sunset';
   }
 

@@ -1,456 +1,239 @@
 'use client';
 
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Bus, Coffee, AlertTriangle, Sunset, MapPin, Star, ExternalLink } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Bus, Coffee, MapPin, Sunset, ArrowRight, ExternalLink } from 'lucide-react';
 import Ticket from '@/components/ui/Ticket';
 
-interface Section {
-  id: string;
-  icon: React.ReactNode;
-  title: string;
-  subtitle?: string;
-  content: React.ReactNode;
-}
+// --- Assets Reales (Wikimedia/Commons) ---
+// Evitamos Unsplash/IA para autenticidad máxima
+const IMAGES = {
+  hero: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Huelva_-_Plaza_de_las_monjas.jpg/1920px-Huelva_-_Plaza_de_las_monjas.jpg",
+  transport: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg/1280px-Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg",
+  food: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gambas_blancas_de_Huelva.jpg/1280px-Gambas_blancas_de_Huelva.jpg", // Gamba blanca real
+  slang: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Choquitos_fritos.jpg/1280px-Choquitos_fritos.jpg", // Choco real
+  muelle: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Muelle_del_Tinto%2C_Huelva%2C_Espa%C3%B1a%2C_2015-12-09%2C_DD_26.JPG/1920px-Muelle_del_Tinto%2C_Huelva%2C_Espa%C3%B1a%2C_2015-12-09%2C_DD_26.JPG",
+  barrio: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Barrio_Reina_Victoria_Huelva.jpg/1280px-Barrio_Reina_Victoria_Huelva.jpg"
+};
 
-// Datos reales verificados de Huelva
-const sections: Section[] = [
-  {
-    id: 'transporte',
-    icon: <Bus size={24} />,
-    title: 'Moverte por la ciudad',
-    subtitle: 'Transporte urbano verificado',
-    content: (
-      <div className="space-y-6">
-        <div className="aspect-video rounded-3xl overflow-hidden relative mb-6">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg/1024px-Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg"
-            alt="Transporte en Huelva"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-        </div>
-
-        <p className="text-navy-70 leading-relaxed">
-          Huelva cuenta con un sistema de autobuses urbanos gestionado por <strong className="text-navy">TUsa</strong> (Transportes Urbanos de Huelva, S.A.).
-        </p>
-
-        <div className="bg-white rounded-3xl p-8 border border-navy-10 shadow-sm">
-          <h4 className="text-display font-semibold text-navy mb-6 flex items-center gap-3">
-            <MapPin size={20} className="text-terracotta" />
-            Líneas Principales Verificadas
-          </h4>
-          <div className="space-y-4">
-            {[
-              { line: 'L1', route: 'Estación de Autobuses ↔ Prado Huelva → Pérez Cubillas', color: 'bg-blue-100 text-blue-700 border-blue-200' },
-              { line: 'L2', route: 'Cuesta de la Rosa ↔ Juan Ramón Jiménez → Costa', color: 'bg-green-100 text-green-700 border-green-200' },
-              { line: 'L3', route: 'Las Colonias ↔ Complejo Educando', color: 'bg-purple-100 text-purple-700 border-purple-200' },
-              { line: 'L4', route: 'El Polvorín → Centro → Costa', color: 'bg-orange-100 text-orange-700 border-orange-200' },
-            ].map((line) => (
-              <div key={line.line} className={`p-4 rounded-2xl border ${line.color}`}>
-                <span className="font-bold text-lg">{line.line}</span>
-                <p className="text-sm mt-1">{line.route}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex justify-center">
-          <Ticket
-            title="Tarifas TUsa"
-            variant="transport"
-            icon={<Bus size={18} />}
-            items={[
-              { label: 'Viaje sencillo', price: '1,20€' },
-              { label: 'Bonobús 10 viajes', price: '9,00€' },
-              { label: 'Bonobús 20 viajes', price: '16,50€' },
-            ]}
-            total="Desde 0,90€/viaje"
-          />
-        </div>
-
-        <div className="flex items-start gap-4 p-6 bg-orange-50 rounded-3xl border border-orange-100">
-          <AlertTriangle size={24} className="text-terracotta mt-0.5 flex-shrink-0" />
-          <div>
-            <p className="font-semibold text-navy mb-2">Taxi verificado</p>
-            <p className="text-sm text-navy-70">
-              Servicio de taxi: <span className="font-mono">+34 959 25 00 00</span><br />
-              <span className="text-xs mt-2 block">Radio Taxi Huelva opera 24h. Los fines de semana por la noche puede haber espera.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    id: 'gastronomia',
-    icon: <Coffee size={24} />,
-    title: 'Donde comer como un local',
-    subtitle: 'Bares y restaurantes verificados con reviews reales',
-    content: (
-      <div className="space-y-6">
-        <div className="aspect-video rounded-3xl overflow-hidden relative mb-6 border border-navy-10">
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Choco_frito.jpg?width=800"
-            alt="Gastronomía de Huelva"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-        </div>
-
-        <p className="text-navy-70 leading-relaxed">
-          Lugares verificados con opiniones reales de clientes en TripAdvisor y Google Reviews.
-        </p>
-
-        <div className="space-y-4">
-          {[
-            {
-              name: 'Restaurante El Azabache',
-              rating: 4.5,
-              reviews: 1326,
-              address: 'Calle Rico, 17',
-              specialty: 'Jamonazo ibérico, choco con tomate',
-              price: '€€ - €€€',
-              badge: 'Más valorado'
-            },
-            {
-              name: 'Cervecería Marisquería Er Chiclanero',
-              rating: 4.7,
-              reviews: 575,
-              address: 'Calle José Nogueira, 8',
-              specialty: 'Marisco fresco, chocos',
-              price: '€€ - €€€',
-              badge: 'Excelente marisco'
-            },
-            {
-              name: 'Bar Pappis',
-              rating: 4.5,
-              reviews: 534,
-              address: 'Conde López Muñoz, 4',
-              specialty: 'Tapas, montaditos',
-              price: '€',
-              badge: 'Calidad-precio'
-            },
-            {
-              name: 'Casa Miguel',
-              rating: 4.3,
-              reviews: 320,
-              address: 'Plaza de las Monjas, 5',
-              specialty: 'Tollos con tomate',
-              price: '€€',
-              badge: 'Tollos legendarios'
-            },
-            {
-              name: 'El Comodoro',
-              rating: 4.4,
-              reviews: 412,
-              address: 'Calle Puerto, 12',
-              specialty: 'Ensaladilla, choco asado',
-              price: '€€',
-              badge: 'Famoso ensaladilla'
-            },
-          ].map((place) => (
-            <div key={place.name} className="bg-white rounded-3xl p-6 border border-navy-10 hover:border-terracotta/30 transition-all hover:shadow-lg group">
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <div className="flex-1">
-                  <h4 className="text-display font-semibold text-navy text-lg group-hover:text-terracotta transition-colors">
-                    {place.name}
-                  </h4>
-                  <p className="text-sm text-navy-50 flex items-center gap-1 mt-1">
-                    <MapPin size={14} />
-                    {place.address}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1 bg-yellow-50 px-3 py-1.5 rounded-full">
-                  <Star size={16} className="text-yellow-500 fill-yellow-500" />
-                  <span className="font-bold text-navy">{place.rating}</span>
-                  <span className="text-xs text-navy-40">({place.reviews})</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="px-3 py-1 bg-terracotta/10 text-terracotta rounded-full text-xs font-bold">
-                  {place.badge}
-                </span>
-                <span className="text-sm text-navy-60">{place.specialty}</span>
-                <span className="ml-auto text-sm text-navy-40">{place.price}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center">
-          <Ticket
-            title="Precios orientativos"
-            variant="restaurant"
-            icon={<Coffee size={18} />}
-            items={[
-              { label: 'Tapa', price: '3-5€' },
-              { label: 'Media ración', price: '6-10€' },
-              { label: 'Ración completa', price: '12-18€' },
-              { label: 'Menú del día', price: '12-15€' },
-            ]}
-            total="Varía según establecimiento"
-          />
-        </div>
-
-        <div className="bg-gradient-to-br from-sand to-orange-50 rounded-3xl p-6 border border-orange-100">
-          <h4 className="text-display font-semibold text-navy mb-4 flex items-center gap-2">
-            <Coffee size={18} className="text-orange-500" />
-            Tapas que DEBES probar
-          </h4>
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            {['Choco con tomate', 'Tollos con tomate', 'Carrillá', 'Raya al pimentón', 'Gamba blanca', 'Aliñá'].map((tapa) => (
-              <div key={tapa} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
-                <span className="text-navy-70">{tapa}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div >
-    )
-  },
-  {
-    id: 'vocabulario',
-    icon: <Coffee size={24} />,
-    title: 'Hablar como un choquero',
-    subtitle: 'Palabras recopiladas del Palabrario de Huelva (600+ términos)',
-    content: (
-      <div className="space-y-6">
-        <div className="aspect-[21/9] rounded-3xl overflow-hidden relative mb-6">
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Tapas_variadas.jpg?width=800"
-            alt="Slang de Huelva"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-        </div>
-
-        <p className="text-navy-70 leading-relaxed">
-          El dialecto onubense o <strong>"choquero"</strong> (del choco, producto estrella de Huelva) tiene más de 600 vocablos recopilados
-          por el historiador Gustavo Castillo Rey. Estos son algunos de los más característicos:
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            { term: 'Choquero/a', meaning: 'Natural de Huelva capital (también onubense)', example: '¡Ese chico es muy choquero!' },
-            { term: 'Choco', meaning: 'Sepia (cuttlefish) - producto estrella', example: 'Un choco con tomate, por favor' },
-            { term: 'Raba', meaning: 'Sepia frita entera', example: 'Dame dos rabas con arroz' },
-            { term: 'Carrillá', meaning: 'Carrillada de cerdo ibérico', example: 'Una carrillá entera' },
-            { term: 'Aliñá', meaning: 'Ensalada aliñada (tomate, pimiento, etc)', example: 'Una aliñá con gambas' },
-            { term: 'Clara', meaning: 'Clara de huevo con guarnición', example: 'Una clara de jamón' },
-            { term: 'Aguamala', meaning: 'Medusa', example: '¡Cuidado, hay aguamalas!' },
-            { term: 'Barrilete', meaning: 'Bocas / doradas', example: 'Unos barriletes fritos' },
-            { term: 'Citrato', meaning: 'Regaliz', example: 'Un citrato para después' },
-            { term: 'Gañafote', meaning: 'Saltamontes', example: 'El campo está lleno de gañafotes' },
-            { term: 'Chocho', meaning: 'Altramuces', example: 'Un puñado de chocos con cerveza' },
-            { term: 'Mare', meaning: 'Cierto / de acuerdo', example: 'Mare, vamos a la playa' },
-          ].map((word) => (
-            <div key={word.term} className="bg-white rounded-2xl p-5 border border-navy-10 hover:border-terracotta/30 transition-all group">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-display font-bold text-navy text-xl group-hover:text-terracotta transition-colors">
-                  {word.term}
-                </span>
-              </div>
-              <p className="text-navy-60 text-sm mb-2">{word.meaning}</p>
-              <p className="text-xs text-navy-40 italic">"{word.example}"</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-terracotta/10 rounded-3xl p-6 border border-terracotta/20">
-          <p className="text-sm text-navy">
-            <span className="font-bold text-terracotta">¿Sabías qué?</span> El término "choquero" viene del "choco" (sepia),
-            que es el producto más emblemático de Huelva. Los onubenses somos conocidos como choqueros precisamente por nuestra
-            pasión por este marisco.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    id: 'lugares',
-    icon: <Sunset size={24} />,
-    title: 'Lugares que no te puedes perder',
-    subtitle: 'Monumentos y parajes naturales verificados',
-    content: (
-      <div className="space-y-8">
-        <p className="text-navy-70 leading-relaxed">
-          Lugares reales con historias verificadas. Cada uno existe y puedes visitarlo hoy mismo.
-        </p>
-
-        <div className="space-y-6">
-          {/* Muelle del Tinto */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="aspect-[21/9] overflow-hidden relative">
-              <img
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/MuelleRioTintoSunset.jpg?width=1000"
-                alt="Muelle del Tinto"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <h4 className="text-display font-semibold text-navy text-xl group-hover:text-terracotta transition-colors">
-                  Muelle del Tinto
-                </h4>
-                <span className="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-700 rounded-full">1874</span>
-              </div>
-              <p className="text-sm text-navy-60 mb-4 leading-relaxed">
-                Monumento industrial de 1.165 metros construido por la Río Tinto Company. Siguiendo las enseñanzas de Eiffel,
-                este muelle fue el corazón de la exportación de mineral hasta 1975.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-navy-40">
-                <span className="flex items-center gap-1"><MapPin size={14} /> Río Odiel</span>
-                <span className="flex items-center gap-1"><Sunset size={14} /> Atardecer épico</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Barrio Reina Victoria */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="aspect-[21/9] overflow-hidden relative">
-              <img
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Barrio_Obrero_Huelva.jpg?width=1000"
-                alt="Barrio Reina Victoria"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <h4 className="text-display font-semibold text-navy text-xl group-hover:text-terracotta transition-colors">
-                  Barrio Reina Victoria
-                </h4>
-                <span className="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-700 rounded-full">1916</span>
-              </div>
-              <p className="text-sm text-navy-60 mb-4 leading-relaxed">
-                Barrio obrero construido por la Río Tinto Company. Mezcla única de arquitectura
-                británica, andaluza y neomudéjar. Declarado Bien de Interés Cultural en 2002.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-navy-40">
-                <span className="flex items-center gap-1"><MapPin size={14} /> Calle Reina Victoria</span>
-                <span className="flex items-center gap-1"><Bus size={14} /> Guía británica</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Marismas del Odiel */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="aspect-[21/9] overflow-hidden relative">
-              <img
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Flamencos_Marismas_del_Odiel.jpg?width=1000"
-                alt="Marismas del Odiel"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <h4 className="text-display font-semibold text-navy text-xl group-hover:text-terracotta transition-colors">
-                  Marismas del Odiel
-                </h4>
-                <span className="text-xs font-bold px-3 py-1 bg-green-100 text-green-700 rounded-full">Natural</span>
-              </div>
-              <p className="text-sm text-navy-60 mb-4 leading-relaxed">
-                Paraje Natural de más de 2.700 hectáreas. Hogar de más de 300 especies de aves, incluidos los flamencos.
-                Reserva de la Biosfera por la UNESCO.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-navy-40">
-                <span className="flex items-center gap-1"><MapPin size={14} /> Ctra. del Espigón</span>
-                <span className="flex items-center gap-1"><Sunset size={14} /> Observación aves</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  },
-];
+const SectionHeader = ({ title, subtitle, index }: { title: string, subtitle: string, index: string }) => (
+  <div className="mb-12 md:mb-20">
+    <div className="flex items-baseline gap-4 mb-4">
+      <span className="text-terracotta font-mono text-sm tracking-widest uppercase">0{index}</span>
+      <div className="h-px bg-terracotta/30 flex-1 max-w-[100px]" />
+    </div>
+    <h2 className="text-5xl md:text-7xl font-display font-medium text-navy leading-[0.9] mb-6">
+      {title}
+    </h2>
+    <p className="text-xl md:text-2xl text-navy-60 max-w-lg font-light leading-relaxed">
+      {subtitle}
+    </p>
+  </div>
+);
 
 export default function SurvivalGuide() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const heroY = useTransform(scrollYProgress, [0, 0.2], ["0%", "20%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div className="container py-24">
-      <div className="max-w-content mx-auto space-y-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-terracotta/10 to-orange-50 border border-terracotta/20 mb-8">
-            <Star size={16} className="text-terracotta animate-pulse" />
-            <span className="text-sm font-bold text-navy uppercase tracking-widest">
-              Información verificada
-            </span>
-          </div>
-          <h1 className="text-display text-4xl md:text-5xl font-semibold text-navy mb-6">
-            Guía de Supervivencia en Huelva
-          </h1>
-          <p className="text-xl text-navy-60 max-w-2xl mx-auto leading-relaxed">
-            Todo lo que necesitas saber para moverte por Huelva como un verdadero onubense.
-            Datos reales, lugares verificados, sin turismos.
-          </p>
-        </div>
+    <div ref={containerRef} className="bg-cream">
+      {/* --- HERO SECTION --- */}
+      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <motion.div
+          style={{ y: heroY, opacity: heroOpacity }}
+          className="absolute inset-0 z-0"
+        >
+          <div className="absolute inset-0 bg-navy/30 z-10 mix-blend-multiply" />
+          <img
+            src={IMAGES.hero}
+            alt="Plaza de las Monjas"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
 
-        {sections.map((section, index) => (
+        <div className="relative z-20 text-center text-white px-6 max-w-5xl mx-auto">
           <motion.div
-            key={section.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="bg-white rounded-3xl overflow-hidden border border-navy-10 shadow-sm hover:shadow-lg transition-shadow"
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <button
-              onClick={() => setOpenSection(openSection === section.id ? null : section.id)}
-              className="w-full flex items-center justify-between p-8 text-left"
-            >
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-terracotta/10 flex items-center justify-center text-terracotta">
-                  {section.icon}
-                </div>
-                <div>
-                  <h3 className="text-display text-xl font-semibold text-navy">
-                    {section.title}
-                  </h3>
-                  {section.subtitle && (
-                    <p className="text-sm text-navy-50 mt-0.5">{section.subtitle}</p>
-                  )}
-                </div>
-              </div>
-              <div className="w-12 h-12 rounded-full bg-navy/5 flex items-center justify-center text-navy-40">
-                {openSection === section.id ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-              </div>
-            </button>
-
-            <AnimatePresence>
-              {openSection === section.id && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-8 pb-8 pt-2 border-t border-navy-10">
-                    {section.content}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <span className="inline-block border border-white/30 px-4 py-1.5 rounded-full text-sm font-medium tracking-widest uppercase mb-8 backdrop-blur-md">
+              Huelva.is Essential Series
+            </span>
+            <h1 className="text-7xl md:text-[8rem] font-display font-normal leading-[0.85] mb-8 tracking-tight">
+              Manual de<br /><span className="italic font-light opacity-90">Supervivencia</span>
+            </h1>
+            <p className="text-xl md:text-2xl font-light text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Olvídate de las trampas para turistas. Esta es la Huelva real, cruda y verificada.
+              <br /><span className="text-sm opacity-70 mt-4 block font-mono">ACTUALIZADO 2026 // DATOS VERIFICADOS</span>
+            </p>
           </motion.div>
-        ))}
-      </div>
-
-      {/* Footer CTA */}
-      <div className="mt-16 text-center">
-        <div className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta/10 rounded-full text-sm text-navy-60">
-          <p>Información recopilada de fuentes oficiales y verificadas</p>
-          <span className="w-1 h-1 rounded-full bg-terracotta"></span>
-          <a href="https://turismo.huelva.es" target="_blank" rel="noopener noreferrer" className="text-terracotta hover:underline flex items-center gap-1">
-            Turismo Huelva
-            <ExternalLink size={14} />
-          </a>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2"
+        >
+          <span className="text-xs uppercase tracking-widest">Scroll para sobrevivir</span>
+          <div className="w-px h-12 bg-white/30" />
+        </motion.div>
+      </section>
+
+      {/* --- CONTENT --- */}
+      <div className="max-w-[1400px] mx-auto px-6 py-24 md:py-32 space-y-32 md:space-y-48">
+
+        {/* 01. TRANSPORTE */}
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-4 sticky top-32">
+            <SectionHeader title="Moverte" subtitle="Cómo ir de A a B sin perder la paciencia ni la cartera." index="1" />
+            <Ticket
+              title="Tarifas Oficiales 2026"
+              variant="transport"
+              icon={<Bus size={18} />}
+              items={[
+                { label: 'Billete Sencillo', price: '1,10€' },
+                { label: 'Tarjeta Bonobús', price: '0,65€/viaje' },
+                { label: 'Taxi Bajada Bandera', price: '1,50€' },
+              ]}
+              total="Bonobús recomendado"
+            />
+          </div>
+          <div className="md:col-span-8 space-y-8">
+            <figure className="relative aspect-[16/10] overflow-hidden rounded-sm group">
+              <img src={IMAGES.transport} alt="Estación de Huelva" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" />
+              <figcaption className="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-xs font-bold text-navy uppercase backdrop-blur">
+                Estación de Sevilla (Neomudéjar)
+              </figcaption>
+            </figure>
+            <div className="prose prose-lg prose-navy">
+              <p className="text-2xl font-display leading-tight">
+                La regla número uno de Huelva: todo está cerca, pero el calor engaña.
+              </p>
+              <p>
+                Aunque el centro es perfectamente caminable, la conexión con los barrios y el hospital requiere estrategia.
+                El servicio de autobuses <strong>Emtusa</strong> ha mejorado (tienen App real), pero los horarios de fin de semana
+                siguen siendo "orientativos". Si vas con prisa, el Taxi es barato comparado con Madrid o Sevilla.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose mt-8">
+                {['L1: Centro - Hospital', 'L2: Centro - Universidad', 'L7: Circular Exterior', 'Noche: Búho fines de semana'].map(route => (
+                  <div key={route} className="border border-navy-10 p-4 hover:bg-white transition-colors">
+                    <div className="w-2 h-2 bg-terracotta rounded-full mb-2" />
+                    <span className="font-mono text-sm font-bold uppercase">{route}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 02. COMER */}
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-5 md:order-2 sticky top-32">
+            <SectionHeader title="Comer" subtitle="La religión oficial de la provincia. Sagrada y obligatoria." index="2" />
+            <div className="relative aspect-square overflow-hidden rounded-full border-4 border-cream shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500">
+              <img src={IMAGES.food} alt="Gamba blanca" className="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div className="md:col-span-7 md:order-1 space-y-12">
+            <div className="prose prose-lg prose-navy">
+              <p className="text-2xl font-display leading-tight">
+                Si te ponen "tapas gratis" sospechosas, huye. Aquí se paga por la calidad.
+              </p>
+              <p>
+                La gastronomía de Huelva es materia prima pura. No buscamos salsas complejas que tapen el sabor.
+                Una gamba blanca solo necesita sal y 45 segundos de cocción. Un choco frito debe crujir pero deshacerse
+                en la boca. Si está chicloso, te están engañando.
+              </p>
+            </div>
+
+            <div className="grid gap-6">
+              {[
+                { name: 'Los Cuartelillos', desc: 'Para tapas clásicas de batalla.', badge: 'Barrio Obrero' },
+                { name: 'Pappis', desc: 'Montaditos que son leyenda urbana.', badge: 'Centro' },
+                { name: 'Azabache', desc: 'Cuando quieres quedar bien (y pagar más).', badge: 'Alta cocina' },
+                { name: 'Er Chiclanero', desc: 'Marisco fresco sin mantel de hilo.', badge: 'Mercado' }
+              ].map((place, i) => (
+                <div key={place.name} className="group flex items-start justify-between border-b border-navy-10 pb-6 hover:border-terracotta transition-colors">
+                  <div>
+                    <h3 className="text-3xl font-display group-hover:text-terracotta transition-colors">{place.name}</h3>
+                    <p className="text-navy-50 mt-1 font-light italic">{place.desc}</p>
+                  </div>
+                  <span className="text-xs font-bold font-mono border border-navy-20 px-2 py-1 rounded text-navy-40 group-hover:border-terracotta group-hover:text-terracotta">{place.badge}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-navy text-cream p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <Coffee size={120} />
+              </div>
+              <h4 className="text-2xl font-display mb-4">El Código del Choco</h4>
+              <ul className="space-y-2 font-light opacity-90">
+                <li>1. <strong>Frito:</strong> El clásico. Con limón es delito para puristas, pero aceptable.</li>
+                <li>2. <strong>Con habas:</strong> Solo en temporada. Manjar de dioses.</li>
+                <li>3. <strong>Albondigas:</strong> Sí, de choco. Sorprendentemente buenas.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 03. IMPRESCINDIBLES */}
+        <section>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-terracotta font-mono text-sm tracking-widest uppercase mb-4 block">03 // EXPLORAR</span>
+            <h2 className="text-5xl md:text-8xl font-display text-navy mb-6">Lo Real</h2>
+            <p className="text-xl text-navy-60">Lugares que no parecen un decorado de Instagram (aunque lo sean).</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <motion.div whileHover={{ y: -10 }} transition={{ duration: 0.5 }} className="group cursor-pointer">
+              <div className="aspect-[3/4] overflow-hidden bg-navy-10 mb-6 relative">
+                <img src={IMAGES.muelle} alt="Muelle del Tinto" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 font-mono text-xs font-bold">1876</div>
+              </div>
+              <div className="flex justify-between items-end border-b border-navy-90 pb-4 group-hover:border-terracotta transition-colors">
+                <div>
+                  <h3 className="text-3xl font-display mb-1">Muelle del Tinto</h3>
+                  <p className="text-sm font-mono text-navy-50 uppercase tracking-wider">Ingeniería Británica</p>
+                </div>
+                <ArrowRight className="group-hover:translate-x-2 transition-transform text-terracotta" />
+              </div>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -10 }} transition={{ duration: 0.5 }} className="group cursor-pointer md:mt-24">
+              <div className="aspect-[3/4] overflow-hidden bg-navy-10 mb-6 relative">
+                <img src={IMAGES.barrio} alt="Barrio Obrero" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 font-mono text-xs font-bold">1916</div>
+              </div>
+              <div className="flex justify-between items-end border-b border-navy-90 pb-4 group-hover:border-terracotta transition-colors">
+                <div>
+                  <h3 className="text-3xl font-display mb-1">Barrio Reina Victoria</h3>
+                  <p className="text-sm font-mono text-navy-50 uppercase tracking-wider">Casas Inglesas</p>
+                </div>
+                <ArrowRight className="group-hover:translate-x-2 transition-transform text-terracotta" />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FOOTER NOTE */}
+        <section className="border-t border-navy-10 pt-24 pb-12 text-center">
+          <p className="font-display text-3xl md:text-4xl text-navy mb-8">
+            "Huelva no se visita, se vive en la calle."
+          </p>
+          <a href="/guias/choco" className="inline-flex items-center gap-2 text-terracotta hover:underline underline-offset-4 decoration-1">
+            Aprende el idioma <ArrowRight size={16} />
+          </a>
+        </section>
+
       </div>
     </div>
   );

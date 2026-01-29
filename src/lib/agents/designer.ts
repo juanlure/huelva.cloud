@@ -98,27 +98,70 @@ const QUERIES_BY_CATEGORY = {
 /**
  * Genera una galería editorial de imágenes basadas en el tema
  */
-export async function generateEditorialGallery(topic: string, count: number = 3): Promise<string[]> {
+export async function generateEditorialGallery(
+  topic: string,
+  count: number = 3,
+  existingImages: string[] = []
+): Promise<string[]> {
+  // 1. Determinar categoría del tema
+  const category = classifyTopic(topic);
+  const isPlace = await isPhysicalPlace(topic);
+
+  // ESTRATEGIA: Si es un lugar físico, NO usar AI. Usar imágenes reales existentes o fallback Unsplash.
+  if (isPlace) {
+    console.log(`[DESIGNER] Detectado Lugar Físico "${topic}". EVITANDO GENERACIÓN IA.`);
+
+    // Si tenemos suficientes imágenes reales, usarlas
+    if (existingImages.length >= count) {
+      console.log(`[DESIGNER] Usando ${count} imágenes reales pre-buscadas.`);
+      return existingImages.slice(0, count);
+    }
+
+    // Si faltan, rellenar con las que hay
+    const gallery = [...existingImages];
+
+    // Si todavía faltan, intentar fallback seguro (Unsplash)
+    // Nota: Aquí lo ideal sería buscar más imágenes reales, pero por ahora usamos fallback
+    if (gallery.length < count) {
+      const fallbacks = getFallbackImages();
+      // Rellenar sin duplicar
+      for (const fb of fallbacks) {
+        if (!gallery.includes(fb) && gallery.length < count) {
+          gallery.push(fb);
+        }
+      }
+    }
+
+    return gallery;
+  }
+
+  // SI NO ES LUGAR (Gastronomía genérica, etc), PUEDE USAR IA
+  // PERO SI HAY IMAGENES REALES, PRIORIZARLAS
   if (!isAiEnabled || !geminiClient) {
     console.warn("[DESIGNER] AI disabled, using fallback gallery");
     return getFallbackImages();
   }
 
-  console.log(`[DESIGNER] Generando galería editorial para: "${topic}"`);
+  // Si tenemos imágenes reales, usarlas primero
+  const galleryUrls: string[] = [...existingImages];
 
-  // 1. Determinar categoría del tema
-  const category = classifyTopic(topic);
-  const queries = QUERIES_BY_CATEGORY[category] || QUERIES_BY_CATEGORY.gastronomy;
+  // Si ya cubrimos el cupo, devolver
+  if (galleryUrls.length >= count) {
+    return galleryUrls.slice(0, count);
+  }
 
-  // 2. Generar prompts para imágenes
-  const prompts = generateImagePrompts(topic, category, count);
+  // Calcular cuantas faltan por generar
+  const remainingCount = count - galleryUrls.length;
 
-  const galleryUrls: string[] = [];
+  console.log(`[DESIGNER] Generando galería editorial (IA) para: "${topic}" (Faltan ${remainingCount})`);
+
+  // 2. Generar prompts para imágenes RESTANTES
+  const prompts = generateImagePrompts(topic, category, remainingCount);
 
   for (let i = 0; i < prompts.length; i++) {
     const prompt = prompts[i];
     try {
-      console.log(`[DESIGNER] Generando imagen ${i + 1}/${count}: ${prompt.substring(0, 50)}...`);
+      console.log(`[DESIGNER] Generando imagen IA ${i + 1}/${remainingCount}: ${prompt.substring(0, 50)}...`);
 
       const response = await geminiClient.models.generateContent({
         model: 'gemini-2.5-flash-image',
@@ -146,7 +189,7 @@ export async function generateEditorialGallery(topic: string, count: number = 3)
     }
   }
 
-  // Si no se generó ninguna imagen, usar fallback
+  // Si no se generó ninguna imagen y no había reales, usar fallback
   if (galleryUrls.length === 0) {
     console.warn("[DESIGNER] No se generaron imágenes, usando fallback");
     return getFallbackImages();

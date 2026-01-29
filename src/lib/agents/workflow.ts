@@ -291,11 +291,15 @@ export async function generateArticle(
       const headerImage = await generateHeaderImage(
         draft.title,
         draft.excerpt,
-        scrapedData?.image,
+        scrapedData?.image || realImages[0],
         draft.slug
       );
 
-      const editorialGallery = await generateEditorialGallery(draft.title, 3);
+      const editorialGallery = await generateEditorialGallery(
+        draft.title,
+        3,
+        realImages
+      );
 
       const enhanced = await enhanceArticleVisuals(
         draft.content,
