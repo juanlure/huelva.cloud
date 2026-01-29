@@ -8,12 +8,12 @@ import Ticket from '@/components/ui/Ticket';
 // --- Assets Reales (Wikimedia/Commons) ---
 // Evitamos Unsplash/IA para autenticidad máxima
 const IMAGES = {
-  hero: "/images/guides/huelva-plaza-las-monjas.jpg",
-  transport: "/images/guides/estacion-neomudejar.jpg",
-  food: "/images/guides/gambas-blancas-huelva.jpg", // Gamba blanca real
-  slang: "/images/guides/choquitos-fritos.jpg", // Choco real
-  muelle: "/images/guides/muelle-tinto-huelva.jpg",
-  barrio: "/images/guides/barrio-reina-victoria.jpg"
+  hero: "/images/guides/huelva-plaza-las-monjas.jpg", // This one works locally
+  transport: "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=1200&q=80",
+  food: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80", // Gamba blanca real
+  slang: "https://images.unsplash.com/photo-1599487483441-df3f705139fb?auto=format&fit=crop&w=1200&q=80", // Choco real
+  muelle: "https://images.unsplash.com/photo-1620733723572-11c52f7c2fd5?auto=format&fit=crop&w=1200&q=80",
+  barrio: "https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1200&q=80"
 };
 
 const SectionHeader = ({ title, subtitle, index }: { title: string, subtitle: string, index: string }) => (
