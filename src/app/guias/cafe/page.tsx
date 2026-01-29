@@ -15,7 +15,7 @@ export default function CoffeeTranslatorPage() {
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-100">
           <div className="absolute inset-0 bg-cover bg-center" style={{
-            backgroundImage: `url("/images/guides/huelva-estacion-sevilla-hero.jpg")`,
+            backgroundImage: `url("/images/guides/estacion-neomudejar-hero.jpg")`,
           }} />
           <div className="absolute inset-0 bg-gradient-to-br from-amber-900/90 via-stone-800/80 to-stone-900/90" />
         </div>

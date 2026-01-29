@@ -20,7 +20,7 @@ export default async function Home() {
     {
       title: 'Guía de Supervivencia en Huelva',
       subtitle: 'Transporte, horarios, slang y secretos locales',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Huelva_-_Plaza_de_las_monjas.jpg/1280px-Huelva_-_Plaza_de_las_monjas.jpg',
+      image: '/images/guides/huelva-plaza-las-monjas.jpg',
       icon: <Compass size={24} />,
       href: '/guias/supervivencia',
       badge: 'Lo más leído'
@@ -28,7 +28,7 @@ export default async function Home() {
     {
       title: '48 Horas en Huelva',
       subtitle: 'Un finsemana perfecto: comida, cultura y mar',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg/1280px-Huelva_-_Estaci%C3%B3n_de_Sevilla_01.jpg',
+      image: '/images/guides/estacion-neomudejar.jpg',
       icon: <Clock size={24} />,
       href: '/guias/48-horas',
       badge: 'Itinerario'
@@ -36,7 +36,7 @@ export default async function Home() {
     {
       title: 'Traductor de Choco',
       subtitle: 'Aprende a pedir como un verdadero choquero',
-      image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Choco_frito.jpg?width=800',
+      image: '/images/guides/choco-frito-tapa.jpg',
       icon: <Users size={24} />,
       href: '/guias/choco',
       badge: 'Interactivo'
@@ -44,7 +44,7 @@ export default async function Home() {
     {
       title: 'Traductor de Jamón',
       subtitle: 'Bellota, Cebo de Campo, Cebo. Las diferencias.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gambas_blancas_de_Huelva.jpg/1280px-Gambas_blancas_de_Huelva.jpg',
+      image: '/images/guides/gambas-blancas-huelva.jpg',
       icon: <Users size={24} />,
       href: '/guias/jamon',
       badge: 'Nuevo'
@@ -52,7 +52,7 @@ export default async function Home() {
     {
       title: 'Traductor de Café',
       subtitle: 'Solo, Cortado, Mitad, Manchado...',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Calle_Berdig%C3%B3n%2C_Huelva.jpg/1024px-Calle_Berdig%C3%B3n%2C_Huelva.jpg',
+      image: '/images/guides/calle-berdigon.jpg',
       icon: <Users size={24} />,
       href: '/guias/cafe',
       badge: 'Nuevo'
@@ -60,7 +60,7 @@ export default async function Home() {
     {
       title: 'Barrios de Huelva',
       subtitle: 'Encuentra tu barrio perfecto',
-      image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Barrio_Obrero_Huelva.jpg?width=1000',
+      image: '/images/guides/barrio-reina-victoria-hero.jpg',
       icon: <Compass size={24} />,
       href: '/guias/barrios',
       badge: 'Interactivo'

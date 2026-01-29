@@ -6,7 +6,7 @@ import { Coffee, Info, Sparkles, Clock, Droplets, Sun, CupSoda } from 'lucide-re
 
 // Imágenes de café - Usando imágenes de Wikimedia y Stock de alta calidad
 const COFFEE_IMAGES = {
-  hero: '/images/guides/huelva-estacion-sevilla-hero.jpg',
+  hero: '/images/guides/estacion-neomudejar-hero.jpg',
   glass_coffee: '/images/guides/cafe-vaso-huelva.jpg', // Aproximación visual al café en vaso/taza
   source: 'Wikimedia Commons'
 };

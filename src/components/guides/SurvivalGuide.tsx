@@ -9,7 +9,7 @@ import Ticket from '@/components/ui/Ticket';
 // Evitamos Unsplash/IA para autenticidad máxima
 const IMAGES = {
   hero: "/images/guides/huelva-plaza-las-monjas.jpg",
-  transport: "/images/guides/huelva-estacion-sevilla.jpg",
+  transport: "/images/guides/estacion-neomudejar.jpg",
   food: "/images/guides/gambas-blancas-huelva.jpg", // Gamba blanca real
   slang: "/images/guides/choquitos-fritos.jpg", // Choco real
   muelle: "/images/guides/muelle-tinto-huelva.jpg",
