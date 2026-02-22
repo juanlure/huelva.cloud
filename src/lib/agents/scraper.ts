@@ -15,7 +15,7 @@ export async function scrapeArticle(url: string): Promise<ScrapedArticle | null>
   try {
     const res = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; Huelva.is/1.0; +https://huelva.is)' // Ser educados
+        'User-Agent': 'Mozilla/5.0 (compatible; Huelva.cloud/1.0; +https://huelva.cloud)' // Ser educados
       }
     });
 

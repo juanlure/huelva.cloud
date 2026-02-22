@@ -28,7 +28,7 @@ export default function GuideRenderer({ guide }: GuideRendererProps) {
                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12 max-w-4xl mx-auto">
                     <div className="text-white mb-8 animate-fade-in-up">
                         <span className="bg-orange-500 text-white text-xs font-bold px-2 py-1 uppercase tracking-widest mb-4 inline-block">
-                            Huelva.is Guides
+                            Huelva.cloud Guides
                         </span>
                         <h1 className="text-5xl md:text-7xl font-serif font-black leading-none mb-4">
                             {guide.title}

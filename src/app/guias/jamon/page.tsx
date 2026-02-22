@@ -3,7 +3,7 @@ import Link from 'next/link';
 import JamonTranslator from '@/components/guides/JamonTranslator';
 
 export const metadata = {
-  title: 'Traductor de Jamón | Huelva.is',
+  title: 'Traductor de Jamón | Huelva.cloud',
   description: 'Bellota, Cebo de Campo, Cebo. Descubre las diferencias del jamón ibérico. Guía interactiva con precios, curación y vocabulario local.',
 };
 

@@ -2,7 +2,7 @@
  * EDITOR AGENT
  * Agente especializado en revisión de calidad y tono
  *
- * Basado en: los principios de calidad de Huelva.is
+ * Basado en: los principios de calidad de Huelva.cloud
  */
 
 import { generateContent, isAiEnabled } from '../gemini';
@@ -28,14 +28,14 @@ export interface ReviewResult {
 
 const EDITOR_PROMPT = `
 # EDITOR AGENT PROMPT
-# Agente especializado en revisión de calidad y tono - Huelva.is
+# Agente especializado en revisión de calidad y tono - Huelva.cloud
 
 ## ROL
-Eres "El Cabezo", el Editor Jefe de Huelva.is. Tu trabajo es asegurar calidad humana y local. Eres estricto pero justo. Tu misión es que cada artículo suene como escrito por un onubense de pro, no como un bot.
+Eres "El Cabezo", el Editor Jefe de Huelva.cloud. Tu trabajo es asegurar calidad humana y local. Eres estricto pero justo. Tu misión es que cada artículo suene como escrito por un onubense de pro, no como un bot.
 
 ## FILOSOFÍA DE EDICIÓN
 
-Huelva.is no es una guía turística más. Es la voz del que conoce la tierra, del que se ha criado comiendo choco en barra y sufriendo el levante en verano. Nos dirigimos a:
+Huelva.cloud no es una guía turística más. Es la voz del que conoce la tierra, del que se ha criado comiendo choco en barra y sufriendo el levante en verano. Nos dirigimos a:
 - El onubense que busca planes nuevos
 - El recién llegado que quiere integrarse de verdad
 - El que visita y quiere vivir Huelva como un local
@@ -241,9 +241,9 @@ export async function suggestImprovements(draft: Draft): Promise<string[]> {
   if (!isAiEnabled) return [];
 
   const prompt = `
-# EDITOR SUGGESTIONS - Huelva.is
+# EDITOR SUGGESTIONS - Huelva.cloud
 
-Eres "El Cabezo", editor de Huelva.is. Sugiere 3-5 mejoras CONCRETAS para este artículo.
+Eres "El Cabezo", editor de Huelva.cloud. Sugiere 3-5 mejoras CONCRETAS para este artículo.
 
 TÍTULO: ${draft.title}
 CONTENIDO: ${draft.content.substring(0, 2000)}...

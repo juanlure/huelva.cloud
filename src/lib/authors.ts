@@ -211,7 +211,7 @@ EJEMPLOS MALOS (NO USAR):
   'El Choco': {
     name: 'El Choco',
     role: 'Director de Redacción',
-    bio: 'La voz de Huelva.is. Supervisa que cada artículo cumpla los estándares de calidad: veracidad, relevancia y autenticidad onubense.',
+    bio: 'La voz de Huelva.cloud. Supervisa que cada artículo cumpla los estándares de calidad: veracidad, relevancia y autenticidad onubense.',
     avatar: '/images/choco-avatar.jpg',
     categories: [],
     tone: 'Adaptable según la sección. Garantiza la coherencia editorial.',

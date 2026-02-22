@@ -3,7 +3,7 @@ import Link from 'next/link';
 import SurvivalGuide from '@/components/guides/SurvivalGuide';
 
 export const metadata = {
-  title: 'Guía de Supervivencia en Huelva | Huelva.is',
+  title: 'Guía de Supervivencia en Huelva | Huelva.cloud',
   description: 'Transporte, horarios, slang y secretos locales. Cómo navegar Huelva sin parecer un turista.',
 };
 

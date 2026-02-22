@@ -64,7 +64,7 @@ export default function SurvivalGuide() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="inline-block border border-white/30 px-4 py-1.5 rounded-full text-sm font-medium tracking-widest uppercase mb-8 backdrop-blur-md">
-              Huelva.is Essential Series
+              Huelva.cloud Essential Series
             </span>
             <h1 className="text-7xl md:text-[8rem] font-display font-normal leading-[0.85] mb-8 tracking-tight">
               Manual de<br /><span className="italic font-light opacity-90">Supervivencia</span>

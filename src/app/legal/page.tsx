@@ -10,7 +10,7 @@ export default function LegalPage() {
                 <div className="prose prose-lg text-slate-700">
                     <h2 className="text-2xl font-bold mt-8 mb-4">Titularidad</h2>
                     <p>
-                        Huelva.is es un proyecto personal sin ánimo de lucro, de carácter experimental y divulgativo.
+                        Huelva.cloud es un proyecto personal sin ánimo de lucro, de carácter experimental y divulgativo.
                         No constituye una actividad económica ni empresarial sujeta a la LSSI-CE en los términos habituales de comercio electrónico.
                     </p>
 

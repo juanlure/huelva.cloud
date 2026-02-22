@@ -3,7 +3,7 @@ import Link from 'next/link';
 import NeighborhoodsGuide from '@/components/guides/NeighborhoodsGuide';
 
 export const metadata = {
-  title: 'Barrios de Huelva | Huelva.is',
+  title: 'Barrios de Huelva | Huelva.cloud',
   description: 'Encuentra tu barrio perfecto en Huelva. Guía interactiva con filtros por tipo de viajero, rankings y características de cada zona.',
 };
 

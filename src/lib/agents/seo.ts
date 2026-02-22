@@ -24,13 +24,13 @@ export interface SeoOptimization {
 
 const SEO_PROMPT = `
 # SEO AGENT PROMPT
-# Agente especializado en optimización SEO para Huelva.is
+# Agente especializado en optimización SEO para Huelva.cloud
 
 ## ROL
-Eres un experto SEO especializado en contenido local y语义 Web (Web Semántica). Tu misión es optimizar los metadatos y generar datos estructurados Schema.org para que el contenido de Huelva.is sea fácilmente descubrible y entendible por los buscadores.
+Eres un experto SEO especializado en contenido local y语义 Web (Web Semántica). Tu misión es optimizar los metadatos y generar datos estructurados Schema.org para que el contenido de Huelva.cloud sea fácilmente descubrible y entendible por los buscadores.
 
 ## CONTEXTO
-- **Sitio**: Huelva.is - Guía local de Huelva (España) escrita por locales
+- **Sitio**: Huelva.cloud - Guía local de Huelva (España) escrita por locales
 - **Audiencia**: Onubenses y visitantes que buscan información auténtica
 - **Target**: Posicionamiento local para "Huelva" + términos de larga cola
 - **Competencia**: Portales de turismo genéricos, periódicos locales
@@ -39,14 +39,14 @@ Eres un experto SEO especializado en contenido local y语义 Web (Web Semántica
 
 ### 1. TITLE TAG (Meta Title)
 - **Longitud**: 50-60 caracteres (máx 60px en SERP)
-- **Estructura preferida**: [Título atractivo] | Huelva.is
+- **Estructura preferida**: [Título atractivo] | Huelva.cloud
 - **Palabras clave**: Incluir siempre "Huelva" cuando sea relevante
 - **Diferenciador**: Añadir adjetivos que den autenticidad (guía local, recomendaciones, verdad sobre...)
 
 Ejemplos:
-- "Ruta del Choco: Dónde comer el mejor en Huelva | Huelva.is"
-- "Playas de Huelva: Las que valen la pena (y las que no) | Huelva.is"
-- "Semana Santa en Huelva: Guía del que no quiere agobios | Huelva.is"
+- "Ruta del Choco: Dónde comer el mejor en Huelva | Huelva.cloud"
+- "Playas de Huelva: Las que valen la pena (y las que no) | Huelva.cloud"
+- "Semana Santa en Huelva: Guía del que no quiere agobios | Huelva.cloud"
 
 ### 2. META DESCRIPTION
 - **Longitud**: 150-160 caracteres (máx 2 líneas en SERP)
@@ -100,15 +100,15 @@ Generar datos estructurados según tipo de contenido:
   "dateModified": "2026-01-25",
   "publisher": {
     "@type": "Organization",
-    "name": "Huelva.is",
+    "name": "Huelva.cloud",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://huelva.is/logo.png"
+      "url": "https://huelva.cloud/logo.png"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://huelva.is/articulo/slug"
+    "@id": "https://huelva.cloud/articulo/slug"
   }
 }
 \`\`\`
@@ -273,7 +273,7 @@ export async function extractKeywords(content: string, title: string): Promise<s
   if (!isAiEnabled) return [];
 
   const prompt = `
-# KEYWORD EXTRACTOR - Huelva.is
+# KEYWORD EXTRACTOR - Huelva.cloud
 
 Extrae 5-8 palabras clave long-tail (3+ palabras) para SEO local.
 
@@ -316,7 +316,7 @@ export async function generateSchema(
   if (!isAiEnabled) return null;
 
   const prompt = `
-# SCHEMA.ORG GENERATOR - Huelva.is
+# SCHEMA.ORG GENERATOR - Huelva.cloud
 
 Genera un JSON-LD válido para Schema.org tipo: ${type}
 
@@ -327,7 +327,7 @@ Reglas:
 - JSON válido y parseable
 - Solo @context y @type son obligatorios
 - Si faltan datos opcionales, omite el campo
-- Incluir publisher: Huelva.is cuando aplique
+- Incluir publisher: Huelva.cloud cuando aplique
 
 Devuelve solo el JSON, sin markdown.
 `;

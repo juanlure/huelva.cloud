@@ -3,7 +3,7 @@ import Link from 'next/link';
 import WeekendItinerary from '@/components/guides/WeekendItinerary';
 
 export const metadata = {
-  title: '48 Horas en Huelva | Huelva.is',
+  title: '48 Horas en Huelva | Huelva.cloud',
   description: 'Un finsemana perfecto: comida, cultura y mar. El itinerario definitivo para Huelva.',
 };
 

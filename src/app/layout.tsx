@@ -29,7 +29,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Huelva.is | La guía honesta de Huelva",
+  title: "Huelva.cloud | La guía honesta de Huelva",
   description: "Descubre Huelva sin turismos. Guía local escrita por choqueros para quienes quieren vivir Huelva de verdad.",
   icons: {
     icon: '/favicon.ico',

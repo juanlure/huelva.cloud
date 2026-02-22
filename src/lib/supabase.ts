@@ -62,7 +62,7 @@ const MOCK_DB = {
       content: '<p>Huelva sigue apostando por su gastronomía...</p>',
       category: 'Noticias',
       image_url: IMAGES.tapas,
-      author: 'Redacción Huelva.is',
+      author: 'Redacción Huelva.cloud',
       is_ai: true,
       published_at: new Date().toISOString()
     },

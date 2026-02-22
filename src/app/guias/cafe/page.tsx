@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CoffeeTranslator from '@/components/guides/CoffeeTranslator';
 
 export const metadata = {
-  title: 'Traductor de Café | Huelva.is',
+  title: 'Traductor de Café | Huelva.cloud',
   description: 'Solo, Cortado, Mitad, Manchado, Sombra, Nube. Aprende los ratios sagrados del café onubense. Guía interactiva.',
 };
 

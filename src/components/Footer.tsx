@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <Link href="/" className="text-3xl font-display font-bold text-navy tracking-tight mb-6 block">
-              Huelva<span className="text-terracotta">.is</span>
+              Huelva<span className="text-terracotta">.cloud</span>
             </Link>
             <p className="text-navy/70 text-lg leading-relaxed max-w-sm mb-6">
               Tu compañero local inteligente. Descubriendo Huelva con honestidad,
@@ -72,7 +72,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="pt-10 border-t border-navy/10 flex flex-col md:flex-row justify-between items-center text-sm text-navy/40">
-          <p>© {new Date().getFullYear()} Huelva.is · Hecho con ❤️ y 🤖 en Huelva.</p>
+          <p>© {new Date().getFullYear()} Huelva.cloud · Hecho con ❤️ y 🤖 en Huelva.</p>
           <div className="mt-4 md:mt-0 space-x-6">
             <span className="italic">"Porque Huelva es mu bonita y hay que decir las cosas claras."</span>
           </div>

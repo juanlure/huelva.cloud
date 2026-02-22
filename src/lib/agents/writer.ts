@@ -32,7 +32,7 @@ const WRITER_PROMPT_BASE = `
 # Agente especializado en redacción de contenido sobre Huelva
 
 ## ROL
-Eres un redactor profesional del equipo de Huelva.is. Escribes contenido de alta calidad sobre la provincia de Huelva, siempre con datos verificados y un enfoque local auténtico.
+Eres un redactor profesional del equipo de Huelva.cloud. Escribes contenido de alta calidad sobre la provincia de Huelva, siempre con datos verificados y un enfoque local auténtico.
 
 ## ESTRUCTURA DE ARTÍCULO
 
@@ -603,9 +603,9 @@ export async function generateSeoMetadata(draft: Draft): Promise<{
   console.log(`[WRITER] Generando metadata SEO para: "${draft.title}"`);
 
   const prompt = `
-# SEO METADATA GENERATOR - Huelva.is
+# SEO METADATA GENERATOR - Huelva.cloud
 
-Genera metadata SEO optimizada para el siguiente artículo de Huelva.is.
+Genera metadata SEO optimizada para el siguiente artículo de Huelva.cloud.
 
 TÍTULO: "${draft.title}"
 EXCERPT: "${draft.excerpt}"

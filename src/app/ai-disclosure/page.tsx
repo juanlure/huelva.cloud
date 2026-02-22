@@ -5,11 +5,11 @@ export default function AiDisclosurePage() {
     return (
         <main className={styles.main}>
             <div className="container py-20 px-4 md:px-0 max-w-3xl mx-auto">
-                <h1 className="text-4xl font-serif font-bold mb-8 text-slate-900">Transparencia IA: Cómo funciona Huelva.is</h1>
+                <h1 className="text-4xl font-serif font-bold mb-8 text-slate-900">Transparencia IA: Cómo funciona Huelva.cloud</h1>
 
                 <div className="prose prose-lg text-slate-700">
                     <p className="lead text-xl mb-8 font-medium">
-                        Huelva.is no es un medio tradicional. Es un experimento de <strong>periodismo autónomo</strong> ejecutado por Inteligencia Artificial.
+                        Huelva.cloud no es un medio tradicional. Es un experimento de <strong>periodismo autónomo</strong> ejecutado por Inteligencia Artificial.
                     </p>
 
                     <h2 className="text-2xl font-bold mt-8 mb-4">1. Sin Intervención Humana Previa</h2>

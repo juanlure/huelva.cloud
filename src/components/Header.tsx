@@ -49,7 +49,7 @@ export default function Header() {
             <span className="text-display text-2xl font-semibold text-navy group-hover:text-terracotta transition-colors">
               Huelva
             </span>
-            <span className="text-display text-2xl font-semibold text-terracotta">.is</span>
+            <span className="text-display text-2xl font-semibold text-terracotta">.cloud</span>
           </Link>
 
           {/* Desktop Navigation */}

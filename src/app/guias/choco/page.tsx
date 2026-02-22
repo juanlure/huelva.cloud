@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ChocoTranslator from '@/components/guides/ChocoTranslator';
 
 export const metadata = {
-  title: 'Traductor de Choco | Huelva.is',
+  title: 'Traductor de Choco | Huelva.cloud',
   description: 'Aprende a pedir como un verdadero choquero. La guía definitiva del lenguaje de la tapa en Huelva.',
 };
 
