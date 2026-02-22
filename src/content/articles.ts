@@ -128,5 +128,45 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Revisa viento y nubosidad antes de salir.</li>
       </ul>
     `
+  },
+  {
+    slug: 'ayamonte-casco-historico-y-tapeo',
+    title: 'Ayamonte en un día: casco histórico, tapeo y paseo con vistas al Guadiana',
+    excerpt: 'Plan práctico para exprimir Ayamonte en una jornada sin correr: centro, comida y paseo final.',
+    category: 'Pueblos',
+    image: '/images/guides/calle-huelva-centro.jpg',
+    publishedAt: '2026-02-22T21:00:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Ayamonte tiene ritmo propio. Si vas con prisas, te pierdes lo mejor: callejeo, barra y paseo al final de la tarde.</p>
+      <h2>Ruta recomendada</h2>
+      <ul>
+        <li>Mañana: centro histórico y plazas principales.</li>
+        <li>Mediodía: tapeo local y producto de la zona.</li>
+        <li>Tarde: paseo junto al Guadiana para cerrar el día.</li>
+      </ul>
+      <p>Plan sencillo, sin inventos, y muy de provincia.</p>
+    `
+  },
+  {
+    slug: 'aracena-que-hacer-fin-de-semana',
+    title: 'Aracena de fin de semana: cueva, sierra y cocina con sello onubense',
+    excerpt: 'Una guía útil para escaparte a Aracena con plan realista: qué ver, cuándo ir y cómo organizar el día.',
+    category: 'Pueblos',
+    image: '/images/guides/jamon-iberico-bellota.jpg',
+    publishedAt: '2026-02-22T21:05:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Aracena combina patrimonio, naturaleza y mesa. La clave es ordenar el día para evitar colas y aprovechar la sierra.</p>
+      <h2>Imprescindibles</h2>
+      <ul>
+        <li>Visita temprana a la Gruta de las Maravillas.</li>
+        <li>Paseo por el casco y entorno del castillo.</li>
+        <li>Parada gastronómica con protagonismo del ibérico.</li>
+      </ul>
+      <p>Si vas en meses fríos, mejor reservar con antelación.</p>
+    `
   }
 ];
