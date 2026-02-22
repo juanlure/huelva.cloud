@@ -8,6 +8,53 @@ Formato:
 
 ---
 
+## 2026-02-22 — Ronda de mañana (08:10 cron)
+
+### Hecho
+- Fuentes revisadas: Huelva24 ✅ | Europapress Huelva ✅ | Huelva Información ⚠️ (JS pesado, sin RSS válido) | Canal Sur Huelva ⚠️ (contenido dinámico) | Diputación Huelva ❌ DNS fallido | Ayuntamiento Huelva ❌ fetch failed
+- Señales detectadas en 6+ fuentes locales.
+- **3 borradores preparados** (no publicados):
+
+#### Borrador 01 — Actualidad local 🔴 SENSIBLE
+- Archivo: `borradores/2026-02-22_BORRADOR_01_noticia_manifestacion_salim.md`
+- Tema: Manifestación en Huelva por muerte de Salim Traoré (Almonte/Guardia Civil, 22/02)
+- Categoría: Noticias | Autor: Manuel V. Cinta
+- Verificación ALTA requerida antes de publicar. Fuente primaria: Guardia Civil/Subdelegación.
+- Foto: pendiente (manifestación en plaza Monjas, Huelva — autoría verificable local)
+
+#### Borrador 02 — Agenda / Semana Santa ✅
+- Archivo: `borradores/2026-02-22_BORRADOR_02_agenda_cautivo_cuaresma.md`
+- Tema: Santo Cristo Cautivo — traslado popular + agenda cultos y besapié (26/02 – 6/03/2026)
+- Categoría: Agenda y Eventos | Autor: Lucía Colombina
+- Estado evento: CONFIRMADO. Verificar horarios con web oficial de la hermandad.
+- Foto: pendiente (traslado por Hispanidad, Huelva — fuente local)
+
+#### Borrador 03 — Empresa local / Evergreen útil ✅
+- Archivo: `borradores/2026-02-22_BORRADOR_03_empresa_campus_ia_trigueros.md`
+- Tema: Proyecto TRON en Trigueros — campus IA 1.500M€, 1.000 empleos, energía verde
+- Categoría: Trabajo y Empresa local | Autor: Manuel V. Cinta
+- Pieza evergreen de alto valor SEO: "Trigueros + IA + Huelva hub tecnológico"
+- Foto: pendiente (aérea Trigueros o finca Los Millares — Ayto. Trigueros o archivo)
+
+### Rotación aplicada (domingo)
+- ✅ 1 actualidad local (noticias sensibles → tono neutro)
+- ✅ 1 agenda/eventos (Semana Santa / Cuaresma onubense)
+- ✅ 1 servicio útil/empresa (evergreen Trigueros-IA)
+
+### Pendiente
+- Verificar foto de cada borrador: 100% Huelva/provincia + autoría confirmada.
+- Revisión editorial humana antes de publicar los 3 borradores.
+- Borrador 01: segunda fuente institucional antes de publicar.
+- Explorar RSS de Ayuntamiento Huelva (web dinámica, no carga bien por fetch).
+- Próxima ventana: 14:00 — ajuste mediodía.
+
+### Riesgo
+- Borrador 01 (Salim Traoré): tema políticamente sensible. No publicar sin segunda verificación.
+- Ayuntamiento Huelva y Diputación: DNS/fetch fallidos — registrar en FUENTES como "acceso directo problemático, requiere Playwright o scraper dedicado".
+- Huelva Información no tiene RSS activo — añadir a lista de fuentes con Playwright.
+
+---
+
 ## 2026-02-22 (inicio)
 - Hecho:
   - Plan operativo documentado (`OPERATIVA_HUELVA_CLOUD.md`).
@@ -15,8 +62,14 @@ Formato:
   - Calendario 14 días (`CALENDARIO_EDITORIAL_14_DIAS.md`).
   - Marco autores EEAT (`AUTORES_EEAT_HUELVA_CLOUD.md`).
   - Noticias antiguas eliminadas en producción (26 -> 0).
+- Hecho (tarde):
+  - Publicadas 3 piezas iniciales para relanzar el sitio:
+    - `atardeceres-costa-luz-huelva` (Guías)
+    - `el-rocio-guia-principiantes` (Guías)
+    - `fiesta-tinajas-trigueros` (Eventos)
 - Pendiente:
-  - Repoblar actualidad con 2-3 piezas/día.
-  - Refuerzo visual 100% Huelva/provincia.
+  - Repoblar bloque de **Noticias** con 2-3 piezas nuevas/día desde fuentes primarias.
+  - Refuerzo visual 100% Huelva/provincia en todas las publicaciones.
 - Riesgo:
   - Si no se mantiene cadencia diaria, baja frescura por sección.
+  - Actualmente Noticias tiene 0 publicadas (debe corregirse mañana en primera pasada).
