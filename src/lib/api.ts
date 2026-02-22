@@ -13,35 +13,46 @@ export interface Article {
   isAi: boolean;
 }
 
-// Helper to fix broken/hotlinked images from DB
-function fixImageUrl(url: string): string {
-  if (!url) return '/images/guides/huelva-plaza-las-monjas.jpg'; // Fallback
-
-  // Local images are already good
-  if (url.startsWith('/') || url.startsWith('http://localhost')) return url;
-
-  const mapping: Record<string, string> = {
-    'Plaza_de_las_monjas': '/images/guides/huelva-plaza-las-monjas.jpg', // Este funciona local
-    'Estación_de_Sevilla': 'https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=1200&q=80',
-    'Calle_Berdigón': 'https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1200&q=80',
-    'Gambas_blancas': 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80',
-    'Choco_frito': 'https://images.unsplash.com/photo-1599487483441-df3f705139fb?auto=format&fit=crop&w=1200&q=80',
-    'Muelle_del_Tinto': 'https://images.unsplash.com/photo-1620733723572-11c52f7c2fd5?auto=format&fit=crop&w=1200&q=80',
-    'Barrio_Reina_Victoria': 'https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1200&q=80',
-    'Barrio_Obrero': 'https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1200&q=80',
-    'Coquinas': 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80', // Fallback to gambas
-    'Jamón': 'https://images.unsplash.com/photo-1624653554176-59a16f39d150?auto=format&fit=crop&w=1200&q=80', // Jamon fallback
-    'Jamon': 'https://images.unsplash.com/photo-1624653554176-59a16f39d150?auto=format&fit=crop&w=1200&q=80',
+// Política visual Huelva.cloud:
+// - Priorizar imágenes reales y locales de /public/images/guides
+// - Evitar dependencias de imágenes externas ambiguas
+function fixImageUrl(url: string, category?: string, slug?: string, title?: string): string {
+  const localByCategory: Record<string, string> = {
+    'Noticias': '/images/guides/ayuntamiento-huelva.jpg',
+    'Eventos': '/images/guides/monumento-colon-monjas.jpg',
+    'Gastronomía': '/images/guides/choco-frito-hero.jpg',
+    'Playa y Naturaleza': '/images/guides/playa-punta-umbria.jpg',
+    'Cultura y Historia': '/images/guides/barrio-reina-victoria-hero.jpg',
+    'Alojamiento': '/images/guides/calle-huelva-centro.jpg',
+    'Guías': '/images/guides/huelva-plaza-las-monjas.jpg',
+    'Guías Locales': '/images/guides/huelva-plaza-las-monjas.jpg'
   };
 
-  // Mapping logic
-  for (const [key, replacement] of Object.entries(mapping)) {
-    if (url.includes(key)) {
-      return replacement;
-    }
+  const localByKeyword: Record<string, string> = {
+    'rocio': '/images/guides/iglesia-rocio-huelva.jpg',
+    'jamon': '/images/guides/jamon-iberico-bellota.jpg',
+    'choco': '/images/guides/choco-frito-hero.jpg',
+    'coquina': '/images/guides/coquinas-huelva.jpg',
+    'gamba': '/images/guides/gambas-blancas-huelva.jpg',
+    'muelle': '/images/guides/muelle-tinto-huelva.jpg',
+    'tinto': '/images/guides/muelle-tinto-riotinto.jpg',
+    'marisma': '/images/guides/marismas-odiel.jpg',
+    'reina-victoria': '/images/guides/barrio-reina-victoria-hero.jpg',
+    'playa': '/images/guides/playa-punta-umbria.jpg'
+  };
+
+  // Si ya es una imagen local del proyecto, mantener
+  if (url?.startsWith('/images/guides/')) return url;
+
+  const text = `${slug || ''} ${title || ''}`.toLowerCase();
+  for (const [kw, local] of Object.entries(localByKeyword)) {
+    if (text.includes(kw)) return local;
   }
 
-  return url;
+  // Fallback por categoría
+  if (category && localByCategory[category]) return localByCategory[category];
+
+  return '/images/guides/huelva-plaza-las-monjas.jpg';
 }
 
 // Mapper de DB a Frontend
@@ -56,7 +67,7 @@ function mapArticle(dbArticle: ArticleDB): Article {
     excerpt: dbArticle.excerpt,
     content: dbArticle.content,
     category: dbArticle.category,
-    image: fixImageUrl(dbArticle.image_url),
+    image: fixImageUrl(dbArticle.image_url, dbArticle.category, dbArticle.slug, dbArticle.title),
     date: new Date(dbArticle.published_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
     readTime,
     author: dbArticle.author,

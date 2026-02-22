@@ -23,12 +23,15 @@ export default async function ArticlePage({ params }: PageProps) {
   const authorData = AUTHORS[article.author] || AUTHORS['El Choco'];
 
   // --- Extract interactive components ---
-  let interactiveType = null;
-  let interactiveData = null;
+  const SUPPORTED_INTERACTIVES = new Set(['translator', 'itinerary', 'quiz', 'cards', 'checklist', 'scorecard', 'map']);
+  let interactiveType: string | null = null;
+  let interactiveData: any = null;
   let cleanedContent = article.content || '';
 
   const typeMatch = cleanedContent.match(/<div id="interactive-root" data-component="([^"]+)"/);
-  if (typeMatch) interactiveType = typeMatch[1];
+  if (typeMatch && SUPPORTED_INTERACTIVES.has(typeMatch[1])) {
+    interactiveType = typeMatch[1];
+  }
 
   const dataMatch = cleanedContent.match(/<script type="application\/json" id="interactive-data">([\s\S]*?)<\/script>/);
   if (dataMatch) {
@@ -39,11 +42,10 @@ export default async function ArticlePage({ params }: PageProps) {
     }
   }
 
-  if (interactiveType && interactiveData) {
-    cleanedContent = cleanedContent
-      .replace(/<div id="interactive-root"[^>]*><\/div>/g, '')
-      .replace(/<script type="application\/json" id="interactive-data">[\s\S]*?<\/script>/g, '');
-  }
+  // Limpia siempre los bloques raw para que no aparezcan artefactos visuales
+  cleanedContent = cleanedContent
+    .replace(/<div id="interactive-root"[^>]*><\/div>/g, '')
+    .replace(/<script type="application\/json" id="interactive-data">[\s\S]*?<\/script>/g, '');
 
   return (
     <article className={styles.articlePage}>

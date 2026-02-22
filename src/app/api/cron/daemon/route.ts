@@ -3,7 +3,8 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { analyzeDiversity } from '@/lib/agents/diversity';
 import { generateDraft, refineDraft } from '@/lib/agents/writer';
 import { reviewDraft } from '@/lib/agents/editor';
-import { generateHeaderImage, generateEditorialGallery } from '@/lib/agents/designer';
+// Política editorial Huelva.cloud: NO generar imágenes de lugares con IA
+// Se usan fotos reales de fuente o biblioteca local verificada.
 import { logAgentAction } from '@/lib/logger';
 import { optimizeSeo } from '@/lib/agents/seo';
 import { classifyContent } from '@/lib/agents/classifier';
@@ -167,20 +168,12 @@ export async function GET(req: NextRequest) {
       // Continue with static content
     }
 
-    // 4. Diseño (Safe Wrap - Generate or Scrape)
-    let imageUrl = 'https://images.unsplash.com/photo-1626202158866-2396e3867623?q=80&w=800'; // Hard fallback
-    try {
-      // Pasamos seoData.slug para nombrar el archivo correctamente en Storage
-      const designResult = await generateHeaderImage(finalDraft.title, finalDraft.excerpt, scrapedData?.image, seoData.slug);
-      if (designResult) {
-        imageUrl = designResult;
-        await logAgentAction('Designer', 'Image Ready', { url: imageUrl });
-      }
-    } catch (e) {
-      console.error("[DAEMON] Design logic failed", e);
-      await logAgentAction('Designer', 'Fallback Used', { error: String(e) });
-      // Continue with fallback image
-    }
+    // 4. Imagen de portada (solo real, no IA)
+    let imageUrl = scrapedData?.image || uploadedGallery?.[0] || '/images/guides/huelva-plaza-las-monjas.jpg';
+    await logAgentAction('Designer', 'Real Image Selected', {
+      source: scrapedData?.image ? 'source-article' : (uploadedGallery?.[0] ? 'source-gallery' : 'local-fallback'),
+      url: imageUrl
+    });
 
     // 5. Publicación (Insertar en Supabase usando Admin Client)
     // 5. Publicación (Insertar en Supabase usando Admin Client)

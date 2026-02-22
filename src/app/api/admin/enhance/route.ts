@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
-import { enhanceArticleVisuals } from '@/lib/agents/designer';
+// Política Huelva.cloud: no insertar imágenes generadas por IA de lugares.
 import { classifyContent } from '@/lib/agents/classifier';
 import { generateInteractiveData } from '@/lib/agents/generator';
 
@@ -26,32 +26,10 @@ export async function POST(request: Request) {
         }
 
         let updatedContent = article.content;
-        let visualCount = 0;
+        const visualCount = 0; // desactivado por política anti imágenes IA
         let interactiveCount = 0;
 
-        // 2. Call Designer Agent (Visuals)
-        console.log(`[ADMIN] Enhancing visuals for: ${article.title} (Category: ${article.category})`);
-        const newVisuals = await enhanceArticleVisuals(article.content, slug, article.category);
-        visualCount = newVisuals.length;
-
-        function escapeRegExp(string: string) {
-            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        }
-
-        for (const visual of newVisuals) {
-            const figureHtml = `
-        <figure>
-          <img src="${visual.imageUrl}" alt="${visual.header} in Huelva" />
-          <figcaption>Vista de ${visual.header} (Generada por AI)</figcaption>
-        </figure>
-      `;
-            // Escape special chars in header (like '?', '(', ')') so regex matches literal text
-            const safeHeader = escapeRegExp(visual.header);
-            const regex = new RegExp(`(<h2.*?>${safeHeader}<\/h2>)`, 'i');
-            updatedContent = updatedContent.replace(regex, `$1${figureHtml}`);
-        }
-
-        // 3. Call Interactive Agent (Components)
+        // 2. Solo mejora interactiva (sin generación de imágenes)
         if (!updatedContent.includes('id="interactive-root"')) {
             console.log(`[ADMIN] Checking interactivity for: ${article.title}`);
 
