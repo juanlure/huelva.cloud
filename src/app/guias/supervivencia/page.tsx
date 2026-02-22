@@ -17,7 +17,7 @@ export default function SurvivalGuidePage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1920&q=80)'
+              backgroundImage: 'url(/images/guides/huelva-plaza-las-monjas.jpg)'
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy" />

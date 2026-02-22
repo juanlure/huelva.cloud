@@ -15,7 +15,7 @@ export default function CoffeeTranslatorPage() {
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-100">
           <div className="absolute inset-0 bg-cover bg-center" style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=1920&q=80")`,
+            backgroundImage: 'url(/images/guides/cafe-vaso-huelva.jpg)',
           }} />
           <div className="absolute inset-0 bg-gradient-to-br from-amber-900/90 via-stone-800/80 to-stone-900/90" />
         </div>

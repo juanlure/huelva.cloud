@@ -52,7 +52,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     title: 'Fiesta de las Tinajas en Trigueros: plan local con sabor a provincia',
     excerpt: 'Horarios, ambiente y claves para aprovechar una de las citas más auténticas de la agenda local.',
     category: 'Eventos',
-    image: '/images/guides/calle-huelva-centro.jpg',
+    image: '/images/guides/monumento-colon-monjas.jpg',
     publishedAt: '2026-02-22T19:37:00Z',
     author: 'Lucía Colombina',
     isAi: true,
