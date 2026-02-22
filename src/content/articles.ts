@@ -11,162 +11,175 @@ export interface LocalArticle {
 }
 
 // Fuente única editorial: GitHub (manual)
+// Regla: contenido útil, más profundidad y portada local real
 export const LOCAL_ARTICLES: LocalArticle[] = [
   {
-    slug: 'atardeceres-costa-luz-huelva',
-    title: 'Atardeceres en la Costa de la Luz: guía onubense sin postureo',
-    excerpt: 'Dónde ver los mejores atardeceres de la costa onubense y qué hacer en cada zona para aprovechar la tarde.',
-    category: 'Guías Locales',
-    image: '/images/guides/playa-punta-umbria.jpg',
-    publishedAt: '2026-02-22T19:35:00Z',
-    author: 'Carmen Doñana',
-    isAi: true,
-    content: `
-      <p>En la Costa de la Luz no hay dos atardeceres iguales. Si vas con prisa, no lo vas a disfrutar. Si vas con tiempo, te llevas media vida en la retina.</p>
-      <h2>Punta Umbría para una tarde fácil</h2>
-      <p>Plan cómodo: paseo, playa, y remate en terraza. Ideal para ir sin complicarte.</p>
-      <h2>Mazagón para horizonte abierto</h2>
-      <p>Más amplitud y menos ruido. Lleva algo de abrigo al caer el sol en meses frescos.</p>
-      <blockquote>Consejo choquero: llega 40 minutos antes del ocaso y no te pegues al coche.</blockquote>
-    `
-  },
-  {
-    slug: 'el-rocio-guia-principiantes',
-    title: 'El Rocío para principiantes: lo que debes saber antes de ir',
-    excerpt: 'Una guía clara para disfrutar El Rocío con respeto, logística y cabeza.',
-    category: 'Guías Locales',
-    image: '/images/guides/iglesia-rocio-huelva.jpg',
-    publishedAt: '2026-02-22T19:36:00Z',
-    author: 'Antonio Torre',
-    isAi: true,
-    content: `
-      <p>El Rocío no se entiende en una tarde. Pero sí puedes evitar errores típicos con una preparación básica.</p>
-      <h2>Cuándo ir</h2>
-      <p>Depende del objetivo: peregrinación, fin de semana tranquilo o visita cultural.</p>
-      <h2>Respeto y contexto</h2>
-      <p>No es un parque temático. Es tradición viva y hay que entrar con esa mentalidad.</p>
-    `
-  },
-  {
-    slug: 'fiesta-tinajas-trigueros',
-    title: 'Fiesta de las Tinajas en Trigueros: plan local con sabor a provincia',
-    excerpt: 'Horarios, ambiente y claves para aprovechar una de las citas más auténticas de la agenda local.',
-    category: 'Eventos',
-    image: '/images/guides/monumento-colon-monjas.jpg',
-    publishedAt: '2026-02-22T19:37:00Z',
-    author: 'Lucía Colombina',
-    isAi: true,
-    content: `
-      <p>Si buscas un evento con ambiente local real, esta fiesta merece sitio en la agenda.</p>
-      <h2>Qué mirar antes de ir</h2>
-      <ul>
-        <li>Horario oficial actualizado</li>
-        <li>Zonas de aparcamiento</li>
-        <li>Condiciones meteorológicas</li>
-      </ul>
-      <p>La clave es llegar con margen y planificar la vuelta.</p>
-    `
-  },
-  {
-    slug: 'como-verificamos-noticias-huelva-cloud',
-    title: 'Cómo verificamos las noticias en Huelva.cloud (y por qué importa)',
-    excerpt: 'Nuestra metodología editorial para cubrir Huelva y provincia con rigor: fuente primaria, contexto local y actualización continua.',
+    slug: 'huelva-cloud-metodologia-verificacion-local',
+    title: 'Cómo verificamos cada noticia en Huelva.cloud (metodología local)',
+    excerpt: 'Nuestro proceso editorial para publicar con rigor en Huelva y provincia: fuente primaria, doble validación y actualización visible.',
     category: 'Noticias',
     image: '/images/guides/ayuntamiento-huelva.jpg',
-    publishedAt: '2026-02-22T20:40:00Z',
+    publishedAt: '2026-02-22T21:20:00Z',
     author: 'Manuel V. Cinta',
     isAi: true,
     content: `
-      <p>Si quieres que un medio local sea útil, tiene que ser fiable. En Huelva.cloud no publicamos por rellenar: publicamos para que te sirva.</p>
-      <h2>Qué verificamos antes de publicar</h2>
+      <p>Para ser referencia local no basta con publicar rápido. Hay que publicar bien. En Huelva.cloud trabajamos con una regla básica: primero datos, luego narrativa.</p>
+      <h2>Qué comprobamos antes de dar una noticia</h2>
       <ul>
-        <li>Fuente primaria cuando exista (institución, entidad u organizador).</li>
-        <li>Fecha, hora y ubicación en piezas de agenda.</li>
-        <li>Contexto local real: qué cambia para Huelva y provincia.</li>
+        <li>Fuente primaria: institución, entidad organizadora o documento oficial.</li>
+        <li>Datos críticos: fecha, hora, ubicación y alcance real del hecho.</li>
+        <li>Contexto local: por qué esa información importa en Huelva o en la provincia.</li>
       </ul>
-      <h2>Qué corregimos rápido</h2>
-      <p>Si un horario cambia o un evento se cancela, actualizamos la pieza y lo dejamos indicado.</p>
+      <h2>Cómo corregimos</h2>
+      <p>Si una agenda cambia o una información se matiza, actualizamos el artículo y dejamos trazabilidad en el propio contenido. No maquillamos errores: los corregimos.</p>
+      <blockquote>Ritmo sí, humo no. Ese es el estándar.</blockquote>
+    `
+  },
+  {
+    slug: 'agenda-huelva-esta-semana-claves',
+    title: 'Agenda de Huelva esta semana: cómo no perderte lo importante',
+    excerpt: 'Resumen práctico para organizar la semana en capital y provincia: cultura, planes y recomendaciones útiles.',
+    category: 'Eventos',
+    image: '/images/guides/monumento-colon-monjas.jpg',
+    publishedAt: '2026-02-22T21:15:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>La agenda local se mueve rápido: hoy hay plan, mañana cambia un horario y pasado se cae un evento. Por eso aquí priorizamos utilidad real.</p>
+      <h2>Qué mirar primero</h2>
+      <ul>
+        <li>Eventos con fecha y hora confirmadas.</li>
+        <li>Lugar exacto y mejor franja para llegar.</li>
+        <li>Precio, reserva previa y plan B si hay cambios.</li>
+      </ul>
+      <h2>Capital + provincia</h2>
+      <p>No nos quedamos solo en Huelva ciudad. Cada semana incluimos rotación de pueblos para cubrir actividad cultural y social de toda la provincia.</p>
+      <p>Consejo práctico: decide dos planes cerrados y uno flexible para no depender de una sola opción.</p>
     `
   },
   {
     slug: 'ruta-gamba-blanca-huelva-capital',
     title: 'Ruta de gamba blanca en Huelva capital: 5 paradas con criterio',
-    excerpt: 'Una guía práctica para disfrutar producto onubense de verdad, sin postureo y con sentido común.',
+    excerpt: 'Guía práctica para disfrutar producto onubense de verdad, sin postureo y con sentido común.',
     category: 'Gastronomía',
     image: '/images/guides/gambas-blancas-huelva.jpg',
-    publishedAt: '2026-02-22T20:45:00Z',
+    publishedAt: '2026-02-22T21:10:00Z',
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>La gamba blanca de Huelva no necesita maquillaje. Necesita producto bueno, punto de cocción y sitio honesto.</p>
-      <h2>Cómo elegir bien</h2>
+      <p>La gamba blanca de Huelva no necesita artificio. Necesita producto fresco, cocción bien hecha y barra honesta.</p>
+      <h2>Cómo distinguir un sitio serio</h2>
       <ul>
-        <li>Pregunta por procedencia y frescura del día.</li>
-        <li>Evita sitios donde todo sabe igual: mala señal.</li>
-        <li>Menos salsa, más producto.</li>
+        <li>Te explican producto y procedencia sin rodeos.</li>
+        <li>La carta no intenta esconder el mar con salsas.</li>
+        <li>El punto de sal y cocción está cuidado, no improvisado.</li>
       </ul>
-      <blockquote>En Huelva se viene a comer bien, no a hacer teatro.</blockquote>
+      <h2>Errores típicos</h2>
+      <p>Pedir “marisco surtido” sin criterio y acabar pagando por relleno. Mejor ir a pocas cosas y bien elegidas.</p>
+      <blockquote>En Huelva, menos cuento y más producto.</blockquote>
     `
   },
   {
-    slug: 'atardecer-muelle-tinto-hora-ideal',
-    title: 'Muelle del Tinto: hora ideal para el atardecer y dónde colocarte',
-    excerpt: 'Guía rápida para ver el atardecer en el Muelle del Tinto con buena luz y sin agobios.',
+    slug: 'muelle-tinto-atardecer-guia-real',
+    title: 'Muelle del Tinto: hora ideal para ver el atardecer sin agobios',
+    excerpt: 'Guía rápida para disfrutar uno de los atardeceres más potentes de Huelva con buena luz y mejor posición.',
     category: 'Playa y Naturaleza',
     image: '/images/guides/muelle-tinto-sunset.jpg',
-    publishedAt: '2026-02-22T20:50:00Z',
+    publishedAt: '2026-02-22T21:05:00Z',
     author: 'Carmen Doñana',
     isAi: true,
     content: `
-      <p>Hay días de foto fácil y días de viento peleón. Si quieres aprovechar bien el Muelle del Tinto, llega con margen.</p>
-      <h2>Cuándo ir</h2>
-      <p>Lo ideal: 35-45 minutos antes de la puesta de sol para ver el cambio completo de luz.</p>
-      <h2>Consejos rápidos</h2>
+      <p>El Muelle del Tinto es un clásico local por una razón: cuando la luz acompaña, la escena es brutal.</p>
+      <h2>Mejor franja</h2>
+      <p>Llega entre 35 y 45 minutos antes de la puesta. Así pillas la transición completa de color y no solo la foto final.</p>
+      <h2>Qué llevar</h2>
       <ul>
-        <li>Calzado cómodo: se anda más de lo que parece.</li>
-        <li>Evita hora punta de fin de semana si buscas calma.</li>
-        <li>Revisa viento y nubosidad antes de salir.</li>
+        <li>Calzado cómodo para caminar sin prisas.</li>
+        <li>Chaqueta ligera en meses de viento.</li>
+        <li>Agua y tiempo: correr aquí no tiene sentido.</li>
       </ul>
+      <p>Si buscas calma, evita la punta de fin de semana.</p>
+    `
+  },
+  {
+    slug: 'el-rocio-guia-principiantes',
+    title: 'El Rocío para principiantes: logística, respeto y contexto',
+    excerpt: 'Una guía clara para entender El Rocío sin improvisar: cuándo ir, cómo moverte y qué evitar.',
+    category: 'Guías Locales',
+    image: '/images/guides/iglesia-rocio-huelva.jpg',
+    publishedAt: '2026-02-22T21:00:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Rocío no se resume en una postal. Es tradición viva, con tiempos propios y mucha logística.</p>
+      <h2>Antes de salir</h2>
+      <ul>
+        <li>Define objetivo: visita cultural, peregrinación o escapada de día.</li>
+        <li>Revisa acceso y aparcamiento con antelación.</li>
+        <li>Respeta entorno y normas locales.</li>
+      </ul>
+      <h2>Qué no hacer</h2>
+      <p>Ir sin plan y tratar la zona como parque temático. El resultado suele ser perder tiempo y no entender nada.</p>
+    `
+  },
+  {
+    slug: 'fiesta-tinajas-trigueros',
+    title: 'Fiesta de las Tinajas en Trigueros: plan de provincia con sentido',
+    excerpt: 'Claves para aprovechar bien la cita: horarios, acceso y cómo organizar la visita.',
+    category: 'Eventos',
+    image: '/images/guides/calle-huelva-centro.jpg',
+    publishedAt: '2026-02-22T20:55:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Trigueros tiene citas que merecen viaje corto desde capital. Esta es una de ellas si te gusta ambiente local real.</p>
+      <h2>Checklist rápido</h2>
+      <ul>
+        <li>Horario oficial actualizado.</li>
+        <li>Ruta de ida/vuelta cerrada antes de salir.</li>
+        <li>Plan de aparcamiento para no perder media tarde.</li>
+      </ul>
+      <p>Si vas en grupo, mejor llegar escalonado y quedar en un punto claro.</p>
     `
   },
   {
     slug: 'ayamonte-casco-historico-y-tapeo',
-    title: 'Ayamonte en un día: casco histórico, tapeo y paseo con vistas al Guadiana',
-    excerpt: 'Plan práctico para exprimir Ayamonte en una jornada sin correr: centro, comida y paseo final.',
-    category: 'Pueblos',
+    title: 'Ayamonte en un día: casco histórico, tapeo y paseo por el Guadiana',
+    excerpt: 'Plan útil para exprimir Ayamonte sin correr: ruta urbana, mesa local y cierre de tarde con vistas.',
+    category: 'Guías Locales',
     image: '/images/guides/calle-huelva-centro.jpg',
-    publishedAt: '2026-02-22T21:00:00Z',
+    publishedAt: '2026-02-22T20:50:00Z',
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>Ayamonte tiene ritmo propio. Si vas con prisas, te pierdes lo mejor: callejeo, barra y paseo al final de la tarde.</p>
+      <p>Ayamonte funciona mejor con ritmo tranquilo: calle, barra y paseo. No necesita más.</p>
       <h2>Ruta recomendada</h2>
       <ul>
-        <li>Mañana: centro histórico y plazas principales.</li>
-        <li>Mediodía: tapeo local y producto de la zona.</li>
-        <li>Tarde: paseo junto al Guadiana para cerrar el día.</li>
+        <li>Mañana: centro y plazas principales.</li>
+        <li>Mediodía: tapeo con producto local.</li>
+        <li>Tarde: cierre junto al río para bajar revoluciones.</li>
       </ul>
-      <p>Plan sencillo, sin inventos, y muy de provincia.</p>
+      <p>Si el día acompaña, es plan redondo de provincia.</p>
     `
   },
   {
     slug: 'aracena-que-hacer-fin-de-semana',
-    title: 'Aracena de fin de semana: cueva, sierra y cocina con sello onubense',
-    excerpt: 'Una guía útil para escaparte a Aracena con plan realista: qué ver, cuándo ir y cómo organizar el día.',
-    category: 'Pueblos',
+    title: 'Aracena de fin de semana: cueva, sierra y mesa con sello onubense',
+    excerpt: 'Guía realista para organizar escapada: qué ver primero, dónde parar y cómo evitar colas.',
+    category: 'Guías Locales',
     image: '/images/guides/jamon-iberico-bellota.jpg',
-    publishedAt: '2026-02-22T21:05:00Z',
+    publishedAt: '2026-02-22T20:45:00Z',
     author: 'Antonio Torre',
     isAi: true,
     content: `
-      <p>Aracena combina patrimonio, naturaleza y mesa. La clave es ordenar el día para evitar colas y aprovechar la sierra.</p>
-      <h2>Imprescindibles</h2>
+      <p>Aracena combina patrimonio, naturaleza y cocina. Si ordenas bien el día, cunde muchísimo.</p>
+      <h2>Prioridades</h2>
       <ul>
-        <li>Visita temprana a la Gruta de las Maravillas.</li>
-        <li>Paseo por el casco y entorno del castillo.</li>
-        <li>Parada gastronómica con protagonismo del ibérico.</li>
+        <li>Primera hora: Gruta de las Maravillas.</li>
+        <li>Después: casco histórico y entorno del castillo.</li>
+        <li>Cierre: mesa con protagonismo del ibérico.</li>
       </ul>
-      <p>Si vas en meses fríos, mejor reservar con antelación.</p>
+      <p>Recomendación: reserva lo importante con margen en fines de semana de alta demanda.</p>
     `
   }
 ];
