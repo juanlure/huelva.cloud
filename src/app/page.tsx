@@ -28,7 +28,7 @@ export default async function Home() {
     {
       title: '48 Horas en Huelva',
       subtitle: 'Un finsemana perfecto: comida, cultura y mar',
-      image: 'https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/guides/muelle-tinto-sunset.jpg',
       icon: <Clock size={24} />,
       href: '/guias/48-horas',
       badge: 'Itinerario'
@@ -36,7 +36,7 @@ export default async function Home() {
     {
       title: 'Traductor de Choco',
       subtitle: 'Aprende a pedir como un verdadero choquero',
-      image: 'https://images.unsplash.com/photo-1599487483441-df3f705139fb?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/guides/choco-frito-tapa.jpg',
       icon: <Users size={24} />,
       href: '/guias/choco',
       badge: 'Interactivo'
@@ -44,7 +44,7 @@ export default async function Home() {
     {
       title: 'Traductor de Jamón',
       subtitle: 'Bellota, Cebo de Campo, Cebo. Las diferencias.',
-      image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/guides/jamon-iberico-bellota.jpg',
       icon: <Users size={24} />,
       href: '/guias/jamon',
       badge: 'Nuevo'
@@ -52,7 +52,7 @@ export default async function Home() {
     {
       title: 'Traductor de Café',
       subtitle: 'Solo, Cortado, Mitad, Manchado...',
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/guides/cafe-vaso-huelva.jpg',
       icon: <Users size={24} />,
       href: '/guias/cafe',
       badge: 'Nuevo'
@@ -60,7 +60,7 @@ export default async function Home() {
     {
       title: 'Barrios de Huelva',
       subtitle: 'Encuentra tu barrio perfecto',
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea904ac6666?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/guides/barrio-reina-victoria-hero.jpg',
       icon: <Compass size={24} />,
       href: '/guias/barrios',
       badge: 'Interactivo'
