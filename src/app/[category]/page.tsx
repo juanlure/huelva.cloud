@@ -23,6 +23,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   const title = CATEGORY_TITLES[category.toLowerCase()] || category;
   const articles = await getArticles(category);
+  const lastUpdated = articles[0]?.date || null;
 
   return (
     <main className={styles.main}>
@@ -39,12 +40,16 @@ export default async function CategoryPage({ params }: PageProps) {
           </Link>
 
           {/* Category badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-4">
             <TrendingUp size={16} className="text-terracotta" />
             <span className="text-sm font-semibold uppercase tracking-widest text-navy/60">
               Explorando
             </span>
           </div>
+
+          {lastUpdated && (
+            <p className="text-sm text-navy/50 mb-6">Última actualización: {lastUpdated}</p>
+          )}
 
           <h1 className={styles.title}>{title}<span className={styles.dot}>.</span></h1>
 

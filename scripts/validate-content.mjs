@@ -32,6 +32,12 @@ for (const [, slug, imageRaw, content] of articleBlocks) {
   const localPath = path.join(publicDir, image);
   if (!fs.existsSync(localPath)) {
     errors.push(`${slug}: image file not found at public${image}`);
+    continue;
+  }
+
+  const head = fs.readFileSync(localPath, { encoding: 'utf8', flag: 'r' }).slice(0, 300).toLowerCase();
+  if (head.includes('<html') || head.includes('<!doctype html')) {
+    errors.push(`${slug}: image file is HTML, not a real image (${image})`);
   }
 
   // Inline image is recommended. If missing, api.ts injects a safe fallback at render time.

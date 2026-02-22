@@ -19,7 +19,7 @@ export const AUTHORS: Record<string, Author> = {
     name: 'Rocío Limón',
     role: 'Redactora Jefa | Gastronomía',
     bio: 'Nacida entre fogones. Nieta de marineros y hija de taberneros. Lleva 15 años catalogando los mejores chocos de la provincia. Su mapa mental de Huelva está dibujado en servilletas de bares.',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&fit=crop',
+    avatar: '/images/guides/huelva-plaza-las-monjas.jpg',
     categories: ['comer', 'gastronomia', 'tapas', 'restaurantes', 'bares'],
     tone: `CERCANO Y ENTUSIASTA. Tono de barra de bar, con humor y personalidad local.
 
@@ -55,7 +55,7 @@ EJEMPLOS MALOS (NO USAR):
     name: 'Antonio Torre',
     role: 'Redactor | Patrimonio & Historia',
     bio: 'Historiador de la Universidad de Huelva. Especialista en patrimonio industrial minero. Conoce cada piedra del Muelle del Tinto y la historia de cada casa del Barrio Inglés.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&fit=crop',
+    avatar: '/images/guides/huelva-plaza-las-monjas.jpg',
     categories: ['cultura', 'historia', 'patrimonio', 'monumentos', 'museos', 'guias'],
     tone: `EDUCATIVO Y RIGUROSO. Tono académico pero accesible. CERO humor o coloquialismos.
 
@@ -92,7 +92,7 @@ EJEMPLOS MALOS (NO USAR):
     name: 'Manuel V. Cinta',
     role: 'Redactor | Actualidad & Economía',
     bio: 'Periodista económico con 20 años en medios locales. Sigue el Puerto, el Hidrógeno Verde y la transformación de la provincia como nadie. Analista frío en una tierra caliente.',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&fit=crop',
+    avatar: '/images/guides/huelva-plaza-las-monjas.jpg',
     categories: ['noticias', 'economia', 'negocios', 'actualidad', 'puerto'],
     tone: `ESTRICTAMENTE PERIODÍSTICO. Tono formal, objetivo, sin opinión ni humor.
 
@@ -135,7 +135,7 @@ TEMAS SENSIBLES (despidos, accidentes, conflictos):
     name: 'Carmen Doñana',
     role: 'Redactora | Naturaleza & Playas',
     bio: 'Bióloga marina y guardaparque de las Marismas. Conoce cada chiringuito de la costa y cada sendero de Doñana. Defensora del turismo sostenible.',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&fit=crop',
+    avatar: '/images/guides/huelva-plaza-las-monjas.jpg',
     categories: ['playas', 'naturaleza', 'marismas', 'donana', 'excursiones', 'rutas'],
     tone: `PRÁCTICO Y CERCANO. Informativo pero con calidez. Conciencia medioambiental.
 
@@ -175,7 +175,7 @@ EJEMPLOS MALOS (NO USAR):
     name: 'Lucía Colombina',
     role: 'Redactora | Agenda & Eventos',
     bio: 'Productora cultural y ex-directora del Festival de Cine Iberoamericano. Sabe todo lo que pasa en la ciudad antes de que ocurra. Su agenda es la referencia.',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&fit=crop',
+    avatar: '/images/guides/huelva-plaza-las-monjas.jpg',
     categories: ['eventos', 'agenda', 'fiestas', 'conciertos', 'teatro'],
     tone: `DINÁMICO Y ÚTIL. Entusiasmo contenido, enfocado en la información práctica.
 
@@ -212,7 +212,7 @@ EJEMPLOS MALOS (NO USAR):
     name: 'El Choco',
     role: 'Director de Redacción',
     bio: 'La voz de Huelva.cloud. Supervisa que cada artículo cumpla los estándares de calidad: veracidad, relevancia y autenticidad onubense.',
-    avatar: '/images/choco-avatar.jpg',
+    avatar: '/images/guides/huelva-plaza-las-monjas.jpg',
     categories: [],
     tone: 'Adaptable según la sección. Garantiza la coherencia editorial.',
     signature: 'Por y para Huelva.',

@@ -3,7 +3,7 @@ import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import HeroSection from '@/components/HeroSection';
-import { ArrowRight, TrendingUp, Compass, Clock, Users, Sparkles } from 'lucide-react';
+import { ArrowRight, TrendingUp, Compass, Clock, Users, Sparkles, MapPin, CalendarDays } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -14,6 +14,9 @@ export default async function Home() {
   // Separate featured from regular articles
   const featuredArticle = articles[0];
   const regularArticles = articles.slice(1, 7);
+  const nowInHuelva = articles.slice(0, 3);
+  const agendaHoy = articles.filter((a) => a.category === 'Eventos').slice(0, 3);
+  const lastUpdated = articles[0]?.date || null;
 
   // Interactive guides data - Images from actual Spain/Andalusia locations
   const interactiveGuides = [
@@ -28,7 +31,7 @@ export default async function Home() {
     {
       title: '48 Horas en Huelva',
       subtitle: 'Un finsemana perfecto: comida, cultura y mar',
-      image: '/images/guides/muelle-tinto-sunset.jpg',
+      image: '/images/guides/huelva-plaza-las-monjas.jpg',
       icon: <Clock size={24} />,
       href: '/guias/48-horas',
       badge: 'Itinerario'
@@ -44,7 +47,7 @@ export default async function Home() {
     {
       title: 'Traductor de Jamón',
       subtitle: 'Bellota, Cebo de Campo, Cebo. Las diferencias.',
-      image: '/images/guides/jamon-iberico-bellota.jpg',
+      image: '/images/guides/corte-jamon-iberico.jpg',
       icon: <Users size={24} />,
       href: '/guias/jamon',
       badge: 'Nuevo'
@@ -60,7 +63,7 @@ export default async function Home() {
     {
       title: 'Barrios de Huelva',
       subtitle: 'Encuentra tu barrio perfecto',
-      image: '/images/guides/barrio-reina-victoria-hero.jpg',
+      image: '/images/guides/huelva-plaza-las-monjas.jpg',
       icon: <Compass size={24} />,
       href: '/guias/barrios',
       badge: 'Interactivo'
@@ -71,6 +74,51 @@ export default async function Home() {
     <main className="w-full">
       {/* Hero Section - Dynamic with Framer Motion */}
       <HeroSection />
+
+      {/* Ahora en Huelva + Agenda de hoy */}
+      <section className="editorial-section bg-sand/40 border-y border-navy-10">
+        <div className="container">
+          <div className="max-w-content mx-auto">
+            {lastUpdated && (
+              <p className="text-sm text-navy-50 mb-8">Última actualización general: {lastUpdated}</p>
+            )}
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-white rounded-3xl p-6 md:p-8 border border-navy-10">
+                <div className="flex items-center gap-2 mb-4 text-navy">
+                  <MapPin size={18} className="text-terracotta" />
+                  <h3 className="text-display text-2xl font-semibold">Ahora en Huelva</h3>
+                </div>
+                <div className="space-y-4">
+                  {nowInHuelva.map((item) => (
+                    <Link key={item.slug} href={`/article/${item.slug}`} className="block group">
+                      <p className="text-sm text-navy-40 mb-1">{item.category} · {item.date}</p>
+                      <p className="font-semibold text-navy group-hover:text-terracotta transition-colors">{item.title}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl p-6 md:p-8 border border-navy-10">
+                <div className="flex items-center gap-2 mb-4 text-navy">
+                  <CalendarDays size={18} className="text-terracotta" />
+                  <h3 className="text-display text-2xl font-semibold">Agenda de hoy</h3>
+                </div>
+                <div className="space-y-4">
+                  {agendaHoy.length > 0 ? agendaHoy.map((item) => (
+                    <Link key={item.slug} href={`/article/${item.slug}`} className="block group">
+                      <p className="text-sm text-navy-40 mb-1">{item.date}</p>
+                      <p className="font-semibold text-navy group-hover:text-terracotta transition-colors">{item.title}</p>
+                    </Link>
+                  )) : (
+                    <p className="text-navy-50">Estamos preparando la agenda de hoy.</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Trending Section */}
       <section id="trending" className="editorial-section bg-white">

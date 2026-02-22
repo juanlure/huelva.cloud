@@ -3,12 +3,12 @@ import { CATEGORY_MAP } from './constants';
 
 const CATEGORY_FALLBACK_IMAGE: Record<string, string> = {
   'noticias': '/images/guides/huelva-plaza-las-monjas.jpg',
-  'eventos': '/images/guides/monumento-colon-monjas.jpg',
-  'gastronomía': '/images/guides/gambas-blancas-huelva.jpg',
-  'gastronomia': '/images/guides/gambas-blancas-huelva.jpg',
-  'alojamiento': '/images/guides/barrio-reina-victoria-hero.jpg',
-  'guías locales': '/images/guides/muelle-tinto-sunset.jpg',
-  'guias locales': '/images/guides/muelle-tinto-sunset.jpg',
+  'eventos': '/images/guides/huelva-plaza-las-monjas.jpg',
+  'gastronomía': '/images/guides/coquinas-huelva.jpg',
+  'gastronomia': '/images/guides/coquinas-huelva.jpg',
+  'alojamiento': '/images/guides/huelva-plaza-las-monjas.jpg',
+  'guías locales': '/images/guides/huelva-plaza-las-monjas.jpg',
+  'guias locales': '/images/guides/huelva-plaza-las-monjas.jpg',
 };
 
 function normalizeCategory(category: string): string {

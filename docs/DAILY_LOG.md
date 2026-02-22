@@ -73,3 +73,39 @@ Formato:
 - Riesgo:
   - Si no se mantiene cadencia diaria, baja frescura por sección.
   - Actualmente Noticias tiene 0 publicadas (debe corregirse mañana en primera pasada).
+
+---
+
+## 2026-02-22 — Ronda noche (22:35)
+
+### Hecho
+- Implementado fallback robusto para publicación:
+  - imagen destacada local obligatoria por categoría (`src/lib/api.ts`)
+  - inyección automática de imagen inline cuando falta en contenido (`src/lib/api.ts`)
+- Home reforzada según plan UX:
+  - bloque **Ahora en Huelva**
+  - bloque **Agenda de hoy**
+  - banner de **Última actualización general**
+- Secciones con frescura visible:
+  - banner **Última actualización** en páginas de categoría.
+- Interlinking inicial aplicado:
+  - bloque **Relacionado en [categoría]** en ficha de artículo.
+- EEAT operativo visible en artículo:
+  - fuente editorial + fecha de publicación mostradas.
+- Calidad visual corregida:
+  - reemplazo de imágenes remotas/genéricas por rutas locales.
+  - avatares de autor movidos a local para evitar dependencias externas.
+- Validación prepublicación añadida:
+  - script `scripts/validate-content.mjs`
+  - hook `prebuild` en `package.json`.
+- QA técnica ejecutada:
+  - `npm run build` OK
+  - revisión con Playwright en `/`, `/noticias` y artículo de muestra.
+  - estado final: **0 imágenes rotas** y **0 imágenes externas** en las rutas revisadas.
+
+### Pendiente
+- Sustituir progresivamente imágenes locales repetidas por banco propio 100% Huelva curado.
+- Publicar 2-3 noticias nuevas verificadas para reforzar sección Noticias en las próximas ventanas.
+
+### Riesgo
+- Parte de `public/images/guides` contiene archivos HTML guardados como `.jpg`; no usados en portada tras limpieza, pero conviene depuración completa del directorio en siguiente pasada.

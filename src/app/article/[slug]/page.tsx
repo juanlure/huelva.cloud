@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { getArticleBySlug } from '@/lib/api';
+import { getArticleBySlug, getArticles } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import { AUTHORS } from '@/lib/authors';
 import InteractiveContainer from '@/components/InteractiveContainer';
 import AuthorBox from '@/components/AuthorBox';
 import ArticleRenderer from '@/components/article/ArticleRenderer';
-import { Clock, ArrowLeft } from 'lucide-react';
+import { Clock, ArrowLeft, Link2 } from 'lucide-react';
 import styles from './ArticlePage.module.css';
 
 interface PageProps {
@@ -21,6 +21,9 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const authorData = AUTHORS[article.author] || AUTHORS['El Choco'];
+  const relatedArticles = (await getArticles())
+    .filter((a) => a.slug !== article.slug && a.category === article.category)
+    .slice(0, 3);
 
   // --- Extract interactive components ---
   const SUPPORTED_INTERACTIVES = new Set(['translator', 'itinerary', 'quiz', 'cards', 'checklist', 'scorecard', 'map']);
@@ -91,6 +94,11 @@ export default async function ArticlePage({ params }: PageProps) {
             {article.excerpt}
           </p>
         )}
+
+        <div className="mt-6 text-sm text-navy-50">
+          <p>Fuente: Redacción Huelva.is + fuentes locales verificadas</p>
+          <p>Fecha de publicación: {article.date}</p>
+        </div>
       </header>
 
       {/* Hero Image */}
@@ -115,6 +123,26 @@ export default async function ArticlePage({ params }: PageProps) {
           <ArticleRenderer content={cleanedContent} />
         )}
       </main>
+
+      {relatedArticles.length > 0 && (
+        <section className="max-w-4xl mx-auto px-4 md:px-0 mt-12">
+          <div className="flex items-center gap-2 mb-4 text-navy-60">
+            <Link2 size={16} />
+            <h2 className="text-base font-semibold">Relacionado en {article.category}</h2>
+          </div>
+          <div className="space-y-2">
+            {relatedArticles.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/article/${related.slug}`}
+                className="block text-navy hover:text-terracotta transition-colors"
+              >
+                {related.title}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Article Footer */}
       <footer className={styles.articleFooter}>
