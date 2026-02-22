@@ -66,5 +66,67 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
       <p>La clave es llegar con margen y planificar la vuelta.</p>
     `
+  },
+  {
+    slug: 'como-verificamos-noticias-huelva-cloud',
+    title: 'Cómo verificamos las noticias en Huelva.cloud (y por qué importa)',
+    excerpt: 'Nuestra metodología editorial para cubrir Huelva y provincia con rigor: fuente primaria, contexto local y actualización continua.',
+    category: 'Noticias',
+    image: '/images/guides/ayuntamiento-huelva.jpg',
+    publishedAt: '2026-02-22T20:40:00Z',
+    author: 'Manuel V. Cinta',
+    isAi: true,
+    content: `
+      <p>Si quieres que un medio local sea útil, tiene que ser fiable. En Huelva.cloud no publicamos por rellenar: publicamos para que te sirva.</p>
+      <h2>Qué verificamos antes de publicar</h2>
+      <ul>
+        <li>Fuente primaria cuando exista (institución, entidad u organizador).</li>
+        <li>Fecha, hora y ubicación en piezas de agenda.</li>
+        <li>Contexto local real: qué cambia para Huelva y provincia.</li>
+      </ul>
+      <h2>Qué corregimos rápido</h2>
+      <p>Si un horario cambia o un evento se cancela, actualizamos la pieza y lo dejamos indicado.</p>
+    `
+  },
+  {
+    slug: 'ruta-gamba-blanca-huelva-capital',
+    title: 'Ruta de gamba blanca en Huelva capital: 5 paradas con criterio',
+    excerpt: 'Una guía práctica para disfrutar producto onubense de verdad, sin postureo y con sentido común.',
+    category: 'Gastronomía',
+    image: '/images/guides/gambas-blancas-huelva.jpg',
+    publishedAt: '2026-02-22T20:45:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>La gamba blanca de Huelva no necesita maquillaje. Necesita producto bueno, punto de cocción y sitio honesto.</p>
+      <h2>Cómo elegir bien</h2>
+      <ul>
+        <li>Pregunta por procedencia y frescura del día.</li>
+        <li>Evita sitios donde todo sabe igual: mala señal.</li>
+        <li>Menos salsa, más producto.</li>
+      </ul>
+      <blockquote>En Huelva se viene a comer bien, no a hacer teatro.</blockquote>
+    `
+  },
+  {
+    slug: 'atardecer-muelle-tinto-hora-ideal',
+    title: 'Muelle del Tinto: hora ideal para el atardecer y dónde colocarte',
+    excerpt: 'Guía rápida para ver el atardecer en el Muelle del Tinto con buena luz y sin agobios.',
+    category: 'Playa y Naturaleza',
+    image: '/images/guides/muelle-tinto-sunset.jpg',
+    publishedAt: '2026-02-22T20:50:00Z',
+    author: 'Carmen Doñana',
+    isAi: true,
+    content: `
+      <p>Hay días de foto fácil y días de viento peleón. Si quieres aprovechar bien el Muelle del Tinto, llega con margen.</p>
+      <h2>Cuándo ir</h2>
+      <p>Lo ideal: 35-45 minutos antes de la puesta de sol para ver el cambio completo de luz.</p>
+      <h2>Consejos rápidos</h2>
+      <ul>
+        <li>Calzado cómodo: se anda más de lo que parece.</li>
+        <li>Evita hora punta de fin de semana si buscas calma.</li>
+        <li>Revisa viento y nubosidad antes de salir.</li>
+      </ul>
+    `
   }
 ];
