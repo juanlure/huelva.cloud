@@ -6,6 +6,11 @@ export interface Author {
   categories: string[];
   tone: string;
   signature: string;
+  // EEAT metadata
+  location?: string;
+  expertise?: string[];
+  experienceYears?: number;
+  verificationLevel?: 'alto' | 'medio';
 }
 
 export const AUTHORS: Record<string, Author> = {
@@ -38,7 +43,11 @@ EJEMPLOS BUENOS:
 EJEMPLOS MALOS (NO USAR):
 - "Este establecimiento ofrece una amplia variedad de productos del mar."
 - "Una experiencia gastronómica única que deleitará tu paladar."`,
-    signature: 'Rocío nunca deja un plato sin probar.'
+    signature: 'Rocío nunca deja un plato sin probar.',
+    location: 'Huelva capital',
+    expertise: ['gastronomía onubense', 'bares tradicionales', 'producto local'],
+    experienceYears: 15,
+    verificationLevel: 'medio'
   },
 
   // ===== ESPECIALISTA EN PATRIMONIO HISTÓRICO =====
@@ -71,7 +80,11 @@ EJEMPLOS BUENOS:
 EJEMPLOS MALOS (NO USAR):
 - "El Muelle del Tinto es una pasada, ¡tienes que verlo!"
 - "Esta catedral impresionante te dejará sin palabras."`,
-    signature: 'La historia se escribe con datos.'
+    signature: 'La historia se escribe con datos.',
+    location: 'Huelva',
+    expertise: ['patrimonio de Huelva', 'historia local', 'archivo histórico'],
+    experienceYears: 20,
+    verificationLevel: 'alto'
   },
 
   // ===== ESPECIALISTA EN ACTUALIDAD Y ECONOMÍA =====
@@ -110,7 +123,11 @@ TEMAS SENSIBLES (despidos, accidentes, conflictos):
 - Máxima sobriedad y respeto
 - Evitar morbo o dramatización
 - Centrarse en hechos, no en especulaciones`,
-    signature: 'Los datos no opinan.'
+    signature: 'Los datos no opinan.',
+    location: 'Provincia de Huelva',
+    expertise: ['actualidad local', 'economía onubense', 'administración pública'],
+    experienceYears: 20,
+    verificationLevel: 'alto'
   },
 
   // ===== ESPECIALISTA EN NATURALEZA Y COSTAS =====
@@ -146,7 +163,11 @@ EJEMPLOS BUENOS:
 EJEMPLOS MALOS (NO USAR):
 - "Una playa paradisíaca donde el tiempo se detiene..."
 - "Este rincón mágico escondido te espera..."`,
-    signature: 'La naturaleza es nuestra mayor riqueza.'
+    signature: 'La naturaleza es nuestra mayor riqueza.',
+    location: 'Costa de Huelva',
+    expertise: ['costa onubense', 'Doñana y marismas', 'turismo sostenible'],
+    experienceYears: 12,
+    verificationLevel: 'alto'
   },
 
   // ===== ESPECIALISTA EN EVENTOS Y AGENDA =====
@@ -179,7 +200,11 @@ EJEMPLOS BUENOS:
 EJEMPLOS MALOS (NO USAR):
 - "¡No te pierdas este evento increíble que promete ser una experiencia única!"
 - "Un festival que hará las delicias de grandes y pequeños..."`,
-    signature: 'Huelva nunca para.'
+    signature: 'Huelva nunca para.',
+    location: 'Huelva capital',
+    expertise: ['agenda cultural', 'eventos locales', 'programación municipal'],
+    experienceYears: 10,
+    verificationLevel: 'medio'
   },
 
   // ===== JEFE DE REDACCIÓN =====
@@ -190,7 +215,11 @@ EJEMPLOS MALOS (NO USAR):
     avatar: '/images/choco-avatar.jpg',
     categories: [],
     tone: 'Adaptable según la sección. Garantiza la coherencia editorial.',
-    signature: 'Por y para Huelva.'
+    signature: 'Por y para Huelva.',
+    location: 'Huelva',
+    expertise: ['dirección editorial', 'estándares EEAT', 'control de calidad'],
+    experienceYears: 18,
+    verificationLevel: 'alto'
   }
 };
 

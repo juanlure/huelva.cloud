@@ -41,6 +41,7 @@ Convertir Huelva.cloud en **la web de referencia de Huelva** en 90 días:
 4. **Fuentes**: siempre enlazar fuente primaria cuando exista.
 5. **Noticias serias**: tono neutro, preciso, sin bromas.
 6. **No relleno**: utilidad real por pieza.
+7. **Autoría EEAT**: toda publicación lleva autor ficticio estable con perfil experto (ver `docs/AUTORES_EEAT_HUELVA_CLOUD.md`).
 
 ---
 
