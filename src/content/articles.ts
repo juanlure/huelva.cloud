@@ -372,5 +372,144 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>El Muelle del Tinto no es atracción turística. Es memoria industrial hecha estructura.</blockquote>
     `
+  },
+
+  // ─── 4 ARTÍCULOS ADICIONALES ───────────────────────────────────
+
+  // 11. Jamón Ibérico de Huelva (artículo dedicado)
+  {
+    slug: 'jamon-iberico-huelva-denominacion-origen',
+    title: 'Jamón ibérico de Huelva: denominación de origen y cómo elegirlo',
+    excerpt: 'La Sierra de Huelva produce jamón ibérico de bellota de primer nivel. Guía para entender la denominación, los códigos de color y dónde comprar.',
+    category: 'Gastronomía',
+    image: '/images/guides/corte-jamon-iberico.jpg',
+    publishedAt: '2026-02-23T19:00:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El jamón ibérico de la Denominación de Origen Protegida (DOP) Sierra de Huelva es uno de los productos más valorados de la gastronomía española. No todo el jamón que se vende como "de Huelva" tiene esta protección.</p>
+
+      <h2>Qué es la DOP Sierra de Huelva</h2>
+      <p>Área geográfica delimitada que incluye la Sierra y parte de la provincia. Solo los cerdos criados, alimentados y sacrificados en esta zona, con las características específicas de raza y alimentación, pueden llevar esta denominación.</p>
+
+      <h2>Códigos de color (brida)</h2>
+      <ul>
+        <li><strong>Negro:</strong> 100% ibérico de bellota. El más alto de la gama.</li>
+        <li><strong>Rojo:</strong> Ibérico de bellota (pero no 100% raza pura).</li>
+        <li><strong>Verde:</strong> Ibérico de cebo de campo.</li>
+        <li><strong>Blanco:</strong> Ibérico de cebo (alimentación con piensos).</li>
+      </ul>
+
+      <h2>Dónde comprar</h2>
+      <p>En Huelva capital, las tiendas especializadas del centro ofrecen producto con certificación. En la Sierra (Aracena, Jabugo, Cortegana), las tiendas de productores suelen tener mejor relación calidad-precio.</p>
+
+      <h2>Precios orientativos</h2>
+      <ul>
+        <li>Paleta (5-6 kg): 80-150€ según calidad.</li>
+        <li>Jamón (7-8 kg): 150-350€ según calidad.</li>
+        <li>Envasado al vacío: 15-25€/kg para bellota de primera.</li>
+      </ul>
+
+      <blockquote>Un jamón bueno no necesita presentación. Pero sí necesita cuchillo afilado y temperatura ambiente.</blockquote>
+    `
+  },
+
+  // 12. Punta Umbría
+  {
+    slug: 'punta-umbria-playa-huelva-escapada',
+    title: 'Punta Umbría: escapada de playa a 15 minutos de Huelva capital',
+    excerpt: 'La playa más cercana a Huelva capital. Cómo llegar, qué esperar y por qué es el destino de verano de los onubenses.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-02-23T19:05:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Punta Umbría es la playa de Huelva por defecto. No es la más bonita de la provincia (esa distinción suele corresponder a las playas de la Costa de la Luz entre Matalascañas y Ayamonte), pero es la más práctica: 15 minutos en coche desde la capital.</p>
+
+      <h2>Qué es Punta Umbría</h2>
+      <p>Municipio costero en la desembocadura del río Odiel. Playas amplias de arena fina, urbanización concentrada en el pueblo y un ambiente de veraneo familiar sin grandes pretensiones turísticas.</p>
+
+      <h2>Cómo llegar</h2>
+      <ul>
+        <li><strong>Coche:</strong> A-497 desde Huelva. 15-20 minutos.</li>
+        <li><strong>Autobús:</strong> línea regular desde Huelva capital.</li>
+        <li><strong>Taxi:</strong> unos 25-35€ desde el centro de Huelva.</li>
+      </ul>
+
+      <h2>Qué encontrar</h2>
+      <p>La playa es amplia, con chiringuitos en verano y suficiente espacio para no sentirte agobiado. El pueblo tiene restaurantes, tiendas y todo lo necesario para una jornada de playa.</p>
+
+      <h2>Mejor época</h2>
+      <p>Julio y agosto están saturados. Junio y septiembre son ideales: buen tiempo, menos gente, precios más razonables.</p>
+
+      <blockquote>Punta Umbría no es destino exótico. Es la playa de los que viven en Huelva y quieren mar sin complicaciones.</blockquote>
+    `
+  },
+
+  // 13. Barrio Reina Victoria
+  {
+    slug: 'barrio-reina-victoria-huelva-modernista',
+    title: 'Barrio Reina Victoria: el modernismo olvidado de Huelva',
+    excerpt: 'Paseo por el barrio Reina Victoria: arquitectura industrial inglesa, casas obreras y el legado británico de la ciudad.',
+    category: 'Guías Locales',
+    image: '/images/guides/aracena-pueblo.jpg',
+    publishedAt: '2026-02-23T19:10:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Barrio Reina Victoria es uno de los pocos conjuntos arquitectónicos de Huelva que sobreviven de la época industrial inglesa. No es una atracción turística organizada: es un barrio residencial con casas de principios del siglo XX que merecen ser vistas con atención.</p>
+
+      <h2>Historia del barrio</h2>
+      <p>Construido por la Rio Tinto Company Limited para albergar a los trabajadores ingleses y a los empleados españoles de cierta categoría. Las casas siguen patrones arquitectónicos británicos adaptados al clima andaluz.</p>
+
+      <h2>Qué ver</h2>
+      <ul>
+        <li><strong>Casas de la calle Reina Victoria:</strong> fachadas con detalles modernistas y estructuras de madera.</li>
+        <li><strong>Viviendas obreras:</strong> casas más sencillas del entorno, también de época.</li>
+        <li><strong>Iglesia anglicana:</strong> pequeña iglesia que servía a la comunidad británica.</li>
+      </ul>
+
+      <h2>Cómo visitar</h2>
+      <p>Acceso libre. Es un barrio residencial, así que se pide discreción. El paseo completo lleva unos 30-45 minutos. Ideal combinar con visita al centro histórico.</p>
+
+      <blockquote>El Reina Victoria es memoria urbana. No hay carteles explicativos: hay que saber mirar.</blockquote>
+    `
+  },
+
+  // 14. Desayuno en Huelva
+  {
+    slug: 'desayuno-huelva-donde-tostada-churros',
+    title: 'Desayuno en Huelva: tostadas, churros y los mejores sitios',
+    excerpt: 'El desayuno es institución en Huelva. Dónde ir, qué pedir y cuánto pagar por un buen desayuno onubense.',
+    category: 'Gastronomía',
+    image: '/images/guides/choco-frito-hero.jpg',
+    publishedAt: '2026-02-23T19:15:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>En Huelva, el desayuno no se improvisa. Hay lugares que llevan décadas sirviendo el mismo café, las mismas tostadas y los mismos churros a la misma gente. El desayuno aquí es rutina social, no solo alimentación.</p>
+
+      <h2>Tipos de desayuno onubense</h2>
+      <ul>
+        <li><strong>Tostada con aceite:</strong> pan de pueblo, aceite de oliva virgen extra, opcional tomate rallado.</li>
+        <li><strong>Manteca colorá:</strong> manteca de cerdo con pimentón, extendida sobre pan tostado. Sabor intenso, no apto para todos los paladares.</li>
+        <li><strong>Churros:</strong> sobretodo fines de semana. Con chocolate o solo.</li>
+        <li><strong>Mollete:</strong> típico de los desayunos rápidos en bares.</li>
+      </ul>
+
+      <h2>Dónde desayunar</h2>
+      <p>Los bares del centro abren temprano (7:00-8:00). Algunos de toda la vida mantienen la calidad y el ritual.</p>
+      <ul>
+        <li>Cerca del Mercado del Carmen: ambiente de mercado, producto fresco.</li>
+        <li>Plaza de las Monjas: terrazas para desayunar con calma.</li>
+        <li>Barrio del Torrejón: locales tradicionales sin pretensiones.</li>
+      </ul>
+
+      <h2>Precios</h2>
+      <p>Desayuno completo (café + tostada): 2-3,50€. Churros para dos: 4-6€. Los fines de semana en zonas céntricas sube un poco.</p>
+
+      <blockquote>El desayuno en Huelva no se inventa. Se hereda.</blockquote>
+    `
   }
 ];
