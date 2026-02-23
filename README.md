@@ -82,6 +82,35 @@
 
 ---
 
+## 🗞️ Noticias Diarias (/noticias)
+
+**Flujo automatizado de noticias locales con contenido original.**
+
+### Cómo funciona
+- Scrapea 5 fuentes locales (Huelva Información, Europa Press, etc.)
+- IA reescribe la noticia más relevante con copy propio (400-600 palabras)
+- Publicación automática todos los días a las 7:30 AM
+
+### Estructura del artículo generado
+1. **Lead impactante** - Qué pasó, en Huelva, ahora
+2. **Contexto** - Por qué importa para el lector local
+3. **Detalles** - Quién, cuándo, dónde, con datos
+4. **Implicaciones** - Qué puede pasar ahora
+
+### Documentación completa
+Ver: [`docs/NEWS_WORKFLOW.md`](docs/NEWS_WORKFLOW.md)
+
+### Ejecución manual
+```bash
+# Solo generar noticia
+node scripts/scrape-and-rewrite.mjs
+
+# Flujo completo (commit + push)
+bash scripts/news-daily-publish.sh
+```
+
+---
+
 ## 🔧 Scripts Disponibles
 
 ### Descarga de Imágenes
