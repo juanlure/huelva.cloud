@@ -60,7 +60,7 @@ export interface Article {
 
 function mapArticle(article: LocalArticle): Article {
   const image = resolveArticleImage(article);
-  const content = ensureInlineImage(article.content, image, article.title);
+  const content = article.content || '';
   const words = content.split(/\s+/).filter(Boolean).length;
   const readTime = `${Math.max(1, Math.ceil(words / 200))} min`;
 
