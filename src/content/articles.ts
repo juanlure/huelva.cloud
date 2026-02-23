@@ -1057,7 +1057,9 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     `
   },
 
-  // 30. Mercado del Carmen
+  // ─── 5 ARTÍCULOS MÁS (30-34) ───────────────────────────────────
+
+  // 30. Palos de la Frontera
   {
     slug: 'mercado-carmen-huelva-comprar-fresco',
     title: 'Mercado del Carmen: comprar fresco en el centro de Huelva',
@@ -1097,7 +1099,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
   // ─── 5 ARTÍCULOS MÁS (31-35) ───────────────────────────────────
 
-  // 31. Palos de la Frontera
+  // 30. Palos de la Frontera
   {
     slug: 'palos-frontera-huelva-colon-lugares',
     title: 'Palos de la Frontera: donde todo empezó',
@@ -1128,7 +1130,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     `
   },
 
-  // 32. Minas de Riotinto
+  // 31. Minas de Riotinto
   {
     slug: 'minas-riotinto-huelva-visitar-tren',
     title: 'Minas de Riotinto: el Marte onubense',
@@ -1159,7 +1161,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     `
   },
 
-  // 33. Noche en Huelva
+  // 32. Noche en Huelva
   {
     slug: 'noche-huelva-donde-salir-tapas',
     title: 'Noche en Huelva: dónde salir y qué hacer',
@@ -1192,7 +1194,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     `
   },
 
-  // 34. Gastronomía típica de Huelva
+  // 33. Gastronomía típica de Huelva
   {
     slug: 'gastronomia-tipica-huelva-platos',
     title: 'Gastronomía de Huelva: los 10 platos que tienes que probar',
@@ -1231,7 +1233,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     `
   },
 
-  // 35. Compras en Huelva
+  // 34. Compras en Huelva
   {
     slug: 'compras-huelva-donde-ir-tiendas',
     title: 'Compras en Huelva: dónde ir y qué comprar',
