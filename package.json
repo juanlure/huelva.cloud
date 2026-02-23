@@ -10,7 +10,9 @@
     "lint": "eslint",
     "download-images": "node scripts/download-images.mjs",
     "download-images:simple": "node scripts/download-images-simple.mjs",
-    "download:missing": "node scripts/download-missing-images.mjs"
+    "download:missing": "node scripts/download-missing-images.mjs",
+    "scrape:commons": "node scripts/scrape-commons-images.mjs",
+    "screenshot:commons": "node scripts/screenshot-commons.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.38.0",
