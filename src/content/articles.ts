@@ -743,5 +743,355 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>El pescado bueno no necesita salsa. El malo, tampoco la salva.</blockquote>
     `
+  },
+
+  // ─── 10 ARTÍCULOS NUEVOS CON IMÁGENES ADICIONALES ──────────────
+
+  // 21. Monasterio de La Rábida
+  {
+    slug: 'monasterio-rabida-huelva-colon',
+    title: 'Monasterio de La Rábida: donde Colón preparó el viaje',
+    excerpt: 'Visita al Monasterio de La Rábida, donde Colón encontró apoyo para su expedición. Historia, qué ver y cómo llegar.',
+    category: 'Guías Locales',
+    image: '/images/guides/monasterio-rabida.jpg',
+    publishedAt: '2026-02-23T20:00:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Monasterio de La Rábida es uno de los lugares más simbólicos de Huelva. Aquí, Cristóbal Colón encontró el apoyo de los frailes franciscanos y de los hermanos Pinzón para su expedición hacia las Indias.</p>
+
+      <h2>Historia del lugar</h2>
+      <p>Monasterio franciscano del siglo XV situado en la confluencia de los ríos Tinto y Odiel. Colón residió aquí antes de partir en 1492, refinando sus planes y buscando patrocinadores.</p>
+
+      <h2>Qué ver en la visita</h2>
+      <ul>
+        <li><strong>Claustro mudéjar:</strong> joya arquitectónica del siglo XV.</li>
+        <li><strong>Sala capitular:</strong> donde Colón expuso sus teorías.</li>
+        <li><strong>Jardines:</strong> vistas sobre la ría y los ríos.</li>
+        <li><strong>Museo colombino:</strong> reproducciones de cartas y documentos.</li>
+      </ul>
+
+      <h2>Cómo llegar</h2>
+      <p>A 2 km de Palos de la Frontera, a unos 15 minutos en coche desde Huelva capital. Acceso bien señalizado desde la carretera nacional.</p>
+
+      <h2>Horarios y precios</h2>
+      <ul>
+        <li>Horario: generalmente 10:00-13:00 y 16:00-18:45.</li>
+        <li>Entrada: gratuita (donativo voluntario).</li>
+        <li>Visitas guiadas: disponibles en horario de mañana.</li>
+      </ul>
+
+      <blockquote>La Rábida es donde la historia de América empezó a hacerse realidad.</blockquote>
+    `
+  },
+
+  // 22. Monumento a Colón
+  {
+    slug: 'monumento-colon-huelva-escultura',
+    title: 'Monumento a Colón: la escultura más grande de España',
+    excerpt: 'Todo sobre el Monumento a la Fe Descubridora, conocido como Monumento a Colón, en Huelva capital.',
+    category: 'Guías Locales',
+    image: '/images/guides/cristobal-colon-huelva.jpg',
+    publishedAt: '2026-02-23T20:05:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>El Monumento a la Fe Descubridora, popularmente conocido como el Monumento a Colón, es una escultura monumental de 37 metros de altura situada en la confluencia de los ríos Tinto y Odiel, en el entorno del puerto de Huelva.</p>
+
+      <h2>Datos del monumento</h2>
+      <ul>
+        <li><strong>Altura:</strong> 37 metros.</li>
+        <li><strong>Material:</strong> hormigón revestido de piedra caliza.</li>
+        <li><strong>Autor:</strong> escultora Gertrudiz Gómez de Avellaneda (homenaje a la escritora).</li>
+        <li><strong>Inauguración:</strong> 1929.</li>
+      </ul>
+
+      <h2>Qué representa</h2>
+      <p>La escultura muestra a Colón con los brazos extendidos mirando hacia el Atlántico, simbolizando la fe en el descubrimiento. Es un símbolo identitario de Huelva y referencia visual desde cualquier punto alto de la ciudad.</p>
+
+      <h2>Cómo visitar</h2>
+      <p>Acceso libre y gratuito. Se encuentra en una rotonda junto al puerto. Se puede ver desde la carretera o acercarse a pie desde el entorno del muelle del Tinto.</p>
+
+      <blockquote>El Colón de Huelva no es el explorador. Es la fe en lo imposible hecha piedra.</blockquote>
+    `
+  },
+
+  // 23. Doñana
+  {
+    slug: 'donana-parque-nacional-huelva-visitar',
+    title: 'Doñana: el parque nacional en la puerta de Huelva',
+    excerpt: 'Guía para visitar Doñana desde Huelva: cómo llegar, qué ver, rutas y consejos prácticos.',
+    category: 'Guías Locales',
+    image: '/images/guides/donana-huelva.jpg',
+    publishedAt: '2026-02-23T20:10:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Parque Nacional de Doñana es uno de los espacios naturales más importantes de Europa. Aunque su entrada principal está en Sevilla, desde Huelva se accede a la zona de influencia del parque: las marismas, el entorno del río, y la costa atlántica.</p>
+
+      <h2>Qué es Doñanav/p>
+      <p>Sistema de marismas, dunas y bosques mediterráneos que alberga una biodiversidad única. Aves migratorias, lince ibérico, águila imperial, y una red hídrica compleja.</p>
+
+      <h2>Cómo visitar desde Huelva</h2>
+      <ul>
+        <li><strong>Marismas del Odiel:</strong> parque natural de acceso libre, parte del entorno de Doñana.</li>
+        <li><strong>Visitas guiadas:</strong> empresas locales organizan excursiones al corazón del parque.</li>
+        <li><strong>Playa de la Bota:</strong> límite del parque, acceso directo desde Huelva.</li>
+      </ul>
+
+      <h2>Qué llevar</h2>
+      <ul>
+        <li>Calzado cómodo para caminar.</li>
+        <li>Ropa según estación (invierno: abrigo, verano: protección solar).</li>
+        <li>Prismáticos si te interesa la observación de aves.</li>
+        <li>Agua y algo de comida (no hay servicios en la mayoría de rutas).</li>
+      </ul>
+
+      <blockquote>Doñana no es un parque. Es un sistema vivo donde la naturaleza sigue sin pedir permiso.</blockquote>
+    `
+  },
+
+  // 24. Feria de Huelva
+  {
+    slug: 'feria-huelva-colombinas-agosto',
+    title: 'Feria de Huelva: Las Colombinas en agosto',
+    excerpt: 'Todo sobre la Feria de las Colombinas de Huelva: fechas, casetas, conciertos y cómo disfrutarla.',
+    category: 'Eventos',
+    image: '/images/guides/feria-huelva.jpg',
+    publishedAt: '2026-02-23T20:15:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>La Feria de las Colombinas es la gran fiesta de Huelva. Se celebra en agosto, en conmemoración del regreso de Colón de su primer viaje. Una semana de casetas, conciertos, toros y ambiente.</p>
+
+      <h2>Fechas y ubicación</h2>
+      <p>Normalmente entre finales de julio y principios de agosto. El recinto ferial está en el centro, junto a la zona portuaria, con entrada libre a las calles principales.</p>
+
+      <h2>Qué es la feria</h2>
+      <ul>
+        <li><strong>Casetas:</strong> algunas públicas (entrada libre), otras privadas (pases o invitación).</li>
+        <li><strong>Conciertos:</strong> escenario principal con artistas nacionales e internacionales.</li>
+        <li><strong>Toros:</strong> corridas en la plaza de toros.</li>
+        <li><strong>Fuegos artificiales:</strong> noche inaugural y final.</li>
+      </ul>
+
+      <h2>Cómo disfrutarla</h2>
+      <p>Vestirse de flamenco es opcional pero frecuente. Las casetas públicas son la mejor opción para turistas: rebujito, tapas y ambiente sin necesidad de conocer a nadie.</p>
+
+      <h2>Horarios</h2>
+      <p>Las casetas abren a mediodía (13:00-14:00), cierran por la tarde (17:00-20:00), y vuelven a abrir hasta la madrugada. El ambiente nocturno es el más intenso.</p>
+
+      <blockquote>Las Colombinas son feria y celebración. Pero también son calor, mucho calor.</blockquote>
+    `
+  },
+
+  // 25. Museo de Huelva
+  {
+    slug: 'museo-huelva-visitar-que-ver',
+    title: 'Museo de Huelva: arqueología y arte provincial',
+    excerpt: 'Guía para visitar el Museo de Huelva: colecciones permanentes, horarios y por qué merece la pena.',
+    category: 'Guías Locales',
+    image: '/images/guides/museo-huelva.jpg',
+    publishedAt: '2026-02-23T20:20:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Museo de Huelva es el principal centro de conservación y exposición del patrimonio arqueológico y artístico de la provincia. Ubicado en un edificio moderno en el centro de la capital.</p>
+
+      <h2>Qué ver</h2>
+      <ul>
+        <li><strong>Arqueología:</strong> restos tartésicos, fenicios y romanos de la provincia.</li>
+        <li><strong>Arte ibero:</strong> piezas destacadas de la cultura ibérica local.</li>
+        <li><strong>Arte colonial:</strong> conexiones con la América descubierta desde Huelva.</li>
+        <li><strong>Exposiciones temporales:</strong> programación cultural variada.</li>
+      </ul>
+
+      <h2>Horarios y precios</h2>
+      <ul>
+        <li>Martes a sábado: 9:00-20:00.</li>
+        <li>Domingos y festivos: 9:00-15:00.</li>
+        <li>Lunes: cerrado.</li>
+        <li>Entrada gratuita (donativo voluntario).</li>
+      </ul>
+
+      <h2>Cómo llegar</h2>
+      <p>En pleno centro, a 5 minutos a pie de la Plaza de las Monjas. Accesible a pie desde cualquier punto del centro histórico.</p>
+
+      <blockquote>El Museo de Huelva es memoria de la provincia desde antes de que existiera España.</blockquote>
+    `
+  },
+
+  // 26. El Portil
+  {
+    slug: 'el-portil-playa-huelva-visitar',
+    title: 'El Portil: playa y entorno natural junto a Huelva',
+    excerpt: 'Guía de El Portil: playas, entorno natural y cómo pasar un día en este núcleo costero cercano a Huelva.',
+    category: 'Guías Locales',
+    image: '/images/guides/el-portil.jpg',
+    publishedAt: '2026-02-23T20:25:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>El Portil es un núcleo urbano costero situado entre Huelva capital y Punta Umbría. Menos masificado que otras zonas, ofrece playa, entorno natural de marismas y un ambiente tranquilo.</p>
+
+      <h2>Qué es El Portil</h2>
+      <p>Urbanización costera desarrollada en los años 70, situada en el entorno de las marismas del río Piedras. Playa amplia, arena fina, y un entorno natural preservado en buena parte.</p>
+
+      <h2>Qué hacer</h2>
+      <ul>
+        <li><strong>Playa:</strong> menos concurrida que Punta Umbría, espacio para estirarse.</li>
+        <li><strong>Senderismo:</strong> rutas por las marismas del entorno.</li>
+        <li><strong>Observación de aves:</strong> zona de paso de aves migratorias.</li>
+        <li><strong>Chiringuitos:</strong> en temporada, bares de playa con ambiente familiar.</li>
+      </ul>
+
+      <h2>Cómo llegar</h2>
+      <p>En coche desde Huelva: 15 minutos por la A-497. También hay autobús de línea regular.</p>
+
+      <h2>Mejor época</h2>
+      <p>Junio y septiembre son ideales: buen tiempo sin masificación. Julio y agosto están más llenos pero sigue siendo tranquilo comparado con otras zonas.</p>
+
+      <blockquote>El Portil es la opción cuando quieres playa sin que te la quiten.</blockquote>
+    `
+  },
+
+  // 27. Ayamonte
+  {
+    slug: 'ayamonte-huelva-frontera-portugal',
+    title: 'Ayamonte: la frontera con Portugal',
+    excerpt: 'Guía de Ayamonte: qué ver en este pueblo fronterizo, playa, gastronomía y cómo cruzar a Portugal.',
+    category: 'Guías Locales',
+    image: '/images/guides/ayamonte-huelva.jpg',
+    publishedAt: '2026-02-23T20:30:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Ayamonte es el último pueblo de España antes de Portugal. Situado en la desembocadura del río Guadiana, es una localidad de pescadores convertida en destino turístico con carácter propio.</p>
+
+      <h2>Qué ver en Ayamonte</h2>
+      <ul>
+        <li><strong>Casco antiguo:</strong> calles empedradas, casas de pescadores, ambiente portugués.</li>
+        <li><strong>Puente internacional:</strong> cruza el Guadiana hacia Portugal (Vila Real de Santo António).</li>
+        <li><strong>Playa de Isla Canela:</strong> playa amplia, a unos 5 km del centro.</li>
+        <li><strong>Iglesia de Nuestra Señora de las Angustias:</strong> barroco del siglo XVIII.</li>
+      </ul>
+
+      <h2>Cruzar a Portugal</h2>
+      <p>El puente une Ayamonte con Vila Real de Santo António (Algarve). Sin frontera real desde el acuerdo de Schengen, pero sí cambio de hora (Portugal tiene una hora menos).</p>
+
+      <h2>Gastronomía</h2>
+      <p>Pescado fresco, mariscos de la ría, y la influencia portuguesa en platos como la cataplana o el arroz de marisco.</p>
+
+      <h2>Cómo llegar</h2>
+      <p>Desde Huelva: 50 minutos en coche por la A-49. Desde Faro (Portugal): 45 minutos.</p>
+
+      <blockquote>Ayamonte es España con aroma portugués. O Portugal con acento andaluz.</blockquote>
+    `
+  },
+
+  // 28. El Rocío
+  {
+    slug: 'el-rocio-huelva-romeria-aldea',
+    title: 'El Rocío: la aldea más famosa de Huelva',
+    excerpt: 'Todo sobre El Rocío: la aldea de Almonte, la romería, y qué ver en este lugar único de Huelva.',
+    category: 'Guías Locales',
+    image: '/images/guides/el-rocio.jpg',
+    publishedAt: '2026-02-23T20:35:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>El Rocío no es un pueblo normal. Es una aldea de Almonte donde cada casa es una <em>hermandad</em>, donde las calles son de arena, y donde la Virgen del Rocío es la protagonista absoluta de la vida local.</p>
+
+      <h2>Qué es El Rocío</h2>
+      <p>Aldea de unos 1.500 habitantes situada junto a las marismas de Doñana. Patrimonio de la Humanidad como parte del entorno de Doñana. Las casas son ermitas-hermandades de diferentes devociones.</p>
+
+      <h2>La Romería del Rocío</h2>
+      <p>El fin de semana de Pentecostés (mayo-junio), más de un millón de personas peregrinan a El Rocío. Es una de las manifestaciones religiosas más importantes de España.</p>
+      <ul>
+        <li>Las hermandades llegan en carretas, a caballo y a pie.</li>
+        <li>El ambiente es festivo y religioso a la vez.</li>
+        <li>Reservar alojamiento con meses de antelación es obligatorio.</li>
+      </ul>
+
+      <h2>Qué ver fuera de la romería</h2>
+      <p>El resto del año, El Rocío es tranquilo. Se puede visitar la ermita de la Virgen, pasear por las calles de arena, y observar las marismas.</p>
+
+      <h2>Cómo llegar</h2>
+      <p>Desde Almonte: 15 minutos en coche. Desde Huelva: 45 minutos. Acceso por carretera secundaria.</p>
+
+      <blockquote>El Rocío es fe en forma de aldea. Sin la Virgen, sería un puñado de casas en la marisma.</blockquote>
+    `
+  },
+
+  // 29. Iglesia de la Concepción
+  {
+    slug: 'iglesia-concepcion-huelva-centro',
+    title: 'Iglesia de la Concepción: la catedral de Huelva',
+    excerpt: 'Historia y visita de la Iglesia de Nuestra Señora de la Concepción, el principal templo de Huelva capital.',
+    category: 'Guías Locales',
+    image: '/images/guides/iglesia-concepcion-huelva.jpg',
+    publishedAt: '2026-02-23T20:40:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>La Iglesia de Nuestra Señora de la Concepción es el templo más importante de Huelva capital. Conocida popularmente como la Catedral (aunque Huelva no tiene catedral, depende de la diócesis de Cádiz).</p>
+
+      <h2>Historia</h2>
+      <p>Edificio del siglo XVI reconstruido en el siglo XVIII tras el terremoto de Lisboa. Estilo barroco con elementos neoclásicos. Ha sido el centro religioso de la ciudad durante siglos.</p>
+
+      <h2>Qué ver</h2>
+      <ul>
+        <li><strong>Fachada:</strong> sobria, de piedra, con torre de campanas.</li>
+        <li><strong>Interior:</strong> nave única, capillas laterales, retablos barrocos.</li>
+        <li><strong>Capilla sacramental:</strong> imagen de la Virgen de la Concepción.</li>
+        <li><strong>Órgano:</strong> instrumento histórico utilizado en celebraciones.</li>
+      </ul>
+
+      <h2>Horarios de visita</h2>
+      <p>Abierta para el culto diario. Horario de misas: consultar la parroquia. Visitas turísticas no organizadas, pero se puede entrar durante las horas de apertura.</p>
+
+      <h2>Ubicación</h2>
+      <p>En pleno centro histórico, a 2 minutos de la Plaza de las Monjas. Referencia ineludible del casco antiguo.</p>
+
+      <blockquote>La Concepción es fe de barrio en forma de templo. No es grande, pero es de todos.</blockquote>
+    `
+  },
+
+  // 30. Mercado del Carmen
+  {
+    slug: 'mercado-carmen-huelva-comprar-fresco',
+    title: 'Mercado del Carmen: comprar fresco en el centro de Huelva',
+    excerpt: 'Guía del Mercado del Carmen de Huelva: qué encontrar, cómo comprar y por qué sigue siendo el corazón gastronómico de la ciudad.',
+    category: 'Gastronomía',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T20:45:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>El Mercado del Carmen es el mercado de abastos principal de Huelva capital. Edificio modernista reformado que alberga pescaderías, carnicerías, fruterías y puestos de productos locales.</p>
+
+      <h2>Qué encontrar</h2>
+      <ul>
+        <li><strong>Pescaderías:</strong> producto de la ría y del litoral, especialmente coquinas, choco y pescado de roca.</li>
+        <li><strong>Carnicerías:</strong> carne de ternera, cerdo ibérico de la Sierra, pollo de corral.</li>
+        <li><strong>Frutas y verduras:</strong> producto local de la provincia (fresas, naranjas, verduras de temporada).</li>
+        <li><strong>Ultramarinos:</strong> especias, legumbres, productos típicos.</li>
+      </ul>
+
+      <h2>Horarios</h2>
+      <ul>
+        <li>Lunes a sábado: 8:00-14:00.</li>
+        <li>Algunos puestos abren por la tarde (17:00-20:00), pero con menor oferta.</li>
+        <li>Domingos: cerrado.</li>
+      </ul>
+
+      <h2>Cómo comprar</h2>
+      <p>La gente mayor compra en sus puestos de toda la vida. Los puestos fijos tienen número: pregunta por "el pescadero del 15" o "la frutera del 8". Relación de confianza entre vendedor y cliente.</p>
+
+      <h2>Cafeterías del mercado</h2>
+      <p>Hay bares dentro y alrededor del mercado donde desayunar después de comprar. Café, tostadas, y ambiente de mercado desde primera hora.</p>
+
+      <blockquote>El Mercado del Carmen es desayuno, compra y charla. Es Huelva antes de las 14:00.</blockquote>
+    `
   }
 ];
