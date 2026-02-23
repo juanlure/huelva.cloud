@@ -1597,5 +1597,232 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>La Cruz de Mayo no es solo religión. Es competencia vecinal, orgullo de barrio, y la prueba de que en Huelva, la belleza se hace entre todos.</blockquote>
     `
+  },
+
+  // ─── ÚLTIMOS 6 CON ADN CHOQUERO (45-50) ────────────────────────
+
+  // 45. Choco Frito - La Biblia
+  {
+    slug: 'choco-frito-biblia-huelva-como-manda',
+    title: 'Choco frito: la biblia del auténtico choco onubense',
+    excerpt: 'Todo lo que necesitas saber sobre el choco frito: cómo debe ser, dónde comerlo bien, y por qué en Huelva lo hacemos como nadie.',
+    category: 'Gastronomía',
+    image: '/images/guides/choco-frito-tapa.jpg',
+    publishedAt: '2026-02-23T22:20:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>Mira, vamos a hablar claro. El choco frito no es "sepia a la romana". Eso se lo cuentas a los de fuera. En Huelva, el choco es choco: <em>Sepia officinalis</em>, de la ría, recién salido del agua, con el cuerpo blanco y las aletas violáceas. Lo demás es imitación.</p>
+
+      <h2>El choco bueno: señales de identidad</h2>
+      <p>Cuando te ponen un plato de choco delante, no hace falta probarlo para saber si va a estar bueno. Solo hay que mirar:</p>
+      <ul>
+        <li><strong>El color:</strong> dorado, no quemado. Si está negro, el aceite estaba viejo o muy caliente.</li>
+        <li><strong>El rebozado:</strong> fino, apenas una capa de harina. Si parece pollo empanado, sal corriendo.</li>
+        <li><strong>El corte:</strong> en tiras regulares, ni muy gruesas ni muy finas. En dados solo si es para tapa pequeña.</li>
+        <li><strong>El limón:</strong> debe venir aparte. Si llega con limón encima, el cocinero no confía en su producto.</li>
+      </ul>
+
+      <h2>El truco del aceite</h2>
+      <p>El secreto no está en el choco, está en el aceite. De oliva virgen, muy caliente, y preferiblemente no reutilizado. Las freidurías de toda la vida lo cambian cada pocos días. Los sitios nuevos, a veces... bueno, ya sabes.</p>
+
+      <h2>Dónde ir (y dónde no)</h2>
+      <p>Los mejores chocos están en los sitios que no tienen carta inglesa. En el centro, busca los bares que huelen a aceite desde la calle. En el Torrejón, hay freidurías que llevan tres generaciones haciendo lo mismo.</p>
+      <p>Evita: sitios con fotos en el menú, sitios que lo sirven con "salsa de la casa", y cualquier lugar donde te digan "sepia frita" sin ruborizarse.</p>
+
+      <h2>Temporada y precio</h2>
+      <p>Todo el año, pero el de verano suele ser congelado o de otras costas. El bueno, el de la ría, se nota. Precio razonable: 10-16€ la ración. Si te piden menos de 8€, sospecha. Si te piden más de 20€, también.</p>
+
+      <blockquote>El choco frito es simple: buen producto, buen aceite, mano experta. Todo lo demás es ruido.</blockquote>
+    `
+  },
+
+  // 46. Coquinas - Guía del marisco
+  {
+    slug: 'coquinas-huelva-marisco-como-comprar',
+    title: 'Coquinas: el marisco humilde que conquistó Huelva',
+    excerpt: 'Guía práctica de las coquinas: cómo elegirlas, cómo cocinarlas, y por qué son el tesoro escondido de nuestra ría.',
+    category: 'Gastronomía',
+    image: '/images/guides/coquinas-huelva.jpg',
+    publishedAt: '2026-02-23T22:25:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>Si la gamba blanca es la reina del marisco onubense, las coquinas son las princesas del pueblo. Pequeñas, humildes, pero cuando están buenas... hay pocos platos que superen una buena ración de coquinas a la marinera con una cerveza bien tirada.</p>
+
+      <h2>Qué son realmente</h2>
+      <p><em>Donax trunculus</em>, para los técnicos. "Tellinas" para los que vienen de fuera. En Huelva, simplemente "coquinas". Bivalvos pequeños que viven enterrados en la arena de las playas y estuarios. Las de la ría de Huelva tienen sabor más intenso que las de mar abierto.</p>
+
+      <h2>Cómo reconocer las buenas</h2>
+      <ul>
+        <li><strong>Tamaño:</strong> pequeñas, de 2 a 4 centímetros. Las grandes suelen ser de vivero o de otras zonas.</li>
+        <li><strong>Concha:</strong> grisácea con refleos amarillentos o violáceos. Si están blancas, sospecha.</li>
+        <li><strong>Vivas:</strong> cuando las golpeas entre sí, deben sonar hueco, no sólido. Las muertas no se abren al cocer.</li>
+        <li><strong>Olor:</strong> a mar limpio. Nada de amoniaco ni olores raros.</li>
+      </ul>
+
+      <h2>Preparación: menos es más</h2>
+      <p>La marinera: aceite, ajo, perejil, guindilla, vino blanco. Se echan limpias a la sartén caliente, tapas un par de minutos hasta que se abran, y a comer. Con pan para mojar, obligatorio.</p>
+      <p>El ajillo: aún más simple. Solo aceite, ajo y guindilla. Para cuando el producto es tan bueno que no necesita aliados.</p>
+
+      <h2>Dónde y cuánto</h2>
+      <p>Mercado del Carmen, primera hora. Pescaderías de confianza, no supermercados. Precio: 6-10€/kg según temporada y tamaño. En bar, una ración buena: 8-14€.</p>
+
+      <blockquote>Las coquinas no son almejas pequeñas. Son otro producto, con sabor propio, de la ría de Huelva. No las confundas.</blockquote>
+    `
+  },
+
+  // 47. Sierra de Huelva
+  {
+    slug: 'sierra-huelva-escapada-montana-fin-de-semana',
+    title: 'Sierra de Huelva: escapada de montaña a una hora de la capital',
+    excerpt: 'La Sierra de Huelva es el refugio natural de la provincia. Rutas, pueblos blancos y el mejor jamón, a menos de 60 minutos.',
+    category: 'Guías Locales',
+    image: '/images/guides/aracena-pueblo.jpg',
+    publishedAt: '2026-02-23T22:30:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Cuando el calor de la costa aprieta o cuando necesitas ver verde después de tanto gris industrial, la Sierra de Huelva está ahí. A 45 minutos en coche, otro mundo: dehesas, robles, pueblos blancos pegados a la ladera, y el jamón más bueno que vas a probar.</p>
+
+      <h2>Qué es la Sierra</h2>
+      <p>Parque Natural de la Sierra de Aracena y Picos de Aroche. 186.000 hectáreas de montes, valles, y el mayor bosque de castaños de España. Cero masificación turística. Cero colas. Cero timos.</p>
+
+      <h2>Pueblos donde perderse</h2>
+      <ul>
+        <li><strong>Aracena:</strong> la capital. Gruta de las Maravillas, castillo, jamón en cada esquina.</li>
+        <li><strong>Jabugo:</strong> el nombre que vende el jamón. Más pequeño, más auténtico, más ibérico.</li>
+        <li><strong>Alájar:</strong> blanco, colgado de la peña, con la Peña de Arias Montano al fondo.</li>
+        <li><strong>Cortegana:</strong> castillo medieval, calles empedradas, silencio.</li>
+      </ul>
+
+      <h2>Qué hacer</h2>
+      <p>Comer jamón, primero. Luego: rutas de senderismo (bajas, para todos los niveles), visitar la Gruta, pasear por los pueblos sin prisa. No hay discotecas ni macrodiscos. Hay mesas de piedra, sombra de castaños, y tiempo que pasa despacio.</p>
+
+      <h2>Cuándo ir</h2>
+      <p>Otoño para los castaños y el jamón. Primavera para el verde y las flores. Verano para huir del calor de la costa (aquí hace fresquito). Invierno para el fuego de la chimenea y el cocido.</p>
+
+      <blockquote>La Sierra es el otro Huelva. El de siempre. El que no ha cambiado porque no necesita cambiar.</blockquote>
+    `
+  },
+
+  // 48. Hablar como onubense
+  {
+    slug: 'hablar-onubense-expresiones-jerga-huelva',
+    title: 'Cómo hablar como un onubense: expresiones que necesitas saber',
+    excerpt: 'Guía de supervivencia lingüística: expresiones, jerga y maneras de hablar propias de Huelva. Para que no parezcas de fuera.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T22:35:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>En Huelva no hablamos andaluz estándar. Tenemos nuestro acento, nuestras palabras, nuestras formas. No es mejor ni peor, es de aquí. Si quieres pasar desapercibido o, al menos, entender qué te dicen en el bar, anota esto.</p>
+
+      <h2>Las básicas</h2>
+      <ul>
+        <li><strong>"Mijo":</strong> no es hijo de nadie, es "mi hijo". "Vente pa'ca, mijo".</li>
+        <li><strong>"Arre/Arreo":</strong> echar, tirar. "Arrea eso pa'alla".</li>
+        <li><strong>"Chiquillo/a":</strong> niño, pero también forma cariñosa de dirigirse a cualquiera.</li>
+        <li><strong>"Guiri":</strong> turista, extranjero. No es ofensivo, es descriptivo.</li>
+      </ul>
+
+      <h2>En el bar</h2>
+      <ul>
+        <li><strong>"Una caña":</strong> cerveza de barril, pequeña. Lo que tomas antes de comer.</li>
+        <li><strong>"Una corta":</strong> menos común, pero se entiende: caña corta de espuma.</li>
+        <li><strong>"Con mosto":</strong> con poca espuma. Solo los que saben lo piden así.</li>
+        <li><strong>"Ponme un chato":</strong> vino de la tierra, en vaso pequeño.</li>
+      </ul>
+
+      <h2>Para describir</h2>
+      <ul>
+        <li><strong>"Mare":</strong> expresión de sorpresa. "¡Mare, qué calor hace!"</li>
+        <li><strong>"Fiera":</strong> bien, genial. "Ese choco está fiera".</li>
+        <li><strong>"Chungo":</strong> malo, difícil. "El tiempo está chungo".</li>
+        <li><strong>"Morro":</strong> cara dura. "Qué morro tiene este".</li>
+      </ul>
+
+      <h2>Lo que nunca dirás</h2>
+      <p>No digas "vale" al final de cada frase (eso es de Madrid). No digas "hostia" cada dos palabras (eso es de Sevilla). No digas "chaval" (eso es de Málaga). Di "mijo", di "fiera", di "mare". Y si no sabes qué decir, asiente y sonríe.</p>
+
+      <blockquote>El acento de Huelva no se aprende en una guía. Se adquiere bebiendo cañas y escuchando. Pero esto te sirve para empezar.</blockquote>
+    `
+  },
+
+  // 49. Huelva en 48 horas
+  {
+    slug: 'huelva-48-horas-itinerario-completo',
+    title: 'Huelva en 48 horas: el itinerario que no te puede fallar',
+    excerpt: 'Dos días en Huelva: qué ver, dónde comer, y cómo sacarle el máximo partido a un fin de semana en la capital onubense.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-02-23T22:40:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Vienes a Huelva 48 horas. No es mucho, pero es suficiente para entender de qué va esta ciudad. No para verlo todo (eso es imposible), sí para captar la esencia: el contraste entre la historia industrial, la marisma, y el chiringuito de playa.</p>
+
+      <h2>Día 1: Historia y capital</h2>
+      <p><strong>Mañana:</strong> Plaza de las Monjas, desayuno en alguna cafetería de toda la vida. Museo de Huelva (gratis, 1 hora). Paseo por el centro: Concepción, calles comerciales.</p>
+      <p><strong>Mediodía:</strong> ruta de tapas en el centro. Choco frito, coquinas, gamba si es temporada. Caña y media.</p>
+      <p><strong>Tarde:</strong> Muelle del Tinto, Monumento a Colón. Atardecer en el entorno del puerto o en El Conquero para ver la ciudad desde arriba.</p>
+      <p><strong>Noche:</strong> cena en el centro o Gran Vía. Tapas, conversación, terraza si hace bueno.</p>
+
+      <h2>Día 2: Naturaleza y alrededores</h2>
+      <p><strong>Mañana:</strong> salida temprana a La Rábida (15 minutos). Monasterio, vistas al río. Luego Palos de la Frontera: Fuente Santa, Casa Pinzón.</p>
+      <p><strong>Mediodía:</strong> comida en la playa. Punta Umbría o El Portil. Pescaíto frito, cerveza, vistas al Atlántico.</p>
+      <p><strong>Tarde:</strong> vuelta a Huelva, paseo por el Parque Moret si quieres sombra, o por la zona del puerto si prefieres movimiento.</p>
+      <p><strong>Noche:</strong> última cena, últimas tapas. Recoger fuerzas para volver.</p>
+
+      <h2>Lo que te estás perdiendo (y está bien)</h2>
+      <p>No has visto Aracena, ni las minas, ni Ayamonte, ni Doñana. Has visto lo esencial de la capital y un poco de alrededor. Para el resto, necesitas volver. Y lo harás.</p>
+
+      <blockquote>48 horas en Huelva no son para verlo todo. Son para entender que aquí se vive distinto, más despacio, más de cerca.</blockquote>
+    `
+  },
+
+  // 50. El Turista vs El Choquero
+  {
+    slug: 'turista-vs-choquero-huelva-diferencias',
+    title: 'Turista vs Choquero: cómo distinguirlos en Huelva',
+    excerpt: 'Manual práctico de las diferencias entre quien viene de fuera y quien lleva el ADN onubense. Para reírte y para aprender.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T22:45:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Hay dos formas de vivir Huelva: como turista o como choquero. No es bueno ni malo, es diferente. Pero si quieres integrarte (o al menos reírte un rato), aquí tienes el manual de diferencias.</p>
+
+      <h2>En la playa</h2>
+      <ul>
+        <li><strong>Turista:</strong> se pone la toalla a 5 metros de la orilla, se quema en 20 minutos, se queja del viento.</li>
+        <li><strong>Choquero:</strong> llega a las 12, se instala lejos del agua (conoce la marea), lleva sombrilla propia, se queda hasta las 8.</li>
+      </ul>
+
+      <h2>En el bar</h2>
+      <ul>
+        <li><strong>Turista:</strong> pide "una cerveza", espera que le pongan aceitunas, se extraña de que no haya tapa gratis.</li>
+        <li><strong>Choquero:</strong> pide "una caña", sabe que la tapa se paga aparte, y si el camarero es de confianza, le dice "ponme lo que tengas bueno".</li>
+      </ul>
+
+      <h2>Con el choco</h2>
+      <ul>
+        <li><strong>Turista:</strong> pide "sepia frita", pregunta si tiene salsa tártara, le pone limón encima sin probarlo.</li>
+        <li><strong>Choquero:</strong> pide "un choco", lo prueba solo primero, si está bueno no toca el limón, y si está malo se lo dice al camarero sin tapujos.</li>
+      </ul>
+
+      <h2>Con el calor</h2>
+      <ul>
+        <li><strong>Turista:</strong> se queja, busca aire acondicionado, se sorprende de que a las 3 de la tarde todo esté cerrado.</li>
+        <li><strong>Choquero:</strong> sabe que a las 3 hay que estar en casa o en la playa. No protesta, se adapta. Y lleva siempre agua en el coche.</li>
+      </ul>
+
+      <h2>El punto de inflexión</h2>
+      <p>El turista se va y cuenta que ha estado en "Huelva, cerca de Sevilla". El choquero, cuando vuelve de fuera, lo primero que hace es ir a una freiduría. Y sonríe. Porque ya está en casa.</p>
+
+      <blockquote>No naces choquero. Te haces. Pero empiezas por respetar el choco, la caña, y la siesta. Lo demás viene solo.</blockquote>
+    `
   }
 ];
