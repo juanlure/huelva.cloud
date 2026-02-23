@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Clock, ArrowRight, Bookmark } from 'lucide-react';
+import { Clock, ArrowRight, Bookmark, ExternalLink } from 'lucide-react';
 
 interface ArticleCardProps {
   title: string;
@@ -20,6 +20,8 @@ interface ArticleCardProps {
   slug: string;
   featured?: boolean;
   compact?: boolean;
+  external?: boolean;
+  externalUrl?: string;
 }
 
 // Category-based styling
@@ -62,6 +64,8 @@ export default function ArticleCard({
   slug,
   featured = false,
   compact = false,
+  external = false,
+  externalUrl,
 }: ArticleCardProps) {
   const [isSaved, setIsSaved] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -73,6 +77,27 @@ export default function ArticleCard({
 
   const normalizedCategory = category.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const style = categoryStyles[normalizedCategory] || categoryStyles['default'];
+
+  // Determinar el href y el comportamiento
+  const href = external && externalUrl ? externalUrl : `/article/${slug}`;
+  const isExternal = external && externalUrl;
+
+  // Wrapper para el link externo
+  const LinkWrapper = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+    if (isExternal) {
+      return (
+        <a 
+          href={href} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={className}
+        >
+          {children}
+        </a>
+      );
+    }
+    return <Link href={href} className={className}>{children}</Link>;
+  };
 
   return (
     <motion.div
@@ -96,8 +121,7 @@ export default function ArticleCard({
     >
       {/* Image Section */}
       {imageUrl ? (
-        <Link
-          href={`/article/${slug}`}
+        <LinkWrapper
           className={`relative overflow-hidden block ${
             featured ? 'aspect-[4/3] md:aspect-auto md:h-full' : 'aspect-[16/9]'
           }`}
@@ -131,8 +155,9 @@ export default function ArticleCard({
           <div className="absolute top-4 left-4">
             <motion.span
               whileHover={{ scale: 1.05 }}
-              className="badge badge-terracotta text-[10px]"
+              className="badge badge-terracotta text-[10px] inline-flex items-center gap-1"
             >
+              {isExternal && <ExternalLink size={10} />}
               {category}
             </motion.span>
           </div>
@@ -167,11 +192,11 @@ export default function ArticleCard({
             className="absolute bottom-4 left-4 right-4"
           >
             <span className="text-white text-sm font-medium flex items-center gap-2">
-              Leer artículo
+              {isExternal ? 'Ver noticia' : 'Leer artículo'}
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </span>
           </motion.div>
-        </Link>
+        </LinkWrapper>
       ) : (
         /* No Image - Category Badge Only */
         <div className={`relative bg-navy-5 flex items-center justify-center ${
@@ -211,9 +236,9 @@ export default function ArticleCard({
 
         {/* Title */}
         <h3 className={`text-display font-semibold text-navy mb-2 group-hover:text-terracotta transition-colors duration-300 ${compact ? 'text-base mb-2' : 'text-lg mb-3'}`}>
-          <Link href={`/article/${slug}`} className="hover:underline decoration-terracotta/30 underline-offset-4">
+          <LinkWrapper className="hover:underline decoration-terracotta/30 underline-offset-4">
             {title}
-          </Link>
+          </LinkWrapper>
         </h3>
 
         {/* Excerpt - hidden in compact mode */}
@@ -225,18 +250,19 @@ export default function ArticleCard({
 
         {/* Footer */}
         <div className={`flex items-center justify-between ${compact ? 'mt-auto pt-3' : 'mt-auto pt-4 border-t border-navy-10'}`}>
-          <Link
-            href={`/article/${slug}`}
+          <LinkWrapper
             className={`inline-flex items-center gap-2 font-semibold text-navy hover:text-terracotta transition-colors group/link ${compact ? 'text-xs' : 'text-sm'}`}
           >
-            <span>Leer más</span>
-            <motion.span
-              animate={{ x: isHovered ? 4 : 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ArrowRight size={compact ? 14 : 16} />
-            </motion.span>
-          </Link>
+            <span>{isExternal ? 'Ver noticia →' : 'Leer más'}</span>
+            {!isExternal && (
+              <motion.span
+                animate={{ x: isHovered ? 4 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight size={compact ? 14 : 16} />
+              </motion.span>
+            )}
+          </LinkWrapper>
 
           {!compact && (
             <span className="text-xs text-navy-30">
