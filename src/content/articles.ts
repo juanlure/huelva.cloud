@@ -1093,5 +1093,182 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>El Mercado del Carmen es desayuno, compra y charla. Es Huelva antes de las 14:00.</blockquote>
     `
+  },
+
+  // ─── 5 ARTÍCULOS MÁS (31-35) ───────────────────────────────────
+
+  // 31. Palos de la Frontera
+  {
+    slug: 'palos-frontera-huelva-colon-lugares',
+    title: 'Palos de la Frontera: donde todo empezó',
+    excerpt: 'Palos de la Frontera: la Fuente Santa, la Rábida, y los lugares colombinos imprescindibles cerca de Huelva.',
+    category: 'Guías Locales',
+    image: '/images/guides/monasterio-rabida.jpg',
+    publishedAt: '2026-02-23T21:00:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Palos de la Frontera es un pueblo de 11.000 habitantes a 10 minutos de Huelva capital. Su nombre aparece en todos los libros de historia por una razón: aquí se gestó el viaje que cambió el mundo.</p>
+
+      <h2>Qué ver en Palos</h2>
+      <ul>
+        <li><strong>Monasterio de La Rábida:</strong> donde Colón encontró apoyo. A 2 km del centro.</li>
+        <li><strong>Fuente Santa:</strong> donde se reclutó parte de la tripulación. Placa conmemorativa.</li>
+        <li><strong>Casa de los Pinzón:</strong> hogar de los hermanos que capitaneaban las naves.</li>
+        <li><strong>Muelle de las Carabelas:</strong> reconstrucción de las tres naves del descubrimiento.</li>
+      </ul>
+
+      <h2>Cómo organizar la visita</h2>
+      <p>Combinar con el Monasterio de La Rábida (misma zona). Media jornada suficiente. Ideal en primavera u otoño, cuando el calor no aprieta.</p>
+
+      <h2>Cómo llegar</h2>
+      <p>Desde Huelva: 10 minutos en coche por la A-497. También autobús de línea regular.</p>
+
+      <blockquote>Palos es pequeño, pero su huella en la historia es inmensamente grande.</blockquote>
+    `
+  },
+
+  // 32. Minas de Riotinto
+  {
+    slug: 'minas-riotinto-huelva-visitar-tren',
+    title: 'Minas de Riotinto: el Marte onubense',
+    excerpt: 'Visita a las Minas de Riotinto: paisajes de otro planeta, tren histórico y el legado minero de Huelva.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-02-23T21:05:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Las Minas de Riotinto son uno de los paisajes más singulares de España. Extracción de minerales desde hace 5.000 años, pasando por tartesios, romanos, y la época británica. El resultado es un territorio que parece de otro planeta.</p>
+
+      <h2>Qué ver en las minas</h2>
+      <ul>
+        <li><strong>Tren turístico:</strong> recorrido por el entorno minero en vagón histórico.</li>
+        <li><strong>Museo minero:</strong> historia de la explotación desde la prehistoria.</li>
+        <li><strong>Peña de Hierro:</strong> mirador con vistas sobre el corta (excavación a cielo abierto).</li>
+        <li><strong>Tinto River:</strong> el río rojo, ácido, único en el mundo.</li>
+      </ul>
+
+      <h2>El color rojo</h2>
+      <p>La tierra, el agua y las rocas tienen tonos rojizos, anaranjados y amarillos por el alto contenido en minerales de hierro y azufre. NASA estudió la zona por su similitud con Marte.</p>
+
+      <h2>Cómo llegar</h2>
+      <p>Desde Huelva: 1 hora en coche. Desde Aracena: 45 minutos. Acceso bien señalizado.</p>
+
+      <blockquote>Riotinto es Huelva en otro planeta. El mismo cielo, suelo diferente.</blockquote>
+    `
+  },
+
+  // 33. Noche en Huelva
+  {
+    slug: 'noche-huelva-donde-salir-tapas',
+    title: 'Noche en Huelva: dónde salir y qué hacer',
+    excerpt: 'Guía de la noche onubense: tapas, copas, y los mejores planes para salir en Huelva capital.',
+    category: 'Eventos',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T21:10:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>La noche en Huelva no es la de Madrid ni Sevilla. Es más tranquila, más temprana, más de bar que de discoteca. Pero tiene su ritmo y sus lugares.</p>
+
+      <h2>La ruta de tapas nocturna</h2>
+      <p>Empieza sobre las 21:00. Calle Concepción, Plaza de las Monjas, y alrededores concentran la mayor oferta. Diferente ambiente que al mediodía: más joven, más movimiento.</p>
+
+      <h2>Zonas para copas</h2>
+      <ul>
+        <li><strong>Centro histórico:</strong> bares con ambiente mixto, desde los 30 a los 50 años.</li>
+        <li><strong>Zona Gran Vía:</strong> más moderno, terrazas y pubs.</li>
+        <li><strong>Puerto:</strong> algunos locales con vistas, más tranquilos.</li>
+      </ul>
+
+      <h2>Horarios</h2>
+      <p>Los bares cierran sobre la 1:00-2:00. Las discotecas (pocas) abren hasta las 6:00, pero no es el ambiente predominante. La noche onubense es de conversación, no de macrofiesta.</p>
+
+      <h2>Presupuesto</h2>
+      <p>Caña: 1,50-2,50€. Copa: 6-10€. Cena de tapas: 15-25€ por persona.</p>
+
+      <blockquote>En Huelva, la noche es de terraza y conversación. No es la ciudad que no duerme, es la ciudad que charla hasta tarde.</blockquote>
+    `
+  },
+
+  // 34. Gastronomía típica de Huelva
+  {
+    slug: 'gastronomia-tipica-huelva-platos',
+    title: 'Gastronomía de Huelva: los 10 platos que tienes que probar',
+    excerpt: 'Guía completa de la gastronomía onubense: qué comer, dónde probarlo y cuándo es temporada.',
+    category: 'Gastronomía',
+    image: '/images/guides/corte-jamon-iberico.jpg',
+    publishedAt: '2026-02-23T21:15:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>La cocina de Huelva es de producto, de mar y de tierra. No hay alta cocina complicada: hay buen producto tratado con respeto. Estos son los platos imprescindibles.</p>
+
+      <h2>Platos de mar</h2>
+      <ul>
+        <li><strong>Gamba blanca:</strong> cocida o a la plancha. Temporada: octubre-marzo.</li>
+        <li><strong>Choco frito:</strong> con limón, sin salsa. Todo el año.</li>
+        <li><strong>Coquinas a la marinera:</strong> ajo, perejil, vino blanco.</li>
+        <li><strong>Atún:</strong> de almadraba, encebollado o a la plancha.</li>
+      </ul>
+
+      <h2>Platos de tierra</h2>
+      <ul>
+        <li><strong>Jamón ibérico:</strong> DOP Sierra de Huelva, bellota.</li>
+        <li><strong>Presa ibérica:</strong> a la brasa, jugosa.</li>
+        <li><strong>Carrillada:</strong> estofada, con vino de la tierra.</li>
+        <li><strong>Papas aliñás:</strong> ensalada de patata, bacalao y naranja.</li>
+      </ul>
+
+      <h2>Dulces</h2>
+      <ul>
+        <li><strong>Jueves lardero:</strong> hornazo, pestiños, torrijas.</li>
+        <li><strong>Roscos fritos:</strong> especialmente en Semana Santa.</li>
+      </ul>
+
+      <blockquote>La gastronomía de Huelva no necesita chefs famosos. Necesita buen producto y manos que lo respeten.</blockquote>
+    `
+  },
+
+  // 35. Compras en Huelva
+  {
+    slug: 'compras-huelva-donde-ir-tiendas',
+    title: 'Compras en Huelva: dónde ir y qué comprar',
+    excerpt: 'Guía de compras en Huelva: centros comerciales, comercio local, artesanía y productos típicos para llevarse.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T21:20:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva no es ciudad de grandes compras, pero tiene comercio local con carácter. Desde centros comerciales a tiendas de productos típicos, aquí está lo que necesitas saber.</p>
+
+      <h2>Centros comerciales</h2>
+      <ul>
+        <li><strong>Aqualon:</strong> el principal, en el Puerto. Grandes superficies, cine, restauración.</li>
+        <li><strong>Holea:</strong> más moderno, a las afueras. Zara, H&amp;M, etc.</li>
+      </ul>
+
+      <h2>Comercio local</h2>
+      <ul>
+        <li><strong>Centro histórico:</strong> tiendas tradicionales de toda la vida.</li>
+        <li><strong>Calle Concepción:</strong> comercio mixto, algunas tiendas de artesanía.</li>
+        <li><strong>Mercado del Carmen:</strong> productos frescos para llevar.</li>
+      </ul>
+
+      <h2>Qué comprar de recuerdo</h2>
+      <ul>
+        <li>Jamón ibérico de bellota (en tiendas especializadas).</li>
+        <li>Vinos del Condado de Huelva.</li>
+        <li>Miel de la Sierra.</li>
+        <li>Artesanía local: cerámica, cuero.</li>
+      </ul>
+
+      <h2>Horarios</h2>
+      <p>Comercio tradicional: 10:00-14:00 y 17:00-20:30. Domingos cerrado (excepto festivos especiales). Centros comerciales: 10:00-22:00, incluso festivos.</p>
+
+      <blockquote>En Huelva no se viene de compras. Se compra lo que se necesita, y se encuentra lo que no se buscaba.</blockquote>
+    `
   }
 ];
