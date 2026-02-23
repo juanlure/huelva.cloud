@@ -66,6 +66,7 @@ export interface Article {
 interface ExternalNewsItem {
   title: string;
   excerpt: string;
+  content?: string;
   url: string;
   publishedAt: string;
   source: string;
@@ -97,18 +98,21 @@ function mapArticle(article: LocalArticle): Article {
 
 function mapExternalNews(news: ExternalNewsItem): Article {
   const humanDate = new Date(news.publishedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+  // Usar content generado por IA si existe, sino fallback básico
+  const bodyContent = news.content || `<p>${news.excerpt}</p>`;
+  
   return {
-    slug: `external-${Buffer.from(news.url).toString('base64').substring(0, 20)}`,
+    slug: `noticia-${Buffer.from(news.url).toString('base64').substring(0, 12)}`,
     title: news.title,
     excerpt: news.excerpt,
-    content: `<p>${news.excerpt}</p><p><strong>Fuente consultada:</strong> ${news.source} (${humanDate}).</p>`,
+    content: `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${humanDate}).</p>`,
     category: 'Noticias',
     image: news.image || null,
     date: humanDate,
-    readTime: '2 min',
+    readTime: '3 min',
     author: 'Redacción Huelva.cloud',
-    isAi: false,
-    external: true,
+    isAi: true,
+    external: false,
     source: news.source,
     sourceDate: humanDate,
   };

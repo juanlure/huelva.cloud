@@ -95,26 +95,43 @@ async function tryHtmlFallback(source) {
 }
 
 function generatePrompt(news) {
-  return `Eres redactor de Huelva.cloud, medio digital local con voz cercana, directa y útil.
+  return `Eres redactor jefe de Huelva.cloud. Escribe esta noticia con copy potente, directo, sin relleno corporativo.
 
-REESCRIBE la siguiente noticia como artículo propio, nunca copies literal. Estructura:
-1) Lead impactante (qué pasó, en Huelva, ahora)
-2) Contexto (por qué importa para el lector local)
-3) Detalles relevantes (quién, cuándo, dónde, con datos si los hay)
-4) Implicaciones o próximos pasos
+ESTRUCTURA OBLIGATORIA (usa estos subtítulos exactos):
 
-Datos de entrada:
+## Lead de impacto
+- Abre con una frase fuerte que enganche
+- Qué pasó, en Huelva, ahora
+- Máximo 2 párrafos
+
+## El mensaje que importa  
+- Por qué esto importa para el lector local
+- Contexto que nadie más está dando
+- La historia detrás de la noticia
+
+## El momento justo
+- Por qué pasa ahora (timing político, social, económico)
+- Qué fuerzas convergen
+
+## La pregunta que dejan / Lo que viene
+- Implicaciones futuras
+- Cierre memorable que invite a reflexionar
+
+DATOS DE ENTRADA:
 - Titular original: "${news.title}"
 - Extracto: "${news.excerpt}"
-- Fuente original: ${news.source}
+- Fuente: ${news.source}
 
-REGLAS:
-- Longitud: 400-600 palabras
-- Tono: cercano, directo, sin relleno corporativo
-- Sin frases como "según fuentes" o "se informa que"
-- Cierra con una línea corta de contexto local
+REGLAS DE ESTILO:
+- Tono: cercano, directo, con actitud
+- Sin frases como "según fuentes", "se informa que", "la institución ha destacado"
+- Usa negritas para énfasis estratégico
+- Incluye nombres de barrios y pueblos de Huelva cuando sea relevante
+- Longitud: 500-700 palabras
+- Escribe en HTML (párrafos con <p>, subtítulos con <h2>)
+- Cierra con "Fuente consultada: ${news.source}"
 
-Devuelve solo el artículo, sin metadatos ni explicaciones.`;
+Devuelve SOLO el HTML del artículo, sin explicaciones.`;
 }
 
 async function rewriteWithAI(news) {

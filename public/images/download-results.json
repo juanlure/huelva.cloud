@@ -1,0 +1,81 @@
+[
+  {
+    "output": "huelva-puerto.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Puerto_de_Huelva.jpg",
+      "Huelva_puerto.jpg",
+      "Port_of_Huelva.jpg",
+      "Puerto_comercial_de_Huelva.jpg",
+      "Huelva_-_Puerto.jpg"
+    ]
+  },
+  {
+    "output": "huelva-gran-teatro.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Gran_Teatro_de_Huelva.jpg",
+      "Gran_Teatro_Huelva.jpg",
+      "Huelva_-_Gran_Teatro.jpg",
+      "Teatro_Grande_Huelva.jpg"
+    ]
+  },
+  {
+    "output": "fiesta-tradicional-huelva.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Romeria_de_Huelva.jpg",
+      "Colombinas_Huelva.jpg",
+      "Fiestas_de_Huelva.jpg",
+      "Festival_Huelva.jpg",
+      "Huelva_-_Fiestas.jpg"
+    ]
+  },
+  {
+    "output": "sierra-aracena.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Sierra_de_Aracena.jpg",
+      "Sierra_Aracena.jpg",
+      "Parque_natural_Sierra_de_Aracena.jpg",
+      "Aracena_-_Sierra.jpg",
+      "Aracena_paisaje.jpg"
+    ]
+  },
+  {
+    "output": "ermita-rocio.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Ermita_del_Rocio.jpg",
+      "Ermita_de_El_Rocio.jpg",
+      "Santuario_de_la_Virgen_del_Rocio.jpg",
+      "El_Rocio_-_Ermita.jpg",
+      "Aldea_del_Rocio.jpg",
+      "Virgen_del_Rocio.jpg"
+    ]
+  },
+  {
+    "output": "muelle-tinto.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Muelle_del_Tinto.jpg",
+      "Muelle_Tinto.jpg",
+      "Muelle_de_Riotinto.jpg",
+      "Muelle_Tinto_Huelva.jpg",
+      "Huelva_-_Muelle_del_Tinto.jpg",
+      "Muelle_de_la_Compania_Riotinto.jpg"
+    ]
+  },
+  {
+    "output": "ayamonte-guadiana.jpg",
+    "status": "not_found",
+    "attempted": [
+      "Ayamonte.jpg",
+      "Ayamonte_Huelva.jpg",
+      "Puente_internacional_del_Guadiana.jpg",
+      "Guadiana_Ayamonte.jpg",
+      "Rio_Guadiana.jpg",
+      "Huelva_-_Ayamonte.jpg"
+    ]
+  }
+]

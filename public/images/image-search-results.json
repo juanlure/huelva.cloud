@@ -1,0 +1,44 @@
+[
+  {
+    "filename": "huelva-puerto.jpg",
+    "query": "Puerto de Huelva",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  },
+  {
+    "filename": "huelva-gran-teatro.jpg",
+    "query": "Gran Teatro Huelva",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  },
+  {
+    "filename": "fiesta-tradicional-huelva.jpg",
+    "query": "Romería Huelva",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  },
+  {
+    "filename": "sierra-aracena.jpg",
+    "query": "Sierra de Aracena",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  },
+  {
+    "filename": "ermita-rocio.jpg",
+    "query": "Ermita del Rocío",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  },
+  {
+    "filename": "muelle-tinto.jpg",
+    "query": "Muelle del Tinto",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  },
+  {
+    "filename": "ayamonte-guadiana.jpg",
+    "query": "Ayamonte",
+    "url": null,
+    "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('.sd-image-results__image img, .fileinfotab') to be visible\n"
+  }
+]
