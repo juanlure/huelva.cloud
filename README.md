@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HUELVA.IS - Documentación del Proyecto
 
-## Getting Started
+**Última actualización:** 23 de febrero de 2026  
+**Estado:** Web viva con 50 artículos y 43 imágenes
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📊 Estadísticas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Métrica | Valor |
+|---------|-------|
+| **Artículos publicados** | 50 |
+| **Imágenes en banco** | 43 |
+| **Categorías** | 4 (Guías, Gastronomía, Eventos, Alojamiento) |
+| **Autores** | Lucía Colombina, Rocío Limón, Antonio Torre |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Estructura de Contenido
 
-## Learn More
+### Artículos por Categoría
 
-To learn more about Next.js, take a look at the following resources:
+**Guías Locales (31 artículos)**
+- Plaza de las Monjas, Puerto de Huelva, Miradores
+- Aracena, Muelle del Tinto, Punta Umbría
+- Reina Victoria, Ayamonte, El Rocío, El Portil
+- La Rábida, Monumento a Colón, Doñana
+- Museo de Huelva, Minas de Riotinto, Palos
+- Estación de tren, Puente Internacional
+- Parque Moret, Baluarte Concepción
+- Sierra de Huelva, Huelva en 48 horas
+- Turista vs Choquero, Hablar como onubense
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Gastronomía (13 artículos)**
+- Choco frito (2 artículos), Coquinas (2 artículos)
+- Gamba blanca (eliminado por imagen incorrecta)
+- Café en Huelva, Desayuno en Huelva
+- Jamón ibérico DOP, Fresas de Huelva
+- Naranjas del Condado, Gastronomía típica (10 platos)
+- Choco frito: la biblia, Coquinas: guía del marisco
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Eventos (5 artículos)**
+- Agenda semanal, Feria de las Colombinas
+- Cruz de Mayo, Noche en Huelva
 
-## Deploy on Vercel
+**Alojamiento (1 artículo)**
+- Dónde dormir en Huelva capital
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🖼️ Banco de Imágenes
+
+### Imágenes Principales (Alta Resolución)
+| Imagen | Tamaño | Uso |
+|--------|--------|-----|
+| huelva-puerto-grande.jpg | 14MB | Puerto industrial |
+| huelva-plaza-las-monjas.jpg | 5.8MB | Plaza central |
+| pinar-huelva.jpg | 9.3MB | Naturaleza costa |
+| baluarte-huelva.jpg | 8.4MB | Fortaleza histórica |
+| monasterio-rabida.jpg | 5.9MB | La Rábida |
+| huelva-aerea.jpg | 3.4MB | Vistas aéreas |
+| feria-huelva.jpg | 3.8MB | Feria Colombinas |
+| cristobal-colon-huelva.jpg | 3.9MB | Monumento Colón |
+| donana-huelva.jpg | 2.2MB | Parque Nacional |
+| matalascanas-playa.jpg | 2.8MB | Playa Matalascañas |
+| la-antilla-playa.jpg | 2.5MB | Playa La Antilla |
+| virgen-rocio.jpg | 2.3MB | Virgen del Rocío |
+
+### Imágenes de Soporte
+- choco-frito-tapa.jpg, choco-frito-hero.jpg
+- coquinas-huelva.jpg, corte-jamon-iberico.jpg
+- cafe-vaso-huelva.jpg, aracena-pueblo.jpg
+- huelva-muelle-tinto.jpg, el-portil.jpg
+- ayamonte-huelva.jpg, el-rocio.jpg
+- museo-huelva.jpg, iglesia-concepcion-huelva.jpg
+- tren-minero-riotinto.jpg, fresas-huelva.jpg
+- naranjas-huelva.png, casa-pinzon.jpg
+- fuente-santa.png, estacion-tren-huelva.jpg
+- puente-internacional.jpg, parque-moret.jpg
+- costa-huelva.jpg, moguer-huelva.jpg
+- quercus.jpg, cruz-mayo-huelva.png
+
+---
+
+## 🔧 Scripts Disponibles
+
+### Descarga de Imágenes
+- `download-commons-hd.sh` - Descarga alta resolución
+- `download-more-images.sh` - Búsqueda específica
+- `download-more-v2.sh` a `v11.sh` - Búsquedas iterativas
+
+### Validación
+- `validate-content.mjs` - Valida artículos antes del build
+
+---
+
+## 📝 Guía de Estilo
+
+### Tono de Voz
+- **Directo:** Sin rodeos, información clara
+- **Local:** ADN choquero cuando procede
+- **Auténtico:** Sin tópicos turísticos vacíos
+
+### Estructura de Artículo
+1. Hook inicial con personalidad
+2. Qué es / Historia breve
+3. Qué ver / hacer (lista)
+4. Cómo llegar / práctico
+5. Blockquote final memorable
+
+### Imágenes
+- Todas las imágenes son de Wikimedia Commons (licencia libre)
+- Mínimo 1000px de ancho preferible
+- Nunca imágenes genéricas de stock
+
+---
+
+## 🚀 Próximos Pasos
+
+### Contenido Pendiente
+- [ ] Artículo Mercado del Carmen (cuando tengamos foto propia)
+- [ ] Más pueblos de la Sierra (Jabugo, Cortegana)
+- [ ] Playas específicas (Matalascañas detallado)
+- [ ] Fiestas locales (Carnaval, Semana Santa)
+- [ ] Rutas de senderismo
+
+### Mejoras Técnicas
+- [ ] Interlinking entre artículos
+- [ ] Meta tags SEO optimizados
+- [ ] Sitemap XML
+- [ ] Schema.org para artículos
+
+### Imágenes Necesarias
+- Platos específicos de gastronomía
+- Fauna de las marismas (flamencos)
+- Romería del Rocío en acción
+- Pueblos pequeños de la Sierra
+
+---
+
+## 📞 Notas
+
+**Autor:** Juanlu (juanlure)  
+**Repo:** github.com/juanlure/huelva-is  
+**Deploy:** Vercel (auto desde main)
