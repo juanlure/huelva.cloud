@@ -53,42 +53,6 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
   // ─── GASTRONOMÍA → /comer ──────────────────────────────────────
   {
-    slug: 'ruta-gamba-blanca-huelva-capital',
-    title: 'Ruta de la gamba blanca en Huelva capital: dónde comer bien sin trampa',
-    excerpt: 'Guía práctica para disfrutar la gamba blanca de Huelva con criterio: cómo elegir sitio, qué pedir y qué evitar.',
-    category: 'Gastronomía',
-    image: '/images/guides/coquinas-huelva.jpg',
-    publishedAt: '2026-02-22T21:10:00Z',
-    author: 'Rocío Limón',
-    isAi: true,
-    content: `
-      <p>La gamba blanca de Huelva no necesita adornos. Es producto de temporada, con sabor intenso y textura firme cuando está bien tratada. El problema es que en muchos sitios se sirve congelada o pasada de cocción sin que el cliente lo sepa.</p>
-
-      <h2>Cómo reconocer producto fresco</h2>
-      <ul>
-        <li>Color: blanco nacarado con ligero tono rosado. Si está grisácea, lleva tiempo.</li>
-        <li>Olor: marino pero limpio. Sin rastro de amoniaco.</li>
-        <li>Textura: firme al tacto. Si está blanda antes de cocinar, no es del día.</li>
-      </ul>
-
-      <h2>Dónde orientar la búsqueda</h2>
-      <p>El mercado del Carmen es buen punto de referencia para ver qué hay de temporada. Los bares de la zona del Odiel y del puerto históricamente tienen rotación de producto más ajustada a la lonja.</p>
-
-      <h2>Qué pedir y qué evitar</h2>
-      <p>La gamba blanca no necesita salsa. Si el sitio la sirve con ali-oli por defecto, es señal de que el producto no es suficientemente bueno solo.</p>
-      <ul>
-        <li>Cocida o a la plancha: las dos preparaciones válidas.</li>
-        <li>Precio orientativo: entre 18 y 28 euros el cuarto de kilo según temporada.</li>
-        <li>Evitar menús con gamba "incluida" a precios muy bajos.</li>
-      </ul>
-
-      <h2>Temporada</h2>
-      <p>La gamba blanca de Huelva tiene mejor momento entre octubre y marzo. En verano el producto que se sirve suele ser de otras procedencias o congelado.</p>
-
-      <blockquote>En Huelva, el marisco no se adorna: se respeta.</blockquote>
-    `
-  },
-  {
     slug: 'choco-frito-huelva-como-se-come-bien',
     title: 'Choco frito en Huelva: cómo distinguir el bueno del mediocre',
     excerpt: 'El choco frito es identidad onubense. Una guía para entender qué lo hace diferente, cómo pedirlo bien y dónde orientar la búsqueda.',
