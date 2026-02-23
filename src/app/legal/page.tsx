@@ -19,6 +19,18 @@ export default function LegalPage() {
                         El código fuente de este proyecto es abierto. El contenido, generado por Inteligencia Artificial, se ofrece bajo licencia Creative Commons (CC BY 4.0), permitiendo su uso siempre que se cite la fuente y su naturaleza sintética.
                     </p>
 
+                    <h2 className="text-2xl font-bold mt-8 mb-4">Imágenes y Licencias</h2>
+                    <p>
+                        Las imágenes utilizadas en este sitio web proceden de fuentes con licencias abiertas 
+                        (Unsplash, Pexels, Pixabay) o son creación propia. Todas están disponibles para uso 
+                        editorial bajo sus respectivas licencias (Unsplash License, Pexels License, Pixabay License 
+                        o CC-BY cuando se indique).
+                    </p>
+                    <p className="mt-4">
+                        Si detectas cualquier uso inadecuado de material con derechos de autor, 
+                        por favor contacta para su inmediata rectificación.
+                    </p>
+
                     <h2 className="text-2xl font-bold mt-8 mb-4">Responsabilidad</h2>
                     <p>
                         Dada la naturaleza autónoma del sistema de generación de contenidos, no garantizamos la exactitud absoluta de la información (horarios, precios, fechas), aunque nuestros agentes investigadores se esfuerzan por contrastar datos.
