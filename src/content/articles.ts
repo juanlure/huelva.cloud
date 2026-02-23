@@ -154,5 +154,223 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>Aracena se disfruta sin prisa. Si intentas hacer todo en 4 horas, no disfrutas nada.</blockquote>
     `
+  },
+
+  // ─── NUEVOS ARTÍCULOS ──────────────────────────────────────────
+
+  // 5. Plaza de las Monjas
+  {
+    slug: 'plaza-monjas-huelva-guia-completa',
+    title: 'Plaza de las Monjas: el corazón social de Huelva',
+    excerpt: 'Guía completa de la Plaza de las Monjas: historia, qué hacer, dónde comer cerca y por qué sigue siendo el centro de gravedad de la ciudad.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T18:00:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>La Plaza de las Monjas no es la plaza más bonita de España. No tiene la elegancia de la Plaza Mayor de Salamanca ni la monumentalidad de la Plaza de España de Sevilla. Pero es la plaza de Huelva: el lugar donde la ciudad se encuentra, se encuentra a sí misma y se organiza.</p>
+
+      <h2>Qué es realmente la Plaza de las Monjas</h2>
+      <p>Espacio peatonal en el centro histórico, rodeado de edificios de principios del siglo XX. El nombre viene del antiguo convento de monjas que ocupaba parte del solar. Hoy es zona de paso, de encuentro y de terrazas.</p>
+
+      <h2>Qué hacer aquí</h2>
+      <ul>
+        <li><strong>Tomar café en una terraza:</strong> especialmente por la mañana, cuando el sol entra de lado y la gente pasea.</li>
+        <li><strong>Observar la arquitectura:</strong> los edificios del entorno tienen detalles modernistas poco conocidos pero dignos de atención.</li>
+        <li><strong>Usarla como base:</strong> desde aquí se llega a pie a todos los puntos interesantes del centro en menos de 10 minutos.</li>
+      </ul>
+
+      <h2>Dónde comer cerca</h2>
+      <p>Alrededor de la plaza hay una concentración de bares y restaurantes que abarca desde tapas tradicionales hasta cocina más elaborada. No es la zona más barata, pero tiene opciones para distintos presupuestos.</p>
+      <ul>
+        <li>Calle Concepción: bares de toda la vida.</li>
+        <li>Calle Rico: opciones de mediana categoría.</li>
+        <li>Calle Vázquez López: cafeterías y desayunos.</li>
+      </ul>
+
+      <h2>Horarios y acceso</h2>
+      <p>La plaza es peatonal las 24 horas. Las terrazas suelen abrir de 8:00 a 24:00. Los fines de semana hay más ambiente, especialmente a mediodía y al atardecer.</p>
+
+      <blockquote>La Plaza de las Monjas no es un destino. Es un punto de partida.</blockquote>
+    `
+  },
+
+  // 6. Puerto de Huelva
+  {
+    slug: 'puerto-huelva-que-ver-industrial',
+    title: 'Puerto de Huelva: visita al corazón industrial de la ciudad',
+    excerpt: 'El puerto es parte esencial de la identidad de Huelva. Una guía para entender qué es hoy, qué puedes ver y cómo acercarte.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-puerto-grande.jpg',
+    publishedAt: '2026-02-23T18:05:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Puerto de Huelva es el más importante de Andalucía occidental y uno de los principales de España en tráfico de mercancías. No es un puerto para cruceristas, es un puerto de trabajo: químicos, minerales, contenedores. Eso lo hace diferente y, en cierto modo, más interesante.</p>
+
+      <h2>Qué es realmente el puerto hoy</h2>
+      <p>Infraestructura industrial dividida en varios muelles. El más conocido es el Muelle de la Compañía (o Muelle del Tinto), de época inglesa. El resto es zona portuaria activa con restricciones de acceso.</p>
+
+      <h2>Qué puedes visitar</h2>
+      <ul>
+        <li><strong>Muelle del Tinto:</strong> acceso público. Antiguo muelle de la Rio Tinto Company Limited. Vistas del río Odiel y de la actividad portuaria.</li>
+        <li><strong>Centro de Interpretación:</strong> información sobre la historia del puerto (consultar horarios).</li>
+        <li><strong>Paseo marítimo:</strong> desde el muelle se puede caminar hacia el entorno del río.</li>
+      </ul>
+
+      <h2>Cómo llegar</h2>
+      <p>El muelle del Tinto está a unos 15-20 minutos a pie desde el centro. También hay autobús (líneas que van hacia el puerto) y aparcamiento en zona si vas en coche.</p>
+
+      <h2>Lo que no encontrarás</h2>
+      <p>No es un puerto turístico. No hay tiendas, ni restaurantes frente al agua, ni ferries para pasajeros con destinos interesantes. La actividad es industrial y el acceso a zonas operativas está restringido.</p>
+
+      <blockquote>El puerto de Huelva es para entender, no para fotografiarse con un barco de crucero de fondo.</blockquote>
+    `
+  },
+
+  // 7. Vistas de Huelva
+  {
+    slug: 'miradores-huelva-vistas-panoramicas',
+    title: 'Dónde ver Huelva desde arriba: los mejores miradores',
+    excerpt: 'Las mejores vistas de Huelva capital y provincia: dónde subir, qué ver y cómo llegar a los puntos panorámicos.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-02-23T18:10:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva es una ciudad plana, pero hay lugares desde donde se obtienen vistas interesantes de la ciudad, el río y el entorno natural. No esperas miradores de montaña: aquí la panorámica combina urbano, industrial y natural.</p>
+
+      <h2>En capital</h2>
+      <ul>
+        <li><strong>Muelle del Tinto:</strong> vistas del puerto, el río Odiel y la marisma. Al atardecer es especialmente interesante por la luz sobre el agua.</li>
+        <li><strong>Barrio Alto (Reina Victoria):</strong> desde ciertas calles se ve el casco antiguo desde una ligera elevación.</li>
+        <li><strong>Edificios públicos:</strong> algunos edificios administrativos tienen vistas desde plantas altas, aunque no suelen ser accesibles al público.</li>
+      </ul>
+
+      <h2>En provincia</h2>
+      <ul>
+        <li><strong>El Conquero:</strong> pequeña elevación natural desde donde se ve Huelva capital a lo lejos, con el Odiel en primer plano.</li>
+        <li><strong>Marismas del Odiel:</strong> desde los observatorios se obtienen vistas panorámicas de la ría y el entorno natural.</li>
+        <li><strong>Sierra de Aracena:</strong> varios puntos de la carretera ofrecen vistas de los pueblos desde altura.</li>
+      </ul>
+
+      <h2>Mejor momento</h2>
+      <p>Al atardecer, cuando la luz baja y colorea el río y las estructuras del puerto. Evitar el mediodía en verano: luz plana y demasiado contraste.</p>
+
+      <blockquote>La mejor vista de Huelva no es un mirador. Es el contraste entre el río, la marisma y la industria.</blockquote>
+    `
+  },
+
+  // 8. Coquinas
+  {
+    slug: 'coquinas-huelva-como-comer',
+    title: 'Coquinas de Huelva: cómo pedirlas bien y dónde',
+    excerpt: 'Las coquinas son un clásico de la gastronomía onubense. Guía para reconocer las buenas, evitar las congeladas y disfrutarlas de verdad.',
+    category: 'Gastronomía',
+    image: '/images/guides/coquinas-huelva.jpg',
+    publishedAt: '2026-02-23T18:15:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>Las coquinas (tellina) son un producto humilde de la ría de Huelva que, bien tratado, se convierte en tapa de primer nivel. Menos glamurosas que la gamba blanca, pero igual de identitarias y más accesibles.</p>
+
+      <h2>Cómo reconocer coquinas frescas</h2>
+      <ul>
+        <li><strong>Tamaño:</strong> pequeñas, de 2-4 cm. Las grandes suelen ser de otras procedencias.</li>
+        <li><strong>Color:</strong> concha grisácea con tonos amarillentos. Si están blanquecinas, pueden ser congeladas.</li>
+        <li><strong>Olor:</strong> marino intenso. Sin rastro de amoniaco ni olores extraños.</li>
+      </ul>
+
+      <h2>Preparaciones típicas</h2>
+      <p>Las coquinas se cocinan de dos formas principales:</p>
+      <ul>
+        <li><strong>A la marinera:</strong> con salsa de ajo, perejil y vino blanco. La más habitual en bares.</li>
+        <li><strong>Al ajillo:</strong> solo con aceite, ajo y guindilla. Para probar el producto sin distracciones.</li>
+      </ul>
+
+      <h2>Dónde comerlas</h2>
+      <p>Los bares de la zona del puerto y del centro histórico suelen tenerlas en temporada. Precio orientativo: 8-14€ la ración.</p>
+
+      <h2>Temporada</h2>
+      <p>Todo el año, aunque en verano sube el precio y baja la calidad por la presión turística.</p>
+
+      <blockquote>Las coquinas no son almejas pequeñas. Son otro producto con sabor y textura propios.</blockquote>
+    `
+  },
+
+  // 9. Café en Huelva
+  {
+    slug: 'cafe-huelva-tradicion-donde-tomar',
+    title: 'Café en Huelva: dónde tomarlo bien y con historia',
+    excerpt: 'El café es ritual en Huelva. Desde los bares tradicionales hasta las nuevas propuestas, guía para tomar café con criterio.',
+    category: 'Gastronomía',
+    image: '/images/guides/cafe-vaso-huelva.jpg',
+    publishedAt: '2026-02-23T18:20:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>En Huelva, el café no es solo una bebida. Es excusa para sentarse, para empezar el día, para hacer tiempo, para encontrarse. La cultura del café aquí es de consumo diario, de barra y terraza, no de especialidad y catación.</p>
+
+      <h2>Cómo se pide el café en Huelva</h2>
+      <ul>
+        <li><strong>Solo:</strong> espresso corto, intenso.</li>
+        <li><strong>Cortado:</strong> solo con un poco de leche caliente.</li>
+        <li><strong>Americano:</strong> solo con agua caliente añadida.</li>
+        <li><strong>Sombra:</strong> mucha leche, poco café (variante local).</li>
+      </ul>
+
+      <h2>Dónde tomarlo</h2>
+      <p>Los bares de toda la vida son la mejor opción para entender el ritual:</p>
+      <ul>
+        <li><strong>Centro histórico:</strong> bares con décadas de historia, clientela fija y café que no ha cambiado de proveedor en años.</li>
+        <li><strong>Zona de la Gran Vía:</strong> más variado, con opciones de cafeterías modernas.</li>
+        <li><strong>Mercado del Carmen:</strong> algunos puestos sirven café para el desayuno del mercado.</li>
+      </ul>
+
+      <h2>El desayuno completo</h2>
+      <p>Café + tostada con aceite o manteca colorá, o café + churros si es fin de semana. Precio: 2-3,50€ dependiendo de la zona.</p>
+
+      <blockquote>En Huelva no se va a tomar café. Se va al bar y se toma café mientras se está.</blockquote>
+    `
+  },
+
+  // 10. Muelle del Tinto
+  {
+    slug: 'muelle-tinto-huelva-historia-visita',
+    title: 'Muelle del Tinto: historia inglesa en el corazón del puerto',
+    excerpt: 'El Muelle del Tinto es uno de los pocos vestigios visibles de la época inglesa en Huelva. Qué es, por qué importa y cómo visitarlo.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-muelle-tinto.jpg',
+    publishedAt: '2026-02-23T18:25:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Muelle de la Compañía, conocido popularmente como Muelle del Tinto, es una estructura portuaria construida a finales del siglo XIX por la Rio Tinto Company Limited para embarcar el mineral de cobre extraído en las minas de la Sierra de Huelva.</p>
+
+      <h2>Qué es hoy</h2>
+      <p>Estructura de hierro y madera (la original era de madera, la actual es reconstrucción) que se adentra en el río Odiel. Es accesible al público y uno de los pocos lugares desde donde se puede ver la actividad portuaria de cerca.</p>
+
+      <h2>Por qué importa</h2>
+      <ul>
+        <li>Es símbolo de la influencia británica en la historia industrial de Huelva.</li>
+        <li>Representa la época de esplendor minero que transformó la economía de la provincia.</li>
+        <li>Es punto de referencia visual de la ciudad.</li>
+      </ul>
+
+      <h2>Cómo visitar</h2>
+      <p>Acceso libre y gratuito. Se llega caminando desde el centro en 15-20 minutos o en coche (aparcamiento en zona). Recomendable al atardecer por la luz sobre el agua.</p>
+      <ul>
+        <li>Duración de la visita: 15-30 minutos.</li>
+        <li>Ideal combinar con paseo por el entorno del puerto.</li>
+        <li>No hay servicios en el propio muelle (baños, bares).</li>
+      </ul>
+
+      <h2>Contexto histórico breve</h2>
+      <p>A partir de 1873, las minas de Riotinto pasaron a manos británicas. El mineral se transportaba por ferrocarril hasta Huelva y se embarcaba desde este muelle. La operación duró hasta mediados del siglo XX y transformó por completo la economía y la demografía de la zona.</p>
+
+      <blockquote>El Muelle del Tinto no es atracción turística. Es memoria industrial hecha estructura.</blockquote>
+    `
   }
 ];
