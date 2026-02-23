@@ -511,5 +511,237 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>El desayuno en Huelva no se inventa. Se hereda.</blockquote>
     `
+  },
+
+  // ─── ÚLTIMOS 6 ARTÍCULOS (TOTAL 20) ────────────────────────────
+
+  // 15. Cómo llegar a Huelva
+  {
+    slug: 'como-llegar-huelva-transporte-coche-tren',
+    title: 'Cómo llegar a Huelva: todas las opciones de transporte',
+    excerpt: 'Guía completa para llegar a Huelva en coche, tren, autobús o avión. Tiempos, precios y recomendaciones prácticas.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-02-23T19:20:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva no está en el centro de ninguna autopista principal, pero tampoco es inaccesible. La clave es entender que es una ciudad de paso entre Portugal, el Algarve y el resto de Andalucía.</p>
+
+      <h2>En coche (la opción más común)</h2>
+      <ul>
+        <li><strong>Desde Sevilla:</strong> A-49, 45 minutos. Autopista de peaje.</li>
+        <li><strong>Desde Madrid:</strong> A-4 hasta Sevilla, luego A-49. Unas 6 horas.</li>
+        <li><strong>Desde el Algarve:</strong> A-22 hasta la frontera, luego A-49. 1 hora desde Faro.</li>
+      </ul>
+
+      <h2>En tren</h2>
+      <p>La estación de tren de Huelva tiene conexiones con Sevilla (cercanías) y trenes de media distancia. No hay AVE directo: hay que cambiar en Sevilla.</p>
+      <ul>
+        <li>Sevilla-Huelva: 1h 15min aproximadamente.</li>
+        <li>Madrid-Huelva: 3h 30min a Sevilla + 1h 15min a Huelva.</li>
+      </ul>
+
+      <h2>En autobús</h2>
+      <p>La estación de autobuses tiene conexiones frecuentes con Sevilla, Cádiz, y ciudades de la provincia. Las compañías principales son Damas y other regional operators.</p>
+
+      <h2>En avión</h2>
+      <p>El aeropuerto más cercano es el de Sevilla (SVQ), a 1 hora en coche. También se puede usar Faro (FAO) en Portugal, a 1 hora y 15 minutos.</p>
+
+      <blockquote>En Huelva, el coche es libertad. El transporte público existente, pero no da para todo.</blockquote>
+    `
+  },
+
+  // 16. Historia de Huelva en 5 minutos
+  {
+    slug: 'historia-huelva-resumen-rapido',
+    title: 'Historia de Huelva: de Tartessos al presente en 5 minutos',
+    excerpt: 'Resumen cronológico de la historia de Huelva: tartessos, fenicios, romanos, británicos y la ciudad actual.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T19:25:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Huelva tiene una de las historias más antiguas de España. La clave es entender que siempre ha sido puerto: de minerales, de comercio, de culturas.</p>
+
+      <h2>Tartessos y Fenicios (antes del 200 a.C.)</h2>
+      <p>La zona de Huelva fue puerto tartésico y luego fenicio. El comercio de metales (cobre, plata, oro) desde las minas del interior hacia el Mediterráneo.</p>
+
+      <h2>Romana (200 a.C. - 500 d.C.)</h2>
+      <p>La ciudad romana de <em>Onuba</em> fue centro administrativo y comercial. Restos arqueológicos en el Museo de Huelva y en el propio subsuelo de la ciudad.</p>
+
+      <h2>Edad Media (500-1500)</h2>
+      <p>Período de menor relevancia. La ciudad estuvo bajo dominio musulmán hasta la Reconquista. Población dispersa, sin la importancia de otros núcleos andaluces.</p>
+
+      <h2>Descubrimiento de América (1492)</h2>
+      <p>La expedición de Colón partió de Palos de la Frontera (Huelva). La provincia tiene un papel simbólico en la historia de la navegación transatlántica.</p>
+
+      <h2>Era industrial inglesa (1873-1954)</h2>
+      <p>La compra de las minas de Riotinto por capital británico transformó Huelva. Llegó el ferrocarril, el puerto moderno, la arquitectura inglesa. La ciudad duplicó su población.</p>
+
+      <h2>Huelva hoy</h2>
+      <p>Ciudad de 145.000 habitantes, capital de provincia, con economía basada en el puerto, la química, la agricultura y un turismo emergente pero aún minoritario.</p>
+
+      <blockquote>Huelva es memoria de puerto: tartesio, fenicio, romano, británico, y ahora español.</blockquote>
+    `
+  },
+
+  // 17. Clima y mejor época para visitar
+  {
+    slug: 'clima-huelva-mejor-epoca-visitar',
+    title: 'Clima de Huelva: cuándo visitar y qué ropa llevar',
+    excerpt: 'Guía climática de Huelva: temperaturas, lluvias, viento y la mejor época del año para viajar a la capital onubense.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-02-23T19:30:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva tiene clima mediterráneo atlántico: inviernos suaves, veranos calurosos, precipitaciones concentradas en otoño e invierno. El viento del oeste es constante.</p>
+
+      <h2>Por estaciones</h2>
+      <ul>
+        <li><strong>Primavera (mar-may):</strong> 15-25ºC. Ideal para visitar. Naturaleza verde, flores, temperatura agradable.</li>
+        <li><strong>Verano (jun-ago):</strong> 25-35ºC, picos de 40ºC. Calor intenso, playa obligatoria. Agobiante en ciudad.</li>
+        <li><strong>Otoño (sep-nov):</strong> 15-25ºC. Lluvias esporádicas. Buena época, menos turística.</li>
+        <li><strong>Invierno (dic-feb):</strong> 8-16ºC. Lluvias frecuentes. Nunca baja de cero, pero el frío húmedo se nota.</li>
+      </ul>
+
+      <h2>La famana (viento de Levante)</h2>
+      <p>El viento del este, seco y caluroso, es característico del verano. Puede elevar la sensación térmica varios grados.</p>
+
+      <h2>Mejor época para visitar</h2>
+      <p>Abril-mayo y septiembre-octubre. Clima ideal para pasear, comer en terrazas y visitar la provincia sin agobios.</p>
+
+      <h2>Qué llevar</h2>
+      <ul>
+        <li>Verano: ropa ligera, crema solar, gafas, sombrero.</li>
+        <li>Invierno: jersey, chaqueta impermeable, paraguas.</li>
+        <li>Todo el año: calzado cómodo para caminar por ciudad.</li>
+      </ul>
+
+      <blockquote>En Huelva, el clima es benevolente: nunca hace frío extremo, pero el verano puede ser implacable.</blockquote>
+    `
+  },
+
+  // 18. Ruta de tapas por el centro
+  {
+    slug: 'ruta-tapas-centro-huelva-donde-ir',
+    title: 'Ruta de tapas por el centro de Huelva: dónde ir y qué pedir',
+    excerpt: 'Recorrido gastronómico por los mejores bares de tapas del centro de Huelva. Precios, especialidades y cómo organizar la ruta.',
+    category: 'Gastronomía',
+    image: '/images/guides/choco-frito-tapa.jpg',
+    publishedAt: '2026-02-23T19:35:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>La ruta de tapas es el plan por excelencia en Huelva. No hay que complicarse: se empieza en un sitio, se bebe, se come, se paga, y se va al siguiente. La gracia está en la variedad, no en quedarse horas en el mismo bar.</p>
+
+      <h2>Zonas para tapear</h2>
+      <ul>
+        <li><strong>Calle Concepción:</strong> bares tradicionales de toda la vida. Ambiente local, tapas clásicas.</li>
+        <li><strong>Plaza de las Monjas:</strong> terrazas, más turístico, bueno para sentarse.</li>
+        <li><strong>Barrio del Torrejón:</strong> tapas de calidad, ambiente más alternativo.</li>
+      </ul>
+
+      <h2>Tapas imprescindibles en la ruta</h2>
+      <ul>
+        <li>Choco frito: en cualquier freiduría de confianza.</li>
+        <li>Coquinas a la marinera: tamaño pequeño, sabor intenso.</li>
+        <li>Gamba blanca: solo en temporada (otoño-invierno).</li>
+        <li>Papas aliñás: ensalada de patata, bacalao y naranja. Plato de contraste.</li>
+        <li>Carrillada ibérica: si se quiere alternar el pescado con carne.</li>
+      </ul>
+
+      <h2>Cómo organizar la ruta</h2>
+      <p>Una tapa y una bebida por bar. No más. El objetivo es probar 4-5 sitios, no llenarse en el primero. Distancia entre bares: máximo 5 minutos caminando.</p>
+
+      <h2>Presupuesto</h2>
+      <p>Tapa + caña: 2,50-4€ dependiendo de la zona. Con 15-20€ por persona se hace una ruta completa y variada.</p>
+
+      <blockquote>La ruta de tapas no es comida. Es deporte de resistencia gastronómica.</blockquote>
+    `
+  },
+
+  // 19. Dónde aparcar en Huelva
+  {
+    slug: 'donde-aparcar-huelva-capital-parkings',
+    title: 'Dónde aparcar en Huelva capital: parkings y zonas libres',
+    excerpt: 'Guía práctica para aparcar en Huelva: parkings públicos, zonas azules, horarios y precios actualizados.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    publishedAt: '2026-02-23T19:40:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Aparcar en el centro de Huelva es complicado pero no imposible. La clave es saber dónde buscar y estar dispuesto a caminar 5-10 minutos.</p>
+
+      <h2>Parkings públicos</h2>
+      <ul>
+        <li><strong>Parking Plaza de las Monjas:</strong> subterráneo, en pleno centro. Precio: aprox. 2€/hora.</li>
+        <li><strong>Parking Gran Vía:</strong> más grande, un poco más alejado del casco antiguo. Tarifa similar.</li>
+        <li><strong>Parking Avenida de Italia:</strong> a las afueras del centro, más barato, 10-15 minutos caminando.</li>
+      </ul>
+
+      <h2>Zona azul (ORA)</h2>
+      <p>Las calles del centro tienen zona azul regulada. Horario general: de 9:00 a 14:00 y de 17:00 a 20:30. Sábados por la mañana también. Precio: 0,50-1€/hora según zona.</p>
+      <ul>
+        <li>Límite de tiempo: generalmente 2 horas.</li>
+        <li>Domingos y festivos: gratis en la mayoría de zonas.</li>
+      </ul>
+
+      <h2>Zonas de aparcamiento libre</h2>
+      <p>Alrededor del centro, en zonas residenciales, se puede aparcar gratis. Requiere llegar con tiempo y caminar. Barrios como El Torrejón o zonas de la Gran Vía suelen tener plazas libres con paciencia.</p>
+
+      <h2>Consejos prácticos</h2>
+      <ul>
+        <li>Evitar las 13:00-14:00: cambio de turno, mucho tráfico.</li>
+        <li>Fines de semana: más fácil aparcar en zona azul, más difícil en parkings (llenos).</li>
+        <li>Noches: zona azul suele ser gratis después de 20:30.</li>
+      </ul>
+
+      <blockquote>En Huelva, aparcar es arte de paciencia. Quien espera, encuentra.</blockquote>
+    `
+  },
+
+  // 20. Pescado fresco en Huelva
+  {
+    slug: 'pescado-fresco-huelva-lonja-comprar',
+    title: 'Pescado fresco en Huelva: cómo comprar como un local',
+    excerpt: 'Guía para comprar pescado fresco en Huelva: la lonja, el mercado, cómo elegir y cuándo ir para el mejor producto.',
+    category: 'Gastronomía',
+    image: '/images/guides/coquinas-huelva.jpg',
+    publishedAt: '2026-02-23T19:45:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>El pescado fresco es uno de los grandes tesoros de Huelva. La lonja de Isla Cristina (a 40 km) y los puestos del Mercado del Carmen ofrecen producto de la ría y del cercano litoral atlántico.</p>
+
+      <h2>Qué pescado encontrar</h2>
+      <ul>
+        <li><strong>Gamba blanca:</strong> producto estrella, temporada otoño-invierno.</li>
+        <li><strong>Coquinas:</strong> todo el año, precio variable.</li>
+        <li><strong>Choco:</strong> fresco o congelado, verificar procedencia.</li>
+        <li><strong>Pescado de roca:</strong> lubina, dorada, pargo según temporada.</li>
+      </ul>
+
+      <h2>Dónde comprar</h2>
+      <p><strong>Mercado del Carmen (Huelva capital):</strong> pescaderías tradicionales con producto diario. Horario: 8:00-14:00, sábados hasta 14:00. Cerrado domingos y festivos.</p>
+      <p><strong>Lonja de Isla Cristina:</strong> para comprar al por mayor o para los muy exigentes. Requiere madrugar (subastas muy temprano).</p>
+
+      <h2>Cómo elegir buen pescado</h2>
+      <ul>
+        <li>Ojos brillantes, hundidos y opacos son señal de poco fresco.</li>
+        <li>Branquias rojas brillantes, no marrones ni grises.</li>
+        <li>Olor a mar limpio, no a amoniaco ni ácido.</li>
+        <li>Textura firme al tacto.</li>
+      </ul>
+
+      <h2>Mejor hora para ir</h2>
+      <p>A primera hora (8:00-9:00) para elegir. A última hora (13:00-14:00) a veces hay ofertas para liquidar stock.</p>
+
+      <blockquote>El pescado bueno no necesita salsa. El malo, tampoco la salva.</blockquote>
+    `
   }
 ];
