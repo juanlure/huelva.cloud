@@ -30,6 +30,41 @@ const SOURCES = [
     name: 'Huelva24',
     rss: 'https://www.huelva24.com/rss/',
     fallbackUrl: 'https://www.huelva24.com/'
+  },
+  {
+    name: 'ABC Sevilla (Huelva)',
+    rss: 'https://sevilla.abc.es/rss/feeds/abc_Andalucia.xml',
+    fallbackUrl: 'https://sevilla.abc.es/andalucia/huelva/'
+  },
+  {
+    name: 'Diario de Sevilla (Andalucía)',
+    rss: 'https://www.diariodesevilla.es/rss/',
+    fallbackUrl: 'https://www.diariodesevilla.es/andalucia/'
+  },
+  {
+    name: 'El Español (Andalucía)',
+    rss: 'https://www.elespanol.com/rss/',
+    fallbackUrl: 'https://www.elespanol.com/espana/andalucia/'
+  },
+  {
+    name: '20minutos Andalucía',
+    rss: 'https://www.20minutos.es/rss/andalucia/',
+    fallbackUrl: 'https://www.20minutos.es/minuteca/andalucia/'
+  },
+  {
+    name: 'COPE Huelva',
+    rss: 'https://www.cope.es/rss/actualidad',
+    fallbackUrl: 'https://www.cope.es/emisoras/andalucia/huelva-provincia/huelva'
+  },
+  {
+    name: 'Onda Cero Huelva',
+    rss: 'https://www.ondacero.es/rss/',
+    fallbackUrl: 'https://www.ondacero.es/emisoras/andalucia/huelva/'
+  },
+  {
+    name: 'Canal Sur Huelva',
+    rss: 'https://www.canalsur.es/rss/',
+    fallbackUrl: 'https://www.canalsur.es/noticias/andalucia/huelva/'
   }
 ];
 
@@ -95,9 +130,13 @@ function imageFromItem(item) {
 function normalizeRssItem(item, sourceName) {
   const title = stripHtml(item?.title || 'Sin título');
   const excerpt = stripHtml(item?.description || item?.summary || '').slice(0, 220);
-  const link = typeof item?.link === 'string' ? item.link : (item?.link?.href || '');
+  const rawLink = typeof item?.link === 'string' ? item.link : (item?.link?.href || '');
+  const link = encodeURI(rawLink);
   const publishedAt = item?.pubDate || item?.published || item?.updated || new Date().toISOString();
   const image = imageFromItem(item) || '/images/guides/huelva-puerto.jpg';
+
+  // Filtro básico para evitar piezas no-noticia
+  if (/podcast|audio|galeria|opinion/i.test(`${title} ${link}`)) return null;
 
   return {
     title,
@@ -130,7 +169,7 @@ async function tryRSS(source) {
   // first valid item
   for (const item of items) {
     const news = normalizeRssItem(item, source.name);
-    if (news.title && news.url) return news;
+    if (news && news.title && news.url) return news;
   }
   return null;
 }
@@ -146,7 +185,11 @@ async function tryHtmlFallback(source) {
 
   if (!href || !title) return null;
 
-  const url = href.startsWith('http') ? href : new URL(href, source.fallbackUrl).toString();
+  const rawUrl = href.startsWith('http') ? href : new URL(href, source.fallbackUrl).toString();
+  const url = encodeURI(rawUrl);
+
+  // Filtro básico para evitar piezas no-noticia (podcast/audios)
+  if (/podcast|audio|galeria|opinion/i.test(`${title} ${url}`)) return null;
 
   return {
     title,
@@ -196,8 +239,14 @@ async function main() {
     process.exit(1);
   }
 
-  // elegir la más reciente
-  candidates.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+  // elegir la mejor: prioriza Huelva en título/URL y luego frescura
+  const score = (n) => {
+    const hayHuelva = /huelva/i.test(`${n.title} ${n.url}`) ? 2 : 0;
+    const esFuenteLocal = /Huelva Información|Huelva24|COPE Huelva|Onda Cero Huelva|Canal Sur Huelva/i.test(n.source) ? 1 : 0;
+    const fecha = new Date(n.publishedAt).getTime() || 0;
+    return hayHuelva * 1_000_000_000 + esFuenteLocal * 100_000_000 + fecha;
+  };
+  candidates.sort((a, b) => score(b) - score(a));
   const selected = candidates[0];
 
   const payload = {
