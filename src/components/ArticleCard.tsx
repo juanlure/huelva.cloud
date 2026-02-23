@@ -10,7 +10,7 @@ interface ArticleCardProps {
   title: string;
   excerpt: string;
   category: string;
-  imageUrl: string;
+  imageUrl: string | null;
   author: {
     name: string;
     avatar?: string;
@@ -93,82 +93,101 @@ export default function ArticleCard({
       }`}
     >
       {/* Image Section */}
-      <Link
-        href={`/article/${slug}`}
-        className={`relative overflow-hidden block ${
-          featured ? 'aspect-[4/3] md:aspect-auto md:h-full' : 'aspect-[16/9]'
-        }`}
-      >
-        <motion.div
-          animate={{
-            scale: isHovered ? 1.08 : 1,
-            filter: isHovered ? 'saturate(1.1)' : 'saturate(1)'
-          }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full h-full"
+      {imageUrl ? (
+        <Link
+          href={`/article/${slug}`}
+          className={`relative overflow-hidden block ${
+            featured ? 'aspect-[4/3] md:aspect-auto md:h-full' : 'aspect-[16/9]'
+          }`}
         >
-          <Image
-            src={imageUrl}
-            alt={title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </motion.div>
-
-        {/* Gradient overlay - appears on hover */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
-          className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent"
-        />
-
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4">
-          <motion.span
-            whileHover={{ scale: 1.05 }}
-            className="badge badge-terracotta text-[10px]"
+          <motion.div
+            animate={{
+              scale: isHovered ? 1.08 : 1,
+              filter: isHovered ? 'saturate(1.1)' : 'saturate(1)'
+            }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full"
           >
-            {category}
-          </motion.span>
-        </div>
+            <Image
+              src={imageUrl}
+              alt={title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </motion.div>
 
-        {/* Save Button */}
-        <motion.button
-          onClick={(e) => { e.preventDefault(); setIsSaved(!isSaved); }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            scale: isHovered ? 1 : 0.8
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white"
-        >
-          <Bookmark
-            size={18}
-            className={isSaved ? 'text-terracotta fill-terracotta' : 'text-navy-60'}
+          {/* Gradient overlay - appears on hover */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.4 }}
+            className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent"
           />
-        </motion.button>
 
-        {/* Read more indicator on image - visible on hover */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            y: isHovered ? 0 : 20
-          }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="absolute bottom-4 left-4 right-4"
-        >
-          <span className="text-white text-sm font-medium flex items-center gap-2">
-            Leer artículo
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </span>
-        </motion.div>
-      </Link>
+          {/* Category Badge */}
+          <div className="absolute top-4 left-4">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              className="badge badge-terracotta text-[10px]"
+            >
+              {category}
+            </motion.span>
+          </div>
+
+          {/* Save Button */}
+          <motion.button
+            onClick={(e) => { e.preventDefault(); setIsSaved(!isSaved); }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{
+              opacity: isHovered ? 1 : 0,
+              scale: isHovered ? 1 : 0.8
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white"
+          >
+            <Bookmark
+              size={18}
+              className={isSaved ? 'text-terracotta fill-terracotta' : 'text-navy-60'}
+            />
+          </motion.button>
+
+          {/* Read more indicator on image - visible on hover */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isHovered ? 1 : 0,
+              y: isHovered ? 0 : 20
+            }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="absolute bottom-4 left-4 right-4"
+          >
+            <span className="text-white text-sm font-medium flex items-center gap-2">
+              Leer artículo
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+          </motion.div>
+        </Link>
+      ) : (
+        /* No Image - Category Badge Only */
+        <div className={`relative bg-navy-5 flex items-center justify-center ${
+          featured ? 'aspect-[4/3] md:aspect-auto md:h-full' : 'aspect-[16/9]'
+        }`}>
+          <div className="absolute top-4 left-4">
+            <span className="badge badge-terracotta text-[10px]">
+              {category}
+            </span>
+          </div>
+          <div className="text-navy-20 text-center">
+            <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+            </svg>
+            <span className="text-sm">Huelva.is</span>
+          </div>
+        </div>
+      )}
 
       {/* Content Section */}
       <div className={`p-6 flex flex-col ${featured ? 'md:p-10' : 'flex-1'} ${style.bg} transition-colors duration-300`}>

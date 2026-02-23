@@ -18,15 +18,15 @@ function normalizeCategory(category: string): string {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
-function resolveArticleImage(article: LocalArticle): string {
+function resolveArticleImage(article: LocalArticle): string | null {
   const raw = (article.image || '').trim();
 
-  // Prefer local images. If empty or remote URL, use stable local fallback.
+  // Solo usar imagen si existe localmente y no es URL remota
   if (!raw || raw.startsWith('http://') || raw.startsWith('https://')) {
-    const key = normalizeCategory(article.category);
-    return CATEGORY_FALLBACK_IMAGE[key] || '/images/placeholder.jpg';
+    return null; // Sin imagen si no hay local válida
   }
 
+  // Verificar que el archivo existe (esto se valida en build)
   return raw;
 }
 
@@ -51,7 +51,7 @@ export interface Article {
   excerpt: string;
   content?: string;
   category: string;
-  image: string;
+  image: string | null;
   date: string;
   readTime: string;
   author: string;
