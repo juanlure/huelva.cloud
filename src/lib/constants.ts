@@ -15,10 +15,10 @@ export const CATEGORY_MAP: Record<string, string> = {
 
 export const CATEGORY_TITLES: Record<string, string> = {
     'comer': 'Comer y Beber',
-    'eventos': 'Agenda y Eventos',
+    'eventos': 'Agenda y Eventos', 
     'alojarse': 'Dónde Dormir',
     'guias': 'Guías Locales',
-    'noticias': 'Últimas Noticias',
+    'noticias': 'Todas las Publicaciones',
     'rutas': 'Rutas y Escapadas',
     'cultura': 'Historia y Cultura'
 };

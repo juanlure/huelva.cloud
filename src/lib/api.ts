@@ -82,7 +82,16 @@ export async function getArticles(category?: string): Promise<Article[]> {
   let filtered = [...LOCAL_ARTICLES];
 
   if (category) {
-    const mappedCategory = CATEGORY_MAP[category.toLowerCase()] || category;
+    const normalizedCategory = category.toLowerCase();
+    
+    // 'noticias' shows all articles (like a blog feed)
+    if (normalizedCategory === 'noticias') {
+      // Return all articles sorted by date
+      filtered.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+      return filtered.map(mapArticle);
+    }
+    
+    const mappedCategory = CATEGORY_MAP[normalizedCategory] || category;
     filtered = filtered.filter(a => a.category.toLowerCase() === mappedCategory.toLowerCase());
   }
 

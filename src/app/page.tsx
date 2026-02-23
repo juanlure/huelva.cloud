@@ -85,7 +85,7 @@ export default async function Home() {
                 href="/noticias"
                 className="inline-flex items-center gap-2 text-navy-60 hover:text-terracotta font-medium transition-colors group"
               >
-                <span>Ver todos los artículos</span>
+                <span>Ver todos los artículos ({stats.totalArticles})</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

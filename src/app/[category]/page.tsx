@@ -55,9 +55,11 @@ export default async function CategoryPage({ params }: PageProps) {
 
           {/* Meta info */}
           <p className="mt-4 text-navy/60 text-lg max-w-2xl">
-            {articles.length > 0
-              ? `${articles.length} artículos para descubrir lo mejor de Huelva.`
-              : 'Próximamente encontrarás contenido increíble aquí.'
+            {category === 'noticias'
+              ? `Todos los ${articles.length} artículos sobre Huelva, ordenados por fecha.`
+              : articles.length > 0
+                ? `${articles.length} artículos para descubrir lo mejor de Huelva.`
+                : 'Próximamente encontrarás contenido increíble aquí.'
             }
           </p>
         </div>
