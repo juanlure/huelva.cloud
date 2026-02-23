@@ -7,7 +7,9 @@
     "prebuild": "node scripts/validate-content.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "download-images": "node scripts/download-images.mjs",
+    "download-images:simple": "node scripts/download-images-simple.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.38.0",
