@@ -3,7 +3,7 @@ import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import HeroSection from '@/components/HeroSection';
-import { ArrowRight, TrendingUp, Compass, Clock, Users, Sparkles, MapPin, CalendarDays } from 'lucide-react';
+import { ArrowRight, TrendingUp, Compass, Clock, MapPin, CalendarDays, Star, Award, Sparkles } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -11,134 +11,49 @@ export const revalidate = 0;
 export default async function Home() {
   const articles = await getArticles();
 
-  // Separate featured from regular articles
+  // Get featured and organize content
   const featuredArticle = articles[0];
-  const regularArticles = articles.slice(1, 7);
-  const nowInHuelva = articles.slice(0, 3);
-  const agendaHoy = articles.filter((a) => a.category === 'Eventos').slice(0, 3);
-  const lastUpdated = articles[0]?.date || null;
+  const trendingArticles = articles.slice(1, 7);
+  const gastronomyArticles = articles.filter(a => a.category === 'Gastronomía').slice(0, 3);
+  const guidesArticles = articles.filter(a => a.category === 'Guías Locales').slice(0, 4);
+  const eventsArticles = articles.filter(a => a.category === 'Eventos').slice(0, 3);
 
-  // Interactive guides data - Images from actual Spain/Andalusia locations
-  const interactiveGuides = [
-    {
-      title: 'Guía de Supervivencia en Huelva',
-      subtitle: 'Transporte, horarios, slang y secretos locales',
-      image: '/images/guides/huelva-plaza-las-monjas.jpg',
-      icon: <Compass size={24} />,
-      href: '/guias/supervivencia',
-      badge: 'Lo más leído'
-    },
-    {
-      title: '48 Horas en Huelva',
-      subtitle: 'Un finsemana perfecto: comida, cultura y mar',
-      image: '/images/guides/huelva-plaza-las-monjas.jpg',
-      icon: <Clock size={24} />,
-      href: '/guias/48-horas',
-      badge: 'Itinerario'
-    },
-    {
-      title: 'Traductor de Choco',
-      subtitle: 'Aprende a pedir como un verdadero choquero',
-      image: '/images/guides/choco-frito-tapa.jpg',
-      icon: <Users size={24} />,
-      href: '/guias/choco',
-      badge: 'Interactivo'
-    },
-    {
-      title: 'Traductor de Jamón',
-      subtitle: 'Bellota, Cebo de Campo, Cebo. Las diferencias.',
-      image: '/images/guides/corte-jamon-iberico.jpg',
-      icon: <Users size={24} />,
-      href: '/guias/jamon',
-      badge: 'Nuevo'
-    },
-    {
-      title: 'Traductor de Café',
-      subtitle: 'Solo, Cortado, Mitad, Manchado...',
-      image: '/images/guides/cafe-vaso-huelva.jpg',
-      icon: <Users size={24} />,
-      href: '/guias/cafe',
-      badge: 'Nuevo'
-    },
-    {
-      title: 'Barrios de Huelva',
-      subtitle: 'Encuentra tu barrio perfecto',
-      image: '/images/guides/huelva-plaza-las-monjas.jpg',
-      icon: <Compass size={24} />,
-      href: '/guias/barrios',
-      badge: 'Interactivo'
-    },
-  ];
+  // Stats
+  const stats = {
+    totalArticles: articles.length,
+    totalImages: 43,
+    categories: [...new Set(articles.map(a => a.category))].length,
+    lastUpdated: articles[0]?.date || null
+  };
 
   return (
     <main className="w-full">
-      {/* Hero Section - Dynamic with Framer Motion */}
+      {/* Hero Section */}
       <HeroSection />
 
-      {/* Ahora en Huelva + Agenda de hoy */}
-      <section className="editorial-section bg-sand/40 border-y border-navy-10">
-        <div className="container">
-          <div className="max-w-content mx-auto">
-            {lastUpdated && (
-              <p className="text-sm text-navy-50 mb-8">Última actualización general: {lastUpdated}</p>
-            )}
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-3xl p-6 md:p-8 border border-navy-10">
-                <div className="flex items-center gap-2 mb-4 text-navy">
-                  <MapPin size={18} className="text-terracotta" />
-                  <h3 className="text-display text-2xl font-semibold">Ahora en Huelva</h3>
-                </div>
-                <div className="space-y-4">
-                  {nowInHuelva.map((item) => (
-                    <Link key={item.slug} href={`/article/${item.slug}`} className="block group">
-                      <p className="text-sm text-navy-40 mb-1">{item.category} · {item.date}</p>
-                      <p className="font-semibold text-navy group-hover:text-terracotta transition-colors">{item.title}</p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white rounded-3xl p-6 md:p-8 border border-navy-10">
-                <div className="flex items-center gap-2 mb-4 text-navy">
-                  <CalendarDays size={18} className="text-terracotta" />
-                  <h3 className="text-display text-2xl font-semibold">Agenda de hoy</h3>
-                </div>
-                <div className="space-y-4">
-                  {agendaHoy.length > 0 ? agendaHoy.map((item) => (
-                    <Link key={item.slug} href={`/article/${item.slug}`} className="block group">
-                      <p className="text-sm text-navy-40 mb-1">{item.date}</p>
-                      <p className="font-semibold text-navy group-hover:text-terracotta transition-colors">{item.title}</p>
-                    </Link>
-                  )) : (
-                    <p className="text-navy-50">Estamos preparando la agenda de hoy.</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trending Section */}
-      <section id="trending" className="editorial-section bg-white">
+      {/* Discover Section - Featured Content */}
+      <section id="descubre" className="py-24 bg-cream">
         <div className="container">
           <div className="max-w-content mx-auto">
             {/* Section Header */}
             <div className="flex items-center gap-3 mb-4">
-              <TrendingUp size={20} className="text-terracotta" />
+              <Star size={20} className="text-terracotta" />
               <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                Lo más leído esta semana
+                Destacado
               </span>
             </div>
 
-            <h2 className="text-display text-4xl md:text-5xl font-semibold text-navy mb-16">
-              Tendencias
+            <h2 className="text-display text-4xl md:text-5xl font-semibold text-navy mb-6">
+              Descubre Huelva
             </h2>
+
+            <p className="text-xl text-navy-60 max-w-2xl mb-16">
+              Artículos seleccionados para que empieces a conocer la ciudad como un local.
+            </p>
 
             {/* Featured Article */}
             {featuredArticle && (
-              <div className="mb-16 opacity-0 animate-fade-in-up">
+              <div className="mb-16">
                 <ArticleCard
                   {...featuredArticle}
                   imageUrl={featuredArticle.image}
@@ -150,26 +65,21 @@ export default async function Home() {
               </div>
             )}
 
-            {/* Article Grid - Asymmetric Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {regularArticles.map((article, idx) => (
-                <div
+            {/* Article Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {trendingArticles.map((article, idx) => (
+                <ArticleCard
                   key={article.slug}
-                  className="opacity-0 animate-fade-in-up"
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                >
-                  <ArticleCard
-                    {...article}
-                    imageUrl={article.image}
-                    author={{ name: article.author }}
-                    publishedAt={article.date}
-                    readTime={parseInt(article.readTime)}
-                  />
-                </div>
+                  {...article}
+                  imageUrl={article.image}
+                  author={{ name: article.author }}
+                  publishedAt={article.date}
+                  readTime={parseInt(article.readTime)}
+                />
               ))}
             </div>
 
-            {/* View All Link */}
+            {/* View All */}
             <div className="mt-16 text-center">
               <Link
                 href="/noticias"
@@ -183,86 +93,183 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Interactive Guides Section - Dark */}
-      <section id="guias" className="editorial-section bg-navy text-white relative overflow-hidden">
-        {/* Background Pattern */}
+      {/* Gastronomy Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-50/50 to-transparent" />
+        
+        <div className="container relative z-10">
+          <div className="max-w-content mx-auto">
+            <div className="flex items-center justify-between mb-12">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <Award size={20} className="text-terracotta" />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
+                    Gastronomía
+                  </span>
+                </div>
+                <h2 className="text-display text-4xl font-semibold text-navy">
+                  Comer en Huelva
+                </h2>
+              </div>
+              <Link
+                href="/comer"
+                className="hidden md:inline-flex items-center gap-2 text-terracotta hover:text-terracotta/80 font-medium transition-colors"
+              >
+                <span>Ver todo</span>
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {gastronomyArticles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  {...article}
+                  imageUrl={article.image}
+                  author={{ name: article.author }}
+                  publishedAt={article.date}
+                  readTime={parseInt(article.readTime)}
+                  compact
+                />
+              ))}
+            </div>
+
+            <div className="mt-8 text-center md:hidden">
+              <Link
+                href="/comer"
+                className="inline-flex items-center gap-2 text-terracotta font-medium"
+              >
+                <span>Ver todo</span>
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guides Section - Dark */}
+      <section id="guias" className="py-24 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-grid" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)' }} />
         </div>
 
         <div className="container relative z-10">
           <div className="max-w-content mx-auto">
-            {/* Section Header */}
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold uppercase tracking-widest mb-6">
                 <Sparkles size={16} />
-                <span>Guías Interactivas</span>
+                <span>Guías Locales</span>
               </div>
 
               <h2 className="text-display text-4xl md:text-5xl font-semibold mb-6">
-                No solo información.
-                <br />
-                <span className="text-terracotta italic">Experiencias.</span>
+                Explora la provincia
               </h2>
 
               <p className="text-xl text-white/60 max-w-2xl mx-auto">
-                Descubre Huelva como un local a través de nuestras guías interactivas diseñadas
-                para ayudarte a explorar la ciudad como un verdadero onubense.
+                Desde la capital hasta la Sierra, desde el puerto hasta las playas. 
+                Todo lo que necesitas saber para moverte por Huelva.
               </p>
             </div>
 
-            {/* Guide Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-              {interactiveGuides.map((guide, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {guidesArticles.map((article) => (
                 <Link
-                  key={idx}
-                  href={guide.href}
-                  className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-terracotta/50 transition-all duration-500 hover:scale-[1.02]"
+                  key={article.slug}
+                  href={`/article/${article.slug}`}
+                  className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:border-terracotta/50 transition-all duration-300"
                 >
-                  {/* Image with overlay */}
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <div
                       className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      style={{ backgroundImage: `url(${guide.image})` }}
+                      style={{ backgroundImage: `url(${article.image})` }}
                     >
                       <div className="w-full h-full bg-gradient-to-t from-navy via-navy/50 to-transparent" />
                     </div>
-                    <div className="absolute top-4 left-4">
-                      <span className="badge badge-terracotta">
-                        {guide.badge}
-                      </span>
-                    </div>
                   </div>
 
-                  {/* Content */}
                   <div className="p-6">
-                    <div className="flex items-center gap-3 mb-4 text-terracotta">
-                      {guide.icon}
-                    </div>
-                    <h3 className="text-display text-xl font-semibold text-white mb-3 group-hover:text-terracotta transition-colors">
-                      {guide.title}
+                    <p className="text-white/40 text-sm mb-2">{article.category}</p>
+                    <h3 className="font-semibold text-white text-lg group-hover:text-terracotta transition-colors">
+                      {article.title}
                     </h3>
-                    <p className="text-white/50 text-sm leading-relaxed mb-4">
-                      {guide.subtitle}
-                    </p>
-                    <div className="flex items-center gap-2 text-terracotta font-medium text-sm">
-                      <span>Explorar guía</span>
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
                   </div>
                 </Link>
               ))}
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-white/30 text-sm">Más guías próximamente</p>
+              <Link
+                href="/guias"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all duration-300"
+              >
+                <span>Ver todas las guías</span>
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="py-24 bg-sand/40">
+        <div className="container">
+          <div className="max-w-content mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <CalendarDays size={20} className="text-terracotta" />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
+                    Agenda
+                  </span>
+                </div>
+
+                <h2 className="text-display text-4xl font-semibold text-navy mb-6">
+                  Eventos y planes
+                </h2>
+
+                <p className="text-xl text-navy-60 mb-8">
+                  Desde la Romería del Rocío hasta la Feria de las Colombinas. 
+                  Todo lo que pasa en Huelva y no te puedes perder.
+                </p>
+
+                <Link
+                  href="/eventos"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-terracotta hover:bg-terracotta/90 text-white font-semibold rounded-full transition-all duration-300"
+                >
+                  <span>Ver agenda completa</span>
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+
+              <div className="space-y-4">
+                {eventsArticles.map((article) => (
+                  <Link
+                    key={article.slug}
+                    href={`/article/${article.slug}`}
+                    className="block bg-white rounded-2xl p-6 border border-navy-10 hover:border-terracotta/30 transition-all group"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-20 h-20 rounded-xl bg-cover bg-center flex-shrink-0"
+                        style={{ backgroundImage: `url(${article.image})` }}
+                      />
+                      <div className="flex-1">
+                        <p className="text-sm text-navy-40 mb-1">{article.category}</p>
+                        <h3 className="font-semibold text-navy group-hover:text-terracotta transition-colors mb-2">
+                          {article.title}
+                        </h3>
+                        <p className="text-sm text-navy-50 line-clamp-2">{article.excerpt}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Interactive Quiz Section */}
-      <section className="editorial-section bg-sand">
+      <section className="py-24 bg-white">
         <div className="container">
           <div className="max-w-content mx-auto">
             <div className="text-center mb-12">
@@ -278,48 +285,34 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="editorial-section bg-white">
+      {/* Stats Section */}
+      <section className="py-24 bg-navy text-white">
         <div className="container">
           <div className="max-w-content mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-display text-4xl font-semibold text-navy mb-4">
-                Explora por categoría
-              </h2>
-              <p className="text-navy-60 text-lg">
-                Encuentra exactamente lo que buscas.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { title: 'Comer', icon: '🦐', desc: 'Gastronomía', count: 12, href: '/comer', color: 'bg-orange-50 hover:bg-orange-100' },
-                { title: 'Eventos', icon: '🎭', desc: 'Agenda', count: 8, href: '/eventos', color: 'bg-purple-50 hover:bg-purple-100' },
-                { title: 'Alojarse', icon: '🏨', desc: 'Hoteles', count: 6, href: '/alojarse', color: 'bg-blue-50 hover:bg-blue-100' },
-                { title: 'Guías', icon: '🗺️', desc: 'Descubrir', count: 15, href: '/guias', color: 'bg-green-50 hover:bg-green-100' },
-              ].map((cat, idx) => (
-                <Link
-                  key={cat.title}
-                  href={cat.href}
-                  className="group p-6 rounded-2xl border border-navy-10 hover:border-terracotta/30 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4 ${cat.color} transition-transform group-hover:scale-110`}>
-                    {cat.icon}
-                  </div>
-                  <h3 className="text-display text-lg font-semibold text-navy mb-1 group-hover:text-terracotta transition-colors">
-                    {cat.title}
-                  </h3>
-                  <p className="text-navy-50 text-sm">{cat.desc}</p>
-                  <span className="absolute top-4 right-4 text-xs font-medium text-navy-20">{cat.count}</span>
-                </Link>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div className="p-6">
+                <p className="text-5xl font-bold text-terracotta mb-2">{stats.totalArticles}</p>
+                <p className="text-white/60">Artículos publicados</p>
+              </div>
+              <div className="p-6">
+                <p className="text-5xl font-bold text-terracotta mb-2">{stats.totalImages}</p>
+                <p className="text-white/60">Imágenes</p>
+              </div>
+              <div className="p-6">
+                <p className="text-5xl font-bold text-terracotta mb-2">{stats.categories}</p>
+                <p className="text-white/60">Categorías</p>
+              </div>
+              <div className="p-6">
+                <p className="text-5xl font-bold text-terracotta mb-2">∞</p>
+                <p className="text-white/60">Chocos fritos</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Newsletter CTA */}
-      <section className="editorial-section bg-terracotta text-white relative overflow-hidden">
+      <section className="py-24 bg-terracotta text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid opacity-10" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)' }} />
         </div>
@@ -340,7 +333,7 @@ export default async function Home() {
                 placeholder="tu@email.com"
                 className="flex-1 px-6 py-4 rounded-full text-navy focus:outline-none focus:ring-4 focus:ring-white/30 bg-white"
               />
-              <button className="btn btn-secondary bg-navy hover:bg-navy-900">
+              <button className="px-8 py-4 bg-navy hover:bg-navy/90 text-white font-semibold rounded-full transition-colors">
                 Suscribirse
               </button>
             </div>

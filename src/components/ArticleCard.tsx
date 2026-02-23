@@ -19,6 +19,7 @@ interface ArticleCardProps {
   readTime: number;
   slug: string;
   featured?: boolean;
+  compact?: boolean;
 }
 
 // Category-based styling
@@ -60,6 +61,7 @@ export default function ArticleCard({
   readTime,
   slug,
   featured = false,
+  compact = false,
 }: ArticleCardProps) {
   const [isSaved, setIsSaved] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -76,7 +78,7 @@ export default function ArticleCard({
     <motion.div
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      whileHover={{
+      whileHover={compact ? { y: -4 } : {
         y: -8,
         rotateX: 2,
         rotateY: -1,
@@ -88,9 +90,9 @@ export default function ArticleCard({
         damping: 20
       }}
       style={{ perspective: 1000 }}
-      className={`group bg-white rounded-3xl overflow-hidden border border-navy-10 hover:shadow-xl transition-all duration-500 ${style.border} ${
+      className={`group bg-white rounded-2xl overflow-hidden border border-navy-10 hover:shadow-lg transition-all duration-500 ${style.border} ${
         featured ? 'md:grid md:grid-cols-2 md:gap-0' : 'flex flex-col h-full'
-      }`}
+      } ${compact ? 'hover:shadow-md' : 'hover:shadow-xl'}`}
     >
       {/* Image Section */}
       {imageUrl ? (
@@ -190,49 +192,57 @@ export default function ArticleCard({
       )}
 
       {/* Content Section */}
-      <div className={`p-6 flex flex-col ${featured ? 'md:p-10' : 'flex-1'} ${style.bg} transition-colors duration-300`}>
+      <div className={`${compact ? 'p-4' : 'p-6'} flex flex-col ${featured ? 'md:p-10' : 'flex-1'} ${style.bg} transition-colors duration-300`}>
         {/* Meta */}
-        <div className="flex items-center gap-4 text-xs text-navy-40 mb-4">
-          <span className="font-semibold uppercase tracking-wider text-navy-60">
+        <div className={`flex items-center gap-4 text-xs text-navy-40 mb-3 ${compact ? 'mb-2' : 'mb-4'}`}>
+          <span className={`font-semibold uppercase tracking-wider text-navy-60 ${compact ? 'text-[10px]' : ''}`}>
             {author.name}
           </span>
-          <span className="w-1 h-1 rounded-full bg-navy-20" />
-          <div className="flex items-center gap-1.5">
-            <Clock size={14} className={style.accent} />
-            <span>{readTime} min</span>
-          </div>
+          {!compact && (
+            <>
+              <span className="w-1 h-1 rounded-full bg-navy-20" />
+              <div className="flex items-center gap-1.5">
+                <Clock size={14} className={style.accent} />
+                <span>{readTime} min</span>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Title */}
-        <h3 className="text-display font-semibold text-navy mb-3 group-hover:text-terracotta transition-colors duration-300">
+        <h3 className={`text-display font-semibold text-navy mb-2 group-hover:text-terracotta transition-colors duration-300 ${compact ? 'text-base mb-2' : 'text-lg mb-3'}`}>
           <Link href={`/article/${slug}`} className="hover:underline decoration-terracotta/30 underline-offset-4">
             {title}
           </Link>
         </h3>
 
-        {/* Excerpt */}
-        <p className="text-navy-60 text-sm leading-relaxed mb-6 line-clamp-3">
-          {excerpt}
-        </p>
+        {/* Excerpt - hidden in compact mode */}
+        {!compact && (
+          <p className="text-navy-60 text-sm leading-relaxed mb-6 line-clamp-3">
+            {excerpt}
+          </p>
+        )}
 
         {/* Footer */}
-        <div className="mt-auto pt-4 border-t border-navy-10 flex items-center justify-between">
+        <div className={`flex items-center justify-between ${compact ? 'mt-auto pt-3' : 'mt-auto pt-4 border-t border-navy-10'}`}>
           <Link
             href={`/article/${slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-terracotta transition-colors group/link"
+            className={`inline-flex items-center gap-2 font-semibold text-navy hover:text-terracotta transition-colors group/link ${compact ? 'text-xs' : 'text-sm'}`}
           >
             <span>Leer más</span>
             <motion.span
               animate={{ x: isHovered ? 4 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              <ArrowRight size={16} />
+              <ArrowRight size={compact ? 14 : 16} />
             </motion.span>
           </Link>
 
-          <span className="text-xs text-navy-30">
-            {formatDate(publishedAt)}
-          </span>
+          {!compact && (
+            <span className="text-xs text-navy-30">
+              {formatDate(publishedAt)}
+            </span>
+          )}
         </div>
       </div>
     </motion.div>
