@@ -2,13 +2,13 @@ import { LOCAL_ARTICLES, LocalArticle } from '@/content/articles';
 import { CATEGORY_MAP } from './constants';
 
 const CATEGORY_FALLBACK_IMAGE: Record<string, string> = {
-  'noticias': '/images/guides/huelva-plaza-las-monjas.jpg',
-  'eventos': '/images/guides/huelva-plaza-las-monjas.jpg',
+  'noticias': '/images/guides/huelva-puerto.jpg',
+  'eventos': '/images/guides/fiesta-tradicional-huelva.jpg',
   'gastronomía': '/images/guides/coquinas-huelva.jpg',
   'gastronomia': '/images/guides/coquinas-huelva.jpg',
-  'alojamiento': '/images/guides/huelva-plaza-las-monjas.jpg',
-  'guías locales': '/images/guides/huelva-plaza-las-monjas.jpg',
-  'guias locales': '/images/guides/huelva-plaza-las-monjas.jpg',
+  'alojamiento': '/images/guides/sierra-aracena.jpg',
+  'guías locales': '/images/guides/muelle-tinto.jpg',
+  'guias locales': '/images/guides/muelle-tinto.jpg',
 };
 
 function normalizeCategory(category: string): string {
