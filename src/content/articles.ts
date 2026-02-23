@@ -1272,5 +1272,330 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>En Huelva no se viene de compras. Se compra lo que se necesita, y se encuentra lo que no se buscaba.</blockquote>
     `
+  },
+
+  // ─── 10 ARTÍCULOS CON NUEVAS IMÁGENES (35-44) ──────────────────
+
+  // 35. Tren Minero de Riotinto
+  {
+    slug: 'tren-minero-riotinto-viaje-historia',
+    title: 'Tren Minero de Riotinto: viaje al corazón de la historia',
+    excerpt: 'Sube al tren minero de Riotinto y recorre 22 kilómetros de historia, paisajes de otro planeta y el legado británico de Huelva.',
+    category: 'Guías Locales',
+    image: '/images/guides/tren-minero-riotinto.jpg',
+    publishedAt: '2026-02-23T21:30:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Tren Minero de Riotinto no es un tren turístico cualquiera. Es una máquina del tiempo sobre raíles que te lleva a través de 22 kilómetros de historia, desde la época británica hasta los paisajes más alienígenas de España.</p>
+
+      <h2>El recorrido</h2>
+      <p>Salida desde la estación de Riotinto, antiguo centro de operaciones de la Rio Tinto Company Limited. El tren recorre el valle del Tinto, pasando por túneles excavados en la roca, puentes de hierro del siglo XIX, y paisajes que la NASA estudió por su similitud con Marte.</p>
+
+      <h2>Qué verás desde el vagón</h2>
+      <ul>
+        <li><strong>Corta Atalaya:</strong> la mina a cielo abierto más grande de Europa en su época.</li>
+        <li><strong>Río Tinto:</strong> aguas rojas, ácidas, únicas en el mundo. Color que no parece de este planeta.</li>
+        <li><strong>Estaciones históricas:</strong> construcciones victorianas que sobreviven como fantasmas de la época dorada.</li>
+      </ul>
+
+      <h2>Detalles prácticos</h2>
+      <p>Duración: 1 hora y 45 minutos ida y vuelta. Precio: 12-15€ adultos, descuentos para niños y grupos. Horarios: fines de semana todo el año, diario en verano. Reserva recomendada.</p>
+
+      <h2>Combinar con</h2>
+      <p>Museo Minero (en la misma estación), Peña de Hierro (mirador sobre el corta), y el pueblo de Nerva para comer. Media jornada completa.</p>
+
+      <blockquote>El Tren Minero no te lleva a un destino. Te lleva a otro tiempo, a otro color, a otra forma de entender Huelva.</blockquote>
+    `
+  },
+
+  // 36. Fresas de Huelva
+  {
+    slug: 'fresas-huelva-rojas-oro-rojo',
+    title: 'Fresas de Huelva: el oro rojo de la provincia',
+    excerpt: 'La fresa onubense es la mejor de España. Descubre por qué, dónde comprarlas y cómo disfrutarlas en temporada.',
+    category: 'Gastronomía',
+    image: '/images/guides/fresas-huelva.jpg',
+    publishedAt: '2026-02-23T21:35:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>Huelva produce el 90% de las fresas de España y exporta a toda Europa. No es casualidad: el clima suave del oeste andaluz, la tierra arenosa, y décadas de experiencia han convertido a la provincia en la capital europea de la fresa.</p>
+
+      <h2>Por qué son diferentes</h2>
+      <p>Las fresas de Huelva tienen aroma intenso, dulzor equilibrado, y textura firme. No son las fresas de invernadero de otros sitios: son producto de campo, cultivadas al aire libre en su mayoría, con técnicas que han perfeccionado generaciones de agricultores.</p>
+
+      <h2>Temporada</h2>
+      <p>Principalmente diciembre a mayo, con pico en marzo-abril. Fuera de temporada, lo que encuentres probablemente viene de otros lugares o es de invernadero con menor calidad.</p>
+
+      <h2>Dónde comprar</h2>
+      <ul>
+        <li><strong>Mercado del Carmen:</strong> puestos de productores locales con fresas recién recogidas.</li>
+        <li><strong>Carreteras de la comarca:</strong> venta directa en puestos de campo (más baratas, más frescas).</li>
+        <li><strong>Supermercados:</strong> busca el origen "Huelva" en la etiqueta.</li>
+      </ul>
+
+      <h2>Más que fresa natural</h2>
+      <p>La industria transformadora elabora mermeladas, licores, yogures, y postres. La fresa de Huelva es ingrediente, recuerdo, y motor económico de la provincia.</p>
+
+      <blockquote>Una fresa de Huelva en su punto no necesita azúcar. Ya tiene todo lo que debe tener.</blockquote>
+    `
+  },
+
+  // 37. Naranjas de Huelva
+  {
+    slug: 'naranjas-huelva-citricos-condado',
+    title: 'Naranjas de Huelva: el cítrico del Condado',
+    excerpt: 'El Condado de Huelva produce naranjas de mesa con denominación de origen. Cómo reconocerlas y disfrutarlas.',
+    category: 'Gastronomía',
+    image: '/images/guides/naranjas-huelva.png',
+    publishedAt: '2026-02-23T21:40:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>El Condado de Huelva, la comarca al este de la capital, es tierra de naranjos desde hace siglos. Aquí se cultivan naranjas de mesa con denominación de origen protegida: dulces, jugosas, con el punto ácido justo que las hace equilibradas.</p>
+
+      <h2>Variedades principales</h2>
+      <ul>
+        <li><strong>Navelate:</strong> la reina, sin pepitas, dulce, de fácil pelado.</li>
+        <li><strong>Navelina:</strong> similar, madura antes, algo más ácida.</li>
+        <li><strong>Salustiana:</strong> muy jugosa, ideal para zumo.</li>
+      </ul>
+
+      <h2>Temporada</h2>
+      <p>Noviembre a mayo, dependiendo de la variedad. Enero y febrero son los meses de mejor calidad-precio: la naranja ha acumulado azúcares durante el frío invernal.</p>
+
+      <h2>La diferencia del Condado</h2>
+      <p>El microclima de la comarca —temperaturas suaves, humedad del Atlántico, tierra fértil— produce naranjas con más jugo y mejor conservación que las de otras zonas. La Denominación de Origen protege este saber hacer.</p>
+
+      <h2>Dónde comprar</h2>
+      <p>Mercado del Carmen, cooperativas agrícolas del Condado, y venta directa en las carreteras de la comarca (A-472, A-493). Precio en origen: 1-2€/kg según calidad y temporada.</p>
+
+      <blockquote>La naranja del Condado no es solo fruta. Es el sabor del invierno onubense, exprimido.</blockquote>
+    `
+  },
+
+  // 38. Casa de los Pinzón
+  {
+    slug: 'casa-pinzon-palos-frontera-visita',
+    title: 'Casa de los Pinzón: los capitanes olvidados del Descubrimiento',
+    excerpt: 'Visita la Casa de los Pinzón en Palos de la Frontera, hogar de los hermanos que capitaneaban las naves de Colón.',
+    category: 'Guías Locales',
+    image: '/images/guides/casa-pinzon.jpg',
+    publishedAt: '2026-02-23T21:45:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Mientras Colón se lleva los libros de historia, los hermanos Pinzón hicieron el trabajo real. Martín Alonso, Vicente Yáñez y Francisco Martín nacieron en Palos de la Frontera, y desde su casa familiar organizaron la tripulación, financiaron parte de la expedición, y capitaneaban la Pinta, la Niña y la Santa María.</p>
+
+      <h2>La casa hoy</h2>
+      <p>Casa-museo en el centro de Palos que recrea la vivienda de la familia Pinzón. No es la casa original (destruida en el siglo XIX), sino una reconstrucción fiel en el mismo solar, con elementos arquitectónicos de la época.</p>
+
+      <h2>Qué ver</h2>
+      <ul>
+        <li><strong>Reconstrucción de estancias:</strong> cómo vivía una familia de marineros adinerados del siglo XV.</li>
+        <li><strong>Maquetas de las carabelas:</strong> diferencias entre la Pinta, la Niña y la Santa María.</li>
+        <li><strong>Documentación:</strong> contratos, cartas, y la historia real de quién hizo qué en 1492.</li>
+      </ul>
+
+      <h2>Los Pinzón vs Colón</h2>
+      <p>Martín Alonso Pinzón comandó la Pinta y fue el verdadero experto navegante. Muchos historiadores sostienen que sin los Pinzón, la expedición no hubiera salido adelante. Esta casa es homenaje a los olvidados.</p>
+
+      <h2>Visita combinada</h2>
+      <p>Entrada gratuita. Combinar con Monasterio de La Rábida (2 km), Fuente Santa (donde se reclutó la tripulación), y Muelle de las Carabelas. Media jornada colombina completa.</p>
+
+      <blockquote>Colón tuvo la idea. Los Pinzón la hicieron realidad. Esta casa es de los que ejecutan, no de los que firman.</blockquote>
+    `
+  },
+
+  // 39. Fuente Santa
+  {
+    slug: 'fuente-santa-palos-historia-colon',
+    title: 'Fuente Santa: donde se gestó la tripulación del Descubrimiento',
+    excerpt: 'La Fuente Santa de Palos de la Frontera es el lugar donde se reclutó a los marineros que cambiaron la historia.',
+    category: 'Guías Locales',
+    image: '/images/guides/fuente-santa.png',
+    publishedAt: '2026-02-23T21:50:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>La Fuente Santa es solo una fuente. Pero es LA fuente. Aquí, en 1492, Martín Alonso Pinzón convenció a los marineros de Palos para que se embarcaran en una expedición loca comandada por un extranjero con ideas raras. Sin esa fuente, quizás no hubiera Descubrimiento.</p>
+
+      <h2>El lugar</h2>
+      <p>Fuente pública del siglo XV, reconstruida varias veces, situada en una plaza peatonal del centro de Palos. Agua que sigue corriendo, como hace 500 años.</p>
+
+      <h2>La historia</h2>
+      <p>Los pinzones tenían una deuda con la Corona. Para saldarla, debían proporcionar dos carabelas y tripulación. Martín Alonso Pinzón se plantó junto a esta fuente y convenció a sus paisanos. La oferta: participar en algo peligroso pero potencialmente rentable.</p>
+
+      <h2>El resultado</h2>
+      <p>De los 90 marineros que partieron, 49 eran de Palos y Moguer. La mayoría volvieron. Algunos se quedaron en el Caribe. La Fuente Santa es el origen de la primera globalización.</p>
+
+      <h2>Cómo llegar</h2>
+      <p>En el centro de Palos de la Frontera, a 2 minutos a pie de la Casa de los Pinzón. Placa conmemorativa, bancos, ambiente de pueblo. Visita gratuita, 10 minutos suficientes.</p>
+
+      <blockquote>La Fuente Santa no es monumento. Es el lugar donde la historia cambió de río, no de agua.</blockquote>
+    `
+  },
+
+  // 40. Estación de Tren de Huelva
+  {
+    slug: 'estacion-tren-huelva-historia-arquitectura',
+    title: 'Estación de tren de Huelva: la puerta de hierro de la ciudad',
+    excerpt: 'Historia y arquitectura de la estación de tren de Huelva, punto de entrada a la capital onubense desde 1880.',
+    category: 'Guías Locales',
+    image: '/images/guides/estacion-tren-huelva.jpg',
+    publishedAt: '2026-02-23T21:55:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>La estación de tren de Huelva es la primera impresión que muchos viajeros tienen de la ciudad. Edificio funcional, heredero de la época en que el ferrocarril era el verdadero motor de la provincia: el tren de las minas, el tren de Sevilla, el tren que conectaba Huelva con el mundo.</p>
+
+      <h2>Historia de la estación</h2>
+      <p>Inaugurada en 1880, durante la época dorada de la Rio Tinto Company Limited. El ferrocarril unió las minas de Riotinto con el puerto de Huelva, y la estación se convirtió en centro neurálgico de la ciudad. Reformada en el siglo XX, mantiene la estructura original.</p>
+
+      <h2>Arquitectura</h2>
+      <p>Edificio de ladrillo visto con elementos neomudéjares típicos del ferrocarril español de finales del XIX. El andén cubierto, el vestíbulo, y la fachada principal conservan el aire de estación de provincias de la España industrial.</p>
+
+      <h2>Servicios actuales</h2>
+      <ul>
+        <li><strong>Media Distancia:</strong> conexiones con Sevilla, Córdoba, Madrid (con transbordo).</li>
+        <li><strong>Cercanías:</strong> línea Sevilla-Huelva, frecuente y económica.</li>
+        <li><strong>Estación de autobuses:</strong> junto a la de tren, para conexiones provinciales.</li>
+      </ul>
+
+      <h2>Acceso al centro</h2>
+      <p>La estación está a 15 minutos a pie del centro histórico. Taxi en la salida (unos 6-8€ al centro). Autobús urbano: líneas que conectan con la Gran Vía y el centro.</p>
+
+      <blockquote>La estación de Huelva es umbral: entras por una provincia industrial del siglo XIX y sales a una ciudad del siglo XXI que aún respira ese pasado.</blockquote>
+    `
+  },
+
+  // 41. Puente Internacional del Guadiana
+  {
+    slug: 'puente-internacional-guadiana-frontera',
+    title: 'Puente Internacional: cruzar el Guadiana hacia Portugal',
+    excerpt: 'Guía del Puente Internacional del Guadiana: cómo cruzar de España a Portugal, historia de la frontera y qué encontrar al otro lado.',
+    category: 'Guías Locales',
+    image: '/images/guides/puente-internacional.jpg',
+    publishedAt: '2026-02-23T22:00:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>El Puente Internacional del Guadiana une Ayamonte (Huelva) con Vila Real de Santo António (Algarve, Portugal). Es una frontera sin frontera: Schengen permite el paso sin controles, aunque cambias de país, de moneda (si usas efectivo), y sobre todo, de hora: Portugal tiene una menos.</p>
+
+      <h2>El puente</h2>
+      <p>Inaugurado en 1991, mide 666 metros de longitud. Diseño funcional, sin pretensiones arquitectónicas monumentales, pero con vistas espectaculares sobre la desembocadura del Guadiana. Peaje en sentido Portugal (unos 2€).</p>
+
+      <h2>Cómo cruzar</h2>
+      <ul>
+        <li><strong>Coche:</strong> más común. Peaje solo hacia Portugal, gratis de vuelta.</li>
+        <li><strong>Ferry:</strong> en verano hay barcas que cruzan el río (más lento, más pintoresco).</li>
+        <li><strong>A pie:</strong> no hay paso peatonal por el puente. Debes ir en transporte.</li>
+      </ul>
+
+      <h2>Qué encontrar al otro lado</h2>
+      <p>Vila Real de Santo António es el gemelo portugués de Ayamonte: pueblo de pescadores, playas, marisco. Diferencias notables: precios similares, lengua diferente, y el café espresso es más fuerte.</p>
+
+      <h2>El cambio de hora</h2>
+      <p>Es el detalle más surrealista. Cruzas el puente y tu móvil atrasa una hora automáticamente. Si quedas con alguien, especifica "hora española" o "hora portuguesa".</p>
+
+      <blockquote>El Puente Internacional es frontera sin frontera: pasas de España a Portugal sin saber muy bien cuándo, solo tu móvil te lo confirma.</blockquote>
+    `
+  },
+
+  // 42. Parque Moret
+  {
+    slug: 'parque-moret-huelva-respiro-verde',
+    title: 'Parque Moret: el pulmón verde de Huelva capital',
+    excerpt: 'Guía del Parque Moret de Huelva: historia, qué ver, y por qué es el lugar favorito de los onubenses para desconectar.',
+    category: 'Guías Locales',
+    image: '/images/guides/parque-moret.jpg',
+    publishedAt: '2026-02-23T22:05:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva es una ciudad industrial, portuaria, con pocas zonas verdes. El Parque Moret es la excepción: 20 hectáreas de vegetación, estanques, paseos y árboles centenarios que ofrecen respiro a una ciudad que lo necesita.</p>
+
+      <h2>Historia del parque</h2>
+      <p>Antiguos terrenos de la familia Moret, terratenientes onubenses. Cedidos al municipio en el siglo XX, transformados en parque público. Conserva la casa señorial (hoy centro cultural) y el jardín histórico.</p>
+
+      <h2>Qué hacer en el Moret</h2>
+      <ul>
+        <li><strong>Pasear:</strong> senderos arbolados, bancos para sentarse, sombra en verano.</li>
+        <li><strong>Estanque:</strong> patos, tortugas, y el juego favorito de los niños: tirar pan.</li>
+        <li><strong>Casa Moret:</strong> ocasionalmente exposiciones y eventos culturales.</li>
+        <li><strong>Área de juegos:</strong> columpios y espacios para niños.</li>
+      </ul>
+
+      <h2>Para quién es</h2>
+      <p>Para familias con niños (los domingos por la mañana es inevitable). Para mayores que pasean en grupos. Para quien necesita sombra en agosto. Para los que quieren leer un rato sin ruido de coches.</p>
+
+      <h2>Ubicación y acceso</h2>
+      <p>Al oeste del centro, cerca de la zona de El Conquero. Autobús urbano, aparcamiento en zona. Acceso peatonal desde varios puntos.</p>
+
+      <blockquote>El Parque Moret no es Central Park. Es humilde, pequeño, y precisamente por eso es de los onubenses: no viene nadie de fuera, solo los que necesitan un respiro.</blockquote>
+    `
+  },
+
+  // 43. Baluarte de la Concepción
+  {
+    slug: 'baluarte-concepcion-huelva-fortaleza',
+    title: 'Baluarte de la Concepción: fortaleza olvidada en el puerto',
+    excerpt: 'Historia del Baluarte de la Concepción, la fortaleza defensiva del puerto de Huelva que resistió piratas y corsarios.',
+    category: 'Guías Locales',
+    image: '/images/guides/baluarte-huelva.jpg',
+    publishedAt: '2026-02-23T22:10:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>El Baluarte de la Concepción es una fortaleza del siglo XVII situada en el entorno del puerto de Huelva. Construido para defender la ría de piratas, corsarios y potencias enemigas, hoy es un vestigio histórico poco conocido incluso por los propios onubenses.</p>
+
+      <h2>Historia defensiva</h2>
+      <p>Época de oro del comercio colonial: Huelva era puerto de paso hacia las Indias. El baluarte formaba parte de un sistema defensivo que incluía torres de vigilancia costera, fuertes, y baterías. Nunca tuvo que defenderse de un ataque serio, pero su mera presencia disuadía.</p>
+
+      <h2>Arquitectura militar</h2>
+      <p>Construcción de piedra con planta estrellada, cañoneras orientadas al mar, y murallas de más de dos metros de grosor. Diseño funcional: resistir bombarda y permitir el fuego cruzado de artillería.</p>
+
+      <h2>Estado actual</h2>
+      <p>En proceso de restauración durante años. El acceso es limitado, aunque ocasionalmente se organizan visitas guiadas. El exterior se puede observar desde el entorno portuario.</p>
+
+      <h2>Ubicación</h2>
+      <p>En la zona del puerto, cerca del Muelle del Tinto. Acceso complicado (zona portuaria industrial), pero visible desde ciertos puntos.</p>
+
+      <blockquote>El Baluarte de la Concepción es la memoria de cuando Huelva tenía que defenderse del mundo, en lugar de comerciar con él.</blockquote>
+    `
+  },
+
+  // 44. Cruz de Mayo
+  {
+    slug: 'cruz-mayo-huelva-tradicion-flores',
+    title: 'Cruz de Mayo en Huelva: tradición, flores y devoción',
+    excerpt: 'La fiesta de las Cruces de Mayo en Huelva: historia, dónde verlas, y por qué esta tradición sigue viva en la provincia.',
+    category: 'Eventos',
+    image: '/images/guides/cruz-mayo-huelva.png',
+    publishedAt: '2026-02-23T22:15:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Cada 3 de mayo, Huelva se llena de flores. La Fiesta de las Cruces es una tradición que mezcla devoción religiosa con concurso popular: cruces elaboradas con flores, plantas, y objetos cotidianos, expuestas en plazas, calles, y patios de vecinos.</p>
+
+      <h2>Origen de la tradición</h2>
+      <p>La leyenda dice que Constantino vio una cruz en el cielo antes de una batalla. La victoria convirtió el símbolo en sagrado. En España, la tradición de las cruces de mayo viene del siglo XV, pero en Huelva tomó fuerza especialmente en barrios obreros como forma de expresión colectiva.</p>
+
+      <h2>Cómo son las cruces</h2>
+      <ul>
+        <li><strong>Cruces vivas:</strong> estructura de madera cubierta de flores frescas.</li>
+        <li><strong>Cruces de patio:</strong> instaladas en espacios privados, abiertas al público.</li>
+        <li><strong>Cruces de calle:</strong> organizadas por asociaciones de vecinos en plazas y rincones.</li>
+      </ul>
+
+      <h2>Dónde verlas</h2>
+      <p>Barrios tradicionales: El Torrejón, Barrio Obrero, Zona Centro. Cada cruz compite por premios, pero la verdadera recompensa es el reconocimiento vecinal. Se acompaña de música, pescaíto frito, y ambiente de barrio.</p>
+
+      <h2>Cuándo es</h2>
+      <p>El 3 de mayo, aunque los preparativos empiezan días antes y algunas cruces permanecen más tiempo. La noche del 2 al 3 es cuando se montan, y el día 3 es la procesión y los premios.</p>
+
+      <blockquote>La Cruz de Mayo no es solo religión. Es competencia vecinal, orgullo de barrio, y la prueba de que en Huelva, la belleza se hace entre todos.</blockquote>
+    `
   }
 ];
