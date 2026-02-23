@@ -65,40 +65,63 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </header>
 
-      {/* Articles Grid */}
+      {/* Articles Grid / Noticias List */}
       <section className={styles.content}>
         <div className="container">
-          <div className={styles.grid}>
-            {articles.length > 0 ? (
-              articles.map((article, idx) => (
-                <ArticleCard
-                  key={idx}
-                  {...article}
-                  imageUrl={article.image}
-                  publishedAt={article.date}
-                  readTime={parseInt(article.readTime)}
-                  author={{ name: article.author }}
-                />
-              ))
-            ) : (
-              <div className={styles.emptyState}>
-                <p className="font-display text-xl text-navy mb-2">
-                  Próximamente
-                </p>
-                <p className="text-navy/50">
-                  Estamos preparando contenido increíble sobre {title.toLowerCase()}.
-                  Mientras tanto, explora nuestras otras categorías.
-                </p>
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta-500 transition-colors"
-                >
-                  Volver al inicio
-                  <ArrowLeft size={18} />
-                </Link>
+          {articles.length > 0 ? (
+            category === 'noticias' ? (
+              <div className="max-w-4xl mx-auto space-y-4">
+                {articles.map((article, idx) => (
+                  <Link
+                    key={article.slug || idx}
+                    href={`/article/${article.slug}`}
+                    className="block bg-white rounded-2xl border border-navy/10 p-6 hover:border-terracotta/30 hover:shadow-sm transition-all"
+                  >
+                    <div className="flex items-center justify-between gap-4 mb-2">
+                      <span className="text-xs uppercase tracking-wider text-terracotta font-semibold">
+                        {article.source || 'Redacción Huelva.cloud'}
+                      </span>
+                      <span className="text-xs text-navy/50">{article.date}</span>
+                    </div>
+                    <h3 className="font-display text-2xl text-navy leading-tight mb-2 hover:text-terracotta transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-navy/70 leading-relaxed">{article.excerpt}</p>
+                  </Link>
+                ))}
               </div>
-            )}
-          </div>
+            ) : (
+              <div className={styles.grid}>
+                {articles.map((article, idx) => (
+                  <ArticleCard
+                    key={idx}
+                    {...article}
+                    imageUrl={article.image}
+                    publishedAt={article.date}
+                    readTime={parseInt(article.readTime)}
+                    author={{ name: article.author }}
+                  />
+                ))}
+              </div>
+            )
+          ) : (
+            <div className={styles.emptyState}>
+              <p className="font-display text-xl text-navy mb-2">
+                Próximamente
+              </p>
+              <p className="text-navy/50">
+                Estamos preparando contenido increíble sobre {title.toLowerCase()}.
+                Mientras tanto, explora nuestras otras categorías.
+              </p>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta-500 transition-colors"
+              >
+                Volver al inicio
+                <ArrowLeft size={18} />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
     </main>

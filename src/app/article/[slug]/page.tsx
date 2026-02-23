@@ -96,20 +96,22 @@ export default async function ArticlePage({ params }: PageProps) {
         )}
 
         <div className="mt-6 text-sm text-navy-50">
-          <p>Fuente: Redacción Huelva.is + fuentes locales verificadas</p>
+          <p>Fuente: {article.source ? `Redacción Huelva.cloud (fuente consultada: ${article.source})` : 'Redacción Huelva.cloud + fuentes locales verificadas'}</p>
           <p>Fecha de publicación: {article.date}</p>
         </div>
       </header>
 
-      {/* Hero Image */}
-      <figure className={styles.heroImage}>
-        <img
-          src={article.image || '/images/placeholder.jpg'}
-          alt={article.title}
-          className={styles.heroImg}
-          loading="eager"
-        />
-      </figure>
+      {/* Hero Image (solo si existe) */}
+      {article.image && (
+        <figure className={styles.heroImage}>
+          <img
+            src={article.image}
+            alt={article.title}
+            className={styles.heroImg}
+            loading="eager"
+          />
+        </figure>
+      )}
 
       {/* Main Content */}
       <main className={styles.articleContent}>

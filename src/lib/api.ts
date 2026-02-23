@@ -58,8 +58,8 @@ export interface Article {
   author: string;
   isAi: boolean;
   external?: boolean;
-  externalUrl?: string;
   source?: string;
+  sourceDate?: string;
 }
 
 // Tipo para noticias externas
@@ -70,7 +70,7 @@ interface ExternalNewsItem {
   publishedAt: string;
   source: string;
   category: string;
-  image: string;
+  image: string | null;
   external: boolean;
 }
 
@@ -96,20 +96,21 @@ function mapArticle(article: LocalArticle): Article {
 }
 
 function mapExternalNews(news: ExternalNewsItem): Article {
+  const humanDate = new Date(news.publishedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
   return {
     slug: `external-${Buffer.from(news.url).toString('base64').substring(0, 20)}`,
     title: news.title,
     excerpt: news.excerpt,
-    content: `<p>${news.excerpt}</p><p><a href="${news.url}" target="_blank" rel="noopener noreferrer">Leer noticia completa en ${news.source} →</a></p>`,
+    content: `<p>${news.excerpt}</p><p><strong>Fuente consultada:</strong> ${news.source} (${humanDate}).</p>`,
     category: 'Noticias',
-    image: news.image,
-    date: new Date(news.publishedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }),
+    image: news.image || null,
+    date: humanDate,
     readTime: '2 min',
-    author: news.source,
+    author: 'Redacción Huelva.cloud',
     isAi: false,
     external: true,
-    externalUrl: news.url,
     source: news.source,
+    sourceDate: humanDate,
   };
 }
 

@@ -21,7 +21,6 @@ interface ArticleCardProps {
   featured?: boolean;
   compact?: boolean;
   external?: boolean;
-  externalUrl?: string;
 }
 
 // Category-based styling
@@ -65,7 +64,6 @@ export default function ArticleCard({
   featured = false,
   compact = false,
   external = false,
-  externalUrl,
 }: ArticleCardProps) {
   const [isSaved, setIsSaved] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -78,24 +76,10 @@ export default function ArticleCard({
   const normalizedCategory = category.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const style = categoryStyles[normalizedCategory] || categoryStyles['default'];
 
-  // Determinar el href y el comportamiento
-  const href = external && externalUrl ? externalUrl : `/article/${slug}`;
-  const isExternal = external && externalUrl;
+  const href = `/article/${slug}`;
+  const isExternal = external;
 
-  // Wrapper para el link externo
   const LinkWrapper = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-    if (isExternal) {
-      return (
-        <a 
-          href={href} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {children}
-        </a>
-      );
-    }
     return <Link href={href} className={className}>{children}</Link>;
   };
 

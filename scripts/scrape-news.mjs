@@ -133,7 +133,7 @@ function normalizeRssItem(item, sourceName) {
   const rawLink = typeof item?.link === 'string' ? item.link : (item?.link?.href || '');
   const link = encodeURI(rawLink);
   const publishedAt = item?.pubDate || item?.published || item?.updated || new Date().toISOString();
-  const image = imageFromItem(item) || '/images/guides/huelva-puerto.jpg';
+  const image = imageFromItem(item) || null;
 
   // Filtro básico para evitar piezas no-noticia
   if (/podcast|audio|galeria|opinion/i.test(`${title} ${link}`)) return null;
@@ -198,7 +198,7 @@ async function tryHtmlFallback(source) {
     publishedAt: new Date().toISOString(),
     source: source.name,
     category: 'Noticias',
-    image: '/images/guides/huelva-puerto.jpg',
+    image: null,
     external: true
   };
 }
