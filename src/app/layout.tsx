@@ -29,8 +29,46 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Huelva.cloud | La guía honesta de Huelva",
-  description: "Descubre Huelva sin turismos. Guía local escrita por choqueros para quienes quieren vivir Huelva de verdad.",
+  title: {
+    default: "Huelva.cloud | Guía Local 2026 - Qué Ver, Dónde Comer y Eventos",
+    template: "%s | Huelva.cloud"
+  },
+  description: "Guía local de Huelva escrita por onubenses. Descubre qué ver, dónde comer (choco frito, coquinas), eventos 2026 y los mejores planes. Sin tópicos turísticos.",
+  keywords: "Huelva, qué ver en Huelva, dónde comer en Huelva, choco frito Huelva, coquinas Huelva, eventos Huelva 2026, guía Huelva, turismo Huelva, Andalucía",
+  authors: [{ name: "Huelva.cloud" }],
+  creator: "Huelva.cloud",
+  publisher: "Huelva.cloud",
+  metadataBase: new URL("https://huelva.cloud"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Huelva.cloud | Guía Local 2026 - Qué Ver, Dónde Comer y Eventos",
+    description: "Guía local de Huelva escrita por onubenses. Descubre qué ver, dónde comer (choco frito, coquinas), eventos 2026 y los mejores planes.",
+    url: "https://huelva.cloud",
+    siteName: "Huelva.cloud",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Huelva.cloud | Guía Local 2026",
+    description: "Guía local de Huelva escrita por onubenses. Qué ver, dónde comer, eventos 2026.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "tu-codigo-verificacion-google",
+  },
   icons: {
     icon: '/favicon.ico',
   },

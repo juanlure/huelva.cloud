@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://huelva.cloud/sitemap.xml
+
+# disallow temp files
+Disallow: /tmp/
+Disallow: /preview/
+Disallow: /*.json$
