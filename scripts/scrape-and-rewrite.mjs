@@ -130,10 +130,10 @@ REGLAS DE ESTILO:
 - Usa negritas para énfasis estratégico
 - Incluye nombres de barrios y pueblos de Huelva cuando sea relevante
 - Longitud: 500-700 palabras
-- Escribe en HTML (párrafos con <p>, subtítulos con <h2>)
+- Escribe en HTML puro (párrafos con <p>, subtítulos con <h2>), NUNCA uses bloques de código markdown como \`\`\`html
 - Cierra con "Fuente consultada: ${news.source}"
 
-Devuelve SOLO el HTML del artículo, sin explicaciones.`;
+Devuelve SOLO el HTML del artículo, sin explicaciones, sin markdown, sin bloques de código.`;
 }
 
 async function rewriteWithAI(news) {
@@ -147,8 +147,12 @@ async function rewriteWithAI(news) {
     
     const data = JSON.parse(result);
     // La respuesta viene en payloads[0].text
-    const content = data.payloads?.[0]?.text || '';
-    return content.trim();
+    let content = data.payloads?.[0]?.text || '';
+    
+    // Limpiar bloques de código markdown si la IA los generó
+    content = content.replace(/```html\n?/g, '').replace(/```\n?$/g, '').trim();
+    
+    return content;
   } catch (e) {
     console.log(`   ⚠️ AI falló (${e.message}), usando extracto original`);
     return `<p>${news.excerpt}</p>`;

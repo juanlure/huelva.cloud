@@ -101,8 +101,11 @@ function mapExternalNews(news: ExternalNewsItem): Article {
   // Usar content generado por IA si existe, sino fallback básico
   const bodyContent = news.content || `<p>${news.excerpt}</p>`;
   
+  // Generar slug consistente con external- prefix
+  const base64Url = Buffer.from(news.url).toString('base64').substring(0, 20);
+  
   return {
-    slug: `noticia-${Buffer.from(news.url).toString('base64').substring(0, 12)}`,
+    slug: `external-${base64Url}`,
     title: news.title,
     excerpt: news.excerpt,
     content: `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${humanDate}).</p>`,
@@ -112,7 +115,7 @@ function mapExternalNews(news: ExternalNewsItem): Article {
     readTime: '3 min',
     author: 'Redacción Huelva.cloud',
     isAi: true,
-    external: false,
+    external: true,
     source: news.source,
     sourceDate: humanDate,
   };
