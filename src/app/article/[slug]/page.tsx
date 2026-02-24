@@ -7,9 +7,49 @@ import AuthorBox from '@/components/AuthorBox';
 import ArticleRenderer from '@/components/article/ArticleRenderer';
 import { Clock, ArrowLeft, Link2 } from 'lucide-react';
 import styles from './ArticlePage.module.css';
+import type { Metadata } from 'next';
 
 interface PageProps {
   params: { slug: string };
+}
+
+// Generate metadata for each article
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await getArticleBySlug(slug);
+
+  if (!article) {
+    return {
+      title: 'Artículo no encontrado | Huelva.cloud',
+    };
+  }
+
+  return {
+    title: `${article.title} | Huelva.cloud`,
+    description: article.excerpt,
+    keywords: `${article.title}, Huelva, ${article.category}, Andalucía, guía local`,
+    authors: [{ name: article.author }],
+    alternates: {
+      canonical: `https://huelva.cloud/article/${slug}`,
+    },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://huelva.cloud/article/${slug}`,
+      siteName: 'Huelva.cloud',
+      locale: 'es_ES',
+      type: 'article',
+      publishedTime: article.date,
+      authors: [article.author],
+      images: article.image ? [article.image] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: article.image ? [article.image] : [],
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: PageProps) {

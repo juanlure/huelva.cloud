@@ -4,6 +4,7 @@ import { getArticles } from '@/lib/api';
 import { ArrowLeft, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import styles from './page.module.css';
+import type { Metadata } from 'next';
 
 import { CATEGORY_TITLES } from '@/lib/constants';
 
@@ -11,6 +12,37 @@ export function generateStaticParams() {
   return Object.keys(CATEGORY_TITLES).map((category) => ({
     category,
   }));
+}
+
+// Generate metadata for each category
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
+  const { category } = await params;
+  const title = CATEGORY_TITLES[category.toLowerCase()] || category;
+  
+  const metaDescriptions: Record<string, string> = {
+    'comer': 'Dónde comer en Huelva: choco frito, coquinas, gamba blanca y los mejores restaurantes. Guía local sin tópicos turísticos.',
+    'eventos': 'Agenda de eventos en Huelva 2026: ferias, conciertos, mercados y planes. Todo lo que pasa en la ciudad y provincia.',
+    'alojarse': 'Dónde dormir en Huelva: hoteles, apartamentos y alojamientos recomendados. Zonas, precios y consejos locales.',
+    'guias': 'Guías de Huelva: qué ver, rutas, monumentos, playas y pueblos. Descubre la provincia como un local.',
+    'noticias': 'Noticias de Huelva: actualidad local, provincia, cultura y eventos. Información relevante para onubenses.',
+  };
+
+  const metaTitles: Record<string, string> = {
+    'comer': 'Dónde Comer en Huelva 2026 | Choco Frito, Coquinas y Más',
+    'eventos': 'Eventos Huelva 2026 | Agenda y Planes en la Ciudad',
+    'alojarse': 'Dónde Dormir en Huelva | Hoteles y Alojamientos 2026',
+    'guias': 'Qué Ver en Huelva | Guías Locales de la Provincia 2026',
+    'noticias': 'Noticias Huelva | Actualidad Local y Provincial 2026',
+  };
+
+  return {
+    title: metaTitles[category.toLowerCase()] || `${title} | Huelva.cloud`,
+    description: metaDescriptions[category.toLowerCase()] || `Descubre ${title} en Huelva. Guía local con información actualizada.`,
+    keywords: `Huelva, ${title}, ${category}, Andalucía, guía local`,
+    alternates: {
+      canonical: `https://huelva.cloud/${category}`,
+    },
+  };
 }
 
 interface PageProps {
