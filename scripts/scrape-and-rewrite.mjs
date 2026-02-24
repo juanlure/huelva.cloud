@@ -18,6 +18,8 @@ const NEWS_FILE = path.join(process.cwd(), 'src/content/external-news.json');
 
 const SOURCES = [
   { name: 'Huelva Información', rss: 'https://www.huelvainformacion.es/rss/', fallbackUrl: 'https://www.huelvainformacion.es/huelva/' },
+  { name: 'Huelva Buenas Noticias', rss: 'https://huelvabuenasnoticias.com/feed/', fallbackUrl: 'https://huelvabuenasnoticias.com/' },
+  { name: 'Diario de Huelva', rss: 'https://www.diariodehuelva.es/feed/', fallbackUrl: 'https://www.diariodehuelva.es/' },
   { name: 'Europa Press Huelva', rss: 'https://www.europapress.es/andalucia/huelva/rss/', fallbackUrl: 'https://www.europapress.es/andalucia/huelva/' },
   { name: 'Huelva24', rss: 'https://www.huelva24.com/rss/', fallbackUrl: 'https://www.huelva24.com/' },
   { name: 'COPE Huelva', rss: 'https://www.cope.es/rss/actualidad', fallbackUrl: 'https://www.cope.es/emisoras/andalucia/huelva-provincia/huelva' },
