@@ -25,23 +25,33 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     excerpt: 'Selección de planes para la semana en Huelva y provincia: mercados, conciertos, actividades en la naturaleza y eventos culturales con horarios y acceso.',
     category: 'Eventos',
     image: '/images/guides/huelva-plaza-las-monjas.jpg',
-    publishedAt: '2026-02-22T21:15:00Z',
+    publishedAt: '2026-02-25T14:00:00Z',
     author: 'Lucía Colombina',
     isAi: true,
     content: `
       <p>La agenda onubense tiene ritmo propio: hay semanas cargadas y semanas para respirar. Esta es una selección con criterio, no un volcado de todo lo que pasa.</p>
 
-      <h2>Planes en capital</h2>
+      <h2>Planes en capital (última semana de febrero)</h2>
       <ul>
-        <li><strong>Mercado ecológico Plaza de las Monjas</strong> — Sábado 9:00-14:00. Productores locales de Huelva y provincia. Entrada libre.</li>
-        <li><strong>Visita guiada Barrio Reina Victoria</strong> — Domingo 11:00. Salida desde el propio barrio. Plazas limitadas, reserva previa recomendada.</li>
-        <li><strong>Exposición temporal Museo de Huelva</strong> — Abierta toda la semana. Entrada gratuita domingos.</li>
+        <li><strong>Mercado ecológico Plaza de las Monjas</strong> — Sábado 1 de marzo, 9:00-14:00. Productores locales de Huelva y provincia. Entrada libre.</li>
+        <li><strong>Concierto 'Noches de Jazz' - Teatro Casa Colón</strong> — Viernes 28 de febrero, 20:30. Ciclo de jazz con grupos locales. Entrada: 8€.</li>
+        <li><strong>Exposición 'Paisajes Mineros' - Sala de Exposiciones del Puerto</strong> — Hasta 15 de marzo. Fotografías históricas de las minas de Riotinto. Entrada gratuita.</li>
+        <li><strong>Ruta guiada 'Huelva Industrial'</strong> — Domingo 2 de marzo, 11:00. Recorrido por el Muelle del Tinto y zonas patrimoniales. Reserva en turismo@huelva.es</li>
       </ul>
 
       <h2>Planes en provincia</h2>
       <ul>
-        <li><strong>Ruta senderista Marismas del Odiel</strong> — Sábado 8:30. Salida desde el Centro de Visitantes. Nivel fácil-medio. Llevar agua y calzado adecuado.</li>
-        <li><strong>Mercado artesano Almonte</strong> — Domingo 10:00-15:00. Artesanía local, cerámica y productos típicos de la comarca.</li>
+        <li><strong>Festival de Cine de Islantilla</strong> — Hasta 1 de marzo. Proyecciones de cine independiente en el Centro Cultural. Algunas sesiones gratuitas.</li>
+        <li><strong>Mercado artesano de La Antilla</strong> — Sábado 1 y domingo 2 de marzo, 10:00-15:00. Artesanía, productos locales y gastronomía en el paseo marítimo.</li>
+        <li><strong>Ruta ornitológica Marismas del Odiel</strong> — Sábado 1 de marzo, 9:00. Observación de aves migratorias. Traer prismáticos. Gratuito con inscripción previa.</li>
+        <li><strong>Visita teatralizada Aracena</strong> — Domingo 2 de marzo, 12:00 y 18:00. Recorrido por el casco histórico con personajes en vivo. Precio: 10€.</li>
+      </ul>
+
+      <h2>Preparativos para marzo</h2>
+      <p>Marzo trae consigo el cambio de hora (último fin de semana) y el inicio de la primavera. Programaciones culturales en preparación:</p>
+      <ul>
+        <li><strong>Semana Santa:</strong> Los ensayos de cofradías comienzan a intensificarse. Consultar programación local de cada hermandad.</li>
+        <li><strong>Feria del Libro:</strong> Habitualmente primera quincena de marzo en la Gran Vía. Pendiente de confirmación oficial.</li>
       </ul>
 
       <h2>Cómo organizarte</h2>
