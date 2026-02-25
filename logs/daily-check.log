@@ -1,3 +1,72 @@
 [2026-02-23] Iniciando revisión diaria de huelva.is
 [2026-02-23] Verificando estado del repositorio...
 [2026-02-23] ⚠️  Cambios sin commitear detectados
+[2026-02-23] Verificando build...
+
+> huelva.is@0.1.0 prebuild
+> node scripts/validate-content.mjs
+
+✅ Content validation OK (51 artículos)
+
+> huelva.is@0.1.0 build
+> next build
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/claw1/.openclaw/workspace/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/claw1/.openclaw/workspace/huelva-is/pnpm-lock.yaml
+
+▲ Next.js 16.1.4 (Turbopack)
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 21.5s
+  Running TypeScript ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/22) ...
+  Generating static pages using 3 workers (5/22) 
+  Generating static pages using 3 workers (10/22) 
+  Generating static pages using 3 workers (16/22) 
+✓ Generating static pages using 3 workers (22/22) in 1679.6ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ● /[category]
+│ ├ /comer
+│ ├ /eventos
+│ ├ /alojarse
+│ └ [+4 more paths]
+├ ○ /ai-disclosure
+├ ƒ /article/[slug]
+├ ○ /guias
+├ ○ /guias/48-horas
+├ ○ /guias/barrios
+├ ○ /guias/cafe
+├ ○ /guias/choco
+├ ○ /guias/jamon
+├ ○ /guias/supervivencia
+├ ○ /legal
+├ ○ /privacy
+├ ○ /test
+├ ○ /test/guide-mock
+└ ○ /tiempo
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-02-23] ✅ Build exitoso
+[2026-02-23] 📊 Artículos actuales: 52
+[2026-02-23] 🖼️  Imágenes actuales: 36
+[2026-02-23] ✅ Revisión diaria completada
+---
+[2026-02-25] Iniciando revisión diaria de huelva.is
+[2026-02-25] Verificando estado del repositorio...
+[2026-02-25] ⚠️  Cambios sin commitear detectados
