@@ -141,3 +141,28 @@ Route (app)
 [2026-02-26] Iniciando revisión diaria de huelva.is
 [2026-02-26] Verificando estado del repositorio...
 [2026-02-26] ⚠️  Cambios sin commitear detectados
+[2026-02-26] ⚠️  Push fallido
+[2026-02-26] Verificando build...
+
+> huelva.is@0.1.0 prebuild
+> node scripts/validate-content.mjs
+
+✅ Content validation OK (51 artículos)
+
+> huelva.is@0.1.0 build
+> next build
+
+⚠ Installing TypeScript as it was not found while loading "next.config.ts".
+
+Installing devDependencies (pnpm):
+- typescript
+
+uncaughtException Error: spawn pnpm ENOENT
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn pnpm',
+  path: 'pnpm',
+  spawnargs: [Array]
+}
+[2026-02-26] ❌ ERROR: Build fallido

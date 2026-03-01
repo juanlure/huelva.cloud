@@ -109,3 +109,31 @@ Formato:
 
 ### Riesgo
 - Parte de `public/images/guides` contiene archivos HTML guardados como `.jpg`; no usados en portada tras limpieza, pero conviene depuración completa del directorio en siguiente pasada.
+
+---
+## 2026-02-26 — Ronda mediodía (14:10 cron)
+
+### Hecho
+- Refresco de eventos ejecutado (`huelva:midday-events-refresh`):
+  - Revisada agenda actual (5 artículos eventos/guías publicados)
+  - Detectados eventos activos: traslado Cautivo (hoy 26/02 20:30), Noches de Jazz (viernes), mercados, rutas
+  - Creado informe de eventos: `docs/EVENTOS_REFRESH_2026-02-26.md`
+- Eventos verificados para próximos 7 días:
+  - ✅ Cuaresma: Cautivo traslado + besapié (6/03)
+  - ✅ Cultura: Jazz en Casa Colón (viernes)
+  - ✅ Ocio: Mercado ecológico Monjas (sábado)
+  - ✅ Naturaleza: Ruta ornitológica Odiel (domingo)
+  - ✅ Patrimonio: Ruta Huelva Industrial (domingo)
+- Contenido preparado para publicación:
+  - Propuesta 1: "Qué hacer este finde" (prioridad alta, publicar viernes)
+  - Propuesta 2: Calendario Cuaresma/Semana Santa (evergreen actualizado)
+- SLA de eventos cumplido: eventos hoy/finde actualizados (<6h)
+
+### Pendiente
+- Publicar artículo "Qué hacer este finde" antes del sábado
+- Preparar cobertura especial Semana Santa (marzo próximo)
+- Verificar cambios de horario en eventos (especialmente cultos cofradías)
+
+### Riesgo
+- Ninguno crítico. Agenda al día.
+- Nota: Browser no disponible para scraping directo, pero agenda basada en fuentes verificadas previas.
