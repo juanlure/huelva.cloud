@@ -164,16 +164,18 @@ async function stageScrapeNews(logger, maxNewsToday = 3) {
   
   logger.info(`Publicadas hoy: ${newsToday}/${maxNewsToday}. Ejecutando scraper...`);
   
-  const result = await exec('node scripts/scrape-and-rewrite.mjs');
+  const result = await exec('node scripts/scrape-and-rewrite.mjs 2>&1');
   
   if (!result.success) {
     logger.error('Scraper falló', { error: result.error });
     return { success: false, error: result.error };
   }
   
+  logger.info('Scraper completado', { output: result.output?.slice(0, 200) });
+  
   // Verificar que se añadió una noticia
   const contentBefore = await countContent();
-  await new Promise(r => setTimeout(r, 500)); // Esperar escritura
+  await new Promise(r => setTimeout(r, 500));
   const contentAfter = await countContent();
   
   if (contentAfter.externalNews > contentBefore.externalNews) {
@@ -182,7 +184,7 @@ async function stageScrapeNews(logger, maxNewsToday = 3) {
     await saveState(state);
     return { success: true, added: true };
   } else {
-    logger.warn('No se detectó nueva noticia (posible duplicado)');
+    logger.warn('No se detectó nueva noticia (posible duplicado o sin novedades)');
     return { success: true, added: false };
   }
 }
