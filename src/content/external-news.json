@@ -1,17 +1,46 @@
 {
-  "lastUpdated": "2026-02-26T19:18:12.102Z",
-  "count": 1,
+  "lastUpdated": "2026-03-01T19:27:18.205Z",
+  "count": 4,
   "news": [
     {
-      "title": "La Diputación de Huelva moviliza 23 millones de euros con el plan 'Tu Diputación Actúa' para reparar los daños del temporal en los pueblos \"de manera urgente\"",
-      "excerpt": "El próximo lunes 2 de marzo se celebrará un pleno extraordinario y urgente para activar el Plan y ponerlo en marcha \"Estamos ejecutando una inversión realmente ...",
-      "content": "<p>El próximo lunes 2 de marzo se celebrará un pleno extraordinario y urgente para activar el Plan y ponerlo en marcha \"Estamos ejecutando una inversión realmente histórica, sin precedentes. En 2023 el plan fue de 16 millones; ahora las acciones suman</p>",
-      "url": "https://www.huelvainformacion.es/provincia/diputacion-huelva-moviliza-23-millones-euros-plan-actua-reparar-danos-temporal-pueblos-urgente_0_2006013816.html",
-      "publishedAt": "Thu, 26 Feb 2026 12:30:53 +0100",
-      "source": "Huelva Información",
+      "title": "Un total de 12 centros de Huelva participan en la fase provincial del V Torneo de Debate Educativo",
+      "excerpt": "Noticia destacada. Abre la fuente original para leerla completa.",
+      "url": "https://www.europapress.es/esandalucia/huelva/noticia-total-12-centros-huelva-participan-fase-provincial-torneo-debate-educativo-20260226113145.html",
+      "publishedAt": "2026-03-01T19:27:16.071Z",
+      "source": "Europa Press Huelva",
       "category": "Noticias",
       "image": null,
-      "external": false
+      "external": true
+    },
+    {
+      "title": "El Museo de Huelva expone por el 28F las versiones que José Caballero hizo de la bandera de Andalucía",
+      "excerpt": "Noticia destacada. Abre la fuente original para leerla completa.",
+      "url": "https://www.europapress.es/esandalucia/huelva/noticia-museo-huelva-expone-28f-versiones-jose-caballero-hizo-bandera-andalucia-20260225105958.html",
+      "publishedAt": "2026-03-01T19:27:16.071Z",
+      "source": "Europa Press Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": true
+    },
+    {
+      "title": "La Junta invierte más de 248.000 euros en Aroche y Jabugo (Huelva) a través del PFEA en 2025",
+      "excerpt": "Noticia destacada. Abre la fuente original para leerla completa.",
+      "url": "https://www.europapress.es/esandalucia/huelva/noticia-junta-invierte-mas-248000-euros-aroche-jabugo-huelva-traves-pfea-2025-20260226135739.html",
+      "publishedAt": "2026-03-01T19:27:16.070Z",
+      "source": "Europa Press Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": true
+    },
+    {
+      "title": "El Ayuntamiento de Huelva se persona en la causa del accidente de Adamuz y aprueba la expropiación del Cabezo de la Joya",
+      "excerpt": "Noticia destacada de COPE Huelva. Abre la fuente original para leerla completa.",
+      "url": "https://www.cope.es/emisoras/andalucia/huelva-provincia/huelva/noticias/ayuntamiento-huelva-persona-causa-accidente-adamuz-aprueba-expropiacion-cabezo-joya-20260227_3316885.html",
+      "publishedAt": "2026-03-01T19:05:11.666Z",
+      "source": "COPE Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": true
     }
   ]
 }
