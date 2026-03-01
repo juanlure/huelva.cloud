@@ -1,0 +1,77 @@
+{
+  "mode": "morning",
+  "executedAt": "2026-03-01T19:42:55.372Z",
+  "duration": 34503,
+  "logs": [
+    {
+      "timestamp": "2026-03-01T19:42:20.877Z",
+      "level": "info",
+      "message": "=== MODO: MORNING (08:00) ===",
+      "data": null,
+      "elapsed": 9
+    },
+    {
+      "timestamp": "2026-03-01T19:42:20.882Z",
+      "level": "info",
+      "message": "STAGE 1: Scrape Noticias",
+      "data": null,
+      "elapsed": 13
+    },
+    {
+      "timestamp": "2026-03-01T19:42:20.884Z",
+      "level": "info",
+      "message": "Publicadas hoy: 0/1. Ejecutando scraper...",
+      "data": null,
+      "elapsed": 15
+    },
+    {
+      "timestamp": "2026-03-01T19:42:54.307Z",
+      "level": "warn",
+      "message": "No se detectó nueva noticia (posible duplicado)",
+      "data": null,
+      "elapsed": 33438
+    },
+    {
+      "timestamp": "2026-03-01T19:42:54.308Z",
+      "level": "info",
+      "message": "STAGE 2: Procesamiento de Contenido",
+      "data": null,
+      "elapsed": 33439
+    },
+    {
+      "timestamp": "2026-03-01T19:42:54.368Z",
+      "level": "success",
+      "message": "JSON válido",
+      "data": null,
+      "elapsed": 33499
+    },
+    {
+      "timestamp": "2026-03-01T19:42:54.368Z",
+      "level": "info",
+      "message": "STAGE: Check Agenda",
+      "data": null,
+      "elapsed": 33499
+    },
+    {
+      "timestamp": "2026-03-01T19:42:54.372Z",
+      "level": "info",
+      "message": "Contenido actual: 5 noticias, 52 artículos",
+      "data": null,
+      "elapsed": 33503
+    },
+    {
+      "timestamp": "2026-03-01T19:42:54.373Z",
+      "level": "info",
+      "message": "STAGE 3: Publicación (Git)",
+      "data": null,
+      "elapsed": 33504
+    },
+    {
+      "timestamp": "2026-03-01T19:42:55.370Z",
+      "level": "success",
+      "message": "Publicado en Vercel",
+      "data": null,
+      "elapsed": 34501
+    }
+  ]
+}
