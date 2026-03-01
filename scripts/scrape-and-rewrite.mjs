@@ -198,23 +198,43 @@ async function main() {
   const content = await rewriteWithAI(selected);
 
   const humanDate = new Date(selected.publishedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+
+  // Leer noticias existentes para acumular (no sobrescribir)
+  let existingNews = [];
+  try {
+    const existing = JSON.parse(await fs.readFile(NEWS_FILE, 'utf8').catch(() => '{}'));
+    existingNews = existing.news || [];
+  } catch (_) {}
+
+  const newItem = {
+    title: selected.title,
+    excerpt: selected.excerpt.slice(0, 160) + '...',
+    content,
+    url: selected.url,
+    publishedAt: selected.publishedAt,
+    source: selected.source,
+    category: 'Noticias',
+    image: null,
+    external: false
+  };
+
+  // Deduplicar por URL y añadir la nueva al principio
+  const urlSet = new Set(existingNews.map(n => n.url));
+  const combined = urlSet.has(newItem.url)
+    ? existingNews  // ya existe, no duplicar
+    : [newItem, ...existingNews];
+
+  // Mantener máximo 15 noticias
+  const finalNews = combined.slice(0, 15);
+
   const payload = {
     lastUpdated: new Date().toISOString(),
-    count: 1,
-    news: [{
-      title: selected.title,
-      excerpt: selected.excerpt.slice(0, 160) + '...',
-      content,
-      url: selected.url,
-      publishedAt: selected.publishedAt,
-      source: selected.source,
-      category: 'Noticias',
-      image: null,
-      external: false
-    }]
+    count: finalNews.length,
+    news: finalNews
   };
 
   await fs.writeFile(NEWS_FILE, JSON.stringify(payload, null, 2));
+  console.log(`📚 Total noticias acumuladas: ${finalNews.length}`);
 
   console.log('\n✅ Noticia diaria guardada');
   console.log(`📰 ${selected.title}`);
