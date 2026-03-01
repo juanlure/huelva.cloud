@@ -137,25 +137,28 @@ Devuelve SOLO el HTML del artículo, sin explicaciones, sin markdown, sin bloque
 }
 
 async function rewriteWithAI(news) {
+  const tmpFile = `/tmp/huelva-prompt-${Date.now()}.txt`;
   try {
     const prompt = generatePrompt(news);
-    // Usar openclaw agent --local con --agent main
+    // Escribir prompt a archivo temporal para evitar problemas con caracteres especiales en shell
+    await fs.writeFile(tmpFile, prompt, 'utf8');
+    
+    const oc = process.env.HOME + '/.npm-global/bin/openclaw';
     const result = execSync(
-      `openclaw agent --local --agent main --message "${prompt.replace(/"/g, '\\"')}" --json`,
-      { encoding: 'utf-8', timeout: 120000, env: { ...process.env } }
+      `${oc} agent --local --agent main --message-file "${tmpFile}" --json`,
+      { encoding: 'utf-8', timeout: 120000 }
     );
     
     const data = JSON.parse(result);
-    // La respuesta viene en payloads[0].text
     let content = data.payloads?.[0]?.text || '';
-    
-    // Limpiar bloques de código markdown si la IA los generó
     content = content.replace(/```html\n?/g, '').replace(/```\n?$/g, '').trim();
-    
     return content;
   } catch (e) {
-    console.log(`   ⚠️ AI falló (${e.message}), usando extracto original`);
-    return `<p>${news.excerpt}</p>`;
+    // Fallback: construir un artículo básico en HTML sin IA
+    console.log(`   ⚠️ AI falló, usando formato básico`);
+    return `<p>${news.excerpt}</p><p><em>Noticia de ${news.source}. <a href="${news.url}" target="_blank" rel="noopener">Leer noticia original →</a></em></p>`;
+  } finally {
+    await fs.unlink(tmpFile).catch(() => {});
   }
 }
 
@@ -184,15 +187,20 @@ async function main() {
     process.exit(1);
   }
 
-  // Priorizar por mención de Huelva y frescura
+  // Filtrar: solo noticias que mencionen Huelva o sean claramente locales
+  const localCandidates = candidates.filter(n =>
+    /huelva/i.test(`${n.title} ${n.excerpt} ${n.url}`)
+  );
+  const pool = localCandidates.length > 0 ? localCandidates : candidates;
+
+  // Priorizar por frescura y fuente local
   const score = (n) => {
-    const hayHuelva = /huelva/i.test(`${n.title} ${n.url}`) ? 2 : 0;
     const esFuenteLocal = /Huelva Información|Huelva24|COPE Huelva|Canal Sur Huelva/i.test(n.source) ? 1 : 0;
     const fecha = new Date(n.publishedAt).getTime() || 0;
-    return hayHuelva * 1_000_000_000 + esFuenteLocal * 100_000_000 + fecha;
+    return esFuenteLocal * 100_000_000 + fecha;
   };
-  candidates.sort((a, b) => score(b) - score(a));
-  const selected = candidates[0];
+  pool.sort((a, b) => score(b) - score(a));
+  const selected = pool[0];
 
   console.log('\n✍️ Reescribiendo con IA...');
   const content = await rewriteWithAI(selected);
