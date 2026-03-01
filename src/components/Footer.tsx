@@ -40,9 +40,10 @@ export default function Footer() {
 
           {/* Links Section 2 */}
           <div>
-            <h4 className="font-display text-xl font-bold text-navy mb-6">Transparencia</h4>
+            <h4 className="font-display text-xl font-bold text-navy mb-6">Nosotros</h4>
             <ul className="space-y-4">
               {[
+                { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
                 { name: 'Cómo funciona (IA)', href: '/ai-disclosure' },
                 { name: 'Privacidad', href: '/privacy' },
                 { name: 'Aviso Legal', href: '/legal' },

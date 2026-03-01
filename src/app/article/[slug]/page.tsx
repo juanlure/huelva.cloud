@@ -52,6 +52,35 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+// Generate JSON-LD structured data
+function generateArticleSchema(article: any, slug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt,
+    image: article.image ? `https://huelva.cloud${article.image}` : undefined,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      '@type': 'Person',
+      name: article.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Huelva.cloud',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://huelva.cloud/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://huelva.cloud/article/${slug}`,
+    },
+  };
+}
+
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
@@ -90,108 +119,118 @@ export default async function ArticlePage({ params }: PageProps) {
     .replace(/<div id="interactive-root"[^>]*><\/div>/g, '')
     .replace(/<script type="application\/json" id="interactive-data">[\s\S]*?<\/script>/g, '');
 
+  const articleSchema = generateArticleSchema(article, slug);
+
   return (
-    <article className={styles.articlePage}>
-      {/* Progress Line - animado al scroll */}
-      <div className={styles.progressLine} aria-hidden="true" data-progress-line />
+    <>
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      
+      <article className={styles.articlePage}>
+        {/* Progress Line - animado al scroll */}
+        <div className={styles.progressLine} aria-hidden="true" data-progress-line />
 
-      {/* Navigation Breadcrumb */}
-      <nav className={styles.articleNav}>
-        <Link href="/" className={styles.backLink}>
-          <ArrowLeft size={18} />
-          <span>Volver</span>
-        </Link>
-        <span className={styles.categoryTag}>{article.category}</span>
-      </nav>
+        {/* Navigation Breadcrumb */}
+        <nav className={styles.articleNav}>
+          <Link href="/" className={styles.backLink}>
+            <ArrowLeft size={18} />
+            <span>Volver</span>
+          </Link>
+          <span className={styles.categoryTag}>{article.category}</span>
+        </nav>
 
-      {/* Header Section */}
-      <header className={styles.articleHeader}>
-        <div className={styles.metaLine}>
-          <span className={styles.author}>{article.author}</span>
-          <span>•</span>
-          <span className={styles.date}>{article.date}</span>
-          <span>•</span>
-          <span className={styles.readTime}>
-            <Clock size={14} />
-            {parseInt(article.readTime) || 5} min
-          </span>
-          {article.isAi && (
-            <>
-              <span>•</span>
-              <span className="text-xs text-muted-foreground opacity-70">
-                Generado con asistencia de IA
-              </span>
-            </>
+        {/* Header Section */}
+        <header className={styles.articleHeader}>
+          <div className={styles.metaLine}>
+            <span className={styles.author}>{article.author}</span>
+            <span>•</span>
+            <span className={styles.date}>{article.date}</span>
+            <span>•</span>
+            <span className={styles.readTime}>
+              <Clock size={14} />
+              {parseInt(article.readTime) || 5} min
+            </span>
+            {article.isAi && (
+              <>
+                <span>•</span>
+                <span className="text-xs text-muted-foreground opacity-70">
+                  Generado con asistencia de IA
+                </span>
+              </>
+            )}
+          </div>
+
+          <h1 className={styles.articleTitle}>
+            {article.title}
+          </h1>
+
+          {article.excerpt && (
+            <p className={styles.articleExcerpt}>
+              {article.excerpt}
+            </p>
           )}
-        </div>
 
-        <h1 className={styles.articleTitle}>
-          {article.title}
-        </h1>
+          <div className="mt-6 text-sm text-navy-50">
+            <p>Fuente: {article.source ? `Redacción Huelva.cloud (fuente consultada: ${article.source})` : 'Redacción Huelva.cloud + fuentes locales verificadas'}</p>
+            <p>Fecha de publicación: {article.date}</p>
+          </div>
+        </header>
 
-        {article.excerpt && (
-          <p className={styles.articleExcerpt}>
-            {article.excerpt}
-          </p>
+        {/* Hero Image (solo si existe) */}
+        {article.image && (
+          <figure className={styles.heroImage}>
+            <img
+              src={article.image}
+              alt={article.title}
+              className={styles.heroImg}
+              loading="eager"
+            />
+          </figure>
         )}
 
-        <div className="mt-6 text-sm text-navy-50">
-          <p>Fuente: {article.source ? `Redacción Huelva.cloud (fuente consultada: ${article.source})` : 'Redacción Huelva.cloud + fuentes locales verificadas'}</p>
-          <p>Fecha de publicación: {article.date}</p>
-        </div>
-      </header>
+        {/* Main Content */}
+        <main className={styles.articleContent}>
+          {interactiveType && interactiveData && (
+            <div className={styles.interactiveWrapper}>
+              <InteractiveContainer type={interactiveType} data={interactiveData} />
+            </div>
+          )}
 
-      {/* Hero Image (solo si existe) */}
-      {article.image && (
-        <figure className={styles.heroImage}>
-          <img
-            src={article.image}
-            alt={article.title}
-            className={styles.heroImg}
-            loading="eager"
-          />
-        </figure>
-      )}
+          {cleanedContent && (
+            <ArticleRenderer content={cleanedContent} />
+          )}
+        </main>
 
-      {/* Main Content */}
-      <main className={styles.articleContent}>
-        {interactiveType && interactiveData && (
-          <div className={styles.interactiveWrapper}>
-            <InteractiveContainer type={interactiveType} data={interactiveData} />
-          </div>
+        {relatedArticles.length > 0 && (
+          <section className="max-w-4xl mx-auto px-4 md:px-0 mt-12">
+            <div className="flex items-center gap-2 mb-4 text-navy-60">
+              <Link2 size={16} />
+              <h2 className="text-base font-semibold">Relacionado en {article.category}</h2>
+            </div>
+            <div className="space-y-2">
+              {relatedArticles.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/article/${related.slug}`}
+                  className="block text-navy hover:text-terracotta transition-colors"
+                >
+                  {related.title}
+                </Link>
+              ))}
+            </div>
+          </section>
         )}
 
-        {cleanedContent && (
-          <ArticleRenderer content={cleanedContent} />
-        )}
-      </main>
-
-      {relatedArticles.length > 0 && (
-        <section className="max-w-4xl mx-auto px-4 md:px-0 mt-12">
-          <div className="flex items-center gap-2 mb-4 text-navy-60">
-            <Link2 size={16} />
-            <h2 className="text-base font-semibold">Relacionado en {article.category}</h2>
+        {/* Article Footer */}
+        <footer className={styles.articleFooter}>
+          <div className={styles.footerContent}>
+            <AuthorBox author={authorData} />
           </div>
-          <div className="space-y-2">
-            {relatedArticles.map((related) => (
-              <Link
-                key={related.slug}
-                href={`/article/${related.slug}`}
-                className="block text-navy hover:text-terracotta transition-colors"
-              >
-                {related.title}
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Article Footer */}
-      <footer className={styles.articleFooter}>
-        <div className={styles.footerContent}>
-          <AuthorBox author={authorData} />
-        </div>
-      </footer>
-    </article>
+        </footer>
+      </article>
+    </>
   );
 }
