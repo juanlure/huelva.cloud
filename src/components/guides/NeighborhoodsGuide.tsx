@@ -34,6 +34,7 @@ interface Neighborhood {
   highlights: string[];
   color: string;
   image: string;
+  ranking?: number;
 }
 
 const NEIGHBORHOODS: Neighborhood[] = [
