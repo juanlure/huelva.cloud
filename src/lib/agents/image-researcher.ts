@@ -346,9 +346,10 @@ export async function searchRealWebImage(topic: string): Promise<ImageResult | n
 
   // 1. Buscar una URL relevante usando Google Search
   const searchPrompt = `
-      Busca una página web oficial, artículo de noticias o guía de turismo fiable sobre "${topic}" en Huelva.
-      Prioriza sitios como: huelvainformacion.es, aytodehuelva.es, andalucia.org, tripadvisor.es, u otras fuentes locales.
-      NO uses pinterest, stock photos, ni redes sociales.
+      Busca una página web oficial, artículo de noticias o guía de turismo fiable sobre "${topic}" específicamente en Huelva, España.
+      Prioriza sitios locales: huelvainformacion.es, huelvahoy.com, huelva24.com, aytodehuelva.es, turismohuelva.org, andalucia.org.
+      NO uses pinterest, stock photos genéricas, ni redes sociales.
+      Buscamos la imagen con mayor resolución posible que represente el lugar o plato de comida.
       
       Devuelve SOLO un JSON con este formato:
       { "url": "https://..." }

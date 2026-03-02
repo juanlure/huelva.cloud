@@ -144,7 +144,7 @@ ${author.tone}
 
 **Firma característica:** "${author.signature}"
 
-IMPORTANTE: El tono definido arriba es OBLIGATORIO. No lo ignores. Si el tono dice "ESTRICTAMENTE INFORMATIVO" no uses humor. Si dice "CERCANO Y ENTUSIASTA" sí puedes usar coloquialismos.
+IMPORTANTE: Queremos "alma". No nos des un texto genérico. Si eres Rocío Limón, quiero oler el aceite del choco. Si eres Manuel V. Cinta, quiero el dato frío que me aclare la mañana.
 `;
 }
 
@@ -152,37 +152,23 @@ IMPORTANTE: El tono definido arriba es OBLIGATORIO. No lo ignores. Si el tono di
 // DICCIONARIO LOCAL (solo para autores que lo necesiten)
 // ============================================================================
 const DICCIONARIO_LOCAL = `
-## DICCIONARIO CHOQUERO (usar según el tono del autor lo permita)
+## DICCIONARIO CHOQUERO (Uso obligatorio según contexto)
 
-### GASTRONOMÍA (OBLIGATORIO usar estos términos):
-- **Choco**: Sepia. SIEMPRE di "choco", NUNCA "sepia". Es la regla de oro.
-- **Rabas**: Calamares fritos en aros
-- **Pota**: Calamar grande (diferente de las rabas)
-- **Gamba blanca**: La de Huelva, la buena, la que no necesita apellido
-- **Ortiguilla**: Anémona de mar frita, especialidad local
-- **Pringá**: Carne de puchero deshilachada con tomate
-- **Pipirrana**: Ensalada de tomate, pimiento, pepino y atún
-- **Mojama**: Lomo de atún curado, se come con almendras
-- **Coquinas**: Almejas pequeñas típicas de la zona
-- **Cabrilla**: Pescado de roca para caldos
-- **Chocos con habas**: Plato típico, el choco se hace con habitas tiernas
+### GASTRONOMÍA:
+- **Choco**: Sepia. Prohibido decir "sepia" en Huelva.
+- **Rabas**: Calamares a la romana (en aros).
+- **Pringá**: Carne de cocido picada. Un manjar entre pan y pan.
+- **Habas con poleo**: El snack oficial de Huelva en Semana Santa.
+- **Gamba blanca**: La reina. No necesita limón, solo buena compañía.
 
-### VOCABULARIO LOCAL:
-- **Choquero/Choquera**: Natural de Huelva capital (con orgullo)
-- **Onubense**: Natural de la provincia de Huelva
-- **Guiri**: Turista, especialmente extranjero (uso irónico, sin malicia)
-- **Jartible**: Algo o alguien pesado, molesto, insoportable
-- **Levante**: El viento del este que trae calor y pone nervioso
-- **Poniente**: El viento bueno, el que refresca
-- **Marisma**: Zona húmeda entre tierra y mar (Doñana)
-- **Chiringuito**: Bar de playa
-- **Aguamala/Aguaviva**: Medusa (¡cuidado al bañarte!)
-
-### EXPRESIONES:
-- "Eso está mu güeno" (muy bueno)
-- "Vaya tela" (expresión de sorpresa)
-- "Venga ya" (incredulidad)
-- "¿Qué pasa, borde?" (saludo informal)
+### EXPRESIONES Y LOCALISMOS:
+- **Jartible**: Pesado, insistente.
+- **Cagalería**: Miedo (en tono coloquial).
+- **Miarma**: Apodo para los de Sevilla (uso irónico/picante).
+- **Levante**: El viento malo. El que te pone la cabeza loca.
+- **Poniente**: El viento que salva las noches de verano.
+- **Choquero**: Orgulloso de la capital.
+- **Monumento a la Fe Descubridora**: El "Colón" (aunque no sea Colón).
 `;
 
 const WRITER_MODE_REWRITER = `
