@@ -133,14 +133,13 @@ export default function HeroSection() {
         <div className="max-w-5xl mx-auto">
           {/* Badge - compact on mobile */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium text-white/80 mb-4 sm:mb-6 border border-white/10"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full text-xs font-bold text-white/90 mb-8 border border-white/10 shadow-2xl"
           >
-            <Users size={14} className="text-terracotta" />
-            <span className="hidden sm:inline">60+ guías escritas por onubenses de verdad</span>
-            <span className="sm:hidden">60+ guías de onubenses</span>
+            <Sparkles size={14} className="text-terracotta" />
+            <span className="uppercase tracking-[0.2em]">Huelva.cloud · La mejor guía local 2026</span>
           </motion.div>
 
           {/* Trust Badge - hidden on smallest screens */}
@@ -160,24 +159,24 @@ export default function HeroSection() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white mb-4 sm:mb-6 leading-[0.95]"
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.85] tracking-tight"
           >
             Descubre Huelva
             <br />
-            <span className="text-terracotta italic">como un local</span>
+            <span className="text-terracotta italic font-light drop-shadow-2xl">como un local</span>
           </motion.h1>
 
           {/* Subheadline - shorter on mobile */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 leading-relaxed max-w-2xl mb-6 sm:mb-8"
+            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="text-lg sm:text-xl md:text-2xl text-white/60 leading-relaxed max-w-2xl mb-12 font-light"
           >
-            <span className="hidden sm:inline">Sin tópicos vacíos. Sin lugares turísticos trampa. </span>
-            Solo <strong className="text-white">lo que los de Huelva hacemos</strong>, 
-            <span className="hidden sm:inline"> dónde comemos, y qué lugares guardamos en secreto.</span>
+            Di adiós a los tópicos y a las trampas para turistas. 
+            Te contamos <strong className="text-white font-medium italic">lo que solo sabemos nosotros</strong>: 
+            dónde se come el mejor choco, qué playas siguen vírgenes y cómo vivir Huelva de verdad.
           </motion.p>
 
           {/* Value Props - horizontal scroll on mobile */}
@@ -211,21 +210,23 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 mb-8 sm:mb-12"
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-20"
           >
             <Link
               href="#descubre"
-              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-terracotta hover:bg-terracotta/90 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-terracotta/25 text-sm sm:text-base"
+              className="group relative overflow-hidden px-8 py-5 bg-terracotta text-white font-bold rounded-full transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(212,85,58,0.5)] active:scale-95 text-center"
             >
-              Ver planes para hoy
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                EMPEZAR A EXPLORAR
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </span>
             </Link>
             <Link
               href="#guias"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all duration-300 text-sm sm:text-base"
+              className="group px-8 py-5 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/10 transition-all duration-300 text-center active:scale-95 hover:border-white/20"
             >
-              Explorar guías
+              GUÍAS LOCALES
             </Link>
           </motion.div>
 
@@ -243,37 +244,49 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
+      {/* Quick Links Header */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="relative z-10 px-4 sm:px-6 mb-4"
+      >
+        <div className="container px-0">
+          <p className="text-[10px] sm:text-xs font-bold text-white/40 uppercase tracking-[0.3em] mb-4">Accesos directos</p>
+        </div>
+      </motion.div>
+
       {/* Quick Links Bar - optimized for mobile */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+        transition={{ duration: 1, delay: 0.9 }}
         className="relative z-10 mt-auto"
       >
         <div className="container px-4 sm:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 pb-4 sm:pb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 pb-8 sm:pb-12">
             {quickLinks.map((link) => (
               <Link
                 key={link.title}
                 href={link.href}
-                className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-3 sm:p-6 hover:bg-white/10 transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-white/[0.03] backdrop-blur-2xl border border-white/5 p-5 sm:p-8 hover:bg-white/[0.08] transition-all duration-500 hover:-translate-y-2 shadow-2xl"
               >
                 {/* Badge */}
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20">
-                  <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-terracotta/80 text-white text-[10px] sm:text-xs font-semibold rounded-full">
+                <div className="absolute top-4 right-5 z-20">
+                  <span className="px-2 py-1 bg-terracotta text-white text-[9px] font-bold rounded-full uppercase tracking-wider shadow-lg shadow-terracotta/20">
                     {link.badge}
                   </span>
                 </div>
 
                 {/* Gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${link.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${link.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
                 
                 <div className="relative z-10">
-                  <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-white/10 flex items-center justify-center text-terracotta mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-white/5 flex items-center justify-center text-terracotta mb-4 group-hover:scale-110 transition-transform duration-500 border border-white/5">
                     {link.icon}
                   </div>
-                  <h3 className="font-semibold text-white text-sm sm:text-lg mb-0.5 sm:mb-1">{link.title}</h3>
-                  <p className="text-white/50 text-[10px] sm:text-sm leading-tight">{link.desc}</p>
+                  <h3 className="font-bold text-white text-base sm:text-xl mb-1 group-hover:text-terracotta transition-colors">{link.title}</h3>
+                  <p className="text-white/40 text-xs sm:text-sm leading-relaxed font-light">{link.desc}</p>
                 </div>
               </Link>
             ))}

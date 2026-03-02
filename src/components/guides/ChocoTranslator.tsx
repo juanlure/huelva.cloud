@@ -125,96 +125,104 @@ export default function ChocoTranslator() {
   };
 
   return (
-    <div className="bg-cream min-h-screen py-12 md:py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-sand/30 min-h-screen py-24 md:py-32 px-6">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-terracotta/10 to-orange-50 border border-terracotta/20 mb-8">
-            <Sparkles size={16} className="text-terracotta animate-pulse" />
-            <span className="text-sm font-bold text-navy uppercase tracking-widest">
-              Vocabulario Choquero Verificado
+        <div className="max-w-3xl mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-4 text-terracotta mb-8"
+          >
+            <div className="h-px w-12 bg-terracotta/30" />
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] animate-pulse">
+              Huelva Philology Department
             </span>
-          </div>
-          <h1 className="text-display text-4xl md:text-6xl font-semibold text-navy mb-6">
-            Diccionario de Bolsillo
+          </motion.div>
+          <h1 className="text-display text-7xl md:text-9xl font-bold text-navy mb-8 leading-[0.8] tracking-tighter">
+            Diccionario <br /><span className="italic font-light text-terracotta">Choquero</span>
           </h1>
-          <p className="text-xl text-navy-60 max-w-2xl mx-auto leading-relaxed">
-            Palabras recopiladas de fuentes locales fiables. Si no está aquí, es que no se dice en Huelva.
+          <p className="text-xl md:text-3xl text-navy-60 font-light leading-relaxed">
+            Una recopilación exhaustiva del léxico onubense. 
+            Donde la semántica se encuentra con la solera de la calle.
           </p>
         </div>
 
-        {/* Search & Filter */}
-        <div className="sticky top-4 z-30 bg-white/90 backdrop-blur-xl p-4 md:p-6 rounded-[2rem] shadow-lg shadow-navy/5 border border-white/50 mb-12">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <div className="relative flex-1 w-full">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-navy-40" size={20} />
-              <input
-                type="text"
-                placeholder="Busca 'Gamba', 'Choco', 'Fatiga'..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-12 pr-6 py-4 bg-sand/30 hover:bg-sand/50 transition-colors rounded-2xl border-none focus:ring-2 focus:ring-terracotta/20 text-navy placeholder:text-navy-40 text-lg font-medium"
-              />
-            </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto no-scrollbar scroll-smooth">
-              {categories.map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-3 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${selectedCategory === cat
-                    ? 'bg-navy text-white shadow-lg shadow-navy/20 scale-105'
-                    : 'bg-sand/30 text-navy-60 hover:bg-sand hover:text-navy'
-                    }`}
-                >
-                  {cat === 'all' ? 'Todo' : cat.charAt(0).toUpperCase() + cat.slice(1).replace('-', ' ')}
-                </button>
-              ))}
-            </div>
+        {/* Search & Filter - More elegant bar */}
+        <div className="sticky top-6 z-30 bg-white/40 backdrop-blur-3xl p-3 rounded-full border border-white/20 shadow-2xl mb-20 flex flex-col md:flex-row gap-2">
+          <div className="relative flex-1">
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/30" size={18} />
+            <input
+              type="text"
+              placeholder="Buscar término (ej. Gamba, Choco, Fatiga...)"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-14 pr-6 py-4 bg-white/50 rounded-full border-none focus:ring-2 focus:ring-terracotta/20 text-navy placeholder:text-navy/30 text-lg font-medium transition-all"
+            />
+          </div>
+          <div className="flex gap-1 overflow-x-auto no-scrollbar py-1">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-500 ${
+                  selectedCategory === cat
+                    ? 'bg-navy text-white shadow-xl scale-105'
+                    : 'bg-white/50 text-navy/40 hover:bg-white hover:text-navy'
+                }`}
+              >
+                {cat === 'all' ? 'Todo' : cat.replace('-', ' ')}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid - Encyclopedic Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredTerms.map((term) => (
               <motion.div
                 key={term.id}
                 layoutId={term.id}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.95 }}
                 onClick={() => setActiveTerm(term)}
-                className="bg-white p-6 rounded-[2rem] border border-navy-10 hover:border-terracotta/30 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group flex flex-col h-full relative overflow-hidden"
+                className="bg-white p-10 rounded-sm border border-navy/5 hover:border-terracotta/20 hover:shadow-[0_20px_50px_-15px_rgba(26,42,58,0.1)] transition-all cursor-pointer group flex flex-col h-full relative"
               >
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-3xl font-display font-semibold text-navy group-hover:text-terracotta transition-colors">
+                <div className="flex justify-between items-start mb-10">
+                  <div>
+                    <span className="text-terracotta font-mono text-[9px] font-bold uppercase tracking-[0.2em] mb-2 block">{term.category}</span>
+                    <h3 className="text-5xl font-display font-medium text-navy group-hover:text-terracotta transition-colors leading-none tracking-tighter">
                       {term.term}
                     </h3>
-                    <span onClick={(e) => { e.stopPropagation(); speak(term.term); }} className="w-10 h-10 rounded-full bg-sand/50 flex items-center justify-center text-navy-40 hover:bg-terracotta hover:text-white transition-colors">
-                      <Volume2 size={18} />
-                    </span>
                   </div>
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); speak(term.term); }} 
+                    className="w-10 h-10 rounded-full bg-sand/50 flex items-center justify-center text-navy/20 hover:bg-terracotta hover:text-white transition-all scale-90 group-hover:scale-100 opacity-0 group-hover:opacity-100"
+                  >
+                    <Volume2 size={16} />
+                  </button>
+                </div>
 
-                  <p className="text-navy-60 text-base leading-relaxed mb-6 line-clamp-3 flex-grow">{term.definition}</p>
+                <div className="flex-grow">
+                  <p className="text-lg text-navy-60 font-light leading-relaxed line-clamp-4 mb-10 italic">
+                    {term.definition}
+                  </p>
+                </div>
 
-                  {term.image ? (
-                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mt-auto mb-4 border border-navy-5">
-                      <img src={term.image} alt={term.term} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    </div>
-                  ) : (
-                    <div className="mt-auto pt-4 border-t border-navy-5">
-                      <div className="text-sm font-mono text-terracotta/80 italic truncate">"{term.example}"</div>
-                    </div>
-                  )}
+                {term.image && (
+                  <div className="aspect-[16/9] overflow-hidden mb-10 bg-sand ring-1 ring-navy/5">
+                    <img src={term.image} alt={term.term} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" />
+                  </div>
+                )}
 
-                  <div className="flex items-center justify-between mt-auto pt-2">
-                    <span className="text-xs font-bold font-mono text-navy-30 uppercase tracking-wider bg-navy-5 px-3 py-1 rounded-full">
-                      {term.category}
-                    </span>
-                    {term.verified && <Star size={14} className="text-terracotta fill-terracotta" />}
+                <div className="pt-8 border-t border-navy/5 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-navy/30 uppercase tracking-[0.2em]">Ref: {term.id}</span>
+                  <div className="flex items-center gap-1">
+                    {term.verified && <Star size={10} className="text-terracotta fill-terracotta" />}
+                    <ChevronRight size={14} className="text-navy/20 group-hover:text-terracotta group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </motion.div>
@@ -222,84 +230,81 @@ export default function ChocoTranslator() {
           </AnimatePresence>
         </div>
 
-        {/* Modal Overlay */}
+        {/* Modal Overlay - Elegant and minimalist */}
         <AnimatePresence>
           {activeTerm && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setActiveTerm(null)}
-                className="absolute inset-0 bg-navy/60 backdrop-blur-md"
+                className="absolute inset-0 bg-navy/95 backdrop-blur-3xl"
               />
 
               <motion.div
                 layoutId={activeTerm.id}
-                className="relative w-full max-w-2xl bg-white rounded-[2.5rem] overflow-hidden shadow-2xl z-10 flex flex-col max-h-[90vh]"
+                className="relative w-full max-w-5xl bg-cream rounded-sm overflow-hidden shadow-2xl z-10 flex flex-col md:flex-row max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
               >
-                {/* Close Button */}
-                <button
-                  onClick={() => setActiveTerm(null)}
-                  className="absolute top-6 right-6 z-20 w-12 h-12 bg-white/20 backdrop-blur-md hover:bg-white rounded-full flex items-center justify-center text-navy shadow-lg transition-all"
-                >
-                  <X size={24} />
-                </button>
-
-                {/* Hero Image in Modal */}
-                {activeTerm.image && (
-                  <div className="aspect-video relative flex-shrink-0">
+                <div className="md:w-1/2 relative h-48 md:h-auto bg-sand flex items-center justify-center overflow-hidden">
+                  {activeTerm.image ? (
                     <img src={activeTerm.image} alt={activeTerm.term} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-80" />
-                    <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-white via-white/80 to-transparent pt-24">
-                      <span className="inline-block px-3 py-1 bg-terracotta text-white text-xs font-bold uppercase tracking-widest rounded-full mb-3 shadow-lg shadow-terracotta/20">
-                        {activeTerm.category}
-                      </span>
-                      <h2 className="text-5xl md:text-6xl font-display font-bold text-navy mb-2">{activeTerm.term}</h2>
-                      <p className="font-mono text-lg text-terracotta">{activeTerm.phonetic}</p>
-                    </div>
-                  </div>
-                )}
-
-                <div className={`p-8 md:p-10 overflow-y-auto ${!activeTerm.image ? 'pt-16' : ''}`}>
-                  {!activeTerm.image && (
-                    <div className="mb-8">
-                      <span className="inline-block px-3 py-1 bg-terracotta text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4 shadow-lg shadow-terracotta/20">
-                        {activeTerm.category}
-                      </span>
-                      <h2 className="text-5xl md:text-6xl font-display font-bold text-navy mb-2">{activeTerm.term}</h2>
-                      <p className="font-mono text-lg text-terracotta">{activeTerm.phonetic}</p>
+                  ) : (
+                    <div className="text-[20rem] font-display font-bold text-navy/5 absolute -rotate-12 select-none">
+                      {activeTerm.term[0]}
                     </div>
                   )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
+                  <div className="absolute bottom-10 left-10 text-white">
+                     <p className="font-mono text-sm tracking-widest uppercase mb-2 opacity-70">Pronunciación</p>
+                     <p className="text-4xl font-display font-light italic">{activeTerm.phonetic}</p>
+                  </div>
+                </div>
 
-                  <div className="space-y-8">
+                <div className="md:w-1/2 p-8 md:p-24 overflow-y-auto bg-white">
+                  <button
+                    onClick={() => setActiveTerm(null)}
+                    className="absolute top-10 right-10 text-navy/20 hover:text-terracotta transition-colors"
+                  >
+                    <X size={32} />
+                  </button>
+
+                  <div className="mb-16">
+                    <span className="text-terracotta font-mono text-xs font-bold uppercase tracking-[0.4em] mb-4 block">{activeTerm.category}</span>
+                    <h2 className="text-7xl md:text-8xl font-display font-bold text-navy mb-8 tracking-tighter leading-none">{activeTerm.term}</h2>
+                    <div className="h-px w-20 bg-terracotta/20" />
+                  </div>
+
+                  <div className="space-y-12">
                     <div>
-                      <h4 className="text-xs font-bold text-navy-40 uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <Sparkles size={14} /> Significado
+                      <h4 className="text-[10px] font-bold text-navy/30 uppercase tracking-[0.3em] mb-6 flex items-center gap-2">
+                        <Sparkles size={14} className="text-terracotta" /> Acepción
                       </h4>
-                      <p className="text-xl md:text-2xl text-navy-80 leading-relaxed font-light">{activeTerm.definition}</p>
+                      <p className="text-2xl md:text-3xl text-navy font-light leading-relaxed">{activeTerm.definition}</p>
                     </div>
 
-                    <div className="bg-sand/30 p-6 md:p-8 rounded-3xl border border-terracotta/10 relative overflow-hidden group hover:bg-sand/50 transition-colors">
-                      <h4 className="flex items-center gap-2 text-xs font-bold text-terracotta uppercase tracking-widest mb-4 z-10 relative">
-                        <MessageSquare size={14} />
-                        Ejemplo de uso
+                    <div className="bg-sand/30 p-10 md:p-14 rounded-sm border-l-4 border-terracotta relative overflow-hidden group">
+                      <h4 className="flex items-center gap-2 text-[10px] font-bold text-terracotta uppercase tracking-[0.4em] mb-8">
+                        <MessageSquare size={14} /> Contextualización
                       </h4>
-                      <p className="text-navy font-display text-2xl md:text-3xl italic z-10 relative leading-tight">
+                      <p className="text-navy font-display text-3xl md:text-5xl italic leading-tight">
                         "{activeTerm.example}"
                       </p>
                       <button
                         onClick={() => speak(activeTerm.example)}
-                        className="absolute bottom-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center text-navy-60 hover:text-terracotta hover:scale-110 shadow-sm transition-all z-20"
+                        className="absolute bottom-10 right-10 w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy/20 hover:text-terracotta hover:scale-110 shadow-sm transition-all"
                       >
                         <Volume2 size={24} />
                       </button>
                     </div>
                   </div>
 
-                  <div className="mt-12 pt-8 border-t border-navy-5 flex justify-between items-center text-xs text-navy-30 tracking-widest uppercase">
-                    <span>Verificado</span>
-                    <span>Huelva Dictionary</span>
+                  <div className="mt-20 pt-10 border-t border-navy/5 flex justify-between items-center text-[10px] font-mono text-navy/20 tracking-[0.3em] uppercase">
+                    <div className="flex items-center gap-2 font-bold">
+                      <Star size={12} className="text-terracotta fill-terracotta" /> Verificado
+                    </div>
+                    <span>Huelva Cloud · Lexicographic project</span>
                   </div>
                 </div>
               </motion.div>
