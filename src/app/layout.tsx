@@ -67,11 +67,12 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "tu-codigo-verificacion-google",
+    google: "4OHaHWxYg2W4o994iY9MXUO8OW0GC1mYqPywIKrY8es",
   },
   icons: {
     icon: '/favicon.ico',
   },
+
 };
 
 export default function RootLayout({

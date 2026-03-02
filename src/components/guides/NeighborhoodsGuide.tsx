@@ -34,6 +34,7 @@ interface Neighborhood {
   highlights: string[];
   color: string;
   image: string;
+  ranking?: number;
 }
 
 const NEIGHBORHOODS: Neighborhood[] = [
@@ -151,85 +152,109 @@ export default function NeighborhoodsGuide() {
     );
   };
 
-  return (
-    <div className="bg-stone-50 min-h-screen font-sans text-stone-900 pb-24">
+  const categories = ['all', 'foodie', 'culture', 'views', 'local', 'nightlife'];
 
-      {/* Filters Section */}
-      <div className="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-stone-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-stone-500 text-sm font-medium">
-              <Filter size={16} />
-              <span>Filtra por tu estilo:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {TRAVELER_TYPES.map(type => (
-                <button
-                  key={type.id}
-                  onClick={() => toggleTraveler(type.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all border ${selectedTravelers.includes(type.id)
-                    ? 'bg-stone-900 text-white border-stone-900 shadow-lg'
-                    : 'bg-white text-stone-500 border-stone-200 hover:border-amber-400 hover:text-amber-600'
-                    }`}
-                >
-                  {type.icon}
-                  {type.name}
-                </button>
-              ))}
-              {selectedTravelers.length > 0 && (
-                <button
-                  onClick={() => setSelectedTravelers([])}
-                  className="px-3 py-2 text-stone-400 hover:text-stone-900 transition-colors"
-                >
-                  <X size={18} />
-                </button>
-              )}
-            </div>
+  return (
+    <div className="bg-cream min-h-screen font-sans text-navy pb-32 pt-24">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-3 text-terracotta mb-6"
+            >
+              <div className="h-px w-12 bg-terracotta/30" />
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em]">Huelva Discovery Series</span>
+            </motion.div>
+            <h1 className="text-display text-6xl md:text-8xl lg:text-9xl font-bold text-navy leading-[0.8] mb-8 tracking-tighter">
+              Barrios con <br /><span className="italic font-light text-terracotta drop-shadow-sm">Alma</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-navy-60 font-light leading-relaxed max-w-xl">
+              Más allá de lo evidente. Una selección curada de los rincones donde Huelva late con su propio compás.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap gap-2 md:pb-4 justify-end">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setSelectedTravelers(cat === 'all' ? [] : [cat])}
+                className={`px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-500 border-2 ${
+                  (cat === 'all' && selectedTravelers.length === 0) || selectedTravelers.includes(cat)
+                    ? 'bg-navy border-navy text-white shadow-2xl scale-105'
+                    : 'bg-transparent border-navy/5 text-navy-40 hover:border-navy/20 hover:text-navy'
+                }`}
+              >
+                {cat === 'all' ? 'Ver todo' : cat}
+              </button>
+            ))}
           </div>
         </div>
-      </div>
 
-      <div className="container mx-auto px-6 py-12 max-w-7xl">
-
-        {/* Main Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredNeighborhoods.map((hood, idx) => (
+        {/* Asymmetric Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
+          {filteredNeighborhoods.map((n, idx) => (
             <motion.div
-              key={hood.id}
-              layoutId={`card-${hood.id}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              onClick={() => setSelectedNeighborhood(hood)}
-              className="group relative h-[400px] rounded-[2.5rem] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
+              key={n.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: (idx % 3) * 0.1 }}
+              className={`group cursor-pointer ${
+                idx % 5 === 0 ? 'md:col-span-12 lg:col-span-8' : 
+                idx % 5 === 1 ? 'md:col-span-12 lg:col-span-4 lg:mt-32' : 
+                idx % 5 === 2 ? 'md:col-span-12 lg:col-span-5 lg:-mt-20' :
+                idx % 5 === 3 ? 'md:col-span-12 lg:col-span-7' :
+                'md:col-span-12 lg:col-span-10 lg:col-start-2'
+              }`}
+              onClick={() => setSelectedNeighborhood(n)}
             >
-              {/* Background Image */}
-              <div className="absolute inset-0 bg-stone-900">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-60"
-                  style={{ backgroundImage: `url(${hood.image})` }}
+              <div className="relative overflow-hidden aspect-[16/10] mb-10 bg-sand group-hover:shadow-2xl transition-shadow duration-700">
+                <img
+                  src={n.image}
+                  alt={n.name}
+                  className="w-full h-full object-cover grayscale brightness-90 transition-all duration-1000 ease-out group-hover:grayscale-0 group-hover:scale-105 group-hover:brightness-100"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${hood.color.replace('from-', 'from-black/0 ').replace('to-', 'to-')} opacity-90`} />
-              </div>
-
-              {/* Content */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                <div className="absolute top-8 left-8 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-                  {hood.letter}
+                
+                {/* Letter Badge */}
+                <div className="absolute top-10 left-10">
+                  <span className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-2xl flex items-center justify-center text-white font-display text-2xl font-bold border border-white/20 shadow-2xl">
+                    {n.letter}
+                  </span>
                 </div>
 
-                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-3xl font-display font-bold mb-2 leading-tight">{hood.name}</h3>
-                  <p className="text-white/80 line-clamp-2 text-sm mb-4 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    {hood.description}
-                  </p>
+                {/* Tags overlay */}
+                <div className="absolute bottom-10 right-10 flex gap-2">
+                  {n.tags.slice(0, 2).map(tag => (
+                    <span key={tag} className="px-4 py-2 bg-navy/90 text-white font-mono text-[9px] font-bold uppercase tracking-widest backdrop-blur-md">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {hood.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className="px-2 py-1 bg-white/20 backdrop-blur-sm rounded-md text-xs font-bold">
-                        {tag}
-                      </span>
-                    ))}
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-6 mb-6">
+                  <span className="text-terracotta font-mono text-[10px] font-bold uppercase tracking-[0.3em]">RANKING #{n.ranking || idx + 1}</span>
+                  <div className="h-px flex-1 bg-navy/10" />
+                </div>
+                <h3 className="text-5xl md:text-7xl font-display font-medium text-navy mb-6 group-hover:text-terracotta transition-colors flex items-center justify-between">
+                  {n.name}
+                </h3>
+                <p className="text-xl md:text-2xl text-navy-60 font-light leading-relaxed mb-8 line-clamp-2 italic">
+                  "{n.description}"
+                </p>
+                
+                <div className="flex items-center gap-8">
+                  <div className="flex items-center gap-2 text-navy-30 font-mono text-[10px] uppercase font-bold tracking-widest">
+                    <MapPin size={12} className="text-terracotta" />
+                    {n.distance}
+                  </div>
+                  <div className="flex items-center gap-2 text-navy-80 font-mono text-[10px] uppercase font-bold tracking-widest group-hover:text-terracotta transition-colors">
+                    Explorar historia
+                    <Navigation size={12} className="group-hover:translate-x-1 -rotate-45 transition-transform" />
                   </div>
                 </div>
               </div>
@@ -237,166 +262,94 @@ export default function NeighborhoodsGuide() {
           ))}
         </div>
 
-        {/* Rankings Section */}
-        <div className="mt-24 mb-12">
-          <div className="flex items-end justify-between mb-8 border-b border-stone-200 pb-4">
-            <div>
-              <h2 className="text-3xl font-display font-bold text-stone-900">Top Rankings</h2>
-              <p className="text-stone-500">¿Qué buscas exactamente?</p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            {RANKING_CATEGORIES.map(cat => {
-              const top3 = [...NEIGHBORHOODS].sort((a, b) => b.vibes[cat.key as keyof typeof a.vibes] - a.vibes[cat.key as keyof typeof a.vibes]).slice(0, 3);
-              return (
-                <div key={cat.key} className="bg-white p-6 rounded-3xl border border-stone-100 shadow-sm">
-                  <div className="flex items-center gap-2 mb-6 text-amber-600">
-                    <div className="p-2 bg-amber-50 rounded-xl">{cat.icon}</div>
-                    <span className="font-bold uppercase tracking-widest text-xs">{cat.name}</span>
-                  </div>
-                  <ul className="space-y-4">
-                    {top3.map((hood, i) => (
-                      <li key={hood.id} className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-stone-700">{hood.name}</span>
-                        <span className={`text-xs font-bold px-2 py-1 rounded-md ${i === 0 ? 'bg-amber-100 text-amber-800' : 'bg-stone-50 text-stone-400'}`}>
-                          #{i + 1}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-      </div>
-
-      {/* MODAL DETALLE */}
-      <AnimatePresence>
-        {selectedNeighborhood && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-4 md:p-8 bg-stone-900/60 backdrop-blur-sm"
-            onClick={() => setSelectedNeighborhood(null)}
-          >
-            <motion.div
-              layoutId={`card-${selectedNeighborhood.id}`}
-              className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2rem] shadow-2xl relative"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
+        {/* Modal Selection */}
+        <AnimatePresence>
+          {selectedNeighborhood && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={() => setSelectedNeighborhood(null)}
-                className="absolute top-6 right-6 z-10 p-2 bg-black/20 hover:bg-black/40 text-white rounded-full backdrop-blur-md transition-colors"
+                className="absolute inset-0 bg-navy/95 backdrop-blur-2xl"
+              />
+              
+              <motion.div
+                layoutId={`card-${selectedNeighborhood.id}`}
+                className="relative w-full max-w-6xl bg-cream rounded-sm overflow-hidden shadow-2xl z-10 flex flex-col md:flex-row max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
               >
-                <X size={20} />
-              </button>
-
-              <div className="grid md:grid-cols-2">
-                {/* Image Side */}
-                <div className="h-64 md:h-auto relative bg-stone-900">
-                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${selectedNeighborhood.image})` }} />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${selectedNeighborhood.color} opacity-30 mix-blend-multiply`} />
-
-                  <div className="absolute bottom-0 left-0 p-8 text-white w-full bg-gradient-to-t from-black/80 to-transparent">
-                    <span className="text-6xl font-display font-bold opacity-20 absolute -top-10 left-6">{selectedNeighborhood.letter}</span>
-                    <h2 className="text-4xl font-display font-bold mb-2 relative">{selectedNeighborhood.name}</h2>
-                    <div className="flex items-center gap-2 text-sm font-medium opacity-90">
-                      <Navigation size={14} />
-                      {selectedNeighborhood.distance}
+                <div className="md:w-1/2 relative h-64 md:h-auto">
+                  <img src={selectedNeighborhood.image} alt={selectedNeighborhood.name} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
+                  <div className="absolute top-8 left-8">
+                    <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white font-display text-2xl font-bold">
+                      {selectedNeighborhood.letter}
                     </div>
                   </div>
                 </div>
 
-                {/* Info Side */}
-                <div className="p-8 md:p-10 bg-white">
-                  <div className="mb-8">
-                    <h4 className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-3">La Esencia</h4>
-                    <p className="text-lg text-stone-800 leading-relaxed font-medium">
-                      {selectedNeighborhood.longDescription}
+                <div className="md:w-1/2 p-8 md:p-20 overflow-y-auto">
+                  <button
+                    onClick={() => setSelectedNeighborhood(null)}
+                    className="absolute top-8 right-8 text-navy/40 hover:text-terracotta transition-colors"
+                  >
+                    <X size={32} />
+                  </button>
+
+                  <div className="mb-12">
+                    <span className="text-terracotta font-mono text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Neighborhood Profile</span>
+                    <h2 className="text-6xl md:text-8xl font-display font-bold text-navy mb-6 tracking-tighter">{selectedNeighborhood.name}</h2>
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {selectedNeighborhood.tags.map(tag => (
+                        <span key={tag} className="px-4 py-1.5 bg-navy text-white font-mono text-[9px] font-bold uppercase tracking-widest">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="prose prose-xl prose-navy font-light leading-relaxed text-navy/70 space-y-8">
+                    <p className="text-2xl text-navy font-normal italic leading-snug">
+                      {selectedNeighborhood.description}
                     </p>
-                  </div>
-
-                  <div className="mb-8">
-                    <h4 className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-4">Vibe Check</h4>
-                    <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-xs font-medium text-stone-600">
-                          <span>Gastronomía</span>
-                          <span>{selectedNeighborhood.vibes.food}/5</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-amber-500 rounded-full" style={{ width: `${selectedNeighborhood.vibes.food * 20}%` }} />
-                        </div>
+                    <p>{selectedNeighborhood.longDescription}</p>
+                    
+                    <div className="grid grid-cols-2 gap-12 pt-12 border-t border-navy/10">
+                      <div>
+                        <h4 className="text-xs font-bold text-navy uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                          <Star size={14} className="text-terracotta" /> Highlights
+                        </h4>
+                        <ul className="space-y-3 list-none p-0 m-0">
+                          {selectedNeighborhood.highlights.map(h => (
+                            <li key={h} className="text-lg text-navy-60 flex items-center gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full bg-terracotta/40" />
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-xs font-medium text-stone-600">
-                          <span>Cultura</span>
-                          <span>{selectedNeighborhood.vibes.culture}/5</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-purple-500 rounded-full" style={{ width: `${selectedNeighborhood.vibes.culture * 20}%` }} />
-                        </div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-xs font-medium text-stone-600">
-                          <span>Vida Nocturna</span>
-                          <span>{selectedNeighborhood.vibes.nightlife}/5</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-blue-500 rounded-full" style={{ width: `${selectedNeighborhood.vibes.nightlife * 20}%` }} />
-                        </div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-xs font-medium text-stone-600">
-                          <span>Tranquilidad</span>
-                          <span>{5 - selectedNeighborhood.vibes.nightlife}/5</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-green-500 rounded-full" style={{ width: `${(5 - selectedNeighborhood.vibes.nightlife) * 20}%` }} />
-                        </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-navy uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                          <Coffee size={14} className="text-terracotta" /> Best For
+                        </h4>
+                        <ul className="space-y-3 list-none p-0 m-0">
+                          {selectedNeighborhood.bestFor.map(b => (
+                            <li key={b} className="text-lg text-navy-60 flex items-center gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full bg-navy/20" />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="flex items-center gap-2 text-xs font-bold text-stone-400 uppercase tracking-widest mb-3">
-                        <Star size={14} className="text-amber-500" /> Imperdibles
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedNeighborhood.highlights.map(h => (
-                          <span key={h} className="px-3 py-1 bg-stone-100 text-stone-600 rounded-lg text-sm font-medium">
-                            {h}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="flex items-center gap-2 text-xs font-bold text-stone-400 uppercase tracking-widest mb-3">
-                        <MapPin size={14} className="text-amber-500" /> Ideal para
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedNeighborhood.bestFor.map(h => (
-                          <span key={h} className="px-3 py-1 border border-stone-200 text-stone-500 rounded-lg text-sm">
-                            {h}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

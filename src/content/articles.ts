@@ -72,23 +72,20 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>El choco frito es uno de los elementos más reconocibles de la cocina onubense. No es sepia. Es choco: un cefalópodo que se trabaja de forma diferente, con textura y sabor propios que no tienen equivalente directo en otras cocinas costeras andaluzas.</p>
+      <p>Vamos a ver, que nos conocemos. Si vienes a Huelva y pides sepia, el camarero te va a mirar con una mezcla de lástima y resignación. En Huelva se come <strong>choco</strong>, y punto pelota. Es nuestra seña de identidad, hasta el punto de que nos llaman choqueros a los de la capital con todo el orgullo del mundo.</p>
 
-      <h2>Qué hace al choco frito de Huelva diferente</h2>
-      <p>El punto clave está en el rebozado y la temperatura del aceite. El choco bien frito tiene la capa exterior crujiente y el interior tierno, sin exceso de grasa. Si está gomoso o apelmazado, algo falló en la cocina.</p>
+      <h2>El choco no es sepia (métetelo en la cabeza)</h2>
+      <p>La diferencia está en la textura. El choco de la ría tiene un "mordisco" que no encuentras en el Mediterráneo. Si está gomoso o parece un chicle, huye: es congelado o lo han maltratado en la cocina.</p>
       <ul>
-        <li>Rebozado: harina fina, no panko ni espeso.</li>
-        <li>Aceite: de oliva, muy caliente. No reutilizado en exceso.</li>
-        <li>Corte: en tiras o en dados, según zona y tradición del local.</li>
+        <li><strong>El rebozado:</strong> Harina fina de calidad. Nada de panko, ni tempuras raras, ni inventos modernos. Tiene que crujir, no ser una bota.</li>
+        <li><strong>El aceite:</strong> De oliva virgen, limpio y que eche humo. Si el aceite está cansado, el choco sale triste.</li>
+        <li><strong>El corte:</strong> En tiras o dados. Si te lo sirven en aros perfectos, sospecha; puede que te estén dando gato por liebre (o pota por choco).</li>
       </ul>
 
-      <h2>Dónde orientarse</h2>
-      <p>Las freidurías del centro y del barrio El Torrejón son buena referencia. Los sitios con carta extensa y precio bajo suelen sacrificar calidad de producto.</p>
+      <h2>¿Dónde ir sin que te engañen?</h2>
+      <p>Si quieres el choco de verdad, vete a los bares de toda la vida en el centro o date una vuelta por las freidurías del barrio de El Torrejón. Huye de los sitios con fotos de platos en la puerta; eso es para guiris que no saben lo que es la humedad de la ría.</p>
 
-      <h2>Cómo pedirlo</h2>
-      <p>Ración o media ración, dependiendo del grupo. Sin limón por defecto en muchos sitios —si lo quieres, pídelo. El choco bueno no necesita enmascarar nada.</p>
-
-      <blockquote>Regla choquera: si te sirven "sepia frita" en Huelva, pregunta. Probablemente es choco y el camarero no lo sabe diferenciar.</blockquote>
+      <blockquote>Si pides limón, hazlo con discreción. El choco bueno sabe a mar, no a cítrico de bote.</blockquote>
     `
   },
 
@@ -103,31 +100,19 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>Huelva no es una ciudad con infraestructura hotelera masiva. Lo que tiene es suficiente para una estancia de 1-3 días si sabes dónde mirar. El truco está en elegir bien la zona antes de elegir el hotel.</p>
+      <p>En Huelva no nos sobran los hoteles, pero los que hay cumplen si sabes elegir. Si buscas un resort de cinco estrellas con buffet de fotos de Instagram, tira para la costa. En la capital venimos a vivir la calle, así que el alojamiento es para dormir y poco más.</p>
 
-      <h2>Qué zona elegir</h2>
-      <p>Para moverse a pie, el centro histórico (entorno a Plaza de las Monjas y Calle Concepción) es lo más práctico. Acceso a bares, comercio y museos sin necesitar coche.</p>
+      <h2>Zonas: O en el centro, o estás lejos</h2>
+      <p>Huelva se camina en 15 minutos de punta a punta. Si te quedas en el centro (Plaza de las Monjas, Gran Vía), tienes la vida a un paso. Si te quedas a las afueras, vas a depender del coche y aparcar en el centro es un deporte de riesgo.</p>
       <ul>
-        <li><strong>Centro:</strong> mejor acceso a pie. Algo más de ruido nocturno los fines de semana.</li>
-        <li><strong>Zona Gran Vía:</strong> más tranquila, bien comunicada. Buena opción para viajes de trabajo.</li>
-        <li><strong>Alrededores del Puerto:</strong> interesante si llegas en barco o quieres el ambiente del Odiel.</li>
+        <li><strong>Centro Histórico:</strong> Donde pasa todo. Ruido los fines de semana (porque aquí nos gusta la juerga), pero lo tienes todo a mano.</li>
+        <li><strong>Zona Puerto:</strong> Más moderna, pero un poco más fría. Útil si vienes de negocios y no quieres líos.</li>
       </ul>
 
-      <h2>Rangos de precio orientativos</h2>
-      <ul>
-        <li><strong>Económico (30-55€/noche):</strong> hostales y pensiones familiares en el centro. Limpios y funcionales. Sin extra.</li>
-        <li><strong>Medio (60-100€/noche):</strong> hoteles de 3 estrellas con desayuno incluido en algunos casos. La mejor relación calidad-precio.</li>
-        <li><strong>Superior (100-160€/noche):</strong> hoteles de 4 estrellas con aparcamiento y servicios completos. Dos o tres opciones en la ciudad.</li>
-      </ul>
+      <h2>Verdades sobre el precio</h2>
+      <p>Un hostal limpio en el centro te va a dar más alegrías que un hotel de cadena a 3 kilómetros. No pagues por el desayuno del hotel; sal a la calle, pide una tostada de pringá y un café, y ahórrate 15 pavos que luego te gastas en gambas.</p>
 
-      <h2>Qué revisar antes de reservar</h2>
-      <ul>
-        <li>Aparcamiento: en el centro es complicado. Confirmar si el hotel tiene o está cerca de parking público.</li>
-        <li>Desayuno incluido: en Huelva suele compensar más desayunar en bar local que pagar el buffet del hotel.</li>
-        <li>Cancelación: reservar con cancelación gratuita si el plan no está 100% cerrado.</li>
-      </ul>
-
-      <blockquote>Consejo directo: un hostal bien ubicado en el centro supera a un hotel mediocre en la periferia. La logística lo vale.</blockquote>
+      <blockquote>Consejo de local: El parking es clave. Si el hotel no tiene, asegúrate de que haya uno público cerca o prepárate para dar vueltas como un jartible.</blockquote>
     `
   },
 
@@ -179,30 +164,19 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>La Plaza de las Monjas no es la plaza más bonita de España. No tiene la elegancia de la Plaza Mayor de Salamanca ni la monumentalidad de la Plaza de España de Sevilla. Pero es la plaza de Huelva: el lugar donde la ciudad se encuentra, se encuentra a sí misma y se organiza.</p>
+      <p>No nos engañemos: la Plaza de las Monjas no es la Plaza Mayor de Salamanca. Ni falta que le hace. Es el salón de nuestra casa. Si quieres ver quién manda en Huelva, ven un sábado a mediodía y siéntate en un banco (si encuentras uno libre).</p>
 
-      <h2>Qué es realmente la Plaza de las Monjas</h2>
-      <p>Espacio peatonal en el centro histórico, rodeado de edificios de principios del siglo XX. El nombre viene del antiguo convento de monjas que ocupaba parte del solar. Hoy es zona de paso, de encuentro y de terrazas.</p>
-
-      <h2>Qué hacer aquí</h2>
+      <h2>¿Qué se hace aquí? Nada y todo</h2>
+      <p>Es el punto de encuentro por excelencia. Aquí se queda para ir a comer, para ver pasar el tiempo o para que los niños corran mientras tú te tomas un café. No busques monumentos épicos, busca la vida que tiene.</p>
       <ul>
-        <li><strong>Tomar café en una terraza:</strong> especialmente por la mañana, cuando el sol entra de lado y la gente pasea.</li>
-        <li><strong>Observar la arquitectura:</strong> los edificios del entorno tienen detalles modernistas poco conocidos pero dignos de atención.</li>
-        <li><strong>Usarla como base:</strong> desde aquí se llega a pie a todos los puntos interesantes del centro en menos de 10 minutos.</li>
+        <li><strong>El "Colón":</strong> Aunque la estatua es de la Fe Descubridora, todos le llamamos Colón. Es el punto de reunión oficial. "Nos vemos en el Colón", y punto.</li>
+        <li><strong>El Kiosko:</strong> Un clásico para comprar chuches o el periódico mientras ves pasar a la gente.</li>
       </ul>
 
-      <h2>Dónde comer cerca</h2>
-      <p>Alrededor de la plaza hay una concentración de bares y restaurantes que abarca desde tapas tradicionales hasta cocina más elaborada. No es la zona más barata, pero tiene opciones para distintos presupuestos.</p>
-      <ul>
-        <li>Calle Concepción: bares de toda la vida.</li>
-        <li>Calle Rico: opciones de mediana categoría.</li>
-        <li>Calle Vázquez López: cafeterías y desayunos.</li>
-      </ul>
+      <h2>A comer, pero con criterio</h2>
+      <p>Alrededor de la plaza hay de todo. Desde sitios donde te clavan por ser el centro hasta bares de toda la vida en las calles que salen (Vázquez López o Rico). Si ves a muchos onubenses en una barra, entra. Si solo ves cámaras de fotos, sigue caminando.</p>
 
-      <h2>Horarios y acceso</h2>
-      <p>La plaza es peatonal las 24 horas. Las terrazas suelen abrir de 8:00 a 24:00. Los fines de semana hay más ambiente, especialmente a mediodía y al atardecer.</p>
-
-      <blockquote>La Plaza de las Monjas no es un destino. Es un punto de partida.</blockquote>
+      <blockquote>Dato real: La plaza ha cambiado mil veces. Algunos todavía echan de menos los jardines antiguos, otros aman el espacio peatonal. Así somos aquí.</blockquote>
     `
   },
 
@@ -293,20 +267,19 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li><strong>Olor:</strong> marino intenso. Sin rastro de amoniaco ni olores extraños.</li>
       </ul>
 
-      <h2>Preparaciones típicas</h2>
-      <p>Las coquinas se cocinan de dos formas principales:</p>
+      <p>Si la gamba blanca es la reina, la coquina es la princesa rebelde de la ría. Es un producto humilde, pero si te dan "gato por liebre" (o tellina por coquina de aquí), te vas a enterar rápido porque tienen más arena que el desierto del Sáhara.</p>
+
+      <h2>¿Cómo saber si son de las buenas?</h2>
+      <p>La coquina de Huelva es pequeña, fina y tiene un sabor que te llena la boca de mar. Si ves unas almejas gigantes que te venden como coquinas, sospecha. Probablemente vienen de lejos y han pasado más tiempo en un camión que en el agua.</p>
       <ul>
-        <li><strong>A la marinera:</strong> con salsa de ajo, perejil y vino blanco. La más habitual en bares.</li>
-        <li><strong>Al ajillo:</strong> solo con aceite, ajo y guindilla. Para probar el producto sin distracciones.</li>
+        <li><strong>A la marinera:</strong> La clásica. Ajo, perejil y un chorrito de vino del Condado. El secreto es no dejarlas mucho tiempo al fuego; tienen que abrirse y ya está.</li>
+        <li><strong>Al ajillo:</strong> Para los puristas. Solo aceite del bueno, ajo picadito y un toque de guindilla para que despierten el paladar.</li>
       </ul>
 
-      <h2>Dónde comerlas</h2>
-      <p>Los bares de la zona del puerto y del centro histórico suelen tenerlas en temporada. Precio orientativo: 8-14€ la ración.</p>
+      <h2>El ritual de comerlas</h2>
+      <p>Aquí no se usan cubiertos. Se usan las manos. Coges una, usas la concha para sacar el bicho de la siguiente y así hasta que solo quede un montón de cáscaras y el caldito delicioso al fondo del plato. El que no use pan para mojar ese caldo, no tiene alma.</p>
 
-      <h2>Temporada</h2>
-      <p>Todo el año, aunque en verano sube el precio y baja la calidad por la presión turística.</p>
-
-      <blockquote>Las coquinas no son almejas pequeñas. Son otro producto con sabor y textura propios.</blockquote>
+      <blockquote>Ojo con la veda: Hay épocas en las que no se pueden coger. Si te las ofrecen en agosto a precio de oro, pregunta de dónde vienen.</blockquote>
     `
   },
 
@@ -357,30 +330,19 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Antonio Torre',
     isAi: true,
     content: `
-      <p>El Muelle de la Compañía, conocido popularmente como Muelle del Tinto, es una estructura portuaria construida a finales del siglo XIX por la Rio Tinto Company Limited para embarcar el mineral de cobre extraído en las minas de la Sierra de Huelva.</p>
+      <p>El Muelle de la Rio Tinto Company Limited (o Muelle del Tinto para los amigos) es nuestro monumento al hierro y al pasado inglés. Olvida las pirámides; esto es ingeniería bruta que servía para cargar el mineral que salía de las tripas de la Sierra.</p>
 
-      <h2>Qué es hoy</h2>
-      <p>Estructura de hierro y madera (la original era de madera, la actual es reconstrucción) que se adentra en el río Odiel. Es accesible al público y uno de los pocos lugares desde donde se puede ver la actividad portuaria de cerca.</p>
-
-      <h2>Por qué importa</h2>
+      <h2>Más que un muelle, un símbolo</h2>
+      <p>Terminado en 1876, fue una revolución tecnológica en su día. Hoy es el sitio perfecto para pasear cuando el sol empieza a caer y la ría se pone de color naranja. No es una "atracción turística" al uso; es un trozo de historia que sigue en pie a pesar del salitre y del olvido.</p>
       <ul>
-        <li>Es símbolo de la influencia británica en la historia industrial de Huelva.</li>
-        <li>Representa la época de esplendor minero que transformó la economía de la provincia.</li>
-        <li>Es punto de referencia visual de la ciudad.</li>
+        <li><strong>La visita:</strong> Se camina por arriba. Tienes las mejores vistas del Odiel y del puerto. Si tienes suerte, verás algún barco mercante entrando a cámara lenta.</li>
+        <li><strong>El momento:</strong> Atardecer. Imprescindible. La luz de Huelva a esa hora sobre el hierro del muelle es algo que no se olvida.</li>
       </ul>
 
-      <h2>Cómo visitar</h2>
-      <p>Acceso libre y gratuito. Se llega caminando desde el centro en 15-20 minutos o en coche (aparcamiento en zona). Recomendable al atardecer por la luz sobre el agua.</p>
-      <ul>
-        <li>Duración de la visita: 15-30 minutos.</li>
-        <li>Ideal combinar con paseo por el entorno del puerto.</li>
-        <li>No hay servicios en el propio muelle (baños, bares).</li>
-      </ul>
+      <h2>¿Qué hay cerca?</h2>
+      <p>Poco. El muelle está un poco apartado del bullicio del centro, pero el paseo por la ría merece la pena. Llévate una chaqueta fina, que cuando sopla el Poniente al lado del agua te puedes quedar tieso hasta en julio.</p>
 
-      <h2>Contexto histórico breve</h2>
-      <p>A partir de 1873, las minas de Riotinto pasaron a manos británicas. El mineral se transportaba por ferrocarril hasta Huelva y se embarcaba desde este muelle. La operación duró hasta mediados del siglo XX y transformó por completo la economía y la demografía de la zona.</p>
-
-      <blockquote>El Muelle del Tinto no es atracción turística. Es memoria industrial hecha estructura.</blockquote>
+      <blockquote>Dato de historiador local: Muchos creen que es de Eiffel, pero no. Fue cosa de George Bruce y Thomas Gibson. Ingeniería británica con alma choquera.</blockquote>
     `
   },
 
@@ -397,30 +359,20 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Antonio Torre',
     isAi: true,
     content: `
-      <p>El jamón ibérico de la Denominación de Origen Protegida (DOP) Sierra de Huelva es uno de los productos más valorados de la gastronomía española. No todo el jamón que se vende como "de Huelva" tiene esta protección.</p>
+      <p>Cuidado aquí, que entramos en terreno sagrado. En la Sierra de Huelva no hacemos jamón; hacemos arte que se come. Si estás acostumbrado al jamón de sobre del súper, prepárate porque lo que vas a probar aquí es otra liga.</p>
 
-      <h2>Qué es la DOP Sierra de Huelva</h2>
-      <p>Área geográfica delimitada que incluye la Sierra y parte de la provincia. Solo los cerdos criados, alimentados y sacrificados en esta zona, con las características específicas de raza y alimentación, pueden llevar esta denominación.</p>
-
-      <h2>Códigos de color (brida)</h2>
+      <h2>DOP Jabugo (Sierra de Huelva)</h2>
+      <p>No todo lo que viene de la sierra es 100% ibérico de bellota. Tienes que fijarte en la brida (la etiqueta de plástico que lleva en la pezuña). Si quieres lo máximo, busca la <strong>brida negra</strong>. Eso significa que el cerdo era un atleta dehesa que solo comió bellotas y hierba.</p>
       <ul>
-        <li><strong>Negro:</strong> 100% ibérico de bellota. El más alto de la gama.</li>
-        <li><strong>Rojo:</strong> Ibérico de bellota (pero no 100% raza pura).</li>
-        <li><strong>Verde:</strong> Ibérico de cebo de campo.</li>
-        <li><strong>Blanco:</strong> Ibérico de cebo (alimentación con piensos).</li>
+        <li><strong>Negro:</strong> El top. 100% raza ibérica y bellota.</li>
+        <li><strong>Rojo:</strong> Bellota, pero el cerdo tiene mezcla de sangre (no es 100% ibérico).</li>
+        <li><strong>Verde:</strong> Cebo de campo. Buenos, pero no han vivido el sueño de la bellota completa.</li>
       </ul>
 
-      <h2>Dónde comprar</h2>
-      <p>En Huelva capital, las tiendas especializadas del centro ofrecen producto con certificación. En la Sierra (Aracena, Jabugo, Cortegana), las tiendas de productores suelen tener mejor relación calidad-precio.</p>
+      <h2>¿Cómo se come?</h2>
+      <p>A cuchillo. Siempre a cuchillo. Si ves que lo cortan con máquina en un bar de la sierra, date media vuelta. El jamón necesita sudar, estar a temperatura ambiente y que el corte sea traslúcido. Y por favor, no le quites el tocino; ahí es donde está la gloria.</p>
 
-      <h2>Precios orientativos</h2>
-      <ul>
-        <li>Paleta (5-6 kg): 80-150€ según calidad.</li>
-        <li>Jamón (7-8 kg): 150-350€ según calidad.</li>
-        <li>Envasado al vacío: 15-25€/kg para bellota de primera.</li>
-      </ul>
-
-      <blockquote>Un jamón bueno no necesita presentación. Pero sí necesita cuchillo afilado y temperatura ambiente.</blockquote>
+      <blockquote>Un truco: Si vas a Jabugo o Aracena, compra directamente en los secaderos. Te ahorras intermediarios y la calidad está garantizada.</blockquote>
     `
   },
 
