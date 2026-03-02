@@ -80,7 +80,7 @@ async function nourishArticles() {
 
 async function nourishNews() {
   console.log('--- Nourishing External News ---');
-  const newsData = { ...externalNewsData };
+  const newsData = JSON.parse(fs.readFileSync(NEWS_FILE, 'utf8'));
   let updated = false;
   
   for (const item of newsData.news) {
@@ -97,8 +97,8 @@ async function nourishNews() {
         
         const success = await downloadImage(result.selected_image.url, destPath);
         if (success) {
-          item.image = `/images/nourished/${filename}`;
-          console.log(`  ✓ Success: ${item.image}`);
+          (item as any).image = `/images/nourished/${filename}`;
+          console.log(`  ✓ Success: ${(item as any).image}`);
           updated = true;
         }
       }
