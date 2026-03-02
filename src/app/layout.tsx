@@ -66,15 +66,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: "tu-codigo-verificacion-google",
+    google: "4OHaHWxYg2W4o994iY9MXUO8OW0GC1mYqPywIKrY8es",
   },
   icons: {
     icon: '/favicon.ico',
   },
-  verification: {
-    google: "4OHaHWxYg2W4o994iY9MXUO8OW0GC1mYqPywIKrY8es",
-  },
+
 };
 
 export default function RootLayout({
