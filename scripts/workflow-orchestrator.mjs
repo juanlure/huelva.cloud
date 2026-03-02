@@ -305,6 +305,35 @@ async function runFull(logger) {
   await runEvening(logger);
 }
 
+// ============ NOTIFICACIONES ============
+
+async function sendNotification(mode, results) {
+  try {
+    const counts = await countContent();
+    const newsAdded = results.news?.added ? '✅' : '⏭️';
+    const published = results.publish?.published ? '✅' : '⏭️';
+    
+    const message = `📰 **Workflow ${mode} — ${new Date().toLocaleDateString('es-ES')}**
+
+${newsAdded} Noticias: ${counts.externalNews} total
+${published} Publicado: ${published === '✅' ? 'Sí' : 'Sin cambios'}
+📊 Artículos: ${counts.localArticles}
+
+${results.news?.skipped ? '_Límite diario alcanzado_' : ''}`;
+
+    // Enviar notificación visible (no logs)
+    console.log('\n' + '='.repeat(50));
+    console.log('NOTIFICACIÓN:');
+    console.log(message);
+    console.log('='.repeat(50));
+    
+    return true;
+  } catch (e) {
+    console.error('Error enviando notificación:', e.message);
+    return false;
+  }
+}
+
 // ============ MAIN ============
 
 async function main() {
@@ -336,6 +365,9 @@ async function main() {
     };
     
     const results = await runners[mode](logger);
+    
+    // Enviar notificación visible
+    await sendNotification(mode, results);
     
     // Guardar log
     const logFile = await logger.save(mode);
