@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     default: "Huelva.cloud | Guía Local 2026 - Qué Ver, Dónde Comer y Eventos",
     template: "%s | Huelva.cloud"
   },
-  description: "Guía local de Huelva escrita por onubenses. Descubre qué ver, dónde comer (choco frito, coquinas), eventos 2026 y los mejores planes. Sin tópicos turísticos.",
-  keywords: "Huelva, qué ver en Huelva, dónde comer en Huelva, choco frito Huelva, coquinas Huelva, eventos Huelva 2026, guía Huelva, turismo Huelva, Andalucía",
+  description: "La guía de Huelva sin rodeos ni folletos turísticos genéricos. Escrita por onubenses para que sepas dónde comer el mejor choco frito, qué ver y los planes más auténticos de la provincia. Huelva de verdad.",
+  keywords: "Huelva, qué ver en Huelva, dónde comer en Huelva, choco frito Huelva, coquinas Huelva, eventos Huelva 2026, guía local Huelva, turismo Huelva auténtico",
   authors: [{ name: "Huelva.cloud" }],
   creator: "Huelva.cloud",
   publisher: "Huelva.cloud",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Huelva.cloud | Guía Local 2026 - Qué Ver, Dónde Comer y Eventos",
-    description: "Guía local de Huelva escrita por onubenses. Descubre qué ver, dónde comer (choco frito, coquinas), eventos 2026 y los mejores planes.",
+    title: "Huelva.cloud | Guía Local de Huelva (Sin Filtros)",
+    description: "La guía de Huelva escrita por onubenses. Dónde comer choco frito, coquinas y los mejores planes sin tópicos turísticos.",
     url: "https://huelva.cloud",
     siteName: "Huelva.cloud",
     locale: "es_ES",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Huelva.cloud | Guía Local 2026",
-    description: "Guía local de Huelva escrita por onubenses. Qué ver, dónde comer, eventos 2026.",
+    title: "Huelva.cloud | La Guía Auténtica de Huelva",
+    description: "Qué ver y dónde comer en Huelva de verdad. Sin pamplinas turísticas.",
   },
   robots: {
     index: true,
@@ -80,9 +80,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // SEO-Geo: Structured Data for the entire site
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Huelva.cloud",
+    "url": "https://huelva.cloud",
+    "description": "Guía local auténtica de Huelva escrita por onubenses.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Huelva.cloud",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://huelva.cloud/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://huelva.cloud/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${instrument.variable} ${dmSans.variable} ${jetbrains.variable} font-body bg-cream text-navy antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         {children}
         <Footer />

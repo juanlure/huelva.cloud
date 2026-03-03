@@ -44,11 +44,11 @@ export default async function Home() {
             </div>
 
             <h2 className="text-display text-4xl md:text-5xl font-semibold text-navy mb-6">
-              Descubre Huelva
+              Huelva de verdad
             </h2>
 
             <p className="text-xl text-navy-60 max-w-2xl mb-16">
-              Artículos seleccionados para que empieces a conocer la ciudad como un local.
+              Ni folletos turísticos ni postureo. Aquí te contamos lo que hay, desde el mejor choco frito hasta los rincones que no salen en las guías de Madrid.
             </p>
 
             {/* Featured Article */}

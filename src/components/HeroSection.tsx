@@ -97,11 +97,8 @@ export default function HeroSection() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/images/guides/huelva-aerea.jpg)' }}
         />
-        {/* Editorial Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/40 to-navy/100" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-transparent to-navy/90" />
-        {/* Top Fade for Header Visibility - Stronger and deeper for contrast */}
-        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-navy/95 via-navy/60 to-transparent pointer-events-none z-20" />
+        {/* Editorial Gradients - Cleaned up since header is now solid white */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/20 to-navy" />
         {/* Subtle Noise Texture */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </motion.div>

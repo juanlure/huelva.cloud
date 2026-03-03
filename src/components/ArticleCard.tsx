@@ -102,6 +102,12 @@ export default function ArticleCard({
       className={`group bg-white rounded-2xl overflow-hidden border border-navy-10 hover:shadow-lg transition-all duration-500 ${style.border} ${
         featured ? 'md:grid md:grid-cols-2 md:gap-0' : 'flex flex-col h-full'
       } ${compact ? 'hover:shadow-md' : 'hover:shadow-xl'}`}
+      style={{ 
+        perspective: 1000,
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+        transformStyle: 'preserve-3d'
+      }}
     >
       {/* Image Section */}
       {imageUrl ? (
@@ -109,21 +115,23 @@ export default function ArticleCard({
           className={`relative overflow-hidden block ${
             featured ? 'aspect-[4/3] md:aspect-auto md:h-full' : 'aspect-[16/9]'
           }`}
+          style={{ transform: 'translateZ(0)' }}
         >
           <motion.div
             animate={{
-              scale: isHovered ? 1.08 : 1,
+              scale: isHovered ? 1.05 : 1,
               filter: isHovered ? 'saturate(1.1)' : 'saturate(1)'
             }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full h-full"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full will-change-transform"
           >
             <Image
               src={imageUrl}
               alt={title}
               fill
-              className="object-cover"
+              className="object-cover transition-opacity duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={featured}
             />
           </motion.div>
 

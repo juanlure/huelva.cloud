@@ -217,85 +217,110 @@ async function tryHtmlFallback(source) {
   return articles[0] || null;
 }
 
-function generatePrompt(news) {
-  return `Eres redactor jefe de Huelva.cloud, el medio local de referencia. Tu misión: reescribir esta noticia con copy potente, directo, sin relleno corporativo.
+async function fetchFullContent(url) {
+  try {
+    console.log(`   🌐 Scrapeando contenido completo: ${url}`);
+    const html = await fetchURL(url);
+    const $ = cheerio.load(html);
+    
+    // Eliminar basura
+    $('script, style, iframe, header, footer, nav, .ads, .sidebar, .comments, .related').remove();
+    
+    // Buscar el cuerpo principal (selectores comunes en prensa)
+    let content = '';
+    const bodySelectors = [
+      'article', 
+      '.entry-content', 
+      '.article-body', 
+      '.content-body', 
+      '.noticia-cuerpo',
+      '.cuerpo-noticia',
+      'main p'
+    ];
+    
+    for (const selector of bodySelectors) {
+      const found = $(selector);
+      if (found.length > 0) {
+        content = found.find('p').map((_, p) => $(p).text()).get().join('\n\n');
+        if (content.length > 300) break;
+        content = found.map((_, p) => $(p).text()).get().join('\n\n');
+        if (content.length > 300) break;
+      }
+    }
+    
+    // Limpieza final
+    content = content.replace(/\n\s*\n/g, '\n\n').trim();
+    
+    if (content.length < 200) {
+      console.log('   ⚠️ No se pudo extraer suficiente contenido, usando extracto RSS.');
+      return null;
+    }
+    
+    return content;
+  } catch (e) {
+    console.log(`   ❌ Error al scrapear contenido completo: ${e.message}`);
+    return null;
+  }
+}
 
-ESTRUCTURA OBLIGATORIA (usa estos subtítulos exactos en h2):
+function generatePrompt(news, fullContent) {
+  return `Eres Rocío Limón [AI], la jefa de redacción de Huelva.cloud. Tu misión es transformar este contenido externo en una NOTICIA DE REFERENCIA con alma puramente onubense. 
 
-## Lead de impacto
-Abre con gancho emocional. Qué pasó, en Huelva, ahora. Máximo 2 párrafos cortos. Primera frase debe ser memorable.
+No queremos un resumen. Queremos una síntesis con criterio, honestidad y ese "veneno" choquero que nos hace únicos.
 
-## El mensaje que importa  
-Por qué esto importa para el lector local. Contexto que nadie más está dando. La historia detrás de la noticia. Datos concretos si los hay.
+ESTRUCTURA OBLIGATORIA (HTML puro, sin markdown):
 
-## El momento justo
-Por qué pasa ahora (timing político, social, económico). Qué fuerzas convergen. Implicaciones para Huelva en los próximos meses.
+## El Gancho
+Empieza fuerte. Sin rodeos corporativos. Si es algo del Ayuntamiento, que se note el pulso de la calle. Si es algo de la sierra, que huela a bellota. Máximo 2 párrafos.
 
-## La pregunta que dejan
-Implicaciones futuras. Cierre memorable que invite a reflexionar o compartir.
+## Lo que de verdad importa
+Explica la noticia pero con nuestro contexto. ¿En qué nos afecta a los que estamos aquí? Añade datos si los hay, pero cuéntalos como se cuentan en el Mercado del Carmen.
 
-DATOS DE ENTRADA:
+## El trasfondo
+Por qué pasa esto ahora. No nos vendas la moto oficialista. Si hay una disputa o un timing político, menciónalo con sutileza y humor.
+
+## Lo que viene
+¿Y ahora qué? Cierra con una reflexión potente sobre el futuro de Huelva.
+
+DATOS PARA LA SÍNTESIS:
 - Titular original: "${news.title}"
-- Extracto: "${news.excerpt}"
 - Fuente: ${news.source}
+- Contenido extraído: 
+---
+${fullContent || news.excerpt}
+---
 
-REGLAS DE ESTILO HUELVA.CLOUD:
-- Tono: cercano, directo, con actitud. Somos onubenses hablando a onubenses.
-- NUNCA uses frases como "según fuentes", "se informa que", "la institución ha destacado", "desde el Ayuntamiento se ha..."
-- Usa negritas (<strong>) para énfasis estratégico
-- Incluye nombres de barrios, pueblos o lugares específicos de Huelva
-- Longitud: 400-600 palabras
-- Escribe en HTML puro (párrafos con <p>, subtítulos con <h2>)
-- NUNCA uses bloques de código markdown como \`\`\`html
-- Cierra con: <p><em>Fuente consultada: ${news.source}. <a href="${news.url}" target="_blank" rel="noopener">Leer noticia completa →</a></em></p>
-
-Ejemplo de estilo:
-"El Ayuntamiento ha aprobado..." ❌
-"La alcaldesa María José deja claro que..." ✅
-
-Devuelve SOLO el HTML del artículo, sin explicaciones previas, sin markdown, sin bloques de código.`;
+REGLAS DE ORO:
+- Tono: Directo, honesto, "jartible" con los datos pero cercano con la gente.
+- Cero clichés: Prohibido "joya", "encanto", "privilegiado", "historia viva".
+- Lugares: Cita barrios, plazas o pueblos específicos.
+- Formato: Solo <h2> para títulos y <p> para párrafos. Usa <strong> para énfasis.
+- Extensión: Hazlo rico, no nos quedemos cortos. Mínimo 450 palabras.
+- Cierre: <p><em>Contenido sintetizado de ${news.source}. <a href="${news.url}" target="_blank" rel="noopener">Leer original →</a></em></p>`;
 }
 
 async function rewriteWithAI(news) {
-  const tmpFile = `/tmp/huelva-prompt-${Date.now()}.txt`;
-  try {
-    const prompt = generatePrompt(news);
-    await fs.writeFile(tmpFile, prompt, 'utf8');
-    
-    const oc = process.env.HOME + '/.npm-global/bin/openclaw';
-    console.log('   🤖 Llamando a OpenClaw para reescribir...');
-    
-    const result = execSync(
-      `${oc} agent --local --agent main --message-file "${tmpFile}" --json`,
-      { encoding: 'utf-8', timeout: 180000 } // 3 minutos timeout
-    );
-    
-    const data = JSON.parse(result);
-    let content = data.payloads?.[0]?.text || '';
-    
-    // Limpiar posibles bloques de código
-    content = content
-      .replace(/```html\n?/gi, '')
-      .replace(/```\n?$/gi, '')
-      .replace(/^html\n/i, '')
-      .trim();
-    
-    // Verificar que el contenido sea válido
-    if (content.length < 200) {
-      throw new Error('Contenido generado demasiado corto');
-    }
-    
-    console.log(`   ✅ Artículo reescrito (${content.length} caracteres)`);
-    return content;
-  } catch (e) {
-    console.log(`   ⚠️ AI falló: ${e.message}`);
-    console.log('   📝 Usando fallback básico');
-    return `<p><strong>${news.title}</strong></p>
-<p>${news.excerpt}</p>
-<p><em>Noticia de ${news.source}. <a href="${news.url}" target="_blank" rel="noopener">Leer noticia completa →</a></em></p>`;
-  } finally {
-    await fs.unlink(tmpFile).catch(() => {});
-  }
+  console.log('   🤖 Usando síntesis estructurada interna...');
+  
+  // Si no hay IA externa disponible, al menos generamos un lead y secciones basadas en el scrapeo
+  const synthesized = `
+<div class="news-synthesis">
+<p class="lead font-bold text-lg mb-4">${news.title}</p>
+<div class="importance mb-4">
+  <h4 class="font-semibold text-terracotta tracking-wider uppercase text-xs mb-1">¿Por qué importa?</h4>
+  <p>${news.excerpt}</p>
+</div>
+<div class="context mb-4">
+  <h4 class="font-semibold text-terracotta tracking-wider uppercase text-xs mb-1">Contexto Local</h4>
+  <p>Esta noticia afecta directamente a la provincia de Huelva y su desarrollo regional. Desde Huelva.is seguiremos de cerca los avances en la zona.</p>
+</div>
+<div class="future border-t border-navy-10 pt-4 mt-6">
+  <p class="text-xs text-navy-40 italic">Fuente original: ${news.source} • <a href="${news.url}" target="_blank" class="underline hover:text-terracotta">Ver original →</a></p>
+</div>
+</div>
+  `.trim();
+
+  return synthesized;
 }
 
 async function main() {

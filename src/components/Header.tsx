@@ -33,11 +33,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-2xl shadow-premium py-3 border-b border-navy/5'
-          : 'bg-gradient-to-b from-navy/30 to-transparent py-5 backdrop-blur-[2px]'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-premium py-3 border-b border-navy/5 transition-all duration-300"
     >
       <div className="container overflow-visible">
         <div className="flex items-center justify-between">
@@ -46,12 +42,10 @@ export default function Header() {
             href="/"
             className="flex items-center gap-1 group"
           >
-            <span className={`text-display text-2xl font-bold transition-colors ${
-              isScrolled ? 'text-navy' : 'text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]'
-            } group-hover:text-terracotta`}>
+            <span className="text-display text-2xl font-bold text-navy group-hover:text-terracotta transition-colors">
               Huelva
             </span>
-            <span className="text-display text-2xl font-bold text-terracotta drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">.cloud</span>
+            <span className="text-display text-2xl font-bold text-terracotta drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">.cloud</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -66,7 +60,7 @@ export default function Header() {
                     className={`px-5 py-2.5 text-sm font-bold tracking-tight transition-all duration-300 relative group/link ${
                       isActive
                         ? 'text-terracotta'
-                        : isScrolled ? 'text-navy hover:text-terracotta' : 'text-white hover:text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]'
+                        : 'text-navy hover:text-terracotta'
                     }`}
                   >
                     <span className="relative z-10">{item.name}</span>
@@ -87,11 +81,9 @@ export default function Header() {
           {/* Right Side */}
           <div className="flex items-center gap-6">
             {/* Widgets */}
-            <div className={`hidden xl:flex items-center gap-4 text-sm transition-colors ${
-              isScrolled ? 'text-navy/50' : 'text-white/60'
-            }`}>
+            <div className="hidden xl:flex items-center gap-4 text-sm text-navy/50">
               <WeatherWidget />
-              <span className={`w-px h-4 ${isScrolled ? 'bg-navy/10' : 'bg-white/10'}`} />
+              <span className="w-px h-4 bg-navy/10" />
               <TimeWidget />
             </div>
 
@@ -105,9 +97,7 @@ export default function Header() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className={`lg:hidden p-2.5 transition-colors rounded-full ${
-                isScrolled ? 'text-navy hover:bg-navy/5' : 'text-white hover:bg-white/10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
-              }`}
+              className="lg:hidden p-2.5 transition-colors rounded-full text-navy hover:bg-navy/5"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Alternar menú"
             >
