@@ -79,8 +79,8 @@ export default function ArticleCard({
   const href = `/article/${slug}`;
   const isExternal = external;
 
-  const LinkWrapper = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-    return <Link href={href} className={className}>{children}</Link>;
+  const LinkWrapper = ({ children, className, style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => {
+    return <Link href={href} className={className} style={style}>{children}</Link>;
   };
 
   return (
