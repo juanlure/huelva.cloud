@@ -98,7 +98,6 @@ export default function ArticleCard({
         stiffness: 300,
         damping: 20
       }}
-      style={{ perspective: 1000 }}
       className={`group bg-white rounded-2xl overflow-hidden border border-navy-10 hover:shadow-lg transition-all duration-500 ${style.border} ${
         featured ? 'md:grid md:grid-cols-2 md:gap-0' : 'flex flex-col h-full'
       } ${compact ? 'hover:shadow-md' : 'hover:shadow-xl'}`}
