@@ -1,0 +1,86 @@
+{
+  "mode": "morning",
+  "executedAt": "2026-03-02T07:05:41.391Z",
+  "duration": 12051,
+  "logs": [
+    {
+      "timestamp": "2026-03-02T07:05:29.356Z",
+      "level": "info",
+      "message": "=== MODO: MORNING (08:00) ===",
+      "data": null,
+      "elapsed": 16
+    },
+    {
+      "timestamp": "2026-03-02T07:05:29.361Z",
+      "level": "info",
+      "message": "STAGE 1: Scrape Noticias",
+      "data": null,
+      "elapsed": 21
+    },
+    {
+      "timestamp": "2026-03-02T07:05:29.364Z",
+      "level": "info",
+      "message": "Publicadas hoy: 0/1. Ejecutando scraper...",
+      "data": null,
+      "elapsed": 24
+    },
+    {
+      "timestamp": "2026-03-02T07:05:38.796Z",
+      "level": "info",
+      "message": "Scraper completado",
+      "data": {
+        "output": "🗞️ Scrape + Rewrite: generando noticia diaria\n\n\n📚 Noticias existentes: 4\n📡 Huelva Información\n   ⚠️ Descartada (término excluido: hamas)\n   ⚠️ Descartada (término excluido: trump)\n   ⚠️ Descartada "
+      },
+      "elapsed": 9456
+    },
+    {
+      "timestamp": "2026-03-02T07:05:39.307Z",
+      "level": "warn",
+      "message": "No se detectó nueva noticia (posible duplicado o sin novedades)",
+      "data": null,
+      "elapsed": 9967
+    },
+    {
+      "timestamp": "2026-03-02T07:05:39.307Z",
+      "level": "info",
+      "message": "STAGE 2: Procesamiento de Contenido",
+      "data": null,
+      "elapsed": 9967
+    },
+    {
+      "timestamp": "2026-03-02T07:05:39.372Z",
+      "level": "success",
+      "message": "JSON válido",
+      "data": null,
+      "elapsed": 10032
+    },
+    {
+      "timestamp": "2026-03-02T07:05:39.373Z",
+      "level": "info",
+      "message": "STAGE: Check Agenda",
+      "data": null,
+      "elapsed": 10033
+    },
+    {
+      "timestamp": "2026-03-02T07:05:39.376Z",
+      "level": "info",
+      "message": "Contenido actual: 5 noticias, 52 artículos",
+      "data": null,
+      "elapsed": 10036
+    },
+    {
+      "timestamp": "2026-03-02T07:05:39.377Z",
+      "level": "info",
+      "message": "STAGE 3: Publicación (Git)",
+      "data": null,
+      "elapsed": 10037
+    },
+    {
+      "timestamp": "2026-03-02T07:05:41.389Z",
+      "level": "success",
+      "message": "Publicado en Vercel",
+      "data": null,
+      "elapsed": 12049
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "mode": "midday",
+  "executedAt": "2026-03-03T13:01:32.731Z",
+  "duration": 25843,
+  "logs": [
+    {
+      "timestamp": "2026-03-03T13:01:07.004Z",
+      "level": "info",
+      "message": "=== MODO: MIDDAY (14:00) ===",
+      "data": null,
+      "elapsed": 116
+    },
+    {
+      "timestamp": "2026-03-03T13:01:07.016Z",
+      "level": "info",
+      "message": "STAGE 1: Scrape Noticias",
+      "data": null,
+      "elapsed": 128
+    },
+    {
+      "timestamp": "2026-03-03T13:01:07.064Z",
+      "level": "info",
+      "message": "Publicadas hoy: 0/2. Ejecutando scraper...",
+      "data": null,
+      "elapsed": 176
+    },
+    {
+      "timestamp": "2026-03-03T13:01:27.252Z",
+      "level": "info",
+      "message": "Scraper completado",
+      "data": {
+        "output": "🗞️ Scrape + Rewrite: generando noticia diaria\n\n\n📚 Noticias existentes: 6\n📡 Huelva Información\n   ⚠️ Descartada (término excluido: irán)\n   ⚠️ Descartada (término excluido: irán)\n   ⚠️ Descartada (t"
+      },
+      "elapsed": 20364
+    },
+    {
+      "timestamp": "2026-03-03T13:01:27.765Z",
+      "level": "warn",
+      "message": "No se detectó nueva noticia (posible duplicado o sin novedades)",
+      "data": null,
+      "elapsed": 20877
+    },
+    {
+      "timestamp": "2026-03-03T13:01:27.767Z",
+      "level": "info",
+      "message": "STAGE: Check Agenda",
+      "data": null,
+      "elapsed": 20879
+    },
+    {
+      "timestamp": "2026-03-03T13:01:27.792Z",
+      "level": "info",
+      "message": "Contenido actual: 7 noticias, 52 artículos",
+      "data": null,
+      "elapsed": 20904
+    },
+    {
+      "timestamp": "2026-03-03T13:01:27.792Z",
+      "level": "info",
+      "message": "STAGE 3: Publicación (Git)",
+      "data": null,
+      "elapsed": 20904
+    },
+    {
+      "timestamp": "2026-03-03T13:01:32.635Z",
+      "level": "error",
+      "message": "Git push falló",
+      "data": {
+        "error": "Command failed: git push origin main\nTo https://github.com/juanlure/huelva-is.git\n ! [rejected]        main -> main (fetch first)\nerror: failed to push some refs to 'https://github.com/juanlure/huelva-is.git'\nhint: Updates were rejected because the remote contains work that you do not\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n"
+      },
+      "elapsed": 25747
+    }
+  ]
+}
