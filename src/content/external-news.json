@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-03-05T13:01:35.624Z",
-  "count": 6,
+  "lastUpdated": "2026-03-06T07:03:08.817Z",
+  "count": 7,
   "news": [
+    {
+      "title": "El PSOE pregunta en el Parlamento por el bloqueo de los hospitales comarcales de Huelva y exige fechas para su apertura",
+      "excerpt": "El socialista Mario Jiménez denuncia la paralización de los centros de Lepe, Aracena y Bollullos y alerta de que más de 86.000 onubenses esperan una cita sanitaria",
+      "content": "<div class=\"news-synthesis\">\n<p class=\"lead font-bold text-lg mb-4\">El PSOE pregunta en el Parlamento por el bloqueo de los hospitales comarcales de Huelva y exige fechas para su apertura</p>\n<div class=\"importance mb-4\">\n  <h4 class=\"font-semibold text-terracotta tracking-wider uppercase text-xs mb-1\">¿Por qué importa?</h4>\n  <p>El socialista Mario Jiménez denuncia la paralización de los centros de Lepe, Aracena y Bollullos y alerta de que más de 86.000 onubenses esperan una cita sanitaria</p>\n</div>\n<div class=\"context mb-4\">\n  <h4 class=\"font-semibold text-terracotta tracking-wider uppercase text-xs mb-1\">Contexto Local</h4>\n  <p>Esta noticia afecta directamente a la provincia de Huelva y su desarrollo regional. Desde Huelva.is seguiremos de cerca los avances en la zona.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n  <p class=\"text-xs text-navy-40 italic\">Fuente original: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/politica/psoe-pregunta-parlamento-bloqueo-hospitales-comarcales-huelva-exige-fechas-apertura/20260305140732334883.html\" target=\"_blank\" class=\"underline hover:text-terracotta\">Ver original →</a></p>\n</div>\n</div>",
+      "url": "https://www.diariodehuelva.es/articulo/politica/psoe-pregunta-parlamento-bloqueo-hospitales-comarcales-huelva-exige-fechas-apertura/20260305140732334883.html",
+      "publishedAt": "Thu, 5 Mar 2026 14:07:32 +0100",
+      "source": "Diario de Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false
+    },
     {
       "title": "La Universidad de Huelva celebra el 3 de marzo con la entrega de sus Medallas",
       "excerpt": "HBN. La Universidad de Huelva ha celebrado un año más su día, el 3 de...",
