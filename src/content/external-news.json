@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-03-08T22:09:52.132Z",
-  "count": 11,
+  "lastUpdated": "2026-03-08T22:15:31.498Z",
+  "count": 12,
   "news": [
+    {
+      "title": "Salida de vía de un turismo en Almonte con varios heridos leves",
+      "excerpt": "Los ocupantes del vehículo fueron atendidos por los servicios sanitarios desplazados al lugar del accidente &nbsp;",
+      "content": "<div class=\"news-synthesis\">\n<p class=\"lead font-bold text-lg mb-4\">Salida de vía de un turismo en Almonte con varios heridos leves</p>\n<div class=\"importance mb-4\">\n  <h4 class=\"font-semibold text-terracotta tracking-wider uppercase text-xs mb-1\">¿Por qué importa?</h4>\n  <p>Los ocupantes del vehículo fueron atendidos por los servicios sanitarios desplazados al lugar del accidente &nbsp;</p>\n</div>\n<div class=\"context mb-4\">\n  <h4 class=\"font-semibold text-terracotta tracking-wider uppercase text-xs mb-1\">Contexto Local</h4>\n  <p>Esta noticia afecta directamente a la provincia de Huelva y su desarrollo regional. Desde Huelva.is seguiremos de cerca los avances en la zona.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n  <p class=\"text-xs text-navy-40 italic\">Fuente original: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/sucesos/salida-via-turismo-almonte-varios-heridos-leves/20260308134148334954.html\" target=\"_blank\" class=\"underline hover:text-terracotta\">Ver original →</a></p>\n</div>\n</div>",
+      "url": "https://www.diariodehuelva.es/articulo/sucesos/salida-via-turismo-almonte-varios-heridos-leves/20260308134148334954.html",
+      "publishedAt": "Sun, 8 Mar 2026 13:41:48 +0100",
+      "source": "Diario de Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false
+    },
     {
       "title": "Diez mujeres que hicieron historia en Huelva y que son dignas de recordar en el 8-M: Desde Zenobia Camprubí hasta Martirio o Carolina Marín",
       "excerpt": "Del pupitre de Antonia Arrobas al bádminton de Carolina Marín: las onubenses que derribaron los muros de la historia La primera mujer tamborilera del mundo es de Huelva: Rocío Albarrán, la almonteña q...",
