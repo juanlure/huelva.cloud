@@ -25,39 +25,40 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     excerpt: 'Selección de planes para la semana en Huelva y provincia: mercados, conciertos, actividades en la naturaleza y eventos culturales con horarios y acceso.',
     category: 'Eventos',
     image: '/images/guides/huelva-plaza-las-monjas.jpg',
-    publishedAt: '2026-02-25T14:00:00Z',
+    publishedAt: '2026-03-08T22:00:00Z',
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>La agenda onubense tiene ritmo propio: hay semanas cargadas y semanas para respirar. Esta es una selección con criterio, no un volcado de todo lo que pasa.</p>
+      <p>La agenda onubense tiene ritmo propio: hay semanas cargadas y semanas para respirar. Esta es una guía práctica para saber dónde buscar planes en Huelva capital y provincia, con criterio y sin rodeos.</p>
 
-      <h2>Planes en capital (última semana de febrero)</h2>
+      <h2>Planes habituales en capital</h2>
       <ul>
-        <li><strong>Mercado ecológico Plaza de las Monjas</strong> — Sábado 1 de marzo, 9:00-14:00. Productores locales de Huelva y provincia. Entrada libre.</li>
-        <li><strong>Concierto 'Noches de Jazz' - Teatro Casa Colón</strong> — Viernes 28 de febrero, 20:30. Ciclo de jazz con grupos locales. Entrada: 8€.</li>
-        <li><strong>Exposición 'Paisajes Mineros' - Sala de Exposiciones del Puerto</strong> — Hasta 15 de marzo. Fotografías históricas de las minas de Riotinto. Entrada gratuita.</li>
-        <li><strong>Ruta guiada 'Huelva Industrial'</strong> — Domingo 2 de marzo, 11:00. Recorrido por el Muelle del Tinto y zonas patrimoniales. Reserva en turismo@huelva.es</li>
+        <li><strong>Mercado ecológico Plaza de las Monjas</strong> — Sábados por la mañana, 9:00-14:00. Productores locales de Huelva y provincia. Entrada libre. Confirma fechas en el Ayuntamiento.</li>
+        <li><strong>Ciclo 'Noches de Jazz' - Teatro Casa Colón</strong> — Programación periódica con grupos locales y nacionales. Consulta cartelera en casacolon.es. Entradas desde 8€.</li>
+        <li><strong>Exposiciones en el Museo de Huelva</strong> — Programación cultural rotatoria. Entrada gratuita domingos. Merece la visita aunque no haya exposición temporal.</li>
+        <li><strong>Ruta guiada 'Huelva Industrial'</strong> — Recorrido por el Muelle del Tinto y el patrimonio portuario. Fechas variables; reserva en turismo@huelva.es o en la Oficina de Turismo.</li>
       </ul>
 
       <h2>Planes en provincia</h2>
       <ul>
-        <li><strong>Festival de Cine de Islantilla</strong> — Hasta 1 de marzo. Proyecciones de cine independiente en el Centro Cultural. Algunas sesiones gratuitas.</li>
-        <li><strong>Mercado artesano de La Antilla</strong> — Sábado 1 y domingo 2 de marzo, 10:00-15:00. Artesanía, productos locales y gastronomía en el paseo marítimo.</li>
-        <li><strong>Ruta ornitológica Marismas del Odiel</strong> — Sábado 1 de marzo, 9:00. Observación de aves migratorias. Traer prismáticos. Gratuito con inscripción previa.</li>
-        <li><strong>Visita teatralizada Aracena</strong> — Domingo 2 de marzo, 12:00 y 18:00. Recorrido por el casco histórico con personajes en vivo. Precio: 10€.</li>
+        <li><strong>Islantilla y La Antilla</strong> — Mercados artesanos en paseo marítimo los fines de semana en temporada. Artesanía, productos locales y gastronomía.</li>
+        <li><strong>Ruta ornitológica Marismas del Odiel</strong> — Todo el año, especialmente en migración otoño-primavera. Gratuito con inscripción previa. Llevar prismáticos.</li>
+        <li><strong>Visita teatralizada Aracena</strong> — Disponible fines de semana y festivos. Recorrido por el casco histórico con personajes en vivo. Consulta horarios en turismodeAracena.es. Precio: 10€.</li>
+        <li><strong>Gruta de las Maravillas</strong> — Abierta todo el año. Acceso con visita guiada; entradas limitadas, reservar con antelación.</li>
       </ul>
 
-      <h2>Preparativos para marzo</h2>
-      <p>Marzo trae consigo el cambio de hora (último fin de semana) y el inicio de la primavera. Programaciones culturales en preparación:</p>
+      <h2>Dónde consultar la agenda actualizada</h2>
       <ul>
-        <li><strong>Semana Santa:</strong> Los ensayos de cofradías comienzan a intensificarse. Consultar programación local de cada hermandad.</li>
-        <li><strong>Feria del Libro:</strong> Habitualmente primera quincena de marzo en la Gran Vía. Pendiente de confirmación oficial.</li>
+        <li><strong>Ayuntamiento de Huelva:</strong> huelva.es/agenda</li>
+        <li><strong>Diputación Provincial:</strong> diphuelva.es</li>
+        <li><strong>Turismo Andaluz:</strong> andalucia.org/huelva</li>
+        <li><strong>Redes sociales locales:</strong> busca "Huelva Cultural" o "Agenda Huelva" en Instagram para eventos de última hora.</li>
       </ul>
 
-      <h2>Cómo organizarte</h2>
-      <p>Si vas a varios planes, ordena por ubicación: capital el sábado por la mañana y sierra o costa el domingo. Ahorra desplazamientos y aprovechas mejor el fin de semana.</p>
+      <h2>Cómo organizarte el fin de semana</h2>
+      <p>Si quieres combinar capital y provincia, el esquema más eficiente es: mercado o cultura en capital el sábado por la mañana, sierra o costa el domingo. Ahorra desplazamientos y aprovechas mejor el tiempo.</p>
 
-      <blockquote>Consejo: llama antes de ir a cualquier evento. Los cambios de horario de última hora son más habituales de lo que parece.</blockquote>
+      <blockquote>Consejo: llama antes de ir a cualquier evento. Los cambios de horario de última hora son más habituales de lo que parece en Huelva.</blockquote>
     `
   },
 
