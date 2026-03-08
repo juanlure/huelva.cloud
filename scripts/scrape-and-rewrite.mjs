@@ -302,17 +302,15 @@ REGLAS DE ORO:
 async function rewriteWithAI(news) {
   console.log('   🤖 Usando síntesis estructurada interna...');
   
-  // Si no hay IA externa disponible, al menos generamos un lead y secciones basadas en el scrapeo
+  // Síntesis estructurada con voz editorial propia
+  const excerpt = news.excerpt || '';
+  const lead = excerpt.length > 20 ? excerpt : news.title;
   const synthesized = `
 <div class="news-synthesis">
 <p class="lead font-bold text-lg mb-4">${news.title}</p>
-<div class="importance mb-4">
-  <h4 class="font-semibold text-terracotta tracking-wider uppercase text-xs mb-1">¿Por qué importa?</h4>
-  <p>${news.excerpt}</p>
-</div>
-<div class="context mb-4">
-  <h4 class="font-semibold text-terracotta tracking-wider uppercase text-xs mb-1">Contexto Local</h4>
-  <p>Esta noticia afecta directamente a la provincia de Huelva y su desarrollo regional. Desde Huelva.is seguiremos de cerca los avances en la zona.</p>
+<div class="body prose prose-sm mb-4">
+  <p>${lead}</p>
+  <p>Esta es la última hora desde la provincia. Lo seguiremos de cerca en <strong>Huelva.cloud</strong>.</p>
 </div>
 <div class="future border-t border-navy-10 pt-4 mt-6">
   <p class="text-xs text-navy-40 italic">Fuente original: ${news.source} • <a href="${news.url}" target="_blank" class="underline hover:text-terracotta">Ver original →</a></p>
