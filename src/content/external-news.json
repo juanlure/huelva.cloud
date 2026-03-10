@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-03-10T07:15:33.145Z",
-  "count": 14,
+  "lastUpdated": "2026-03-10T07:16:46.975Z",
+  "count": 15,
   "news": [
+    {
+      "title": "Detenido en Lepe un hombre acusado de robo con violencia, robo con fuerza y daños",
+      "excerpt": "El individuo habría sustraído un camión en el Puerto del Terrón, provocado un accidente en la localidad y cometido posteriormente un atraco en un establecimiento &nbsp;",
+      "content": "<div class=\"news-synthesis\">\n<p class=\"lead font-bold text-lg mb-4\">Detenido en Lepe un hombre acusado de robo con violencia, robo con fuerza y daños</p>\n<div class=\"body prose prose-sm mb-4\">\n  <p>El individuo habría sustraído un camión en el Puerto del Terrón, provocado un accidente en la localidad y cometido posteriormente un atraco en un establecimiento &nbsp;</p>\n  <p>Esta es la última hora desde la provincia. Lo seguiremos de cerca en <strong>Huelva.cloud</strong>.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n  <p class=\"text-xs text-navy-40 italic\">Fuente original: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/sucesos/detenido-lepe-hombre-acusado-robo-violencia-robo-fuerza-danos/20260310080643334987.html\" target=\"_blank\" class=\"underline hover:text-terracotta\">Ver original →</a></p>\n</div>\n</div>",
+      "url": "https://www.diariodehuelva.es/articulo/sucesos/detenido-lepe-hombre-acusado-robo-violencia-robo-fuerza-danos/20260310080643334987.html",
+      "publishedAt": "Tue, 10 Mar 2026 08:06:43 +0100",
+      "source": "Diario de Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false
+    },
     {
       "title": "Ocho relevos en el Grupo Socialista de Huelva desde las elecciones de 2023",
       "excerpt": "La salida de Luis Albillo es un movimiento más en la lista del PSOE que concurrió hace tres años, aunque es el primero que no deja su acta El concejal Luis Albillo abandona el PSOE y solicita pasar al...",
