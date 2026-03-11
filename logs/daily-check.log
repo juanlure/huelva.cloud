@@ -166,3 +166,6 @@ uncaughtException Error: spawn pnpm ENOENT
   spawnargs: [Array]
 }
 [2026-02-26] ❌ ERROR: Build fallido
+[2026-03-11] Iniciando revisión diaria de huelva.is
+[2026-03-11] Verificando estado del repositorio...
+[2026-03-11] ⚠️  Cambios sin commitear detectados
