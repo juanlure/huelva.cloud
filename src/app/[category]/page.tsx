@@ -20,18 +20,18 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const title = CATEGORY_TITLES[category.toLowerCase()] || category;
   
   const metaDescriptions: Record<string, string> = {
-    'comer': 'Dónde comer en Huelva: choco frito, coquinas, gamba blanca y los mejores restaurantes. Guía local sin tópicos turísticos.',
-    'eventos': 'Agenda de eventos en Huelva 2026: ferias, conciertos, mercados y planes. Todo lo que pasa en la ciudad y provincia.',
+    'comer': 'Dónde comer en Huelva: choco frito, coquinas, gamba blanca, tapas y restaurantes que sí merecen la pena. Guía local sin humo.',
+    'eventos': 'Agenda de eventos en Huelva 2026: ferias, conciertos, mercados, escapadas y planes. Lo útil para saber qué hacer en capital y provincia.',
     'alojarse': 'Dónde dormir en Huelva: hoteles, apartamentos y alojamientos recomendados. Zonas, precios y consejos locales.',
-    'guias': 'Guías de Huelva: qué ver, rutas, monumentos, playas y pueblos. Descubre la provincia como un local.',
-    'noticias': 'Noticias de Huelva: actualidad local, provincia, cultura y eventos. Información relevante para onubenses.',
+    'guias': 'Guías de Huelva: qué ver, rutas, playas, pueblos y escapadas. Descubre la provincia como un local y no como otro turista perdido.',
+    'noticias': 'Noticias de Huelva: actualidad local, provincia, cultura y señales que afectan a la agenda real. Información relevante para onubenses y visitantes.',
   };
 
   const metaTitles: Record<string, string> = {
-    'comer': 'Dónde Comer en Huelva 2026 | Choco Frito, Coquinas y Más',
-    'eventos': 'Eventos Huelva 2026 | Agenda y Planes en la Ciudad',
+    'comer': 'Dónde Comer en Huelva 2026 | Tapas, Choco Frito y Restaurantes',
+    'eventos': 'Agenda de Huelva 2026 | Eventos, Planes y Qué Hacer',
     'alojarse': 'Dónde Dormir en Huelva | Hoteles y Alojamientos 2026',
-    'guias': 'Qué Ver en Huelva | Guías Locales de la Provincia 2026',
+    'guias': 'Qué Ver en Huelva | Guías, Playas, Pueblos y Escapadas',
     'noticias': 'Noticias Huelva | Actualidad Local y Provincial 2026',
   };
 
@@ -46,6 +46,11 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 }
 
 // Generate Event Schema for eventos category
+function safeIsoDate(value?: string) {
+  const date = new Date(value || '');
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+}
+
 function generateEventSchema(articles: any[]) {
   return {
     '@context': 'https://schema.org',
@@ -60,8 +65,8 @@ function generateEventSchema(articles: any[]) {
         url: `https://huelva.cloud/article/${article.slug}`,
         image: article.image ? `https://huelva.cloud${article.image}` : undefined,
         eventStatus: 'https://schema.org/EventScheduled',
-        ...(article.date && {
-          startDate: new Date(article.date).toISOString(),
+        ...(safeIsoDate(article.date) && {
+          startDate: safeIsoDate(article.date),
         }),
         location: {
           '@type': 'Place',

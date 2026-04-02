@@ -2005,5 +2005,102 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>La escapada buena no es la más ambiciosa. Es la que te hace volver pensando “esto lo repito”, no “a ver cuándo me recupero”.</blockquote>
     `
+  },
+
+  // 57. Mejores restaurantes en Huelva
+  {
+    slug: 'mejores-restaurantes-huelva',
+    title: 'Los mejores restaurantes en Huelva para comer bien sin postureo',
+    excerpt: 'Restaurantes en Huelva para comer producto, cocina seria y sitios que merecen una reserva. Menos ruido, más criterio.',
+    category: 'Gastronomía',
+    image: '/images/guides/coquinas-huelva.jpg',
+    publishedAt: '2026-04-02T11:00:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>Buscar “mejores restaurantes en Huelva” suele darte dos cosas: listas copiadas unas de otras o sitios que viven más de la foto que del plato. Así que vamos a lo importante: producto, regularidad, contexto y sentido común.</p>
+
+      <h2>Lo primero: en Huelva manda el producto</h2>
+      <p>Aquí el restaurante bueno no necesita hacer veinte piruetas si tiene buena materia prima y cocina con cabeza. Marisco, pescado, chacina, temporada. Si eso falla, da igual cuántas bombillitas tenga el local.</p>
+
+      <h2>Qué distingue un sitio serio</h2>
+      <ul>
+        <li><strong>Carta corta o con criterio:</strong> no una enciclopedia infumable.</li>
+        <li><strong>Producto con rotación:</strong> se nota en pescado y marisco.</li>
+        <li><strong>Servicio que recomienda:</strong> no solo apunta comanda.</li>
+        <li><strong>Coherencia precio-experiencia:</strong> si pagas, que se note por qué.</li>
+      </ul>
+
+      <h2>Qué tipo de restaurante buscar según el plan</h2>
+      <p>Si vas a producto, busca cocina onubense y carta con verdad. Si quieres cena más fina, hay sitios que elevan la experiencia sin volverse ridículos. Si vas en modo tapeo largo, a veces un bar excelente le gana la partida a un restaurante mediocre con mantel.</p>
+
+      <h2>Errores típicos</h2>
+      <p>Elegir por estética, por estar “cerca” o por reseñas que parecen escritas por primos del dueño. En Huelva se come muy bien, sí, pero no por arte de magia. Hay que elegir con un mínimo de criterio.</p>
+
+      <blockquote>El mejor restaurante no siempre es el más famoso. Muchas veces es el que entiende mejor el producto y no intenta impresionarte con gilipolleces.</blockquote>
+    `
+  },
+
+  // 58. Qué hacer en Huelva en abril
+  {
+    slug: 'que-hacer-en-huelva-en-abril',
+    title: 'Qué hacer en Huelva en abril: planes, clima y escapadas que sí apetecen',
+    excerpt: 'Abril en Huelva pide calle, costa, sierra y agenda. Una guía útil para saber qué hacer este mes sin improvisar mal.',
+    category: 'Eventos',
+    image: '/images/guides/feria-huelva.jpg',
+    publishedAt: '2026-04-02T11:10:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Abril le sienta bien a Huelva. El calor todavía no aprieta del todo, la luz mejora, la costa empieza a llamar y la sierra sigue teniendo sentido. Es uno de esos meses en los que casi cualquier buen plan parece más fácil.</p>
+
+      <h2>Capital: pasear y comer fuera vuelve a tener gracia</h2>
+      <p>Centro, terrazas, Muelle del Tinto, alguna visita cultural ligera y tapeo. Abril permite recuperar la calle sin sufrirla. Ya solo por eso merece la pena aprovecharlo.</p>
+
+      <h2>Costa: primeras escapadas serias</h2>
+      <p>Quizá no sea todavía verano pleno, pero sí un mes muy bueno para ir a Punta Umbría, El Portil, Islantilla o La Antilla a pasear, comer o incluso pisar playa si sale buen día.</p>
+
+      <h2>Sierra: todavía muy fuerte</h2>
+      <p>Aracena y alrededores siguen funcionando de lujo en abril. Comer bien, aire fresco, pueblos bonitos y un ritmo más humano. Muy buena contraoferta al ruido de ciudad.</p>
+
+      <h2>Cómo usar abril inteligentemente</h2>
+      <ul>
+        <li>Si hace buen tiempo: costa.</li>
+        <li>Si quieres comer y pasear: sierra.</li>
+        <li>Si solo tienes unas horas: capital + muelle + tapas.</li>
+        <li>Si hay agenda local fuerte ese finde: prioriza evento + comida.</li>
+      </ul>
+
+      <blockquote>Abril en Huelva no pide heroicidades. Pide elegir bien y salir. Con eso ya le sacas mucho partido al mes.</blockquote>
+    `
+  },
+
+  // 59. Qué ver en la provincia de Huelva
+  {
+    slug: 'provincia-de-huelva-que-ver',
+    title: 'Qué ver en la provincia de Huelva si quieres ir más allá de lo obvio',
+    excerpt: 'Costa, sierra, historia, pueblos y espacios naturales. Una guía para entender qué ver en la provincia de Huelva con criterio.',
+    category: 'Guías Locales',
+    image: '/images/guides/costa-huelva.jpg',
+    publishedAt: '2026-04-02T11:20:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>La provincia de Huelva tiene un problema curioso: mucha gente la reduce a una sola cosa. Playa, jamón, El Rocío o poco más. Error. Lo bueno de Huelva está precisamente en la mezcla: costa, sierra, marismas, historia, frontera y pueblos con mucha más personalidad de la que aparentan.</p>
+
+      <h2>La costa: mucho más que tumbarse al sol</h2>
+      <p>Punta Umbría, El Rompido, Islantilla, La Antilla, Ayamonte, Isla Cristina o Matalascañas. Hay playas, sí, pero también paseos, puertos, gastronomía y ritmos distintos según la zona.</p>
+
+      <h2>La sierra: el otro gran mundo onubense</h2>
+      <p>Aracena, Alájar, Cortegana, Jabugo y compañía. Aquí cambian el paisaje, la comida y hasta la cadencia del día. Si vienes buscando equilibrio, la sierra suele devolver mucho.</p>
+
+      <h2>Entorno colombino e historia</h2>
+      <p>La Rábida, Palos de la Frontera, Moguer y otros puntos ligados al imaginario del descubrimiento. Más allá de la chapa escolar, bien vistos tienen bastante interés.</p>
+
+      <h2>Naturaleza potente</h2>
+      <p>Doñana, Marismas del Odiel y otros espacios que no están para rellenar un folleto. Son parte de la identidad real de la provincia y una ventaja competitiva enorme frente a destinos más artificiales.</p>
+
+      <blockquote>La provincia de Huelva no se visita bien con una lista absurda de “10 cosas”. Se entiende mejor por zonas, ritmos y planes. Cuando haces eso, de repente gana mucho.</blockquote>
+    `
   }
 ];
