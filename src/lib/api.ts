@@ -19,6 +19,12 @@ function normalizeCategory(category: string): string {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
+function getCategoryUrl(category: string): string {
+  const normalized = normalizeCategory(category);
+  const entry = Object.entries(CATEGORY_MAP).find(([, dbCategory]) => normalizeCategory(dbCategory) === normalized);
+  return entry?.[0] || 'guias';
+}
+
 function resolveArticleImage(article: LocalArticle): string | null {
   const raw = (article.image || '').trim();
 
@@ -102,7 +108,7 @@ function mapArticle(article: LocalArticle): Article {
     title: article.title,
     excerpt: article.excerpt,
     content,
-    category: article.category,
+    category: getCategoryUrl(article.category),
     image,
     date: publishedLabel,
     publishedAtISO,
@@ -128,7 +134,7 @@ function mapExternalNews(news: ExternalNewsItem): Article {
     title: news.title,
     excerpt: news.excerpt,
     content: `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`,
-    category: 'Noticias',
+    category: 'noticias',
     image: news.image || null,
     date: publishedLabel,
     publishedAtISO,

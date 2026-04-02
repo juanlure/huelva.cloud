@@ -150,7 +150,7 @@ export default async function GuidesPage() {
             {guides.map((guide, index) => (
               <Link
                 key={guide.slug}
-                href={`/guias/${guide.slug}`}
+                href={guide.slug.startsWith('../') ? `/${guide.slug.replace('../', '')}` : `/guias/${guide.slug}`}
                 className="group"
               >
                 <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 hover:border-terracotta/50 hover:shadow-2xl transition-all duration-500 h-full">

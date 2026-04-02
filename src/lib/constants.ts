@@ -18,7 +18,7 @@ export const CATEGORY_TITLES: Record<string, string> = {
     'eventos': 'Agenda y Eventos', 
     'alojarse': 'Dónde Dormir',
     'guias': 'Guías Locales',
-    'noticias': 'Todas las Publicaciones',
+    'noticias': 'Noticias y Actualidad',
     'rutas': 'Rutas y Escapadas',
     'cultura': 'Historia y Cultura'
 };
