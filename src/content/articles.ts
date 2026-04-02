@@ -1902,5 +1902,108 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>La Sierra de Huelva no se disfruta corriendo. Se disfruta comiendo, andando y dejando que el día vaya un poco más lento. Rarísimo concepto, ya.</blockquote>
     `
+  },
+
+  // 54. Dónde tapear en Huelva
+  {
+    slug: 'donde-tapear-en-huelva',
+    title: 'Dónde tapear en Huelva sin caer en la trampa para guiris',
+    excerpt: 'Una guía práctica para tapear en Huelva con cabeza: zonas que funcionan, qué pedir y cómo detectar un sitio que merece la pena.',
+    category: 'Gastronomía',
+    image: '/images/guides/choco-frito-tapa.jpg',
+    publishedAt: '2026-04-02T10:00:00Z',
+    author: 'Rocío Limón',
+    isAi: true,
+    content: `
+      <p>Tapear en Huelva no consiste en sentarte en la primera terraza con sol y entregarte al destino. Hay sitios que cumplen, otros que viven de la inercia y algunos que parecen hechos para cazar al despistado. Si quieres comer bien, conviene distinguirlos.</p>
+
+      <h2>Empieza por el centro, pero no te enamores de lo primero</h2>
+      <p>El centro concentra opciones y eso está bien para arrancar, pero también mete ruido. Mira rotación, mira si hay gente local y mira si la carta parece pensada para comer o para sobrevivir con cuatro fotos plastificadas. La diferencia se nota rápido.</p>
+
+      <h2>Qué pedir para medir un sitio</h2>
+      <ul>
+        <li><strong>Choco frito:</strong> si esto falla, mal asunto.</li>
+        <li><strong>Coquinas:</strong> producto, limpieza y punto. Aquí se retratan solos.</li>
+        <li><strong>Ensaladilla o tapa fría:</strong> útil para detectar desgana.</li>
+        <li><strong>Algo fuera de carta:</strong> si existe, normalmente hay cocina viva detrás.</li>
+      </ul>
+
+      <h2>Cómo detectar trampa</h2>
+      <p>Si todo parece pensado para que hagas una foto y nada para que repitas, sospecha. Si el camarero no sabe recomendarte nada, peor. Y si el pescado sabe a trámite, vete cerrando la cuenta y sigue tu vida.</p>
+
+      <h2>Zonas y lógica</h2>
+      <p>Centro para empezar. Barrios o zonas menos obvias para afinar. Costa si el día pide mar. No hay un único “mejor sitio”; hay contextos. Lo inteligente es decidir según hambre, hora y compañía.</p>
+
+      <blockquote>La mejor ruta de tapas en Huelva no la gana el sitio más mono. La gana el que te hace pedir una ronda más porque está todo bueno. Fin del misterio.</blockquote>
+    `
+  },
+
+  // 55. Qué ver en Huelva en un día
+  {
+    slug: 'que-ver-en-huelva-en-un-dia',
+    title: 'Qué ver en Huelva en un día para salir con la sensación de haber acertado',
+    excerpt: 'Un recorrido realista por Huelva en un día: centro, historia, paseo, comida y un cierre digno sin hacer turismo a martillazos.',
+    category: 'Guías Locales',
+    image: '/images/guides/huelva-aerea.jpg',
+    publishedAt: '2026-04-02T10:15:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Si solo tienes un día en Huelva, la clave no es meter veinte cosas. La clave es elegir un hilo lógico: centro, historia, comida, paseo y un buen final. Así entiendes la ciudad sin convertir el día en una oposición.</p>
+
+      <h2>Mañana: centro y primeras referencias</h2>
+      <p>Empieza por Plaza de las Monjas y las calles del centro. Desayuna bien, pasea sin prisa y entiende rápido la escala real de la ciudad. Huelva no se disfruta corriendo como si fueras a sellar una gymkana.</p>
+
+      <h2>Media mañana: Museo o entorno colombino</h2>
+      <p>Si quieres ciudad, Museo de Huelva. Si prefieres contexto histórico más amplio y tienes coche, La Rábida te da bastante retorno por poco esfuerzo. Las dos opciones son sensatas; lo absurdo es intentar hacer ambas como si nada.</p>
+
+      <h2>Mediodía: comer como toca</h2>
+      <p>Este tramo importa mucho. Choco, coquinas, pescado o una ruta de tapas bien resuelta. Huelva gana bastante cuando comes donde debes y pierde mucho cuando improvisas mal.</p>
+
+      <h2>Tarde: Muelle del Tinto y paseo</h2>
+      <p>El Muelle del Tinto no falla. Tiene historia, imagen potente y paseo agradable. Si pillas buena luz, además te llevas las fotos fáciles sin tener que inventar demasiado.</p>
+
+      <h2>Final del día: mirador, terraza o paseo largo</h2>
+      <p>Remata con vistas, terraza o un paseo tranquilo. Huelva no necesita un final épico; necesita uno coherente. Si acabas bien comido y con la sensación de haber respirado otro ritmo, ya has acertado.</p>
+
+      <blockquote>En un día no vas a “tachar Huelva”. Vas a entenderla lo justo para querer volver. Y eso, sinceramente, ya es una victoria.</blockquote>
+    `
+  },
+
+  // 56. Escapadas desde Huelva
+  {
+    slug: 'escapadas-desde-huelva-un-dia',
+    title: 'Las mejores escapadas desde Huelva para un día sin desperdicio',
+    excerpt: 'Ideas de escapadas desde Huelva capital: sierra, costa, pueblos y planes de un día que sí compensan el desplazamiento.',
+    category: 'Guías Locales',
+    image: '/images/guides/ayamonte-huelva.jpg',
+    publishedAt: '2026-04-02T10:30:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva capital está bien colocada para hacer escapadas muy decentes sin tragarte media vida en carretera. La clave es no querer abarcar demasiadas cosas en un solo día. Una buena escapada no es la que más kilómetros mete, sino la que te deja volver contento y no reventado.</p>
+
+      <h2>Aracena y sierra: cuando quieres aire y comida seria</h2>
+      <p>Es la escapada clásica y sigue siéndolo porque funciona. Paseas, comes bien y cambias de paisaje de verdad. Muy buena opción cuando apetece montaña suave y bajar ruido mental.</p>
+
+      <h2>Ayamonte: frontera, paseo y otro ritmo</h2>
+      <p>Tiene personalidad, mezcla de río y frontera, y ese punto de sitio que no va con prisas. Si te gusta pasear, comer tranquilo y sentir que has salido de la rutina sin volverte loco, entra muy bien.</p>
+
+      <h2>Punta Umbría o El Portil: solución rápida si manda el mar</h2>
+      <p>Para día de playa o paseo costero, son salidas fáciles desde la capital. Menos épica, más practicidad. Y a veces eso es exactamente lo correcto.</p>
+
+      <h2>La Rábida y Palos: historia sin paliza</h2>
+      <p>Muy recomendables cuando quieres media jornada con sentido histórico y sin grandes desplazamientos. En relación esfuerzo/retorno, salen bastante fuertes.</p>
+
+      <h2>Cómo elegir</h2>
+      <ul>
+        <li><strong>Si quieres comer bien y desconectar:</strong> sierra.</li>
+        <li><strong>Si quieres paseo con carácter:</strong> Ayamonte.</li>
+        <li><strong>Si quieres mar sin complicarte:</strong> Punta Umbría o El Portil.</li>
+        <li><strong>Si quieres historia cercana:</strong> La Rábida y Palos.</li>
+      </ul>
+
+      <blockquote>La escapada buena no es la más ambiciosa. Es la que te hace volver pensando “esto lo repito”, no “a ver cuándo me recupero”.</blockquote>
+    `
   }
 ];
