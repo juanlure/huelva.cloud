@@ -12,12 +12,13 @@ export default async function Home() {
   const articles = await getArticles();
 
   // Get featured and organize content
-  const featuredArticle = articles[0];
-  const trendingArticles = articles.slice(1, 7);
+  const nonNewsArticles = articles.filter(a => a.category !== 'Noticias');
+  const featuredArticle = nonNewsArticles[0] || articles[0];
+  const trendingArticles = nonNewsArticles.slice(1, 7);
   const gastronomyArticles = articles.filter(a => a.category === 'Gastronomía').slice(0, 3);
   const guidesArticles = articles.filter(a => a.category === 'Guías Locales').slice(0, 4);
   const eventsArticles = articles.filter(a => a.category === 'Eventos').slice(0, 3);
-  const newsArticles = articles.filter(a => a.category === 'Noticias').slice(0, 3);
+  const newsArticles = (await getArticles('noticias')).slice(0, 3);
 
   // Stats
   const stats = {
@@ -74,7 +75,7 @@ export default async function Home() {
                   {...article}
                   imageUrl={article.image}
                   author={{ name: article.author }}
-                  publishedAt={article.date}
+                  publishedAt={article.publishedAtISO}
                   readTime={parseInt(article.readTime)}
                 />
               ))}
@@ -128,7 +129,7 @@ export default async function Home() {
                   {...article}
                   imageUrl={article.image}
                   author={{ name: article.author }}
-                  publishedAt={article.date}
+                  publishedAt={article.publishedAtISO}
                   readTime={parseInt(article.readTime)}
                   compact
                 />
@@ -306,42 +307,47 @@ export default async function Home() {
       </section>
 
       {/* News Pulse */}
-      <section className="py-24 bg-sand/30">
-        <div className="container">
-          <div className="max-w-content mx-auto">
-            <div className="flex items-center justify-between mb-12 gap-6 flex-wrap">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <TrendingUp size={20} className="text-terracotta" />
-                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                    Actualidad
-                  </span>
+      {newsArticles.length > 0 && (
+        <section className="py-24 bg-sand/30">
+          <div className="container">
+            <div className="max-w-content mx-auto">
+              <div className="flex items-center justify-between mb-12 gap-6 flex-wrap">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <TrendingUp size={20} className="text-terracotta" />
+                    <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
+                      Actualidad
+                    </span>
+                  </div>
+                  <h2 className="text-display text-4xl font-semibold text-navy">
+                    Radar local
+                  </h2>
+                  <p className="text-navy/60 mt-3 max-w-2xl">
+                    Noticias útiles, con fuente visible y sin vender humo. Si la actualidad no da nivel, no debe mandar en portada.
+                  </p>
                 </div>
-                <h2 className="text-display text-4xl font-semibold text-navy">
-                  Ahora en Huelva
-                </h2>
+                <Link href="/noticias" className="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">
+                  Ver noticias <ArrowRight size={18} />
+                </Link>
               </div>
-              <Link href="/noticias" className="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">
-                Ver noticias <ArrowRight size={18} />
-              </Link>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {newsArticles.map((article) => (
-                <ArticleCard
-                  key={article.slug}
-                  {...article}
-                  imageUrl={article.image}
-                  author={{ name: article.author }}
-                  publishedAt={article.date}
-                  readTime={parseInt(article.readTime)}
-                  compact
-                />
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {newsArticles.map((article) => (
+                  <ArticleCard
+                    key={article.slug}
+                    {...article}
+                    imageUrl={article.image}
+                    author={{ name: article.author }}
+                    publishedAt={article.publishedAtISO}
+                    readTime={parseInt(article.readTime)}
+                    compact
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Interactive Quiz Section */}
       <section className="py-24 bg-white">

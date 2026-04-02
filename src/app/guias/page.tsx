@@ -99,7 +99,7 @@ async function DynamicGuidesGrid() {
           key={idx}
           {...article}
           imageUrl={article.image} // Adapter: api returns 'image', component expects 'imageUrl'
-          publishedAt={article.date}
+          publishedAt={article.publishedAtISO}
           readTime={parseInt(article.readTime)}
           author={{ name: article.author }}
         />

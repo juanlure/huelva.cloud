@@ -88,7 +88,7 @@ export default async function AgendaPage() {
                   {...article}
                   imageUrl={article.image}
                   author={{ name: article.author }}
-                  publishedAt={article.date}
+                  publishedAt={article.publishedAtISO}
                   readTime={parseInt(article.readTime)}
                 />
               ))}
@@ -111,7 +111,7 @@ export default async function AgendaPage() {
                   {...article}
                   imageUrl={article.image}
                   author={{ name: article.author }}
-                  publishedAt={article.date}
+                  publishedAt={article.publishedAtISO}
                   readTime={parseInt(article.readTime)}
                   compact
                 />

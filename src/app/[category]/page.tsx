@@ -93,7 +93,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   const title = CATEGORY_TITLES[category.toLowerCase()] || category;
   const articles = await getArticles(category);
-  const lastUpdated = articles[0]?.date || null;
+  const lastUpdated = articles[0]?.publishedLabel || null;
 
   // Generate Event Schema if this is the eventos category
   const eventSchema = category.toLowerCase() === 'eventos' ? generateEventSchema(articles) : null;
@@ -187,7 +187,7 @@ export default async function CategoryPage({ params }: PageProps) {
                       key={idx}
                       {...article}
                       imageUrl={article.image}
-                      publishedAt={article.date}
+                      publishedAt={article.publishedAtISO}
                       readTime={parseInt(article.readTime)}
                       author={{ name: article.author }}
                     />

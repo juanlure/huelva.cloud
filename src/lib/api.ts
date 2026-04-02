@@ -54,6 +54,8 @@ export interface Article {
   category: string;
   image: string | null;
   date: string;
+  publishedAtISO: string;
+  publishedLabel: string;
   readTime: string;
   author: string;
   isAi: boolean;
@@ -75,11 +77,25 @@ interface ExternalNewsItem {
   external: boolean;
 }
 
+function formatHumanDate(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return 'Fecha pendiente';
+  return date.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function toSafeIso(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return new Date().toISOString();
+  return date.toISOString();
+}
+
 function mapArticle(article: LocalArticle): Article {
   const image = resolveArticleImage(article);
   const content = article.content || '';
   const words = content.split(/\s+/).filter(Boolean).length;
   const readTime = `${Math.max(1, Math.ceil(words / 200))} min`;
+  const publishedAtISO = toSafeIso(article.publishedAt);
+  const publishedLabel = formatHumanDate(article.publishedAt);
 
   return {
     slug: article.slug,
@@ -88,7 +104,9 @@ function mapArticle(article: LocalArticle): Article {
     content,
     category: article.category,
     image,
-    date: new Date(article.publishedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }),
+    date: publishedLabel,
+    publishedAtISO,
+    publishedLabel,
     readTime,
     author: article.author,
     isAi: article.isAi,
@@ -97,7 +115,8 @@ function mapArticle(article: LocalArticle): Article {
 }
 
 function mapExternalNews(news: ExternalNewsItem): Article {
-  const humanDate = new Date(news.publishedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+  const publishedAtISO = toSafeIso(news.publishedAt);
+  const publishedLabel = formatHumanDate(news.publishedAt);
   // Usar content generado por IA si existe, sino fallback básico
   const bodyContent = news.content || `<p>${news.excerpt}</p>`;
   
@@ -108,16 +127,18 @@ function mapExternalNews(news: ExternalNewsItem): Article {
     slug: `external-${base64Url}`,
     title: news.title,
     excerpt: news.excerpt,
-    content: `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${humanDate}).</p>`,
+    content: `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`,
     category: 'Noticias',
     image: news.image || null,
-    date: humanDate,
+    date: publishedLabel,
+    publishedAtISO,
+    publishedLabel,
     readTime: '3 min',
     author: 'Redacción Huelva.cloud',
     isAi: true,
     external: true,
     source: news.source,
-    sourceDate: humanDate,
+    sourceDate: publishedLabel,
   };
 }
 

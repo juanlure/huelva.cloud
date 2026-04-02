@@ -69,8 +69,13 @@ export default function ArticleCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const formatDate = (date: Date | string) => {
-    const d = typeof date === 'string' ? new Date(date) : date;
-    return d.toLocaleDateString('es-ES', { month: 'short', day: 'numeric' });
+    if (typeof date === 'string') {
+      const parsed = new Date(date);
+      if (Number.isNaN(parsed.getTime())) return date;
+      return parsed.toLocaleDateString('es-ES', { month: 'short', day: 'numeric' });
+    }
+
+    return date.toLocaleDateString('es-ES', { month: 'short', day: 'numeric' });
   };
 
   const normalizedCategory = category.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
