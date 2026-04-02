@@ -4,31 +4,34 @@ export function GuideHeroPremium({ data }: { data: GuideHero }) {
   return (
     <section className="premium-guide-section premium-guide-hero">
       <div className="premium-guide-container premium-guide-hero__grid">
-        <div className="premium-guide-panel premium-guide-stack-lg">
+        <div className="premium-guide-panel premium-guide-panel--hero premium-guide-stack-lg">
           {data.eyebrow ? <p className="premium-guide-eyebrow">{data.eyebrow}</p> : null}
-          <h1 className="premium-guide-h1">{data.title}</h1>
-          <p className="premium-guide-lead">{data.subtitle}</p>
+          <div className="premium-guide-stack-md">
+            <h1 className="premium-guide-h1">{data.title}</h1>
+            <p className="premium-guide-lead">{data.subtitle}</p>
+          </div>
 
           {data.quickFacts?.length ? (
             <div className="premium-guide-facts">
               {data.quickFacts.map((fact) => (
                 <div key={fact.label} className="premium-guide-fact">
                   <span className="premium-guide-label">{fact.label}</span>
-                  <strong>{fact.value}</strong>
+                  <strong className="premium-guide-fact__value">{fact.value}</strong>
                 </div>
               ))}
             </div>
           ) : null}
         </div>
 
-        <div className="premium-guide-hero__visual premium-guide-panel premium-guide-stack-md" aria-hidden="true">
+        <div className="premium-guide-hero__visual premium-guide-panel premium-guide-panel--hero-aside premium-guide-stack-md" aria-hidden="true">
           <div className="premium-guide-hero__image premium-guide-hero__image--placeholder">
             {data.image ? (
               <img src={data.image.src} alt={data.image.alt} />
             ) : (
               <div className="premium-guide-hero__placeholder-copy">
-                <span>Base inteligente &gt; foto bonita</span>
-                <strong>Tu alojamiento cambia todo el viaje</strong>
+                <span>Decisión rápida</span>
+                <strong>La mejor base no siempre es la más sexy</strong>
+                <p>La buena elección es la que hace que todo el viaje friccione menos.</p>
               </div>
             )}
           </div>

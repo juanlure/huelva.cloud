@@ -2,14 +2,14 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const alojarseGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium',
-    title: 'Dónde alojarse en Huelva: qué zona elegir según tu viaje',
+    eyebrow: 'Guía premium · flagship',
+    title: 'Dónde alojarse en Huelva sin cagarla: la zona correcta según tu viaje',
     subtitle:
-      'Si no quieres perder tiempo comparando opciones mediocres, aquí tienes la forma más rápida de decidir si te conviene dormir en Huelva capital, en la costa o en una base más práctica según tu plan, presupuesto y forma de moverte.',
+      'La decisión no es hotel vs apartamento. La decisión de verdad es elegir una base que juegue a favor de tu plan. Si eliges mal la zona, el viaje se vuelve más lento, más caro y bastante más torpe.',
     quickFacts: [
-      { label: 'Mejor para primera vez', value: 'Huelva capital' },
-      { label: 'Mejor para playa', value: 'Costa de Huelva' },
-      { label: 'Clave real', value: 'La base condiciona todo el viaje' },
+      { label: 'Si vienes por primera vez', value: 'Huelva capital' },
+      { label: 'Si vienes por playa', value: 'Costa de Huelva' },
+      { label: 'Verdad incómoda', value: 'La base manda más que la foto' },
     ],
   },
   toc: [
@@ -24,168 +24,168 @@ export const alojarseGuideData: AlojarseGuideData = {
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
-    title: 'Decisión rápida',
-    intro: 'Si no quieres leerte media internet para decidir bien, empieza aquí.',
+    title: 'La respuesta corta, sin turismo de humo',
+    intro: 'Si quieres decidir en 30 segundos y seguir con tu vida, lee esto y ya.',
     items: [
       {
-        title: 'Quédate en Huelva capital',
+        title: 'Elige Huelva capital',
         description:
-          'Si vienes por primera vez, quieres base práctica y prefieres moverte fácil sin hipotecar el viaje a una sola zona.',
+          'Si es tu primera vez, si quieres mezclar planes o si valoras una base flexible que no te complique cada desplazamiento.',
       },
       {
-        title: 'Quédate en la costa',
+        title: 'Elige la costa',
         description:
-          'Si tu prioridad absoluta es playa, descanso y ritmo vacacional. No si quieres mezclar demasiados planes.',
+          'Si vienes a playa de verdad, a bajar revoluciones y a construir el viaje alrededor del mar, no alrededor de una lista de sitios.',
       },
       {
-        title: 'No elijas solo por precio',
+        title: 'No compres una ganga torpe',
         description:
-          'El alojamiento barato mal situado parece ahorro, pero luego te lo cobra en tiempo, coche y cansancio.',
+          'Alojamiento barato + mala ubicación = falso ahorro. Luego lo pagas en coche, tiempo, cansancio y peores decisiones.',
       },
     ],
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
-    title: 'Capital o costa: qué cambia de verdad',
+    title: 'Huelva capital o costa: aquí se gana o se pierde el viaje',
     intro:
-      'No es una diferencia decorativa. Cambian la logística, el ritmo del viaje y lo que realmente aprovechas cada día.',
+      'Esto no va de gustos abstractos. Va de qué base te deja hacer mejor el viaje que realmente quieres tener, no el que suena bonito en una foto.',
     cards: [
       {
         name: 'Huelva capital',
-        bestFor: 'Primera visita, escapadas mixtas y base más eficiente',
-        good: ['Más central', 'Más servicios', 'Mejor para combinar planes'],
-        tradeoffs: ['Menos sensación vacacional', 'No duermes junto al mar'],
-        mobility: 'Muy buena para entrar, salir y reorganizar el día sin drama.',
+        bestFor: 'Primera visita, escapadas mixtas y viajes donde manda la eficiencia',
+        good: ['Más central para pivotar', 'Más servicios y margen de maniobra', 'Mejor base para combinar planes sin rehacer el día'],
+        tradeoffs: ['Menos ambiente de vacaciones puras', 'No sales andando a la arena'],
+        mobility: 'Muy buena. Te permite corregir sobre la marcha, entrar y salir fácil y no hipotecar el día a un solo tipo de plan.',
         verdict:
-          'Es la base más inteligente para la mayoría. No la más aspiracional en foto, sí la más útil.',
+          'Es la decisión más inteligente para la mayoría. No vende la postal más sexy, pero sí el viaje mejor resuelto.',
       },
       {
         name: 'Costa de Huelva',
-        bestFor: 'Viajes centrados en playa, descanso y ambiente costero',
-        good: ['Más ambiente vacacional', 'Mejor acceso a playa', 'Más desconexión'],
-        tradeoffs: ['Peor como base mixta', 'Más dependencia del coche'],
-        mobility: 'Correcta si tu viaje gira alrededor de costa y no quieres complicarte con más frentes.',
+        bestFor: 'Viajes de playa, descanso y ritmo más lento',
+        good: ['Más sensación de escapada', 'Más cerca del mar', 'Mejor para días de playa encadenados'],
+        tradeoffs: ['Peor base si quieres mezclar demasiadas cosas', 'Más dependencia del coche y de trayectos'],
+        mobility: 'Funciona bien cuando la costa es el plan. Si no, te vuelve menos ágil y más rehén de la geografía.',
         verdict:
-          'Tiene sentido cuando vienes claramente a costa. Si no, te puede encorsetar el viaje.',
+          'Compensa cuando vienes claramente a playa. Si tu viaje es mixto, puede parecer buena idea y acabar siendo una molestia cara.',
       },
     ],
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
-    title: 'Qué te conviene según tu viaje',
-    intro: 'Aquí se corta el ruido. No todo el mundo necesita la misma base.',
+    title: 'Elige la base según el viaje que vas a hacer, no según la foto que te seduce',
+    intro: 'Aquí es donde de verdad se limpia el ruido. El mismo alojamiento puede ser perfecto o una mala compra según para qué vengas.',
     options: [
       {
         label: 'Primera vez en Huelva',
-        audience: 'Quien quiere una base fácil y sin errores tontos',
-        recommendation: 'Huelva capital.',
+        audience: 'Quieres una base simple, útil y sin errores de novato',
+        recommendation: 'Huelva capital. Es la opción con más margen para acertar incluso si improvisas parte del viaje.',
       },
       {
-        label: 'Viaje de playa',
-        audience: 'Quien prioriza mar, paseo y chiringuito',
-        recommendation: 'Costa de Huelva.',
+        label: 'Viaje de playa serio',
+        audience: 'Vienes a mar, paseo, descanso y ritmo vacacional',
+        recommendation: 'Costa de Huelva. Aquí sí tiene sentido pagar por cercanía al mar porque esa cercanía es el plan.',
       },
       {
-        label: 'Escapada corta',
-        audience: 'Quien necesita optimizar tiempos',
-        recommendation: 'Base céntrica y práctica.',
+        label: 'Escapada corta de fin de semana',
+        audience: 'Necesitas aprovechar bien cada tramo del día',
+        recommendation: 'Base práctica y bien conectada. En poco tiempo, la logística manda más que la fantasía.',
       },
       {
-        label: 'Ruta en coche',
-        audience: 'Quien va a moverse entre varios puntos',
-        recommendation: 'Elige conectividad, no postal bonita.',
+        label: 'Ruta en coche y varios frentes',
+        audience: 'Vas a moverte mucho y no quieres rehacer trayectos absurdos',
+        recommendation: 'Prioriza conectividad y facilidad de entrada/salida. Lo bonito sin eficiencia aquí estorba.',
       },
     ],
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi recomendación',
+    title: 'Mi recomendación editorial, sin quedar bien con todo el mundo',
     body:
-      'Si vienes por primera vez y no tienes un motivo muy claro para dormir en la costa, quédate en Huelva capital. Es la base más flexible, la que menos fricción genera y la que mejor te deja corregir sobre la marcha.',
+      'Si vienes por primera vez y no tienes un motivo clarísimo para dormir en la costa, quédate en Huelva capital. Es la base que te deja más margen, menos fricción y mejores decisiones durante todo el viaje.',
     highlight:
-      'La mayoría no necesita la opción más bonita. Necesita la opción que hace que el viaje salga bien.',
+      'La mayoría no necesita la opción más fotogénica. Necesita la opción que evita un viaje torpe.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
-    title: 'Errores típicos al elegir alojamiento',
-    intro: 'Aquí es donde mucha gente la lía sin darse cuenta.',
+    title: 'Errores típicos que convierten una buena escapada en logística absurda',
+    intro: 'Aquí cae mucha gente por querer ahorrar mal, decidir tarde o comprar relato en vez de utilidad.',
     mistakes: [
       {
         title: 'Elegir solo por precio',
-        description: 'Lo barato mal ubicado se paga en desplazamientos, cansancio y peor experiencia.',
+        description: 'Lo barato mal colocado casi nunca sale barato. Se convierte en más trayectos, más fricción y menos ganas de hacer cosas.',
       },
       {
-        title: 'Comprar una foto de portada',
-        description: 'Una imagen bonita no corrige una base torpe ni una mala logística.',
+        title: 'Comprar la portada y no el viaje',
+        description: 'Una foto bonita vende deseo rápido, pero no corrige una base torpe ni una logística mala.',
       },
       {
-        title: 'No pensar el viaje entero',
-        description: 'Dormir lejos de lo que realmente vas a hacer te rompe el ritmo del plan.',
+        title: 'No pensar el viaje completo',
+        description: 'Si duermes lejos de lo que realmente vas a hacer, el plan se desgasta antes de empezar.',
       },
     ],
   },
   accommodationTypes: {
     sectionId: 'tipos-alojamiento',
-    title: 'Qué tipo de alojamiento te encaja',
-    intro: 'No todo es hotel. El formato también cambia la experiencia.',
+    title: 'Qué formato te encaja de verdad',
+    intro: 'No todo es zona. El tipo de alojamiento también cambia cuánto roce o comodidad te llevas en el viaje.',
     cards: [
       {
         title: 'Hotel urbano',
-        bestFor: 'Escapadas prácticas y primeras visitas',
-        pros: ['Más sencillo', 'Mejor logística', 'Menos fricción'],
-        cons: ['Puede sentirse genérico si eliges sin criterio'],
+        bestFor: 'Primeras visitas, escapadas cortas y viajes donde importa la facilidad',
+        pros: ['Más simple de gestionar', 'Mejor para entrar/salir sin líos', 'Reduce fricción en casi todo el viaje'],
+        cons: ['Si eliges uno mediocre, la experiencia se vuelve bastante plana'],
       },
       {
         title: 'Apartamento',
-        bestFor: 'Parejas, familias o estancias algo más largas',
-        pros: ['Más flexibilidad', 'Más espacio', 'Mejor autonomía'],
-        cons: ['La calidad es muy desigual'],
+        bestFor: 'Parejas, familias o estancias donde compensa tener más autonomía',
+        pros: ['Más espacio', 'Más libertad de horarios', 'Mejor si quieres vivir el viaje a tu ritmo'],
+        cons: ['La diferencia entre uno bueno y uno cutre es enorme'],
       },
       {
         title: 'Alojamiento en costa',
-        bestFor: 'Vacaciones centradas en mar y descanso',
-        pros: ['Más ambiente vacacional', 'Cercanía a playa'],
-        cons: ['Peor base si quieres mezclar muchos planes'],
+        bestFor: 'Vacaciones centradas en playa, paseo y descanso real',
+        pros: ['Más sensación de desconexión', 'Más sentido si el mar manda', 'Mejor atmósfera vacacional'],
+        cons: ['Si el viaje es mixto, puede volverse una base incómoda'],
       },
     ],
   },
   faq: {
     sectionId: 'faq',
-    title: 'Preguntas frecuentes',
+    title: 'Preguntas frecuentes que sí cambian la decisión',
     items: [
       {
         question: '¿Es mejor dormir en Huelva capital o en la costa?',
         answer:
-          'Para la mayoría que viene por primera vez, Huelva capital suele ser la base más útil. La costa compensa cuando el viaje gira claramente alrededor de la playa.',
+          'Para la mayoría que viene por primera vez, Huelva capital suele ser la mejor base. La costa gana cuando el viaje está claramente construido alrededor de playa, descanso y ritmo vacacional.',
       },
       {
         question: '¿Cuántas noches conviene quedarse?',
         answer:
-          'Para una primera toma de contacto, una escapada corta bien planteada ya permite ver bastante sin saturarte.',
+          'Para una primera toma de contacto, una escapada corta bien planteada ya da bastante juego. Lo importante no es meter noches por meter, sino elegir una base que no te robe tiempo útil.',
       },
       {
         question: '¿Conviene reservar con antelación?',
         answer:
-          'Sí. Sobre todo si no quieres quedarte con lo mediocre en fechas de más demanda.',
+          'Sí. Especialmente si no quieres quedarte con lo mediocre, con mala ubicación o con precios inflados por decidir tarde.',
       },
     ],
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Reserva con criterio, no por impulso',
+    title: 'Reserva la base correcta antes de que se la lleve otro',
     body:
-      'Si ya tienes claro qué tipo de base necesitas, el siguiente paso es filtrar bien y descartar rápido lo que solo parece buena idea en fotos.',
+      'Si ya has decidido qué tipo de base encaja contigo, el siguiente paso no es mirar veinte opciones más. Es filtrar con criterio, descartar rápido lo mediocre y reservar antes de entrar en parálisis de comparación.',
     primaryAction: {
-      label: 'Explorar alojamientos',
+      label: 'Ver alojamientos en Huelva',
       href: '#',
     },
     secondaryAction: {
-      label: 'Seguir planificando el viaje',
+      label: 'Seguir montando el viaje',
       href: '/guias',
     },
   },
   relatedGuides: {
-    title: 'Sigue afinando tu viaje',
+    title: 'Sigue afinando el viaje para no improvisar mal',
     guides: [
       {
         title: 'Qué ver en Huelva',

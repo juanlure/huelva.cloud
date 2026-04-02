@@ -36,10 +36,11 @@ export function BestForSelector({ data }: { data: BestForSelectorData }) {
           </div>
 
           {activeOption ? (
-            <div className="premium-guide-panel premium-guide-bestfor__result">
-              <p className="premium-guide-eyebrow">Recomendación</p>
+            <div className="premium-guide-panel premium-guide-bestfor__result premium-guide-stack-sm">
+              <p className="premium-guide-eyebrow">Tu mejor jugada</p>
               <h3 className="premium-guide-h3">{activeOption.label}</h3>
-              <p className="premium-guide-body">{activeOption.recommendation}</p>
+              <p className="premium-guide-kicker">{activeOption.audience}</p>
+              <p className="premium-guide-body premium-guide-body--strong">{activeOption.recommendation}</p>
             </div>
           ) : null}
         </div>

@@ -20,22 +20,22 @@ export function ZoneComparisonCards({ data }: { data: ZoneComparisonCardsData })
 
               <div className="premium-guide-stack-sm">
                 <div>
-                  <span className="premium-guide-list-title">Lo bueno</span>
+                  <span className="premium-guide-list-title">Lo que ganas</span>
                   <ul className="premium-guide-list">
                     {card.good.map((item) => <li key={item}>{item}</li>)}
                   </ul>
                 </div>
                 <div>
-                  <span className="premium-guide-list-title">Trade-offs</span>
+                  <span className="premium-guide-list-title">El peaje real</span>
                   <ul className="premium-guide-list premium-guide-list--muted">
                     {card.tradeoffs.map((item) => <li key={item}>{item}</li>)}
                   </ul>
                 </div>
               </div>
 
-              <div className="premium-guide-meta-block">
+              <div className="premium-guide-meta-block premium-guide-meta-block--verdict">
                 <p><strong>Movilidad:</strong> {card.mobility}</p>
-                <p><strong>Veredicto:</strong> {card.verdict}</p>
+                <p><strong>Veredicto editorial:</strong> {card.verdict}</p>
               </div>
             </article>
           ))}

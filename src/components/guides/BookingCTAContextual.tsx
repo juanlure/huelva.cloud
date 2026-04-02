@@ -8,7 +8,8 @@ export function BookingCTAContextual({ data }: { data: ContextualCTA }) {
         <div className="premium-guide-cta premium-guide-stack-md">
           <p className="premium-guide-eyebrow">Siguiente paso</p>
           <h2 className="premium-guide-h2">{data.title}</h2>
-          <p className="premium-guide-body">{data.body}</p>
+          <p className="premium-guide-body premium-guide-body--strong">{data.body}</p>
+          <p className="premium-guide-kicker">Decide la base, filtra rápido y no regales las mejores opciones por seguir comparando sin fin.</p>
 
           <div className="premium-guide-cta__actions">
             <Link href={data.primaryAction.href} className="btn btn-primary btn-lg">
