@@ -110,7 +110,11 @@ async function DynamicGuidesGrid() {
 
 export default async function GuidesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-cream to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#fffdf9] via-cream to-white relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-terracotta/8 rounded-full blur-3xl" />
+        <div className="absolute top-[20rem] right-0 w-[26rem] h-[26rem] bg-sky-500/6 rounded-full blur-3xl" />
+      </div>
       {/* Header */}
       <div className="relative overflow-hidden bg-navy pt-32 pb-32 px-6">
         {/* Animated Background */}
@@ -144,7 +148,7 @@ export default async function GuidesPage() {
       </div>
 
       {/* Guides Grid */}
-      <div className="container py-20">
+      <div className="container py-20 relative z-10">
         <div className="max-w-content mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {guides.map((guide, index) => (
@@ -153,7 +157,7 @@ export default async function GuidesPage() {
                 href={guide.slug.startsWith('../') ? `/${guide.slug.replace('../', '')}` : `/guias/${guide.slug}`}
                 className="group"
               >
-                <div className="bg-white rounded-3xl overflow-hidden border border-navy-10 hover:border-terracotta/50 hover:shadow-2xl transition-all duration-500 h-full">
+                <div className="bg-white/88 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/70 hover:border-terracotta/40 hover:shadow-[0_24px_80px_rgba(26,42,58,0.16)] transition-all duration-500 h-full">
                   {/* Image */}
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <div
@@ -201,7 +205,7 @@ export default async function GuidesPage() {
       </div>
 
       {/* Dynamic Guides Section - Articles from DB */}
-      <section className="bg-sand/30 py-20 border-t border-navy-10">
+      <section className="bg-white/55 backdrop-blur-md py-20 border-t border-navy-10 relative z-10">
         <div className="container">
           <div className="max-w-content mx-auto">
             <div className="flex items-center justify-between mb-12">
@@ -231,7 +235,7 @@ export default async function GuidesPage() {
       {/* CTA */}
       <div className="container py-20">
         <div className="max-w-content mx-auto">
-          <div className="bg-gradient-to-r from-terracotta to-orange-600 rounded-3xl p-8 md:p-12 text-center text-white">
+          <div className="bg-gradient-to-r from-terracotta via-orange-500 to-orange-600 rounded-[2rem] p-8 md:p-12 text-center text-white shadow-[0_24px_80px_rgba(212,85,58,0.28)] border border-white/10">
             <h2 className="text-display text-2xl md:text-3xl font-semibold mb-4">
               ¿Pruebas a ser choquero?
             </h2>

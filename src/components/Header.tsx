@@ -35,7 +35,11 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-premium py-3 border-b border-navy/5 transition-all duration-300"
+      className={`fixed top-0 left-0 right-0 z-50 py-3 border-b transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/88 backdrop-blur-xl shadow-lg border-navy/10'
+          : 'bg-white/72 backdrop-blur-md border-white/40'
+      }`}
     >
       <div className="container overflow-visible">
         <div className="flex items-center justify-between">

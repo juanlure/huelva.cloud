@@ -3,46 +3,46 @@ import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import HeroSection from '@/components/HeroSection';
-import { ArrowRight, TrendingUp, Compass, Clock, MapPin, CalendarDays, Star, Award, Sparkles, CloudSun, Newspaper } from 'lucide-react';
+import { ArrowRight, TrendingUp, CalendarDays, Star, Award, Sparkles, CloudSun, Newspaper, MapPin, Compass } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
   const articles = await getArticles();
+  const comer = await getArticles('comer');
+  const guias = await getArticles('guias');
+  const eventos = await getArticles('eventos');
+  const noticias = await getArticles('noticias');
 
-  // Get featured and organize content
-  const nonNewsArticles = articles.filter(a => a.category !== 'Noticias');
-  const featuredArticle = nonNewsArticles[0] || articles[0];
-  const trendingArticles = nonNewsArticles.slice(1, 7);
-  const gastronomyArticles = articles.filter(a => a.category === 'Gastronomía').slice(0, 3);
-  const guidesArticles = articles.filter(a => a.category === 'Guías Locales').slice(0, 4);
-  const eventsArticles = articles.filter(a => a.category === 'Eventos').slice(0, 3);
-  const newsArticles = (await getArticles('noticias')).slice(0, 3);
+  const featuredArticle = guias[0] || comer[0] || eventos[0] || articles[0];
+  const trendingArticles = [...guias.slice(1, 3), ...comer.slice(0, 2), ...eventos.slice(0, 2)].slice(0, 6);
+  const gastronomyArticles = comer.slice(0, 3);
+  const guidesArticles = guias.slice(0, 4);
+  const eventsArticles = eventos.slice(0, 3);
+  const newsArticles = noticias.slice(0, 3);
 
-  // Stats
   const stats = {
     totalArticles: articles.length,
     totalImages: 43,
     categories: [...new Set(articles.map(a => a.category))].length,
-    lastUpdated: articles[0]?.date || null
+    lastUpdated: articles[0]?.date || null,
   };
 
   return (
-    <main className="w-full">
-      {/* Hero Section */}
+    <main className="w-full overflow-hidden">
       <HeroSection />
 
-      {/* Discover Section - Featured Content */}
-      <section id="descubre" className="py-24 bg-cream">
-        <div className="container">
+      <section id="descubre" className="py-24 bg-cream relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-40" />
+        <div className="absolute top-0 left-0 w-[32rem] h-[32rem] bg-terracotta/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-navy/5 rounded-full blur-3xl" />
+
+        <div className="container relative z-10">
           <div className="max-w-content mx-auto">
-            {/* Section Header */}
             <div className="flex items-center gap-3 mb-4">
               <Star size={20} className="text-terracotta" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                Destacado
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Destacado</span>
             </div>
 
             <h2 className="text-display text-4xl md:text-5xl font-semibold text-navy mb-6">
@@ -50,26 +50,24 @@ export default async function Home() {
             </h2>
 
             <p className="text-xl text-navy-60 max-w-2xl mb-16">
-              Ni folletos turísticos ni postureo. Aquí te contamos lo que hay, desde el mejor choco frito hasta los rincones que no salen en las guías de Madrid.
+              La portada ya no puede parecer un blog cualquiera. Tiene que sentirse local, editorial y útil desde el primer scroll.
             </p>
 
-            {/* Featured Article */}
             {featuredArticle && (
               <div className="mb-16">
                 <ArticleCard
                   {...featuredArticle}
                   imageUrl={featuredArticle.image}
                   author={{ name: featuredArticle.author }}
-                  publishedAt={featuredArticle.date}
+                  publishedAt={featuredArticle.publishedAtISO}
                   readTime={parseInt(featuredArticle.readTime)}
                   featured
                 />
               </div>
             )}
 
-            {/* Article Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {trendingArticles.map((article, idx) => (
+              {trendingArticles.map((article) => (
                 <ArticleCard
                   key={article.slug}
                   {...article}
@@ -81,13 +79,12 @@ export default async function Home() {
               ))}
             </div>
 
-            {/* View All */}
             <div className="mt-16 text-center">
               <Link
                 href="/noticias"
                 className="inline-flex items-center gap-2 text-navy-60 hover:text-terracotta font-medium transition-colors group"
               >
-                <span>Ver todos los artículos ({stats.totalArticles})</span>
+                <span>Explorar todo el archivo ({stats.totalArticles})</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -95,103 +92,83 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Gastronomy Section */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-50/50 to-transparent" />
-        
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-16 right-0 w-[36rem] h-[36rem] bg-orange-100/50 rounded-full blur-3xl" />
+        </div>
         <div className="container relative z-10">
           <div className="max-w-content mx-auto">
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
+            <div className="grid lg:grid-cols-[1.15fr_1.85fr] gap-10 items-start">
+              <div className="sticky top-28">
+                <div className="inline-flex items-center gap-3 mb-4">
                   <Award size={20} className="text-terracotta" />
-                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                    Gastronomía
-                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Gastronomía</span>
                 </div>
-                <h2 className="text-display text-4xl font-semibold text-navy">
-                  Comer en Huelva
-                </h2>
+                <h2 className="text-display text-4xl font-semibold text-navy mb-5">Comer en Huelva</h2>
+                <p className="text-lg text-navy/60 mb-8">
+                  Choco, coquinas, desayunos, tapeo y criterio. Si esta parte no apetece, la web no vende Huelva ni aunque rece.
+                </p>
+                <Link href="/comer" className="inline-flex items-center gap-2 btn btn-primary">
+                  Ver gastronomía <ArrowRight size={18} />
+                </Link>
               </div>
-              <Link
-                href="/comer"
-                className="hidden md:inline-flex items-center gap-2 text-terracotta hover:text-terracotta/80 font-medium transition-colors"
-              >
-                <span>Ver todo</span>
-                <ArrowRight size={18} />
-              </Link>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {gastronomyArticles.map((article) => (
-                <ArticleCard
-                  key={article.slug}
-                  {...article}
-                  imageUrl={article.image}
-                  author={{ name: article.author }}
-                  publishedAt={article.publishedAtISO}
-                  readTime={parseInt(article.readTime)}
-                  compact
-                />
-              ))}
-            </div>
-
-            <div className="mt-8 text-center md:hidden">
-              <Link
-                href="/comer"
-                className="inline-flex items-center gap-2 text-terracotta font-medium"
-              >
-                <span>Ver todo</span>
-                <ArrowRight size={18} />
-              </Link>
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {gastronomyArticles.map((article) => (
+                  <ArticleCard
+                    key={article.slug}
+                    {...article}
+                    imageUrl={article.image}
+                    author={{ name: article.author }}
+                    publishedAt={article.publishedAtISO}
+                    readTime={parseInt(article.readTime)}
+                    compact
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Guides Section - Dark */}
       <section id="guias" className="py-24 bg-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-grid" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)' }} />
-        </div>
+        <div className="absolute inset-0 opacity-10 bg-grid" />
+        <div className="absolute -top-20 -right-10 w-[26rem] h-[26rem] bg-terracotta/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[24rem] h-[24rem] bg-white/6 rounded-full blur-3xl" />
 
         <div className="container relative z-10">
           <div className="max-w-content mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold uppercase tracking-widest mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold uppercase tracking-widest mb-6 border border-white/10">
                 <Sparkles size={16} />
                 <span>Guías Locales</span>
               </div>
 
-              <h2 className="text-display text-4xl md:text-5xl font-semibold mb-6">
-                Explora la provincia
-              </h2>
-
-              <p className="text-xl text-white/60 max-w-2xl mx-auto">
-                Desde la capital hasta la Sierra, desde el puerto hasta las playas. 
-                Todo lo que necesitas saber para moverte por Huelva.
+              <h2 className="text-display text-4xl md:text-5xl font-semibold mb-6">Explora la provincia con estilo</h2>
+              <p className="text-xl text-white/65 max-w-2xl mx-auto">
+                Menos tono institucional y más sensación editorial premium. Que den ganas de clicar aunque no hayas venido buscando nada.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {guidesArticles.map((article) => (
                 <Link
                   key={article.slug}
                   href={`/article/${article.slug}`}
-                  className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:border-terracotta/50 transition-all duration-300"
+                  className="group relative overflow-hidden rounded-[1.75rem] bg-white/8 border border-white/10 hover:border-terracotta/50 transition-all duration-300 shadow-[0_18px_60px_rgba(0,0,0,0.18)]"
                 >
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <div
                       className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                       style={{ backgroundImage: `url(${article.image})` }}
                     >
-                      <div className="w-full h-full bg-gradient-to-t from-navy via-navy/50 to-transparent" />
+                      <div className="w-full h-full bg-gradient-to-t from-navy via-navy/45 to-transparent" />
                     </div>
                   </div>
 
                   <div className="p-6">
-                    <p className="text-white/40 text-sm mb-2">{article.category}</p>
-                    <h3 className="font-semibold text-white text-lg group-hover:text-terracotta transition-colors">
+                    <p className="text-white/45 text-xs uppercase tracking-widest mb-2">Guía local</p>
+                    <h3 className="font-semibold text-white text-xl leading-tight group-hover:text-terracotta transition-colors">
                       {article.title}
                     </h3>
                   </div>
@@ -202,7 +179,7 @@ export default async function Home() {
             <div className="mt-12 text-center">
               <Link
                 href="/guias"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/16 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all duration-300"
               >
                 <span>Ver todas las guías</span>
                 <ArrowRight size={18} />
@@ -212,34 +189,25 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="py-24 bg-sand/40">
-        <div className="container">
+      <section className="py-24 bg-sand/50 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 right-10 w-[24rem] h-[24rem] bg-terracotta/8 rounded-full blur-3xl" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-content mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <CalendarDays size={20} className="text-terracotta" />
-                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                    Agenda
-                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Agenda</span>
                 </div>
 
-                <h2 className="text-display text-4xl font-semibold text-navy mb-6">
-                  Eventos y planes
-                </h2>
-
+                <h2 className="text-display text-4xl font-semibold text-navy mb-6">Eventos y planes</h2>
                 <p className="text-xl text-navy-60 mb-8">
-                  Desde la Romería del Rocío hasta la Feria de las Colombinas. 
-                  Todo lo que pasa en Huelva y no te puedes perder.
+                  Aquí falta más contenido vivo, sí. Pero visualmente ya tiene que sentirse como una agenda con criterio y no como un listado triste.
                 </p>
-
-                <Link
-                  href="/eventos"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-terracotta hover:bg-terracotta/90 text-white font-semibold rounded-full transition-all duration-300"
-                >
-                  <span>Ver agenda completa</span>
-                  <ArrowRight size={18} />
+                <Link href="/agenda" className="inline-flex items-center gap-2 btn btn-primary">
+                  Ver agenda viva <ArrowRight size={18} />
                 </Link>
               </div>
 
@@ -248,15 +216,16 @@ export default async function Home() {
                   <Link
                     key={article.slug}
                     href={`/article/${article.slug}`}
-                    className="block bg-white rounded-2xl p-6 border border-navy-10 hover:border-terracotta/30 transition-all group"
+                    className="block bg-white/82 backdrop-blur-xl rounded-[1.75rem] p-6 border border-white/70 hover:border-terracotta/30 shadow-[0_18px_60px_rgba(26,42,58,0.08)] transition-all group"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-20 h-20 rounded-xl bg-cover bg-center flex-shrink-0"
-                        style={{ backgroundImage: `url(${article.image})` }}
+                      <div
+                        className="w-22 h-22 min-w-22 rounded-2xl bg-cover bg-center flex-shrink-0 shadow-md"
+                        style={{ backgroundImage: `url(${article.image})`, width: 88, height: 88 }}
                       />
                       <div className="flex-1">
-                        <p className="text-sm text-navy-40 mb-1">{article.category}</p>
-                        <h3 className="font-semibold text-navy group-hover:text-terracotta transition-colors mb-2">
+                        <p className="text-[11px] uppercase tracking-widest text-terracotta font-semibold mb-2">Evento</p>
+                        <h3 className="font-semibold text-navy group-hover:text-terracotta transition-colors mb-2 text-lg leading-tight">
                           {article.title}
                         </h3>
                         <p className="text-sm text-navy-50 line-clamp-2">{article.excerpt}</p>
@@ -270,35 +239,34 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Utility Hub */}
       <section className="py-24 bg-white border-t border-navy/5">
         <div className="container">
           <div className="max-w-content mx-auto">
             <div className="grid lg:grid-cols-3 gap-6">
-              <Link href="/agenda" className="group rounded-3xl border border-navy/10 bg-cream p-8 hover:border-terracotta/40 hover:shadow-lg transition-all">
+              <Link href="/agenda" className="group rounded-[2rem] border border-white/70 bg-cream/90 backdrop-blur-xl p-8 hover:border-terracotta/40 hover:shadow-[0_24px_80px_rgba(26,42,58,0.12)] transition-all">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-terracotta/10 text-terracotta mb-5">
                   <CalendarDays size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold text-navy mb-3 group-hover:text-terracotta transition-colors">Agenda al día</h2>
-                <p className="text-navy/60 mb-5">Hoy, esta semana y este finde. El sitio necesitaba esto visible arriba, no enterrado.</p>
+                <p className="text-navy/60 mb-5">Hoy, esta semana y este finde. Acceso rápido, limpio y premium.</p>
                 <span className="inline-flex items-center gap-2 text-terracotta font-semibold">Abrir agenda <ArrowRight size={18} /></span>
               </Link>
 
-              <Link href="/tiempo" className="group rounded-3xl border border-navy/10 bg-white p-8 hover:border-sky-400/40 hover:shadow-lg transition-all">
+              <Link href="/tiempo" className="group rounded-[2rem] border border-white/70 bg-white/90 backdrop-blur-xl p-8 hover:border-sky-400/40 hover:shadow-[0_24px_80px_rgba(26,42,58,0.12)] transition-all">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-sky-100 text-sky-600 mb-5">
                   <CloudSun size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold text-navy mb-3">Tiempo útil</h2>
-                <p className="text-navy/60 mb-5">Si hace viento, lluvia o solazo, cambia el plan. Tenerlo a un clic suma UX y SEO local.</p>
+                <p className="text-navy/60 mb-5">Para playa, sierra o paseo. Mejor decisión, mejor UX.</p>
                 <span className="inline-flex items-center gap-2 text-sky-600 font-semibold">Ver previsión <ArrowRight size={18} /></span>
               </Link>
 
-              <Link href="/noticias" className="group rounded-3xl border border-navy/10 bg-sand/40 p-8 hover:border-navy/30 hover:shadow-lg transition-all">
+              <Link href="/noticias" className="group rounded-[2rem] border border-white/70 bg-sand/60 backdrop-blur-xl p-8 hover:border-navy/20 hover:shadow-[0_24px_80px_rgba(26,42,58,0.12)] transition-all">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy/10 text-navy mb-5">
                   <Newspaper size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold text-navy mb-3">Noticias locales</h2>
-                <p className="text-navy/60 mb-5">Actualidad provincial y señales que mueven planes, tráfico, eventos o conversación local.</p>
+                <p className="text-navy/60 mb-5">Actualidad provincial tratada con cara de medio serio, no de feed improvisado.</p>
                 <span className="inline-flex items-center gap-2 text-navy font-semibold">Ir a noticias <ArrowRight size={18} /></span>
               </Link>
             </div>
@@ -306,7 +274,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* News Pulse */}
       {newsArticles.length > 0 && (
         <section className="py-24 bg-sand/30">
           <div className="container">
@@ -315,15 +282,11 @@ export default async function Home() {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <TrendingUp size={20} className="text-terracotta" />
-                    <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
-                      Actualidad
-                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Actualidad</span>
                   </div>
-                  <h2 className="text-display text-4xl font-semibold text-navy">
-                    Radar local
-                  </h2>
+                  <h2 className="text-display text-4xl font-semibold text-navy">Radar local</h2>
                   <p className="text-navy/60 mt-3 max-w-2xl">
-                    Noticias útiles, con fuente visible y sin vender humo. Si la actualidad no da nivel, no debe mandar en portada.
+                    La parte informativa también tiene que verse premium: limpia, visible y con sensación de medio cuidado.
                   </p>
                 </div>
                 <Link href="/noticias" className="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">
@@ -349,41 +312,40 @@ export default async function Home() {
         </section>
       )}
 
-      {/* Interactive Quiz Section */}
       <section className="py-24 bg-white">
         <div className="container">
           <div className="max-w-content mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-display text-4xl font-semibold text-navy mb-4">
-                ¿Eres Choquero o Guiri?
-              </h2>
-              <p className="text-navy-60 text-lg">
-                Descubre cuánto de Huelva llevas dentro con este test rápido.
-              </p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-navy/10 bg-cream/80 mb-5">
+                <Compass size={16} className="text-terracotta" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-navy/50">Interactivo</span>
+              </div>
+              <h2 className="text-display text-4xl font-semibold text-navy mb-4">¿Eres Choquero o Guiri?</h2>
+              <p className="text-navy-60 text-lg">Un bloque juguetón, pero presentado con más mimo que antes.</p>
             </div>
             <Quiz />
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 bg-navy text-white">
-        <div className="container">
+      <section className="py-24 bg-navy text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-10" />
+        <div className="container relative z-10">
           <div className="max-w-content mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="p-6">
+              <div className="p-6 rounded-[1.75rem] border border-white/10 bg-white/5">
                 <p className="text-5xl font-bold text-terracotta mb-2">{stats.totalArticles}</p>
                 <p className="text-white/60">Artículos publicados</p>
               </div>
-              <div className="p-6">
+              <div className="p-6 rounded-[1.75rem] border border-white/10 bg-white/5">
                 <p className="text-5xl font-bold text-terracotta mb-2">{stats.totalImages}</p>
                 <p className="text-white/60">Imágenes</p>
               </div>
-              <div className="p-6">
+              <div className="p-6 rounded-[1.75rem] border border-white/10 bg-white/5">
                 <p className="text-5xl font-bold text-terracotta mb-2">{stats.categories}</p>
                 <p className="text-white/60">Categorías</p>
               </div>
-              <div className="p-6">
+              <div className="p-6 rounded-[1.75rem] border border-white/10 bg-white/5">
                 <p className="text-5xl font-bold text-terracotta mb-2">∞</p>
                 <p className="text-white/60">Chocos fritos</p>
               </div>
@@ -392,29 +354,27 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
       <section className="py-24 bg-terracotta text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-grid opacity-10" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)' }} />
-        </div>
-
+        <div className="absolute inset-0 bg-grid opacity-10" />
+        <div className="absolute -top-16 right-0 w-[30rem] h-[30rem] bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="max-w-content mx-auto text-center">
-            <h2 className="text-display text-3xl md:text-4xl font-semibold mb-4">
-              Únete a la comunidad
-            </h2>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm mb-6">
+              <MapPin size={16} />
+              <span className="text-xs font-semibold uppercase tracking-widest">Comunidad local</span>
+            </div>
+            <h2 className="text-display text-3xl md:text-4xl font-semibold mb-4">Únete a la comunidad</h2>
             <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-              Recibe las mejores recomendaciones de Huelva directamente en tu email.
-              Una vez por semana, sin spam.
+              Remate más limpio, más editorial y más premium. El cierre también importa.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="tu@email.com"
-                className="flex-1 px-6 py-4 rounded-full text-navy focus:outline-none focus:ring-4 focus:ring-white/30 bg-white"
+                className="flex-1 px-6 py-4 rounded-full text-navy focus:outline-none focus:ring-4 focus:ring-white/30 bg-white shadow-lg"
               />
-              <button className="px-8 py-4 bg-navy hover:bg-navy/90 text-white font-semibold rounded-full transition-colors">
+              <button className="px-8 py-4 bg-navy hover:bg-navy/90 text-white font-semibold rounded-full transition-colors shadow-lg">
                 Suscribirse
               </button>
             </div>
