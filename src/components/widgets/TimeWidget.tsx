@@ -7,25 +7,26 @@ export default function TimeWidget() {
 
   useEffect(() => {
     const updateTime = () => {
-      setTime(new Date().toLocaleTimeString('es-ES', { 
+      setTime(new Date().toLocaleTimeString('es-ES', {
         timeZone: 'Europe/Madrid',
-        hour: '2-digit', 
-        minute: '2-digit' 
+        hour: '2-digit',
+        minute: '2-digit',
       }));
     };
-    
+
     updateTime();
-    const interval = setInterval(updateTime, 60000); // Update every minute
+    const interval = setInterval(updateTime, 60000);
     return () => clearInterval(interval);
   }, []);
 
-  if (!time) return <span style={{ opacity: 0 }}>--:--</span>;
+  if (!time) return <span className="opacity-0">--:--</span>;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>
-      <span>🕒</span>
+    <div className="flex items-center gap-2 text-[0.92rem] font-medium text-navy/70">
+      <span className="text-base">🕒</span>
       <span>{time}</span>
-      <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8em' }}>Huelva</span>
+      <span className="hidden md:inline text-navy/35">·</span>
+      <span className="hidden md:inline text-navy/45 text-[0.82rem] uppercase tracking-[0.14em]">Huelva</span>
     </div>
   );
 }

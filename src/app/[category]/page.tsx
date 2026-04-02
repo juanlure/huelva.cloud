@@ -1,7 +1,7 @@
 import React from 'react';
 import ArticleCard from '@/components/ArticleCard';
 import { getArticles } from '@/lib/api';
-import { ArrowLeft, TrendingUp, Calendar, ArrowRight } from 'lucide-react';
+import { ArrowLeft, TrendingUp, Calendar, ArrowRight, Sparkles, Compass, Newspaper } from 'lucide-react';
 import Link from 'next/link';
 import styles from './page.module.css';
 import type { Metadata } from 'next';
@@ -19,19 +19,19 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const title = CATEGORY_TITLES[category.toLowerCase()] || category;
 
   const metaDescriptions: Record<string, string> = {
-    'comer': 'Dónde comer en Huelva: choco frito, coquinas, gamba blanca, tapas y restaurantes que sí merecen la pena. Guía local sin humo.',
-    'eventos': 'Agenda de eventos en Huelva 2026: ferias, conciertos, mercados, escapadas y planes. Lo útil para saber qué hacer en capital y provincia.',
-    'alojarse': 'Dónde dormir en Huelva: hoteles, apartamentos y alojamientos recomendados. Zonas, precios y consejos locales.',
-    'guias': 'Guías de Huelva: qué ver, rutas, playas, pueblos y escapadas. Descubre la provincia como un local y no como otro turista perdido.',
-    'noticias': 'Noticias de Huelva: actualidad local, provincia, cultura y señales que afectan a la agenda real. Información relevante para onubenses y visitantes.',
+    comer: 'Dónde comer en Huelva: choco frito, coquinas, gamba blanca, tapas y restaurantes que sí merecen la pena. Guía local sin humo.',
+    eventos: 'Agenda de eventos en Huelva 2026: ferias, conciertos, mercados, escapadas y planes. Lo útil para saber qué hacer en capital y provincia.',
+    alojarse: 'Dónde dormir en Huelva: hoteles, apartamentos y alojamientos recomendados. Zonas, precios y consejos locales.',
+    guias: 'Guías de Huelva: qué ver, rutas, playas, pueblos y escapadas. Descubre la provincia como un local y no como otro turista perdido.',
+    noticias: 'Noticias de Huelva: actualidad local, provincia, cultura y señales que afectan a la agenda real. Información relevante para onubenses y visitantes.',
   };
 
   const metaTitles: Record<string, string> = {
-    'comer': 'Dónde Comer en Huelva 2026 | Tapas, Choco Frito y Restaurantes',
-    'eventos': 'Agenda de Huelva 2026 | Eventos, Planes y Qué Hacer',
-    'alojarse': 'Dónde Dormir en Huelva | Hoteles y Alojamientos 2026',
-    'guias': 'Qué Ver en Huelva | Guías, Playas, Pueblos y Escapadas',
-    'noticias': 'Noticias Huelva | Actualidad Local y Provincial 2026',
+    comer: 'Dónde Comer en Huelva 2026 | Tapas, Choco Frito y Restaurantes',
+    eventos: 'Agenda de Huelva 2026 | Eventos, Planes y Qué Hacer',
+    alojarse: 'Dónde Dormir en Huelva | Hoteles y Alojamientos 2026',
+    guias: 'Qué Ver en Huelva | Guías, Playas, Pueblos y Escapadas',
+    noticias: 'Noticias Huelva | Actualidad Local y Provincial 2026',
   };
 
   return {
@@ -87,29 +87,42 @@ interface PageProps {
   }>;
 }
 
-const categoryIntro: Record<string, { eyebrow: string; description: string; ctaLabel?: string; ctaHref?: string }> = {
+const categoryIntro: Record<string, { eyebrow: string; description: string; ctaLabel?: string; ctaHref?: string; kicker: string }> = {
   comer: {
     eyebrow: 'Producto, bares y criterio',
     description: 'Aquí va lo que sí merece sentarte a comer en Huelva: pescado, tapas, desayunos y sitios con sentido. Menos lista vacía, más utilidad real.',
+    kicker: 'Dónde comer bien sin caer en la trampa turística.',
   },
   eventos: {
     eyebrow: 'La parte viva de Huelva',
     description: 'Planes, agenda, escapadas y señales de lo que se mueve en capital y provincia. Si toca salir de casa, empieza aquí.',
     ctaLabel: 'Ver agenda viva',
     ctaHref: '/agenda',
+    kicker: 'Qué se mueve ahora y qué merece tu tiempo.',
   },
   alojarse: {
     eyebrow: 'Dormir sin cagarla',
     description: 'Dónde alojarte en Huelva según plan, presupuesto y zona. Poco volumen aún, así que prima la utilidad sobre el relleno.',
+    kicker: 'Zonas, contexto y alojamientos con sentido.',
   },
   guias: {
     eyebrow: 'Descubrir Huelva de verdad',
     description: 'Guías para entender la ciudad y la provincia con ojos de local: playas, pueblos, patrimonio, rutas y dudas prácticas.',
+    kicker: 'La capa útil para no venir a ciegas.',
   },
   noticias: {
     eyebrow: 'Actualidad útil',
     description: 'Noticias y señales que afectan al día a día, la agenda y el contexto local. Nada de ruido por rellenar una portada.',
+    kicker: 'Lo importante antes de que se convierta en ruido.',
   },
+};
+
+const categorySignals: Record<string, string[]> = {
+  comer: ['Restaurantes con criterio', 'Tapas que merecen rodeo', 'Guías locales sin relleno'],
+  eventos: ['Agenda viva', 'Escapadas y planes', 'Provincia en movimiento'],
+  alojarse: ['Zonas recomendadas', 'Hoteles y apartamentos', 'Consejo local antes de reservar'],
+  guias: ['Playas y pueblos', 'Rutas y patrimonio', 'Respuestas prácticas'],
+  noticias: ['Actualidad local', 'Contexto útil', 'Señales que importan'],
 };
 
 export default async function CategoryPage({ params }: PageProps) {
@@ -122,6 +135,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const featured = articles[0];
   const rest = articles.slice(1);
   const eventSchema = normalizedCategory === 'eventos' ? generateEventSchema(articles) : null;
+  const signals = categorySignals[normalizedCategory] || ['Selección local', 'Información actualizada', 'Enfoque útil'];
 
   return (
     <>
@@ -135,50 +149,90 @@ export default async function CategoryPage({ params }: PageProps) {
       <main className={styles.main}>
         <header className={styles.header}>
           <div className="container">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-navy/60 hover:text-terracotta transition-colors mb-6 font-medium text-sm"
-            >
-              <ArrowLeft size={18} />
-              Volver al inicio
-            </Link>
-
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-4">
-              <TrendingUp size={16} className="text-terracotta" />
-              <span className="text-sm font-semibold uppercase tracking-widest text-navy/60">
-                {intro?.eyebrow || 'Explorando Huelva'}
-              </span>
-            </div>
-
-            {lastUpdated && (
-              <p className="text-sm text-navy/50 mb-6">Última actualización: {lastUpdated}</p>
-            )}
-
-            <h1 className={styles.title}>{title}<span className={styles.dot}>.</span></h1>
-
-            <p className="mt-4 text-navy/60 text-lg max-w-3xl">
-              {intro?.description || `Descubre ${title} en Huelva con una selección útil de artículos.`}
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-navy/60">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-navy/10">
-                {articles.length} piezas publicadas
-              </span>
-              {normalizedCategory === 'eventos' && articles.length > 0 && (
-                <span className="inline-flex items-center gap-2 px-4 py-2 bg-terracotta/10 rounded-full text-terracotta">
-                  <Calendar size={16} />
-                  Agenda activa
-                </span>
-              )}
-              {intro?.ctaHref && intro?.ctaLabel && (
+            <div className={styles.headerCard}>
+              <div className={styles.headerTopRow}>
                 <Link
-                  href={intro.ctaHref}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy text-white hover:bg-navy/90 transition-colors"
+                  href="/"
+                  className="inline-flex items-center gap-2 text-navy/60 hover:text-terracotta transition-colors font-medium text-sm"
                 >
-                  {intro.ctaLabel}
-                  <ArrowRight size={16} />
+                  <ArrowLeft size={18} />
+                  Volver al inicio
                 </Link>
-              )}
+
+                {lastUpdated && (
+                  <p className="text-sm text-navy/45">Última actualización: {lastUpdated}</p>
+                )}
+              </div>
+
+              <div className={styles.headerGrid}>
+                <div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/70 bg-white/70 mb-5 shadow-[0_10px_30px_rgba(26,42,58,0.05)]">
+                    <TrendingUp size={16} className="text-terracotta" />
+                    <span className="text-sm font-semibold uppercase tracking-widest text-navy/60">
+                      {intro?.eyebrow || 'Explorando Huelva'}
+                    </span>
+                  </div>
+
+                  <h1 className={styles.title}>{title}<span className={styles.dot}>.</span></h1>
+
+                  <p className={styles.kicker}>
+                    {intro?.kicker || `Una selección útil para entender ${title.toLowerCase()} en Huelva.`}
+                  </p>
+
+                  <p className={styles.description}>
+                    {intro?.description || `Descubre ${title} en Huelva con una selección útil de artículos.`}
+                  </p>
+
+                  <div className={styles.actions}>
+                    {intro?.ctaHref && intro?.ctaLabel ? (
+                      <Link href={intro.ctaHref} className="btn btn-secondary">
+                        {intro.ctaLabel}
+                        <ArrowRight size={16} />
+                      </Link>
+                    ) : (
+                      <Link href="/guias" className="btn btn-secondary">
+                        Explorar más guías
+                        <ArrowRight size={16} />
+                      </Link>
+                    )}
+
+                    <div className={styles.metaChip}>
+                      <Sparkles size={15} className="text-terracotta" />
+                      <span>{articles.length} piezas publicadas</span>
+                    </div>
+
+                    {normalizedCategory === 'eventos' && articles.length > 0 && (
+                      <div className={styles.metaChipAccent}>
+                        <Calendar size={15} />
+                        <span>Agenda activa</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <aside className={styles.sidePanel}>
+                  <div className={styles.sidePanelHeader}>
+                    <Compass size={17} className="text-terracotta" />
+                    <span>Radar de esta sección</span>
+                  </div>
+
+                  <div className={styles.signalList}>
+                    {signals.map((signal) => (
+                      <div key={signal} className={styles.signalItem}>
+                        <span className={styles.signalDot} />
+                        <span>{signal}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className={styles.sideNote}>
+                    <Newspaper size={16} className="text-navy/45" />
+                    <p>
+                      Huelva.cloud no va de inflar páginas. Va de que encuentres antes lo que merece tu tiempo.
+                    </p>
+                  </div>
+                </aside>
+              </div>
             </div>
           </div>
         </header>
@@ -186,14 +240,15 @@ export default async function CategoryPage({ params }: PageProps) {
         <section className={styles.content}>
           <div className="container">
             {articles.length > 0 ? (
-              <div className="space-y-12">
+              <div className="space-y-14">
                 {featured && normalizedCategory !== 'noticias' && (
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
+                  <section className={styles.sectionBlock}>
+                    <div className={styles.sectionHeading}>
                       <div>
-                        <p className="text-xs uppercase tracking-widest text-navy/40 font-semibold mb-2">Destacado</p>
-                        <h2 className="text-display text-3xl text-navy font-semibold">Empieza por aquí</h2>
+                        <p className={styles.sectionEyebrow}>Destacado</p>
+                        <h2 className={styles.sectionTitle}>Empieza por aquí</h2>
                       </div>
+                      <p className={styles.sectionCopy}>La pieza que mejor abre esta categoría sin hacerte perder tiempo.</p>
                     </div>
 
                     <ArticleCard
@@ -204,70 +259,74 @@ export default async function CategoryPage({ params }: PageProps) {
                       author={{ name: featured.author }}
                       featured
                     />
-                  </div>
+                  </section>
                 )}
 
                 {normalizedCategory === 'noticias' ? (
-                  <div className="max-w-4xl mx-auto space-y-4">
-                    {articles.map((article, idx) => (
-                      <Link
-                        key={article.slug || idx}
-                        href={`/article/${article.slug}`}
-                        className="block bg-white rounded-2xl border border-navy/10 p-6 hover:border-terracotta/30 hover:shadow-sm transition-all"
-                      >
-                        <div className="flex items-center justify-between gap-4 mb-2">
-                          <span className="text-xs uppercase tracking-wider text-terracotta font-semibold">
-                            {article.source || 'Redacción Huelva.cloud'}
-                          </span>
-                          <span className="text-xs text-navy/50">{article.date}</span>
-                        </div>
-                        <h3 className="font-display text-2xl text-navy leading-tight mb-2 hover:text-terracotta transition-colors">
-                          {article.title}
-                        </h3>
-                        <p className="text-navy/70 leading-relaxed">{article.excerpt}</p>
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <>
-                    {rest.length > 0 && (
+                  <section className={styles.newsFeed}>
+                    <div className={styles.sectionHeading}>
                       <div>
-                        <div className="flex items-center justify-between mb-6">
-                          <div>
-                            <p className="text-xs uppercase tracking-widest text-navy/40 font-semibold mb-2">Archivo útil</p>
-                            <h2 className="text-display text-3xl text-navy font-semibold">Todos los artículos de {title.toLowerCase()}</h2>
-                          </div>
-                        </div>
-                        <div className={styles.grid}>
-                          {rest.map((article, idx) => (
-                            <ArticleCard
-                              key={article.slug || idx}
-                              {...article}
-                              imageUrl={article.image}
-                              publishedAt={article.publishedAtISO}
-                              readTime={parseInt(article.readTime)}
-                              author={{ name: article.author }}
-                            />
-                          ))}
-                        </div>
+                        <p className={styles.sectionEyebrow}>Actualidad</p>
+                        <h2 className={styles.sectionTitle}>Señales de Huelva</h2>
                       </div>
-                    )}
-                  </>
+                      <p className={styles.sectionCopy}>Noticias con una presentación más limpia y menos aspecto de bloque genérico.</p>
+                    </div>
+
+                    <div className={styles.newsList}>
+                      {articles.map((article, idx) => (
+                        <Link
+                          key={article.slug || idx}
+                          href={`/article/${article.slug}`}
+                          className={styles.newsItem}
+                        >
+                          <div className={styles.newsMeta}>
+                            <span className={styles.newsSource}>{article.source || 'Redacción Huelva.cloud'}</span>
+                            <span className={styles.newsDate}>{article.date}</span>
+                          </div>
+                          <h3 className={styles.newsTitle}>{article.title}</h3>
+                          <p className={styles.newsExcerpt}>{article.excerpt}</p>
+                          <span className={styles.newsCta}>
+                            Leer noticia
+                            <ArrowRight size={15} />
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </section>
+                ) : (
+                  rest.length > 0 && (
+                    <section className={styles.sectionBlock}>
+                      <div className={styles.sectionHeading}>
+                        <div>
+                          <p className={styles.sectionEyebrow}>Archivo útil</p>
+                          <h2 className={styles.sectionTitle}>Todos los artículos de {title.toLowerCase()}</h2>
+                        </div>
+                        <p className={styles.sectionCopy}>Más profundidad, más contexto y una parrilla que ya no parece un listado sin acabar.</p>
+                      </div>
+
+                      <div className={styles.grid}>
+                        {rest.map((article, idx) => (
+                          <ArticleCard
+                            key={article.slug || idx}
+                            {...article}
+                            imageUrl={article.image}
+                            publishedAt={article.publishedAtISO}
+                            readTime={parseInt(article.readTime)}
+                            author={{ name: article.author }}
+                          />
+                        ))}
+                      </div>
+                    </section>
+                  )
                 )}
               </div>
             ) : (
               <div className={styles.emptyState}>
-                <p className="font-display text-xl text-navy mb-2">
-                  Próximamente
+                <p className="font-display text-2xl text-navy mb-3">Próximamente</p>
+                <p className="text-navy/55 max-w-xl mx-auto">
+                  Estamos preparando contenido sobre {title.toLowerCase()}. Mejor eso que publicar paja para llenar una URL.
                 </p>
-                <p className="text-navy/50">
-                  Estamos preparando contenido sobre {title.toLowerCase()}.
-                  Mientras tanto, explora nuestras otras categorías.
-                </p>
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta-500 transition-colors"
-                >
+                <Link href="/" className="btn btn-primary mt-8">
                   Volver al inicio
                   <ArrowLeft size={18} />
                 </Link>

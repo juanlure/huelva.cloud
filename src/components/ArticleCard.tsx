@@ -23,37 +23,43 @@ interface ArticleCardProps {
   external?: boolean;
 }
 
-const categoryStyles: Record<string, { accent: string; pill: string; glow: string }> = {
-  'comer': {
+const categoryStyles: Record<string, { accent: string; pill: string; glow: string; frame: string }> = {
+  comer: {
     accent: 'text-terracotta',
     pill: 'bg-terracotta/12 text-terracotta border-terracotta/15',
-    glow: 'group-hover:shadow-[0_22px_70px_rgba(212,85,58,0.16)]'
+    glow: 'group-hover:shadow-[0_22px_70px_rgba(212,85,58,0.16)]',
+    frame: 'from-terracotta/16 via-white/0 to-transparent',
   },
-  'eventos': {
+  eventos: {
     accent: 'text-navy',
     pill: 'bg-navy/8 text-navy border-navy/10',
-    glow: 'group-hover:shadow-[0_22px_70px_rgba(26,42,58,0.14)]'
+    glow: 'group-hover:shadow-[0_22px_70px_rgba(26,42,58,0.14)]',
+    frame: 'from-navy/12 via-white/0 to-transparent',
   },
-  'guias': {
+  guias: {
     accent: 'text-navy-600',
     pill: 'bg-sage text-navy border-sage/70',
-    glow: 'group-hover:shadow-[0_22px_70px_rgba(104,132,96,0.14)]'
+    glow: 'group-hover:shadow-[0_22px_70px_rgba(104,132,96,0.14)]',
+    frame: 'from-sage/70 via-white/0 to-transparent',
   },
-  'alojarse': {
+  alojarse: {
     accent: 'text-sky-600',
     pill: 'bg-sky-50 text-sky-700 border-sky-100',
-    glow: 'group-hover:shadow-[0_22px_70px_rgba(96,165,250,0.14)]'
+    glow: 'group-hover:shadow-[0_22px_70px_rgba(96,165,250,0.14)]',
+    frame: 'from-sky-100 via-white/0 to-transparent',
   },
-  'noticias': {
+  noticias: {
     accent: 'text-orange-600',
     pill: 'bg-orange-50 text-orange-700 border-orange-100',
-    glow: 'group-hover:shadow-[0_22px_70px_rgba(249,115,22,0.14)]'
+    glow: 'group-hover:shadow-[0_22px_70px_rgba(249,115,22,0.14)]',
+    frame: 'from-orange-100 via-white/0 to-transparent',
   },
-  'default': {
+  default: {
     accent: 'text-terracotta',
     pill: 'bg-terracotta/12 text-terracotta border-terracotta/15',
-    glow: 'group-hover:shadow-[0_22px_70px_rgba(212,85,58,0.16)]'
-  }
+    glow: 'group-hover:shadow-[0_22px_70px_rgba(212,85,58,0.16)]',
+    frame: 'from-terracotta/16 via-white/0 to-transparent',
+  },
 };
 
 export default function ArticleCard({
@@ -83,7 +89,7 @@ export default function ArticleCard({
   };
 
   const normalizedCategory = category.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const style = categoryStyles[normalizedCategory] || categoryStyles['default'];
+  const style = categoryStyles[normalizedCategory] || categoryStyles.default;
   const href = `/article/${slug}`;
   const isExternal = external;
 
@@ -92,16 +98,18 @@ export default function ArticleCard({
   };
 
   return (
-    <motion.div
+    <motion.article
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       whileHover={compact ? { y: -4 } : { y: -8 }}
       whileTap={{ scale: 0.985 }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-      className={`group overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/88 backdrop-blur-md shadow-[0_16px_50px_rgba(26,42,58,0.08)] transition-all duration-500 ${style.glow} ${
-        featured ? 'md:grid md:grid-cols-2 md:gap-0' : 'flex flex-col h-full'
+      className={`group relative overflow-hidden rounded-[1.9rem] border border-white/75 bg-white/90 backdrop-blur-md shadow-[0_16px_50px_rgba(26,42,58,0.08)] transition-all duration-500 ${style.glow} ${
+        featured ? 'md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-0' : 'flex flex-col h-full'
       } ${compact ? 'hover:border-navy/10' : 'hover:border-white/90'}`}
     >
+      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${style.frame} opacity-80`} />
+
       {imageUrl ? (
         <LinkWrapper
           className={`relative overflow-hidden block ${
@@ -123,13 +131,19 @@ export default function ArticleCard({
             />
           </motion.div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/72 via-navy/18 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/78 via-navy/18 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/10 to-transparent" />
 
-          <div className="absolute top-4 left-4">
+          <div className="absolute top-4 left-4 flex items-center gap-2">
             <span className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] backdrop-blur-md ${style.pill}`}>
               {isExternal && <ExternalLink size={10} />}
               {category}
             </span>
+            {featured && (
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/12 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur-md">
+                Destacado
+              </span>
+            )}
           </div>
 
           <motion.button
@@ -174,8 +188,8 @@ export default function ArticleCard({
         </div>
       )}
 
-      <div className={`${compact ? 'p-5' : featured ? 'p-7 md:p-10' : 'p-6'} flex flex-col ${featured ? '' : 'flex-1'} transition-colors duration-300 bg-white/55`}>
-        <div className={`flex items-center gap-4 text-xs text-navy/42 ${compact ? 'mb-2' : 'mb-4'} flex-wrap`}>
+      <div className={`${compact ? 'p-5' : featured ? 'p-7 md:p-10' : 'p-6'} relative flex flex-col ${featured ? '' : 'flex-1'} transition-colors duration-300 bg-white/62`}>
+        <div className={`flex items-center gap-4 text-xs text-navy/42 ${compact ? 'mb-3' : 'mb-4'} flex-wrap`}>
           <span className="font-semibold uppercase tracking-[0.18em] text-navy/55 text-[11px]">{author.name}</span>
           <span className="w-1 h-1 rounded-full bg-navy/20" />
           <div className="flex items-center gap-1.5">
@@ -185,7 +199,7 @@ export default function ArticleCard({
         </div>
 
         <h3 className={`text-display text-navy leading-[1.02] tracking-[-0.02em] group-hover:text-terracotta transition-colors duration-300 ${
-          featured ? 'text-3xl md:text-4xl mb-4' : compact ? 'text-xl mb-2' : 'text-2xl mb-3'
+          featured ? 'text-3xl md:text-4xl mb-4' : compact ? 'text-[1.35rem] mb-2' : 'text-[1.75rem] mb-3'
         }`}>
           <LinkWrapper className="hover:underline decoration-terracotta/30 underline-offset-4">
             {title}
@@ -199,7 +213,7 @@ export default function ArticleCard({
         )}
 
         <div className={`flex items-center justify-between gap-4 ${compact ? 'mt-auto pt-3' : 'mt-auto pt-4 border-t border-navy/8'}`}>
-          <LinkWrapper className={`inline-flex items-center gap-2 font-semibold text-navy hover:text-terracotta transition-colors ${compact ? 'text-sm' : 'text-sm'}`}>
+          <LinkWrapper className="inline-flex items-center gap-2 font-semibold text-navy hover:text-terracotta transition-colors text-sm">
             <span>{isExternal ? 'Ver noticia' : 'Leer más'}</span>
             <motion.span animate={{ x: isHovered ? 4 : 0 }} transition={{ duration: 0.2 }}>
               <ArrowRight size={compact ? 14 : 16} />
@@ -209,6 +223,6 @@ export default function ArticleCard({
           <span className="text-xs text-navy/34 whitespace-nowrap">{formatDate(publishedAt)}</span>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }
