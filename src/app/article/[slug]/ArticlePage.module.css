@@ -1,13 +1,15 @@
-/* ArticlePage - Editorial layout for article pages */
+/* ArticlePage - Editorial premium layout */
 
 .articlePage {
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 80px;
-  background: #FAF8F3;
+  padding-bottom: 96px;
+  background:
+    radial-gradient(circle at top left, rgba(212, 85, 58, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(122, 138, 154, 0.08), transparent 24%),
+    linear-gradient(180deg, #fffdf9 0%, #faf8f3 46%, #ffffff 100%);
 }
 
-/* Progress Line */
 .progressLine {
   position: fixed;
   top: 0;
@@ -19,45 +21,46 @@
   transition: width 0.1s ease-out;
 }
 
-/* Navigation */
 .articleNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto 3rem;
   padding: 0 24px;
 }
 
 .backLink {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   color: #7A8A9A;
   text-decoration: none;
   font-size: 0.875rem;
-  font-weight: 500;
-  transition: color 0.2s;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .backLink:hover {
   color: #1A2A3A;
+  transform: translateX(-2px);
 }
 
 .categoryTag {
-  padding: 0.5rem 1rem;
-  background: #E8EFE4;
+  padding: 0.65rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
   color: #1A2A3A;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: 20px;
+  letter-spacing: 0.12em;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 42, 58, 0.08);
+  backdrop-filter: blur(12px);
 }
 
-/* Header */
 .articleHeader {
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto 3rem;
   padding: 0 24px;
   animation: fadeUp 0.8s ease-out;
@@ -66,41 +69,38 @@
 .metaLine {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
   color: #7A8A9A;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-}
-
-.readTimeIcon {
-  display: inline-flex;
-  align-items: center;
 }
 
 .articleTitle {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 400;
+  line-height: 0.98;
   color: #0F1A24;
-  letter-spacing: -0.02em;
-  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.6rem;
+  max-width: 13ch;
 }
 
 .articleExcerpt {
   font-family: var(--font-display);
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
   font-weight: 400;
   line-height: 1.5;
   color: #3A4A5A;
   font-style: italic;
+  max-width: 40rem;
 }
 
-/* Hero Image */
 .heroImage {
-  max-width: 720px;
-  margin: 0 auto 3rem;
+  max-width: 860px;
+  margin: 0 auto 3.5rem;
   padding: 0 24px;
   animation: fadeUp 0.8s ease-out 0.1s backwards;
 }
@@ -110,13 +110,13 @@
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px -12px rgba(26, 42, 58, 0.15);
+  border-radius: 28px;
+  box-shadow: 0 30px 90px rgba(26, 42, 58, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.65);
 }
 
-/* Content */
 .articleContent {
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 0 24px;
   animation: fadeUp 0.8s ease-out 0.2s backwards;
@@ -124,27 +124,26 @@
 
 .interactiveWrapper {
   margin: 3rem 0;
-  padding: 2rem 1rem;
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid #E8EBF0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 2rem 1.25rem;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 28px;
+  border: 1px solid rgba(26, 42, 58, 0.08);
+  box-shadow: 0 20px 70px rgba(26, 42, 58, 0.08);
+  backdrop-filter: blur(16px);
 }
 
-/* Footer */
 .articleFooter {
-  margin-top: 4rem;
-  border-top: 1px solid #E8EBF0;
+  margin-top: 4.5rem;
+  border-top: 1px solid rgba(26, 42, 58, 0.08);
   animation: fadeUp 0.8s ease-out 0.3s backwards;
 }
 
 .footerContent {
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 2rem 24px 1rem;
+  padding: 2.5rem 24px 1rem;
 }
 
-/* Animations */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -156,7 +155,6 @@
   }
 }
 
-/* Responsive */
 @media (min-width: 768px) {
   .articlePage {
     padding-top: 140px;
