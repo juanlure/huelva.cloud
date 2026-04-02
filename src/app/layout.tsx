@@ -3,6 +3,7 @@ import { Instrument_Serif, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CollabBanner from "@/components/CollabBanner";
 
 // Premium typography system - avoiding generic Inter/Playfair
 const instrument = Instrument_Serif({
@@ -109,6 +110,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <CollabBanner />
         <Header />
         {children}
         <Footer />
