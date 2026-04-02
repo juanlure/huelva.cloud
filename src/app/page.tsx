@@ -3,7 +3,7 @@ import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import HeroSection from '@/components/HeroSection';
-import { ArrowRight, TrendingUp, Compass, Clock, MapPin, CalendarDays, Star, Award, Sparkles } from 'lucide-react';
+import { ArrowRight, TrendingUp, Compass, Clock, MapPin, CalendarDays, Star, Award, Sparkles, CloudSun, Newspaper } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -17,6 +17,7 @@ export default async function Home() {
   const gastronomyArticles = articles.filter(a => a.category === 'Gastronomía').slice(0, 3);
   const guidesArticles = articles.filter(a => a.category === 'Guías Locales').slice(0, 4);
   const eventsArticles = articles.filter(a => a.category === 'Eventos').slice(0, 3);
+  const newsArticles = articles.filter(a => a.category === 'Noticias').slice(0, 3);
 
   // Stats
   const stats = {
@@ -263,6 +264,80 @@ export default async function Home() {
                   </Link>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Utility Hub */}
+      <section className="py-24 bg-white border-t border-navy/5">
+        <div className="container">
+          <div className="max-w-content mx-auto">
+            <div className="grid lg:grid-cols-3 gap-6">
+              <Link href="/agenda" className="group rounded-3xl border border-navy/10 bg-cream p-8 hover:border-terracotta/40 hover:shadow-lg transition-all">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-terracotta/10 text-terracotta mb-5">
+                  <CalendarDays size={22} />
+                </div>
+                <h2 className="text-display text-2xl font-semibold text-navy mb-3 group-hover:text-terracotta transition-colors">Agenda al día</h2>
+                <p className="text-navy/60 mb-5">Hoy, esta semana y este finde. El sitio necesitaba esto visible arriba, no enterrado.</p>
+                <span className="inline-flex items-center gap-2 text-terracotta font-semibold">Abrir agenda <ArrowRight size={18} /></span>
+              </Link>
+
+              <Link href="/tiempo" className="group rounded-3xl border border-navy/10 bg-white p-8 hover:border-sky-400/40 hover:shadow-lg transition-all">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-sky-100 text-sky-600 mb-5">
+                  <CloudSun size={22} />
+                </div>
+                <h2 className="text-display text-2xl font-semibold text-navy mb-3">Tiempo útil</h2>
+                <p className="text-navy/60 mb-5">Si hace viento, lluvia o solazo, cambia el plan. Tenerlo a un clic suma UX y SEO local.</p>
+                <span className="inline-flex items-center gap-2 text-sky-600 font-semibold">Ver previsión <ArrowRight size={18} /></span>
+              </Link>
+
+              <Link href="/noticias" className="group rounded-3xl border border-navy/10 bg-sand/40 p-8 hover:border-navy/30 hover:shadow-lg transition-all">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy/10 text-navy mb-5">
+                  <Newspaper size={22} />
+                </div>
+                <h2 className="text-display text-2xl font-semibold text-navy mb-3">Noticias locales</h2>
+                <p className="text-navy/60 mb-5">Actualidad provincial y señales que mueven planes, tráfico, eventos o conversación local.</p>
+                <span className="inline-flex items-center gap-2 text-navy font-semibold">Ir a noticias <ArrowRight size={18} /></span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* News Pulse */}
+      <section className="py-24 bg-sand/30">
+        <div className="container">
+          <div className="max-w-content mx-auto">
+            <div className="flex items-center justify-between mb-12 gap-6 flex-wrap">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <TrendingUp size={20} className="text-terracotta" />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">
+                    Actualidad
+                  </span>
+                </div>
+                <h2 className="text-display text-4xl font-semibold text-navy">
+                  Ahora en Huelva
+                </h2>
+              </div>
+              <Link href="/noticias" className="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">
+                Ver noticias <ArrowRight size={18} />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {newsArticles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  {...article}
+                  imageUrl={article.image}
+                  author={{ name: article.author }}
+                  publishedAt={article.date}
+                  readTime={parseInt(article.readTime)}
+                  compact
+                />
+              ))}
             </div>
           </div>
         </div>

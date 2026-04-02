@@ -1787,5 +1787,120 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <blockquote>No naces choquero. Te haces. Pero empiezas por respetar el choco, la caña, y la siesta. Lo demás viene solo.</blockquote>
     `
+  },
+
+  // 51. Mejores playas de Huelva
+  {
+    slug: 'mejores-playas-huelva-guia-real',
+    title: 'Las mejores playas de Huelva: guía real para no ir a ciegas',
+    excerpt: 'Qué playa elegir en Huelva según el plan: familiar, salvaje, cómoda, con ambiente o para desconectar de verdad.',
+    category: 'Guías Locales',
+    image: '/images/guides/costa-huelva.jpg',
+    publishedAt: '2026-04-02T09:00:00Z',
+    author: 'Lucía Colombina',
+    isAi: true,
+    content: `
+      <p>Huelva tiene costa para aburrir, pero no todas las playas sirven para lo mismo. Una cosa es querer aparcar fácil con niños y otra buscar dunas, silencio o un chiringuito decente. Esta guía va de elegir bien y no perder el día haciendo el primo.</p>
+
+      <h2>Si quieres comodidad: Punta Umbría</h2>
+      <p>Es la opción fácil. Cerca de la capital, con servicios, bares, paseo y ambiente. No es la playa más salvaje ni la más fotogénica, pero funciona. Para ir sin complicarte la vida, cumple de sobra.</p>
+
+      <h2>Si quieres amplitud y verano clásico: Matalascañas</h2>
+      <p>Matalascañas es enorme. Hay sitio, hay tradición veraniega y hay mezcla de familias, chavales y gente que lleva veraneando ahí media vida. Si te toca viento, cambia bastante la experiencia, así que conviene mirar el tiempo antes de salir.</p>
+
+      <h2>Si quieres equilibrio: El Portil y Nuevo Portil</h2>
+      <p>Menos escándalo que Punta Umbría y bastante más tranquilidad. Buena opción para pasear, desconectar y comer luego con cierta calma. No vende tanto humo y quizá por eso gusta más a quien repite.</p>
+
+      <h2>Si quieres ambiente de siempre: La Antilla e Islantilla</h2>
+      <p>Aquí hay vida, paseo, familias, terrazas y sensación de vacaciones de toda la vida. Perfecta si quieres playa + helado + paseo + cena sin coger el coche para todo. Si buscas soledad monástica, no es esto.</p>
+
+      <h2>Si quieres naturaleza más cruda: Cuesta Maneli o zonas abiertas de Doñana</h2>
+      <p>Aquí vienes por paisaje, no por comodidad. Menos servicios, más arena, más sensación de costa en bruto. Es mejor planearlo bien: agua, sombra y cabeza. Si no, la épica se te convierte en castigo.</p>
+
+      <h2>Cómo elegir sin equivocarte</h2>
+      <ul>
+        <li><strong>Niños y logística:</strong> Punta Umbría o Islantilla.</li>
+        <li><strong>Pareja y calma:</strong> El Portil o zonas menos masificadas.</li>
+        <li><strong>Día completo con paseo:</strong> La Antilla.</li>
+        <li><strong>Playa grande y clásica:</strong> Matalascañas.</li>
+        <li><strong>Naturaleza y menos gente:</strong> entorno Doñana.</li>
+      </ul>
+
+      <blockquote>La mejor playa de Huelva no existe. Existe la mejor para el plan que llevas hoy. Si no distingues eso, acabas cabreado con arena hasta en el DNI.</blockquote>
+    `
+  },
+
+  // 52. Qué hacer en Huelva con niños
+  {
+    slug: 'que-hacer-en-huelva-con-ninos',
+    title: 'Qué hacer en Huelva con niños sin caer en el plan cutre',
+    excerpt: 'Ideas reales para familias en Huelva: playa, naturaleza, paseos, visitas fáciles y planes que no se hacen bola.',
+    category: 'Guías Locales',
+    image: '/images/guides/parque-moret.jpg',
+    publishedAt: '2026-04-02T09:10:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>Cuando vas con niños, el plan perfecto dura exactamente hasta que alguien tiene hambre, calor o se aburre. Así que en Huelva conviene pensar menos en “hacer muchas cosas” y más en encadenar planes sencillos que no te revienten el día.</p>
+
+      <h2>Parque Moret: la salida fácil que suele funcionar</h2>
+      <p>Es amplio, al aire libre y permite correr sin demasiada ceremonia. Si lo que necesitas es soltar energía y no gastar una fortuna, es una opción bastante sensata dentro de la capital.</p>
+
+      <h2>La Rábida: historia que entra mejor si no la conviertes en clase</h2>
+      <p>El entorno de La Rábida funciona bien porque mezcla paseo, aire libre y un punto de historia sin exigir demasiado. Si vas en modo ligero y no pretendes recitar fechas, puede salir muy bien.</p>
+
+      <h2>Playas cómodas para familias</h2>
+      <p>Punta Umbría, Islantilla o La Antilla suelen darte mejor logística: acceso razonable, más servicios y menos drama. Si el plan depende de baños, sombras y comida cerca, no inventes demasiado.</p>
+
+      <h2>Muelle del Tinto al atardecer</h2>
+      <p>Paseo corto, fotogénico y con sensación de sitio especial. No hace falta convertirlo en expedición. Llegas, paseas, haces fotos y luego te vas a cenar algo. Eso ya cuenta como plan bueno.</p>
+
+      <h2>Consejos para no liarla</h2>
+      <ul>
+        <li>Evita las horas centrales si hace calor fuerte.</li>
+        <li>No metas coche, museo, playa y cena el mismo día como si fueras un touroperador poseído.</li>
+        <li>Ten siempre un plan B de comida rápida decente.</li>
+        <li>Menos sitios, mejor elegidos.</li>
+      </ul>
+
+      <blockquote>Con niños no gana el plan más ambicioso. Gana el que sale limpio, fácil y sin berrinche colectivo a las seis de la tarde.</blockquote>
+    `
+  },
+
+  // 53. Pueblos bonitos de la Sierra de Huelva
+  {
+    slug: 'pueblos-bonitos-sierra-huelva',
+    title: 'Pueblos bonitos de la Sierra de Huelva para una escapada que merezca la pena',
+    excerpt: 'Aracena, Alájar, Cortegana, Jabugo y otros pueblos de la sierra para comer bien, pasear y salir del ruido.',
+    category: 'Guías Locales',
+    image: '/images/guides/aracena-pueblo.jpg',
+    publishedAt: '2026-04-02T09:20:00Z',
+    author: 'Antonio Torre',
+    isAi: true,
+    content: `
+      <p>La Sierra de Huelva es la respuesta correcta cuando la costa aprieta, la ciudad cansa o simplemente te apetece comer como una persona decente. No hace falta montar un retiro espiritual: con un día bien pensado ya te cambia el humor.</p>
+
+      <h2>Aracena: la puerta obvia, y con razón</h2>
+      <p>Tiene tirón porque funciona. Gruta, castillo, calles con pendiente, bares, ambiente y suficientes cosas para justificar la escapada. Es la más conocida, sí. También una de las más seguras para acertar.</p>
+
+      <h2>Alájar: pequeño, bonito y con ese punto especial</h2>
+      <p>No necesitas que te vendan demasiado. Basta pasearlo. Casas blancas, entorno serrano y la Peña de Arias Montano dominando la zona. Si quieres bajar revoluciones, este encaja muy bien.</p>
+
+      <h2>Cortegana: castillo y sierra con personalidad</h2>
+      <p>El castillo le da presencia y el pueblo tiene más cuerpo del que parece a primera vista. Buen sitio para mezclar paseo, foto y comida con fundamento. No es decorado: tiene vida propia.</p>
+
+      <h2>Jabugo: aquí se viene a entender el jamón</h2>
+      <p>No es solo una marca famosa. Es contexto, dehesa, industria, cultura y producto. Si vienes con hambre y curiosidad, sales mejor de lo que entraste. Y probablemente más caro, pero eso ya es otra historia.</p>
+
+      <h2>Cómo montar la escapada</h2>
+      <ul>
+        <li><strong>Una sola base:</strong> Aracena si quieres comodidad.</li>
+        <li><strong>Ruta corta:</strong> Aracena + Alájar.</li>
+        <li><strong>Ruta con producto:</strong> Jabugo + pueblos cercanos.</li>
+        <li><strong>Si vas sin prisa:</strong> añade Cortegana.</li>
+      </ul>
+
+      <blockquote>La Sierra de Huelva no se disfruta corriendo. Se disfruta comiendo, andando y dejando que el día vaya un poco más lento. Rarísimo concepto, ya.</blockquote>
+    `
   }
 ];

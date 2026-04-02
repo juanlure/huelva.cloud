@@ -1,6 +1,11 @@
 import { MetadataRoute } from 'next'
 import { getArticles } from '@/lib/api'
 
+function safeDate(value?: string | Date) {
+  const date = value instanceof Date ? value : new Date(value || '');
+  return Number.isNaN(date.getTime()) ? new Date() : date;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://huelva.cloud'
   
@@ -10,13 +15,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Article URLs
   const articleUrls = articles.map((article) => ({
     url: `${baseUrl}/article/${article.slug}`,
-    lastModified: new Date(article.date),
+    lastModified: safeDate(article.date),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
   
   // Category URLs
-  const categories = ['comer', 'eventos', 'alojarse', 'guias', 'noticias']
+  const categories = ['agenda', 'comer', 'eventos', 'alojarse', 'guias', 'noticias', 'tiempo']
   const categoryUrls = categories.map((cat) => ({
     url: `${baseUrl}/${cat}`,
     lastModified: new Date(),

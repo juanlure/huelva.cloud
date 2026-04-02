@@ -16,7 +16,7 @@ const guides = [
     slug: '48-horas',
     title: '48 Horas en Huelva',
     description: 'Itinerario personalizado: comida, cultura y costa. Elige tu vibe y descubre la ciudad.',
-    image: '/images/guides/muelle-tinto-sunset.jpg',
+    image: '/images/guides/huelva-muelle-tinto.jpg',
     icon: <Clock size={28} />,
     badge: 'Itinerario',
     color: 'from-blue-500 to-cyan-600',
@@ -36,7 +36,7 @@ const guides = [
     slug: 'jamon',
     title: 'Traductor de Jamón',
     description: 'Bellota, Cebo de Campo, Cebo. Descubre las diferencias que marcan el precio y sabor.',
-    image: '/images/guides/jamon-iberico-bellota.jpg',
+    image: '/images/guides/corte-jamon-iberico.jpg',
     icon: <Award size={28} />,
     badge: 'Premium',
     color: 'from-amber-600 to-yellow-600',
@@ -55,12 +55,32 @@ const guides = [
   {
     slug: 'barrios',
     title: 'Barrios de Huelva',
-    description: 'Centro, Reina Victoria, Paseo de la Cinta... Encuentra tu barrio perfecto.',
-    image: '/images/guides/barrio-reina-victoria-hero.jpg',
+    description: 'Centro, Reina Victoria, Paseo de la Cinta y más. Lo útil para entender dónde ir y por qué.',
+    image: '/images/guides/huelva-aerea.jpg',
     icon: <MapPin size={28} />,
     badge: 'Interactivo',
     color: 'from-purple-500 to-pink-600',
     stats: '6 barrios'
+  },
+  {
+    slug: '../agenda',
+    title: 'Agenda al día',
+    description: 'La puerta rápida para saber qué hacer hoy, esta semana y este finde sin perder tiempo.',
+    image: '/images/guides/feria-huelva.jpg',
+    icon: <Clock size={28} />,
+    badge: 'Nueva',
+    color: 'from-emerald-500 to-teal-600',
+    stats: 'Actualizada'
+  },
+  {
+    slug: '../tiempo',
+    title: 'Tiempo útil',
+    description: 'Antes de playa, sierra o paseo, mira el clima. Más práctico que improvisar con viento de levante.',
+    image: '/images/guides/costa-huelva.jpg',
+    icon: <Compass size={28} />,
+    badge: 'Servicio',
+    color: 'from-sky-500 to-blue-600',
+    stats: '7 días'
   }
 ];
 

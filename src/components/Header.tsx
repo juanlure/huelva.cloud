@@ -9,11 +9,13 @@ import WeatherWidget from '@/components/widgets/WeatherWidget';
 import TimeWidget from '@/components/widgets/TimeWidget';
 
 const NAVIGATION_ITEMS = [
+  { name: 'Agenda', href: '/agenda' },
   { name: 'Comer', href: '/comer' },
   { name: 'Eventos', href: '/eventos' },
   { name: 'Alojarse', href: '/alojarse' },
   { name: 'Guías', href: '/guias' },
   { name: 'Noticias', href: '/noticias' },
+  { name: 'Tiempo', href: '/tiempo' },
 ];
 
 export default function Header() {
