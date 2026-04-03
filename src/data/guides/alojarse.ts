@@ -172,16 +172,16 @@ export const alojarseGuideData: AlojarseGuideData = {
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Reserva la base correcta antes de que se la lleve otro',
+    title: 'Siguiente paso: cierra la base y luego monta el resto del viaje',
     body:
-      'Si ya has decidido qué tipo de base encaja contigo, el siguiente paso no es mirar veinte opciones más. Es filtrar con criterio, descartar rápido lo mediocre y reservar antes de entrar en parálisis de comparación.',
+      'Si ya sabes qué tipo de base te encaja, el siguiente movimiento útil no es seguir mareando opciones. Es validar zona, cerrar una shortlist corta y seguir con las decisiones que de verdad ordenan la escapada.',
     primaryAction: {
-      label: 'Ver alojamientos en Huelva',
-      href: '#',
+      label: 'Ver qué ver en Huelva',
+      href: '/que-ver',
     },
     secondaryAction: {
-      label: 'Seguir montando el viaje',
-      href: '/guias',
+      label: 'Planear un fin de semana en Huelva',
+      href: '/fin-de-semana',
     },
   },
   relatedGuides: {
