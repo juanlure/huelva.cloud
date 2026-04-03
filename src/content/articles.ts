@@ -361,6 +361,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>¿Qué hay cerca?</h2>
       <p>Poco. El muelle está un poco apartado del bullicio del centro, pero el paseo por la ría merece la pena. Llévate una chaqueta fina, que cuando sopla el Poniente al lado del agua te puedes quedar tieso hasta en julio.</p>
 
+      <p>Si quieres que esta parada tenga retorno de verdad, mézclala con <a href="/que-ver">qué ver en Huelva</a> y con la visita al entorno portuario. El muelle gana cuando entiendes lo que lo rodea.</p>
+
       <blockquote>Dato de historiador local: Muchos creen que es de Eiffel, pero no. Fue cosa de George Bruce y Thomas Gibson. Ingeniería británica con alma choquera.</blockquote>
     `
   },
@@ -455,6 +457,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Cómo visitar</h2>
       <p>Acceso libre. Es un barrio residencial, así que se pide discreción. El paseo completo lleva unos 30-45 minutos. Ideal combinar con visita al centro histórico.</p>
+
+      <p>Por eso funciona mejor si lo metes en una ruta de ciudad más amplia. Úsalo como parada con contexto dentro de <a href="/que-ver">qué ver en Huelva</a> y no como visita aislada sin más.</p>
 
       <blockquote>El Reina Victoria es memoria urbana. No hay carteles explicativos: hay que saber mirar.</blockquote>
     `
@@ -569,6 +573,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Huelva hoy</h2>
       <p>Ciudad de 145.000 habitantes, capital de provincia, con economía basada en el puerto, la química, la agricultura y un turismo emergente pero aún minoritario.</p>
+
+      <p>Si esta parte te interesa de verdad, el siguiente paso lógico no es leer más cronología: es ver sitios. Tira de <a href="/que-ver">qué ver en Huelva</a> y conviértelo en recorrido, no en examen.</p>
 
       <blockquote>Huelva es memoria de puerto: tartesio, fenicio, romano, británico, y ahora español.</blockquote>
     `
@@ -774,6 +780,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Visitas guiadas: disponibles en horario de mañana.</li>
       </ul>
 
+      <p>Si vas a acercarte hasta aquí, no lo dejes como visita suelta. Mete también Palos y el entorno colombino dentro de <a href="/que-ver">qué ver en Huelva y provincia</a>, o conviértelo directamente en <a href="/fin-de-semana">plan de fin de semana</a>.</p>
+
       <blockquote>La Rábida es donde la historia de América empezó a hacerse realidad.</blockquote>
     `
   },
@@ -804,6 +812,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Cómo visitar</h2>
       <p>Acceso libre y gratuito. Se encuentra en una rotonda junto al puerto. Se puede ver desde la carretera o acercarse a pie desde el entorno del muelle del Tinto.</p>
+
+      <p>Bien metido dentro del recorrido, funciona. Solo, se liquida rápido. Mejor enlazarlo con <a href="/que-ver">qué ver en Huelva</a> y con la zona del puerto para que tenga contexto.</p>
 
       <blockquote>El Colón de Huelva no es el explorador. Es la fe en lo imposible hecha piedra.</blockquote>
     `
@@ -909,6 +919,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Cómo llegar</h2>
       <p>En pleno centro, a 5 minutos a pie de la Plaza de las Monjas. Accesible a pie desde cualquier punto del centro histórico.</p>
+
+      <p>Si vienes con poco tiempo, úsalo como ancla cultural dentro de <a href="/que-ver">qué ver en Huelva</a>. Y si luego toca comer, enlaza sin drama con <a href="/donde-comer">dónde comer en el centro</a>.</p>
 
       <blockquote>El Museo de Huelva es memoria de la provincia desde antes de que existiera España.</blockquote>
     `
@@ -1048,6 +1060,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Ubicación</h2>
       <p>En pleno centro histórico, a 2 minutos de la Plaza de las Monjas. Referencia ineludible del casco antiguo.</p>
 
+      <p>Como parada, funciona muy bien dentro de un paseo por el casco antiguo. Lo sensato es integrarla en <a href="/que-ver">qué ver en Huelva</a> y rematar luego por el centro con algo de <a href="/donde-comer">comer bien</a>.</p>
+
       <blockquote>La Concepción es fe de barrio en forma de templo. No es grande, pero es de todos.</blockquote>
     `
   },
@@ -1120,6 +1134,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Cómo llegar</h2>
       <p>Desde Huelva: 10 minutos en coche por la A-497. También autobús de línea regular.</p>
+
+      <p>Precisamente por eso conviene visitarlo con estructura: usa <a href="/que-ver">qué ver en Huelva y provincia</a> para no dejar fuera La Rábida, y si puedes, conviértelo en <a href="/fin-de-semana">escapada de fin de semana</a> con más aire.</p>
 
       <blockquote>Palos es pequeño, pero su huella en la historia es inmensamente grande.</blockquote>
     `
@@ -1403,6 +1419,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Visita combinada</h2>
       <p>Entrada gratuita. Combinar con Monasterio de La Rábida (2 km), Fuente Santa (donde se reclutó la tripulación), y Muelle de las Carabelas. Media jornada colombina completa.</p>
 
+      <p>Si vas a hacer ruta colombina, no la trocees mal: enlaza esta parada con <a href="/que-ver">qué ver en Huelva y provincia</a> y con <a href="/fin-de-semana">un plan de fin de semana</a> si quieres meter también La Rábida y Palos con calma.</p>
+
       <blockquote>Colón tuvo la idea. Los Pinzón la hicieron realidad. Esta casa es de los que ejecutan, no de los que firman.</blockquote>
     `
   },
@@ -1431,6 +1449,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Cómo llegar</h2>
       <p>En el centro de Palos de la Frontera, a 2 minutos a pie de la Casa de los Pinzón. Placa conmemorativa, bancos, ambiente de pueblo. Visita gratuita, 10 minutos suficientes.</p>
+
+      <p>Encaja mejor dentro de una ruta colombina completa, así que compárala con <a href="/que-ver">qué ver en Huelva y provincia</a> y monta la media jornada con cabeza.</p>
 
       <blockquote>La Fuente Santa no es monumento. Es el lugar donde la historia cambió de río, no de agua.</blockquote>
     `
@@ -1532,6 +1552,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Ubicación y acceso</h2>
       <p>Al oeste del centro, cerca de la zona de El Conquero. Autobús urbano, aparcamiento en zona. Acceso peatonal desde varios puntos.</p>
 
+      <p>Como parada aislada no te cambia el viaje, pero dentro de <a href="/que-ver">qué ver en Huelva</a> suma bien si te apetece bajar revoluciones o vas con niños.</p>
+
       <blockquote>El Parque Moret no es Central Park. Es humilde, pequeño, y precisamente por eso es de los onubenses: no viene nadie de fuera, solo los que necesitan un respiro.</blockquote>
     `
   },
@@ -1560,6 +1582,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Ubicación</h2>
       <p>En la zona del puerto, cerca del Muelle del Tinto. Acceso complicado (zona portuaria industrial), pero visible desde ciertos puntos.</p>
+
+      <p>Si te interesa este Huelva menos obvio, encájalo dentro de <a href="/que-ver">qué ver en Huelva</a> junto al puerto y el Muelle del Tinto. Solo, se queda corto; en conjunto, gana bastante.</p>
 
       <blockquote>El Baluarte de la Concepción es la memoria de cuando Huelva tenía que defenderse del mundo, en lugar de comerciar con él.</blockquote>
     `
