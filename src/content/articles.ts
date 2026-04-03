@@ -86,6 +86,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>¿Dónde ir sin que te engañen?</h2>
       <p>Si quieres el choco de verdad, vete a los bares de toda la vida en el centro o date una vuelta por las freidurías del barrio de El Torrejón. Huye de los sitios con fotos de platos en la puerta; eso es para guiris que no saben lo que es la humedad de la ría.</p>
 
+      <p>Si quieres montar una ruta de barra con un poco más de criterio, sigue por <a href="/donde-comer">dónde comer en Huelva</a> y por <a href="/article/donde-tapear-en-huelva">la guía para tapear sin caer en la trampa</a>.</p>
+
       <blockquote>Si pides limón, hazlo con discreción. El choco bueno sabe a mar, no a cítrico de bote.</blockquote>
     `
   },
@@ -279,6 +281,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>El ritual de comerlas</h2>
       <p>Aquí no se usan cubiertos. Se usan las manos. Coges una, usas la concha para sacar el bicho de la siguiente y así hasta que solo quede un montón de cáscaras y el caldito delicioso al fondo del plato. El que no use pan para mojar ese caldo, no tiene alma.</p>
+
+      <p>Y si quieres llevar esto al terreno práctico, enlaza con <a href="/donde-comer">dónde comer en Huelva</a> y con <a href="/article/donde-tapear-en-huelva">la ruta de tapeo</a> para encontrar contexto, no solo teoría.</p>
 
       <blockquote>Ojo con la veda: Hay épocas en las que no se pueden coger. Si te las ofrecen en agosto a precio de oro, pregunta de dónde vienen.</blockquote>
     `
@@ -511,6 +515,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>En avión</h2>
       <p>El aeropuerto más cercano es el de Sevilla (SVQ), a 1 hora en coche. También se puede usar Faro (FAO) en Portugal, a 1 hora y 15 minutos.</p>
 
+      <p>Una vez resuelto el trayecto, lo inteligente es enlazar transporte con plan real: revisa <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">ideas para un fin de semana</a> y <a href="/alojarse">dónde alojarse</a> para que llegar no sea lo único que tengas claro.</p>
+
       <blockquote>En Huelva, el coche es libertad. El transporte público existente, pero no da para todo.</blockquote>
     `
   },
@@ -575,7 +581,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>El viento del este, seco y caluroso, es característico del verano. Puede elevar la sensación térmica varios grados.</p>
 
       <h2>Mejor época para visitar</h2>
-      <p>Abril-mayo y septiembre-octubre. Clima ideal para pasear, comer en terrazas y visitar la provincia sin agobios.</p>
+      <p>Abril-mayo y septiembre-octubre. Clima ideal para pasear, comer en terrazas y visitar la provincia sin agobios. Si quieres afinar el viaje según plan, te conviene cruzar esta guía con <a href="/playas">las mejores playas de Huelva</a>, <a href="/fin-de-semana">ideas de fin de semana</a> y <a href="/que-ver">qué ver en Huelva</a> para no venir a ciegas.</p>
 
       <h2>Qué llevar</h2>
       <ul>
@@ -663,6 +669,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Fines de semana: más fácil aparcar en zona azul, más difícil en parkings (llenos).</li>
         <li>Noches: zona azul suele ser gratis después de 20:30.</li>
       </ul>
+
+      <p>Si vienes a dormir en la capital o a hacer base desde aquí, combina esto con la guía de <a href="/alojarse">dónde alojarse en Huelva</a> y con <a href="/que-ver">qué ver en Huelva</a> para elegir zona con sentido y no perder media jornada en logística.</p>
 
       <blockquote>En Huelva, aparcar es arte de paciencia. Quien espera, encuentra.</blockquote>
     `
@@ -1191,6 +1199,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li><strong>Jueves lardero:</strong> hornazo, pestiños, torrijas.</li>
         <li><strong>Roscos fritos:</strong> especialmente en Semana Santa.</li>
       </ul>
+
+      <p>Si prefieres pasar de la teoría al sitio correcto, sigue por <a href="/donde-comer">dónde comer en Huelva</a> y luego afina con piezas concretas como <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a>, <a href="/article/coquinas-huelva-como-comer">coquinas</a> o <a href="/article/mejores-restaurantes-huelva">los mejores restaurantes de Huelva</a>.</p>
 
       <blockquote>La gastronomía de Huelva no necesita chefs famosos. Necesita buen producto y manos que lo respeten.</blockquote>
     `
@@ -1850,7 +1860,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>El entorno de La Rábida funciona bien porque mezcla paseo, aire libre y un punto de historia sin exigir demasiado. Si vas en modo ligero y no pretendes recitar fechas, puede salir muy bien.</p>
 
       <h2>Playas cómodas para familias</h2>
-      <p>Punta Umbría, Islantilla o La Antilla suelen darte mejor logística: acceso razonable, más servicios y menos drama. Si el plan depende de baños, sombras y comida cerca, no inventes demasiado.</p>
+      <p>Punta Umbría, Islantilla o La Antilla suelen darte mejor logística: acceso razonable, más servicios y menos drama. Si el plan depende de baños, sombras y comida cerca, no inventes demasiado. Para elegir bien según distancia, servicios y tipo de día, mira también <a href="/playas">la guía de playas de Huelva</a>.</p>
 
       <h2>Muelle del Tinto al atardecer</h2>
       <p>Paseo corto, fotogénico y con sensación de sitio especial. No hace falta convertirlo en expedición. Llegas, paseas, haces fotos y luego te vas a cenar algo. Eso ya cuenta como plan bueno.</p>
@@ -1862,6 +1872,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Ten siempre un plan B de comida rápida decente.</li>
         <li>Menos sitios, mejor elegidos.</li>
       </ul>
+
+      <p>Si quieres montar algo más completo sin volverte loco, cruza esta guía con <a href="/que-ver">qué ver en Huelva</a> y con <a href="/fin-de-semana">planes de fin de semana</a>. Así pasas de “a ver qué hacemos” a un día medio resuelto.</p>
 
       <blockquote>Con niños no gana el plan más ambicioso. Gana el que sale limpio, fácil y sin berrinche colectivo a las seis de la tarde.</blockquote>
     `
@@ -1929,7 +1941,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Cómo detectar trampa</h2>
-      <p>Si todo parece pensado para que hagas una foto y nada para que repitas, sospecha. Si el camarero no sabe recomendarte nada, peor. Y si el pescado sabe a trámite, vete cerrando la cuenta y sigue tu vida.</p>
+      <p>Si todo parece pensado para que hagas una foto y nada para que repitas, sospecha. Si el camarero no sabe recomendarte nada, peor. Y si el pescado sabe a trámite, vete cerrando la cuenta y sigue tu vida. Para afinar todavía más, cruza esta pieza con <a href="/donde-comer">dónde comer en Huelva</a> y con las guías específicas de <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a> y <a href="/article/coquinas-huelva-como-comer">coquinas</a>.</p>
 
       <h2>Zonas y lógica</h2>
       <p>Centro para empezar. Barrios o zonas menos obvias para afinar. Costa si el día pide mar. No hay un único “mejor sitio”; hay contextos. Lo inteligente es decidir según hambre, hora y compañía.</p>
@@ -2002,6 +2014,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li><strong>Si quieres mar sin complicarte:</strong> Punta Umbría o El Portil.</li>
         <li><strong>Si quieres historia cercana:</strong> La Rábida y Palos.</li>
       </ul>
+
+      <p>Si quieres convertir esta escapada en un plan más redondo, enlázala con <a href="/fin-de-semana">la guía de fin de semana en Huelva</a>, <a href="/playas">las mejores playas</a> y <a href="/que-ver">qué ver en la provincia</a> según el tipo de viaje.</p>
 
       <blockquote>La escapada buena no es la más ambiciosa. Es la que te hace volver pensando “esto lo repito”, no “a ver cuándo me recupero”.</blockquote>
     `
