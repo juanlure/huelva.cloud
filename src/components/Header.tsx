@@ -35,17 +35,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-[52px] left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-[52px] left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'py-3 bg-white/84 backdrop-blur-2xl shadow-[0_20px_60px_rgba(26,42,58,0.10)] border-b border-navy/8'
-          : 'py-4 bg-white/68 backdrop-blur-xl border-b border-white/40'
+          ? 'py-3 bg-[rgba(255,255,255,0.78)] backdrop-blur-2xl shadow-[0_24px_70px_rgba(26,42,58,0.10)] border-b border-[rgba(26,42,58,0.06)]'
+          : 'py-4 bg-[linear-gradient(180deg,rgba(255,255,255,0.62),rgba(255,255,255,0.28))] backdrop-blur-xl border-b border-white/30'
       }`}
     >
       <div className="container overflow-visible">
-        <div className="flex items-center justify-between gap-6 rounded-[1.75rem] border border-white/60 bg-white/40 px-4 py-2 shadow-[0_12px_40px_rgba(26,42,58,0.05)] backdrop-blur-md md:px-5">
+        <div className="flex items-center justify-between gap-6 rounded-[2rem] border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.42))] px-4 py-2.5 shadow-[0_18px_50px_rgba(26,42,58,0.07)] backdrop-blur-xl md:px-5">
           <div className="flex items-center gap-6 min-w-0">
             <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-11 h-11 rounded-[1.35rem] bg-gradient-to-br from-terracotta to-orange-600 text-white flex items-center justify-center shadow-[0_14px_34px_rgba(212,85,58,0.35)] text-sm font-bold">
+              <div className="w-11 h-11 rounded-[1.35rem] bg-[linear-gradient(135deg,#D4553A_0%,#E56C49_52%,#C5402A_100%)] text-white flex items-center justify-center shadow-[0_18px_40px_rgba(212,85,58,0.34)] text-sm font-bold ring-1 ring-white/25">
                 HC
               </div>
               <div className="min-w-0">
@@ -61,14 +61,14 @@ export default function Header() {
               </div>
             </Link>
 
-            <div className="hidden 2xl:flex items-center gap-3 rounded-full border border-white/70 bg-white/72 px-4 py-2 shadow-[0_10px_30px_rgba(26,42,58,0.05)] text-sm text-navy/60">
+            <div className="hidden 2xl:flex items-center gap-3 rounded-full border border-white/80 bg-[rgba(255,255,255,0.76)] px-4 py-2 shadow-[0_12px_30px_rgba(26,42,58,0.05)] text-sm text-navy/60 backdrop-blur-md">
               <Compass size={15} className="text-terracotta" />
               <span className="font-medium">Capital + costa + provincia</span>
             </div>
           </div>
 
           <nav className="hidden xl:flex items-center min-w-0 flex-1 justify-center">
-            <div className="flex items-center gap-1 rounded-full border border-white/80 bg-white/72 backdrop-blur-md px-2 py-1 shadow-[0_10px_40px_rgba(26,42,58,0.06)]">
+            <div className="flex items-center gap-1 rounded-full border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,255,255,0.62))] backdrop-blur-md px-2 py-1.5 shadow-[0_12px_34px_rgba(26,42,58,0.06)]">
               {NAVIGATION_ITEMS.map((item) => {
                 const isActive = pathname === item.href || pathname?.startsWith(item.href + '/');
                 return (
@@ -83,7 +83,7 @@ export default function Header() {
                     {isActive && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute inset-0 rounded-full bg-terracotta/10 border border-terracotta/15"
+                        className="absolute inset-0 rounded-full border border-terracotta/15 bg-[linear-gradient(180deg,rgba(212,85,58,0.18),rgba(212,85,58,0.08))] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                         initial={false}
                         transition={{ type: 'spring', stiffness: 500, damping: 32 }}
                       />
@@ -103,7 +103,7 @@ export default function Header() {
 
             <Link
               href="/guias"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-full bg-navy text-white text-sm font-semibold hover:bg-terracotta transition-colors shadow-[0_12px_30px_rgba(26,42,58,0.16)]"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[linear-gradient(135deg,#0F1A24_0%,#1A2A3A_100%)] text-white text-sm font-semibold hover:from-terracotta hover:to-orange-600 transition-all shadow-[0_14px_34px_rgba(26,42,58,0.18)] ring-1 ring-white/10"
             >
               <Sparkles size={15} />
               Explorar Huelva

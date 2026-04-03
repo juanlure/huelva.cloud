@@ -5,6 +5,7 @@ import { AUTHORS } from '@/lib/authors';
 import InteractiveContainer from '@/components/InteractiveContainer';
 import AuthorBox from '@/components/AuthorBox';
 import ArticleRenderer from '@/components/article/ArticleRenderer';
+import StrategicGuideCTA from '@/components/article/StrategicGuideCTA';
 import { Clock, ArrowLeft, Link2 } from 'lucide-react';
 import styles from './ArticlePage.module.css';
 import type { Metadata } from 'next';
@@ -81,6 +82,64 @@ function generateArticleSchema(article: any, slug: string) {
   };
 }
 
+const STRATEGIC_GUIDE_CTAS: Record<string, {
+  eyebrow: string;
+  title: string;
+  body: string;
+  primary: { href: string; label: string };
+  secondary?: { href: string; label: string };
+}> = {
+  'que-hacer-en-huelva-guia-definitiva': {
+    eyebrow: 'Siguiente paso útil',
+    title: 'Si quieres criterio de verdad, entra en la flagship de qué ver',
+    body: 'Este artículo te orienta. La guía premium de qué ver te ayuda a decidir mejor según tiempo, tipo de visita y zonas que sí compensan.',
+    primary: { href: '/que-ver', label: 'Abrir guía de qué ver' },
+    secondary: { href: '/agenda', label: 'Ver agenda de hoy' },
+  },
+  'que-ver-en-huelva-en-un-dia': {
+    eyebrow: 'Decisión rápida',
+    title: 'No improvises el recorrido: usa la guía completa de qué ver',
+    body: 'Si ya sabes que vienes con poco tiempo, la flagship te ordena mejor el plan y evita meter paradas mediocres por rellenar.',
+    primary: { href: '/que-ver', label: 'Abrir qué ver en Huelva' },
+    secondary: { href: '/fin-de-semana', label: 'Ver plan de fin de semana' },
+  },
+  'playas-huelva-guia-completa': {
+    eyebrow: 'Mejor siguiente paso',
+    title: 'La versión buena de esta decisión está en la flagship de playas',
+    body: 'Si vas a elegir playa según plan, viento, acceso y tipo de día, la guía premium de playas está bastante mejor resuelta que una lista genérica.',
+    primary: { href: '/playas', label: 'Abrir guía de playas' },
+    secondary: { href: '/tiempo', label: 'Mirar el tiempo antes de salir' },
+  },
+  'mejores-playas-huelva-guia-real': {
+    eyebrow: 'Atajo útil',
+    title: 'Cruza esta guía con la flagship de playas y decidirás más rápido',
+    body: 'Aquí tienes contexto editorial. En la guía premium tienes la versión preparada para comparar mejor según el tipo de día que quieres tener.',
+    primary: { href: '/playas', label: 'Comparar playas en la flagship' },
+    secondary: { href: '/tiempo', label: 'Ver previsión y viento' },
+  },
+  'mejores-restaurantes-huelva-2026': {
+    eyebrow: 'Siguiente capa',
+    title: 'Para comer bien sin regalar una comida, usa la flagship de dónde comer',
+    body: 'La guía premium está pensada para decidir según presupuesto, vibe, zona y tipo de comida. Menos lista, más criterio.',
+    primary: { href: '/donde-comer', label: 'Abrir guía de dónde comer' },
+    secondary: { href: '/guias/choco', label: 'Ver traductor de choco' },
+  },
+  'mejores-restaurantes-huelva': {
+    eyebrow: 'Siguiente capa',
+    title: 'Este artículo orienta; la flagship de dónde comer convierte mejor',
+    body: 'Si ya estás comparando sitios, entra en la guía premium para filtrar rápido y elegir con más intención.',
+    primary: { href: '/donde-comer', label: 'Abrir flagship gastronómica' },
+    secondary: { href: '/guias/cafe', label: 'Ver traductor de café' },
+  },
+  'huelva-48-horas-itinerario-completo': {
+    eyebrow: 'Plan resuelto',
+    title: 'Si vienes un finde, usa la flagship de fin de semana',
+    body: 'Este itinerario inspira. La página premium de fin de semana aterriza mejor el ritmo, las decisiones y el orden de juego.',
+    primary: { href: '/fin-de-semana', label: 'Abrir guía de fin de semana' },
+    secondary: { href: '/alojarse', label: 'Ver dónde alojarse' },
+  },
+};
+
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
@@ -120,6 +179,7 @@ export default async function ArticlePage({ params }: PageProps) {
     .replace(/<script type="application\/json" id="interactive-data">[\s\S]*?<\/script>/g, '');
 
   const articleSchema = generateArticleSchema(article, slug);
+  const strategicGuideCta = STRATEGIC_GUIDE_CTAS[slug];
 
   return (
     <>
@@ -202,6 +262,16 @@ export default async function ArticlePage({ params }: PageProps) {
           {cleanedContent && (
             <ArticleRenderer content={cleanedContent} />
           )}
+
+          {strategicGuideCta ? (
+            <StrategicGuideCTA
+              eyebrow={strategicGuideCta.eyebrow}
+              title={strategicGuideCta.title}
+              body={strategicGuideCta.body}
+              primary={strategicGuideCta.primary}
+              secondary={strategicGuideCta.secondary}
+            />
+          ) : null}
         </main>
 
         {relatedArticles.length > 0 && (

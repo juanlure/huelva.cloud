@@ -104,11 +104,12 @@ export default function ArticleCard({
       whileHover={compact ? { y: -4 } : { y: -8 }}
       whileTap={{ scale: 0.985 }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-      className={`group relative overflow-hidden rounded-[1.9rem] border border-white/75 bg-white/90 backdrop-blur-md shadow-[0_16px_50px_rgba(26,42,58,0.08)] transition-all duration-500 ${style.glow} ${
+      className={`group relative overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(255,252,248,0.86))] backdrop-blur-md shadow-[0_18px_60px_rgba(26,42,58,0.08)] transition-all duration-500 ${style.glow} ${
         featured ? 'md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-0' : 'flex flex-col h-full'
       } ${compact ? 'hover:border-navy/10' : 'hover:border-white/90'}`}
     >
-      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${style.frame} opacity-80`} />
+      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${style.frame} opacity-90`} />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
 
       {imageUrl ? (
         <LinkWrapper
@@ -188,7 +189,7 @@ export default function ArticleCard({
         </div>
       )}
 
-      <div className={`${compact ? 'p-5' : featured ? 'p-7 md:p-10' : 'p-6'} relative flex flex-col ${featured ? '' : 'flex-1'} transition-colors duration-300 bg-white/62`}>
+      <div className={`${compact ? 'p-5' : featured ? 'p-7 md:p-10' : 'p-6'} relative flex flex-col ${featured ? '' : 'flex-1'} transition-colors duration-300 bg-[linear-gradient(180deg,rgba(255,255,255,0.70),rgba(255,252,247,0.54))]`}>
         <div className={`flex items-center gap-4 text-xs text-navy/42 ${compact ? 'mb-3' : 'mb-4'} flex-wrap`}>
           <span className="font-semibold uppercase tracking-[0.18em] text-navy/55 text-[11px]">{author.name}</span>
           <span className="w-1 h-1 rounded-full bg-navy/20" />

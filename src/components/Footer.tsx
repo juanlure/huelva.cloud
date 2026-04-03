@@ -11,8 +11,9 @@ const exploreLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white pt-24 pb-10 px-6 border-t border-white/5 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
+    <footer className="bg-[linear-gradient(180deg,#13202d_0%,#0f1822_100%)] text-white pt-24 pb-10 px-6 border-t border-white/5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-[0.08] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,85,58,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_24%)] pointer-events-none" />
       <div className="absolute -top-16 right-0 w-[28rem] h-[28rem] bg-terracotta/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[22rem] h-[22rem] bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -36,7 +37,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/6 backdrop-blur-md p-6 max-w-xl">
+            <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))] backdrop-blur-md p-6 max-w-xl shadow-[0_18px_60px_rgba(0,0,0,0.14)]">
               <p className="text-xs uppercase tracking-widest text-white/45 font-semibold mb-3">Promesa editorial</p>
               <p className="text-white/80 leading-relaxed">
                 Sin folletos turísticos, sin relleno y sin disfrazar una agenda vacía. Si algo aparece aquí, tiene que merecer clic o visita.

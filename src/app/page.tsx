@@ -35,8 +35,9 @@ export default async function Home() {
     <main className="w-full overflow-hidden">
       <HeroSection />
 
-      <section className="relative py-10 bg-white border-b border-navy/5 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-[0.08]" />
+      <section className="relative py-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,252,247,0.92))] border-b border-navy/5 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,85,58,0.08),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(15,26,36,0.04),transparent_24%)]" />
         <div className="container relative z-10">
           <div className="grid md:grid-cols-3 gap-4">
             <div className="rounded-[1.75rem] border border-white/70 bg-cream/90 backdrop-blur-xl p-6 shadow-[0_18px_60px_rgba(26,42,58,0.06)]">
@@ -61,8 +62,8 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="descubre" className="py-24 bg-cream relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-40" />
+      <section id="descubre" className="py-24 bg-[linear-gradient(180deg,#fffdf9_0%,#faf6ef_100%)] relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-[0.16]" />
         <div className="absolute top-0 left-0 w-[32rem] h-[32rem] bg-terracotta/8 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-navy/5 rounded-full blur-3xl" />
 
@@ -120,7 +121,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,252,248,0.86))] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-16 right-0 w-[36rem] h-[36rem] bg-orange-100/50 rounded-full blur-3xl" />
         </div>
@@ -159,7 +160,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-[#fffdf9] to-sand/50 relative overflow-hidden">
+      <section className="py-24 bg-[linear-gradient(180deg,#fffdf9_0%,rgba(245,238,227,0.84)_100%)] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-6 left-0 w-[30rem] h-[30rem] bg-sky-200/20 rounded-full blur-3xl" />
         </div>
@@ -206,8 +207,8 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="guias" className="py-24 bg-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-grid" />
+      <section id="guias" className="py-24 bg-[linear-gradient(180deg,#172635_0%,#0f1822_100%)] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.08] bg-grid" />
         <div className="absolute -top-20 -right-10 w-[26rem] h-[26rem] bg-terracotta/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[24rem] h-[24rem] bg-white/6 rounded-full blur-3xl" />
 
@@ -230,7 +231,7 @@ export default async function Home() {
                 <Link
                   key={article.slug}
                   href={`/article/${article.slug}`}
-                  className="group relative overflow-hidden rounded-[1.75rem] bg-white/8 border border-white/10 hover:border-terracotta/50 transition-all duration-300 shadow-[0_18px_60px_rgba(0,0,0,0.18)]"
+                  className="group relative overflow-hidden rounded-[1.9rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.05))] border border-white/10 hover:border-terracotta/50 transition-all duration-300 shadow-[0_20px_70px_rgba(0,0,0,0.20)] backdrop-blur-sm"
                 >
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <div

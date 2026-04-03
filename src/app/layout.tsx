@@ -105,7 +105,7 @@ export default function RootLayout({
 
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${instrument.variable} ${dmSans.variable} ${jetbrains.variable} font-body bg-cream text-navy antialiased`}>
+      <body className={`${instrument.variable} ${dmSans.variable} ${jetbrains.variable} font-body bg-cream text-navy antialiased selection:bg-terracotta/20 selection:text-navy`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

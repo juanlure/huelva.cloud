@@ -86,7 +86,7 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-navy"
+      className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-[linear-gradient(180deg,#13202d_0%,#1a2a3a_42%,#101922_100%)]"
     >
       {/* Background Image with Overlay */}
       <motion.div 
@@ -97,10 +97,8 @@ export default function HeroSection() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/images/guides/huelva-aerea.jpg)' }}
         />
-        {/* Editorial Gradients - Cleaned up since header is now solid white */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/20 to-navy" />
-        {/* Subtle Noise Texture */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,85,58,0.22),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.10),transparent_20%),linear-gradient(180deg,rgba(15,26,36,0.66)_0%,rgba(15,26,36,0.24)_32%,rgba(15,26,36,0.92)_100%)]" />
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-grid-shimmer mix-blend-soft-light" />
       </motion.div>
 
       {/* Animated Particles - fewer on mobile */}
@@ -138,7 +136,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full text-xs font-bold text-white/90 mb-8 border border-white/10 shadow-2xl"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] backdrop-blur-xl rounded-full text-xs font-bold text-white/90 mb-8 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.16)]"
           >
             <Sparkles size={14} className="text-terracotta" />
             <span className="uppercase tracking-[0.2em]">Huelva.cloud · La mejor guía local 2026</span>
@@ -162,7 +160,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.85] tracking-tight"
+            className="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.85] tracking-tight drop-shadow-[0_18px_50px_rgba(0,0,0,0.28)]"
           >
             Descubre Huelva
             <br />
@@ -217,7 +215,7 @@ export default function HeroSection() {
           >
             <Link
               href="#descubre"
-              className="group relative overflow-hidden px-8 py-5 bg-terracotta text-white font-bold rounded-full transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(212,85,58,0.5)] active:scale-95 text-center"
+              className="group relative overflow-hidden px-8 py-5 bg-[linear-gradient(135deg,#D4553A_0%,#E56C49_52%,#C5402A_100%)] text-white font-bold rounded-full transition-all duration-500 hover:shadow-[0_18px_40px_-12px_rgba(212,85,58,0.55)] active:scale-95 text-center ring-1 ring-white/10"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
                 EMPEZAR A EXPLORAR
@@ -226,7 +224,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="#guias"
-              className="group px-8 py-5 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/10 transition-all duration-300 text-center active:scale-95 hover:border-white/20"
+              className="group px-8 py-5 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] hover:bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/10 transition-all duration-300 text-center active:scale-95 hover:border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
             >
               GUÍAS LOCALES
             </Link>
@@ -271,7 +269,7 @@ export default function HeroSection() {
               <Link
                 key={link.title}
                 href={link.href}
-                className="group relative overflow-hidden rounded-2xl bg-white/[0.03] backdrop-blur-2xl border border-white/5 p-5 sm:p-8 hover:bg-white/[0.08] transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+                className="group relative overflow-hidden rounded-[1.7rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] backdrop-blur-2xl border border-white/8 p-5 sm:p-8 hover:bg-white/[0.08] transition-all duration-500 hover:-translate-y-2 shadow-[0_22px_70px_rgba(0,0,0,0.18)]"
               >
                 {/* Badge */}
                 <div className="absolute top-4 right-5 z-20">
