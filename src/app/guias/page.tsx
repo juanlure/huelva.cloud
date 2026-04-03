@@ -3,6 +3,56 @@ import { Compass, Clock, Users, MapPin, ArrowRight, Award, Coffee } from 'lucide
 
 const guides = [
   {
+    slug: '../alojarse',
+    title: 'Dónde alojarse en Huelva',
+    description: 'La flagship para elegir bien base, zona y tipo de estancia sin reservar a ciegas.',
+    image: '/images/guides/huelva-aerea.jpg',
+    icon: <MapPin size={28} />,
+    badge: 'Flagship',
+    color: 'from-sky-500 to-cyan-600',
+    stats: 'Guía premium'
+  },
+  {
+    slug: '../que-ver',
+    title: 'Qué ver en Huelva',
+    description: 'Selección útil para separar lo que sí compensa de lo que solo rellena listas turísticas.',
+    image: '/images/guides/huelva-muelle-tinto.jpg',
+    icon: <Compass size={28} />,
+    badge: 'Flagship',
+    color: 'from-orange-500 to-terracotta',
+    stats: 'Guía premium'
+  },
+  {
+    slug: '../playas',
+    title: 'Playas de Huelva',
+    description: 'Elige costa según el tipo de día que quieres tener, no por la playa más repetida.',
+    image: '/images/guides/costa-huelva.jpg',
+    icon: <MapPin size={28} />,
+    badge: 'Flagship',
+    color: 'from-blue-500 to-sky-600',
+    stats: 'Guía premium'
+  },
+  {
+    slug: '../donde-comer',
+    title: 'Dónde comer en Huelva',
+    description: 'Para decidir con criterio entre comida resolutiva, producto, tapeo y sitios que sí compensan.',
+    image: '/images/guides/choco-frito-hero.jpg',
+    icon: <Coffee size={28} />,
+    badge: 'Flagship',
+    color: 'from-terracotta to-red-600',
+    stats: 'Guía premium'
+  },
+  {
+    slug: '../fin-de-semana',
+    title: 'Fin de semana en Huelva',
+    description: 'Cómo montar una escapada de 48 horas con ritmo, criterio y cero sensación de checklist.',
+    image: '/images/guides/huelva-plaza-las-monjas.jpg',
+    icon: <Clock size={28} />,
+    badge: 'Flagship',
+    color: 'from-purple-500 to-pink-600',
+    stats: 'Guía premium'
+  },
+  {
     slug: 'supervivencia',
     title: 'Guía de Supervivencia',
     description: 'Transporte, horarios, slang y secretos locales para moverte por Huelva sin parecer turista.',

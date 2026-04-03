@@ -251,7 +251,27 @@ export default async function Home() {
               ))}
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-12 grid md:grid-cols-2 xl:grid-cols-5 gap-4">
+              {[
+                { href: '/alojarse', title: 'Dónde alojarse', copy: 'La base correcta cambia todo el viaje.' },
+                { href: '/que-ver', title: 'Qué ver', copy: 'Qué sí compensa y qué relleno te puedes ahorrar.' },
+                { href: '/playas', title: 'Playas', copy: 'Costa elegida por tipo de día, no por fama vacía.' },
+                { href: '/donde-comer', title: 'Dónde comer', copy: 'Para filtrar mejor entre ruido y sitios que sí entregan.' },
+                { href: '/fin-de-semana', title: 'Fin de semana', copy: 'Escapada de 48h con ritmo, criterio y cero checklist.' },
+              ].map((guide) => (
+                <Link
+                  key={guide.href}
+                  href={guide.href}
+                  className="group rounded-[1.5rem] border border-white/10 bg-white/6 backdrop-blur-sm p-5 text-left hover:border-terracotta/50 hover:bg-white/10 transition-all duration-300"
+                >
+                  <p className="text-[11px] uppercase tracking-widest text-white/45 mb-2">Flagship</p>
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-terracotta transition-colors">{guide.title}</h3>
+                  <p className="text-sm text-white/65 leading-relaxed">{guide.copy}</p>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
               <Link
                 href="/guias"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/16 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all duration-300"
