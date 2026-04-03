@@ -56,7 +56,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Cómo organizarte el fin de semana</h2>
-      <p>Si quieres combinar capital y provincia, el esquema más eficiente es: mercado o cultura en capital el sábado por la mañana, sierra o costa el domingo. Ahorra desplazamientos y aprovechas mejor el tiempo.</p>
+      <p>Si quieres combinar capital y provincia, el esquema más eficiente es: mercado o cultura en capital el sábado por la mañana, sierra o costa el domingo. Ahorra desplazamientos y aprovechas mejor el tiempo. Si quieres bajarlo a tierra, enlázalo con <a href="/fin-de-semana">la guía de fin de semana</a>, <a href="/que-ver">qué ver en Huelva</a> y <a href="/playas">las mejores playas</a> según el tipo de plan.</p>
 
       <blockquote>Consejo: llama antes de ir a cualquier evento. Los cambios de horario de última hora son más habituales de lo que parece en Huelva.</blockquote>
     `
@@ -113,7 +113,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Verdades sobre el precio</h2>
-      <p>Un hostal limpio en el centro te va a dar más alegrías que un hotel de cadena a 3 kilómetros. No pagues por el desayuno del hotel; sal a la calle, pide una tostada de pringá y un café, y ahórrate 15 pavos que luego te gastas en gambas.</p>
+      <p>Un hostal limpio en el centro te va a dar más alegrías que un hotel de cadena a 3 kilómetros. No pagues por el desayuno del hotel; sal a la calle, pide una tostada de pringá y un café, y ahórrate 15 pavos que luego te gastas en gambas. Y para decidir bien dónde te conviene dormir según el plan, combínalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a> y <a href="/donde-comer">dónde comer</a>.</p>
 
       <blockquote>Consejo de local: El parking es clave. Si el hotel no tiene, asegúrate de que haya uno público cerca o prepárate para dar vueltas como un jartible.</blockquote>
     `
@@ -149,6 +149,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Hora punta: 14:00-15:30 los fines de semana. Reservar si el grupo es de 4+.</li>
         <li>Precio medio: 25-40€ por persona con bebida.</li>
       </ul>
+
+      <p>Si estás montando una escapada completa, enlaza con <a href="/fin-de-semana">planes para un fin de semana en Huelva</a> y con <a href="/que-ver">qué ver en la provincia</a> para no dejar Aracena aislada del resto del viaje.</p>
 
       <blockquote>Aracena se disfruta sin prisa. Si intentas hacer todo en 4 horas, no disfrutas nada.</blockquote>
     `
@@ -408,7 +410,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>La playa es amplia, con chiringuitos en verano y suficiente espacio para no sentirte agobiado. El pueblo tiene restaurantes, tiendas y todo lo necesario para una jornada de playa.</p>
 
       <h2>Mejor época</h2>
-      <p>Julio y agosto están saturados. Junio y septiembre son ideales: buen tiempo, menos gente, precios más razonables.</p>
+      <p>Julio y agosto están saturados. Junio y septiembre son ideales: buen tiempo, menos gente, precios más razonables. Si estás comparando opciones, cruza esto con <a href="/playas">las mejores playas de Huelva</a> y con <a href="/fin-de-semana">ideas de fin de semana</a> para decidir si Punta Umbría es tu base o solo una parada.</p>
 
       <blockquote>Punta Umbría no es destino exótico. Es la playa de los que viven en Huelva y quieren mar sin complicaciones.</blockquote>
     `
@@ -920,7 +922,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>En coche desde Huelva: 15 minutos por la A-497. También hay autobús de línea regular.</p>
 
       <h2>Mejor época</h2>
-      <p>Junio y septiembre son ideales: buen tiempo sin masificación. Julio y agosto están más llenos pero sigue siendo tranquilo comparado con otras zonas.</p>
+      <p>Junio y septiembre son ideales: buen tiempo sin masificación. Julio y agosto están más llenos pero sigue siendo tranquilo comparado con otras zonas. Si quieres compararlo con otras zonas costeras, tira de <a href="/playas">la guía general de playas</a> y de <a href="/fin-de-semana">planes de fin de semana en Huelva</a>.</p>
 
       <blockquote>El Portil es la opción cuando quieres playa sin que te la quiten.</blockquote>
     `
@@ -1749,7 +1751,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p><strong>Noche:</strong> última cena, últimas tapas. Recoger fuerzas para volver.</p>
 
       <h2>Lo que te estás perdiendo (y está bien)</h2>
-      <p>No has visto Aracena, ni las minas, ni Ayamonte, ni Doñana. Has visto lo esencial de la capital y un poco de alrededor. Para el resto, necesitas volver. Y lo harás.</p>
+      <p>No has visto Aracena, ni las minas, ni Ayamonte, ni Doñana. Has visto lo esencial de la capital y un poco de alrededor. Para el resto, necesitas volver. Y lo harás. Si quieres ordenar mejor ese regreso, sigue por <a href="/fin-de-semana">la guía de fin de semana</a>, <a href="/que-ver">qué ver en Huelva</a>, <a href="/donde-comer">dónde comer</a> y <a href="/alojarse">dónde alojarse</a>.</p>
 
       <blockquote>48 horas en Huelva no son para verlo todo. Son para entender que aquí se vive distinto, más despacio, más de cerca.</blockquote>
     `
@@ -1836,6 +1838,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li><strong>Naturaleza y menos gente:</strong> entorno Doñana.</li>
       </ul>
 
+      <p>Si después quieres aterrizar la elección en un viaje más completo, enlaza con <a href="/playas">la guía de playas de Huelva</a> y con <a href="/fin-de-semana">planes de fin de semana</a> para no quedarte solo en “qué playa”, sino también en “qué hago alrededor”.</p>
+
       <blockquote>La mejor playa de Huelva no existe. Existe la mejor para el plan que llevas hoy. Si no distingues eso, acabas cabreado con arena hasta en el DNI.</blockquote>
     `
   },
@@ -1912,6 +1916,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li><strong>Si vas sin prisa:</strong> añade Cortegana.</li>
       </ul>
 
+      <p>Para encajarlo dentro de una visita más amplia, apóyate en <a href="/fin-de-semana">la guía de fin de semana</a> y en <a href="/que-ver">qué ver en Huelva y provincia</a>. Así conviertes pueblos sueltos en un plan con lógica.</p>
+
       <blockquote>La Sierra de Huelva no se disfruta corriendo. Se disfruta comiendo, andando y dejando que el día vaya un poco más lento. Rarísimo concepto, ya.</blockquote>
     `
   },
@@ -1976,7 +1982,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>El Muelle del Tinto no falla. Tiene historia, imagen potente y paseo agradable. Si pillas buena luz, además te llevas las fotos fáciles sin tener que inventar demasiado.</p>
 
       <h2>Final del día: mirador, terraza o paseo largo</h2>
-      <p>Remata con vistas, terraza o un paseo tranquilo. Huelva no necesita un final épico; necesita uno coherente. Si acabas bien comido y con la sensación de haber respirado otro ritmo, ya has acertado.</p>
+      <p>Remata con vistas, terraza o un paseo tranquilo. Huelva no necesita un final épico; necesita uno coherente. Si acabas bien comido y con la sensación de haber respirado otro ritmo, ya has acertado. Y si luego decides alargar, te conviene saltar a <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">planes para un fin de semana</a> y <a href="/donde-comer">dónde comer bien</a>.</p>
 
       <blockquote>En un día no vas a “tachar Huelva”. Vas a entenderla lo justo para querer volver. Y eso, sinceramente, ya es una victoria.</blockquote>
     `
@@ -2084,6 +2090,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Si solo tienes unas horas: capital + muelle + tapas.</li>
         <li>Si hay agenda local fuerte ese finde: prioriza evento + comida.</li>
       </ul>
+
+      <p>Para convertir abril en plan concreto, salta a <a href="/playas">las mejores playas de Huelva</a>, <a href="/fin-de-semana">planes de fin de semana</a> y <a href="/que-ver">qué ver en capital y provincia</a>. Ahí es donde decides de verdad.</p>
 
       <blockquote>Abril en Huelva no pide heroicidades. Pide elegir bien y salir. Con eso ya le sacas mucho partido al mes.</blockquote>
     `
