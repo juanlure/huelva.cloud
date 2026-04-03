@@ -58,6 +58,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Cómo organizarte el fin de semana</h2>
       <p>Si quieres combinar capital y provincia, el esquema más eficiente es: mercado o cultura en capital el sábado por la mañana, sierra o costa el domingo. Ahorra desplazamientos y aprovechas mejor el tiempo. Si quieres bajarlo a tierra, enlázalo con <a href="/fin-de-semana">la guía de fin de semana</a>, <a href="/que-ver">qué ver en Huelva</a> y <a href="/playas">las mejores playas</a> según el tipo de plan.</p>
 
+      <p>Y si el evento es solo la excusa para salir, completa luego con <a href="/donde-comer">dónde comer</a> o con <a href="/fin-de-semana">algún plan de fin de semana</a> que te redondee el día.</p>
+
       <blockquote>Consejo: llama antes de ir a cualquier evento. Los cambios de horario de última hora son más habituales de lo que parece en Huelva.</blockquote>
     `
   },
@@ -115,6 +117,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Verdades sobre el precio</h2>
       <p>Un hostal limpio en el centro te va a dar más alegrías que un hotel de cadena a 3 kilómetros. No pagues por el desayuno del hotel; sal a la calle, pide una tostada de pringá y un café, y ahórrate 15 pavos que luego te gastas en gambas. Y para decidir bien dónde te conviene dormir según el plan, combínalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a> y <a href="/donde-comer">dónde comer</a>.</p>
 
+      <p>La elección buena no es “hotel bonito”, es hotel útil para el plan. Decide con <a href="/alojarse">la guía de alojamiento</a> y luego ordénalo con <a href="/que-ver">qué ver</a>.</p>
+
       <blockquote>Consejo de local: El parking es clave. Si el hotel no tiene, asegúrate de que haya uno público cerca o prepárate para dar vueltas como un jartible.</blockquote>
     `
   },
@@ -152,6 +156,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <p>Si estás montando una escapada completa, enlaza con <a href="/fin-de-semana">planes para un fin de semana en Huelva</a> y con <a href="/que-ver">qué ver en la provincia</a> para no dejar Aracena aislada del resto del viaje.</p>
 
+      <p>Para no dejarla aislada como pieza suelta, mézclala con <a href="/fin-de-semana">una escapada de fin de semana</a> o con <a href="/que-ver">otros sitios potentes de la provincia</a>.</p>
+
       <blockquote>Aracena se disfruta sin prisa. Si intentas hacer todo en 4 horas, no disfrutas nada.</blockquote>
     `
   },
@@ -180,6 +186,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>A comer, pero con criterio</h2>
       <p>Alrededor de la plaza hay de todo. Desde sitios donde te clavan por ser el centro hasta bares de toda la vida en las calles que salen (Vázquez López o Rico). Si ves a muchos onubenses en una barra, entra. Si solo ves cámaras de fotos, sigue caminando.</p>
+
+      <p>Si vienes con mentalidad de recorrido, esta parada encaja sola dentro de <a href="/que-ver">qué ver en Huelva</a>. Y si estás montando una visita más completa, enlázala con <a href="/donde-comer">dónde comer</a> y <a href="/fin-de-semana">qué hacer un fin de semana</a>.</p>
 
       <blockquote>Dato real: La plaza ha cambiado mil veces. Algunos todavía echan de menos los jardines antiguos, otros aman el espacio peatonal. Así somos aquí.</blockquote>
     `
@@ -214,6 +222,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Lo que no encontrarás</h2>
       <p>No es un puerto turístico. No hay tiendas, ni restaurantes frente al agua, ni ferries para pasajeros con destinos interesantes. La actividad es industrial y el acceso a zonas operativas está restringido.</p>
 
+      <p>Para meter esta visita en una ruta que tenga sentido, enlázala con <a href="/que-ver">qué ver en Huelva</a>. Y si la idea es quedarte más de un día, <a href="/fin-de-semana">esta guía de fin de semana</a> te ordena bastante mejor el conjunto.</p>
+
       <blockquote>El puerto de Huelva es para entender, no para fotografiarse con un barco de crucero de fondo.</blockquote>
     `
   },
@@ -247,6 +257,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Mejor momento</h2>
       <p>Al atardecer, cuando la luz baja y colorea el río y las estructuras del puerto. Evitar el mediodía en verano: luz plana y demasiado contraste.</p>
+
+      <p>Si quieres encajar estos puntos dentro de una visita con lógica, combínalos con <a href="/que-ver">qué ver en Huelva</a> y con <a href="/fin-de-semana">ideas para un fin de semana</a> según vayas con más o menos tiempo.</p>
 
       <blockquote>La mejor vista de Huelva no es un mirador. Es el contraste entre el río, la marisma y la industria.</blockquote>
     `
@@ -412,6 +424,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Mejor época</h2>
       <p>Julio y agosto están saturados. Junio y septiembre son ideales: buen tiempo, menos gente, precios más razonables. Si estás comparando opciones, cruza esto con <a href="/playas">las mejores playas de Huelva</a> y con <a href="/fin-de-semana">ideas de fin de semana</a> para decidir si Punta Umbría es tu base o solo una parada.</p>
 
+      <p>Si estás comparando costa, no te quedes solo con esta pieza: abre también <a href="/playas">la guía general de playas</a> y decide con más criterio.</p>
+
       <blockquote>Punta Umbría no es destino exótico. Es la playa de los que viven en Huelva y quieren mar sin complicaciones.</blockquote>
     `
   },
@@ -519,6 +533,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <p>Una vez resuelto el trayecto, lo inteligente es enlazar transporte con plan real: revisa <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">ideas para un fin de semana</a> y <a href="/alojarse">dónde alojarse</a> para que llegar no sea lo único que tengas claro.</p>
 
+      <p>Eso también significa que, si vas a moverte por provincia, te conviene organizar antes <a href="/que-ver">qué ver</a> y si el viaje da para <a href="/fin-de-semana">una escapada de fin de semana</a> o solo para una visita rápida.</p>
+
       <blockquote>En Huelva, el coche es libertad. El transporte público existente, pero no da para todo.</blockquote>
     `
   },
@@ -591,6 +607,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li>Invierno: jersey, chaqueta impermeable, paraguas.</li>
         <li>Todo el año: calzado cómodo para caminar por ciudad.</li>
       </ul>
+
+      <p>Úsalo como filtro, no como curiosidad. Si hace calor serio, manda <a href="/playas">la costa</a>. Si quieres ciudad y paseo, revisa antes <a href="/que-ver">qué ver en Huelva</a>.</p>
 
       <blockquote>En Huelva, el clima es benevolente: nunca hace frío extremo, pero el verano puede ser implacable.</blockquote>
     `
@@ -673,6 +691,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <p>Si vienes a dormir en la capital o a hacer base desde aquí, combina esto con la guía de <a href="/alojarse">dónde alojarse en Huelva</a> y con <a href="/que-ver">qué ver en Huelva</a> para elegir zona con sentido y no perder media jornada en logística.</p>
+
+      <p>Y si vas a hacer base en ciudad, no planifiques aparcamiento aislado: decide primero <a href="/alojarse">dónde alojarte</a> y luego qué parte de <a href="/que-ver">Huelva quieres cubrir</a>.</p>
 
       <blockquote>En Huelva, aparcar es arte de paciencia. Quien espera, encuentra.</blockquote>
     `
@@ -923,6 +943,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Mejor época</h2>
       <p>Junio y septiembre son ideales: buen tiempo sin masificación. Julio y agosto están más llenos pero sigue siendo tranquilo comparado con otras zonas. Si quieres compararlo con otras zonas costeras, tira de <a href="/playas">la guía general de playas</a> y de <a href="/fin-de-semana">planes de fin de semana en Huelva</a>.</p>
+
+      <p>Si dudas entre Portil, Punta Umbría o algo más familiar, compara directamente en <a href="/playas">la guía de playas de Huelva</a> en vez de elegir a ciegas.</p>
 
       <blockquote>El Portil es la opción cuando quieres playa sin que te la quiten.</blockquote>
     `
@@ -1203,6 +1225,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <p>Si prefieres pasar de la teoría al sitio correcto, sigue por <a href="/donde-comer">dónde comer en Huelva</a> y luego afina con piezas concretas como <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a>, <a href="/article/coquinas-huelva-como-comer">coquinas</a> o <a href="/article/mejores-restaurantes-huelva">los mejores restaurantes de Huelva</a>.</p>
+
+      <p>Y si lo que quieres no es teoría sino sentarte bien, tira de <a href="/donde-comer">dónde comer en Huelva</a> y deja de improvisar como un turista castigado.</p>
 
       <blockquote>La gastronomía de Huelva no necesita chefs famosos. Necesita buen producto y manos que lo respeten.</blockquote>
     `
@@ -1918,6 +1942,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <p>Para encajarlo dentro de una visita más amplia, apóyate en <a href="/fin-de-semana">la guía de fin de semana</a> y en <a href="/que-ver">qué ver en Huelva y provincia</a>. Así conviertes pueblos sueltos en un plan con lógica.</p>
 
+      <p>Y si quieres convertir pueblos bonitos en ruta útil, enlázalos con <a href="/fin-de-semana">planes de fin de semana</a> y con <a href="/que-ver">qué ver en Huelva y provincia</a>.</p>
+
       <blockquote>La Sierra de Huelva no se disfruta corriendo. Se disfruta comiendo, andando y dejando que el día vaya un poco más lento. Rarísimo concepto, ya.</blockquote>
     `
   },
@@ -1951,6 +1977,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Zonas y lógica</h2>
       <p>Centro para empezar. Barrios o zonas menos obvias para afinar. Costa si el día pide mar. No hay un único “mejor sitio”; hay contextos. Lo inteligente es decidir según hambre, hora y compañía.</p>
+
+      <p>Si quieres ir un paso más allá de la tapa suelta, remata con <a href="/donde-comer">la guía de dónde comer en Huelva</a>, que es donde separas picoteo de comida seria.</p>
 
       <blockquote>La mejor ruta de tapas en Huelva no la gana el sitio más mono. La gana el que te hace pedir una ronda más porque está todo bueno. Fin del misterio.</blockquote>
     `
@@ -2092,6 +2120,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <p>Para convertir abril en plan concreto, salta a <a href="/playas">las mejores playas de Huelva</a>, <a href="/fin-de-semana">planes de fin de semana</a> y <a href="/que-ver">qué ver en capital y provincia</a>. Ahí es donde decides de verdad.</p>
+
+      <p>Y elegir bien aquí significa una cosa: si sale día de costa, abre <a href="/playas">playas</a>; si sale día de recorrido, abre <a href="/que-ver">qué ver en Huelva</a>.</p>
 
       <blockquote>Abril en Huelva no pide heroicidades. Pide elegir bien y salir. Con eso ya le sacas mucho partido al mes.</blockquote>
     `
