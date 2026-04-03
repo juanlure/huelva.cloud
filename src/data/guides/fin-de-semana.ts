@@ -198,9 +198,9 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
         href: '/que-ver',
       },
       {
-        title: 'Dónde comer en Huelva',
-        description: 'Para no desperdiciar una de las piezas fuertes del fin de semana.',
-        href: '/donde-comer',
+        title: 'Playas de Huelva',
+        description: 'Si quieres meter costa sin romper el ritmo del viaje.',
+        href: '/playas',
       },
     ],
   },

@@ -180,8 +180,8 @@ export const dondeComerGuideData: AlojarseGuideData = {
       href: '/que-ver',
     },
     secondaryAction: {
-      label: 'Dónde alojarse en Huelva',
-      href: '/alojarse',
+      label: 'Fin de semana en Huelva',
+      href: '/fin-de-semana',
     },
   },
   relatedGuides: {
@@ -198,9 +198,9 @@ export const dondeComerGuideData: AlojarseGuideData = {
         href: '/que-ver',
       },
       {
-        title: 'Playas de Huelva',
-        description: 'Para elegir costa según el tipo de día que quieres tener.',
-        href: '/playas',
+        title: 'Fin de semana en Huelva',
+        description: 'Para integrar bien comida, paseo y ritmo de escapada.',
+        href: '/fin-de-semana',
       },
     ],
   },
