@@ -274,12 +274,28 @@
   opacity: 1;
 }
 
+.newsImageWrap,
 .newsMeta,
 .newsTitle,
 .newsExcerpt,
 .newsCta {
   position: relative;
   z-index: 1;
+}
+
+.newsImageWrap {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  margin-bottom: 1.2rem;
+  aspect-ratio: 16 / 8;
+  background: linear-gradient(135deg, rgba(212,85,58,0.08), rgba(15,26,36,0.04));
+}
+
+.newsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .newsMeta {

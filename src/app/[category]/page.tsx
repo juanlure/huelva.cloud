@@ -279,6 +279,16 @@ export default async function CategoryPage({ params }: PageProps) {
                           href={`/article/${article.slug}`}
                           className={styles.newsItem}
                         >
+                          {article.image && (
+                            <div className={styles.newsImageWrap}>
+                              <img
+                                src={article.image}
+                                alt={article.title}
+                                className={styles.newsImage}
+                                loading={idx === 0 ? 'eager' : 'lazy'}
+                              />
+                            </div>
+                          )}
                           <div className={styles.newsMeta}>
                             <span className={styles.newsSource}>{article.source || 'Redacción Huelva.cloud'}</span>
                             <span className={styles.newsDate}>{article.date}</span>

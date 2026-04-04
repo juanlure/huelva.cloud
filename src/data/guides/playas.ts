@@ -2,45 +2,45 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const playasGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium · capital',
-    title: 'Playas de Huelva: cuál elegir sin acabar en la que menos te convenía',
+    eyebrow: 'Guía premium · costa de Huelva',
+    title: 'Playas de Huelva: qué playa elegir según el plan, sin comerte una hora de postureo inútil',
     subtitle:
-      'No todas las playas te sirven para lo mismo. Aquí tienes una guía pensada para decidir según el tipo de día que buscas: más salvaje, más cómodo, más familiar o más de paseo y desconexión.',
+      'Si dudas entre Punta Umbría, El Portil, Mazagón, Cuesta Maneli, Matalascañas, Islantilla o Isla Canela, deja de elegir por fama. Cada una sirve para un día distinto y aquí va la diferencia de verdad.',
     quickFacts: [
-      { label: 'Si quieres ir a tiro hecho', value: 'Elige por tipo de plan' },
-      { label: 'Error típico', value: 'Elegir por fama y no por encaje' },
-      { label: 'Clave real', value: 'La mejor playa depende del día' },
+      { label: 'Si quieres ir a tiro hecho', value: 'Punta Umbría o El Portil' },
+      { label: 'Si buscas algo más salvaje', value: 'Cuesta Maneli o Mazagón' },
+      { label: 'Si vas en escapada larga', value: 'Islantilla o Isla Canela' },
     ],
   },
   toc: [
     { id: 'decision-rapida', label: 'Decisión rápida' },
-    { id: 'capital-o-costa', label: 'Qué cambia de verdad' },
+    { id: 'capital-o-costa', label: 'Comparativa real' },
     { id: 'segun-tu-viaje', label: 'Según tu plan' },
     { id: 'mi-recomendacion', label: 'Mi recomendación' },
     { id: 'errores-tipicos', label: 'Errores típicos' },
-    { id: 'tipos-alojamiento', label: 'Tipos de playa' },
+    { id: 'tipos-alojamiento', label: 'Playas concretas' },
     { id: 'faq', label: 'FAQ' },
     { id: 'reservar', label: 'Siguiente paso' },
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
-    title: 'La respuesta rápida, antes de liarte con listas infinitas',
-    intro: 'Si quieres acertar antes de abrir veinte pestañas, empieza aquí.',
+    title: 'La respuesta rápida, con nombres y apellidos',
+    intro: 'Si no quieres tragarte una comparativa eterna, empieza aquí.',
     items: [
       {
-        title: 'Elige por experiencia, no por nombre',
+        title: 'Para un día fácil desde Huelva capital: Punta Umbría',
         description:
-          'Una playa famosa no siempre es la mejor para ti. Lo que manda es el tipo de día que quieres tener.',
+          'Es la opción más obvia por cercanía, logística y comodidad. No siempre es la más bonita, pero sí muchas veces la más práctica.',
       },
       {
-        title: 'No todas compensan igual según la logística',
+        title: 'Para equilibrio entre comodidad y mejor entorno: El Portil',
         description:
-          'Acceso, ambiente, comodidad y ritmo cambian mucho más de lo que parece cuando comparas playas sobre el mapa.',
+          'Suele encajar mejor si quieres costa agradable, menos sensación de agobio y un día más redondo sin complicarte demasiado.',
       },
       {
-        title: 'Menos ambición, mejor elección',
+        title: 'Para sensación más salvaje: Cuesta Maneli o Mazagón',
         description:
-          'Intentar probar muchas playas en poco tiempo suele dejarte con trayectos, cansancio y menos disfrute real.',
+          'Aquí sube la épica y baja la comodidad. Compensan cuando buscas naturaleza y no cuando vas con prisas, niños o cero margen de error.',
       },
     ],
   },
@@ -48,104 +48,134 @@ export const playasGuideData: AlojarseGuideData = {
     sectionId: 'capital-o-costa',
     title: 'Qué cambia de verdad entre unas playas y otras',
     intro:
-      'La diferencia no es solo estética. Cambian el ritmo, el acceso, el tipo de gente, la comodidad y lo bien que encajan con tu día.',
+      'No es solo una cuestión de arena. Cambian accesos, ambiente, servicios, tipo de público y el esfuerzo que exige que el día salga bien.',
     cards: [
       {
-        name: 'Playas para ir cómodo',
-        bestFor: 'Días fáciles, familia, logística sencilla y cero complicaciones',
-        good: ['Más accesibles', 'Más cómodas para pasar horas', 'Menos fricción al llegar y montar el día'],
-        tradeoffs: ['Pueden sentirse menos salvajes', 'A veces tienen menos sensación de descubrimiento'],
-        mobility: 'Alta. Son las que mejor funcionan cuando quieres un día fluido y poco drama.',
+        name: 'Punta Umbría y La Bota',
+        bestFor: 'Escapadas rápidas desde capital, familias y días donde manda la comodidad',
+        good: ['Llegas fácil', 'Mucha oferta alrededor', 'Apuesta simple cuando no quieres experimentar'],
+        tradeoffs: ['Pierde encanto frente a opciones más abiertas', 'En días fuertes puede sentirse más masificada'],
+        mobility: 'Alta. Sirve muy bien cuando quieres resolver el plan rápido y sin drama.',
         verdict:
-          'Son la mejor jugada cuando quieres disfrutar sin convertir la playa en una operación logística.',
+          'No gana por mística; gana porque muchas veces hace bien el trabajo práctico.',
       },
       {
-        name: 'Playas con más carácter',
-        bestFor: 'Quien busca una sensación más abierta, más natural o menos domesticada',
-        good: ['Más personalidad', 'Más sensación de escapada', 'Más premio si conectan contigo'],
-        tradeoffs: ['No siempre son las más cómodas', 'Exigen encajar mejor expectativas y plan'],
-        mobility: 'Media. Funcionan mejor cuando ya sabes qué tipo de experiencia estás persiguiendo.',
+        name: 'El Portil y Nuevo Portil',
+        bestFor: 'Quien quiere una playa amable, más equilibrada y con mejor sensación de escapada',
+        good: ['Más aire de descanso', 'Suele sentirse más agradable', 'Buena mezcla de acceso y atmósfera'],
+        tradeoffs: ['No tiene la fuerza salvaje de las más naturales', 'Tampoco es la más diferencial si buscas paisaje bruto'],
+        mobility: 'Alta-media. Muy buena cuando buscas comodidad sin caer en lo demasiado obvio.',
         verdict:
-          'Pueden ser memorables, pero no son automáticamente mejores: solo ganan cuando encajan con el día correcto.',
+          'Si no sabes cuál elegir, El Portil suele ser una decisión bastante defendible.',
+      },
+      {
+        name: 'Mazagón, Cuesta Maneli y entorno de Doñana',
+        bestFor: 'Días de naturaleza, amplitud y sensación de playa menos domesticada',
+        good: ['Más carácter', 'Más paisaje', 'Más sensación de costa potente de verdad'],
+        tradeoffs: ['Acceso menos cómodo', 'No siempre es la mejor jugada para un día rápido o familiar'],
+        mobility: 'Media. Compensa cuando el plan es precisamente buscar esa atmósfera.',
+        verdict:
+          'Cuando encaja, te deja mejor recuerdo. Cuando no encaja, te mete peajes innecesarios.',
+      },
+      {
+        name: 'Matalascañas, Islantilla e Isla Canela',
+        bestFor: 'Estancias más largas, escapadas completas o quien quiere combinar playa con más servicios',
+        good: ['Más infraestructura', 'Más opciones alrededor', 'Buenas para armar plan de varios días'],
+        tradeoffs: ['No todas transmiten autenticidad', 'Algunas funcionan mejor como base que como playa memorable'],
+        mobility: 'Alta si haces escapada, menor si solo buscas una playa top sin más.',
+        verdict:
+          'Funcionan bien cuando la playa es una pieza del viaje, no la única decisión del día.',
       },
     ],
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
     title: 'Qué playa te encaja según el tipo de día que quieres tener',
-    intro: 'La mejor playa no es una medalla universal. Es la que hace bien el trabajo que tú necesitas ese día.',
+    intro: 'La buena elección sale de tu plan, no del ranking genérico de internet.',
     options: [
       {
-        label: 'Día fácil y sin complicarte',
-        audience: 'Quieres comodidad, acceso sencillo y un plan que fluya solo',
-        recommendation: 'Prioriza playas cómodas y fáciles de gestionar. En este caso, la fricción importa más que la épica.',
+        label: 'Voy desde Huelva capital y quiero cero lío',
+        audience: 'Buscas una decisión simple, rápida y razonable',
+        recommendation: 'Empieza por Punta Umbría. Si quieres un punto más agradable sin complicarte, mira El Portil.',
       },
       {
-        label: 'Día más salvaje o abierto',
-        audience: 'Buscas más sensación de naturaleza y menos domesticación',
-        recommendation: 'Ve a playas con más carácter, pero hazlo sabiendo que cambias comodidad por atmósfera.',
+        label: 'Quiero más naturaleza y menos paseo marítimo',
+        audience: 'Te importa más la sensación de costa abierta que la logística',
+        recommendation: 'Mazagón y Cuesta Maneli tienen más sentido para ti que una playa urbana o hiper cómoda.',
       },
       {
-        label: 'Plan en pareja o escapada tranquila',
-        audience: 'Te importa tanto el ritmo y el ambiente como la propia arena',
-        recommendation: 'Elige playas que permitan pasear, bajar revoluciones y cerrar el día con buena sensación, no solo tumbarte al sol.',
+        label: 'Voy con familia o necesito una apuesta segura',
+        audience: 'No quieres jugar a adivinar ni pelearte con un acceso incómodo',
+        recommendation: 'Punta Umbría, El Portil o Islantilla suelen darte un día más fácil y más defendible.',
       },
       {
-        label: 'Poco tiempo y cero margen de error',
-        audience: 'Necesitas una apuesta segura y defendible',
-        recommendation: 'No experimentes de más. Elige una playa simple, agradable y sin peajes logísticos raros.',
+        label: 'Estoy montando una escapada más completa',
+        audience: 'La playa es importante, pero también el entorno, la estancia y el ritmo del viaje',
+        recommendation: 'Islantilla, Isla Canela o incluso Matalascañas tienen más sentido como parte de una escapada de varios días.',
       },
     ],
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi recomendación editorial, sin venderte “la mejor playa” como si fuera universal',
+    title: 'Mi recomendación editorial, sin venderte una playa universal porque eso es humo',
     body:
-      'Empieza decidiendo qué tipo de día quieres tener y luego elige la playa. Huelva tiene costa potente, pero la decisión buena no sale de buscar la más famosa: sale de encajar bien comodidad, atmósfera y tipo de plan.',
+      'Si vienes desde Huelva capital y quieres acertar rápido, empieza por Punta Umbría o El Portil. Si buscas costa con más carácter, mira Mazagón o Cuesta Maneli. Y si estás montando una escapada más larga, Islantilla o Isla Canela suelen tener más sentido que obsesionarte con “la mejor playa”.',
     highlight:
-      'La mejor playa no es la más nombrada. Es la que hace que tu día salga redondo.',
+      'La mejor playa de Huelva no existe. Existen playas que encajan mejor o peor con el día que quieres tener.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
     title: 'Errores típicos al elegir playa en Huelva',
-    intro: 'Aquí es donde mucha gente se monta un día peor del que podría haber tenido.',
+    intro: 'Aquí es donde mucha gente se fastidia sola el día.',
     mistakes: [
       {
-        title: 'Elegir por fama',
-        description: 'La playa más conocida no siempre es la más adecuada para tu ritmo, tu compañía o tu logística.',
+        title: 'Elegir Matalascañas o Punta Umbría solo porque son las más conocidas',
+        description: 'La fama no resuelve si tú buscabas otra cosa: menos gente, más paisaje o un acceso más amable.',
       },
       {
-        title: 'No pensar el acceso y el peaje real',
-        description: 'Lo que parece una gran idea en el mapa puede convertirse en más roce del que te apetece ese día.',
+        title: 'Ir a Cuesta Maneli como si fuera una playa comodísima para cualquiera',
+        description: 'Tiene encanto precisamente porque exige más. Si vas con la expectativa equivocada, la experiencia cae.',
       },
       {
-        title: 'Querer encadenar demasiadas playas',
-        description: 'Eso suele producir un día fragmentado y cansino. Mejor una buena elección que tres medias.',
+        title: 'No separar “playa bonita” de “playa que me conviene hoy”',
+        description: 'Mazagón puede gustarte más sobre el papel, pero para un día rápido quizá te compensa bastante más El Portil.',
       },
     ],
   },
   accommodationTypes: {
     sectionId: 'tipos-alojamiento',
-    title: 'Qué tipo de playa te interesa de verdad',
-    intro: 'No todas sirven para lo mismo, aunque en fotos muchas parezcan competir en la misma liga.',
+    title: 'Playas concretas que sí conviene tener en el radar',
+    intro: 'Aquí ya no hablamos en abstracto. Hablamos de playas reales y de cuándo tienen sentido.',
     cards: [
       {
-        title: 'Playa cómoda',
-        bestFor: 'Días fáciles, familia y planes donde importa la logística',
-        pros: ['Más sencilla', 'Más previsible', 'Más fácil de disfrutar sin esfuerzo'],
-        cons: ['Puede sentirse menos especial si buscas algo más abierto'],
+        title: 'Punta Umbría',
+        bestFor: 'Día sencillo, familia, cercanía y logística fácil',
+        pros: ['Muy práctica', 'Accesible', 'Buena para no fallar en un plan simple'],
+        cons: ['Menos especial si buscas paisaje más potente o sensación más salvaje'],
       },
       {
-        title: 'Playa con carácter',
-        bestFor: 'Quien quiere más sensación de escapada o naturaleza',
-        pros: ['Más personalidad', 'Más atmósfera', 'Más premio si buscas eso exactamente'],
-        cons: ['Suele exigir más tolerancia a incomodidades o peajes'],
+        title: 'El Portil / Nuevo Portil',
+        bestFor: 'Quien quiere equilibrio entre comodidad y mejor ambiente de escapada',
+        pros: ['Agradable', 'Bastante defendible para casi todo', 'Menos obvia que Punta Umbría'],
+        cons: ['No es la más espectacular si buscas una experiencia muy diferencial'],
       },
       {
-        title: 'Playa de paseo y ritmo',
-        bestFor: 'Planes tranquilos donde importa tanto el ambiente como bañarse',
-        pros: ['Más disfrutable como experiencia completa', 'Mejor para bajar revoluciones', 'Encaja bien en escapadas con más capas'],
-        cons: ['No siempre es la opción más práctica si vas con idea muy funcional'],
+        title: 'Mazagón',
+        bestFor: 'Más amplitud, más costa abierta y más sensación de naturaleza',
+        pros: ['Más carácter', 'Más paisaje', 'Mejor recuerdo si ese era tu plan'],
+        cons: ['No siempre compensa para un día rápido o muy cómodo'],
+      },
+      {
+        title: 'Cuesta Maneli',
+        bestFor: 'Quien prioriza entorno natural y no necesita una playa “fácil”',
+        pros: ['Tiene personalidad', 'Se siente distinta', 'Premia si buscas costa menos domesticada'],
+        cons: ['No es para cualquiera ni para cualquier día'],
+      },
+      {
+        title: 'Islantilla / Isla Canela',
+        bestFor: 'Escapadas más largas y planes donde playa + estancia cuentan juntos',
+        pros: ['Buenas como base', 'Más servicios', 'Encajan bien en viajes de varios días'],
+        cons: ['No siempre son las que más enamoran si solo valoras la playa aislada'],
       },
     ],
   },
@@ -156,32 +186,32 @@ export const playasGuideData: AlojarseGuideData = {
       {
         question: '¿Cuál es la mejor playa de Huelva?',
         answer:
-          'La pregunta buena no es esa. La pregunta buena es qué tipo de día quieres tener. La mejor cambia según busques comodidad, ambiente, naturaleza o facilidad.',
+          'Depende del plan. Para comodidad rápida, Punta Umbría o El Portil. Para más naturaleza, Mazagón o Cuesta Maneli. Para escapada larga, Islantilla o Isla Canela.',
       },
       {
-        question: '¿Compensa visitar varias playas en un mismo día?',
+        question: '¿Qué playa está mejor si voy desde Huelva capital?',
         answer:
-          'Normalmente no. Salvo que tengas muy claro el plan, suele funcionar mejor elegir una bien y disfrutarla de verdad.',
+          'Punta Umbría suele ser la jugada más simple. El Portil también compite muy bien si quieres un punto más agradable.',
       },
       {
-        question: '¿Hay mucha diferencia entre unas y otras?',
+        question: '¿Qué playa elegir si quiero algo más salvaje?',
         answer:
-          'Sí. Cambian bastante el tono del día, la comodidad, el ambiente y la sensación final. Elegir bien importa más de lo que parece.',
+          'Mazagón y sobre todo Cuesta Maneli te encajan más que una playa urbana o muy domesticada.',
       },
     ],
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Siguiente paso: elige el tipo de día y cierra el plan',
+    title: 'Siguiente paso: convierte la playa en un plan bueno de verdad',
     body:
-      'Si ya sabes qué experiencia quieres, no necesitas más ruido. Necesitas una decisión limpia, una playa que encaje y una escapada sin trayectos absurdos.',
+      'Ya tienes claro qué zona de costa te encaja. Ahora toca completar la escapada con una base cómoda, comida decente y un plan que no se caiga por mala logística.',
     primaryAction: {
       label: 'Dónde alojarse en Huelva',
       href: '/alojarse',
     },
     secondaryAction: {
-      label: 'Qué ver en Huelva',
-      href: '/que-ver',
+      label: 'Fin de semana en Huelva',
+      href: '/fin-de-semana',
     },
   },
   relatedGuides: {
@@ -189,17 +219,17 @@ export const playasGuideData: AlojarseGuideData = {
     guides: [
       {
         title: 'Dónde alojarse en Huelva',
-        description: 'La base correcta cambia todo el viaje.',
+        description: 'La base correcta cambia bastante más de lo que parece.',
         href: '/alojarse',
       },
       {
         title: 'Fin de semana en Huelva',
-        description: 'Para encajar la costa dentro de una escapada que no se rompa.',
+        description: 'Para encajar costa, ciudad y ritmo sin improvisar mal.',
         href: '/fin-de-semana',
       },
       {
         title: 'Dónde comer en Huelva',
-        description: 'Porque el día bueno no acaba solo en la arena.',
+        description: 'Porque una buena playa no arregla una comida mediocre.',
         href: '/donde-comer',
       },
     ],
