@@ -6,6 +6,7 @@ import InteractiveContainer from '@/components/InteractiveContainer';
 import AuthorBox from '@/components/AuthorBox';
 import ArticleRenderer from '@/components/article/ArticleRenderer';
 import StrategicGuideCTA from '@/components/article/StrategicGuideCTA';
+import ArticleHeroImage from '@/components/article/ArticleHeroImage';
 import { Clock, ArrowLeft, Link2 } from 'lucide-react';
 import styles from './ArticlePage.module.css';
 import type { Metadata } from 'next';
@@ -242,17 +243,10 @@ export default async function ArticlePage({ params }: PageProps) {
         {/* Hero Image (solo si existe) */}
         {article.image && (
           <figure className={styles.heroImage}>
-            <img
+            <ArticleHeroImage
               src={article.image}
               alt={article.title}
               className={styles.heroImg}
-              loading="eager"
-              onError={(event) => {
-                const target = event.currentTarget;
-                if (target.dataset.fallbackApplied === 'true') return;
-                target.dataset.fallbackApplied = 'true';
-                target.src = '/images/guides/huelva-muelle-tinto.jpg';
-              }}
             />
           </figure>
         )}
