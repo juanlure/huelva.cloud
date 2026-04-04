@@ -7,70 +7,78 @@ function hashString(input: string): number {
   return Math.abs(hash);
 }
 
-function normalizeTitle(title: string): string {
-  return (title || '')
-    .replace(/[|:;\-–—].*$/, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+function escapeXml(value: string): string {
+  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function buildShortHeadline(title: string, maxLineLength = 18): string[] {
-  const cleaned = normalizeTitle(title);
+function truncate(value: string, maxLength: number): string {
+  if (value.length <= maxLength) return value;
+  return `${value.slice(0, maxLength - 1).trim()}…`;
+}
+
+function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
+  const cleaned = (text || '').replace(/\s+/g, ' ').trim();
   if (!cleaned) return ['Huelva.cloud'];
 
-  const words = cleaned.split(' ').filter(Boolean);
+  const words = cleaned.split(' ');
   const lines: string[] = [];
   let current = '';
-  let usedWords = 0;
 
   for (const word of words) {
     const candidate = current ? `${current} ${word}` : word;
 
     if (candidate.length <= maxLineLength) {
       current = candidate;
-      usedWords += 1;
       continue;
     }
 
     if (current) {
       lines.push(current);
-      current = word.length <= maxLineLength ? word : `${word.slice(0, maxLineLength - 1)}…`;
-      usedWords += 1;
+      current = word;
     } else {
-      lines.push(`${word.slice(0, maxLineLength - 1)}…`);
-      usedWords += 1;
+      lines.push(truncate(word, maxLineLength));
       current = '';
     }
 
-    if (lines.length === 2) {
-      current = '';
+    if (lines.length === maxLines - 1) {
       break;
     }
   }
 
-  if (current && lines.length < 2) {
+  if (lines.length < maxLines && current) {
     lines.push(current);
   }
 
-  const hasMoreWords = usedWords < words.length;
+  if (lines.length === 0) return [truncate(cleaned, maxLineLength)];
 
-  if (lines.length === 0) {
-    return [cleaned.slice(0, maxLineLength)];
+  const consumed = lines.join(' ').length;
+  if (cleaned.length > consumed && lines.length > 0) {
+    lines[lines.length - 1] = truncate(lines[lines.length - 1], maxLineLength);
   }
 
-  if (hasMoreWords) {
-    const lastIndex = Math.min(lines.length, 2) - 1;
-    const trimmed = lines[lastIndex].replace(/…$/, '');
-    lines[lastIndex] = trimmed.length >= maxLineLength
-      ? `${trimmed.slice(0, maxLineLength - 1)}…`
-      : `${trimmed}…`;
-  }
-
-  return lines.slice(0, 2);
+  return lines.slice(0, maxLines);
 }
 
-function escapeXml(value: string): string {
-  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+function buildNewsHook(title: string, source?: string): string {
+  const lower = `${title} ${source || ''}`.toLowerCase();
+
+  if (/(adamuz|ayuntamiento|causa|accidente)/.test(lower)) {
+    return 'Huelva no quiere salir de la causa';
+  }
+
+  if (/(estafa|detenido|ayamonte)/.test(lower)) {
+    return 'La estafa en Ayamonte ya tiene detenido';
+  }
+
+  if (/(suces|polic|guardia civil|juzgado|tribunal)/.test(lower)) {
+    return 'Lo importante empieza después del titular';
+  }
+
+  if (/(playa|verano|turismo|hotel|restaurante|chiringuito)/.test(lower)) {
+    return 'Lo que cambia aquí sí te afecta si vienes';
+  }
+
+  return truncate(title.replace(/\s+/g, ' ').trim(), 42);
 }
 
 export function generateNewsArtDataUri(title: string, source?: string) {
@@ -83,9 +91,10 @@ export function generateNewsArtDataUri(title: string, source?: string) {
     ['#0B1F2A', '#14B8A6', '#F97316'],
   ];
   const palette = palettes[seed % palettes.length];
-  const [line1, line2] = buildShortHeadline(title, 18);
-  const safeTitle1 = escapeXml(line1 || 'Huelva.cloud');
-  const safeTitle2 = escapeXml(line2 || '');
+  const hook = buildNewsHook(title, source);
+  const headlineLines = splitTitle(hook, 24, 2);
+  const safeTitle1 = escapeXml(headlineLines[0] || 'Huelva.cloud');
+  const safeTitle2 = escapeXml(headlineLines[1] || '');
   const safeSource = escapeXml(source || 'Huelva.cloud');
 
   const svg = `
@@ -111,11 +120,12 @@ export function generateNewsArtDataUri(title: string, source?: string) {
       <rect x="88" y="88" width="208" height="48" rx="24" fill="white" fill-opacity="0.14" />
       <text x="118" y="119" fill="white" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="3">NOTICIAS</text>
 
-      <text x="88" y="560" fill="white" font-size="104" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
-      ${safeTitle2 ? `<text x="88" y="674" fill="white" font-size="104" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
+      <text x="88" y="520" fill="white" font-size="96" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
+      ${safeTitle2 ? `<text x="88" y="628" fill="white" font-size="96" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
 
-      <text x="92" y="774" fill="rgba(255,255,255,0.82)" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Provincia de Huelva · ${safeSource}</text>
-      <text x="92" y="826" fill="rgba(255,255,255,0.62)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>
+      <text x="92" y="736" fill="rgba(255,255,255,0.90)" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="600">Una lectura rápida para entender qué cambia</text>
+      <text x="92" y="790" fill="rgba(255,255,255,0.82)" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Provincia de Huelva · ${safeSource}</text>
+      <text x="92" y="838" fill="rgba(255,255,255,0.62)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>
     </svg>
   `.trim();
 
