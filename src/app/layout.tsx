@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CollabBanner from "@/components/CollabBanner";
 
-// Premium typography system - avoiding generic Inter/Playfair
 const instrument = Instrument_Serif({
   subsets: ["latin"],
   variable: '--font-display',
@@ -73,7 +72,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-
 };
 
 export default function RootLayout({
@@ -81,7 +79,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // SEO-Geo: Structured Data for the entire site
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -110,9 +107,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <CollabBanner />
         <Header />
-        {children}
+        <main className="pt-[76px] md:pt-[88px]">
+          <CollabBanner />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

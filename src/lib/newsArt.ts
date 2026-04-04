@@ -7,19 +7,55 @@ function hashString(input: string): number {
   return Math.abs(hash);
 }
 
-function splitTitle(title: string): string[] {
-  const cleaned = (title || '').replace(/\s+/g, ' ').trim();
-  if (!cleaned) return ['Huelva.cloud', 'Noticias'];
-
-  const words = cleaned.split(' ');
-  const midpoint = Math.ceil(words.length / 2);
-  const first = words.slice(0, midpoint).join(' ');
-  const second = words.slice(midpoint).join(' ');
-  return second ? [first, second] : [first];
+function normalizeTitle(title: string): string {
+  return (title || '')
+    .replace(/[|:;\-–—].*$/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-function truncate(line: string, max = 28): string {
-  return line.length > max ? `${line.slice(0, max - 1)}…` : line;
+function buildShortHeadline(title: string, max = 26): string[] {
+  const cleaned = normalizeTitle(title);
+  if (!cleaned) return ['Huelva.cloud'];
+
+  const words = cleaned.split(' ');
+  const lines: string[] = [];
+  let current = '';
+
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length <= max) {
+      current = candidate;
+      continue;
+    }
+
+    if (current) {
+      lines.push(current);
+      current = word;
+    } else {
+      lines.push(word.slice(0, max));
+      current = '';
+    }
+
+    if (lines.length === 2) break;
+  }
+
+  if (current && lines.length < 2) lines.push(current);
+
+  if (lines.length === 0) return [cleaned.slice(0, max)];
+
+  if (lines.length === 2) {
+    const remainingWords = words.join(' ').slice(`${lines[0]} ${lines[1]}`.trim().length).trim();
+    if (remainingWords) {
+      lines[1] = `${lines[1].slice(0, Math.max(0, max - 1))}…`;
+    }
+  }
+
+  return lines;
+}
+
+function escapeXml(value: string): string {
+  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 export function generateNewsArtDataUri(title: string, source?: string) {
@@ -32,10 +68,10 @@ export function generateNewsArtDataUri(title: string, source?: string) {
     ['#0B1F2A', '#14B8A6', '#F97316'],
   ];
   const palette = palettes[seed % palettes.length];
-  const [line1, line2] = splitTitle(title).map((line) => truncate(line, 30));
-  const safeTitle1 = line1.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const safeTitle2 = (line2 || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const safeSource = (source || 'Huelva.cloud').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const [line1, line2] = buildShortHeadline(title, 24);
+  const safeTitle1 = escapeXml(line1 || 'Huelva.cloud');
+  const safeTitle2 = escapeXml(line2 || '');
+  const safeSource = escapeXml(source || 'Huelva.cloud');
 
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
@@ -60,8 +96,8 @@ export function generateNewsArtDataUri(title: string, source?: string) {
       <rect x="88" y="88" width="208" height="48" rx="24" fill="white" fill-opacity="0.14" />
       <text x="118" y="119" fill="white" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="3">NOTICIAS</text>
 
-      <text x="88" y="560" fill="white" font-size="84" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
-      ${safeTitle2 ? `<text x="88" y="656" fill="white" font-size="84" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
+      <text x="88" y="540" fill="white" font-size="92" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
+      ${safeTitle2 ? `<text x="88" y="648" fill="white" font-size="92" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
 
       <text x="92" y="774" fill="rgba(255,255,255,0.82)" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Provincia de Huelva · ${safeSource}</text>
       <text x="92" y="826" fill="rgba(255,255,255,0.62)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>
