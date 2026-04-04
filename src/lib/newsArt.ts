@@ -66,19 +66,45 @@ function buildNewsHook(title: string, source?: string): string {
     return 'Huelva no quiere salir de la causa';
   }
 
-  if (/(estafa|detenido|ayamonte)/.test(lower)) {
-    return 'La estafa en Ayamonte ya tiene detenido';
+  if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
+    return 'La estafa en Ayamonte ya tiene un detenido';
   }
 
-  if (/(suces|polic|guardia civil|juzgado|tribunal)/.test(lower)) {
-    return 'Lo importante empieza después del titular';
+  if (/(juzgado|tribunal|audiencia|fiscal[ií]a|recurso)/.test(lower)) {
+    return 'Aquí lo importante es quién mueve ficha ahora';
+  }
+
+  if (/(polic|guardia civil|suces|investigaci[oó]n|arrest)/.test(lower)) {
+    return 'El caso da un giro, pero faltan piezas';
   }
 
   if (/(playa|verano|turismo|hotel|restaurante|chiringuito)/.test(lower)) {
     return 'Lo que cambia aquí sí te afecta si vienes';
   }
 
+  if (/(ayuntamiento|pleno|obra|barrio|calle|provincia)/.test(lower)) {
+    return 'Esto va más allá del titular fácil';
+  }
+
   return truncate(title.replace(/\s+/g, ' ').trim(), 42);
+}
+
+function buildSupportLine(title: string, source?: string): string {
+  const lower = `${title} ${source || ''}`.toLowerCase();
+
+  if (/(adamuz|causa|accidente|recurso)/.test(lower)) {
+    return 'Una lectura rápida para entender quién intenta seguir dentro';
+  }
+
+  if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
+    return 'Una lectura rápida para entender qué se sabe y qué falta';
+  }
+
+  if (/(polic|guardia civil|suces|juzgado|tribunal)/.test(lower)) {
+    return 'Una lectura rápida para separar hechos, ruido y consecuencias';
+  }
+
+  return 'Una lectura rápida para entender qué cambia';
 }
 
 export function generateNewsArtDataUri(title: string, source?: string) {
@@ -92,9 +118,11 @@ export function generateNewsArtDataUri(title: string, source?: string) {
   ];
   const palette = palettes[seed % palettes.length];
   const hook = buildNewsHook(title, source);
+  const supportLine = buildSupportLine(title, source);
   const headlineLines = splitTitle(hook, 24, 2);
   const safeTitle1 = escapeXml(headlineLines[0] || 'Huelva.cloud');
   const safeTitle2 = escapeXml(headlineLines[1] || '');
+  const safeSupportLine = escapeXml(supportLine);
   const safeSource = escapeXml(source || 'Huelva.cloud');
 
   const svg = `
@@ -123,7 +151,7 @@ export function generateNewsArtDataUri(title: string, source?: string) {
       <text x="88" y="520" fill="white" font-size="96" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
       ${safeTitle2 ? `<text x="88" y="628" fill="white" font-size="96" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
 
-      <text x="92" y="736" fill="rgba(255,255,255,0.90)" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="600">Una lectura rápida para entender qué cambia</text>
+      <text x="92" y="736" fill="rgba(255,255,255,0.90)" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="600">${safeSupportLine}</text>
       <text x="92" y="790" fill="rgba(255,255,255,0.82)" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Provincia de Huelva · ${safeSource}</text>
       <text x="92" y="838" fill="rgba(255,255,255,0.62)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>
     </svg>
