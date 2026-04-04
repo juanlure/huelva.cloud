@@ -53,9 +53,9 @@ export default async function Home() {
             <div className="rounded-[1.75rem] border border-terracotta/20 bg-gradient-to-br from-terracotta to-orange-600 text-white p-6 shadow-[0_20px_70px_rgba(212,85,58,0.26)]">
               <p className="text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Colaboraciones</p>
               <h3 className="text-display text-2xl mb-2">Publicidad con sentido</h3>
-              <p className="text-white/85 text-sm leading-relaxed mb-4">Marcas y negocios que quieran aparecer aquí: mejor bien integrados que cutres.</p>
-              <Link href="mailto:jlromero@flowia.pro" className="inline-flex items-center gap-2 text-sm font-semibold">
-                jlromero@flowia.pro <ArrowRight size={16} />
+              <p className="text-white/85 text-sm leading-relaxed mb-4">Negocios, marcas y eventos con encaje local. Mejor integrados con criterio que puestos ahí de cualquier forma.</p>
+              <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold">
+                Ver opciones <ArrowRight size={16} />
               </Link>
             </div>
           </div>
@@ -366,7 +366,7 @@ export default async function Home() {
                 <span className="inline-flex items-center gap-2 text-navy font-semibold">Ir a noticias <ArrowRight size={18} /></span>
               </Link>
 
-              <Link href="mailto:jlromero@flowia.pro" className="group rounded-[2rem] border border-terracotta/15 bg-gradient-to-br from-terracotta to-orange-600 p-8 text-white hover:shadow-[0_24px_80px_rgba(212,85,58,0.28)] transition-all">
+              <Link href="/contact" className="group rounded-[2rem] border border-terracotta/15 bg-gradient-to-br from-terracotta to-orange-600 p-8 text-white hover:shadow-[0_24px_80px_rgba(212,85,58,0.28)] transition-all">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/14 text-white mb-5">
                   <Mail size={22} />
                 </div>
@@ -466,37 +466,42 @@ export default async function Home() {
           <div className="max-w-content mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm mb-6">
               <MapPin size={16} />
-              <span className="text-xs font-semibold uppercase tracking-widest">Comunidad local</span>
+              <span className="text-xs font-semibold uppercase tracking-widest">Negocio local</span>
             </div>
-            <h2 className="text-display text-3xl md:text-4xl font-semibold mb-4">Únete a la comunidad</h2>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-              Remate más limpio, más editorial y más premium. El cierre también importa.
+            <h2 className="text-display text-3xl md:text-4xl font-semibold mb-4">¿Quieres visibilidad en Huelva?</h2>
+            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+              Si tienes un negocio, una marca o un evento y quieres aparecer aquí con criterio, ya hay una vía clara para hacerlo.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-10 text-left">
               <div className="rounded-[1.5rem] bg-white/10 border border-white/10 p-5">
-                <div className="inline-flex items-center gap-2 mb-3 text-white/85 font-semibold"><CheckCircle2 size={16} /> Guías útiles</div>
-                <p className="text-white/70 text-sm">Rutas, barrios, sitios donde comer y planes que sí merecen clic.</p>
+                <div className="inline-flex items-center gap-2 mb-3 text-white/85 font-semibold"><CheckCircle2 size={16} /> Presencia editorial</div>
+                <p className="text-white/70 text-sm">Mejor una integración útil y bien contada que un banner triste sin contexto.</p>
               </div>
               <div className="rounded-[1.5rem] bg-white/10 border border-white/10 p-5">
-                <div className="inline-flex items-center gap-2 mb-3 text-white/85 font-semibold"><CheckCircle2 size={16} /> Agenda viva</div>
-                <p className="text-white/70 text-sm">Selección con más criterio y menos relleno.</p>
+                <div className="inline-flex items-center gap-2 mb-3 text-white/85 font-semibold"><CheckCircle2 size={16} /> Eventos y campañas</div>
+                <p className="text-white/70 text-sm">Lanzamientos, acciones de temporada y planes que sí merecen atención.</p>
               </div>
               <div className="rounded-[1.5rem] bg-white/10 border border-white/10 p-5">
-                <div className="inline-flex items-center gap-2 mb-3 text-white/85 font-semibold"><CheckCircle2 size={16} /> Noticias locales</div>
-                <p className="text-white/70 text-sm">Actualidad con cara de producto serio.</p>
+                <div className="inline-flex items-center gap-2 mb-3 text-white/85 font-semibold"><CheckCircle2 size={16} /> Contacto directo</div>
+                <p className="text-white/70 text-sm">Una página clara para explicar qué ofreces, a quién vas y qué quieres mover.</p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="tu@email.com"
-                className="flex-1 px-6 py-4 rounded-full text-navy focus:outline-none focus:ring-4 focus:ring-white/30 bg-white shadow-lg"
-              />
-              <button className="px-8 py-4 bg-navy hover:bg-navy/90 text-white font-semibold rounded-full transition-colors shadow-lg">
-                Suscribirse
-              </button>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto justify-center">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-navy hover:bg-navy/90 text-white font-semibold rounded-full transition-colors shadow-lg inline-flex items-center justify-center gap-2"
+              >
+                Ver contacto y colaboraciones
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/sobre-nosotros"
+                className="px-8 py-4 bg-white/12 hover:bg-white/18 text-white font-semibold rounded-full transition-colors shadow-lg inline-flex items-center justify-center gap-2 border border-white/20"
+              >
+                Ver quién está detrás
+              </Link>
             </div>
           </div>
         </div>

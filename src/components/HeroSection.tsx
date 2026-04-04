@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { ArrowRight, Sparkles, MapPin, Utensils, Calendar, Compass, Star, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Sparkles, MapPin, Utensils, Calendar, Compass, Users, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 
 interface QuickStatProps {
@@ -142,17 +142,15 @@ export default function HeroSection() {
             <span className="uppercase tracking-[0.2em]">Huelva.cloud · La mejor guía local 2026</span>
           </motion.div>
 
-          {/* Trust Badge - hidden on smallest screens */}
+          {/* Local trust signal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden sm:flex items-center gap-1 mb-4 sm:mb-6"
+            className="hidden sm:flex items-center gap-2 mb-4 sm:mb-6 text-white/60 text-sm"
           >
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
-            ))}
-            <span className="text-white/60 text-sm ml-2">Guía local #1 en Huelva</span>
+            <span className="inline-flex w-2.5 h-2.5 rounded-full bg-terracotta" />
+            <span>Criterio local. Sin ranking inventado.</span>
           </motion.div>
 
           {/* Main Headline - responsive sizes */}
@@ -190,7 +188,7 @@ export default function HeroSection() {
               <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-500/20 flex items-center justify-center">
                 <TrendingUp size={10} className="text-green-400" />
               </div>
-              <span>Marzo 2026</span>
+              <span>Actualizado en 2026</span>
             </div>
             <div className="flex items-center gap-1.5 text-white/60 text-xs sm:text-sm">
               <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -237,9 +235,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="hidden sm:flex flex-wrap gap-6 lg:gap-8 pt-6 lg:pt-8 border-t border-white/10"
           >
-            <QuickStat value="60+" label="guías locales" icon={<Sparkles size={16} />} />
-            <QuickStat value="10k" label="lectores/mes" icon={<Users size={16} />} />
-            <QuickStat value="4.9" label="valoración" icon={<Star size={16} />} />
+            <QuickStat value="60+" label="piezas publicadas" icon={<Sparkles size={16} />} />
+            <QuickStat value="capital + costa" label="cobertura editorial" icon={<MapPin size={16} />} />
+            <QuickStat value="local" label="criterio por delante del relleno" icon={<Users size={16} />} />
           </motion.div>
         </div>
       </motion.div>
