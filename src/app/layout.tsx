@@ -108,7 +108,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Header />
-        <main className="pt-[76px] md:pt-[88px]">
+        <main className="pt-[72px] md:pt-[88px]">
           <CollabBanner />
           {children}
         </main>

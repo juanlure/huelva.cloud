@@ -34,7 +34,7 @@ export default async function Home() {
     <main className="w-full overflow-hidden">
       <HeroSection />
 
-      <section className="relative py-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,252,247,0.92))] border-b border-navy/5 overflow-hidden">
+      <section className="relative py-8 md:py-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,252,247,0.92))] border-b border-navy/5 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.06]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,85,58,0.08),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(15,26,36,0.04),transparent_24%)]" />
         <div className="container relative z-10">
@@ -61,7 +61,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="descubre" className="py-24 bg-[linear-gradient(180deg,#fffdf9_0%,#faf6ef_100%)] relative overflow-hidden">
+      <section id="descubre" className="py-16 md:py-24 bg-[linear-gradient(180deg,#fffdf9_0%,#faf6ef_100%)] relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.16]" />
         <div className="absolute top-0 left-0 w-[32rem] h-[32rem] bg-terracotta/8 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-navy/5 rounded-full blur-3xl" />
@@ -73,11 +73,11 @@ export default async function Home() {
               <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Destacado</span>
             </div>
 
-            <h2 className="text-display text-4xl md:text-5xl font-semibold text-navy mb-6">
+            <h2 className="text-display text-3xl md:text-5xl font-semibold text-navy mb-5 md:mb-6">
               Huelva de verdad
             </h2>
 
-            <p className="text-xl text-navy-60 max-w-2xl mb-16">
+            <p className="text-base md:text-xl text-navy-60 max-w-2xl mb-10 md:mb-16">
               La portada tiene que vender sensación de producto cuidado desde el primer scroll: editorial, local y con más intención visual.
             </p>
 
@@ -120,14 +120,14 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,252,248,0.86))] relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,252,248,0.86))] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-16 right-0 w-[36rem] h-[36rem] bg-orange-100/50 rounded-full blur-3xl" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-content mx-auto">
             <div className="grid lg:grid-cols-[1.05fr_1.95fr] gap-10 items-start">
-              <div className="sticky top-28">
+              <div className="lg:sticky lg:top-28">
                 <div className="inline-flex items-center gap-3 mb-4">
                   <Award size={20} className="text-terracotta" />
                   <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Gastronomía</span>
@@ -159,14 +159,14 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-[linear-gradient(180deg,#fffdf9_0%,rgba(245,238,227,0.84)_100%)] relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-[linear-gradient(180deg,#fffdf9_0%,rgba(245,238,227,0.84)_100%)] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-6 left-0 w-[30rem] h-[30rem] bg-sky-200/20 rounded-full blur-3xl" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-content mx-auto">
             <div className="grid lg:grid-cols-[1.05fr_1.95fr] gap-10 items-start">
-              <div className="sticky top-28">
+              <div className="lg:sticky lg:top-28">
                 <div className="inline-flex items-center gap-3 mb-4">
                   <BedDouble size={20} className="text-sky-600" />
                   <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Alojamiento</span>
@@ -206,7 +206,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="guias" className="py-24 bg-[linear-gradient(180deg,#172635_0%,#0f1822_100%)] text-white relative overflow-hidden">
+      <section id="guias" className="py-16 md:py-24 bg-[linear-gradient(180deg,#172635_0%,#0f1822_100%)] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.08] bg-grid" />
         <div className="absolute -top-20 -right-10 w-[26rem] h-[26rem] bg-terracotta/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[24rem] h-[24rem] bg-white/6 rounded-full blur-3xl" />
@@ -284,7 +284,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-sand/50 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-sand/50 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 right-10 w-[24rem] h-[24rem] bg-terracotta/8 rounded-full blur-3xl" />
         </div>
@@ -334,7 +334,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white border-t border-navy/5">
+      <section className="py-16 md:py-24 bg-white border-t border-navy/5">
         <div className="container">
           <div className="max-w-content mx-auto">
             <div className="grid lg:grid-cols-4 gap-6">
@@ -379,7 +379,7 @@ export default async function Home() {
       </section>
 
       {newsArticles.length > 0 && (
-        <section className="py-24 bg-sand/30">
+        <section className="py-16 md:py-24 bg-sand/30">
           <div className="container">
             <div className="max-w-content mx-auto">
               <div className="flex items-center justify-between mb-12 gap-6 flex-wrap">
@@ -416,7 +416,7 @@ export default async function Home() {
         </section>
       )}
 
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="max-w-content mx-auto">
             <div className="text-center mb-12">
@@ -432,7 +432,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-navy text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-10" />
         <div className="container relative z-10">
           <div className="max-w-content mx-auto">
@@ -458,7 +458,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-terracotta text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-terracotta text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-10" />
         <div className="absolute -top-16 right-0 w-[30rem] h-[30rem] bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
