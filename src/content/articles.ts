@@ -325,29 +325,36 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>En Huelva el café no se vive como ceremonia sofisticada, sino como parte del día. Sirve para arrancar la mañana, hacer una pausa, esperar a alguien, rematar un desayuno o justificar sentarse diez minutos más. Si vienes buscando discurso de specialty coffee, aquí la película va por otro lado. Y no pasa nada: la gracia está justo ahí.</p>
+      <p>Si preguntas dónde tomar café en Huelva y nadie te dice un sitio, te están contando ambiente, no ayudando a decidir. Así que aquí va lo útil: no una teoría del café, sino referencias que sí encajan según lo que busques.</p>
 
-      <h2>Lo primero es entender el contexto</h2>
-      <p>El buen café en Huelva no siempre está en el local más moderno, sino en el bar que funciona, rota, conoce a su clientela y acompaña bien el momento. Muchas veces importa tanto la barra, la terraza o la tostada como la taza en sí. Por eso no conviene juzgarlo solo con el radar de “cafetería bonita”.</p>
-
-      <h2>Cómo se pide aquí, sin hacer el paripé</h2>
+      <h2>Sitios que sí tienen sentido</h2>
       <ul>
-        <li><strong>Solo:</strong> corto, directo y sin florituras.</li>
-        <li><strong>Cortado:</strong> para quien quiere café con algo de leche pero sin traicionarse del todo.</li>
-        <li><strong>Americano:</strong> menos frecuente como protagonista, pero existe.</li>
-        <li><strong>Sombra:</strong> una manera muy andaluza de aligerar el café sin convertirlo en vaso de leche.</li>
+        <li><strong>Macha</strong> — la referencia más clara si quieres una parada agradable, un café que encaje bien y un entorno algo más cuidado sin volverse ridículo.</li>
+        <li><strong>Gran Vía Uno</strong> — buena opción si estás en el centro y quieres resolver café, desayuno o pausa sin desviarte ni complicarte la vida.</li>
+        <li><strong>Bares del entorno de Plaza de las Monjas y Mercado del Carmen</strong> — mejor si buscas café con pulso real de ciudad, barra viva y contexto local antes que local bonito.</li>
       </ul>
 
-      <h2>Dónde suele encajar mejor</h2>
-      <p>En el centro histórico y alrededor de las zonas más vivas de mañana, el café funciona sobre todo como ancla de rutina. Cerca del Mercado del Carmen se mezcla más con el pulso del desayuno y el producto. En otras zonas algo más modernas puede haber propuesta más actual, pero el corazón del asunto sigue siendo el mismo: barra, conversación y tiempo real.</p>
+      <h2>Qué elegir según el momento</h2>
+      <ul>
+        <li><strong>Si quieres un café con calma:</strong> Macha.</li>
+        <li><strong>Si quieres algo práctico en pleno centro:</strong> Gran Vía Uno.</li>
+        <li><strong>Si quieres mezclar café con desayuno local:</strong> bares con rotación de mañana cerca del mercado o del centro vivo.</li>
+      </ul>
 
-      <h2>El error típico: confundir café bueno con local bonito</h2>
-      <p>Una vajilla mona no te arregla un café flojo ni una experiencia vacía. Y al revés: un bar sencillo puede darte justo el café que encaja con el momento. En Huelva compensa pensar menos en la foto y más en para qué te estás sentando: desayuno con calma, parada corta, espera, reunión o simple costumbre.</p>
+      <h2>Cómo se pide aquí, sin hacer teatro</h2>
+      <ul>
+        <li><strong>Solo</strong> si vas corto y directo.</li>
+        <li><strong>Cortado</strong> si quieres equilibrio sin convertirlo en vaso de leche.</li>
+        <li><strong>Sombra</strong> si te va más suave y quieres pedir como alguien que no aterrizó ayer.</li>
+      </ul>
 
-      <h2>Con qué combina mejor</h2>
-      <p>Café y tostada sigue siendo la pareja fuerte. Café y churros entra mejor en fin de semana. Y si estás usando el desayuno como arranque de día, tiene sentido enlazarlo luego con <a href="/que-ver">qué ver en Huelva</a>, con <a href="/donde-comer">dónde comer en Huelva</a>, con <a href="/fin-de-semana">la escapada de fin de semana</a> o con <a href="/article/desayuno-huelva-donde-tostada-churros">la guía de desayunos</a> para que no se quede en pausa aislada.</p>
+      <h2>El error típico</h2>
+      <p>Confundir cafetería mona con parada buena. En Huelva muchas veces compensa más un sitio funcional con barra viva que un local bonito donde el café es casi decoración. El café aquí sirve al momento: desayuno, pausa, espera, charla o arranque de ruta.</p>
 
-      <blockquote>En Huelva no se sale “a catar café”. Se va al bar, se pide uno y el día sigue desde ahí.</blockquote>
+      <h2>Con qué lo uniría</h2>
+      <p>Con <a href="/article/desayuno-huelva-donde-tostada-churros">la guía de desayunos</a> si es primera hora, con <a href="/que-ver">qué ver en Huelva</a> si estás montando el día y con <a href="/donde-comer">dónde comer</a> si el café es solo una parada antes de algo más serio.</p>
+
+      <blockquote>En Huelva el café bueno no siempre está en el local más mono. Suele estar en el sitio que entiende para qué te sientas.</blockquote>
     `
   },
 
