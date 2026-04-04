@@ -468,7 +468,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   {
     slug: 'desayuno-huelva-donde-tostada-churros',
     title: 'Desayuno en Huelva: tostadas, churros y los mejores sitios',
-    excerpt: 'El desayuno es institución en Huelva. Dónde ir, qué pedir y cuánto pagar por un buen desayuno onubense.',
+    excerpt: 'Dónde desayunar en Huelva sin caer en sitios flojos: tostadas, churros y bares que todavía entienden el ritual como debe ser.',
     category: 'Gastronomía',
     image: '/images/guides/choco-frito-hero.jpg',
     publishedAt: '2026-02-23T19:15:00Z',
@@ -486,7 +486,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Dónde desayunar</h2>
-      <p>Los bares del centro abren temprano (7:00-8:00). Algunos de toda la vida mantienen la calidad y el ritual.</p>
+      <p>Los bares del centro abren temprano (7:00-8:00). Algunos de toda la vida mantienen la calidad y el ritual. Si luego quieres seguir comiendo bien durante el día, enlaza con <a href="/donde-comer">la guía de dónde comer</a> o con <a href="/article/ruta-tapas-centro-huelva-donde-ir">una ruta de tapas por el centro</a>.</p>
       <ul>
         <li>Cerca del Mercado del Carmen: ambiente de mercado, producto fresco.</li>
         <li>Plaza de las Monjas: terrazas para desayunar con calma.</li>
@@ -494,7 +494,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Precios</h2>
-      <p>Desayuno completo (café + tostada): 2-3,50€. Churros para dos: 4-6€. Los fines de semana en zonas céntricas sube un poco.</p>
+      <p>Desayuno completo (café + tostada): 2-3,50€. Churros para dos: 4-6€. Los fines de semana en zonas céntricas sube un poco. Si estás de visita y no solo desayunando, ordénalo con <a href="/que-ver">qué ver en Huelva</a> o con <a href="/fin-de-semana">un finde montado con cabeza</a>.</p>
 
       <blockquote>El desayuno en Huelva no se inventa. Se hereda.</blockquote>
     `
@@ -624,7 +624,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   {
     slug: 'ruta-tapas-centro-huelva-donde-ir',
     title: 'Ruta de tapas por el centro de Huelva: dónde ir y qué pedir',
-    excerpt: 'Recorrido gastronómico por los mejores bares de tapas del centro de Huelva. Precios, especialidades y cómo organizar la ruta.',
+    excerpt: 'Una ruta de tapas pensada para comer bien por el centro de Huelva sin perder tiempo en bares flojos ni reventarte en la primera parada.',
     category: 'Gastronomía',
     image: '/images/guides/choco-frito-tapa.jpg',
     publishedAt: '2026-02-23T19:35:00Z',
@@ -650,10 +650,10 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Cómo organizar la ruta</h2>
-      <p>Una tapa y una bebida por bar. No más. El objetivo es probar 4-5 sitios, no llenarse en el primero. Distancia entre bares: máximo 5 minutos caminando.</p>
+      <p>Una tapa y una bebida por bar. No más. El objetivo es probar 4-5 sitios, no llenarse en el primero. Distancia entre bares: máximo 5 minutos caminando. Si quieres afinar según tipo de mesa y no solo por zona, crúzalo con <a href="/donde-comer">dónde comer en Huelva</a> y con <a href="/article/mejores-restaurantes-huelva">esta selección de restaurantes sin postureo</a>.</p>
 
       <h2>Presupuesto</h2>
-      <p>Tapa + caña: 2,50-4€ dependiendo de la zona. Con 15-20€ por persona se hace una ruta completa y variada.</p>
+      <p>Tapa + caña: 2,50-4€ dependiendo de la zona. Con 15-20€ por persona se hace una ruta completa y variada. Si luego quieres alargar el día, completa con <a href="/agenda">la agenda actual</a> o con <a href="/fin-de-semana">un plan más redondo de fin de semana</a>.</p>
 
       <blockquote>La ruta de tapas no es comida. Es deporte de resistencia gastronómica.</blockquote>
     `
@@ -823,7 +823,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   {
     slug: 'donana-parque-nacional-huelva-visitar',
     title: 'Doñana: el parque nacional en la puerta de Huelva',
-    excerpt: 'Guía para visitar Doñana desde Huelva: cómo llegar, qué ver, rutas y consejos prácticos.',
+    excerpt: 'Una guía clara para acercarte a Doñana desde Huelva sin confundir parque, entorno y accesos reales ni perder el día improvisando.',
     category: 'Guías Locales',
     image: '/images/guides/donana-huelva.jpg',
     publishedAt: '2026-02-23T20:10:00Z',
@@ -832,8 +832,8 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     content: `
       <p>El Parque Nacional de Doñana es uno de los espacios naturales más importantes de Europa. Aunque su entrada principal está en Sevilla, desde Huelva se accede a la zona de influencia del parque: las marismas, el entorno del río, y la costa atlántica.</p>
 
-      <h2>Qué es Doñanav/p>
-      <p>Sistema de marismas, dunas y bosques mediterráneos que alberga una biodiversidad única. Aves migratorias, lince ibérico, águila imperial, y una red hídrica compleja.</p>
+      <h2>Qué es Doñana</h2>
+      <p>Sistema de marismas, dunas y bosques mediterráneos que alberga una biodiversidad única. Aves migratorias, lince ibérico, águila imperial, y una red hídrica compleja. Para no entenderla como una pieza aislada, conviene cruzarla con <a href="/article/provincia-de-huelva-que-ver">la guía de la provincia</a> y con <a href="/fin-de-semana">un plan de fin de semana</a> que tenga sentido logístico.</p>
 
       <h2>Cómo visitar desde Huelva</h2>
       <ul>
@@ -841,6 +841,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
         <li><strong>Visitas guiadas:</strong> empresas locales organizan excursiones al corazón del parque.</li>
         <li><strong>Playa de la Bota:</strong> límite del parque, acceso directo desde Huelva.</li>
       </ul>
+      <p>Si vas a mezclar naturaleza con costa o pueblos, remata la decisión con <a href="/que-ver">qué ver en Huelva</a> y con <a href="/playas">la guía de playas</a>.</p>
 
       <h2>Qué llevar</h2>
       <ul>
@@ -1176,7 +1177,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   {
     slug: 'noche-huelva-donde-salir-tapas',
     title: 'Noche en Huelva: dónde salir y qué hacer',
-    excerpt: 'Guía de la noche onubense: tapas, copas, y los mejores planes para salir en Huelva capital.',
+    excerpt: 'Una guía útil para salir por Huelva capital sin improvisar mal: dónde tapear, dónde alargar la noche y qué ambiente esperar de verdad.',
     category: 'Eventos',
     image: '/images/guides/huelva-plaza-las-monjas.jpg',
     publishedAt: '2026-02-23T21:10:00Z',
@@ -1186,7 +1187,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>La noche en Huelva no es la de Madrid ni Sevilla. Es más tranquila, más temprana, más de bar que de discoteca. Pero tiene su ritmo y sus lugares.</p>
 
       <h2>La ruta de tapas nocturna</h2>
-      <p>Empieza sobre las 21:00. Calle Concepción, Plaza de las Monjas, y alrededores concentran la mayor oferta. Diferente ambiente que al mediodía: más joven, más movimiento.</p>
+      <p>Empieza sobre las 21:00. Calle Concepción, Plaza de las Monjas, y alrededores concentran la mayor oferta. Diferente ambiente que al mediodía: más joven, más movimiento. Si quieres evitar improvisar regular, te conviene cruzarlo con <a href="/article/ruta-tapas-centro-huelva-donde-ir">la ruta de tapas por el centro</a> y con <a href="/donde-comer">la flagship de dónde comer</a>.</p>
 
       <h2>Zonas para copas</h2>
       <ul>
@@ -1199,7 +1200,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>Los bares cierran sobre la 1:00-2:00. Las discotecas (pocas) abren hasta las 6:00, pero no es el ambiente predominante. La noche onubense es de conversación, no de macrofiesta.</p>
 
       <h2>Presupuesto</h2>
-      <p>Caña: 1,50-2,50€. Copa: 6-10€. Cena de tapas: 15-25€ por persona.</p>
+      <p>Caña: 1,50-2,50€. Copa: 6-10€. Cena de tapas: 15-25€ por persona. Y si lo que buscas no es solo noche sino plan completo, enlázalo con <a href="/agenda">la agenda de Huelva</a> o con <a href="/que-ver">qué ver antes de cenar</a>.</p>
 
       <blockquote>En Huelva, la noche es de terraza y conversación. No es la ciudad que no duerme, es la ciudad que charla hasta tarde.</blockquote>
     `
@@ -2083,7 +2084,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   {
     slug: 'mejores-restaurantes-huelva',
     title: 'Los mejores restaurantes en Huelva para comer bien sin postureo',
-    excerpt: 'Restaurantes en Huelva para comer producto, cocina seria y sitios que merecen una reserva. Menos ruido, más criterio.',
+    excerpt: 'Una selección con criterio para comer bien en Huelva sin caer en postureo, listas infladas ni reservas que luego no compensan.',
     category: 'Gastronomía',
     image: '/images/guides/coquinas-huelva.jpg',
     publishedAt: '2026-04-02T11:00:00Z',
@@ -2104,10 +2105,10 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       </ul>
 
       <h2>Qué tipo de restaurante buscar según el plan</h2>
-      <p>Si vas a producto, busca cocina onubense y carta con verdad. Si quieres cena más fina, hay sitios que elevan la experiencia sin volverse ridículos. Si vas en modo tapeo largo, a veces un bar excelente le gana la partida a un restaurante mediocre con mantel.</p>
+      <p>Si vas a producto, busca cocina onubense y carta con verdad. Si quieres cena más fina, hay sitios que elevan la experiencia sin volverse ridículos. Si vas en modo tapeo largo, a veces un bar excelente le gana la partida a un restaurante mediocre con mantel. Para separar mejor la ocasión, compensa cruzar esto con <a href="/donde-comer">la flagship de dónde comer</a> y con <a href="/article/donde-tapear-en-huelva">la guía de tapeo con cabeza</a>.</p>
 
       <h2>Errores típicos</h2>
-      <p>Elegir por estética, por estar “cerca” o por reseñas que parecen escritas por primos del dueño. En Huelva se come muy bien, sí, pero no por arte de magia. Hay que elegir con un mínimo de criterio.</p>
+      <p>Elegir por estética, por estar “cerca” o por reseñas que parecen escritas por primos del dueño. En Huelva se come muy bien, sí, pero no por arte de magia. Hay que elegir con un mínimo de criterio. Y si estás montando el día entero, remátalo con <a href="/que-ver">qué ver en Huelva</a> o con <a href="/fin-de-semana">un plan de fin de semana bien ordenado</a>.</p>
 
       <blockquote>El mejor restaurante no siempre es el más famoso. Muchas veces es el que entiende mejor el producto y no intenta impresionarte con gilipolleces.</blockquote>
     `
@@ -2155,7 +2156,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   {
     slug: 'provincia-de-huelva-que-ver',
     title: 'Qué ver en la provincia de Huelva si quieres ir más allá de lo obvio',
-    excerpt: 'Costa, sierra, historia, pueblos y espacios naturales. Una guía para entender qué ver en la provincia de Huelva con criterio.',
+    excerpt: 'Una guía para entender la provincia de Huelva con más criterio que la típica lista floja: costa, sierra, historia y naturaleza según el plan.',
     category: 'Guías Locales',
     image: '/images/guides/costa-huelva.jpg',
     publishedAt: '2026-04-02T11:20:00Z',
@@ -2165,16 +2166,16 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>La provincia de Huelva tiene un problema curioso: mucha gente la reduce a una sola cosa. Playa, jamón, El Rocío o poco más. Error. Lo bueno de Huelva está precisamente en la mezcla: costa, sierra, marismas, historia, frontera y pueblos con mucha más personalidad de la que aparentan.</p>
 
       <h2>La costa: mucho más que tumbarse al sol</h2>
-      <p>Punta Umbría, El Rompido, Islantilla, La Antilla, Ayamonte, Isla Cristina o Matalascañas. Hay playas, sí, pero también paseos, puertos, gastronomía y ritmos distintos según la zona.</p>
+      <p>Punta Umbría, El Rompido, Islantilla, La Antilla, Ayamonte, Isla Cristina o Matalascañas. Hay playas, sí, pero también paseos, puertos, gastronomía y ritmos distintos según la zona. Si tu decisión empieza por arena y agua, entra después en <a href="/playas">la guía de playas</a>.</p>
 
       <h2>La sierra: el otro gran mundo onubense</h2>
-      <p>Aracena, Alájar, Cortegana, Jabugo y compañía. Aquí cambian el paisaje, la comida y hasta la cadencia del día. Si vienes buscando equilibrio, la sierra suele devolver mucho.</p>
+      <p>Aracena, Alájar, Cortegana, Jabugo y compañía. Aquí cambian el paisaje, la comida y hasta la cadencia del día. Si vienes buscando equilibrio, la sierra suele devolver mucho. Para aterrizarlo mejor, cruza esta visión con <a href="/article/pueblos-bonitos-sierra-huelva">los pueblos más potentes de la sierra</a> y con <a href="/fin-de-semana">la guía de fin de semana</a>.</p>
 
       <h2>Entorno colombino e historia</h2>
-      <p>La Rábida, Palos de la Frontera, Moguer y otros puntos ligados al imaginario del descubrimiento. Más allá de la chapa escolar, bien vistos tienen bastante interés.</p>
+      <p>La Rábida, Palos de la Frontera, Moguer y otros puntos ligados al imaginario del descubrimiento. Más allá de la chapa escolar, bien vistos tienen bastante interés. Si quieres ordenar capital y provincia en una sola visita, te sirve también <a href="/que-ver">qué ver en Huelva</a>.</p>
 
       <h2>Naturaleza potente</h2>
-      <p>Doñana, Marismas del Odiel y otros espacios que no están para rellenar un folleto. Son parte de la identidad real de la provincia y una ventaja competitiva enorme frente a destinos más artificiales.</p>
+      <p>Doñana, Marismas del Odiel y otros espacios que no están para rellenar un folleto. Son parte de la identidad real de la provincia y una ventaja competitiva enorme frente a destinos más artificiales. Para bajar esto a recorrido real, enlaza con <a href="/article/donana-parque-nacional-huelva-visitar">la guía de Doñana</a>.</p>
 
       <blockquote>La provincia de Huelva no se visita bien con una lista absurda de “10 cosas”. Se entiende mejor por zonas, ritmos y planes. Cuando haces eso, de repente gana mucho.</blockquote>
     `
