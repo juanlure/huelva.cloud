@@ -143,7 +143,11 @@ function mapExternalNews(news: ExternalNewsItem): Article {
   const publishedAtISO = toSafeIso(news.publishedAt);
   const publishedLabel = formatHumanDate(news.publishedAt);
   const localImage = news.image && !/^https?:\/\//i.test(news.image) ? news.image : null;
-  const resolvedImage = localImage || generateNewsArtDataUri(news.title, news.source);
+  const resolvedImage = localImage || generateNewsArtDataUri(news.title, {
+    title: news.title,
+    excerpt: news.excerpt,
+    source: news.source,
+  });
 
   // Usar content generado por IA si existe, sino fallback básico
   const bodyContent = news.content || `<p>${news.excerpt}</p>`;

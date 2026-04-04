@@ -77,8 +77,14 @@ function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
   return normalizedLines;
 }
 
-function buildNewsKicker(title: string, source?: string): string {
-  const lower = `${title} ${source || ''}`.toLowerCase();
+type NewsArtInput = {
+  title: string;
+  excerpt?: string;
+  source?: string;
+};
+
+function buildNewsKicker(title: string, excerpt?: string, source?: string): string {
+  const lower = `${title} ${excerpt || ''} ${source || ''}`.toLowerCase();
 
   if (/(adamuz|causa|accidente|juzgado|tribunal|recurso|fiscal[ií]a)/.test(lower)) {
     return 'CLAVE JUDICIAL';
@@ -99,15 +105,15 @@ function buildNewsKicker(title: string, source?: string): string {
   return 'NOTICIA LOCAL';
 }
 
-function buildNewsHook(title: string, source?: string): string {
-  const lower = `${title} ${source || ''}`.toLowerCase();
+function buildNewsHook(title: string, excerpt?: string, source?: string): string {
+  const lower = `${title} ${excerpt || ''} ${source || ''}`.toLowerCase();
 
   if (/(adamuz|causa|accidente)/.test(lower)) {
     return 'Huelva sigue dentro';
   }
 
   if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
-    return 'Cae el presunto autor';
+    return 'Ayamonte ya lo tiene';
   }
 
   if (/(juzgado|tribunal|audiencia|fiscal[ií]a|recurso)/.test(lower)) {
@@ -129,15 +135,15 @@ function buildNewsHook(title: string, source?: string): string {
   return truncate(tidyText(title), 30);
 }
 
-function buildSupportLine(title: string, source?: string): string {
-  const lower = `${title} ${source || ''}`.toLowerCase();
+function buildSupportLine(title: string, excerpt?: string, source?: string): string {
+  const lower = `${title} ${excerpt || ''} ${source || ''}`.toLowerCase();
 
   if (/(adamuz|causa|accidente|recurso)/.test(lower)) {
     return 'El Ayuntamiento recurre para no salir del caso';
   }
 
   if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
-    return 'La detención abre la fase donde cuentan las pruebas';
+    return 'La Policía cierra la búsqueda y ahora mandan las pruebas';
   }
 
   if (/(juzgado|tribunal|audiencia|fiscal[ií]a)/.test(lower)) {
@@ -159,8 +165,15 @@ function buildSupportLine(title: string, source?: string): string {
   return 'Una lectura rápida para entender qué cambia';
 }
 
-export function generateNewsArtDataUri(title: string, source?: string) {
-  const seed = hashString(`${title}-${source || ''}`);
+export function generateNewsArtDataUri(title: string, sourceOrOptions?: string | NewsArtInput, maybeSource?: string) {
+  const options: NewsArtInput = typeof sourceOrOptions === 'object'
+    ? sourceOrOptions
+    : { title, source: sourceOrOptions || maybeSource };
+
+  const finalTitle = options.title || title;
+  const finalExcerpt = options.excerpt;
+  const finalSource = options.source;
+  const seed = hashString(`${finalTitle}-${finalExcerpt || ''}-${finalSource || ''}`);
   const palettes = [
     ['#0F1A24', '#1F3A4D', '#D4553A'],
     ['#111827', '#1D4ED8', '#F97316'],
@@ -169,15 +182,15 @@ export function generateNewsArtDataUri(title: string, source?: string) {
     ['#0B1F2A', '#14B8A6', '#F97316'],
   ];
   const palette = palettes[seed % palettes.length];
-  const kicker = buildNewsKicker(title, source);
-  const hook = buildNewsHook(title, source);
-  const supportLine = buildSupportLine(title, source);
+  const kicker = buildNewsKicker(finalTitle, finalExcerpt, finalSource);
+  const hook = buildNewsHook(finalTitle, finalExcerpt, finalSource);
+  const supportLine = buildSupportLine(finalTitle, finalExcerpt, finalSource);
   const headlineLines = splitTitle(hook, 20, 2);
   const safeKicker = escapeXml(kicker);
   const safeTitle1 = escapeXml(headlineLines[0] || 'Huelva.cloud');
   const safeTitle2 = escapeXml(headlineLines[1] || '');
   const safeSupportLine = escapeXml(supportLine);
-  const safeSource = escapeXml(source || 'Huelva.cloud');
+  const safeSource = escapeXml(finalSource || 'Huelva.cloud');
 
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
