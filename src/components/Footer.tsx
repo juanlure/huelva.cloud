@@ -69,6 +69,7 @@ export default function Footer() {
             <ul className="space-y-4 mb-8">
               {[
                 { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
+                { name: 'Contacto y colaboraciones', href: '/contact' },
                 { name: 'Cómo funciona (IA)', href: '/ai-disclosure' },
                 { name: 'Privacidad', href: '/privacy' },
                 { name: 'Aviso Legal', href: '/legal' },

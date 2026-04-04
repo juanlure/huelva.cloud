@@ -19,11 +19,11 @@ export default function CollabBanner() {
           </div>
 
           <Link
-            href="mailto:jlromero@flowia.pro"
+            href="/contact"
             className="inline-flex items-center gap-2 self-start md:self-auto px-4 py-2 rounded-full bg-white text-terracotta font-semibold hover:bg-cream transition-colors shadow-sm"
           >
             <Mail size={14} />
-            jlromero@flowia.pro
+            Ver opciones
             <ArrowRight size={14} />
           </Link>
         </div>
