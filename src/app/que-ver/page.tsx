@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { AccommodationTypeCards } from '@/components/guides/AccommodationTypeCards';
 import { BestForSelector } from '@/components/guides/BestForSelector';
 import { BookingCTAContextual } from '@/components/guides/BookingCTAContextual';
@@ -10,6 +11,13 @@ import { RelatedGuidesRail } from '@/components/guides/RelatedGuidesRail';
 import { StickyGuideTOC } from '@/components/guides/StickyGuideTOC';
 import { ZoneComparisonCards } from '@/components/guides/ZoneComparisonCards';
 import { queVerGuideData } from '@/data/guides/que-ver';
+import { buildBasicPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildBasicPageMetadata({
+  title: 'Qué ver en Huelva | Guía local con criterio',
+  description: 'Qué ver en Huelva capital y provincia sin perder tiempo en relleno turístico. Selección útil, contexto local y plan claro.',
+  path: '/que-ver',
+});
 
 export default function QueVerPage() {
   const data = queVerGuideData;

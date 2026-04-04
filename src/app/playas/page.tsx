@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { AccommodationTypeCards } from '@/components/guides/AccommodationTypeCards';
 import { BestForSelector } from '@/components/guides/BestForSelector';
 import { BookingCTAContextual } from '@/components/guides/BookingCTAContextual';
@@ -10,6 +11,13 @@ import { RelatedGuidesRail } from '@/components/guides/RelatedGuidesRail';
 import { StickyGuideTOC } from '@/components/guides/StickyGuideTOC';
 import { ZoneComparisonCards } from '@/components/guides/ZoneComparisonCards';
 import { playasGuideData } from '@/data/guides/playas';
+import { buildBasicPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildBasicPageMetadata({
+  title: 'Playas de Huelva | Qué playa elegir según el día',
+  description: 'Guía local para elegir playas de Huelva con criterio: familias, viento, escapada, paseo o día largo de costa sin ir a ciegas.',
+  path: '/playas',
+});
 
 export default function PlayasPage() {
   const data = playasGuideData;

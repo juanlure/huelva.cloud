@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { AccommodationTypeCards } from '@/components/guides/AccommodationTypeCards';
 import { BestForSelector } from '@/components/guides/BestForSelector';
 import { BookingCTAContextual } from '@/components/guides/BookingCTAContextual';
@@ -10,6 +11,13 @@ import { RelatedGuidesRail } from '@/components/guides/RelatedGuidesRail';
 import { StickyGuideTOC } from '@/components/guides/StickyGuideTOC';
 import { ZoneComparisonCards } from '@/components/guides/ZoneComparisonCards';
 import { dondeComerGuideData } from '@/data/guides/donde-comer';
+import { buildBasicPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildBasicPageMetadata({
+  title: 'Dónde comer en Huelva | Sitios que sí compensan',
+  description: 'Dónde comer en Huelva con criterio: desayunos, tapeo, producto, choco frito y sitios que sí merecen la pena.',
+  path: '/donde-comer',
+});
 
 export default function DondeComerPage() {
   const data = dondeComerGuideData;

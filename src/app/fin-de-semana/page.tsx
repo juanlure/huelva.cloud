@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { AccommodationTypeCards } from '@/components/guides/AccommodationTypeCards';
 import { BestForSelector } from '@/components/guides/BestForSelector';
 import { BookingCTAContextual } from '@/components/guides/BookingCTAContextual';
@@ -10,6 +11,13 @@ import { RelatedGuidesRail } from '@/components/guides/RelatedGuidesRail';
 import { StickyGuideTOC } from '@/components/guides/StickyGuideTOC';
 import { ZoneComparisonCards } from '@/components/guides/ZoneComparisonCards';
 import { finDeSemanaGuideData } from '@/data/guides/fin-de-semana';
+import { buildBasicPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildBasicPageMetadata({
+  title: 'Fin de semana en Huelva | Escapada de 48 horas',
+  description: 'Plan de fin de semana en Huelva con ritmo, criterio y contexto local para aprovechar 48 horas sin caer en la ruta cutre.',
+  path: '/fin-de-semana',
+});
 
 export default function FinDeSemanaPage() {
   const data = finDeSemanaGuideData;

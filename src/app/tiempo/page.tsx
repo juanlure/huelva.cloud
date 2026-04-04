@@ -4,6 +4,17 @@ import WeatherWidget from '@/components/WeatherWidget';
 export const metadata: Metadata = {
   title: 'El Tiempo en Huelva Hoy | Previsión 7 días',
   description: 'Consulta el tiempo actual en Huelva con previsión para los próximos 7 días. Temperatura, lluvia, viento y UV actualizados en tiempo real.',
+  alternates: {
+    canonical: 'https://huelva.cloud/tiempo',
+  },
+  openGraph: {
+    title: 'El Tiempo en Huelva Hoy | Previsión 7 días',
+    description: 'Consulta el tiempo actual en Huelva con previsión para los próximos 7 días. Temperatura, lluvia, viento y UV actualizados en tiempo real.',
+    url: 'https://huelva.cloud/tiempo',
+    siteName: 'Huelva.cloud',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 export default function TiempoPage() {
