@@ -16,6 +16,13 @@ function truncate(value: string, maxLength: number): string {
   return `${value.slice(0, maxLength - 1).trim()}…`;
 }
 
+function tidyText(value: string): string {
+  return (value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/["“”]/g, '')
+    .trim();
+}
+
 function tidyLineEnding(value: string): string {
   return value
     .replace(/\s+(de|del|la|las|el|los|y|o|en|con|sin|por|para|a)$/i, '')
@@ -23,7 +30,7 @@ function tidyLineEnding(value: string): string {
 }
 
 function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
-  const cleaned = (text || '').replace(/\s+/g, ' ').trim();
+  const cleaned = tidyText(text);
   if (!cleaned) return ['Huelva.cloud'];
 
   const words = cleaned.split(' ');
@@ -70,49 +77,83 @@ function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
   return normalizedLines;
 }
 
+function buildNewsKicker(title: string, source?: string): string {
+  const lower = `${title} ${source || ''}`.toLowerCase();
+
+  if (/(adamuz|causa|accidente|juzgado|tribunal|recurso|fiscal[ií]a)/.test(lower)) {
+    return 'CLAVE JUDICIAL';
+  }
+
+  if (/(estafa|detenido|fraude|polic|guardia civil|investigaci[oó]n|arrest)/.test(lower)) {
+    return 'SUCESO LOCAL';
+  }
+
+  if (/(playa|verano|turismo|hotel|restaurante|chiringuito)/.test(lower)) {
+    return 'CLAVE PRÁCTICA';
+  }
+
+  if (/(ayuntamiento|pleno|obra|barrio|calle|provincia)/.test(lower)) {
+    return 'LECTURA LOCAL';
+  }
+
+  return 'NOTICIA LOCAL';
+}
+
 function buildNewsHook(title: string, source?: string): string {
   const lower = `${title} ${source || ''}`.toLowerCase();
 
   if (/(adamuz|causa|accidente)/.test(lower)) {
-    return 'Huelva sigue en la causa';
+    return 'Huelva sigue dentro';
   }
 
   if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
-    return 'Detenido por la estafa de Ayamonte';
+    return 'Cae el presunto autor';
   }
 
   if (/(juzgado|tribunal|audiencia|fiscal[ií]a|recurso)/.test(lower)) {
-    return 'Ahora importa quién mueve ficha';
+    return 'Ahora manda el siguiente movimiento';
   }
 
   if (/(polic|guardia civil|suces|investigaci[oó]n|arrest)/.test(lower)) {
-    return 'El caso gira, pero faltan piezas';
+    return 'El caso cambia de fase';
   }
 
   if (/(playa|verano|turismo|hotel|restaurante|chiringuito)/.test(lower)) {
-    return 'Esto sí cambia el plan si vienes';
+    return 'Esto sí cambia el plan';
   }
 
   if (/(ayuntamiento|pleno|obra|barrio|calle|provincia)/.test(lower)) {
-    return 'Aquí hay más fondo que titular';
+    return 'Aquí hay más fondo';
   }
 
-  return truncate(title.replace(/\s+/g, ' ').trim(), 36);
+  return truncate(tidyText(title), 30);
 }
 
 function buildSupportLine(title: string, source?: string): string {
   const lower = `${title} ${source || ''}`.toLowerCase();
 
   if (/(adamuz|causa|accidente|recurso)/.test(lower)) {
-    return 'Una lectura rápida para entender quién intenta seguir dentro';
+    return 'El Ayuntamiento recurre para no salir del caso';
   }
 
   if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
-    return 'Una lectura rápida para entender qué se sabe y qué falta';
+    return 'La detención abre la fase donde cuentan las pruebas';
   }
 
-  if (/(polic|guardia civil|suces|juzgado|tribunal)/.test(lower)) {
-    return 'Una lectura rápida para separar hechos, ruido y consecuencias';
+  if (/(juzgado|tribunal|audiencia|fiscal[ií]a)/.test(lower)) {
+    return 'Lo relevante ahora es quién gana posición real';
+  }
+
+  if (/(polic|guardia civil|suces|investigaci[oó]n|arrest)/.test(lower)) {
+    return 'Separar hechos, ruido y consecuencias es lo útil';
+  }
+
+  if (/(playa|verano|turismo|hotel|restaurante|chiringuito)/.test(lower)) {
+    return 'Una lectura rápida para decidir mejor si vienes';
+  }
+
+  if (/(ayuntamiento|pleno|obra|barrio|calle|provincia)/.test(lower)) {
+    return 'Qué cambia de verdad y por qué importa aquí';
   }
 
   return 'Una lectura rápida para entender qué cambia';
@@ -128,9 +169,11 @@ export function generateNewsArtDataUri(title: string, source?: string) {
     ['#0B1F2A', '#14B8A6', '#F97316'],
   ];
   const palette = palettes[seed % palettes.length];
+  const kicker = buildNewsKicker(title, source);
   const hook = buildNewsHook(title, source);
   const supportLine = buildSupportLine(title, source);
-  const headlineLines = splitTitle(hook, 24, 2);
+  const headlineLines = splitTitle(hook, 20, 2);
+  const safeKicker = escapeXml(kicker);
   const safeTitle1 = escapeXml(headlineLines[0] || 'Huelva.cloud');
   const safeTitle2 = escapeXml(headlineLines[1] || '');
   const safeSupportLine = escapeXml(supportLine);
@@ -156,15 +199,15 @@ export function generateNewsArtDataUri(title: string, source?: string) {
       <circle cx="1280" cy="780" r="280" fill="white" fill-opacity="0.05" />
       <path d="M0 742C166 676 279 653 451 679C629 706 716 814 897 817C1081 820 1217 693 1600 638V900H0V742Z" fill="white" fill-opacity="0.08"/>
 
-      <rect x="88" y="88" width="208" height="48" rx="24" fill="white" fill-opacity="0.14" />
-      <text x="118" y="119" fill="white" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="3">NOTICIAS</text>
+      <rect x="88" y="88" width="250" height="48" rx="24" fill="white" fill-opacity="0.14" />
+      <text x="118" y="119" fill="white" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="2.6">${safeKicker}</text>
 
-      <text x="88" y="520" fill="white" font-size="96" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
-      ${safeTitle2 ? `<text x="88" y="628" fill="white" font-size="96" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
+      <text x="88" y="500" fill="white" font-size="104" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
+      ${safeTitle2 ? `<text x="88" y="614" fill="white" font-size="104" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
 
-      <text x="92" y="736" fill="rgba(255,255,255,0.90)" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="600">${safeSupportLine}</text>
-      <text x="92" y="790" fill="rgba(255,255,255,0.82)" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Provincia de Huelva · ${safeSource}</text>
-      <text x="92" y="838" fill="rgba(255,255,255,0.62)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>
+      <text x="92" y="708" fill="rgba(255,255,255,0.92)" font-size="36" font-family="Inter, Arial, sans-serif" font-weight="600">${safeSupportLine}</text>
+      <text x="92" y="780" fill="rgba(255,255,255,0.82)" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="600">Provincia de Huelva · ${safeSource}</text>
+      <text x="92" y="832" fill="rgba(255,255,255,0.60)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>
     </svg>
   `.trim();
 
