@@ -16,6 +16,12 @@ function truncate(value: string, maxLength: number): string {
   return `${value.slice(0, maxLength - 1).trim()}…`;
 }
 
+function tidyLineEnding(value: string): string {
+  return value
+    .replace(/\s+(de|del|la|las|el|los|y|o|en|con|sin|por|para|a)$/i, '')
+    .trim();
+}
+
 function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
   const cleaned = (text || '').replace(/\s+/g, ' ').trim();
   if (!cleaned) return ['Huelva.cloud'];
@@ -33,7 +39,7 @@ function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
     }
 
     if (current) {
-      lines.push(current);
+      lines.push(tidyLineEnding(current) || current);
       current = word;
     } else {
       lines.push(truncate(word, maxLineLength));
@@ -51,42 +57,47 @@ function splitTitle(text: string, maxLineLength = 24, maxLines = 2): string[] {
 
   if (lines.length === 0) return [truncate(cleaned, maxLineLength)];
 
-  const consumed = lines.join(' ').length;
-  if (cleaned.length > consumed && lines.length > 0) {
-    lines[lines.length - 1] = truncate(lines[lines.length - 1], maxLineLength);
+  const normalizedLines = lines.slice(0, maxLines).map((line, index, arr) => {
+    if (index < arr.length - 1) return tidyLineEnding(line) || line;
+    return line;
+  });
+
+  const joined = normalizedLines.join(' ').trim();
+  if (cleaned.length > joined.length && normalizedLines.length > 0) {
+    normalizedLines[normalizedLines.length - 1] = truncate(normalizedLines[normalizedLines.length - 1], maxLineLength);
   }
 
-  return lines.slice(0, maxLines);
+  return normalizedLines;
 }
 
 function buildNewsHook(title: string, source?: string): string {
   const lower = `${title} ${source || ''}`.toLowerCase();
 
-  if (/(adamuz|ayuntamiento|causa|accidente)/.test(lower)) {
-    return 'Huelva no quiere salir de la causa';
+  if (/(adamuz|causa|accidente)/.test(lower)) {
+    return 'Huelva sigue en la causa';
   }
 
   if (/(estafa|detenido|ayamonte|fraude)/.test(lower)) {
-    return 'La estafa en Ayamonte ya tiene un detenido';
+    return 'Detenido por la estafa de Ayamonte';
   }
 
   if (/(juzgado|tribunal|audiencia|fiscal[ií]a|recurso)/.test(lower)) {
-    return 'Aquí lo importante es quién mueve ficha ahora';
+    return 'Ahora importa quién mueve ficha';
   }
 
   if (/(polic|guardia civil|suces|investigaci[oó]n|arrest)/.test(lower)) {
-    return 'El caso da un giro, pero faltan piezas';
+    return 'El caso gira, pero faltan piezas';
   }
 
   if (/(playa|verano|turismo|hotel|restaurante|chiringuito)/.test(lower)) {
-    return 'Lo que cambia aquí sí te afecta si vienes';
+    return 'Esto sí cambia el plan si vienes';
   }
 
   if (/(ayuntamiento|pleno|obra|barrio|calle|provincia)/.test(lower)) {
-    return 'Esto va más allá del titular fácil';
+    return 'Aquí hay más fondo que titular';
   }
 
-  return truncate(title.replace(/\s+/g, ' ').trim(), 42);
+  return truncate(title.replace(/\s+/g, ' ').trim(), 36);
 }
 
 function buildSupportLine(title: string, source?: string): string {
