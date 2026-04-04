@@ -5,8 +5,7 @@ import Quiz from '@/components/quiz/Quiz';
 import HeroSection from '@/components/HeroSection';
 import { ArrowRight, TrendingUp, CalendarDays, Star, Award, Sparkles, CloudSun, Newspaper, MapPin, Compass, BedDouble, Mail, CheckCircle2 } from 'lucide-react';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 300;
 
 export default async function Home() {
   const articles = await getArticles();
