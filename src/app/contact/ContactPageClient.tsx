@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Megaphone, Building2, ArrowRight, MapPin, Clock3 } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Megaphone, Building2, ArrowRight, MapPin, Clock3, Copy, Check } from 'lucide-react';
 import { trackCommercialClick } from '@/lib/analytics';
 
 const offers = [
@@ -20,6 +21,21 @@ const offers = [
 ];
 
 export default function ContactPageClient() {
+  const [copied, setCopied] = useState(false);
+  const contactEmail = 'jlromero@flowia.pro';
+  const primaryMailto = 'mailto:jlromero@flowia.pro?subject=Huelva.cloud%20-%20Publicidad%20o%20colaboraci%C3%B3n&body=Hola%2C%0A%0Asoy%20%5Bnombre%5D%20y%20quiero%20mover%20%5Bnegocio%2C%20marca%2C%20evento%20o%20campa%C3%B1a%5D.%0A%0AObjetivo%3A%20%5Bvisibilidad%2C%20ventas%2C%20lanzamiento%2C%20tr%C3%A1fico%5D%0AFecha%20o%20timing%3A%20%5B...%5D%0APresupuesto%20orientativo%3A%20%5B...%5D%0A%0ASi%20encaja%2C%20vemos%20opciones.%0A';
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(contactEmail);
+      trackCommercialClick('contact_copy_email', contactEmail);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // silencio: no romper UX por clipboard
+    }
+  };
+
   return (
     <main className="min-h-screen bg-cream pt-36 pb-24 px-6">
       <section className="max-w-6xl mx-auto">
@@ -57,15 +73,26 @@ export default function ContactPageClient() {
                 </div>
               </div>
 
-              <a
-                href="mailto:jlromero@flowia.pro?subject=Huelva.cloud%20-%20Colaboraci%C3%B3n%20o%20publicidad"
-                onClick={() => trackCommercialClick('contact_hero_mail', 'mailto:jlromero@flowia.pro?subject=Huelva.cloud%20-%20Colaboraci%C3%B3n%20o%20publicidad')}
-                className="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-[linear-gradient(135deg,#D4553A_0%,#E56C49_52%,#C5402A_100%)] text-white font-semibold shadow-[0_20px_50px_rgba(212,85,58,0.32)] hover:shadow-[0_24px_60px_rgba(212,85,58,0.38)] transition-all"
-              >
-                <Mail size={18} />
-                Escribir ahora
-                <ArrowRight size={18} />
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={primaryMailto}
+                  onClick={() => trackCommercialClick('contact_hero_mail', primaryMailto)}
+                  className="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-[linear-gradient(135deg,#D4553A_0%,#E56C49_52%,#C5402A_100%)] text-white font-semibold shadow-[0_20px_50px_rgba(212,85,58,0.32)] hover:shadow-[0_24px_60px_rgba(212,85,58,0.38)] transition-all"
+                >
+                  <Mail size={18} />
+                  Escribir ahora
+                  <ArrowRight size={18} />
+                </a>
+
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="inline-flex items-center gap-3 px-5 py-4 rounded-full border border-white/15 bg-white/8 text-white font-semibold hover:bg-white/12 transition-colors"
+                >
+                  {copied ? <Check size={18} /> : <Copy size={18} />}
+                  {copied ? 'Email copiado' : 'Copiar email'}
+                </button>
+              </div>
             </div>
 
             <div className="rounded-[1.8rem] border border-white/10 bg-white/8 backdrop-blur-md p-7 md:p-8">
@@ -77,11 +104,11 @@ export default function ContactPageClient() {
                   <div>
                     <p className="text-sm text-white/45">Email</p>
                     <a
-                      href="mailto:jlromero@flowia.pro"
-                      onClick={() => trackCommercialClick('contact_card_mail', 'mailto:jlromero@flowia.pro')}
+                      href={primaryMailto}
+                      onClick={() => trackCommercialClick('contact_card_mail', primaryMailto)}
                       className="hover:text-terracotta transition-colors"
                     >
-                      jlromero@flowia.pro
+                      {contactEmail}
                     </a>
                   </div>
                 </div>
@@ -103,8 +130,12 @@ export default function ContactPageClient() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/10 text-sm text-white/60 leading-relaxed">
-                Si escribes, mejor con esto claro: qué quieres mover, a quién, fechas, presupuesto orientativo y qué resultado te gustaría conseguir.
+              <div className="mt-8 pt-6 border-t border-white/10 text-sm text-white/60 leading-relaxed space-y-3">
+                <p>Si escribes, mejor con esto claro: qué quieres mover, a quién, fechas, presupuesto orientativo y qué resultado te gustaría conseguir.</p>
+                <div className="rounded-2xl border border-white/10 bg-white/6 p-4 text-white/72">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 font-semibold mb-2">Plantilla rápida</p>
+                  <p>"Hola, soy [nombre]. Quiero mover [negocio/evento/campaña] en Huelva. Busco [visibilidad/ventas/tráfico]. Timing: [fecha]. Presupuesto: [rango]."</p>
+                </div>
               </div>
             </div>
           </div>
@@ -130,8 +161,8 @@ export default function ContactPageClient() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="mailto:jlromero@flowia.pro?subject=Huelva.cloud%20-%20Quiero%20colaborar"
-              onClick={() => trackCommercialClick('contact_final_mail', 'mailto:jlromero@flowia.pro?subject=Huelva.cloud%20-%20Quiero%20colaborar')}
+              href={primaryMailto}
+              onClick={() => trackCommercialClick('contact_final_mail', primaryMailto)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-navy text-white font-semibold hover:bg-terracotta transition-colors"
             >
               Enviar propuesta

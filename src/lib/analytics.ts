@@ -5,6 +5,7 @@ export type CommercialSurface =
   | 'contact_hero_mail'
   | 'contact_card_mail'
   | 'contact_final_mail'
+  | 'contact_copy_email'
   | 'home_top_collab'
   | 'home_contact_card'
   | 'home_bottom_contact';
