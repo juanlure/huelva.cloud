@@ -6,7 +6,7 @@ export function RelatedGuidesRail({ data }: { data: RelatedGuidesRailData }) {
     <section className="premium-guide-section">
       <div className="premium-guide-container premium-guide-stack-lg">
         <div className="premium-guide-reading-width premium-guide-stack-sm">
-          <p className="premium-guide-eyebrow">Siguiente capa</p>
+          {data.eyebrow ? <p className="premium-guide-eyebrow">{data.eyebrow}</p> : null}
           <h2 className="premium-guide-h2">{data.title}</h2>
         </div>
 

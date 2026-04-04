@@ -2,50 +2,52 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const queVerGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium · capital',
-    title: 'Qué ver en Huelva sin perder tiempo en relleno turístico',
+    eyebrow: 'Guía local · Huelva capital',
+    title: 'Qué ver en Huelva si no quieres tragarte una ruta de relleno',
     subtitle:
-      'Si quieres quedarte con lo que de verdad compensa, aquí tienes una selección pensada para separar lo interesante de lo prescindible según el tipo de visita que quieras hacer.',
+      'Huelva no se visita bien acumulando “imprescindibles”. Se visita bien cuando entiendes qué zonas tienen sentido, qué paradas dan contexto y qué cosas se pueden saltar sin drama. Aquí va la versión útil, no la de folleto.',
     quickFacts: [
-      { label: 'Si es tu primera vez', value: 'Centro + muelle + paseo' },
-      { label: 'Si vas justo de tiempo', value: 'Menos sitios, mejor elegidos' },
-      { label: 'Clave real', value: 'No todo merece el mismo tiempo' },
+      { label: 'Primera visita', value: 'Centro, muelle y paseo con cabeza' },
+      { label: 'Si vas justo', value: 'Recorta sin pena' },
+      { label: 'Verdad útil', value: 'No todo lo famoso compensa' },
     ],
   },
   toc: [
-    { id: 'decision-rapida', label: 'Decisión rápida' },
-    { id: 'capital-o-costa', label: 'Qué compensa más' },
-    { id: 'segun-tu-viaje', label: 'Según tu plan' },
-    { id: 'mi-recomendacion', label: 'Mi selección' },
-    { id: 'errores-tipicos', label: 'Errores típicos' },
-    { id: 'tipos-alojamiento', label: 'Tipos de visita' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'reservar', label: 'Siguiente paso' },
+    { id: 'decision-rapida', label: 'Si vas justo' },
+    { id: 'capital-o-costa', label: 'Dónde está el valor' },
+    { id: 'segun-tu-viaje', label: 'Qué encaja contigo' },
+    { id: 'mi-recomendacion', label: 'Mi lectura' },
+    { id: 'errores-tipicos', label: 'Qué te fastidia la ruta' },
+    { id: 'tipos-alojamiento', label: 'Formas de visitar' },
+    { id: 'faq', label: 'Dudas útiles' },
+    { id: 'reservar', label: 'Cerrar el plan' },
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
-    title: 'La respuesta corta, sin postureo de guía eterna',
-    intro: 'Si quieres una respuesta usable ya, empieza aquí.',
+    eyebrow: 'Si vienes con poco tiempo',
+    title: 'La respuesta corta, sin hacerte perder la tarde leyendo obviedades',
+    intro: 'Si quieres una respuesta usable de verdad, empieza aquí.',
     items: [
       {
-        title: 'Haz una ruta corta pero bien elegida',
+        title: 'Haz una ruta corta y defendible',
         description:
-          'Huelva se disfruta mejor con criterio que con acumulación. Pocos sitios buenos ganan a una lista larga mal priorizada.',
+          'Huelva funciona mejor cuando unes pocas piezas buenas que cuando intentas justificar cada parada que viste en internet.',
       },
       {
-        title: 'Empieza por el centro y el frente de agua',
+        title: 'Empieza por el centro y remata en el frente de agua',
         description:
-          'Es la forma más limpia de entender rápido el tono de la ciudad sin empezar dispersándote.',
+          'Ahí entiendes rápido el tono de la ciudad y evitas empezar la visita con desvíos que no aportan gran cosa.',
       },
       {
-        title: 'No intentes verlo todo en una visita corta',
+        title: 'No intentes “cubrir” Huelva en una mañana',
         description:
-          'La obsesión por cubrirlo todo mata el ritmo. Mejor salir con sensación redonda que con agenda rota.',
+          'La obsesión por verlo todo solo sirve para que acabes caminando mucho, recordando poco y rematando peor el plan.',
       },
     ],
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
+    eyebrow: 'Dónde está el valor real',
     title: 'Qué sí compensa ver y qué solo parece obligatorio',
     intro:
       'Aquí no se trata de tachar monumentos por inercia, sino de distinguir entre lo que aporta contexto, paseo o experiencia y lo que apenas suma.',
@@ -72,6 +74,8 @@ export const queVerGuideData: AlojarseGuideData = {
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
+    eyebrow: 'Si vienes por una cosa concreta',
+    resultEyebrow: 'La jugada que mejor encaja',
     title: 'Qué te conviene ver según el tipo de visita que quieres hacer',
     intro: 'La misma ciudad cambia mucho según vayas a pasear, descubrir, comer o simplemente aprovechar unas horas.',
     options: [
@@ -99,14 +103,16 @@ export const queVerGuideData: AlojarseGuideData = {
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi selección editorial, sin venderte humo de folleto',
+    eyebrow: 'Mi lectura de la ciudad',
+    title: 'Mi recomendación, sin intentar venderte una ciudad que no necesita maquillaje',
     body:
-      'Si es tu primera vez, haz una ruta sobria y bien resuelta: centro, uno o dos puntos con contexto, paseo agradable y cierre con algo de comida o café. Huelva no necesita sobreactuación; necesita criterio.',
+      'Si es tu primera vez, haz una ruta sobria: centro, una o dos paradas con contexto real, paseo con aire y cierre con algo de comer o de tomar. Huelva no gana cuando la fuerzas; gana cuando la lees bien.',
     highlight:
-      'La visita buena no es la más larga. Es la que te deja con sensación de “esto sí ha tenido sentido”.',
+      'La visita buena no es la que más sitios mete. Es la que deja una sensación clara de ciudad y cero relleno.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
+    eyebrow: 'Lo que suele estropear la visita',
     title: 'Errores típicos al montar una ruta por Huelva',
     intro: 'Aquí es donde una visita decente se convierte en una sucesión de desvíos innecesarios.',
     mistakes: [
@@ -151,6 +157,7 @@ export const queVerGuideData: AlojarseGuideData = {
   },
   faq: {
     sectionId: 'faq',
+    eyebrow: 'Dudas normales, respuestas sin rodeos',
     title: 'Preguntas frecuentes que sí importan aquí',
     items: [
       {
@@ -172,19 +179,22 @@ export const queVerGuideData: AlojarseGuideData = {
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Siguiente paso: convierte esta selección en una ruta real',
+    eyebrow: 'Cuando ya lo tienes medio claro',
+    title: 'Deja de mirar listas y cierra un plan que se sostenga solo',
     body:
-      'Si ya tienes claro qué tipo de visita te encaja, el siguiente movimiento no es abrir diez pestañas más. Es montar una ruta corta, coherente y con buenas transiciones.',
+      'Si ya tienes claro qué tipo de visita quieres, ahora toca unir bien base, comida y ritmo. Ahí es donde un día en Huelva pasa de correcto a redondo.',
+    kicker: 'La diferencia no la marca abrir otra pestaña. La marca enlazar bien dos o tres decisiones buenas.',
     primaryAction: {
-      label: 'Ver más guías de Huelva',
+      label: 'Ver más guías útiles',
       href: '/guias',
     },
     secondaryAction: {
-      label: 'Dónde alojarse en Huelva',
+      label: 'Resolver dónde alojarse',
       href: '/alojarse',
     },
   },
   relatedGuides: {
+    eyebrow: 'Si quieres hilar mejor el día',
     title: 'Sigue afinando la escapada',
     guides: [
       {

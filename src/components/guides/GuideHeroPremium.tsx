@@ -29,9 +29,9 @@ export function GuideHeroPremium({ data }: { data: GuideHero }) {
               <img src={data.image.src} alt={data.image.alt} />
             ) : (
               <div className="premium-guide-hero__placeholder-copy">
-                <span>Decisión rápida</span>
-                <strong>La mejor base no siempre es la más sexy</strong>
-                <p>La buena elección es la que hace que todo el viaje friccione menos.</p>
+                <span>{data.eyebrow ?? 'Guía local'}</span>
+                <strong>{data.title}</strong>
+                <p>{data.subtitle}</p>
               </div>
             )}
           </div>

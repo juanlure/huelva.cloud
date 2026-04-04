@@ -105,19 +105,19 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>En Huelva no nos sobran los hoteles, pero los que hay cumplen si sabes elegir. Si buscas un resort de cinco estrellas con buffet de fotos de Instagram, tira para la costa. En la capital venimos a vivir la calle, así que el alojamiento es para dormir y poco más.</p>
+      <p>En Huelva no sobran los hoteles, así que conviene quitarse una fantasía de encima cuanto antes: aquí no vienes a encerrarte en un alojamiento espectacular. Vienes a usarlo como base para moverte bien, dormir sin guerra y no perder tiempo con mala logística. Si eliges con esa idea, aciertas mucho más.</p>
 
-      <h2>Zonas: O en el centro, o estás lejos</h2>
-      <p>Huelva se camina en 15 minutos de punta a punta. Si te quedas en el centro (Plaza de las Monjas, Gran Vía), tienes la vida a un paso. Si te quedas a las afueras, vas a depender del coche y aparcar en el centro es un deporte de riesgo.</p>
+      <h2>La decisión importante no es el hotel: es la zona</h2>
+      <p>Huelva se camina rápido, pero eso no significa que dé igual dónde te quedes. Si duermes en el centro —Plaza de las Monjas, Gran Vía y alrededores— tienes la ciudad a mano y te ahorras bastante fricción. Si te vas demasiado fuera, dependes del coche y aparcar se convierte en un pequeño castigo administrativo.</p>
       <ul>
-        <li><strong>Centro Histórico:</strong> Donde pasa todo. Ruido los fines de semana (porque aquí nos gusta la juerga), pero lo tienes todo a mano.</li>
-        <li><strong>Zona Puerto:</strong> Más moderna, pero un poco más fría. Útil si vienes de negocios y no quieres líos.</li>
+        <li><strong>Centro histórico:</strong> práctico, vivo y cómodo para una primera visita. Ruido los fines de semana, sí, porque aquí la gente sale.</li>
+        <li><strong>Zona puerto o áreas más nuevas:</strong> más frías, pero útiles si vienes por trabajo o si priorizas acceso fácil antes que ambiente.</li>
       </ul>
 
-      <h2>Verdades sobre el precio</h2>
-      <p>Un hostal limpio en el centro te va a dar más alegrías que un hotel de cadena a 3 kilómetros. No pagues por el desayuno del hotel; sal a la calle, pide una tostada de pringá y un café, y ahórrate 15 pavos que luego te gastas en gambas. Y para decidir bien dónde te conviene dormir según el plan, combínalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a> y <a href="/donde-comer">dónde comer</a>.</p>
+      <h2>Dónde suele meter la pata la gente</h2>
+      <p>Pagar de más por un hotel simplemente correcto, quedarse lejos por ahorrarse poco dinero o valorar más la foto de la habitación que el plan real del viaje. Un hostal limpio y bien colocado en el centro puede darte bastante más alegría que un hotel anodino a tres kilómetros. Y no pagues alegremente desayunos flojos: sal, desayuna en la calle y usa ese dinero en comer mejor luego. Para decidir con sentido, combínalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a> y <a href="/donde-comer">dónde comer</a>.</p>
 
-      <p>La elección buena no es “hotel bonito”, es hotel útil para el plan. Decide con <a href="/alojarse">la guía de alojamiento</a> y luego ordénalo con <a href="/que-ver">qué ver</a>.</p>
+      <p>La elección buena no es “hotel bonito”. Es alojamiento útil para el viaje que quieres hacer. Si quieres ordenarlo bien, empieza por <a href="/alojarse">la guía de alojamiento</a> y luego encájalo con <a href="/que-ver">qué ver</a>.</p>
 
       <blockquote>Consejo de local: El parking es clave. Si el hotel no tiene, asegúrate de que haya uno público cerca o prepárate para dar vueltas como un jartible.</blockquote>
     `
@@ -134,29 +134,27 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Antonio Torre',
     isAi: true,
     content: `
-      <p>Aracena es la capital de la Sierra de Huelva y uno de los destinos de interior más completos de Andalucía. Naturaleza, patrimonio, gastronomía ibérica y un pueblo con carácter propio. El problema es que mucha gente va sin orden y pierde horas en colas evitables.</p>
+      <p>Aracena funciona muy bien cuando vas con un orden simple y bastante mal cuando intentas hacerla a empujones. Tienes cueva, pueblo, sierra y mesa seria en muy poco espacio. El error habitual no es elegir mal el sitio, sino montarte un día torpe y acabar haciendo cola donde no tocaba o comiendo tarde en cualquier parte.</p>
 
-      <h2>Gruta de las Maravillas: ir temprano o no ir</h2>
-      <p>La Gruta de las Maravillas es visita obligatoria, pero las entradas se agotan. Recomienda llegar al menos 45 minutos antes de apertura (9:00) o reservar online con antelación. Las visitas son guiadas con grupos cerrados cada 30-45 minutos.</p>
+      <h2>La Gruta manda el ritmo del día</h2>
+      <p>La Gruta de las Maravillas sigue siendo la pieza que ordena todo. Si quieres verla, reserva o llega con tiempo de verdad. Lo sensato es construir el día alrededor de esa visita, no meterla con calzador entre otras cinco cosas. Las entradas vuelan, las visitas son guiadas y cuando te sale mal el horario te descuadra media escapada.</p>
       <ul>
-        <li>Duración de la visita: aproximadamente 50 minutos.</li>
-        <li>Temperatura interior: 16-18ºC constantes. Llevar capa ligera.</li>
-        <li>Precio: consultar web oficial para tarifas actualizadas.</li>
+        <li>Duración aproximada: 50 minutos.</li>
+        <li>Temperatura interior: 16-18ºC constantes. Lleva algo ligero encima.</li>
+        <li>Precio: mejor revisar la web oficial antes de salir y no fiarte de recuerdos viejos.</li>
       </ul>
 
-      <h2>Castillo y casco histórico</h2>
-      <p>El castillo árabe domina el pueblo desde lo alto. Acceso libre al recinto exterior. Las vistas sobre la sierra desde la muralla justifican el paseo.</p>
+      <h2>Luego sí: castillo, calles y sierra</h2>
+      <p>El castillo y el casco histórico entran bien después, sin estrés. No hace falta convertir Aracena en una carrera de puntos de interés. Basta con subir, mirar, pasear y dejar que el pueblo juegue a favor. Ahí es donde gana de verdad frente a otros destinos que parecen hechos para tachar y salir corriendo.</p>
 
-      <h2>Mesa: el ibérico como protagonista</h2>
-      <p>La comarca de Aracena es zona de denominación de origen del jamón ibérico de bellota. Los restaurantes del centro sirven producto local con elaboraciones sencillas: tabla de ibéricos, presa a la brasa, solomillo al Pedro Ximénez.</p>
+      <h2>Comer aquí no es un extra: es parte del motivo para venir</h2>
+      <p>La comarca vive el ibérico con bastante menos teatro del que cabría esperar. Tabla buena, presa, solomillo y producto local bien llevado. No hace falta ponerse creativo cuando la materia prima ya hace gran parte del trabajo. Si vas en fin de semana y sois varios, reservar sigue siendo bastante más inteligente que improvisar a las tres de la tarde.</p>
       <ul>
-        <li>Hora punta: 14:00-15:30 los fines de semana. Reservar si el grupo es de 4+.</li>
-        <li>Precio medio: 25-40€ por persona con bebida.</li>
+        <li>Hora punta: 14:00-15:30 los fines de semana.</li>
+        <li>Precio medio razonable: 25-40€ por persona con bebida.</li>
       </ul>
 
-      <p>Si estás montando una escapada completa, enlaza con <a href="/fin-de-semana">planes para un fin de semana en Huelva</a> y con <a href="/que-ver">qué ver en la provincia</a> para no dejar Aracena aislada del resto del viaje.</p>
-
-      <p>Para no dejarla aislada como pieza suelta, mézclala con <a href="/fin-de-semana">una escapada de fin de semana</a> o con <a href="/que-ver">otros sitios potentes de la provincia</a>.</p>
+      <p>Si estás montando una escapada completa, encájala con <a href="/fin-de-semana">planes para un fin de semana en Huelva</a> y con <a href="/que-ver">qué ver en la provincia</a> para no dejar Aracena como una pieza suelta dentro del viaje.</p>
 
       <blockquote>Aracena se disfruta sin prisa. Si intentas hacer todo en 4 horas, no disfrutas nada.</blockquote>
     `
@@ -167,29 +165,35 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   // 5. Plaza de las Monjas
   {
     slug: 'plaza-monjas-huelva-guia-completa',
-    title: 'Plaza de las Monjas: el corazón social de Huelva',
-    excerpt: 'Guía completa de la Plaza de las Monjas: historia, qué hacer, dónde comer cerca y por qué sigue siendo el centro de gravedad de la ciudad.',
+    title: 'Plaza de las Monjas: cómo encajarla bien en una visita a Huelva',
+    excerpt: 'Más que una plaza monumental, es el centro de gravedad social de Huelva. Qué mirar, cuándo pasar y cómo usarla como punto de partida con sentido.',
     category: 'Guías Locales',
     image: '/images/guides/huelva-plaza-las-monjas.jpg',
     publishedAt: '2026-02-23T18:00:00Z',
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>No nos engañemos: la Plaza de las Monjas no es la Plaza Mayor de Salamanca. Ni falta que le hace. Es el salón de nuestra casa. Si quieres ver quién manda en Huelva, ven un sábado a mediodía y siéntate en un banco (si encuentras uno libre).</p>
+      <p>La Plaza de las Monjas no se visita como quien tacha un monumento. Se usa. Ese es el matiz importante. Es el punto desde el que Huelva se ordena bastante bien: quedadas, café, paseo, arranque de ruta por el centro y ese rato de ciudad que no necesita espectáculo para funcionar.</p>
 
-      <h2>¿Qué se hace aquí? Nada y todo</h2>
-      <p>Es el punto de encuentro por excelencia. Aquí se queda para ir a comer, para ver pasar el tiempo o para que los niños corran mientras tú te tomas un café. No busques monumentos épicos, busca la vida que tiene.</p>
+      <h2>No vengas buscando una plaza solemne</h2>
+      <p>Si esperas una gran plaza histórica al estilo castellano, te vas a equivocar de expectativa. Aquí la gracia no está en una arquitectura descomunal, sino en que sigue siendo el sitio donde la ciudad se encuentra. Por eso conviene leerla como termómetro local, no como postal.</p>
       <ul>
-        <li><strong>El "Colón":</strong> Aunque la estatua es de la Fe Descubridora, todos le llamamos Colón. Es el punto de reunión oficial. "Nos vemos en el Colón", y punto.</li>
-        <li><strong>El Kiosko:</strong> Un clásico para comprar chuches o el periódico mientras ves pasar a la gente.</li>
+        <li><strong>El “Colón”:</strong> aunque la escultura es la de la Fe Descubridora, medio Huelva sigue quedando “en el Colón”. Si alguien te cita aquí, no hace falta más explicación.</li>
+        <li><strong>El arranque del centro:</strong> desde la plaza sales fácil hacia Gran Vía, Concepción, Rico o Vázquez López. Es decir: paseo, compras, bares y vida urbana en pocos minutos.</li>
       </ul>
 
-      <h2>A comer, pero con criterio</h2>
-      <p>Alrededor de la plaza hay de todo. Desde sitios donde te clavan por ser el centro hasta bares de toda la vida en las calles que salen (Vázquez López o Rico). Si ves a muchos onubenses en una barra, entra. Si solo ves cámaras de fotos, sigue caminando.</p>
+      <h2>Cuándo encaja mejor</h2>
+      <p>A media mañana, al salir a comer o al caer la tarde. Ahí es cuando se nota de verdad para qué sirve: gente entrando y saliendo, familias, terrazas, recados, café, una ciudad que se mueve sin necesidad de montaje turístico. Ir a pleno sol en verano a las tres de la tarde no tiene mucha épica; usarla para abrir o coser un recorrido, sí.</p>
 
-      <p>Si vienes con mentalidad de recorrido, esta parada encaja sola dentro de <a href="/que-ver">qué ver en Huelva</a>. Y si estás montando una visita más completa, enlázala con <a href="/donde-comer">dónde comer</a> y <a href="/fin-de-semana">qué hacer un fin de semana</a>.</p>
+      <h2>La decisión buena aquí no es quedarse: es desde dónde seguir</h2>
+      <p>Lo útil de la plaza es que te coloca. Si vas a una primera visita, úsala como punto de arranque para leer el centro. Si ya vienes con hambre, te sirve de base para moverte hacia calles con más criterio gastronómico. Y si solo quieres tomarle el pulso a Huelva antes de decidir siguiente paso, aquí lo tienes bastante fácil.</p>
 
-      <blockquote>Dato real: La plaza ha cambiado mil veces. Algunos todavía echan de menos los jardines antiguos, otros aman el espacio peatonal. Así somos aquí.</blockquote>
+      <h2>Qué suele hacer mal quien viene de fuera</h2>
+      <p>Quedarse solo en el perímetro más obvio, sentarse en la primera terraza sin mirar dos calles más allá o pensar que, como ya ha visto la plaza, ya ha entendido el centro. No. La plaza funciona mejor como nudo que como destino final. A partir de aquí empiezan de verdad el paseo, la comida o el recorrido urbano.</p>
+
+      <p>Si quieres encajarla con sentido, mézclala con <a href="/que-ver">qué ver en Huelva</a>. Y si la idea es que te lleve a mesa o a un plan más redondo, sigue después por <a href="/donde-comer">dónde comer</a> o por <a href="/fin-de-semana">la guía de fin de semana</a>.</p>
+
+      <blockquote>La Plaza de las Monjas no gana por monumental. Gana porque Huelva sigue pasando por aquí.</blockquote>
     `
   },
 
@@ -204,23 +208,23 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Antonio Torre',
     isAi: true,
     content: `
-      <p>El Puerto de Huelva es el más importante de Andalucía occidental y uno de los principales de España en tráfico de mercancías. No es un puerto para cruceristas, es un puerto de trabajo: químicos, minerales, contenedores. Eso lo hace diferente y, en cierto modo, más interesante.</p>
+      <p>El Puerto de Huelva no encaja en la postal turística fácil, y precisamente por eso merece la pena entenderlo. No es un decorado para cruceros ni una fachada bonita frente al agua: es un puerto de trabajo, con peso industrial real, y una de las claves para leer la ciudad sin simplificarla demasiado.</p>
 
-      <h2>Qué es realmente el puerto hoy</h2>
-      <p>Infraestructura industrial dividida en varios muelles. El más conocido es el Muelle de la Compañía (o Muelle del Tinto), de época inglesa. El resto es zona portuaria activa con restricciones de acceso.</p>
+      <h2>La parte importante: esto no va de turismo portuario</h2>
+      <p>Hablamos de una infraestructura industrial enorme, dividida en varios muelles y pensada para mercancías, no para visitantes. El punto más accesible y agradecido para quien viene de fuera sigue siendo el Muelle del Tinto, que además tiene la ventaja de darte historia e imagen en el mismo movimiento. El resto del puerto se entiende más como contexto que como recorrido.</p>
 
-      <h2>Qué puedes visitar</h2>
+      <h2>Qué sí merece acercarte a ver</h2>
       <ul>
-        <li><strong>Muelle del Tinto:</strong> acceso público. Antiguo muelle de la Rio Tinto Company Limited. Vistas del río Odiel y de la actividad portuaria.</li>
-        <li><strong>Centro de Interpretación:</strong> información sobre la historia del puerto (consultar horarios).</li>
-        <li><strong>Paseo marítimo:</strong> desde el muelle se puede caminar hacia el entorno del río.</li>
+        <li><strong>Muelle del Tinto:</strong> acceso público, historia inglesa y buenas vistas del Odiel y del entorno portuario.</li>
+        <li><strong>Entorno peatonal:</strong> paseo cómodo para leer mejor la relación entre río, ciudad e industria.</li>
+        <li><strong>Centro de interpretación:</strong> útil si te interesa la capa histórica, aunque conviene revisar horarios antes.</li>
       </ul>
 
-      <h2>Cómo llegar</h2>
-      <p>El muelle del Tinto está a unos 15-20 minutos a pie desde el centro. También hay autobús (líneas que van hacia el puerto) y aparcamiento en zona si vas en coche.</p>
+      <h2>Cómo encajarlo sin forzarlo</h2>
+      <p>Desde el centro llegas andando en 15-20 minutos, y eso lo hace muy fácil de meter en una tarde sin complicarte. También puedes ir en coche o transporte público, pero lo importante aquí no es la logística, sino no esperar algo que esto no pretende ser. Funciona mejor como parte de un recorrido urbano con criterio que como visita estrella aislada.</p>
 
-      <h2>Lo que no encontrarás</h2>
-      <p>No es un puerto turístico. No hay tiendas, ni restaurantes frente al agua, ni ferries para pasajeros con destinos interesantes. La actividad es industrial y el acceso a zonas operativas está restringido.</p>
+      <h2>Qué no vas a encontrar, para no montar una película equivocada</h2>
+      <p>No hay paseo marítimo de postal, ni fila de restaurantes con vistas, ni actividad pensada para entretener a turistas. Hay industria, historia y paisaje mezclados. Si entras esperando un puerto bonito, te decepciona. Si entras entendiendo qué papel juega en Huelva, gana bastante.</p>
 
       <p>Para meter esta visita en una ruta que tenga sentido, enlázala con <a href="/que-ver">qué ver en Huelva</a>. Y si la idea es quedarte más de un día, <a href="/fin-de-semana">esta guía de fin de semana</a> te ordena bastante mejor el conjunto.</p>
 
@@ -267,74 +271,74 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
   // 8. Coquinas
   {
     slug: 'coquinas-huelva-como-comer',
-    title: 'Coquinas de Huelva: cómo pedirlas bien y dónde',
-    excerpt: 'Las coquinas son un clásico de la gastronomía onubense. Guía para reconocer las buenas, evitar las congeladas y disfrutarlas de verdad.',
+    title: 'Coquinas de Huelva: cómo pedirlas bien sin tragarte una mentira',
+    excerpt: 'Producto humilde, tapa seria. Cómo detectar unas buenas coquinas, qué errores son típicos y en qué contexto merece pedirlas de verdad.',
     category: 'Gastronomía',
     image: '/images/guides/coquinas-huelva.jpg',
     publishedAt: '2026-02-23T18:15:00Z',
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Las coquinas (tellina) son un producto humilde de la ría de Huelva que, bien tratado, se convierte en tapa de primer nivel. Menos glamurosas que la gamba blanca, pero igual de identitarias y más accesibles.</p>
+      <p>Las coquinas parecen una tapa sencilla hasta que te ponen unas malas delante. Entonces entiendes rápido la diferencia entre producto fino y plato de compromiso. En Huelva funcionan cuando son pequeñas, frescas, bien limpiadas y cocinadas con mano ligera. Si no, solo te comes arena, ajo y decepción.</p>
 
-      <h2>Cómo reconocer coquinas frescas</h2>
+      <h2>La decisión no es si pedir coquinas: es dónde hacerlo</h2>
+      <p>No son una tapa para cualquier sitio. Las coquinas buenas exigen rotación, producto cuidado y cocina que sepa no pasarse. En una barra con poca vida o con carta demasiado larga, es más fácil que te lleves una versión mediocre. Mejor pedirlas donde el marisco y el pescado sí tengan salida real.</p>
+
+      <h2>Cómo notar si van bien encaminadas</h2>
       <ul>
-        <li><strong>Tamaño:</strong> pequeñas, de 2-4 cm. Las grandes suelen ser de otras procedencias.</li>
-        <li><strong>Color:</strong> concha grisácea con tonos amarillentos. Si están blanquecinas, pueden ser congeladas.</li>
-        <li><strong>Olor:</strong> marino intenso. Sin rastro de amoniaco ni olores extraños.</li>
+        <li><strong>Tamaño pequeño:</strong> suele ser mejor señal. Las piezas enormes ya te invitan a sospechar.</li>
+        <li><strong>Caldo limpio y con sentido:</strong> ajo, vino, perejil y mar. No una sopa turbia que tape el producto.</li>
+        <li><strong>Arena controlada:</strong> algo puede aparecer, claro, pero si cruje cada bocado, están mal tratadas.</li>
+        <li><strong>Cocción corta:</strong> abrir, ligar y fuera. Si las castigan al fuego, se quedan tiesas y pierden gracia.</li>
       </ul>
 
-      <p>Si la gamba blanca es la reina, la coquina es la princesa rebelde de la ría. Es un producto humilde, pero si te dan "gato por liebre" (o tellina por coquina de aquí), te vas a enterar rápido porque tienen más arena que el desierto del Sáhara.</p>
+      <h2>El error típico del que viene de fuera</h2>
+      <p>Pedirlas por obligación folclórica, como si hubiera que tacharlas sí o sí. No. Las coquinas merecen la pena cuando la casa las trabaja bien y cuando encajan dentro de una comida o una ruta de barra con producto marino. Si estás en un sitio más de carne, de carta infinita o de terraza turística sin alma, mejor elige otra cosa.</p>
 
-      <h2>¿Cómo saber si son de las buenas?</h2>
-      <p>La coquina de Huelva es pequeña, fina y tiene un sabor que te llena la boca de mar. Si ves unas almejas gigantes que te venden como coquinas, sospecha. Probablemente vienen de lejos y han pasado más tiempo en un camión que en el agua.</p>
-      <ul>
-        <li><strong>A la marinera:</strong> La clásica. Ajo, perejil y un chorrito de vino del Condado. El secreto es no dejarlas mucho tiempo al fuego; tienen que abrirse y ya está.</li>
-        <li><strong>Al ajillo:</strong> Para los puristas. Solo aceite del bueno, ajo picadito y un toque de guindilla para que despierten el paladar.</li>
-      </ul>
+      <h2>Cómo se disfrutan de verdad</h2>
+      <p>Sin grandes ceremonias: plato al centro, pan cerca y manos trabajando. La gracia está en el ritmo corto, en el sabor limpio y en ese caldo que pide mojar. No necesitan inventos, ni salsas raras, ni una interpretación moderna para justificar el precio.</p>
 
-      <h2>El ritual de comerlas</h2>
-      <p>Aquí no se usan cubiertos. Se usan las manos. Coges una, usas la concha para sacar el bicho de la siguiente y así hasta que solo quede un montón de cáscaras y el caldito delicioso al fondo del plato. El que no use pan para mojar ese caldo, no tiene alma.</p>
+      <h2>Cuándo compensan más</h2>
+      <p>En tapeo, en comida compartida o como arranque de una mesa donde luego vayan más cosas de mar. Funcionan peor como plato estrella aislado que como parte de un contexto gastronómico bien pensado. Por eso tiene sentido cruzarlas con <a href="/donde-comer">dónde comer en Huelva</a> y con <a href="/article/donde-tapear-en-huelva">la ruta de tapeo</a> antes de lanzarte a pedir por inercia.</p>
 
-      <p>Y si quieres llevar esto al terreno práctico, enlaza con <a href="/donde-comer">dónde comer en Huelva</a> y con <a href="/article/donde-tapear-en-huelva">la ruta de tapeo</a> para encontrar contexto, no solo teoría.</p>
-
-      <blockquote>Ojo con la veda: Hay épocas en las que no se pueden coger. Si te las ofrecen en agosto a precio de oro, pregunta de dónde vienen.</blockquote>
+      <blockquote>Una buena ración de coquinas sabe a ría. Una mala sabe a arena cara.</blockquote>
     `
   },
 
   // 9. Café en Huelva
   {
     slug: 'cafe-huelva-tradicion-donde-tomar',
-    title: 'Café en Huelva: dónde tomarlo bien y con historia',
-    excerpt: 'El café es ritual en Huelva. Desde los bares tradicionales hasta las nuevas propuestas, guía para tomar café con criterio.',
+    title: 'Café en Huelva: dónde tomarlo con sentido y sin postureo',
+    excerpt: 'Aquí el café es barra, pausa y rutina social. Cómo pedirlo, qué esperar de cada zona y dónde encaja mejor dentro de un día real en Huelva.',
     category: 'Gastronomía',
     image: '/images/guides/cafe-vaso-huelva.jpg',
     publishedAt: '2026-02-23T18:20:00Z',
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>En Huelva, el café no es solo una bebida. Es excusa para sentarse, para empezar el día, para hacer tiempo, para encontrarse. La cultura del café aquí es de consumo diario, de barra y terraza, no de especialidad y catación.</p>
+      <p>En Huelva el café no se vive como ceremonia sofisticada, sino como parte del día. Sirve para arrancar la mañana, hacer una pausa, esperar a alguien, rematar un desayuno o justificar sentarse diez minutos más. Si vienes buscando discurso de specialty coffee, aquí la película va por otro lado. Y no pasa nada: la gracia está justo ahí.</p>
 
-      <h2>Cómo se pide el café en Huelva</h2>
+      <h2>Lo primero es entender el contexto</h2>
+      <p>El buen café en Huelva no siempre está en el local más moderno, sino en el bar que funciona, rota, conoce a su clientela y acompaña bien el momento. Muchas veces importa tanto la barra, la terraza o la tostada como la taza en sí. Por eso no conviene juzgarlo solo con el radar de “cafetería bonita”.</p>
+
+      <h2>Cómo se pide aquí, sin hacer el paripé</h2>
       <ul>
-        <li><strong>Solo:</strong> espresso corto, intenso.</li>
-        <li><strong>Cortado:</strong> solo con un poco de leche caliente.</li>
-        <li><strong>Americano:</strong> solo con agua caliente añadida.</li>
-        <li><strong>Sombra:</strong> mucha leche, poco café (variante local).</li>
+        <li><strong>Solo:</strong> corto, directo y sin florituras.</li>
+        <li><strong>Cortado:</strong> para quien quiere café con algo de leche pero sin traicionarse del todo.</li>
+        <li><strong>Americano:</strong> menos frecuente como protagonista, pero existe.</li>
+        <li><strong>Sombra:</strong> una manera muy andaluza de aligerar el café sin convertirlo en vaso de leche.</li>
       </ul>
 
-      <h2>Dónde tomarlo</h2>
-      <p>Los bares de toda la vida son la mejor opción para entender el ritual:</p>
-      <ul>
-        <li><strong>Centro histórico:</strong> bares con décadas de historia, clientela fija y café que no ha cambiado de proveedor en años.</li>
-        <li><strong>Zona de la Gran Vía:</strong> más variado, con opciones de cafeterías modernas.</li>
-        <li><strong>Mercado del Carmen:</strong> algunos puestos sirven café para el desayuno del mercado.</li>
-      </ul>
+      <h2>Dónde suele encajar mejor</h2>
+      <p>En el centro histórico y alrededor de las zonas más vivas de mañana, el café funciona sobre todo como ancla de rutina. Cerca del Mercado del Carmen se mezcla más con el pulso del desayuno y el producto. En otras zonas algo más modernas puede haber propuesta más actual, pero el corazón del asunto sigue siendo el mismo: barra, conversación y tiempo real.</p>
 
-      <h2>El desayuno completo</h2>
-      <p>Café + tostada con aceite o manteca colorá, o café + churros si es fin de semana. Precio: 2-3,50€ dependiendo de la zona.</p>
+      <h2>El error típico: confundir café bueno con local bonito</h2>
+      <p>Una vajilla mona no te arregla un café flojo ni una experiencia vacía. Y al revés: un bar sencillo puede darte justo el café que encaja con el momento. En Huelva compensa pensar menos en la foto y más en para qué te estás sentando: desayuno con calma, parada corta, espera, reunión o simple costumbre.</p>
 
-      <blockquote>En Huelva no se va a tomar café. Se va al bar y se toma café mientras se está.</blockquote>
+      <h2>Con qué combina mejor</h2>
+      <p>Café y tostada sigue siendo la pareja fuerte. Café y churros entra mejor en fin de semana. Y si estás usando el desayuno como arranque de día, tiene sentido enlazarlo luego con <a href="/que-ver">qué ver en Huelva</a>, con <a href="/donde-comer">dónde comer</a> o con <a href="/article/desayuno-huelva-donde-tostada-churros">la guía de desayunos</a> para que no se quede en pausa aislada.</p>
+
+      <blockquote>En Huelva no se sale “a catar café”. Se va al bar, se pide uno y el día sigue desde ahí.</blockquote>
     `
   },
 
@@ -1785,22 +1789,22 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>Vienes a Huelva 48 horas. No es mucho, pero es suficiente para entender de qué va esta ciudad. No para verlo todo (eso es imposible), sí para captar la esencia: el contraste entre la historia industrial, la marisma, y el chiringuito de playa.</p>
+      <p>Dos días en Huelva dan para entender bastante más de lo que parece, siempre que no intentes abarcarlo todo. El plan bueno aquí no es coleccionar paradas: es mezclar centro, contexto, comida y un poco de costa o entorno para salir con una lectura coherente de la ciudad y su provincia cercana.</p>
 
-      <h2>Día 1: Historia y capital</h2>
-      <p><strong>Mañana:</strong> Plaza de las Monjas, desayuno en alguna cafetería de toda la vida. Museo de Huelva (gratis, 1 hora). Paseo por el centro: Concepción, calles comerciales.</p>
-      <p><strong>Mediodía:</strong> ruta de tapas en el centro. Choco frito, coquinas, gamba si es temporada. Caña y media.</p>
-      <p><strong>Tarde:</strong> Muelle del Tinto, Monumento a Colón. Atardecer en el entorno del puerto o en El Conquero para ver la ciudad desde arriba.</p>
-      <p><strong>Noche:</strong> cena en el centro o Gran Vía. Tapas, conversación, terraza si hace bueno.</p>
+      <h2>Primer día: capital, ritmo y primeras claves</h2>
+      <p><strong>Mañana:</strong> Plaza de las Monjas, desayuno en una cafetería con algo de verdad y paseo por el centro para coger escala. Museo de Huelva si quieres contexto rápido sin complicarte la vida.</p>
+      <p><strong>Mediodía:</strong> aquí no improvises demasiado. Ruta de tapas o comida bien elegida: choco frito, coquinas, pescado y barra con movimiento.</p>
+      <p><strong>Tarde:</strong> Muelle del Tinto y entorno del puerto para entender una de las capas más propias de Huelva. Si llegas con buena luz, mejor todavía.</p>
+      <p><strong>Noche:</strong> cena tranquila en centro o Gran Vía. Nada de perseguir una gran noche legendaria: aquí suele funcionar mejor una buena mesa y tiempo para alargarla.</p>
 
-      <h2>Día 2: Naturaleza y alrededores</h2>
-      <p><strong>Mañana:</strong> salida temprana a La Rábida (15 minutos). Monasterio, vistas al río. Luego Palos de la Frontera: Fuente Santa, Casa Pinzón.</p>
-      <p><strong>Mediodía:</strong> comida en la playa. Punta Umbría o El Portil. Pescaíto frito, cerveza, vistas al Atlántico.</p>
-      <p><strong>Tarde:</strong> vuelta a Huelva, paseo por el Parque Moret si quieres sombra, o por la zona del puerto si prefieres movimiento.</p>
-      <p><strong>Noche:</strong> última cena, últimas tapas. Recoger fuerzas para volver.</p>
+      <h2>Segundo día: salir un poco para completar la foto</h2>
+      <p><strong>Mañana:</strong> La Rábida entra muy bien por cercanía y retorno. Monasterio, vistas y algo de contexto colombino sin meter una paliza de coche. Si te cuadra, completa con Palos y listo.</p>
+      <p><strong>Mediodía:</strong> comida en costa. Punta Umbría o El Portil resuelven bien si quieres combinar mar, paseo y pescado sin montar una odisea logística.</p>
+      <p><strong>Tarde:</strong> vuelve con calma. Parque Moret si necesitas bajar revoluciones, zona del puerto si todavía te apetece calle, o simplemente café largo y cierre sin prisas.</p>
+      <p><strong>Noche:</strong> última cena, última vuelta y fuera. Si haces bien el viaje, te vas con la sensación de que Huelva no se agota en 48 horas, pero sí se deja entender.</p>
 
-      <h2>Lo que te estás perdiendo (y está bien)</h2>
-      <p>No has visto Aracena, ni las minas, ni Ayamonte, ni Doñana. Has visto lo esencial de la capital y un poco de alrededor. Para el resto, necesitas volver. Y lo harás. Si quieres ordenar mejor ese regreso, sigue por <a href="/fin-de-semana">la guía de fin de semana</a>, <a href="/que-ver">qué ver en Huelva</a>, <a href="/donde-comer">dónde comer</a> y <a href="/alojarse">dónde alojarse</a>.</p>
+      <h2>Lo que dejas fuera no es un fallo del plan</h2>
+      <p>No has visto Aracena, ni minas, ni Ayamonte, ni Doñana con calma. Perfecto. Este itinerario no intenta tachar provincia, sino dejarte con un mapa mental útil para volver mejor. Si quieres ordenar ese siguiente viaje, sigue por <a href="/fin-de-semana">la guía de fin de semana</a>, <a href="/que-ver">qué ver en Huelva</a>, <a href="/donde-comer">dónde comer</a> y <a href="/alojarse">dónde alojarse</a>.</p>
 
       <blockquote>48 horas en Huelva no son para verlo todo. Son para entender que aquí se vive distinto, más despacio, más de cerca.</blockquote>
     `
@@ -1861,22 +1865,22 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Lucía Colombina',
     isAi: true,
     content: `
-      <p>Huelva tiene costa para aburrir, pero no todas las playas sirven para lo mismo. Una cosa es querer aparcar fácil con niños y otra buscar dunas, silencio o un chiringuito decente. Esta guía va de elegir bien y no perder el día haciendo el primo.</p>
+      <p>Huelva tiene costa para aburrir, pero la decisión buena no es “cuál es la mejor playa”, sino cuál te encaja hoy. Una cosa es ir con niños y nevera, otra querer dunas y silencio, y otra necesitar paseo, ducha y una cerveza decente a diez minutos. Esta guía va de elegir sin hacer el primo.</p>
 
-      <h2>Si quieres comodidad: Punta Umbría</h2>
-      <p>Es la opción fácil. Cerca de la capital, con servicios, bares, paseo y ambiente. No es la playa más salvaje ni la más fotogénica, pero funciona. Para ir sin complicarte la vida, cumple de sobra.</p>
+      <h2>Si quieres llegar y funcionar: Punta Umbría</h2>
+      <p>Es la jugada fácil y por eso sigue siendo útil. Cerca de la capital, con servicios, bares, paseo y bastante vida alrededor. No es la playa más salvaje ni la más bonita para presumir en Instagram, pero para un día cómodo resuelve mejor que muchas que venden más humo.</p>
 
-      <h2>Si quieres amplitud y verano clásico: Matalascañas</h2>
-      <p>Matalascañas es enorme. Hay sitio, hay tradición veraniega y hay mezcla de familias, chavales y gente que lleva veraneando ahí media vida. Si te toca viento, cambia bastante la experiencia, así que conviene mirar el tiempo antes de salir.</p>
+      <h2>Si quieres playa grande de verano clásico: Matalascañas</h2>
+      <p>Matalascañas es amplitud, costumbre y logística conocida. Hay sitio, hay tradición y hay mezcla de familias, chavales y gente que lleva media vida repitiendo. Cuando hace buen día entra sola; cuando pega viento, la experiencia cambia bastante, así que conviene mirar el tiempo antes de salir de casa.</p>
 
-      <h2>Si quieres equilibrio: El Portil y Nuevo Portil</h2>
-      <p>Menos escándalo que Punta Umbría y bastante más tranquilidad. Buena opción para pasear, desconectar y comer luego con cierta calma. No vende tanto humo y quizá por eso gusta más a quien repite.</p>
+      <h2>Si buscas equilibrio de verdad: El Portil y Nuevo Portil</h2>
+      <p>Aquí suele haber menos ruido y más sensación de plan redondo. Buena playa para pasear, comer luego con calma y volver sin la sensación de haberte metido en un hormiguero. No presume tanto y quizá por eso suele gustar más a quien repite.</p>
 
-      <h2>Si quieres ambiente de siempre: La Antilla e Islantilla</h2>
-      <p>Aquí hay vida, paseo, familias, terrazas y sensación de vacaciones de toda la vida. Perfecta si quieres playa + helado + paseo + cena sin coger el coche para todo. Si buscas soledad monástica, no es esto.</p>
+      <h2>Si quieres vacaciones con paseo y vida alrededor: La Antilla e Islantilla</h2>
+      <p>Aquí hay ambiente de toda la vida: playa, familias, terrazas, paseo y tarde que se alarga sin demasiada planificación. Si tu idea es encadenar baño, helado, vuelta y cena sin mover mucho el coche, funciona. Si buscas aislamiento total, estás en la playa equivocada.</p>
 
-      <h2>Si quieres naturaleza más cruda: Cuesta Maneli o zonas abiertas de Doñana</h2>
-      <p>Aquí vienes por paisaje, no por comodidad. Menos servicios, más arena, más sensación de costa en bruto. Es mejor planearlo bien: agua, sombra y cabeza. Si no, la épica se te convierte en castigo.</p>
+      <h2>Si vienes por naturaleza y no por comodidad: Cuesta Maneli o Doñana</h2>
+      <p>En estas zonas el premio es el paisaje, no la facilidad. Menos servicios, más arena, más sensación de costa abierta. Hay que ir con agua, sombra y un poco de cabeza, porque cuando romantizas demasiado la épica luego acabas frito y jurando que no vuelves.</p>
 
       <h2>Cómo elegir sin equivocarte</h2>
       <ul>
@@ -1984,24 +1988,24 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Tapear en Huelva no consiste en sentarte en la primera terraza con sol y entregarte al destino. Hay sitios que cumplen, otros que viven de la inercia y algunos que parecen hechos para cazar al despistado. Si quieres comer bien, conviene distinguirlos.</p>
+      <p>Tapear en Huelva no consiste en sentarte en la primera terraza con sol y dejarte llevar por la providencia. Hay bares que cumplen, otros que viven de la costumbre y unos cuantos que parecen puestos ahí para desplumar al despistado. Si quieres comer bien, conviene separar una cosa de la otra.</p>
 
-      <h2>Empieza por el centro, pero no te enamores de lo primero</h2>
-      <p>El centro concentra opciones y eso está bien para arrancar, pero también mete ruido. Mira rotación, mira si hay gente local y mira si la carta parece pensada para comer o para sobrevivir con cuatro fotos plastificadas. La diferencia se nota rápido.</p>
+      <h2>Empieza por el centro, pero no te cases con lo primero que veas</h2>
+      <p>El centro te da opciones rápidas y eso está bien para arrancar, pero también mete bastante ruido. Mira rotación, mira quién está en la barra y mira si la carta parece pensada para comer o para aguantar turistas con cuatro fotos plastificadas. La diferencia se detecta más rápido de lo que parece.</p>
 
-      <h2>Qué pedir para medir un sitio</h2>
+      <h2>Qué pedir si quieres medir un bar sin perder tiempo</h2>
       <ul>
-        <li><strong>Choco frito:</strong> si esto falla, mal asunto.</li>
+        <li><strong>Choco frito:</strong> si esto falla, no sigas investigando.</li>
         <li><strong>Coquinas:</strong> producto, limpieza y punto. Aquí se retratan solos.</li>
-        <li><strong>Ensaladilla o tapa fría:</strong> útil para detectar desgana.</li>
+        <li><strong>Ensaladilla o tapa fría:</strong> útil para detectar desgana o mimo.</li>
         <li><strong>Algo fuera de carta:</strong> si existe, normalmente hay cocina viva detrás.</li>
       </ul>
 
-      <h2>Cómo detectar trampa</h2>
-      <p>Si todo parece pensado para que hagas una foto y nada para que repitas, sospecha. Si el camarero no sabe recomendarte nada, peor. Y si el pescado sabe a trámite, vete cerrando la cuenta y sigue tu vida. Para afinar todavía más, cruza esta pieza con <a href="/donde-comer">dónde comer en Huelva</a> y con las guías específicas de <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a> y <a href="/article/coquinas-huelva-como-comer">coquinas</a>.</p>
+      <h2>Cómo oler la trampa antes de pagarla</h2>
+      <p>Si todo está pensado para la foto y nada para que repitas, sospecha. Si el camarero no sabe recomendarte nada, peor. Y si el pescado sabe a trámite, cierra la cuenta y sigue tu vida. Para afinar todavía más, cruza esta pieza con <a href="/donde-comer">dónde comer en Huelva</a> y con las guías específicas de <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a> y <a href="/article/coquinas-huelva-como-comer">coquinas</a>.</p>
 
-      <h2>Zonas y lógica</h2>
-      <p>Centro para empezar. Barrios o zonas menos obvias para afinar. Costa si el día pide mar. No hay un único “mejor sitio”; hay contextos. Lo inteligente es decidir según hambre, hora y compañía.</p>
+      <h2>No hay una ruta mágica: hay contexto</h2>
+      <p>Centro para empezar, barrios o zonas menos obvias para afinar y costa si el día pide mar. No existe un único “mejor sitio” para todo. Lo inteligente es decidir según hambre, hora, compañía y nivel de paciencia. Tapear bien aquí va más de leer la situación que de seguir una lista sagrada.</p>
 
       <p>Si quieres ir un paso más allá de la tapa suelta, remata con <a href="/donde-comer">la guía de dónde comer en Huelva</a>, que es donde separas picoteo de comida seria.</p>
 
@@ -2020,22 +2024,22 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Antonio Torre',
     isAi: true,
     content: `
-      <p>Si solo tienes un día en Huelva, la clave no es meter veinte cosas. La clave es elegir un hilo lógico: centro, historia, comida, paseo y un buen final. Así entiendes la ciudad sin convertir el día en una oposición.</p>
+      <p>Si solo tienes un día en Huelva, el error típico es intentar “cubrirla” como si fuera una ciudad museo. No va por ahí. Aquí funciona mejor un recorrido corto, con aire, buena comida y dos o tres golpes de contexto bien elegidos. Menos checklists. Más sensación de haber estado en un sitio real.</p>
 
-      <h2>Mañana: centro y primeras referencias</h2>
-      <p>Empieza por Plaza de las Monjas y las calles del centro. Desayuna bien, pasea sin prisa y entiende rápido la escala real de la ciudad. Huelva no se disfruta corriendo como si fueras a sellar una gymkana.</p>
+      <h2>Empieza por el centro y toma la medida de la ciudad</h2>
+      <p>Arranca en Plaza de las Monjas, baja el ritmo y entiende rápido una cosa: Huelva no se visita a martillazos. Centro, calles comerciales, café sin prisa y una primera lectura del ambiente. Si a las diez de la mañana ya vas corriendo de foto en foto, has entendido mal el plan.</p>
 
-      <h2>Media mañana: Museo o entorno colombino</h2>
-      <p>Si quieres ciudad, Museo de Huelva. Si prefieres contexto histórico más amplio y tienes coche, La Rábida te da bastante retorno por poco esfuerzo. Las dos opciones son sensatas; lo absurdo es intentar hacer ambas como si nada.</p>
+      <h2>Luego decide si quieres ciudad o contexto colombino</h2>
+      <p>Aquí conviene elegir, no acumular. Si quieres una mañana más urbana, Museo de Huelva y casco. Si prefieres contexto histórico más amplio y tienes coche, La Rábida te da más retorno del que parece. Lo torpe es intentar meter ambas cosas como si fueran dos paradas de metro.</p>
 
-      <h2>Mediodía: comer como toca</h2>
-      <p>Este tramo importa mucho. Choco, coquinas, pescado o una ruta de tapas bien resuelta. Huelva gana bastante cuando comes donde debes y pierde mucho cuando improvisas mal.</p>
+      <h2>La comida no es un trámite: te arregla o te rompe el día</h2>
+      <p>Este tramo decide bastante. Choco, coquinas, pescado o una ruta de tapas bien resuelta. Huelva sube enteros cuando comes con criterio y se desinfla rápido cuando improvisas en un sitio solo correcto. Si dudas, prioriza producto y barra viva antes que local bonito con demasiada pose.</p>
 
-      <h2>Tarde: Muelle del Tinto y paseo</h2>
-      <p>El Muelle del Tinto no falla. Tiene historia, imagen potente y paseo agradable. Si pillas buena luz, además te llevas las fotos fáciles sin tener que inventar demasiado.</p>
+      <h2>Deja la tarde para el Muelle del Tinto y un paseo con sentido</h2>
+      <p>El Muelle del Tinto sigue siendo la jugada fácil que no da vergüenza recomendar. Tiene historia, lectura visual de ciudad y un paseo que entra bien incluso sin montar un plan épico. Si además pillas buena luz, te llevas el final fotogénico sin tener que forzarlo.</p>
 
-      <h2>Final del día: mirador, terraza o paseo largo</h2>
-      <p>Remata con vistas, terraza o un paseo tranquilo. Huelva no necesita un final épico; necesita uno coherente. Si acabas bien comido y con la sensación de haber respirado otro ritmo, ya has acertado. Y si luego decides alargar, te conviene saltar a <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">planes para un fin de semana</a> y <a href="/donde-comer">dónde comer bien</a>.</p>
+      <h2>Cierra el día sin inventarte un gran final</h2>
+      <p>Terraza, paseo largo o una última copa tranquila. Ya está. Huelva no necesita fuegos artificiales para cerrar bien un día; necesita coherencia. Si acabas con la sensación de haber entendido el ritmo de la ciudad, has acertado. Y si ves que te sabe a poco, el siguiente salto lógico es <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">planes para un fin de semana</a> y <a href="/donde-comer">dónde comer bien</a>.</p>
 
       <blockquote>En un día no vas a “tachar Huelva”. Vas a entenderla lo justo para querer volver. Y eso, sinceramente, ya es una victoria.</blockquote>
     `
@@ -2091,24 +2095,24 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Buscar “mejores restaurantes en Huelva” suele darte dos cosas: listas copiadas unas de otras o sitios que viven más de la foto que del plato. Así que vamos a lo importante: producto, regularidad, contexto y sentido común.</p>
+      <p>Buscar “mejores restaurantes en Huelva” suele darte dos mierdas: listas copiadas unas de otras o sitios que viven más de la foto que del plato. Así que mejor ir al grano: aquí lo que manda es producto, regularidad y contexto. Lo demás es decoración.</p>
 
-      <h2>Lo primero: en Huelva manda el producto</h2>
-      <p>Aquí el restaurante bueno no necesita hacer veinte piruetas si tiene buena materia prima y cocina con cabeza. Marisco, pescado, chacina, temporada. Si eso falla, da igual cuántas bombillitas tenga el local.</p>
+      <h2>En Huelva no gana el más moderno: gana el que cocina con verdad</h2>
+      <p>El restaurante serio no necesita hacer veinte piruetas si compra bien y cocina con cabeza. Marisco, pescado, chacina, temporada. Si eso falla, ya puede haber media jungla de lámparas, carta en papel bonito y camareros con discurso aprendido: estás pagando envoltorio.</p>
 
-      <h2>Qué distingue un sitio serio</h2>
+      <h2>Cómo detectar un sitio que merece sentarse</h2>
       <ul>
-        <li><strong>Carta corta o con criterio:</strong> no una enciclopedia infumable.</li>
-        <li><strong>Producto con rotación:</strong> se nota en pescado y marisco.</li>
-        <li><strong>Servicio que recomienda:</strong> no solo apunta comanda.</li>
-        <li><strong>Coherencia precio-experiencia:</strong> si pagas, que se note por qué.</li>
+        <li><strong>Carta corta o con criterio:</strong> no una enciclopedia que intenta gustarle a todo el mundo.</li>
+        <li><strong>Producto con rotación:</strong> se nota rápido en pescado y marisco.</li>
+        <li><strong>Servicio que orienta:</strong> alguien que recomienda de verdad, no solo apunta comanda.</li>
+        <li><strong>Precio con lógica:</strong> si pagas más, tiene que notarse en algo más que en el mantel.</li>
       </ul>
 
-      <h2>Qué tipo de restaurante buscar según el plan</h2>
-      <p>Si vas a producto, busca cocina onubense y carta con verdad. Si quieres cena más fina, hay sitios que elevan la experiencia sin volverse ridículos. Si vas en modo tapeo largo, a veces un bar excelente le gana la partida a un restaurante mediocre con mantel. Para separar mejor la ocasión, compensa cruzar esto con <a href="/donde-comer">la flagship de dónde comer</a> y con <a href="/article/donde-tapear-en-huelva">la guía de tapeo con cabeza</a>.</p>
+      <h2>No busques el mismo restaurante para todos los planes</h2>
+      <p>Si vas a producto, busca cocina onubense y carta con verdad. Si quieres una cena más afinada, hay sitios que elevan la experiencia sin ponerse ridículos. Y si vas en modo tapeo largo, a veces un bar excelente le gana fácil la partida a un restaurante correcto con demasiada ambición. Para separar bien la ocasión, cruza esta pieza con <a href="/donde-comer">la flagship de dónde comer</a> y con <a href="/article/donde-tapear-en-huelva">la guía de tapeo con cabeza</a>.</p>
 
-      <h2>Errores típicos</h2>
-      <p>Elegir por estética, por estar “cerca” o por reseñas que parecen escritas por primos del dueño. En Huelva se come muy bien, sí, pero no por arte de magia. Hay que elegir con un mínimo de criterio. Y si estás montando el día entero, remátalo con <a href="/que-ver">qué ver en Huelva</a> o con <a href="/fin-de-semana">un plan de fin de semana bien ordenado</a>.</p>
+      <h2>Errores bastante evitables</h2>
+      <p>Elegir por estética, por cercanía o por reseñas que parecen escritas por primos del dueño. En Huelva se come muy bien, sí, pero no por arte de magia. Si no filtras un poco, acabas pagando una comida simplemente correcta como si fuera memorable. Y si estás montando el día entero, remátalo con <a href="/que-ver">qué ver en Huelva</a> o con <a href="/fin-de-semana">un plan de fin de semana bien ordenado</a>.</p>
 
       <blockquote>El mejor restaurante no siempre es el más famoso. Muchas veces es el que entiende mejor el producto y no intenta impresionarte con gilipolleces.</blockquote>
     `

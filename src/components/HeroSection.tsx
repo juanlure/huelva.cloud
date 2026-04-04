@@ -50,36 +50,36 @@ export default function HeroSection() {
   // Quick links data
   const quickLinks = [
     { 
-      title: 'Dónde comer', 
-      desc: 'Los sitios donde comemos los de aquí',
-      icon: <Utensils size={18} />,
-      href: '/comer',
-      color: 'from-orange-500/20 to-red-500/20',
-      badge: 'Top 10'
+      title: 'Qué ver', 
+      desc: 'La guía madre para empezar con criterio',
+      icon: <Compass size={18} />,
+      href: '/que-ver',
+      color: 'from-amber-500/20 to-orange-500/20',
+      badge: 'Base'
     },
     { 
-      title: 'Qué hacer', 
-      desc: 'Planes que no fallan este finde',
+      title: 'Dónde comer', 
+      desc: 'Sitios que ayudan a decidir de verdad',
+      icon: <Utensils size={18} />,
+      href: '/donde-comer',
+      color: 'from-orange-500/20 to-red-500/20',
+      badge: 'Mesa'
+    },
+    { 
+      title: 'Agenda', 
+      desc: 'Planes vivos para hoy y este finde',
       icon: <Calendar size={18} />,
-      href: '/eventos',
+      href: '/agenda',
       color: 'from-blue-500/20 to-purple-500/20',
-      badge: 'Hoy'
+      badge: 'Ahora'
     },
     { 
       title: 'Playas', 
-      desc: 'Kilómetros sin masificaciones',
+      desc: 'Costa elegida por tipo de día',
       icon: <MapPin size={18} />,
       href: '/playas',
       color: 'from-green-500/20 to-teal-500/20',
-      badge: 'Secretos'
-    },
-    { 
-      title: 'Guías', 
-      desc: 'Lo que solo sabemos los de Huelva',
-      icon: <Compass size={18} />,
-      href: '/guias',
-      color: 'from-amber-500/20 to-orange-500/20',
-      badge: '60+'
+      badge: 'Costa'
     },
   ];
 
@@ -139,7 +139,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] backdrop-blur-xl rounded-full text-xs font-bold text-white/90 mb-8 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.16)]"
           >
             <Sparkles size={14} className="text-terracotta" />
-            <span className="uppercase tracking-[0.2em]">Huelva.cloud · La mejor guía local 2026</span>
+            <span className="uppercase tracking-[0.2em]">Huelva.cloud · Guía local con criterio</span>
           </motion.div>
 
           {/* Local trust signal */}
@@ -150,7 +150,7 @@ export default function HeroSection() {
             className="hidden sm:flex items-center gap-2 mb-4 sm:mb-6 text-white/60 text-sm"
           >
             <span className="inline-flex w-2.5 h-2.5 rounded-full bg-terracotta" />
-            <span>Criterio local. Sin ranking inventado.</span>
+            <span>Capital, costa y provincia. Sin ranking inventado.</span>
           </motion.div>
 
           {/* Main Headline - responsive sizes */}
@@ -160,9 +160,9 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.85] tracking-tight drop-shadow-[0_18px_50px_rgba(0,0,0,0.28)]"
           >
-            Descubre Huelva
+            Huelva
             <br />
-            <span className="text-terracotta italic font-light drop-shadow-2xl">como un local</span>
+            <span className="text-terracotta italic font-light drop-shadow-2xl">bien elegida</span>
           </motion.h1>
 
           {/* Subheadline - shorter on mobile */}
@@ -172,9 +172,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg sm:text-xl md:text-2xl text-white/60 leading-relaxed max-w-2xl mb-12 font-light"
           >
-            Di adiós a los tópicos y a las trampas para turistas. 
-            Te contamos <strong className="text-white font-medium italic">lo que solo sabemos nosotros</strong>: 
-            dónde se come el mejor choco, qué playas siguen vírgenes y cómo vivir Huelva de verdad.
+            Guías, agenda, playas, comida y escapadas para decidir mejor qué ver, dónde comer y cómo ordenar una visita a Huelva sin perder tiempo con relleno.
           </motion.p>
 
           {/* Value Props - horizontal scroll on mobile */}
@@ -194,13 +192,13 @@ export default function HeroSection() {
               <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-500/20 flex items-center justify-center">
                 <MapPin size={10} className="text-green-400" />
               </div>
-              <span>60+ lugares</span>
+              <span>60+ piezas publicadas</span>
             </div>
             <div className="flex items-center gap-1.5 text-white/60 text-xs sm:text-sm">
               <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-500/20 flex items-center justify-center">
                 <Users size={10} className="text-green-400" />
               </div>
-              <span>Por onubenses</span>
+              <span>Criterio local</span>
             </div>
           </motion.div>
 
@@ -212,19 +210,19 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-20"
           >
             <Link
-              href="#descubre"
+              href="/que-ver"
               className="group relative overflow-hidden px-8 py-5 bg-[linear-gradient(135deg,#D4553A_0%,#E56C49_52%,#C5402A_100%)] text-white font-bold rounded-full transition-all duration-500 hover:shadow-[0_18px_40px_-12px_rgba(212,85,58,0.55)] active:scale-95 text-center ring-1 ring-white/10"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
-                EMPEZAR A EXPLORAR
+                VER QUÉ VER EN HUELVA
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
             <Link
-              href="#guias"
+              href="/donde-comer"
               className="group px-8 py-5 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] hover:bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/10 transition-all duration-300 text-center active:scale-95 hover:border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
             >
-              GUÍAS LOCALES
+              VER DÓNDE COMER
             </Link>
           </motion.div>
 
@@ -236,8 +234,8 @@ export default function HeroSection() {
             className="hidden sm:flex flex-wrap gap-6 lg:gap-8 pt-6 lg:pt-8 border-t border-white/10"
           >
             <QuickStat value="60+" label="piezas publicadas" icon={<Sparkles size={16} />} />
-            <QuickStat value="capital + costa" label="cobertura editorial" icon={<MapPin size={16} />} />
-            <QuickStat value="local" label="criterio por delante del relleno" icon={<Users size={16} />} />
+            <QuickStat value="capital + provincia" label="rutas, guías y actualidad" icon={<MapPin size={16} />} />
+            <QuickStat value="local" label="criterio útil antes que postureo" icon={<Users size={16} />} />
           </motion.div>
         </div>
       </motion.div>

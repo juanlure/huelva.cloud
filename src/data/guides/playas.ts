@@ -2,10 +2,10 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const playasGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium · costa de Huelva',
-    title: 'Playas de Huelva: qué playa elegir según el plan, sin comerte una hora de postureo inútil',
+    eyebrow: 'Guía local · costa de Huelva',
+    title: 'Playas de Huelva: cuál te conviene de verdad y cuál solo te mete lío',
     subtitle:
-      'Si dudas entre Punta Umbría, El Portil, Mazagón, Cuesta Maneli, Matalascañas, Islantilla o Isla Canela, deja de elegir por fama. Cada una sirve para un día distinto y aquí va la diferencia de verdad.',
+      'No es lo mismo bajar un día rápido desde la capital, montar una escapada de costa o buscar una playa más salvaje. En Huelva la elección buena no sale del ranking típico, sale de entender accesos, ambiente y peajes reales de cada zona.',
     quickFacts: [
       { label: 'Si quieres ir a tiro hecho', value: 'Punta Umbría o El Portil' },
       { label: 'Si buscas algo más salvaje', value: 'Cuesta Maneli o Mazagón' },
@@ -13,17 +13,18 @@ export const playasGuideData: AlojarseGuideData = {
     ],
   },
   toc: [
-    { id: 'decision-rapida', label: 'Decisión rápida' },
-    { id: 'capital-o-costa', label: 'Comparativa real' },
-    { id: 'segun-tu-viaje', label: 'Según tu plan' },
-    { id: 'mi-recomendacion', label: 'Mi recomendación' },
-    { id: 'errores-tipicos', label: 'Errores típicos' },
-    { id: 'tipos-alojamiento', label: 'Playas concretas' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'reservar', label: 'Siguiente paso' },
+    { id: 'decision-rapida', label: 'Si quieres ir a tiro hecho' },
+    { id: 'capital-o-costa', label: 'Qué cambia de verdad' },
+    { id: 'segun-tu-viaje', label: 'Qué playa te encaja' },
+    { id: 'mi-recomendacion', label: 'Mi lectura' },
+    { id: 'errores-tipicos', label: 'Cómo fastidiarte el día' },
+    { id: 'tipos-alojamiento', label: 'Playas a tener en radar' },
+    { id: 'faq', label: 'Dudas antes de bajar' },
+    { id: 'reservar', label: 'Atar el resto del día' },
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
+    eyebrow: 'Si quieres decidir sin comerte una comparativa eterna',
     title: 'La respuesta rápida, con nombres y apellidos',
     intro: 'Si no quieres tragarte una comparativa eterna, empieza aquí.',
     items: [
@@ -46,6 +47,7 @@ export const playasGuideData: AlojarseGuideData = {
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
+    eyebrow: 'Lo que cambia de verdad cuando eliges mal o bien',
     title: 'Qué cambia de verdad entre unas playas y otras',
     intro:
       'No es solo una cuestión de arena. Cambian accesos, ambiente, servicios, tipo de público y el esfuerzo que exige que el día salga bien.',
@@ -90,6 +92,8 @@ export const playasGuideData: AlojarseGuideData = {
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
+    eyebrow: 'Según el día que quieres tener',
+    resultEyebrow: 'La playa que más sentido tiene',
     title: 'Qué playa te encaja según el tipo de día que quieres tener',
     intro: 'La buena elección sale de tu plan, no del ranking genérico de internet.',
     options: [
@@ -117,14 +121,16 @@ export const playasGuideData: AlojarseGuideData = {
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi recomendación editorial, sin venderte una playa universal porque eso es humo',
+    eyebrow: 'Mi lectura de la costa',
+    title: 'Mi recomendación, sin inventarme una “mejor playa” porque eso no existe',
     body:
-      'Si vienes desde Huelva capital y quieres acertar rápido, empieza por Punta Umbría o El Portil. Si buscas costa con más carácter, mira Mazagón o Cuesta Maneli. Y si estás montando una escapada más larga, Islantilla o Isla Canela suelen tener más sentido que obsesionarte con “la mejor playa”.',
+      'Si sales desde Huelva capital y quieres resolver fácil, Punta Umbría o El Portil son la jugada más lógica. Si quieres más paisaje y menos domesticación, mira Mazagón o Cuesta Maneli. Y si lo tuyo es escapada de varios días, piensa antes en base y logística que en la playa más famosa.',
     highlight:
-      'La mejor playa de Huelva no existe. Existen playas que encajan mejor o peor con el día que quieres tener.',
+      'La playa buena no es la que gana en Instagram. Es la que encaja con el día que quieres tener y no te lo complica por el camino.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
+    eyebrow: 'Cómo fastidiarse solo un día de playa',
     title: 'Errores típicos al elegir playa en Huelva',
     intro: 'Aquí es donde mucha gente se fastidia sola el día.',
     mistakes: [
@@ -181,6 +187,7 @@ export const playasGuideData: AlojarseGuideData = {
   },
   faq: {
     sectionId: 'faq',
+    eyebrow: 'Dudas normales antes de bajar a la costa',
     title: 'Preguntas frecuentes que sí importan para elegir bien',
     items: [
       {
@@ -202,19 +209,22 @@ export const playasGuideData: AlojarseGuideData = {
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Siguiente paso: convierte la playa en un plan bueno de verdad',
+    eyebrow: 'Cuando la playa ya está clara',
+    title: 'Que el día no se arruine fuera de la arena',
     body:
-      'Ya tienes claro qué zona de costa te encaja. Ahora toca completar la escapada con una base cómoda, comida decente y un plan que no se caiga por mala logística.',
+      'Ya sabes qué zona te encaja. Ahora toca cerrar bien base, comida y desplazamientos, que es donde muchas escapadas a playa se van al carajo sin necesidad.',
+    kicker: 'La playa puede estar bien elegida y el día salir regular igual, si todo lo demás está mal atado.',
     primaryAction: {
-      label: 'Dónde alojarse en Huelva',
+      label: 'Elegir dónde alojarse',
       href: '/alojarse',
     },
     secondaryAction: {
-      label: 'Fin de semana en Huelva',
+      label: 'Montar el fin de semana',
       href: '/fin-de-semana',
     },
   },
   relatedGuides: {
+    eyebrow: 'Si quieres que el plan no se caiga al salir de la playa',
     title: 'Sigue montando bien la escapada',
     guides: [
       {

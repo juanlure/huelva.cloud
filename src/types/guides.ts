@@ -39,6 +39,7 @@ export type QuickDecisionItem = {
 
 export type QuickDecisionBlockData = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
   title: string;
   intro?: string;
   items: QuickDecisionItem[];
@@ -55,6 +56,7 @@ export type ZoneComparisonCard = {
 
 export type ZoneComparisonCardsData = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
   title: string;
   intro?: string;
   cards: ZoneComparisonCard[];
@@ -68,6 +70,8 @@ export type BestForOption = {
 
 export type BestForSelectorData = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
+  resultEyebrow?: string;
   title: string;
   intro?: string;
   options: BestForOption[];
@@ -75,6 +79,7 @@ export type BestForSelectorData = {
 
 export type RecommendationCalloutData = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
   title: string;
   body: string;
   highlight?: string;
@@ -87,6 +92,7 @@ export type CommonMistake = {
 
 export type CommonMistakesBoxData = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
   title: string;
   intro?: string;
   mistakes: CommonMistake[];
@@ -113,6 +119,7 @@ export type FAQItem = {
 
 export type FAQAccordionPremiumData = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
   title: string;
   intro?: string;
   items: FAQItem[];
@@ -125,8 +132,10 @@ export type CTAAction = {
 
 export type ContextualCTA = {
   sectionId: GuideSectionId;
+  eyebrow?: string;
   title: string;
   body: string;
+  kicker?: string;
   primaryAction: CTAAction;
   secondaryAction?: CTAAction;
 };
@@ -138,6 +147,7 @@ export type RelatedGuide = {
 };
 
 export type RelatedGuidesRailData = {
+  eyebrow?: string;
   title: string;
   guides: RelatedGuide[];
 };

@@ -2,10 +2,10 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const dondeComerGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium · capital',
-    title: 'Dónde comer en Huelva sin caer en sitios correctos pero olvidables',
+    eyebrow: 'Guía local · Huelva para comer bien',
+    title: 'Dónde comer en Huelva sin acabar en un sitio correcto y ya',
     subtitle:
-      'Si vienes a comer bien, no necesitas una lista infinita. Necesitas criterio para distinguir entre plan rápido, comida con producto, tapeo que sí compensa y sitios que solo viven de sonar bien.',
+      'En Huelva se come muy bien si sabes qué estás buscando. El problema no es que falten sitios; el problema es mezclar bares, mesas serias, tapeo y producto como si todo jugara en la misma liga. Aquí va el filtro útil.',
     quickFacts: [
       { label: 'Error típico', value: 'Elegir por fama vacía' },
       { label: 'Si quieres acertar', value: 'Elige por momento y expectativa' },
@@ -13,17 +13,18 @@ export const dondeComerGuideData: AlojarseGuideData = {
     ],
   },
   toc: [
-    { id: 'decision-rapida', label: 'Decisión rápida' },
-    { id: 'capital-o-costa', label: 'Qué compensa más' },
-    { id: 'segun-tu-viaje', label: 'Según tu plan' },
-    { id: 'mi-recomendacion', label: 'Mi recomendación' },
-    { id: 'errores-tipicos', label: 'Errores típicos' },
-    { id: 'tipos-alojamiento', label: 'Tipos de comida' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'reservar', label: 'Siguiente paso' },
+    { id: 'decision-rapida', label: 'Si quieres resolver ya' },
+    { id: 'capital-o-costa', label: 'Dónde se gana la comida' },
+    { id: 'segun-tu-viaje', label: 'Qué mesa te conviene' },
+    { id: 'mi-recomendacion', label: 'Mi filtro' },
+    { id: 'errores-tipicos', label: 'Cómo comer peor de lo necesario' },
+    { id: 'tipos-alojamiento', label: 'Tipos de experiencia' },
+    { id: 'faq', label: 'Dudas que sí cambian algo' },
+    { id: 'reservar', label: 'Recortar la lista' },
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
+    eyebrow: 'Si quieres comer bien y pasar página',
     title: 'La versión corta para comer bien sin comerte el día decidiendo',
     intro: 'Si no quieres abrir veinte pestañas ni tragarte listas blandas, empieza aquí.',
     items: [
@@ -46,6 +47,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
+    eyebrow: 'Dónde se gana una comida y dónde se pierde',
     title: 'Qué compensa más según el tipo de comida que buscas',
     intro:
       'Lo importante no es solo comer, sino acertar con el contexto: rapidez, producto, ambiente, pausa o plan de escapada.',
@@ -72,6 +74,8 @@ export const dondeComerGuideData: AlojarseGuideData = {
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
+    eyebrow: 'Según el momento que quieras montar',
+    resultEyebrow: 'La mesa que más sentido tiene',
     title: 'Qué tipo de sitio te conviene según el plan que llevas',
     intro: 'La decisión buena cambia mucho si vas a resolver, disfrutar, celebrar o simplemente no perder tiempo comiendo mediocre.',
     options: [
@@ -99,14 +103,16 @@ export const dondeComerGuideData: AlojarseGuideData = {
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi recomendación editorial, sin regalar medallas a cualquier sitio aparente',
+    eyebrow: 'Mi forma de filtrar aquí',
+    title: 'Mi recomendación, sin repartir medallas por ruido ni por postureo gastronómico',
     body:
-      'En Huelva comer bien no va de perseguir nombres por inercia, sino de elegir según el momento. Si quieres acertar, separa sitio funcional, sitio con producto y plan de tapeo, y no les pidas a todos el mismo trabajo.',
+      'Para comer bien en Huelva, primero decide el momento: resolver, disfrutar, tapear o sentarte en serio. Cuando haces esa separación, caen solas muchas recomendaciones infladas y se quedan las que de verdad tienen sentido.',
     highlight:
-      'La comida buena no es la más ruidosa: es la que encaja bien con el momento y luego responde de verdad en mesa.',
+      'Comer bien aquí no va de perseguir el nombre más repetido. Va de elegir el sitio correcto para el momento correcto.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
+    eyebrow: 'Cómo acabar comiendo peor de lo necesario',
     title: 'Errores típicos al decidir dónde comer en Huelva',
     intro: 'Aquí es donde se van muchas comidas que podrían haber salido bastante mejor.',
     mistakes: [
@@ -151,6 +157,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
   },
   faq: {
     sectionId: 'faq',
+    eyebrow: 'Las dudas que sí cambian una comida',
     title: 'Preguntas frecuentes que sí sirven para decidir',
     items: [
       {
@@ -172,19 +179,22 @@ export const dondeComerGuideData: AlojarseGuideData = {
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Siguiente paso: elige el tipo de comida y recorta el ruido',
+    eyebrow: 'Cuando ya sabes qué tipo de comida buscas',
+    title: 'Elige el momento y recorta la lista sin piedad',
     body:
-      'Si ya sabes qué momento quieres montar, no necesitas cincuenta recomendaciones más. Necesitas dos o tres buenas opciones y criterio para descartar el resto.',
+      'Si ya sabes qué tipo de comida quieres, no sigas comparando sitios que no compiten entre sí. Quédate con dos o tres opciones buenas y construye el resto del día alrededor de eso.',
+    kicker: 'La comida buena empieza bastante antes del primer plato: empieza al dejar de comparar ruido.',
     primaryAction: {
-      label: 'Qué ver en Huelva',
+      label: 'Ver qué hacer en Huelva',
       href: '/que-ver',
     },
     secondaryAction: {
-      label: 'Fin de semana en Huelva',
+      label: 'Montar el fin de semana',
       href: '/fin-de-semana',
     },
   },
   relatedGuides: {
+    eyebrow: 'Si quieres que la comida encaje con el resto del día',
     title: 'Sigue afinando el viaje',
     guides: [
       {

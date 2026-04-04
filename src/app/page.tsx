@@ -39,44 +39,46 @@ export default async function Home() {
         <div className="absolute inset-0 bg-grid opacity-[0.06]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,85,58,0.08),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(15,26,36,0.04),transparent_24%)]" />
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-3 gap-4 mb-4">
-            <div className="rounded-[1.75rem] border border-white/70 bg-cream/90 backdrop-blur-xl p-6 shadow-[0_18px_60px_rgba(26,42,58,0.06)]">
-              <p className="text-xs uppercase tracking-widest text-navy/40 font-semibold mb-2">Promesa</p>
-              <h3 className="text-display text-2xl text-navy mb-2">Huelva sin folleto</h3>
-              <p className="text-navy/60 text-sm leading-relaxed">Más criterio editorial, menos bloque genérico que podría pertenecer a cualquier ciudad.</p>
+          <div className="grid xl:grid-cols-[1.45fr_0.95fr] gap-4 mb-4">
+            <div className="rounded-[1.9rem] border border-white/70 bg-white/90 backdrop-blur-xl p-6 md:p-7 shadow-[0_18px_60px_rgba(26,42,58,0.06)]">
+              <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-3">Empieza por aquí</p>
+              <h2 className="text-display text-3xl md:text-4xl text-navy mb-4">La home tiene que decidir por el lector, no enseñarle un escaparate bonito.</h2>
+              <p className="text-navy/65 text-base leading-relaxed max-w-3xl mb-6">
+                Si vienes por primera vez, la ruta buena casi siempre sale de tres preguntas: qué ver, dónde comer y cómo ordenar el fin de semana sin perder tiempo. Lo demás cuelga de ahí.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { href: '/que-ver', title: 'Qué ver', copy: 'La guía madre para separar lo que sí compensa del relleno.', eyebrow: 'Primera visita' },
+                  { href: '/donde-comer', title: 'Dónde comer', copy: 'Donde más fácil se convierte intención en plan real y mesa reservable.', eyebrow: 'Decisión rápida' },
+                  { href: '/fin-de-semana', title: 'Fin de semana', copy: 'La forma más útil de ordenar 24-48 horas sin checklist torpe.', eyebrow: 'Escapada' },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group rounded-[1.5rem] border border-navy/8 bg-cream/70 p-5 hover:border-terracotta/30 hover:bg-white transition-all"
+                  >
+                    <p className="text-[11px] uppercase tracking-widest text-navy/40 font-semibold mb-2">{item.eyebrow}</p>
+                    <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-terracotta transition-colors">{item.title}</h3>
+                    <p className="text-sm text-navy/60 leading-relaxed">{item.copy}</p>
+                  </Link>
+                ))}
+              </div>
             </div>
-            <div className="rounded-[1.75rem] border border-white/70 bg-white/90 backdrop-blur-xl p-6 shadow-[0_18px_60px_rgba(26,42,58,0.06)]">
-              <p className="text-xs uppercase tracking-widest text-navy/40 font-semibold mb-2">Cobertura</p>
-              <h3 className="text-display text-2xl text-navy mb-2">Capital + provincia</h3>
-              <p className="text-navy/60 text-sm leading-relaxed">Costa, sierra, escapadas, agenda, gastronomía y utilidad real para moverse mejor.</p>
-            </div>
-            <div className="rounded-[1.75rem] border border-terracotta/20 bg-gradient-to-br from-terracotta to-orange-600 text-white p-6 shadow-[0_20px_70px_rgba(212,85,58,0.26)]">
-              <p className="text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Colaboraciones</p>
-              <h3 className="text-display text-2xl mb-2">Publicidad con sentido</h3>
-              <p className="text-white/85 text-sm leading-relaxed mb-4">Negocios, marcas y eventos con encaje local. Mejor integrados con criterio que puestos ahí de cualquier forma.</p>
+
+            <div className="rounded-[1.9rem] border border-terracotta/20 bg-gradient-to-br from-terracotta to-orange-600 text-white p-6 shadow-[0_20px_70px_rgba(212,85,58,0.26)]">
+              <p className="text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Negocio local</p>
+              <h3 className="text-display text-2xl mb-3">Publicidad con sentido</h3>
+              <p className="text-white/85 text-sm leading-relaxed mb-5">Negocios, marcas y eventos con encaje local. Mejor integrados con criterio que puestos ahí a martillazos.</p>
+              <ul className="space-y-2 text-sm text-white/82 mb-5">
+                <li>• Visibilidad editorial</li>
+                <li>• Campañas y eventos</li>
+                <li>• Contacto directo y claro</li>
+              </ul>
               <CommercialLink surface="home_top_collab" href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold">
                 Ver opciones <ArrowRight size={16} />
               </CommercialLink>
             </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
-            {[
-              { href: '/que-ver', title: 'Qué ver', copy: 'La flagship para quien aterriza y quiere separar lo bueno del relleno.' },
-              { href: '/donde-comer', title: 'Dónde comer', copy: 'La página que más fácil convierte curiosidad en plan real.' },
-              { href: '/agenda', title: 'Agenda', copy: 'Planes vivos para hoy, esta semana y el finde sin ir a ciegas.' },
-              { href: '/contact', title: 'Publicidad', copy: 'La puerta comercial para negocios, marcas y eventos con encaje local.' },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group rounded-[1.5rem] border border-white/70 bg-white/88 backdrop-blur-xl p-5 shadow-[0_18px_60px_rgba(26,42,58,0.06)] hover:border-terracotta/30 hover:-translate-y-0.5 transition-all"
-              >
-                <p className="text-[11px] uppercase tracking-widest text-navy/40 font-semibold mb-2">Ruta clave</p>
-                <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-terracotta transition-colors">{item.title}</h3>
-                <p className="text-sm text-navy/60 leading-relaxed">{item.copy}</p>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
@@ -94,11 +96,11 @@ export default async function Home() {
             </div>
 
             <h2 className="text-display text-3xl md:text-5xl font-semibold text-navy mb-5 md:mb-6">
-              Huelva de verdad
+              Lo que más sentido tiene ver ahora en Huelva
             </h2>
 
             <p className="text-base md:text-xl text-navy-60 max-w-2xl mb-10 md:mb-16">
-              La portada tiene que vender sensación de producto cuidado desde el primer scroll: editorial, local y con más intención visual.
+              Portada útil: una pieza fuerte arriba y una selección que empuja a decidir mejor, no a perderse entre tarjetas bonitas.
             </p>
 
             {featuredArticle && (
@@ -152,9 +154,9 @@ export default async function Home() {
                   <Award size={20} className="text-terracotta" />
                   <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Gastronomía</span>
                 </div>
-                <h2 className="text-display text-4xl font-semibold text-navy mb-5">Comer en Huelva</h2>
+                <h2 className="text-display text-4xl font-semibold text-navy mb-5">Dónde comer sin caer en lo obvio</h2>
                 <p className="text-lg text-navy/60 mb-8">
-                  Choco, coquinas, desayunos, tapeo y criterio. Si esta parte no abre el apetito, la home está fallando.
+                  La parte gastronómica tiene que mover una decisión real: desayunar bien, tapear con criterio o sentarse donde de verdad compensa.
                 </p>
                 <Link href="/comer" className="inline-flex items-center gap-2 btn btn-primary">
                   Ver gastronomía <ArrowRight size={18} />
@@ -191,9 +193,9 @@ export default async function Home() {
                   <BedDouble size={20} className="text-sky-600" />
                   <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Alojamiento</span>
                 </div>
-                <h2 className="text-display text-4xl font-semibold text-navy mb-5">Dormir bien también vende provincia</h2>
+                <h2 className="text-display text-4xl font-semibold text-navy mb-5">Dónde alojarse sin fastidiarte el viaje</h2>
                 <p className="text-lg text-navy/60 mb-8">
-                  Hoteles, apartamentos y zonas con sentido. Esta parte puede captar intención comercial muy buena si se ve seria.
+                  Hoteles, apartamentos y zonas con sentido. Aquí la clave no es la foto de la habitación, sino dormir donde el plan te salga fácil.
                 </p>
                 <Link href="/alojarse" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-sky-600 text-white font-semibold hover:bg-sky-700 transition-colors shadow-[0_16px_40px_rgba(2,132,199,0.24)]">
                   Ver alojamientos <ArrowRight size={18} />
@@ -239,9 +241,9 @@ export default async function Home() {
                 <span>Guías Locales</span>
               </div>
 
-              <h2 className="text-display text-4xl md:text-5xl font-semibold mb-6">Explora la provincia con estilo</h2>
+              <h2 className="text-display text-4xl md:text-5xl font-semibold mb-6">Las guías que de verdad sostienen el producto</h2>
               <p className="text-xl text-white/65 max-w-2xl mx-auto">
-                Menos tono institucional y más sensación editorial premium. Que den ganas de clicar aunque no hayas venido buscando nada.
+                Aquí están las páginas que más negocio, SEO e intención acumulan. Si fallan, falla media web. Si están finas, tiran del resto.
               </p>
             </div>
 
@@ -317,9 +319,9 @@ export default async function Home() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-navy-40">Agenda</span>
                 </div>
 
-                <h2 className="text-display text-4xl font-semibold text-navy mb-6">Eventos y planes</h2>
+                <h2 className="text-display text-4xl font-semibold text-navy mb-6">Agenda con pulso</h2>
                 <p className="text-xl text-navy-60 mb-8">
-                  Tiene que sentirse como agenda viva: elegante, clara y con ganas de descubrir algo, no como un simple listado triste.
+                  Hoy, esta semana y este finde. No para rellenar, sino para que alguien encuentre plan sin tener que abrir diez pestañas.
                 </p>
                 <Link href="/agenda" className="inline-flex items-center gap-2 btn btn-primary">
                   Ver agenda viva <ArrowRight size={18} />
@@ -363,7 +365,7 @@ export default async function Home() {
                   <CalendarDays size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold text-navy mb-3 group-hover:text-terracotta transition-colors">Agenda al día</h2>
-                <p className="text-navy/60 mb-5">Hoy, esta semana y este finde. Acceso rápido, limpio y premium.</p>
+                <p className="text-navy/60 mb-5">La puerta rápida para quien quiere plan ya, sin dar vueltas tontas.</p>
                 <span className="inline-flex items-center gap-2 text-terracotta font-semibold">Abrir agenda <ArrowRight size={18} /></span>
               </Link>
 
@@ -372,7 +374,7 @@ export default async function Home() {
                   <CloudSun size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold text-navy mb-3">Tiempo útil</h2>
-                <p className="text-navy/60 mb-5">Para playa, sierra o paseo. Mejor decisión, mejor UX.</p>
+                <p className="text-navy/60 mb-5">Para decidir playa, sierra o paseo con algo más de cabeza.</p>
                 <span className="inline-flex items-center gap-2 text-sky-600 font-semibold">Ver previsión <ArrowRight size={18} /></span>
               </Link>
 
@@ -381,7 +383,7 @@ export default async function Home() {
                   <Newspaper size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold text-navy mb-3">Noticias locales</h2>
-                <p className="text-navy/60 mb-5">Actualidad provincial tratada con cara de medio serio, no de feed improvisado.</p>
+                <p className="text-navy/60 mb-5">Actualidad provincial presentada como medio cuidado, no como feed montado con prisa.</p>
                 <span className="inline-flex items-center gap-2 text-navy font-semibold">Ir a noticias <ArrowRight size={18} /></span>
               </Link>
 
@@ -390,7 +392,7 @@ export default async function Home() {
                   <Mail size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold mb-3">Publicidad y marcas</h2>
-                <p className="text-white/82 mb-5">Si alguien quiere visibilidad en Huelva, mejor una integración cuidada que un parche feo.</p>
+                <p className="text-white/82 mb-5">Si alguien quiere visibilidad en Huelva, aquí ya hay una puerta clara para hacerlo sin ensuciar el producto.</p>
                 <span className="inline-flex items-center gap-2 text-white font-semibold">Contactar <ArrowRight size={18} /></span>
               </CommercialLink>
             </div>
@@ -410,7 +412,7 @@ export default async function Home() {
                   </div>
                   <h2 className="text-display text-4xl font-semibold text-navy">Radar local</h2>
                   <p className="text-navy/60 mt-3 max-w-2xl">
-                    La parte informativa también tiene que verse premium: limpia, visible y con sensación de medio cuidado.
+                    Noticias visibles y bien empaquetadas para que la home también respire actualidad, no solo guías evergreen.
                   </p>
                 </div>
                 <Link href="/noticias" className="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">

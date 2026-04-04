@@ -15,7 +15,7 @@ export function BestForSelector({ data }: { data: BestForSelectorData }) {
     <section id={data.sectionId} className="premium-guide-section">
       <div className="premium-guide-container premium-guide-stack-lg">
         <div className="premium-guide-reading-width premium-guide-stack-sm">
-          <p className="premium-guide-eyebrow">Según tu viaje</p>
+          {data.eyebrow ? <p className="premium-guide-eyebrow">{data.eyebrow}</p> : null}
           <h2 className="premium-guide-h2">{data.title}</h2>
           {data.intro ? <p className="premium-guide-lead">{data.intro}</p> : null}
         </div>
@@ -37,7 +37,7 @@ export function BestForSelector({ data }: { data: BestForSelectorData }) {
 
           {activeOption ? (
             <div className="premium-guide-panel premium-guide-bestfor__result premium-guide-stack-sm">
-              <p className="premium-guide-eyebrow">Tu mejor jugada</p>
+              {data.resultEyebrow ? <p className="premium-guide-eyebrow">{data.resultEyebrow}</p> : null}
               <h3 className="premium-guide-h3">{activeOption.label}</h3>
               <p className="premium-guide-kicker">{activeOption.audience}</p>
               <p className="premium-guide-body premium-guide-body--strong">{activeOption.recommendation}</p>

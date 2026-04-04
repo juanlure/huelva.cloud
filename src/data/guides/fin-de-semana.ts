@@ -2,10 +2,10 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const finDeSemanaGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium · capital',
-    title: 'Fin de semana en Huelva: cómo montarlo sin desperdiciar el viaje',
+    eyebrow: 'Guía local · escapada en Huelva',
+    title: 'Fin de semana en Huelva: cómo montarlo para que no se te desmonte solo',
     subtitle:
-      'Si solo tienes un fin de semana, la clave no es meterlo todo. Es combinar bien ciudad, comida, paseo y costa para que el plan tenga ritmo y no parezca una checklist con prisas.',
+      'El error típico aquí no es quedarse corto: es querer meter ciudad, costa, comida y paseo como si todo cupiera igual de bien. Un buen fin de semana en Huelva se gana por ritmo, no por volumen.',
     quickFacts: [
       { label: 'Clave real', value: 'Ritmo > cantidad' },
       { label: 'Error típico', value: 'Sobrecargar el sábado' },
@@ -13,17 +13,18 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
     ],
   },
   toc: [
-    { id: 'decision-rapida', label: 'Decisión rápida' },
-    { id: 'capital-o-costa', label: 'Qué priorizar' },
-    { id: 'segun-tu-viaje', label: 'Según tu fin de semana' },
-    { id: 'mi-recomendacion', label: 'Mi recomendación' },
-    { id: 'errores-tipicos', label: 'Errores típicos' },
-    { id: 'tipos-alojamiento', label: 'Tipos de plan' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'reservar', label: 'Siguiente paso' },
+    { id: 'decision-rapida', label: 'Si quieres una base sólida' },
+    { id: 'capital-o-costa', label: 'Qué priorizar de verdad' },
+    { id: 'segun-tu-viaje', label: 'Qué finde encaja' },
+    { id: 'mi-recomendacion', label: 'Mi forma de montarlo' },
+    { id: 'errores-tipicos', label: 'Cómo romper la escapada' },
+    { id: 'tipos-alojamiento', label: 'Tipos de fin de semana' },
+    { id: 'faq', label: 'Dudas antes de cerrar 48 horas' },
+    { id: 'reservar', label: 'Fijar la base' },
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
+    eyebrow: 'Si quieres una escapada que se sostenga sola',
     title: 'La versión corta para no montar un fin de semana torcido',
     intro: 'Si quieres una base defendible en dos minutos, empieza por aquí.',
     items: [
@@ -46,6 +47,7 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
+    eyebrow: 'Dónde se rompe o se redondea el finde',
     title: 'Qué conviene priorizar en un fin de semana corto',
     intro:
       'La buena decisión no es verlo todo, sino elegir bien qué peso tiene ciudad, comida, costa y descanso según el tipo de escapada que quieres vivir.',
@@ -72,6 +74,8 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
+    eyebrow: 'Según la escapada que te pide el cuerpo',
+    resultEyebrow: 'El finde que mejor encaja',
     title: 'Qué tipo de fin de semana te conviene montar',
     intro: 'No todos los fines de semana buenos en Huelva se parecen. Cambia mucho si buscas calma, ciudad, comida o mezcla con costa.',
     options: [
@@ -99,14 +103,16 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi recomendación editorial, sin montarte un fin de semana de PowerPoint',
+    eyebrow: 'Mi forma de montarlo sin cargarte el ritmo',
+    title: 'Mi recomendación, sin montarte un finde de PowerPoint ni de Google Maps abierto en bucle',
     body:
-      'Si vas dos días, diseña el viaje como una secuencia corta con aire: base buena, ciudad bien leída, una comida que merezca la pena y, si encaja, una capa de costa sin convertirla en protagonista obligatoria. El viaje gana cuando respira.',
+      'Si vienes dos días, piensa el viaje como una secuencia corta: buena base, una lectura clara de la ciudad, una comida que valga la pena y, si entra bien, costa sin forzarla. El viaje sube cuando todo encaja sin correr.',
     highlight:
-      'Un fin de semana bueno no impresiona por cantidad. Funciona porque todo encaja y nada sobra.',
+      'Un buen fin de semana no parece lleno. Parece bien llevado.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
+    eyebrow: 'Cómo cargarte una escapada en dos decisiones',
     title: 'Errores típicos al planear un fin de semana en Huelva',
     intro: 'Aquí es donde una escapada prometedora empieza a desinflarse sola.',
     mistakes: [
@@ -151,6 +157,7 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
   },
   faq: {
     sectionId: 'faq',
+    eyebrow: 'Dudas normales antes de cerrar 48 horas',
     title: 'Preguntas frecuentes que sí te ayudan a montarlo bien',
     items: [
       {
@@ -172,19 +179,22 @@ export const finDeSemanaGuideData: AlojarseGuideData = {
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Siguiente paso: elige base, ritmo y una secuencia corta que sí cierre',
+    eyebrow: 'Cuando el finde ya tiene forma',
+    title: 'Fija la base y corta lo que sobra',
     body:
-      'Si ya sabes qué tipo de escapada quieres, el siguiente movimiento no es meter más ideas. Es fijar una base buena y dos o tres decisiones fuertes que ordenen el fin de semana.',
+      'Si ya sabes qué escapada quieres montar, ahora toca elegir bien dónde dormir y qué dos o tres decisiones van a sostener el viaje. Lo demás es ruido.',
+    kicker: 'En una escapada corta, cada decisión floja ocupa demasiado espacio. Por eso conviene recortar pronto.',
     primaryAction: {
-      label: 'Dónde alojarse en Huelva',
+      label: 'Elegir dónde alojarse',
       href: '/alojarse',
     },
     secondaryAction: {
-      label: 'Dónde comer en Huelva',
+      label: 'Resolver dónde comer',
       href: '/donde-comer',
     },
   },
   relatedGuides: {
+    eyebrow: 'Si quieres cerrar bien las piezas del finde',
     title: 'Termina de montar el viaje',
     guides: [
       {

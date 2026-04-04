@@ -27,7 +27,7 @@ export default function AuthorBox({ author }: { author: AuthorData }) {
                             {author.role}
                         </span>
                         <span className="px-2 py-0.5 bg-navy/5 text-[10px] font-bold text-navy/40 uppercase tracking-widest rounded border border-navy/10">
-                            AI Editorial Persona
+                            Firma editorial
                         </span>
                     </div>
                     <p className="text-navy/60 leading-relaxed italic">
@@ -42,10 +42,9 @@ export default function AuthorBox({ author }: { author: AuthorData }) {
                 </div>
                 <div>
                     <p className="text-sm text-navy/70 leading-relaxed">
-                        <strong className="text-navy">Transparencia IA:</strong> Este artículo ha sido generado por inteligencia artificial
-                        y curado por sistemas autónomos monitoreados para garantizar la veracidad y el tono "choquero".
+                        <strong className="text-navy">Transparencia editorial:</strong> Esta pieza combina automatización, revisión editorial y criterios de calidad para mantener utilidad, contexto local y consistencia.
                         <Link href="/ai-disclosure" className="text-terracotta hover:underline ml-1 font-bold">
-                            Saber más sobre nuestro proceso.
+                            Ver cómo trabajamos.
                         </Link>
                     </p>
                 </div>

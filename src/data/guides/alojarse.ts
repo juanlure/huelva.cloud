@@ -2,10 +2,10 @@ import type { AlojarseGuideData } from '@/types/guides';
 
 export const alojarseGuideData: AlojarseGuideData = {
   hero: {
-    eyebrow: 'Guía premium · flagship',
-    title: 'Dónde alojarse en Huelva sin cagarla: la zona correcta según tu viaje',
+    eyebrow: 'Guía local · dónde dormir',
+    title: 'Dónde alojarse en Huelva sin elegir una base que te fastidie el viaje',
     subtitle:
-      'La decisión no es hotel vs apartamento. La decisión de verdad es elegir una base que juegue a favor de tu plan. Si eliges mal la zona, el viaje se vuelve más lento, más caro y bastante más torpe.',
+      'Aquí la decisión buena no es hotel o apartamento. Es capital o costa, cercanía o peaje, comodidad o foto bonita. Si eliges mal la base, el viaje se vuelve más lento, más caro y bastante más torpe.',
     quickFacts: [
       { label: 'Si vienes por primera vez', value: 'Huelva capital' },
       { label: 'Si vienes por playa', value: 'Costa de Huelva' },
@@ -13,17 +13,18 @@ export const alojarseGuideData: AlojarseGuideData = {
     ],
   },
   toc: [
-    { id: 'decision-rapida', label: 'Decisión rápida' },
-    { id: 'capital-o-costa', label: 'Capital o costa' },
-    { id: 'segun-tu-viaje', label: 'Según tu viaje' },
-    { id: 'mi-recomendacion', label: 'Mi recomendación' },
-    { id: 'errores-tipicos', label: 'Errores típicos' },
-    { id: 'tipos-alojamiento', label: 'Tipos de alojamiento' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'reservar', label: 'Reservar' },
+    { id: 'decision-rapida', label: 'Si quieres cerrar base rápido' },
+    { id: 'capital-o-costa', label: 'La decisión que ordena el viaje' },
+    { id: 'segun-tu-viaje', label: 'Qué base te sirve' },
+    { id: 'mi-recomendacion', label: 'Mi postura' },
+    { id: 'errores-tipicos', label: 'Cómo elegir una base mala' },
+    { id: 'tipos-alojamiento', label: 'Opciones reales' },
+    { id: 'faq', label: 'Dudas antes de reservar' },
+    { id: 'reservar', label: 'Cerrar y seguir' },
   ],
   quickDecision: {
     sectionId: 'decision-rapida',
+    eyebrow: 'Si quieres resolver la base sin marearte',
     title: 'La respuesta corta, sin turismo de humo',
     intro: 'Si quieres decidir en 30 segundos y seguir con tu vida, lee esto y ya.',
     items: [
@@ -46,6 +47,7 @@ export const alojarseGuideData: AlojarseGuideData = {
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
+    eyebrow: 'La decisión que más ordena o estropea el viaje',
     title: 'Huelva capital o costa: aquí se gana o se pierde el viaje',
     intro:
       'Esto no va de gustos abstractos. Va de qué base te deja hacer mejor el viaje que realmente quieres tener, no el que suena bonito en una foto.',
@@ -72,6 +74,8 @@ export const alojarseGuideData: AlojarseGuideData = {
   },
   bestFor: {
     sectionId: 'segun-tu-viaje',
+    eyebrow: 'Según el viaje real que vas a hacer',
+    resultEyebrow: 'La base que mejor te sirve',
     title: 'Elige la base según el viaje que vas a hacer, no según la foto que te seduce',
     intro: 'Aquí es donde de verdad se limpia el ruido. El mismo alojamiento puede ser perfecto o una mala compra según para qué vengas.',
     options: [
@@ -99,14 +103,16 @@ export const alojarseGuideData: AlojarseGuideData = {
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
-    title: 'Mi recomendación editorial, sin quedar bien con todo el mundo',
+    eyebrow: 'Mi postura aquí es bastante clara',
+    title: 'Mi recomendación, sin intentar quedar bien con todas las zonas a la vez',
     body:
-      'Si vienes por primera vez y no tienes un motivo clarísimo para dormir en la costa, quédate en Huelva capital. Es la base que te deja más margen, menos fricción y mejores decisiones durante todo el viaje.',
+      'Si vienes por primera vez y no tienes una razón muy clara para dormir junto al mar, quédate en Huelva capital. Es menos sexy en foto, sí, pero suele darte un viaje bastante mejor resuelto.',
     highlight:
-      'La mayoría no necesita la opción más fotogénica. Necesita la opción que evita un viaje torpe.',
+      'La mayoría no necesita la base más bonita. Necesita la base que no le robe tiempo ni energía.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
+    eyebrow: 'Cómo elegir una base que luego te castiga',
     title: 'Errores típicos que convierten una buena escapada en logística absurda',
     intro: 'Aquí cae mucha gente por querer ahorrar mal, decidir tarde o comprar relato en vez de utilidad.',
     mistakes: [
@@ -151,6 +157,7 @@ export const alojarseGuideData: AlojarseGuideData = {
   },
   faq: {
     sectionId: 'faq',
+    eyebrow: 'Las dudas que sí importan antes de reservar',
     title: 'Preguntas frecuentes que sí cambian la decisión',
     items: [
       {
@@ -172,9 +179,11 @@ export const alojarseGuideData: AlojarseGuideData = {
   },
   cta: {
     sectionId: 'reservar',
-    title: 'Siguiente paso: cierra la base y luego monta el resto del viaje',
+    eyebrow: 'Cuando la zona ya está decidida',
+    title: 'Cierra la base y deja de marear el buscador',
     body:
-      'Si ya sabes qué tipo de base te encaja, el siguiente movimiento útil no es seguir mareando opciones. Es validar zona, cerrar una shortlist corta y seguir con las decisiones que de verdad ordenan la escapada.',
+      'Si ya sabes qué zona te encaja, valida dos o tres opciones decentes y sigue con el resto del viaje. La base buena ordena mucho; perseguir la ganga perfecta solo suele meter ruido.',
+    kicker: 'La mayoría de errores aquí no vienen por elegir poco. Vienen por seguir dudando demasiado tarde.',
     primaryAction: {
       label: 'Ver qué ver en Huelva',
       href: '/que-ver',
@@ -185,6 +194,7 @@ export const alojarseGuideData: AlojarseGuideData = {
     },
   },
   relatedGuides: {
+    eyebrow: 'Si quieres que dormir bien sirva para algo más',
     title: 'Sigue afinando el viaje para no improvisar mal',
     guides: [
       {

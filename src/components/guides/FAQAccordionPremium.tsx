@@ -10,7 +10,7 @@ export function FAQAccordionPremium({ data }: { data: FAQAccordionPremiumData })
     <section id={data.sectionId} className="premium-guide-section premium-guide-section--contrast">
       <div className="premium-guide-container premium-guide-reading-width premium-guide-stack-lg">
         <div className="premium-guide-stack-sm">
-          <p className="premium-guide-eyebrow">Objeciones resueltas</p>
+          {data.eyebrow ? <p className="premium-guide-eyebrow">{data.eyebrow}</p> : null}
           <h2 className="premium-guide-h2">{data.title}</h2>
           {data.intro ? <p className="premium-guide-lead">{data.intro}</p> : null}
         </div>
