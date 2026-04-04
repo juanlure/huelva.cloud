@@ -247,6 +247,12 @@ export default async function ArticlePage({ params }: PageProps) {
               alt={article.title}
               className={styles.heroImg}
               loading="eager"
+              onError={(event) => {
+                const target = event.currentTarget;
+                if (target.dataset.fallbackApplied === 'true') return;
+                target.dataset.fallbackApplied = 'true';
+                target.src = '/images/guides/huelva-muelle-tinto.jpg';
+              }}
             />
           </figure>
         )}

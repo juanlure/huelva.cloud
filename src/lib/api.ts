@@ -3,13 +3,13 @@ import { CATEGORY_MAP } from './constants';
 import externalNewsData from '@/content/external-news.json';
 
 const CATEGORY_FALLBACK_IMAGE: Record<string, string> = {
-  'noticias': '/images/guides/huelva-puerto.jpg',
-  'eventos': '/images/guides/fiesta-tradicional-huelva.jpg',
+  'noticias': '/images/guides/huelva-muelle-tinto.jpg',
+  'eventos': '/images/guides/feria-huelva.jpg',
   'gastronomía': '/images/guides/coquinas-huelva.jpg',
   'gastronomia': '/images/guides/coquinas-huelva.jpg',
-  'alojamiento': '/images/guides/sierra-aracena.jpg',
-  'guías locales': '/images/guides/muelle-tinto.jpg',
-  'guias locales': '/images/guides/muelle-tinto.jpg',
+  'alojamiento': '/images/guides/aracena-pueblo.jpg',
+  'guías locales': '/images/guides/huelva-muelle-tinto.jpg',
+  'guias locales': '/images/guides/huelva-muelle-tinto.jpg',
 };
 
 function normalizeCategory(category: string): string {
