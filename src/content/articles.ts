@@ -2009,31 +2009,37 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Si preguntas dónde tapear en Huelva y nadie te dice un solo sitio, no te están ayudando: te están mareando. Así que aquí va lo útil. No una lista infinita, sino unas cuantas referencias que sí sirven para empezar con criterio.</p>
+      <p>Tapear bien en Huelva no va de memorizar tres nombres y repetirlos como un loro. Va de entender el plan: si quieres barra, movimiento, raciones cortas y margen para ir cambiando de sitio, el criterio importa más que el ranking. Aquí la clave no es encontrar “el mejor bar” en abstracto, sino saber leer rápido dónde merece la pena parar.</p>
 
-      <h2>Sitios que sí compensan para empezar</h2>
+      <h2>Empieza por la zona correcta</h2>
+      <p>Para tapear con sentido, el punto de partida más lógico sigue siendo el <strong>centro</strong>, sobre todo el entorno de <strong>Concepción</strong>, <strong>Plaza de las Monjas</strong> y las calles que conectan con el eje hacia <strong>Mercado del Carmen</strong>. Ahí tienes más densidad de bares, más rotación y más opciones para corregir rápido si una parada no convence.</p>
+
+      <h2>Qué señales te dicen que una barra va en serio</h2>
       <ul>
-        <li><strong>Gran Vía Uno</strong> — muy buena primera opción si estás en el centro y quieres una mesa resolutiva, cómoda y sin demasiada épica. Ideal para no fallar en una primera visita.</li>
-        <li><strong>Azabache</strong> — compensa más si quieres una comida o cena con algo más de intención, pero también puede entrar como parada seria dentro de un recorrido gastronómico.</li>
-        <li><strong>Bares con barra viva alrededor de Concepción</strong> — mejor zona para ir leyendo dónde hay rotación real y dónde solo hay terraza. Aquí el criterio está más en observar que en seguir el mapa a ciegas.</li>
-        <li><strong>Casas de producto cerca del mercado o con clientela local fija</strong> — cuando buscas menos foto y más verdad, suelen devolver bastante más.</li>
+        <li><strong>Barra viva en buena hora</strong> — si hay movimiento real, suele haber más rotación y menos postureo.</li>
+        <li><strong>Carta corta o con especialidad clara</strong> — mejor eso que un menú que quiere ser media península.</li>
+        <li><strong>Fritura ligera</strong> — si el choco sale pesado, ya puedes sospechar del resto.</li>
+        <li><strong>Servicio que orienta</strong> — cuando alguien te recomienda con lógica, normalmente hay más verdad detrás.</li>
       </ul>
 
-      <h2>Qué pedir para saber rápido si merece la pena</h2>
+      <h2>Qué pedir para leer un sitio rápido</h2>
       <ul>
         <li><strong>Choco frito</strong> — si está mal, el sitio ya ha hablado.</li>
-        <li><strong>Coquinas</strong> — limpieza, punto y producto. Aquí se retratan bien.</li>
-        <li><strong>Una tapa fría o aliñada</strong> — perfecta para ver si hay mano o simple rutina.</li>
-        <li><strong>Alguna recomendación del día</strong> — si el camarero sabe defenderla con sentido, suma mucho.</li>
+        <li><strong>Coquinas</strong> — limpieza, punto y respeto por el producto.</li>
+        <li><strong>Una tapa fría o aliñada</strong> — útil para ver si hay mano o solo rutina.</li>
+        <li><strong>La recomendación del día</strong> — si te la defienden bien, suele ser buena señal.</li>
       </ul>
+
+      <h2>Qué referencias sí te sirven para empezar</h2>
+      <p>Si no quieres improvisar del todo, <strong>Gran Vía Uno</strong> sigue siendo una referencia útil en el centro para resolver bien y arrancar sin drama. <strong>Azabache</strong> entra mejor cuando el tapeo ya empieza a parecerse a una comida con más intención que a una ruta ligera de barra. Y si te interesa más el pulso local que un nombre concreto, el entorno de <strong>Mercado del Carmen</strong> te da contexto, producto y bastante más verdad que muchas listas infladas.</p>
 
       <h2>Cómo evitar la trampa típica</h2>
       <p>Terraza llena no significa cocina buena. Carta larga tampoco. Y un local bonito con servicio mecánico suele acabar en comida olvidable. En Huelva merece más la pena un sitio con barra viva y dos o tres platos bien defendidos que una carta infinita pensada para no molestar a nadie.</p>
 
       <h2>Mi criterio rápido</h2>
-      <p>Si vas sin tiempo, tira a un valor seguro como <strong>Gran Vía Uno</strong>. Si quieres afinar un poco más la comida, <strong>Azabache</strong>. Si te apetece hacer de barra en barra, empieza por el centro pero sin casarte con la primera terraza. Y si lo que buscas ya no es tapeo sino sentarte a comer bien, salta a <a href="/article/mejores-restaurantes-huelva">los restaurantes que sí compensan</a> o a <a href="/donde-comer">la guía completa de dónde comer</a>.</p>
+      <p>Si vas con poco tiempo, empieza por el <strong>centro</strong> y usa <strong>Gran Vía Uno</strong> como referencia de salida. Si el plan pide más intención que tapeo, <strong>Azabache</strong> tiene más sentido. Si lo que quieres es moverte, comparar y notar ciudad, baja hacia el eje de <strong>Concepción</strong> y <strong>Mercado del Carmen</strong> y decide sobre la marcha con ojos abiertos. Y si ya no buscas tapear sino sentarte a comer bien, salta a <a href="/article/mejores-restaurantes-huelva">los restaurantes que sí compensan</a> o a <a href="/donde-comer">la guía completa de dónde comer</a>.</p>
 
-      <blockquote>Tapear bien en Huelva no va de encontrar “la zona”. Va de detectar rápido qué sitio tiene cocina viva y cuál solo tiene sillas al sol.</blockquote>
+      <blockquote>Tapear bien en Huelva no va de encontrar “la zona” y entregarte al destino. Va de detectar rápido qué barra tiene cocina viva y cuál solo tiene sillas al sol.</blockquote>
     `
   },
 
