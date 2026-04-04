@@ -3,6 +3,7 @@ import { getArticles } from '@/lib/api';
 import ArticleCard from '@/components/ArticleCard';
 import Quiz from '@/components/quiz/Quiz';
 import HeroSection from '@/components/HeroSection';
+import CommercialLink from '@/components/CommercialLink';
 import { ArrowRight, TrendingUp, CalendarDays, Star, Award, Sparkles, CloudSun, Newspaper, MapPin, Compass, BedDouble, Mail, CheckCircle2 } from 'lucide-react';
 
 export const revalidate = 300;
@@ -53,9 +54,9 @@ export default async function Home() {
               <p className="text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Colaboraciones</p>
               <h3 className="text-display text-2xl mb-2">Publicidad con sentido</h3>
               <p className="text-white/85 text-sm leading-relaxed mb-4">Negocios, marcas y eventos con encaje local. Mejor integrados con criterio que puestos ahí de cualquier forma.</p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold">
+              <CommercialLink surface="home_top_collab" href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold">
                 Ver opciones <ArrowRight size={16} />
-              </Link>
+              </CommercialLink>
             </div>
           </div>
         </div>
@@ -365,14 +366,14 @@ export default async function Home() {
                 <span className="inline-flex items-center gap-2 text-navy font-semibold">Ir a noticias <ArrowRight size={18} /></span>
               </Link>
 
-              <Link href="/contact" className="group rounded-[2rem] border border-terracotta/15 bg-gradient-to-br from-terracotta to-orange-600 p-8 text-white hover:shadow-[0_24px_80px_rgba(212,85,58,0.28)] transition-all">
+              <CommercialLink surface="home_contact_card" href="/contact" className="group rounded-[2rem] border border-terracotta/15 bg-gradient-to-br from-terracotta to-orange-600 p-8 text-white hover:shadow-[0_24px_80px_rgba(212,85,58,0.28)] transition-all">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/14 text-white mb-5">
                   <Mail size={22} />
                 </div>
                 <h2 className="text-display text-2xl font-semibold mb-3">Publicidad y marcas</h2>
                 <p className="text-white/82 mb-5">Si alguien quiere visibilidad en Huelva, mejor una integración cuidada que un parche feo.</p>
                 <span className="inline-flex items-center gap-2 text-white font-semibold">Contactar <ArrowRight size={18} /></span>
-              </Link>
+              </CommercialLink>
             </div>
           </div>
         </div>
@@ -488,13 +489,14 @@ export default async function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto justify-center">
-              <Link
+              <CommercialLink
+                surface="home_bottom_contact"
                 href="/contact"
                 className="px-8 py-4 bg-navy hover:bg-navy/90 text-white font-semibold rounded-full transition-colors shadow-lg inline-flex items-center justify-center gap-2"
               >
                 Ver contacto y colaboraciones
                 <ArrowRight size={18} />
-              </Link>
+              </CommercialLink>
               <Link
                 href="/sobre-nosotros"
                 className="px-8 py-4 bg-white/12 hover:bg-white/18 text-white font-semibold rounded-full transition-colors shadow-lg inline-flex items-center justify-center gap-2 border border-white/20"

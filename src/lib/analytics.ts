@@ -4,7 +4,10 @@ export type CommercialSurface =
   | 'footer_email'
   | 'contact_hero_mail'
   | 'contact_card_mail'
-  | 'contact_final_mail';
+  | 'contact_final_mail'
+  | 'home_top_collab'
+  | 'home_contact_card'
+  | 'home_bottom_contact';
 
 declare global {
   interface Window {
