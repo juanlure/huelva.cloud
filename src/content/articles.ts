@@ -75,22 +75,30 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Vamos a ver, que nos conocemos. Si vienes a Huelva y pides sepia, el camarero te va a mirar con una mezcla de lástima y resignación. En Huelva se come <strong>choco</strong>, y punto pelota. Es nuestra seña de identidad, hasta el punto de que nos llaman choqueros a los de la capital con todo el orgullo del mundo.</p>
+      <p>Si vienes a Huelva y quieres probar choco frito, lo primero es no pedirlo en cualquier parte. El choco bueno no es una tapa de trámite: es una prueba de fuego. Si un sitio falla ahí, ya sabes bastante de todo lo demás.</p>
 
-      <h2>El choco no es sepia (métetelo en la cabeza)</h2>
-      <p>La diferencia está en la textura. El choco de la ría tiene un "mordisco" que no encuentras en el Mediterráneo. Si está gomoso o parece un chicle, huye: es congelado o lo han maltratado en la cocina.</p>
+      <h2>Sitios donde tiene más sentido buscarlo</h2>
       <ul>
-        <li><strong>El rebozado:</strong> Harina fina de calidad. Nada de panko, ni tempuras raras, ni inventos modernos. Tiene que crujir, no ser una bota.</li>
-        <li><strong>El aceite:</strong> De oliva virgen, limpio y que eche humo. Si el aceite está cansado, el choco sale triste.</li>
-        <li><strong>El corte:</strong> En tiras o dados. Si te lo sirven en aros perfectos, sospecha; puede que te estén dando gato por liebre (o pota por choco).</li>
+        <li><strong>Barras vivas del centro</strong> — buena opción para una primera prueba si ves rotación, fritura constante y ambiente local real.</li>
+        <li><strong>Freidurías o casas de producto en barrios con clientela fija</strong> — aquí suele haber menos teatro y más verdad, que para el choco importa mucho.</li>
+        <li><strong>Azabache o mesas con criterio de producto</strong> — si quieres combinar choco con una comida más seria y no solo con tapeo rápido.</li>
       </ul>
 
-      <h2>¿Dónde ir sin que te engañen?</h2>
-      <p>Si quieres el choco de verdad, vete a los bares de toda la vida en el centro o date una vuelta por las freidurías del barrio de El Torrejón. Huye de los sitios con fotos de platos en la puerta; eso es para guiris que no saben lo que es la humedad de la ría.</p>
+      <h2>Cómo notar si el choco es bueno</h2>
+      <ul>
+        <li><strong>Rebozado fino</strong> — cruje, no se hace armadura.</li>
+        <li><strong>Textura limpia</strong> — si está gomoso, ya vas tarde.</li>
+        <li><strong>Aceite limpio</strong> — si sabe a fritanga vieja, mal asunto.</li>
+        <li><strong>Corte creíble</strong> — si parece demasiado perfecto, sospecha de pota o producto flojo.</li>
+      </ul>
 
-      <p>Si quieres montar una ruta de barra con un poco más de criterio, sigue por <a href="/donde-comer">dónde comer en Huelva</a> y por <a href="/article/donde-tapear-en-huelva">la guía para tapear sin caer en la trampa</a>.</p>
+      <h2>Mi consejo para no fallar</h2>
+      <p>Pídelo en sitios donde ya confiarías en el pescado o en el tapeo marino, no donde simplemente aparece en la carta. Si el camarero recomienda con seguridad y la barra se mueve, buena señal. Si todo parece pensado para la foto, no es ahí.</p>
 
-      <blockquote>Si pides limón, hazlo con discreción. El choco bueno sabe a mar, no a cítrico de bote.</blockquote>
+      <h2>Con qué encaja mejor</h2>
+      <p>Con una ruta de tapas bien montada, con una caña y con más cosas de mar alrededor. No necesita salsas ni inventos. Si quieres seguir afinando, cruza esta pieza con <a href="/article/donde-tapear-en-huelva">dónde tapear en Huelva</a>, <a href="/article/coquinas-huelva-como-comer">la guía de coquinas</a> y <a href="/donde-comer">la selección general de dónde comer</a>.</p>
+
+      <blockquote>El choco bueno no necesita maquillaje. Necesita que lo frían bien y que no lo sirvan en un sitio sin alma.</blockquote>
     `
   },
 
@@ -279,29 +287,30 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Las coquinas parecen una tapa sencilla hasta que te ponen unas malas delante. Entonces entiendes rápido la diferencia entre producto fino y plato de compromiso. En Huelva funcionan cuando son pequeñas, frescas, bien limpiadas y cocinadas con mano ligera. Si no, solo te comes arena, ajo y decepción.</p>
+      <p>Las coquinas solo merecen la pena cuando el sitio tiene producto y sabe no estropearlo. Si no, te comes ajo, arena y una tapa que parecía mejor idea en tu cabeza. En Huelva hay que pedirlas donde rota el marisco, no donde la carta las arrastra por costumbre.</p>
 
-      <h2>La decisión no es si pedir coquinas: es dónde hacerlo</h2>
-      <p>No son una tapa para cualquier sitio. Las coquinas buenas exigen rotación, producto cuidado y cocina que sepa no pasarse. En una barra con poca vida o con carta demasiado larga, es más fácil que te lleves una versión mediocre. Mejor pedirlas donde el marisco y el pescado sí tengan salida real.</p>
-
-      <h2>Cómo notar si van bien encaminadas</h2>
+      <h2>Dónde sí tiene sentido pedir coquinas</h2>
       <ul>
-        <li><strong>Tamaño pequeño:</strong> suele ser mejor señal. Las piezas enormes ya te invitan a sospechar.</li>
-        <li><strong>Caldo limpio y con sentido:</strong> ajo, vino, perejil y mar. No una sopa turbia que tape el producto.</li>
-        <li><strong>Arena controlada:</strong> algo puede aparecer, claro, pero si cruje cada bocado, están mal tratadas.</li>
-        <li><strong>Cocción corta:</strong> abrir, ligar y fuera. Si las castigan al fuego, se quedan tiesas y pierden gracia.</li>
+        <li><strong>Azabache</strong> — buena referencia si quieres una mesa con algo más de intención y producto bien tratado.</li>
+        <li><strong>Bares de producto en el centro con cocina viva</strong> — mejor opción para una ración al centro dentro de tapeo o comida compartida.</li>
+        <li><strong>Casas cercanas al mercado o con pescado y marisco como parte real de la identidad</strong> — ahí es donde las coquinas suelen tener más sentido que en un sitio que intenta hacer de todo.</li>
       </ul>
 
-      <h2>El error típico del que viene de fuera</h2>
-      <p>Pedirlas por obligación folclórica, como si hubiera que tacharlas sí o sí. No. Las coquinas merecen la pena cuando la casa las trabaja bien y cuando encajan dentro de una comida o una ruta de barra con producto marino. Si estás en un sitio más de carne, de carta infinita o de terraza turística sin alma, mejor elige otra cosa.</p>
+      <h2>Cómo saber si van bien antes del primer bocado</h2>
+      <ul>
+        <li><strong>Tamaño pequeño y uniforme</strong> — mejor señal que las piezas grandes y aparatosas.</li>
+        <li><strong>Caldo limpio</strong> — ajo, vino, perejil y sabor a mar; no una sopa turbia que tape el producto.</li>
+        <li><strong>Arena controlada</strong> — algo puede escapar, pero no puede crujir cada dos bocados.</li>
+        <li><strong>Cocción corta</strong> — abrir, ligar y fuera. Si están tiesas, ya han perdido la gracia.</li>
+      </ul>
 
-      <h2>Cómo se disfrutan de verdad</h2>
-      <p>Sin grandes ceremonias: plato al centro, pan cerca y manos trabajando. La gracia está en el ritmo corto, en el sabor limpio y en ese caldo que pide mojar. No necesitan inventos, ni salsas raras, ni una interpretación moderna para justificar el precio.</p>
+      <h2>Cuándo pedirlas y cuándo no</h2>
+      <p>Compensan como arranque de una mesa marinera, como ración de tapeo serio o dentro de una comida compartida con más producto de mar. No las pediría en un sitio de carne, de carta infinita o claramente pensado para salir del paso. Ahí casi siempre pierden.</p>
 
-      <h2>Cuándo compensan más</h2>
-      <p>En tapeo, en comida compartida o como arranque de una mesa donde luego vayan más cosas de mar. Funcionan peor como plato estrella aislado que como parte de un contexto gastronómico bien pensado. Por eso tiene sentido cruzarlas con <a href="/donde-comer">dónde comer en Huelva</a>, con <a href="/article/donde-tapear-en-huelva">la ruta de tapeo</a> y con <a href="/fin-de-semana">un fin de semana en Huelva bien montado</a> antes de lanzarte a pedir por inercia.</p>
+      <h2>Mi criterio rápido</h2>
+      <p>Si el sitio ya inspira confianza con pescado, marisco o barra viva, adelante. Si no, mejor choco frito, aliños o otra cosa que sufra menos. Y si quieres ordenar la decisión, cruza esta pieza con <a href="/article/donde-tapear-en-huelva">dónde tapear en Huelva</a>, <a href="/article/mejores-restaurantes-huelva">los restaurantes que sí compensan</a> y <a href="/donde-comer">la guía principal de dónde comer</a>.</p>
 
-      <blockquote>Una buena ración de coquinas sabe a ría. Una mala sabe a arena cara.</blockquote>
+      <blockquote>Las coquinas buenas no necesitan épica. Necesitan limpieza, punto y un sitio que no las trate como relleno de carta.</blockquote>
     `
   },
 
@@ -479,28 +488,31 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>En Huelva, el desayuno no se improvisa. Hay lugares que llevan décadas sirviendo el mismo café, las mismas tostadas y los mismos churros a la misma gente. El desayuno aquí es rutina social, no solo alimentación.</p>
+      <p>El desayuno en Huelva no va de brunch ni de postureo. Va de café rápido o con pausa, tostada bien hecha y un sitio que no falle a las ocho de la mañana. Si buscas eso, conviene ir con nombres y no con barrios en abstracto.</p>
 
-      <h2>Tipos de desayuno onubense</h2>
+      <h2>Los sitios que mejor resuelven el desayuno en Huelva</h2>
       <ul>
-        <li><strong>Tostada con aceite:</strong> pan de pueblo, aceite de oliva virgen extra, opcional tomate rallado.</li>
-        <li><strong>Manteca colorá:</strong> manteca de cerdo con pimentón, extendida sobre pan tostado. Sabor intenso, no apto para todos los paladares.</li>
-        <li><strong>Churros:</strong> sobretodo fines de semana. Con chocolate o solo.</li>
-        <li><strong>Mollete:</strong> típico de los desayunos rápidos en bares.</li>
+        <li><strong>Macha</strong> — buena parada si quieres café, algo dulce o desayuno más agradable que épico. Funciona mejor para arrancar el día con calma que para un desayuno castizo de batalla.</li>
+        <li><strong>Gran Vía Uno</strong> — práctico si te mueves por el centro y quieres sentarte en una terraza o resolver sin desviarte demasiado. Más comodidad que liturgia.</li>
+        <li><strong>Bares alrededor del Mercado del Carmen</strong> — mejor opción si prefieres desayuno con pulso local, ruido de barra y más verdad que decoración. Aquí la tostada tiene más sentido que el postureo.</li>
+        <li><strong>Churrerías de barrio con clientela fija</strong> — la jugada buena para fin de semana si te apetece churros de verdad y no una versión triste para salir del paso.</li>
       </ul>
 
-      <h2>Dónde desayunar</h2>
-      <p>Los bares del centro abren temprano (7:00-8:00). Algunos de toda la vida mantienen la calidad y el ritual. Si luego quieres seguir comiendo bien durante el día, enlaza con <a href="/donde-comer">la guía de dónde comer</a> o con <a href="/article/ruta-tapas-centro-huelva-donde-ir">una ruta de tapas por el centro</a>.</p>
+      <h2>Qué pedir según el tipo de mañana</h2>
       <ul>
-        <li>Cerca del Mercado del Carmen: ambiente de mercado, producto fresco.</li>
-        <li>Plaza de las Monjas: terrazas para desayunar con calma.</li>
-        <li>Barrio del Torrejón: locales tradicionales sin pretensiones.</li>
+        <li><strong>Si quieres ir a lo seguro:</strong> café y tostada con aceite y tomate.</li>
+        <li><strong>Si quieres algo más local:</strong> mollete o tostada con manteca colorá.</li>
+        <li><strong>Si es sábado o domingo:</strong> churros con café o chocolate, mejor temprano antes de que se llene.</li>
+        <li><strong>Si solo quieres una parada agradable:</strong> café bien tirado y algo ligero, sin convertir el desayuno en una excursión.</li>
       </ul>
 
-      <h2>Precios</h2>
-      <p>Desayuno completo (café + tostada): 2-3,50€. Churros para dos: 4-6€. Los fines de semana en zonas céntricas sube un poco. Si estás de visita y no solo desayunando, ordénalo con <a href="/que-ver">qué ver en Huelva</a> o con <a href="/fin-de-semana">un finde montado con cabeza</a>.</p>
+      <h2>Cómo elegir sin fallar</h2>
+      <p>Si ves rotación, barra viva y gente del barrio desayunando sin hacer teatro, vas bien. Si todo parece pensado para la foto y nadie mira la tostada, vas peor. En Huelva compensa más un bar sencillo que cumple cada mañana que una cafetería mona que no sabe para qué sirve.</p>
 
-      <blockquote>El desayuno en Huelva no se inventa. Se hereda.</blockquote>
+      <h2>Lo que yo haría si fuera la primera vez</h2>
+      <p>Centro si quieres comodidad, mercado si quieres pulso real y churrería de barrio si es fin de semana. Ese es el orden sensato. Y si el desayuno forma parte de un día más completo, remátalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/donde-comer">dónde comer bien</a> o <a href="/article/ruta-tapas-centro-huelva-donde-ir">una ruta de tapas por el centro</a>.</p>
+
+      <blockquote>El desayuno bueno en Huelva no es el más bonito. Es el que te deja empezar el día pensando “sí, aquí se viene a vivir”, no “bueno, cumple”.</blockquote>
     `
   },
 
@@ -635,31 +647,31 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>La ruta de tapas es el plan por excelencia en Huelva. No hay que complicarse: se empieza en un sitio, se bebe, se come, se paga, y se va al siguiente. La gracia está en la variedad, no en quedarse horas en el mismo bar.</p>
+      <p>La ruta de tapas en Huelva solo tiene sentido si enlazas sitios que cumplan una función distinta: arrancar fuerte, meter producto, cambiar de ritmo y cerrar sin bajar mucho el nivel. Si no, acabas dando vueltas por el centro sin comer mejor.</p>
 
-      <h2>Zonas para tapear</h2>
+      <h2>Ruta corta y sensata para empezar bien</h2>
       <ul>
-        <li><strong>Calle Concepción:</strong> bares tradicionales de toda la vida. Ambiente local, tapas clásicas.</li>
-        <li><strong>Plaza de las Monjas:</strong> terrazas, más turístico, bueno para sentarse.</li>
-        <li><strong>Barrio del Torrejón:</strong> tapas de calidad, ambiente más alternativo.</li>
+        <li><strong>Gran Vía Uno</strong> — buen punto de salida si quieres empezar cómodo, en el centro y sin necesidad de improvisar demasiado. Útil para una primera toma de contacto.</li>
+        <li><strong>Azabache</strong> — mejor cuando quieres subir un poco el nivel y pasar de tapa alegre a mesa con más intención.</li>
+        <li><strong>Bares del entorno de Concepción con barra viva</strong> — aquí es donde entra el tapeo más clásico, el de ir mirando ambiente, pizarra y rotación antes de sentarte.</li>
+        <li><strong>Parada final según hambre</strong> — o rematas con algo de producto o cortas a tiempo. La ruta buena no es la más larga, es la que no se hunde en la tercera parada.</li>
       </ul>
 
-      <h2>Tapas imprescindibles en la ruta</h2>
+      <h2>Qué pedir para medir cada parada</h2>
       <ul>
-        <li>Choco frito: en cualquier freiduría de confianza.</li>
-        <li>Coquinas a la marinera: tamaño pequeño, sabor intenso.</li>
-        <li>Gamba blanca: solo en temporada (otoño-invierno).</li>
-        <li>Papas aliñás: ensalada de patata, bacalao y naranja. Plato de contraste.</li>
-        <li>Carrillada ibérica: si se quiere alternar el pescado con carne.</li>
+        <li><strong>Choco frito</strong> si el sitio presume de barra y fritura.</li>
+        <li><strong>Coquinas</strong> si ves producto marino de verdad y no carta de trámite.</li>
+        <li><strong>Ensaladilla, aliño o tapa fría</strong> para detectar si hay mimo o dejadez.</li>
+        <li><strong>Algo fuera de carta</strong> si el camarero sabe venderlo con convicción y no como lectura de guion.</li>
       </ul>
 
-      <h2>Cómo organizar la ruta</h2>
-      <p>Una tapa y una bebida por bar. No más. El objetivo es probar 4-5 sitios, no llenarse en el primero. Distancia entre bares: máximo 5 minutos caminando. Si quieres afinar según tipo de mesa y no solo por zona, crúzalo con <a href="/donde-comer">dónde comer en Huelva</a> y con <a href="/article/mejores-restaurantes-huelva">esta selección de restaurantes sin postureo</a>.</p>
+      <h2>Dónde suele pinchar una ruta</h2>
+      <p>En sentarse demasiado tiempo en el primer sitio, pedir como si fuera una comida formal o dejarse llevar por la terraza más vistosa. En Huelva compensa más una barra viva con rotación que una mesa cómoda que no dice nada. La clave es leer el sitio antes de pedir tres rondas de fe.</p>
 
-      <h2>Presupuesto</h2>
-      <p>Tapa + caña: 2,50-4€ dependiendo de la zona. Con 15-20€ por persona se hace una ruta completa y variada. Si luego quieres alargar el día, completa con <a href="/agenda">la agenda actual</a> o con <a href="/fin-de-semana">un plan más redondo de fin de semana</a>.</p>
+      <h2>Cómo la organizaría yo</h2>
+      <p>Máximo cuatro paradas, distancias cortas y una bebida por sitio. Si la idea es rematar con comida seria, corta antes y salta a <a href="/article/mejores-restaurantes-huelva">la selección de restaurantes</a> o a <a href="/donde-comer">la guía madre de dónde comer en Huelva</a>. Y si lo que quieres es tapear sin sobrepensar, <a href="/article/donde-tapear-en-huelva">esta otra guía</a> te ayuda a filtrar trampas sin tanto rodeo.</p>
 
-      <blockquote>La ruta de tapas no es comida. Es deporte de resistencia gastronómica.</blockquote>
+      <blockquote>La ruta buena no es la que suma más bares. Es la que te deja pensando en volver a dos de ellos, no en sobrevivir a todos.</blockquote>
     `
   },
 
@@ -719,32 +731,37 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>El pescado fresco es uno de los grandes tesoros de Huelva. La lonja de Isla Cristina (a 40 km) y los puestos del Mercado del Carmen ofrecen producto de la ría y del cercano litoral atlántico.</p>
+      <p>Si quieres comprar pescado fresco en Huelva, no necesitas una charla romántica sobre el mar: necesitas saber dónde ir, a qué hora y qué señales separan una compra buena de una regulera. Aquí lo útil es el mercado, el producto y el ojo. Lo demás sobra.</p>
 
-      <h2>Qué pescado encontrar</h2>
+      <h2>Dónde comprar con más sentido</h2>
       <ul>
-        <li><strong>Gamba blanca:</strong> producto estrella, temporada otoño-invierno.</li>
-        <li><strong>Coquinas:</strong> todo el año, precio variable.</li>
-        <li><strong>Choco:</strong> fresco o congelado, verificar procedencia.</li>
-        <li><strong>Pescado de roca:</strong> lubina, dorada, pargo según temporada.</li>
+        <li><strong>Mercado del Carmen</strong> — la opción más sensata en Huelva capital. Cómodo, útil y con puestos donde todavía importa el producto del día.</li>
+        <li><strong>Lonja de Isla Cristina</strong> — muy buena referencia si eres especialmente exigente o quieres entender de verdad el movimiento del pescado, pero requiere más logística y madrugar en serio.</li>
       </ul>
 
-      <h2>Dónde comprar</h2>
-      <p><strong>Mercado del Carmen (Huelva capital):</strong> pescaderías tradicionales con producto diario. Horario: 8:00-14:00, sábados hasta 14:00. Cerrado domingos y festivos.</p>
-      <p><strong>Lonja de Isla Cristina:</strong> para comprar al por mayor o para los muy exigentes. Requiere madrugar (subastas muy temprano).</p>
-
-      <h2>Cómo elegir buen pescado</h2>
+      <h2>Qué merece la pena mirar</h2>
       <ul>
-        <li>Ojos brillantes, hundidos y opacos son señal de poco fresco.</li>
-        <li>Branquias rojas brillantes, no marrones ni grises.</li>
-        <li>Olor a mar limpio, no a amoniaco ni ácido.</li>
-        <li>Textura firme al tacto.</li>
+        <li><strong>Gamba blanca</strong> cuando haya buena temporada.</li>
+        <li><strong>Coquinas</strong> si las ves bien cuidadas y con buena rotación.</li>
+        <li><strong>Choco</strong> si te confirman procedencia y se ve firme.</li>
+        <li><strong>Pescado de roca o de costa</strong> cuando el puesto te hable claro y no como si vendiera humo.</li>
       </ul>
 
-      <h2>Mejor hora para ir</h2>
-      <p>A primera hora (8:00-9:00) para elegir. A última hora (13:00-14:00) a veces hay ofertas para liquidar stock.</p>
+      <h2>Cómo elegir sin que te cuelen género flojo</h2>
+      <ul>
+        <li><strong>Ojos brillantes</strong>, no hundidos ni apagados.</li>
+        <li><strong>Branquias rojas</strong>, nunca marrones.</li>
+        <li><strong>Olor limpio</strong>, a mar y no a castigo.</li>
+        <li><strong>Textura firme</strong> al tacto.</li>
+      </ul>
 
-      <blockquote>El pescado bueno no necesita salsa. El malo, tampoco la salva.</blockquote>
+      <h2>La hora buena</h2>
+      <p>Entre las 8:00 y las 9:00 si quieres elegir de verdad. A última hora puedes rascar precio, pero ya no mandas tú: manda lo que quede. Si buscas calidad y no liquidación, ve temprano.</p>
+
+      <h2>Con qué lo conectaría</h2>
+      <p>Si vienes de visita, esta pieza tiene más sentido unida a <a href="/article/gastronomia-tipica-huelva-platos">la guía de gastronomía típica</a>, <a href="/donde-comer">dónde comer en Huelva</a> y artículos concretos como <a href="/article/coquinas-huelva-como-comer">coquinas</a> o <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a>. Así no compras producto sin entender luego dónde compensa pedirlo ya hecho.</p>
+
+      <blockquote>En Huelva, comprar buen pescado no va de postureo gourmet. Va de madrugar un poco, mirar bien y no dejarte impresionar por el puesto más gritón.</blockquote>
     `
   },
 
@@ -1221,35 +1238,32 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>La cocina de Huelva es de producto, de mar y de tierra. No hay alta cocina complicada: hay buen producto tratado con respeto. Estos son los platos imprescindibles.</p>
+      <p>La gastronomía de Huelva no se entiende con una lista de platos soltados al tuntún. Se entiende cuando sabes qué merece la pena pedir, en qué contexto y dónde puede tener sentido buscarlo. Si no, acabas pidiendo “lo típico” como un turista castigado.</p>
 
-      <h2>Platos de mar</h2>
+      <h2>Lo que sí deberías probar</h2>
       <ul>
-        <li><strong>Gamba blanca:</strong> cocida o a la plancha. Temporada: octubre-marzo.</li>
-        <li><strong>Choco frito:</strong> con limón, sin salsa. Todo el año.</li>
-        <li><strong>Coquinas a la marinera:</strong> ajo, perejil, vino blanco.</li>
-        <li><strong>Atún:</strong> de almadraba, encebollado o a la plancha.</li>
+        <li><strong>Gamba blanca</strong> — sobre todo en buena temporada y en sitios donde el producto mande de verdad.</li>
+        <li><strong>Choco frito</strong> — identidad local pura. Si está bien hecho, ya entiendes media Huelva.</li>
+        <li><strong>Coquinas</strong> — mejor en casas que trabajen bien el marisco y sepan no pasarlas de fuego.</li>
+        <li><strong>Jamón ibérico</strong> — la conexión con la sierra no es decorativa: aquí pesa mucho.</li>
+        <li><strong>Presa ibérica o carrillada</strong> — cuando toca tierra en vez de mar.</li>
+        <li><strong>Papas aliñás y otras tapas frías bien hechas</strong> — pequeñas, pero útiles para medir una cocina.</li>
       </ul>
 
-      <h2>Platos de tierra</h2>
+      <h2>Dónde encaja cada cosa</h2>
       <ul>
-        <li><strong>Jamón ibérico:</strong> DOP Sierra de Huelva, bellota.</li>
-        <li><strong>Presa ibérica:</strong> a la brasa, jugosa.</li>
-        <li><strong>Carrillada:</strong> estofada, con vino de la tierra.</li>
-        <li><strong>Papas aliñás:</strong> ensalada de patata, bacalao y naranja.</li>
+        <li><strong>Para una comida más seria:</strong> restaurantes como <strong>Azabache</strong>.</li>
+        <li><strong>Para resolver bien en el centro:</strong> <strong>Gran Vía Uno</strong>.</li>
+        <li><strong>Para tapear y probar varias cosas:</strong> barras con rotación real y guías como <a href="/article/donde-tapear-en-huelva">dónde tapear en Huelva</a> o <a href="/article/ruta-tapas-centro-huelva-donde-ir">la ruta del centro</a>.</li>
       </ul>
 
-      <h2>Dulces</h2>
-      <ul>
-        <li><strong>Jueves lardero:</strong> hornazo, pestiños, torrijas.</li>
-        <li><strong>Roscos fritos:</strong> especialmente en Semana Santa.</li>
-      </ul>
+      <h2>Cómo no pedir mal</h2>
+      <p>No pidas coquinas en una casa de carne. No pidas jamón en un sitio que no parece saber cortarlo. No te fíes de una carta infinita. Y no confundas local bonito con mesa buena. En Huelva, como en casi todas partes, comer bien va de función y de producto, no de decoración.</p>
 
-      <p>Si prefieres pasar de la teoría al sitio correcto, sigue por <a href="/donde-comer">dónde comer en Huelva</a> y luego afina con piezas concretas como <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a>, <a href="/article/coquinas-huelva-como-comer">coquinas</a> o <a href="/article/mejores-restaurantes-huelva">los mejores restaurantes de Huelva</a>.</p>
+      <h2>La forma inteligente de usar esta guía</h2>
+      <p>Úsala para entender qué pedir y luego baja al sitio correcto con <a href="/donde-comer">dónde comer en Huelva</a>, <a href="/article/mejores-restaurantes-huelva">la selección de restaurantes</a>, <a href="/article/choco-frito-huelva-como-se-come-bien">la guía del choco frito</a> y <a href="/article/coquinas-huelva-como-comer">la de coquinas</a>. Ahí es donde de verdad dejas de improvisar.</p>
 
-      <p>Y si lo que quieres no es teoría sino sentarte bien, tira de <a href="/donde-comer">dónde comer en Huelva</a> y deja de improvisar como un turista castigado.</p>
-
-      <blockquote>La gastronomía de Huelva no necesita chefs famosos. Necesita buen producto y manos que lo respeten.</blockquote>
+      <blockquote>La cocina de Huelva no necesita que la expliques demasiado. Necesita que sepas qué pedir y en qué mesa hacerlo.</blockquote>
     `
   },
 
@@ -1988,28 +2002,31 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Tapear en Huelva no consiste en sentarte en la primera terraza con sol y dejarte llevar por la providencia. Hay bares que cumplen, otros que viven de la costumbre y unos cuantos que parecen puestos ahí para desplumar al despistado. Si quieres comer bien, conviene separar una cosa de la otra.</p>
+      <p>Si preguntas dónde tapear en Huelva y nadie te dice un solo sitio, no te están ayudando: te están mareando. Así que aquí va lo útil. No una lista infinita, sino unas cuantas referencias que sí sirven para empezar con criterio.</p>
 
-      <h2>Empieza por el centro, pero no te cases con lo primero que veas</h2>
-      <p>El centro te da opciones rápidas y eso está bien para arrancar, pero también mete bastante ruido. Mira rotación, mira quién está en la barra y mira si la carta parece pensada para comer o para aguantar turistas con cuatro fotos plastificadas. La diferencia se detecta más rápido de lo que parece.</p>
-
-      <h2>Qué pedir si quieres medir un bar sin perder tiempo</h2>
+      <h2>Sitios que sí compensan para empezar</h2>
       <ul>
-        <li><strong>Choco frito:</strong> si esto falla, no sigas investigando.</li>
-        <li><strong>Coquinas:</strong> producto, limpieza y punto. Aquí se retratan solos.</li>
-        <li><strong>Ensaladilla o tapa fría:</strong> útil para detectar desgana o mimo.</li>
-        <li><strong>Algo fuera de carta:</strong> si existe, normalmente hay cocina viva detrás.</li>
+        <li><strong>Gran Vía Uno</strong> — muy buena primera opción si estás en el centro y quieres una mesa resolutiva, cómoda y sin demasiada épica. Ideal para no fallar en una primera visita.</li>
+        <li><strong>Azabache</strong> — compensa más si quieres una comida o cena con algo más de intención, pero también puede entrar como parada seria dentro de un recorrido gastronómico.</li>
+        <li><strong>Bares con barra viva alrededor de Concepción</strong> — mejor zona para ir leyendo dónde hay rotación real y dónde solo hay terraza. Aquí el criterio está más en observar que en seguir el mapa a ciegas.</li>
+        <li><strong>Casas de producto cerca del mercado o con clientela local fija</strong> — cuando buscas menos foto y más verdad, suelen devolver bastante más.</li>
       </ul>
 
-      <h2>Cómo oler la trampa antes de pagarla</h2>
-      <p>Si todo está pensado para la foto y nada para que repitas, sospecha. Si el camarero no sabe recomendarte nada, peor. Y si el pescado sabe a trámite, cierra la cuenta y sigue tu vida. Para afinar todavía más, cruza esta pieza con <a href="/donde-comer">dónde comer en Huelva</a> y con las guías específicas de <a href="/article/choco-frito-huelva-como-se-come-bien">choco frito</a> y <a href="/article/coquinas-huelva-como-comer">coquinas</a>.</p>
+      <h2>Qué pedir para saber rápido si merece la pena</h2>
+      <ul>
+        <li><strong>Choco frito</strong> — si está mal, el sitio ya ha hablado.</li>
+        <li><strong>Coquinas</strong> — limpieza, punto y producto. Aquí se retratan bien.</li>
+        <li><strong>Una tapa fría o aliñada</strong> — perfecta para ver si hay mano o simple rutina.</li>
+        <li><strong>Alguna recomendación del día</strong> — si el camarero sabe defenderla con sentido, suma mucho.</li>
+      </ul>
 
-      <h2>No hay una ruta mágica: hay contexto</h2>
-      <p>Centro para empezar, barrios o zonas menos obvias para afinar y costa si el día pide mar. No existe un único “mejor sitio” para todo. Lo inteligente es decidir según hambre, hora, compañía y nivel de paciencia. Tapear bien aquí va más de leer la situación que de seguir una lista sagrada.</p>
+      <h2>Cómo evitar la trampa típica</h2>
+      <p>Terraza llena no significa cocina buena. Carta larga tampoco. Y un local bonito con servicio mecánico suele acabar en comida olvidable. En Huelva merece más la pena un sitio con barra viva y dos o tres platos bien defendidos que una carta infinita pensada para no molestar a nadie.</p>
 
-      <p>Si quieres ir un paso más allá de la tapa suelta, remata con <a href="/donde-comer">la guía de dónde comer en Huelva</a>, que es donde separas picoteo de comida seria.</p>
+      <h2>Mi criterio rápido</h2>
+      <p>Si vas sin tiempo, tira a un valor seguro como <strong>Gran Vía Uno</strong>. Si quieres afinar un poco más la comida, <strong>Azabache</strong>. Si te apetece hacer de barra en barra, empieza por el centro pero sin casarte con la primera terraza. Y si lo que buscas ya no es tapeo sino sentarte a comer bien, salta a <a href="/article/mejores-restaurantes-huelva">los restaurantes que sí compensan</a> o a <a href="/donde-comer">la guía completa de dónde comer</a>.</p>
 
-      <blockquote>La mejor ruta de tapas en Huelva no la gana el sitio más mono. La gana el que te hace pedir una ronda más porque está todo bueno. Fin del misterio.</blockquote>
+      <blockquote>Tapear bien en Huelva no va de encontrar “la zona”. Va de detectar rápido qué sitio tiene cocina viva y cuál solo tiene sillas al sol.</blockquote>
     `
   },
 
@@ -2095,26 +2112,34 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Buscar “mejores restaurantes en Huelva” suele darte dos mierdas: listas copiadas unas de otras o sitios que viven más de la foto que del plato. Así que mejor ir al grano: aquí lo que manda es producto, regularidad y contexto. Lo demás es decoración.</p>
+      <p>Si alguien busca los mejores restaurantes en Huelva, lo mínimo es darle nombres. No hace falta una lista de veinte. Hace falta una selección corta que se pueda defender. Aquí va la mía para empezar con criterio y sin vender humo.</p>
 
-      <h2>En Huelva no gana el más moderno: gana el que cocina con verdad</h2>
-      <p>El restaurante serio no necesita hacer veinte piruetas si compra bien y cocina con cabeza. Marisco, pescado, chacina, temporada. Si eso falla, ya puede haber media jungla de lámparas, carta en papel bonito y camareros con discurso aprendido: estás pagando envoltorio.</p>
-
-      <h2>Cómo detectar un sitio que merece sentarse</h2>
+      <h2>Restaurantes que sí compensan en Huelva</h2>
       <ul>
-        <li><strong>Carta corta o con criterio:</strong> no una enciclopedia que intenta gustarle a todo el mundo.</li>
-        <li><strong>Producto con rotación:</strong> se nota rápido en pescado y marisco.</li>
-        <li><strong>Servicio que orienta:</strong> alguien que recomienda de verdad, no solo apunta comanda.</li>
-        <li><strong>Precio con lógica:</strong> si pagas más, tiene que notarse en algo más que en el mantel.</li>
+        <li><strong>Azabache</strong> — de las opciones más sólidas si quieres una comida más seria, un punto más afinada y con sensación de que has ido a un sitio con intención. Buena jugada para quedar bien sin caer en un restaurante estirado.</li>
+        <li><strong>Gran Vía Uno</strong> — valor seguro en el centro cuando quieres resolver bien, sin demasiadas vueltas y en una ubicación cómoda para una primera visita.</li>
+        <li><strong>Casas de producto bien trabajadas</strong> — cuando veas carta menos larga, servicio que orienta y pescado o marisco con rotación real, ahí suele estar la mejor comida de Huelva. Mucho más que en el local que presume de diseño.</li>
       </ul>
 
-      <h2>No busques el mismo restaurante para todos los planes</h2>
-      <p>Si vas a producto, busca cocina onubense y carta con verdad. Si quieres una cena más afinada, hay sitios que elevan la experiencia sin ponerse ridículos. Y si vas en modo tapeo largo, a veces un bar excelente le gana fácil la partida a un restaurante correcto con demasiada ambición. Para separar bien la ocasión, cruza esta pieza con <a href="/donde-comer">la flagship de dónde comer</a> y con <a href="/article/donde-tapear-en-huelva">la guía de tapeo con cabeza</a>.</p>
+      <h2>Cuál elegir según el plan</h2>
+      <ul>
+        <li><strong>Si quieres una comida o cena más especial:</strong> Azabache.</li>
+        <li><strong>Si quieres un sitio cómodo y bastante seguro en el centro:</strong> Gran Vía Uno.</li>
+        <li><strong>Si quieres tapear largo antes que sentarte a una comida formal:</strong> mejor saltar a <a href="/article/donde-tapear-en-huelva">la guía de tapeo</a> o a <a href="/article/ruta-tapas-centro-huelva-donde-ir">la ruta del centro</a>.</li>
+      </ul>
 
-      <h2>Errores bastante evitables</h2>
-      <p>Elegir por estética, por cercanía o por reseñas que parecen escritas por primos del dueño. En Huelva se come muy bien, sí, pero no por arte de magia. Si no filtras un poco, acabas pagando una comida simplemente correcta como si fuera memorable. Y si estás montando el día entero, remátalo con <a href="/que-ver">qué ver en Huelva</a> o con <a href="/fin-de-semana">un plan de fin de semana bien ordenado</a>.</p>
+      <h2>Qué separa un restaurante serio de uno inflado</h2>
+      <ul>
+        <li><strong>Producto con lógica</strong> — especialmente en pescado, marisco y cocina onubense.</li>
+        <li><strong>Carta contenida</strong> — si intenta ser japonesa, italiana, marisquería y steakhouse a la vez, mala señal.</li>
+        <li><strong>Servicio que recomienda</strong> — alguien que te orienta de verdad vale mucho.</li>
+        <li><strong>Precio defendible</strong> — si pagas más, tiene que verse en producto, ejecución o contexto.</li>
+      </ul>
 
-      <blockquote>El mejor restaurante no siempre es el más famoso. Muchas veces es el que entiende mejor el producto y no intenta impresionarte con gilipolleces.</blockquote>
+      <h2>Errores típicos</h2>
+      <p>Elegir por diseño, por cercanía al hotel o por listas genéricas copiadas de Google. Huelva se disfruta mucho más cuando eliges un restaurante con función: comer bien, quedar bien, resolver en el centro o alargar una comida con sentido. Si estás montando el día completo, luego encájalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a> y <a href="/donde-comer">la pieza principal de dónde comer</a>.</p>
+
+      <blockquote>El mejor restaurante en Huelva no es el que más ruido hace. Es el que te deja con ganas de repetir antes que de subir una story.</blockquote>
     `
   },
 
