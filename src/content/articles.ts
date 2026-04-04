@@ -329,14 +329,14 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
 
       <h2>Sitios que sí tienen sentido</h2>
       <ul>
-        <li><strong>Macha</strong> — la referencia más clara si quieres una parada agradable, un café que encaje bien y un entorno algo más cuidado sin volverse ridículo.</li>
-        <li><strong>Gran Vía Uno</strong> — buena opción si estás en el centro y quieres resolver café, desayuno o pausa sin desviarte ni complicarte la vida.</li>
+        <li><strong>Gran Vía Uno</strong> — la referencia más defendible si estás en el centro y quieres resolver café, desayuno o pausa sin desviarte ni complicarte la vida.</li>
+        <li><strong>Macha</strong> — opción razonable si buscas una parada agradable, aunque aquí pesa más acertar con la zona y el momento que vender un nombre como verdad absoluta.</li>
         <li><strong>Bares del entorno de Plaza de las Monjas y Mercado del Carmen</strong> — mejor si buscas café con pulso real de ciudad, barra viva y contexto local antes que local bonito.</li>
       </ul>
 
       <h2>Qué elegir según el momento</h2>
       <ul>
-        <li><strong>Si quieres un café con calma:</strong> Macha.</li>
+        <li><strong>Si quieres un café con calma:</strong> una cafetería solvente en el eje centro-mercado; Macha puede encajar, pero no la trataría como única respuesta.</li>
         <li><strong>Si quieres algo práctico en pleno centro:</strong> Gran Vía Uno.</li>
         <li><strong>Si quieres mezclar café con desayuno local:</strong> bares con rotación de mañana cerca del mercado o del centro vivo.</li>
       </ul>

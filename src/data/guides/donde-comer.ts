@@ -9,7 +9,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
     quickFacts: [
       { label: 'Error típico', value: 'Elegir por fama o por foto' },
       { label: 'Si quieres acertar', value: 'Decide primero el momento' },
-      { label: 'Referencias base', value: 'Azabache · Gran Vía Uno · Macha' },
+      { label: 'Referencias base', value: 'Gran Vía Uno · Azabache · centro/mercado' }
     ],
   },
   toc: [
@@ -41,7 +41,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
       {
         title: 'Si el plan es desayuno o pausa amable',
         description:
-          'Macha funciona mejor que muchos sitios más ruidosos cuando lo que quieres es empezar el día o parar con cierta gracia.',
+          'Mejor priorizar cafeterías y bares con movimiento real en centro y mercado; Macha puede encajar, pero aquí pesa más la zona y el momento que un nombre único.',
       },
     ],
   },
@@ -97,7 +97,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
       {
         label: 'Desayuno o primera parada amable',
         audience: 'Quieres empezar el día bien antes de seguir con paseo o visitas',
-        recommendation: 'Macha es de las referencias más claras para arrancar sin arrepentirte media hora después.',
+        recommendation: 'Aquí manda más elegir bien la zona —centro vivo o entorno del mercado— que casarte con un solo nombre. Macha puede encajar, pero no la vendería como verdad absoluta.',
       },
     ],
   },
@@ -106,7 +106,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
     eyebrow: 'Mi forma de filtrar aquí',
     title: 'Si me pidieras tres nombres para empezar, no te daría una lista de veinte',
     body:
-      'Empezaría por Azabache si quieres comer con más intención, por Gran Vía Uno si buscas una apuesta práctica y sólida en el centro, y por Macha si el plan es desayuno o pausa amable. A partir de ahí, ya afinas por producto, tapeo o tipo de día.',
+      'Empezaría por Gran Vía Uno si buscas una apuesta práctica y sólida en el centro, por Azabache si quieres comer con más intención y por el eje centro-mercado si el plan es desayuno, tapeo o una parada rápida con movimiento real. A partir de ahí, ya afinas por producto y tipo de día.',
     highlight:
       'La mejor recomendación no es “el mejor restaurante”. Es el sitio correcto para el momento correcto.',
   },
@@ -122,7 +122,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
       },
       {
         title: 'No separar desayuno, tapeo y mesa seria',
-        description: 'Si comparas Macha con Azabache o una ruta de bares con una comida sentada, te estás haciendo trampas tú solo.',
+        description: 'Si comparas una cafetería de mañana con Azabache o una ruta de bares con una comida sentada, te estás haciendo trampas tú solo.',
       },
       {
         title: 'Buscar “el mejor” como si existiera una respuesta única',
@@ -182,7 +182,7 @@ export const dondeComerGuideData: AlojarseGuideData = {
     eyebrow: 'Cuando ya sabes qué tipo de comida buscas',
     title: 'Quédate con dos o tres referencias y deja de marearte',
     body:
-      'Si buscas mesa con intención, empieza por Azabache. Si quieres resolver bien en el centro, Gran Vía Uno. Si el plan arranca por la mañana, Macha. Luego ya ordenas el resto del día alrededor de esa decisión.',
+      'Si quieres resolver bien en el centro, empieza por Gran Vía Uno. Si buscas una mesa con más intención, mira Azabache. Si el plan arranca por la mañana, quédate en el eje centro-mercado y elige donde veas movimiento real. Luego ordena el resto del día alrededor de esa decisión.',
     kicker: 'La comida buena empieza bastante antes del primer plato: empieza cuando dejas de comparar tonterías.',
     primaryAction: {
       label: 'Ver qué hacer en Huelva',
