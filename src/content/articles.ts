@@ -2119,34 +2119,32 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
     author: 'Rocío Limón',
     isAi: true,
     content: `
-      <p>Si alguien busca los mejores restaurantes en Huelva, lo mínimo es darle nombres. No hace falta una lista de veinte. Hace falta una selección corta que se pueda defender. Aquí va la mía para empezar con criterio y sin vender humo.</p>
+      <p>Comer bien en Huelva no va de abrir el mapa, ver cuatro estrellas decentes y confiar en la providencia. Va de entender qué plan llevas. No es lo mismo querer una comida con más intención, resolver bien en el centro sin complicarte o buscar un sitio donde todavía se note producto, ritmo y ciudad. Si entras con esa idea clara, eliges mucho mejor y comes bastante menos regular.</p>
 
-      <h2>Restaurantes que sí compensan en Huelva</h2>
+      <h2>Si quieres acertar sin darle más vueltas</h2>
+      <p>Hay tres referencias que ahora mismo sirven para orientarte sin demasiada gimnasia. <strong>Azabache</strong> funciona mejor cuando el plan es sentarse a comer con calma, con algo más de intención y con sensación de estar en una mesa seria. <strong>Gran Vía Uno</strong> encaja mejor si estás en el centro y quieres resolver fácil sin caer en una turistada evidente. Y <strong>Mercado del Carmen</strong> no hay que entenderlo como “el mejor restaurante”, sino como un nodo gastronómico real: desayuno, producto, movimiento y una forma bastante más honesta de entrar en la ciudad.</p>
+
+      <h2>Según el plan que lleves</h2>
       <ul>
-        <li><strong>Azabache</strong> — de las opciones más sólidas si quieres una comida más seria, un punto más afinada y con sensación de que has ido a un sitio con intención. Buena jugada para quedar bien sin caer en un restaurante estirado.</li>
-        <li><strong>Gran Vía Uno</strong> — valor seguro en el centro cuando quieres resolver bien, sin demasiadas vueltas y en una ubicación cómoda para una primera visita.</li>
-        <li><strong>Casas de producto bien trabajadas</strong> — cuando veas carta menos larga, servicio que orienta y pescado o marisco con rotación real, ahí suele estar la mejor comida de Huelva. Mucho más que en el local que presume de diseño.</li>
+        <li><strong>Para comer con más calma y más intención:</strong> Azabache. Es la referencia más seria de esta selección cuando quieres que la comida sea el centro del plan y no solo un trámite entre paseos.</li>
+        <li><strong>Para comer en el centro sin complicarte:</strong> Gran Vía Uno. Ubicación cómoda, perfil versátil y bastante más útil que muchas recomendaciones infladas para quien solo quiere resolver bien.</li>
+        <li><strong>Si te importa más el ambiente y el producto que “el restaurante”:</strong> Mercado del Carmen. Aquí el valor está en el pulso local, el desayuno, el movimiento y la sensación de estar en un sitio con vida real.</li>
+        <li><strong>Si prefieres barra, tapeo y moverte:</strong> mejor pensar en el centro y el entorno de Concepción, y luego afinar con <a href="/article/donde-tapear-en-huelva">la guía de tapeo</a> o <a href="/article/ruta-tapas-centro-huelva-donde-ir">la ruta del centro</a>.</li>
       </ul>
 
-      <h2>Cuál elegir según el plan</h2>
-      <ul>
-        <li><strong>Si quieres una comida o cena más especial:</strong> Azabache.</li>
-        <li><strong>Si quieres un sitio cómodo y bastante seguro en el centro:</strong> Gran Vía Uno.</li>
-        <li><strong>Si quieres tapear largo antes que sentarte a una comida formal:</strong> mejor saltar a <a href="/article/donde-tapear-en-huelva">la guía de tapeo</a> o a <a href="/article/ruta-tapas-centro-huelva-donde-ir">la ruta del centro</a>.</li>
-      </ul>
+      <h2>Cómo no acabar comiendo regular</h2>
+      <p>Desconfía de los sitios con <strong>cartas eternas</strong>, porque suelen querer tocar demasiados palos y acertar poco. Mala señal también una <strong>barra sin vida en buena hora</strong>, la fritura pesada o ese lugar pensado más para capturar paso que para fidelizar a nadie. En una ciudad donde el producto importa, la falta de rotación se nota rápido.</p>
+      <p>Las señales buenas suelen ser bastante más simples: <strong>carta más corta</strong>, alguna especialidad clara, movimiento real, fritura limpia, producto reconocible y sensación de que la casa sabe a qué juega. No hace falta poesía. Hace falta criterio.</p>
 
-      <h2>Qué separa un restaurante serio de uno inflado</h2>
-      <ul>
-        <li><strong>Producto con lógica</strong> — especialmente en pescado, marisco y cocina onubense.</li>
-        <li><strong>Carta contenida</strong> — si intenta ser japonesa, italiana, marisquería y steakhouse a la vez, mala señal.</li>
-        <li><strong>Servicio que recomienda</strong> — alguien que te orienta de verdad vale mucho.</li>
-        <li><strong>Precio defendible</strong> — si pagas más, tiene que verse en producto, ejecución o contexto.</li>
-      </ul>
+      <h2>Qué pedir para saber si el sitio va en serio</h2>
+      <p>Si quieres leer un sitio rápido, no te fijes solo en lo bonito que queda el plato. El <strong>choco frito</strong> dice mucho: si sale pesado, tieso o con rebozado bruto, mala cosa. Las <strong>coquinas</strong> también delatan enseguida si hay respeto por el producto o solo ganas de cobrarte la ración. Y cuando hay marisco o pescado, importa menos el discurso y más la frescura, el punto y la sensación de que aquello tiene salida real, no decoración.</p>
 
-      <h2>Errores típicos</h2>
-      <p>Elegir por diseño, por cercanía al hotel o por listas genéricas copiadas de Google. Huelva se disfruta mucho más cuando eliges un restaurante con función: comer bien, quedar bien, resolver en el centro o alargar una comida con sentido. Si estás montando el día completo, luego encájalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a> y <a href="/donde-comer">la pieza principal de dónde comer</a>.</p>
+      <h2>Dónde moverte si no quieres reservar “el restaurante”</h2>
+      <p>No todo el mundo llega a Huelva buscando la comida definitiva. Mucha gente quiere algo más simple: no equivocarse, comer rico, estar bien situado y seguir el día sin drama. Para eso, el <strong>centro</strong>, el eje hacia <strong>Mercado del Carmen</strong> y el entorno con más vida de barra funcionan mejor que la obsesión por cazar un supuesto número uno absoluto. En Huelva conviene elegir primero el tipo de plan y después el sitio, no al revés.</p>
 
-      <blockquote>El mejor restaurante en Huelva no es el que más ruido hace. Es el que te deja con ganas de repetir antes que de subir una story.</blockquote>
+      <p>Si estás montando el día completo, remátalo con <a href="/que-ver">qué ver en Huelva</a>, <a href="/fin-de-semana">la guía de fin de semana</a>, <a href="/article/mejores-restaurantes-huelva">la selección de restaurantes que sí compensan</a> y <a href="/article/gastronomia-tipica-huelva-platos">la guía de platos típicos</a>.</p>
+
+      <blockquote>Si quieres ir a tiro hecho, Huelva ahora mismo se entiende mejor así: Azabache para sentarte con más intención, Gran Vía Uno para resolver bien en pleno centro y Mercado del Carmen para notar producto, movimiento y ciudad. Lo demás depende del plan. Y eso importa bastante más que cualquier ranking hinchado.</blockquote>
     `
   },
 
