@@ -14,44 +14,59 @@ function normalizeTitle(title: string): string {
     .trim();
 }
 
-function buildShortHeadline(title: string, max = 26): string[] {
+function buildShortHeadline(title: string, maxLineLength = 18): string[] {
   const cleaned = normalizeTitle(title);
   if (!cleaned) return ['Huelva.cloud'];
 
-  const words = cleaned.split(' ');
+  const words = cleaned.split(' ').filter(Boolean);
   const lines: string[] = [];
   let current = '';
+  let usedWords = 0;
 
   for (const word of words) {
     const candidate = current ? `${current} ${word}` : word;
-    if (candidate.length <= max) {
+
+    if (candidate.length <= maxLineLength) {
       current = candidate;
+      usedWords += 1;
       continue;
     }
 
     if (current) {
       lines.push(current);
-      current = word;
+      current = word.length <= maxLineLength ? word : `${word.slice(0, maxLineLength - 1)}…`;
+      usedWords += 1;
     } else {
-      lines.push(word.slice(0, max));
+      lines.push(`${word.slice(0, maxLineLength - 1)}…`);
+      usedWords += 1;
       current = '';
     }
 
-    if (lines.length === 2) break;
-  }
-
-  if (current && lines.length < 2) lines.push(current);
-
-  if (lines.length === 0) return [cleaned.slice(0, max)];
-
-  if (lines.length === 2) {
-    const remainingWords = words.join(' ').slice(`${lines[0]} ${lines[1]}`.trim().length).trim();
-    if (remainingWords) {
-      lines[1] = `${lines[1].slice(0, Math.max(0, max - 1))}…`;
+    if (lines.length === 2) {
+      current = '';
+      break;
     }
   }
 
-  return lines;
+  if (current && lines.length < 2) {
+    lines.push(current);
+  }
+
+  const hasMoreWords = usedWords < words.length;
+
+  if (lines.length === 0) {
+    return [cleaned.slice(0, maxLineLength)];
+  }
+
+  if (hasMoreWords) {
+    const lastIndex = Math.min(lines.length, 2) - 1;
+    const trimmed = lines[lastIndex].replace(/…$/, '');
+    lines[lastIndex] = trimmed.length >= maxLineLength
+      ? `${trimmed.slice(0, maxLineLength - 1)}…`
+      : `${trimmed}…`;
+  }
+
+  return lines.slice(0, 2);
 }
 
 function escapeXml(value: string): string {
@@ -68,7 +83,7 @@ export function generateNewsArtDataUri(title: string, source?: string) {
     ['#0B1F2A', '#14B8A6', '#F97316'],
   ];
   const palette = palettes[seed % palettes.length];
-  const [line1, line2] = buildShortHeadline(title, 24);
+  const [line1, line2] = buildShortHeadline(title, 18);
   const safeTitle1 = escapeXml(line1 || 'Huelva.cloud');
   const safeTitle2 = escapeXml(line2 || '');
   const safeSource = escapeXml(source || 'Huelva.cloud');
@@ -96,8 +111,8 @@ export function generateNewsArtDataUri(title: string, source?: string) {
       <rect x="88" y="88" width="208" height="48" rx="24" fill="white" fill-opacity="0.14" />
       <text x="118" y="119" fill="white" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="3">NOTICIAS</text>
 
-      <text x="88" y="540" fill="white" font-size="92" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
-      ${safeTitle2 ? `<text x="88" y="648" fill="white" font-size="92" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
+      <text x="88" y="560" fill="white" font-size="104" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle1}</text>
+      ${safeTitle2 ? `<text x="88" y="674" fill="white" font-size="104" font-family="Inter, Arial, sans-serif" font-weight="800">${safeTitle2}</text>` : ''}
 
       <text x="92" y="774" fill="rgba(255,255,255,0.82)" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Provincia de Huelva · ${safeSource}</text>
       <text x="92" y="826" fill="rgba(255,255,255,0.62)" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="500">Curado por Huelva.cloud</text>

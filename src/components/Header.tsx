@@ -123,13 +123,13 @@ export default function Header() {
                 href="/guias"
                 className="hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[linear-gradient(135deg,#0F1A24_0%,#1A2A3A_100%)] text-white text-sm font-semibold hover:from-terracotta hover:to-orange-600 transition-all shadow-[0_14px_34px_rgba(26,42,58,0.18)] ring-1 ring-white/10"
               >
-                <Sparkles size={15} />
-                Explorar Huelva
-                <ArrowRight size={15} />
+                <Sparkles size={15} className="text-amber-300" />
+                <span className="text-white">Explorar Huelva</span>
+                <ArrowRight size={15} className="text-white/85" />
               </Link>
 
               <button
-                className="xl:hidden inline-flex items-center justify-center p-3 transition-colors rounded-full text-navy hover:bg-navy/5 border border-navy/10 bg-white/88 backdrop-blur-sm shadow-sm"
+                className="xl:hidden inline-flex items-center justify-center p-3 transition-colors rounded-full text-navy hover:bg-navy/5 border border-navy/10 bg-white shadow-sm"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Alternar menú"
                 aria-expanded={isMenuOpen}
