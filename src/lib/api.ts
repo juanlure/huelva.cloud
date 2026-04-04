@@ -57,6 +57,20 @@ function isDataUri(value: string | null | undefined): boolean {
   return !!value && value.startsWith('data:image/');
 }
 
+function getNewsInternalCta(news: ExternalNewsItem): string {
+  const title = `${news.title} ${news.excerpt}`.toLowerCase();
+
+  if (/(ayuntamiento|causa|accidente|familias|institucional|huelva capital)/.test(title)) {
+    return '<p><strong>Siguiente lectura útil:</strong> si quieres más contexto local y recorrido práctico, sigue por <a href="/que-ver">qué ver en Huelva</a>, <a href="/agenda">la agenda de Huelva</a> o <a href="/fin-de-semana">la guía de fin de semana</a>.</p>';
+  }
+
+  if (/(detenido|estafa|sucesos|ayamonte|policia|guardia civil)/.test(title)) {
+    return '<p><strong>Siguiente lectura útil:</strong> si estás siguiendo movimiento en provincia, completa con <a href="/agenda">la agenda actual</a>, <a href="/que-ver">qué ver en Huelva y provincia</a> o <a href="/fin-de-semana">ideas para escapada y contexto local</a>.</p>';
+  }
+
+  return '<p><strong>Siguiente lectura útil:</strong> para no quedarte solo en el titular, enlaza esta noticia con <a href="/agenda">la agenda</a>, <a href="/que-ver">qué ver en Huelva</a> y <a href="/donde-comer">dónde comer bien</a>.</p>';
+}
+
 export interface Article {
   slug: string;
   title: string;
@@ -134,13 +148,14 @@ function mapExternalNews(news: ExternalNewsItem): Article {
   // Usar content generado por IA si existe, sino fallback básico
   const bodyContent = news.content || `<p>${news.excerpt}</p>`;
   const shouldInlineImage = !!localImage && !isDataUri(resolvedImage);
+  const footerContent = `${getNewsInternalCta(news)}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`;
   const content = shouldInlineImage
     ? ensureInlineImage(
-        `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`,
+        `${bodyContent}${footerContent}`,
         resolvedImage,
         news.title
       )
-    : `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`;
+    : `${bodyContent}${footerContent}`;
   
   // Generar slug consistente con external- prefix
   const base64Url = Buffer.from(news.url).toString('base64').substring(0, 20);
