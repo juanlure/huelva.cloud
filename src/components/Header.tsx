@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, ArrowRight, Dot, Compass } from 'lucide-react';
 import WeatherWidget from '@/components/widgets/WeatherWidget';
 import TimeWidget from '@/components/widgets/TimeWidget';
+import { trackCommercialClick } from '@/lib/analytics';
 
 const NAVIGATION_ITEMS = [
   { name: 'Agenda', href: '/agenda' },
@@ -103,6 +104,7 @@ export default function Header() {
 
             <Link
               href="/contact"
+              onClick={() => trackCommercialClick('header_advertising', '/contact')}
               className="hidden lg:inline-flex items-center gap-2 px-5 py-3 rounded-full border border-terracotta/20 bg-white/80 text-terracotta text-sm font-semibold hover:bg-terracotta hover:text-white transition-all shadow-[0_12px_30px_rgba(212,85,58,0.12)]"
             >
               Publicidad

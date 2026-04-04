@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { MapPin, ArrowRight, CalendarDays, Newspaper, BedDouble, UtensilsCrossed } from 'lucide-react';
+import { trackCommercialClick } from '@/lib/analytics';
 
 const exploreLinks = [
   { name: 'Comer', href: '/comer', icon: <UtensilsCrossed size={16} /> },
@@ -91,7 +94,11 @@ export default function Footer() {
 
               <div className="rounded-[1.25rem] border border-white/10 bg-white/6 backdrop-blur-sm p-4">
                 <p className="text-[11px] uppercase tracking-widest text-white/40 font-semibold mb-2">Publicidad y colaboraciones</p>
-                <a href="mailto:jlromero@flowia.pro" className="text-white/75 hover:text-terracotta transition-colors break-all">
+                <a
+                  href="mailto:jlromero@flowia.pro"
+                  onClick={() => trackCommercialClick('footer_email', 'mailto:jlromero@flowia.pro')}
+                  className="text-white/75 hover:text-terracotta transition-colors break-all"
+                >
                   jlromero@flowia.pro
                 </a>
               </div>

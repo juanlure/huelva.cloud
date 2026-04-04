@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { Mail, Megaphone, Handshake, ArrowRight } from 'lucide-react';
+import { trackCommercialClick } from '@/lib/analytics';
 
 export default function CollabBanner() {
   return (
@@ -20,6 +23,7 @@ export default function CollabBanner() {
 
           <Link
             href="/contact"
+            onClick={() => trackCommercialClick('collab_banner', '/contact')}
             className="inline-flex items-center gap-2 self-start md:self-auto px-4 py-2 rounded-full bg-white text-terracotta font-semibold hover:bg-cream transition-colors shadow-sm"
           >
             <Mail size={14} />
