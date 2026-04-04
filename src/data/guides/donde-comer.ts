@@ -3,13 +3,13 @@ import type { AlojarseGuideData } from '@/types/guides';
 export const dondeComerGuideData: AlojarseGuideData = {
   hero: {
     eyebrow: 'Guía local · Huelva para comer bien',
-    title: 'Dónde comer en Huelva sin acabar en un sitio correcto y ya',
+    title: 'Dónde comer en Huelva si quieres una recomendación y no otra lista tibia',
     subtitle:
-      'En Huelva se come muy bien si sabes qué estás buscando. El problema no es que falten sitios; el problema es mezclar bares, mesas serias, tapeo y producto como si todo jugara en la misma liga. Aquí va el filtro útil.',
+      'Aquí no venimos a hablar de “gastronomía local” como si eso resolviera algo. Venimos a separar desayunos, tapeo, producto y mesas serias para que sepas por dónde empezar y qué sitios sí compensan según el momento.',
     quickFacts: [
-      { label: 'Error típico', value: 'Elegir por fama vacía' },
-      { label: 'Si quieres acertar', value: 'Elige por momento y expectativa' },
-      { label: 'Clave real', value: 'No todo “recomendado” merece desvío' },
+      { label: 'Error típico', value: 'Elegir por fama o por foto' },
+      { label: 'Si quieres acertar', value: 'Decide primero el momento' },
+      { label: 'Referencias base', value: 'Azabache · Gran Vía Uno · Macha' },
     ],
   },
   toc: [
@@ -25,47 +25,47 @@ export const dondeComerGuideData: AlojarseGuideData = {
   quickDecision: {
     sectionId: 'decision-rapida',
     eyebrow: 'Si quieres comer bien y pasar página',
-    title: 'La versión corta para comer bien sin comerte el día decidiendo',
-    intro: 'Si no quieres abrir veinte pestañas ni tragarte listas blandas, empieza aquí.',
+    title: 'La versión corta para no perder una comida por no saber elegir',
+    intro: 'Si quieres una respuesta rápida, empieza por esto y deja de comparar ruido.',
     items: [
       {
-        title: 'Decide primero qué tipo de comida quieres',
+        title: 'Si quieres mesa con más intención',
         description:
-          'No se elige igual un sitio para resolver bien una comida que uno para montar una experiencia más tranquila o más de producto.',
+          'Empieza por Azabache. Es la referencia más clara si buscas producto y una comida con algo más de peso.',
       },
       {
-        title: 'No confundas sitio famoso con sitio que compensa',
+        title: 'Si quieres resolver bien en el centro',
         description:
-          'Hay lugares muy nombrados que están bien y ya. Lo interesante es detectar cuáles justifican de verdad el tiempo, el precio o el desvío.',
+          'Gran Vía Uno encaja mejor cuando buscas una apuesta sólida, cómoda y defendible sin montar una odisea gastronómica.',
       },
       {
-        title: 'Menos opciones, mejor filtro',
+        title: 'Si el plan es desayuno o pausa amable',
         description:
-          'Una buena selección corta vale más que una guía kilométrica que no te ayuda a decidir nada.',
+          'Macha funciona mejor que muchos sitios más ruidosos cuando lo que quieres es empezar el día o parar con cierta gracia.',
       },
     ],
   },
   zoneComparison: {
     sectionId: 'capital-o-costa',
     eyebrow: 'Dónde se gana una comida y dónde se pierde',
-    title: 'Qué compensa más según el tipo de comida que buscas',
+    title: 'Qué tipo de sitio compensa más según el plan que lleves',
     intro:
-      'Lo importante no es solo comer, sino acertar con el contexto: rapidez, producto, ambiente, pausa o plan de escapada.',
+      'No necesitas veinte nombres: necesitas distinguir cuándo conviene una mesa seria, cuándo basta con resolver bien y cuándo el tapeo manda más que el restaurante.',
     cards: [
       {
-        name: 'Comer bien sin complicarte',
+        name: 'Resolver bien sin inventarte una película',
         bestFor: 'Quien quiere una apuesta clara, rica y funcional',
-        good: ['Más fácil de acertar', 'Menos desgaste decidiendo', 'Encaja mejor en escapadas con plan apretado'],
-        tradeoffs: ['Puede tener menos efecto wow', 'No siempre será la comida más memorable del viaje'],
+        good: ['Gran Vía Uno encaja bien aquí', 'Más fácil de acertar', 'Encaja mejor en escapadas con plan apretado'],
+        tradeoffs: ['Puede tener menos efecto wow', 'No será la comida más épica del viaje'],
         mobility: 'Alta. Es la opción más sólida cuando quieres que todo fluya.',
         verdict:
           'Muy buena jugada si priorizas seguridad, ritmo y una experiencia sin tonterías.',
       },
       {
-        name: 'Comer con más intención',
-        bestFor: 'Quien quiere producto, contexto o una comida más protagonista',
-        good: ['Más personalidad', 'Más posibilidad de recuerdo fuerte', 'Más premio si eliges bien'],
-        tradeoffs: ['Aquí equivocarte duele más', 'No todo sitio con nombre entrega de verdad'],
+        name: 'Comer con más intención y producto',
+        bestFor: 'Quien quiere que sentarse a la mesa sí marque el día',
+        good: ['Azabache entra mejor aquí', 'Más personalidad', 'Más premio si eliges bien'],
+        tradeoffs: ['Aquí equivocarte duele más', 'Conviene reservar y no ir a ciegas'],
         mobility: 'Media. Conviene ir con criterio y no por simple ruido social.',
         verdict:
           'Compensa cuando la comida es parte central del plan, no solo una parada técnica.',
@@ -76,39 +76,39 @@ export const dondeComerGuideData: AlojarseGuideData = {
     sectionId: 'segun-tu-viaje',
     eyebrow: 'Según el momento que quieras montar',
     resultEyebrow: 'La mesa que más sentido tiene',
-    title: 'Qué tipo de sitio te conviene según el plan que llevas',
-    intro: 'La decisión buena cambia mucho si vas a resolver, disfrutar, celebrar o simplemente no perder tiempo comiendo mediocre.',
+    title: 'Qué sitio te conviene según el plan que llevas',
+    intro: 'Aquí sí toca mojarse: no todo el mundo necesita el mismo restaurante ni la misma experiencia.',
     options: [
       {
         label: 'Comer bien sin drama',
         audience: 'Quieres un sitio sólido y una decisión rápida',
-        recommendation: 'Busca sitios honestos, fluidos y con propuesta clara. Aquí gana el filtro, no la espectacularidad artificial.',
+        recommendation: 'Gran Vía Uno es la salida más defendible si quieres centro, solvencia y poca tontería alrededor.',
       },
       {
         label: 'Comida protagonista del día',
         audience: 'Quieres que sentarte a comer sea una parte fuerte de la escapada',
-        recommendation: 'Prioriza lugares con producto, intención y contexto. Si vas a darle peso al momento, no lo resuelvas con algo simplemente correcto.',
+        recommendation: 'Azabache tiene más sentido cuando quieres una comida con más intención, producto y sensación de haber elegido algo de verdad.',
       },
       {
         label: 'Tapeo o varias paradas',
         audience: 'Prefieres más movimiento y menos comida larga de mesa fija',
-        recommendation: 'Elige bien dos o tres decisiones buenas. Encadenar demasiadas solo convierte el plan en dispersión.',
+        recommendation: 'Mejor dos o tres bares con barra viva por el centro y el entorno del mercado que una ruta infinita de sitios flojos.',
       },
       {
-        label: 'Poco tiempo y tolerancia cero al fallo',
-        audience: 'Necesitas una apuesta defendible y sin experimentos raros',
-        recommendation: 'No persigas hype. Ve a algo claro, bien ejecutado y que no dependa de que “ese día” salga fino.',
+        label: 'Desayuno o primera parada amable',
+        audience: 'Quieres empezar el día bien antes de seguir con paseo o visitas',
+        recommendation: 'Macha es de las referencias más claras para arrancar sin arrepentirte media hora después.',
       },
     ],
   },
   recommendation: {
     sectionId: 'mi-recomendacion',
     eyebrow: 'Mi forma de filtrar aquí',
-    title: 'Mi recomendación, sin repartir medallas por ruido ni por postureo gastronómico',
+    title: 'Si me pidieras tres nombres para empezar, no te daría una lista de veinte',
     body:
-      'Para comer bien en Huelva, primero decide el momento: resolver, disfrutar, tapear o sentarte en serio. Cuando haces esa separación, caen solas muchas recomendaciones infladas y se quedan las que de verdad tienen sentido.',
+      'Empezaría por Azabache si quieres comer con más intención, por Gran Vía Uno si buscas una apuesta práctica y sólida en el centro, y por Macha si el plan es desayuno o pausa amable. A partir de ahí, ya afinas por producto, tapeo o tipo de día.',
     highlight:
-      'Comer bien aquí no va de perseguir el nombre más repetido. Va de elegir el sitio correcto para el momento correcto.',
+      'La mejor recomendación no es “el mejor restaurante”. Es el sitio correcto para el momento correcto.',
   },
   commonMistakes: {
     sectionId: 'errores-tipicos',
@@ -121,11 +121,11 @@ export const dondeComerGuideData: AlojarseGuideData = {
         description: 'Mucho ruido gastronómico solo sirve para llevarte a sitios correctos pero intercambiables.',
       },
       {
-        title: 'No decidir el tipo de comida antes',
-        description: 'Si no sabes si quieres resolver rápido, comer con calma o tapear, acabarás comparando cosas que no compiten entre sí.',
+        title: 'No separar desayuno, tapeo y mesa seria',
+        description: 'Si comparas Macha con Azabache o una ruta de bares con una comida sentada, te estás haciendo trampas tú solo.',
       },
       {
-        title: 'Buscar “el mejor” como si fuera una respuesta única',
+        title: 'Buscar “el mejor” como si existiera una respuesta única',
         description: 'La mejor opción depende del plan, del hambre, del momento y del nivel de exigencia que traigas.',
       },
     ],
@@ -180,10 +180,10 @@ export const dondeComerGuideData: AlojarseGuideData = {
   cta: {
     sectionId: 'reservar',
     eyebrow: 'Cuando ya sabes qué tipo de comida buscas',
-    title: 'Elige el momento y recorta la lista sin piedad',
+    title: 'Quédate con dos o tres referencias y deja de marearte',
     body:
-      'Si ya sabes qué tipo de comida quieres, no sigas comparando sitios que no compiten entre sí. Quédate con dos o tres opciones buenas y construye el resto del día alrededor de eso.',
-    kicker: 'La comida buena empieza bastante antes del primer plato: empieza al dejar de comparar ruido.',
+      'Si buscas mesa con intención, empieza por Azabache. Si quieres resolver bien en el centro, Gran Vía Uno. Si el plan arranca por la mañana, Macha. Luego ya ordenas el resto del día alrededor de esa decisión.',
+    kicker: 'La comida buena empieza bastante antes del primer plato: empieza cuando dejas de comparar tonterías.',
     primaryAction: {
       label: 'Ver qué hacer en Huelva',
       href: '/que-ver',
