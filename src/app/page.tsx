@@ -16,12 +16,12 @@ export default async function Home() {
   const noticias = await getArticles('noticias');
   const alojarse = await getArticles('alojarse');
 
-  const featuredArticle = guias[0] || comer[0] || eventos[0] || articles[0];
-  const trendingArticles = [...guias.slice(1, 3), ...comer.slice(0, 2), ...eventos.slice(0, 2)].slice(0, 6);
+  const featuredArticle = noticias[0] || guias[0] || comer[0] || eventos[0] || articles[0];
+  const trendingArticles = [...noticias.slice(1, 3), ...guias.slice(0, 2), ...comer.slice(0, 2)].slice(0, 6);
   const gastronomyArticles = comer.slice(0, 3);
   const guidesArticles = guias.slice(0, 4);
   const eventsArticles = eventos.slice(0, 3);
-  const newsArticles = noticias.slice(0, 3);
+  const newsArticles = noticias.slice(0, 4);
   const lodgingArticles = alojarse.slice(0, 3);
 
   const stats = {
@@ -113,7 +113,7 @@ export default async function Home() {
                 href="/noticias"
                 className="inline-flex items-center gap-2 text-navy-60 hover:text-terracotta font-medium transition-colors group"
               >
-                <span>Explorar todo el archivo ({stats.totalArticles})</span>
+                <span>Explorar Huelva.cloud ({stats.totalArticles})</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

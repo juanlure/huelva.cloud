@@ -123,8 +123,18 @@ function mapArticle(article: LocalArticle): Article {
 function mapExternalNews(news: ExternalNewsItem): Article {
   const publishedAtISO = toSafeIso(news.publishedAt);
   const publishedLabel = formatHumanDate(news.publishedAt);
+  const fallbackImage = CATEGORY_FALLBACK_IMAGE['noticias'] || null;
+  const resolvedImage = news.image && !/^https?:\/\//i.test(news.image) ? news.image : fallbackImage;
+
   // Usar content generado por IA si existe, sino fallback básico
   const bodyContent = news.content || `<p>${news.excerpt}</p>`;
+  const content = resolvedImage
+    ? ensureInlineImage(
+        `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`,
+        resolvedImage,
+        news.title
+      )
+    : `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`;
   
   // Generar slug consistente con external- prefix
   const base64Url = Buffer.from(news.url).toString('base64').substring(0, 20);
@@ -133,9 +143,9 @@ function mapExternalNews(news: ExternalNewsItem): Article {
     slug: `external-${base64Url}`,
     title: news.title,
     excerpt: news.excerpt,
-    content: `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`,
+    content,
     category: 'noticias',
-    image: news.image || null,
+    image: resolvedImage,
     date: publishedLabel,
     publishedAtISO,
     publishedLabel,

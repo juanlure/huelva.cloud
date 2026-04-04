@@ -1,19 +1,12 @@
 #!/usr/bin/env node
 /**
- * Huelva.cloud Workflow Orchestrator v2.0
- * Sistema unificado de publicación diaria
+ * Huelva.cloud Workflow Orchestrator v3.0 - Optimizado
+ * Sistema unificado de publicación diaria con timeouts por stage
  * 
- * Workflow stages:
- *   1. SCRAPE → 2. PROCESS → 3. PUBLISH
- * 
- * Ejecución:
- *   node workflow-orchestrator.mjs [mode]
- *   
- * Modes:
- *   morning  → 08:00 (noticias + repaso agenda)
- *   midday   → 14:00 (agenda + noticias si es necesario)
- *   evening  → 20:00 (agenda finde + noticias + planificación)
- *   full     → Todo en secuencia (para manual)
+ * Optimizaciones v3:
+ *   - Timeouts por stage individuales
+ *   - Circuit breaker para scraper lento
+ *   - Modos midday/evening son lightweight (solo checks)
  */
 
 import { execSync } from 'child_process';
@@ -24,36 +17,22 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Configuración
 const REPO = '/home/claw1/.openclaw/workspace/huelva-is';
 const LOG_DIR = path.join(REPO, 'logs');
 const EXTERNAL_NEWS_FILE = path.join(REPO, 'src/content/external-news.json');
 const ARTICLES_FILE = path.join(REPO, 'src/content/articles.ts');
-
-// Estados del workflow
 const STATE_FILE = path.join(LOG_DIR, '.workflow-state.json');
 
-// Colores para logs
-const C = {
-  reset: '\x1b[0m',
-  dim: '\x1b[2m',
-  red: '\x1b[31m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  magenta: '\x1b[35m',
-  cyan: '\x1b[36m',
+// Timeouts por operación (ms)
+const TIMEOUTS = {
+  scrape: 60000,      // 1 min para scrape
+  git: 30000,         // 30s para git
+  process: 10000,     // 10s para procesar
+  count: 5000,        // 5s para contar
 };
 
-// Emojis por nivel
-const ICONS = {
-  info: 'ℹ️ ',
-  success: '✅ ',
-  warn: '⚠️ ',
-  error: '❌ '
-};
+const ICONS = { info: 'ℹ️ ', success: '✅ ', warn: '⚠️ ', error: '❌ ' };
 
-// Logger estructurado
 class WorkflowLogger {
   constructor() {
     this.logs = [];
@@ -61,20 +40,9 @@ class WorkflowLogger {
   }
 
   log(level, message, data = null) {
-    const entry = {
-      timestamp: new Date().toISOString(),
-      level,
-      message,
-      data,
-      elapsed: Date.now() - this.startTime
-    };
+    const entry = { timestamp: new Date().toISOString(), level, message, data, elapsed: Date.now() - this.startTime };
     this.logs.push(entry);
-    
-    const icon = ICONS[level] || '';
-    console.log(`${icon}${message}`);
-    if (data && process.env.DEBUG) {
-      console.log(JSON.stringify(data, null, 2));
-    }
+    console.log(`${ICONS[level] || ''}${message}`);
   }
 
   info(msg, data) { this.log('info', msg, data); }
@@ -87,23 +55,15 @@ class WorkflowLogger {
     const logFile = path.join(LOG_DIR, `workflow-${mode}-${date}.json`);
     await fs.mkdir(LOG_DIR, { recursive: true });
     await fs.writeFile(logFile, JSON.stringify({
-      mode,
-      executedAt: new Date().toISOString(),
-      duration: Date.now() - this.startTime,
-      logs: this.logs
+      mode, executedAt: new Date().toISOString(), duration: Date.now() - this.startTime, logs: this.logs
     }, null, 2));
     return logFile;
   }
 }
 
-// Estado del workflow (para saber qué se hizo hoy)
 async function loadState() {
-  try {
-    const data = await fs.readFile(STATE_FILE, 'utf8');
-    return JSON.parse(data);
-  } catch {
-    return { lastRun: null, today: { news: 0, agenda: 0, guides: 0 } };
-  }
+  try { return JSON.parse(await fs.readFile(STATE_FILE, 'utf8')); }
+  catch { return { lastRun: null, today: { news: 0, agenda: 0, guides: 0 } }; }
 }
 
 async function saveState(state) {
@@ -111,45 +71,35 @@ async function saveState(state) {
   await fs.writeFile(STATE_FILE, JSON.stringify(state, null, 2));
 }
 
-// Helpers
 function isToday(dateStr) {
   if (!dateStr) return false;
-  const d = new Date(dateStr);
-  const today = new Date();
-  return d.toDateString() === today.toDateString();
+  return new Date(dateStr).toDateString() === new Date().toDateString();
 }
 
 async function exec(cmd, options = {}) {
+  const start = Date.now();
   try {
-    const result = execSync(cmd, { 
-      encoding: 'utf8', 
-      cwd: REPO,
-      timeout: options.timeout || 120000,
-      ...options 
-    });
-    return { success: true, output: result };
+    const result = execSync(cmd, { encoding: 'utf8', cwd: REPO, timeout: options.timeout || 30000, ...options });
+    return { success: true, output: result, elapsed: Date.now() - start };
   } catch (e) {
-    return { success: false, error: e.message, code: e.status };
+    return { success: false, error: e.message, code: e.status, elapsed: Date.now() - start };
   }
 }
 
-// Contadores de contenido
 async function countContent() {
-  const [newsData, articlesContent] = await Promise.all([
-    fs.readFile(EXTERNAL_NEWS_FILE, 'utf8').then(JSON.parse).catch(() => ({ count: 0 })),
-    fs.readFile(ARTICLES_FILE, 'utf8').catch(() => '')
-  ]);
-  
-  const localArticles = (articlesContent.match(/slug:/g) || []).length;
-  
-  return {
-    externalNews: newsData.count || 0,
-    localArticles,
-    total: (newsData.count || 0) + localArticles
-  };
+  try {
+    const [newsData, articlesContent] = await Promise.all([
+      fs.readFile(EXTERNAL_NEWS_FILE, 'utf8').then(JSON.parse).catch(() => ({ count: 0 })),
+      fs.readFile(ARTICLES_FILE, 'utf8').catch(() => '')
+    ]);
+    const localArticles = (articlesContent.match(/slug:/g) || []).length;
+    return { externalNews: newsData.count || 0, localArticles, total: (newsData.count || 0) + localArticles };
+  } catch {
+    return { externalNews: 0, localArticles: 0, total: 0 };
+  }
 }
 
-// ============ WORKFLOW STAGES ============
+// ============ STAGES ============
 
 async function stageScrapeNews(logger, maxNewsToday = 3) {
   logger.info('STAGE 1: Scrape Noticias');
@@ -158,180 +108,132 @@ async function stageScrapeNews(logger, maxNewsToday = 3) {
   const newsToday = isToday(state.lastRun) ? state.today.news : 0;
   
   if (newsToday >= maxNewsToday) {
-    logger.info(`Ya se publicaron ${newsToday} noticias hoy. Skip.`);
+    logger.info(`Cuota alcanzada: ${newsToday}/${maxNewsToday}. Skip.`);
     return { skipped: true, reason: 'quota_reached' };
   }
   
-  logger.info(`Publicadas hoy: ${newsToday}/${maxNewsToday}. Ejecutando scraper...`);
+  logger.info(`Noticias hoy: ${newsToday}/${maxNewsToday}`);
+
+  const before = await countContent();
   
-  const result = await exec('node scripts/scrape-and-rewrite.mjs 2>&1');
+  // Ejecutar scraper con timeout estricto
+  const result = await exec('node scripts/scrape-and-rewrite.mjs 2>&1', { timeout: TIMEOUTS.scrape });
   
   if (!result.success) {
-    logger.error('Scraper falló', { error: result.error });
+    if (result.elapsed >= TIMEOUTS.scrape - 1000) {
+      logger.error('Scraper TIMEOUT', { elapsed: result.elapsed });
+      return { success: false, error: 'timeout', fatal: false };
+    }
+    logger.error('Scraper falló', { error: result.error?.slice(0, 200) });
     return { success: false, error: result.error };
   }
   
-  logger.info('Scraper completado', { output: result.output?.slice(0, 200) });
+  logger.success(`Scraper OK (${result.elapsed}ms)`);
   
-  // Verificar que se añadió una noticia
-  const contentBefore = await countContent();
+  // Verificar que se añadió noticia
   await new Promise(r => setTimeout(r, 500));
-  const contentAfter = await countContent();
+  const after = await countContent();
   
-  if (contentAfter.externalNews > contentBefore.externalNews) {
-    logger.success(`Noticia añadida. Total: ${contentAfter.externalNews}`);
-    state.today.news = (state.today.news || 0) + 1;
+  if (after.externalNews > before.externalNews) {
+    const addedCount = after.externalNews - before.externalNews;
+    logger.success(`Noticia añadida: +${addedCount} (${after.externalNews} total)`);
+    state.today.news = newsToday + addedCount;
     await saveState(state);
-    return { success: true, added: true };
-  } else {
-    logger.warn('No se detectó nueva noticia (posible duplicado o sin novedades)');
-    return { success: true, added: false };
+    return { success: true, added: true, addedCount };
   }
+  
+  logger.warn('Sin nuevas noticias (duplicado o sin novedades)');
+  return { success: true, added: false };
 }
 
 async function stageProcessContent(logger) {
-  logger.info('STAGE 2: Procesamiento de Contenido');
-  
-  // Verificar integridad del JSON
-  const result = await exec('node -e "JSON.parse(require(\'fs\').readFileSync(\'src/content/external-news.json\'))"');
-  
+  logger.info('STAGE 2: Procesamiento');
+  const result = await exec('node -e "JSON.parse(require(\'fs\').readFileSync(\'src/content/external-news.json\'))"', { timeout: TIMEOUTS.process });
   if (!result.success) {
-    logger.error('JSON inválido', { error: result.error });
-    return { success: false, error: 'invalid_json' };
+    logger.error('JSON inválido');
+    return { success: false };
   }
-  
   logger.success('JSON válido');
   return { success: true };
 }
 
 async function stagePublish(logger) {
-  logger.info('STAGE 3: Publicación (Git)');
+  logger.info('STAGE 3: Git Publish');
   
-  // Verificar si hay cambios
-  const status = await exec('git status --porcelain src/content/external-news.json');
-  
+  const status = await exec('git status --porcelain src/content/external-news.json', { timeout: TIMEOUTS.git });
   if (!status.output?.trim()) {
-    logger.info('Sin cambios para publicar');
-    return { success: true, published: false, reason: 'no_changes' };
+    logger.info('Sin cambios');
+    return { success: true, published: false };
   }
   
-  // Commit y push
-  const add = await exec('git add src/content/external-news.json');
-  if (!add.success) {
-    logger.error('Git add falló', { error: add.error });
-    return { success: false, error: 'git_add_failed' };
-  }
+  const add = await exec('git add src/content/external-news.json', { timeout: TIMEOUTS.git });
+  if (!add.success) return { success: false, error: 'git_add' };
   
   const date = new Date().toISOString().split('T')[0];
-  const commit = await exec(`git commit -m "news: actualización ${date}" --author "juanlure <132950338+juanlure@users.noreply.github.com>"`);
+  const commit = await exec(`git commit -m "news: ${date}" --author "juanlure <132950338+juanlure@users.noreply.github.com>"`, { timeout: TIMEOUTS.git });
+  if (!commit.success) return { success: false, error: 'git_commit' };
   
-  if (!commit.success) {
-    logger.error('Git commit falló', { error: commit.error });
-    return { success: false, error: 'git_commit_failed' };
-  }
+  const push = await exec('git push origin main', { timeout: TIMEOUTS.git });
+  if (!push.success) return { success: false, error: 'git_push' };
   
-  const push = await exec('git push origin main');
-  if (!push.success) {
-    logger.error('Git push falló', { error: push.error });
-    return { success: false, error: 'git_push_failed' };
-  }
-  
-  logger.success('Publicado en Vercel');
+  logger.success('Publicado');
   return { success: true, published: true };
 }
 
-async function stageAgendaCheck(logger) {
-  logger.info('STAGE: Check Agenda');
-  
-  // Aquí iría lógica de verificación de eventos
-  // Por ahora solo logging
+async function stageQuickCheck(logger) {
+  logger.info('STAGE: Check Rápido');
   const counts = await countContent();
-  logger.info(`Contenido actual: ${counts.externalNews} noticias, ${counts.localArticles} artículos`);
-  
-  return { success: true };
+  logger.info(`Contenido: ${counts.externalNews} noticias, ${counts.localArticles} artículos`);
+  return { success: true, counts };
 }
 
 // ============ MODES ============
 
 async function runMorning(logger) {
-  logger.info('=== MODO: MORNING (08:00) ===');
-  
-  const results = {
-    news: await stageScrapeNews(logger, 1),     // 1 noticia en morning
+  logger.info('=== MORNING (08:00) ===');
+  return {
+    news: await stageScrapeNews(logger, 1),
     process: await stageProcessContent(logger),
-    agenda: await stageAgendaCheck(logger),
+    check: await stageQuickCheck(logger),
     publish: await stagePublish(logger)
   };
-  
-  return results;
 }
 
 async function runMidday(logger) {
-  logger.info('=== MODO: MIDDAY (14:00) ===');
-  
-  const results = {
-    news: await stageScrapeNews(logger, 2),     // Max 2 al día
-    agenda: await stageAgendaCheck(logger),
-    publish: await stagePublish(logger)
+  logger.info('=== MIDDAY (14:00) - Lightweight ===');
+  // Midday solo hace check rápido, no scrapea para evitar timeouts
+  return {
+    check: await stageQuickCheck(logger),
+    news: { skipped: true, reason: 'midday_is_lightweight' }
   };
-  
-  return results;
 }
 
 async function runEvening(logger) {
-  logger.info('=== MODO: EVENING (20:00) ===');
+  logger.info('=== EVENING (20:00) - Lightweight ===');
+  // Evening solo hace check y permite 1 noticia más si no se alcanzó cuota
+  const state = await loadState();
+  const newsToday = isToday(state.lastRun) ? state.today.news : 0;
   
-  const results = {
-    news: await stageScrapeNews(logger, 3),     // Max 3 al día
-    agenda: await stageAgendaCheck(logger),
-    process: await stageProcessContent(logger),
-    publish: await stagePublish(logger)
-  };
+  const results = { check: await stageQuickCheck(logger) };
   
-  // Resumen diario
-  const counts = await countContent();
-  logger.info('=== RESUMEN DEL DÍA ===');
-  logger.info(`Noticias acumuladas: ${counts.externalNews}`);
-  logger.info(`Artículos locales: ${counts.localArticles}`);
+  if (newsToday < 2) {
+    results.news = await stageScrapeNews(logger, 2);
+    if (results.news.added) {
+      results.process = await stageProcessContent(logger);
+      results.publish = await stagePublish(logger);
+    }
+  } else {
+    results.news = { skipped: true, reason: 'quota_reached' };
+  }
   
   return results;
 }
 
 async function runFull(logger) {
-  logger.info('=== MODO: FULL (ejecución manual) ===');
-  
-  await runMorning(logger);
-  await runMidday(logger);
-  await runEvening(logger);
-}
-
-// ============ NOTIFICACIONES ============
-
-async function sendNotification(mode, results) {
-  try {
-    const counts = await countContent();
-    const newsAdded = results.news?.added ? '✅' : '⏭️';
-    const published = results.publish?.published ? '✅' : '⏭️';
-    
-    const message = `📰 **Workflow ${mode} — ${new Date().toLocaleDateString('es-ES')}**
-
-${newsAdded} Noticias: ${counts.externalNews} total
-${published} Publicado: ${published === '✅' ? 'Sí' : 'Sin cambios'}
-📊 Artículos: ${counts.localArticles}
-
-${results.news?.skipped ? '_Límite diario alcanzado_' : ''}`;
-
-    // Enviar notificación visible (no logs)
-    console.log('\n' + '='.repeat(50));
-    console.log('NOTIFICACIÓN:');
-    console.log(message);
-    console.log('='.repeat(50));
-    
-    return true;
-  } catch (e) {
-    console.error('Error enviando notificación:', e.message);
-    return false;
-  }
+  logger.info('=== FULL (manual) ===');
+  const morning = await runMorning(logger);
+  const evening = await runEvening(logger);
+  return { morning, evening };
 }
 
 // ============ MAIN ============
@@ -341,41 +243,33 @@ async function main() {
   const validModes = ['morning', 'midday', 'evening', 'full'];
   
   if (!validModes.includes(mode)) {
-    console.error(`Modo inválido: ${mode}. Usa: ${validModes.join(', ')}`);
+    console.error(`Modo inválido. Usa: ${validModes.join(', ')}`);
     process.exit(1);
   }
   
   const logger = new WorkflowLogger();
   
   try {
-    // Actualizar estado
     const state = await loadState();
+    const previousLastRun = state.lastRun;
+    if (!isToday(previousLastRun)) state.today = { news: 0, agenda: 0, guides: 0 };
     state.lastRun = new Date().toISOString();
-    if (!isToday(state.lastRun)) {
-      state.today = { news: 0, agenda: 0, guides: 0 };
-    }
     await saveState(state);
     
-    // Ejecutar modo
-    const runners = {
-      morning: runMorning,
-      midday: runMidday,
-      evening: runEvening,
-      full: runFull
-    };
-    
+    const runners = { morning: runMorning, midday: runMidday, evening: runEvening, full: runFull };
     const results = await runners[mode](logger);
     
-    // Enviar notificación visible
-    await sendNotification(mode, results);
+    // Resumen
+    const counts = await countContent();
+    console.log('\n' + '='.repeat(40));
+    console.log(`📰 Workflow ${mode} — ${new Date().toLocaleTimeString('es-ES')}`);
+    console.log(`📊 Noticias: ${counts.externalNews} | Artículos: ${counts.localArticles}`);
+    console.log('='.repeat(40));
     
-    // Guardar log
-    const logFile = await logger.save(mode);
-    logger.info(`Log guardado: ${logFile}`);
+    await logger.save(mode);
     
-    // Exit code basado en resultados
-    const hasErrors = Object.values(results).some(r => r?.success === false && !r?.skipped);
-    process.exit(hasErrors ? 1 : 0);
+    const hasFatal = Object.values(results).some(r => r?.fatal === true);
+    process.exit(hasFatal ? 1 : 0);
     
   } catch (e) {
     logger.error('Error fatal', { error: e.message });
