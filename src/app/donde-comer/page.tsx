@@ -17,6 +17,9 @@ export const metadata: Metadata = buildBasicPageMetadata({
   title: 'Dónde comer en Huelva | Sitios que sí compensan',
   description: 'Dónde comer en Huelva con criterio: desayunos, tapeo, producto, choco frito y sitios que sí merecen la pena.',
   path: '/donde-comer',
+  keywords: ['dónde comer en Huelva', 'restaurantes en Huelva', 'tapear en Huelva', 'comer bien en Huelva'],
+  image: '/images/guides/choco-frito-tapa.jpg',
+  type: 'website',
 });
 
 export default function DondeComerPage() {

@@ -17,6 +17,9 @@ export const metadata: Metadata = buildBasicPageMetadata({
   title: 'Fin de semana en Huelva | Escapada de 48 horas',
   description: 'Plan de fin de semana en Huelva con ritmo, criterio y contexto local para aprovechar 48 horas sin caer en la ruta cutre.',
   path: '/fin-de-semana',
+  keywords: ['fin de semana en Huelva', 'escapada Huelva', '48 horas en Huelva', 'qué hacer en Huelva fin de semana'],
+  image: '/images/guides/huelva-aerea.jpg',
+  type: 'website',
 });
 
 export default function FinDeSemanaPage() {

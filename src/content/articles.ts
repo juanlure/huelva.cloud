@@ -191,7 +191,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <h2>Qué suele hacer mal quien viene de fuera</h2>
       <p>Quedarse solo en el perímetro más obvio, sentarse en la primera terraza sin mirar dos calles más allá o pensar que, como ya ha visto la plaza, ya ha entendido el centro. No. La plaza funciona mejor como nudo que como destino final. A partir de aquí empiezan de verdad el paseo, la comida o el recorrido urbano.</p>
 
-      <p>Si quieres encajarla con sentido, mézclala con <a href="/que-ver">qué ver en Huelva</a>. Y si la idea es que te lleve a mesa o a un plan más redondo, sigue después por <a href="/donde-comer">dónde comer</a> o por <a href="/fin-de-semana">la guía de fin de semana</a>.</p>
+      <p>Si quieres encajarla con sentido, mézclala con <a href="/que-ver">qué ver en Huelva</a>. Y si la idea es que te lleve a mesa o a un plan más redondo, sigue después por <a href="/donde-comer">dónde comer en Huelva</a>, por <a href="/fin-de-semana">la guía de fin de semana</a> o por <a href="/alojarse">dónde alojarse en Huelva</a> si estás montando visita completa.</p>
 
       <blockquote>La Plaza de las Monjas no gana por monumental. Gana porque Huelva sigue pasando por aquí.</blockquote>
     `
@@ -299,7 +299,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>Sin grandes ceremonias: plato al centro, pan cerca y manos trabajando. La gracia está en el ritmo corto, en el sabor limpio y en ese caldo que pide mojar. No necesitan inventos, ni salsas raras, ni una interpretación moderna para justificar el precio.</p>
 
       <h2>Cuándo compensan más</h2>
-      <p>En tapeo, en comida compartida o como arranque de una mesa donde luego vayan más cosas de mar. Funcionan peor como plato estrella aislado que como parte de un contexto gastronómico bien pensado. Por eso tiene sentido cruzarlas con <a href="/donde-comer">dónde comer en Huelva</a> y con <a href="/article/donde-tapear-en-huelva">la ruta de tapeo</a> antes de lanzarte a pedir por inercia.</p>
+      <p>En tapeo, en comida compartida o como arranque de una mesa donde luego vayan más cosas de mar. Funcionan peor como plato estrella aislado que como parte de un contexto gastronómico bien pensado. Por eso tiene sentido cruzarlas con <a href="/donde-comer">dónde comer en Huelva</a>, con <a href="/article/donde-tapear-en-huelva">la ruta de tapeo</a> y con <a href="/fin-de-semana">un fin de semana en Huelva bien montado</a> antes de lanzarte a pedir por inercia.</p>
 
       <blockquote>Una buena ración de coquinas sabe a ría. Una mala sabe a arena cara.</blockquote>
     `
@@ -336,7 +336,7 @@ export const LOCAL_ARTICLES: LocalArticle[] = [
       <p>Una vajilla mona no te arregla un café flojo ni una experiencia vacía. Y al revés: un bar sencillo puede darte justo el café que encaja con el momento. En Huelva compensa pensar menos en la foto y más en para qué te estás sentando: desayuno con calma, parada corta, espera, reunión o simple costumbre.</p>
 
       <h2>Con qué combina mejor</h2>
-      <p>Café y tostada sigue siendo la pareja fuerte. Café y churros entra mejor en fin de semana. Y si estás usando el desayuno como arranque de día, tiene sentido enlazarlo luego con <a href="/que-ver">qué ver en Huelva</a>, con <a href="/donde-comer">dónde comer</a> o con <a href="/article/desayuno-huelva-donde-tostada-churros">la guía de desayunos</a> para que no se quede en pausa aislada.</p>
+      <p>Café y tostada sigue siendo la pareja fuerte. Café y churros entra mejor en fin de semana. Y si estás usando el desayuno como arranque de día, tiene sentido enlazarlo luego con <a href="/que-ver">qué ver en Huelva</a>, con <a href="/donde-comer">dónde comer en Huelva</a>, con <a href="/fin-de-semana">la escapada de fin de semana</a> o con <a href="/article/desayuno-huelva-donde-tostada-churros">la guía de desayunos</a> para que no se quede en pausa aislada.</p>
 
       <blockquote>En Huelva no se sale “a catar café”. Se va al bar, se pide uno y el día sigue desde ahí.</blockquote>
     `

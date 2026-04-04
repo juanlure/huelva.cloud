@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { alojarseGuideData } from '@/data/guides/alojarse';
 import { AccommodationTypeCards } from '@/components/guides/AccommodationTypeCards';
 import { BestForSelector } from '@/components/guides/BestForSelector';
@@ -10,6 +11,16 @@ import { RecommendationCallout } from '@/components/guides/RecommendationCallout
 import { RelatedGuidesRail } from '@/components/guides/RelatedGuidesRail';
 import { StickyGuideTOC } from '@/components/guides/StickyGuideTOC';
 import { ZoneComparisonCards } from '@/components/guides/ZoneComparisonCards';
+import { buildBasicPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildBasicPageMetadata({
+  title: 'Dónde alojarse en Huelva | Zonas y opciones que sí encajan',
+  description: 'Dónde alojarse en Huelva con criterio: centro, zonas más prácticas, tipos de alojamiento y errores típicos al reservar.',
+  path: '/alojarse',
+  keywords: ['dónde alojarse en Huelva', 'dónde dormir en Huelva', 'hoteles en Huelva', 'alojamiento Huelva capital'],
+  image: '/images/guides/huelva-plaza-las-monjas.jpg',
+  type: 'website',
+});
 
 export default function AlojarsePage() {
   const data = alojarseGuideData;

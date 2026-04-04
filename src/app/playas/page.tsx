@@ -17,6 +17,9 @@ export const metadata: Metadata = buildBasicPageMetadata({
   title: 'Playas de Huelva | Qué playa elegir según el día',
   description: 'Guía local para elegir playas de Huelva con criterio: familias, viento, escapada, paseo o día largo de costa sin ir a ciegas.',
   path: '/playas',
+  keywords: ['playas de Huelva', 'mejores playas de Huelva', 'qué playa elegir en Huelva', 'playas Huelva provincia'],
+  image: '/images/guides/huelva-aerea.jpg',
+  type: 'website',
 });
 
 export default function PlayasPage() {

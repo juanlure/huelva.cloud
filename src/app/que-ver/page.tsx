@@ -17,6 +17,9 @@ export const metadata: Metadata = buildBasicPageMetadata({
   title: 'Qué ver en Huelva | Guía local con criterio',
   description: 'Qué ver en Huelva capital y provincia sin perder tiempo en relleno turístico. Selección útil, contexto local y plan claro.',
   path: '/que-ver',
+  keywords: ['qué ver en Huelva', 'qué hacer en Huelva', 'Huelva capital', 'Huelva provincia', 'guía Huelva'],
+  image: '/images/guides/huelva-aerea.jpg',
+  type: 'website',
 });
 
 export default function QueVerPage() {
