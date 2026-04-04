@@ -42,9 +42,9 @@ export default async function Home() {
           <div className="grid xl:grid-cols-[1.45fr_0.95fr] gap-4 mb-4">
             <div className="rounded-[1.9rem] border border-white/70 bg-white/90 backdrop-blur-xl p-6 md:p-7 shadow-[0_18px_60px_rgba(26,42,58,0.06)]">
               <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-3">Empieza por aquí</p>
-              <h2 className="text-display text-3xl md:text-4xl text-navy mb-4">La home tiene que decidir por el lector, no enseñarle un escaparate bonito.</h2>
+              <h2 className="text-display text-3xl md:text-4xl text-navy mb-4">Empieza por el centro, come bien y no pierdas medio viaje en relleno.</h2>
               <p className="text-navy/65 text-base leading-relaxed max-w-3xl mb-6">
-                Si vienes por primera vez, la ruta buena casi siempre sale de tres preguntas: qué ver, dónde comer y cómo ordenar el fin de semana sin perder tiempo. Lo demás cuelga de ahí.
+                Si vienes por primera vez, la jugada sensata es simple: quédate con lo que sí compensa ver, reserva una mesa que no falle y ordena el fin de semana sin improvisar como un guiri castigado.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4">
@@ -100,7 +100,7 @@ export default async function Home() {
             </h2>
 
             <p className="text-base md:text-xl text-navy-60 max-w-2xl mb-10 md:mb-16">
-              Portada útil: una pieza fuerte arriba y una selección que empuja a decidir mejor, no a perderse entre tarjetas bonitas.
+              Una portada para decidir rápido: qué merece atención hoy y qué piezas te ahorran vueltas tontas al planear Huelva.
             </p>
 
             {featuredArticle && (
@@ -156,7 +156,7 @@ export default async function Home() {
                 </div>
                 <h2 className="text-display text-4xl font-semibold text-navy mb-5">Dónde comer sin caer en lo obvio</h2>
                 <p className="text-lg text-navy/60 mb-8">
-                  La parte gastronómica tiene que mover una decisión real: desayunar bien, tapear con criterio o sentarse donde de verdad compensa.
+                  Aquí no venimos a hablar de comida en abstracto: venimos a decidir dónde desayunar, dónde tapear y en qué mesa sí compensa sentarse.
                 </p>
                 <Link href="/comer" className="inline-flex items-center gap-2 btn btn-primary">
                   Ver gastronomía <ArrowRight size={18} />
@@ -243,7 +243,7 @@ export default async function Home() {
 
               <h2 className="text-display text-4xl md:text-5xl font-semibold mb-6">Las guías que de verdad sostienen el producto</h2>
               <p className="text-xl text-white/65 max-w-2xl mx-auto">
-                Aquí están las páginas que más negocio, SEO e intención acumulan. Si fallan, falla media web. Si están finas, tiran del resto.
+                Estas son las piezas que más ayudan a decidir viaje, comida y plan. Si están finas, empujan negocio e indexación; si flojean, arrastran al resto.
               </p>
             </div>
 
