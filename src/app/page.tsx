@@ -39,7 +39,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-grid opacity-[0.06]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,85,58,0.08),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(15,26,36,0.04),transparent_24%)]" />
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4 mb-4">
             <div className="rounded-[1.75rem] border border-white/70 bg-cream/90 backdrop-blur-xl p-6 shadow-[0_18px_60px_rgba(26,42,58,0.06)]">
               <p className="text-xs uppercase tracking-widest text-navy/40 font-semibold mb-2">Promesa</p>
               <h3 className="text-display text-2xl text-navy mb-2">Huelva sin folleto</h3>
@@ -58,6 +58,25 @@ export default async function Home() {
                 Ver opciones <ArrowRight size={16} />
               </CommercialLink>
             </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+            {[
+              { href: '/que-ver', title: 'Qué ver', copy: 'La flagship para quien aterriza y quiere separar lo bueno del relleno.' },
+              { href: '/donde-comer', title: 'Dónde comer', copy: 'La página que más fácil convierte curiosidad en plan real.' },
+              { href: '/agenda', title: 'Agenda', copy: 'Planes vivos para hoy, esta semana y el finde sin ir a ciegas.' },
+              { href: '/contact', title: 'Publicidad', copy: 'La puerta comercial para negocios, marcas y eventos con encaje local.' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-[1.5rem] border border-white/70 bg-white/88 backdrop-blur-xl p-5 shadow-[0_18px_60px_rgba(26,42,58,0.06)] hover:border-terracotta/30 hover:-translate-y-0.5 transition-all"
+              >
+                <p className="text-[11px] uppercase tracking-widest text-navy/40 font-semibold mb-2">Ruta clave</p>
+                <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-terracotta transition-colors">{item.title}</h3>
+                <p className="text-sm text-navy/60 leading-relaxed">{item.copy}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
