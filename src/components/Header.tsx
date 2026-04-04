@@ -102,6 +102,14 @@ export default function Header() {
             </div>
 
             <Link
+              href="/contact"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-3 rounded-full border border-terracotta/20 bg-white/80 text-terracotta text-sm font-semibold hover:bg-terracotta hover:text-white transition-all shadow-[0_12px_30px_rgba(212,85,58,0.12)]"
+            >
+              Publicidad
+              <ArrowRight size={15} />
+            </Link>
+
+            <Link
               href="/guias"
               className="hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[linear-gradient(135deg,#0F1A24_0%,#1A2A3A_100%)] text-white text-sm font-semibold hover:from-terracotta hover:to-orange-600 transition-all shadow-[0_14px_34px_rgba(26,42,58,0.18)] ring-1 ring-white/10"
             >

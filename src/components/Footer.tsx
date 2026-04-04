@@ -83,9 +83,18 @@ export default function Footer() {
               ))}
             </ul>
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-terracotta/12 rounded-full border border-terracotta/20">
-              <span className="w-2 h-2 bg-terracotta rounded-full animate-pulse" />
-              <span className="text-xs text-terracotta font-medium">Curado con IA. Guiado por criterio onubense.</span>
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-terracotta/12 rounded-full border border-terracotta/20">
+                <span className="w-2 h-2 bg-terracotta rounded-full animate-pulse" />
+                <span className="text-xs text-terracotta font-medium">Curado con IA. Guiado por criterio onubense.</span>
+              </div>
+
+              <div className="rounded-[1.25rem] border border-white/10 bg-white/6 backdrop-blur-sm p-4">
+                <p className="text-[11px] uppercase tracking-widest text-white/40 font-semibold mb-2">Publicidad y colaboraciones</p>
+                <a href="mailto:jlromero@flowia.pro" className="text-white/75 hover:text-terracotta transition-colors break-all">
+                  jlromero@flowia.pro
+                </a>
+              </div>
             </div>
           </div>
         </div>
