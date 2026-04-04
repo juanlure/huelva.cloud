@@ -83,13 +83,15 @@ function generateArticleSchema(article: any, slug: string) {
   };
 }
 
-const STRATEGIC_GUIDE_CTAS: Record<string, {
+type StrategicCta = {
   eyebrow: string;
   title: string;
   body: string;
   primary: { href: string; label: string };
   secondary?: { href: string; label: string };
-}> = {
+};
+
+const STRATEGIC_GUIDE_CTAS: Record<string, StrategicCta> = {
   'que-hacer-en-huelva-guia-definitiva': {
     eyebrow: 'Siguiente paso útil',
     title: 'Si quieres criterio de verdad, entra en la flagship de qué ver',
@@ -141,6 +143,44 @@ const STRATEGIC_GUIDE_CTAS: Record<string, {
   },
 };
 
+const CATEGORY_FALLBACK_CTAS: Record<string, StrategicCta> = {
+  guias: {
+    eyebrow: 'Sigue explorando con criterio',
+    title: 'No te quedes en una sola pieza: la flagship te ordena mejor el viaje',
+    body: 'Si este artículo te sirvió de contexto, el siguiente paso lógico es entrar en una guía principal que convierta la lectura en decisión real.',
+    primary: { href: '/que-ver', label: 'Abrir qué ver en Huelva' },
+    secondary: { href: '/fin-de-semana', label: 'Ver plan de fin de semana' },
+  },
+  comer: {
+    eyebrow: 'Siguiente decisión útil',
+    title: 'Para filtrar mejor dónde merece la pena sentarse, entra en la flagship',
+    body: 'Un artículo ayuda. La página principal de dónde comer te resuelve mejor la elección según momento, zona y tipo de comida.',
+    primary: { href: '/donde-comer', label: 'Abrir dónde comer' },
+    secondary: { href: '/fin-de-semana', label: 'Ver escapada completa' },
+  },
+  alojarse: {
+    eyebrow: 'Ordena el viaje',
+    title: 'Dormir bien cambia todo el plan si eliges la zona correcta',
+    body: 'Si ya estás comparando alojamiento, cruza esta lectura con la flagship para decidir mejor según base, ritmo y tipo de visita.',
+    primary: { href: '/alojarse', label: 'Abrir guía de alojamiento' },
+    secondary: { href: '/que-ver', label: 'Ver qué compensa visitar' },
+  },
+  eventos: {
+    eyebrow: 'Convierte el plan en día redondo',
+    title: 'La agenda funciona mejor si la cruzas con una guía útil de ciudad',
+    body: 'Un evento te da la excusa. Las páginas principales te ayudan a completar mejor qué ver, dónde comer o cómo montar el finde.',
+    primary: { href: '/agenda', label: 'Abrir agenda de Huelva' },
+    secondary: { href: '/que-ver', label: 'Ver qué hacer en Huelva' },
+  },
+  noticias: {
+    eyebrow: 'No te quedes solo en el titular',
+    title: 'Después de la noticia, lo útil es seguir por una página con contexto local',
+    body: 'Si quieres convertir actualidad en navegación con intención, salta a las guías principales y entiende mejor ciudad, provincia y planes reales.',
+    primary: { href: '/que-ver', label: 'Abrir qué ver en Huelva' },
+    secondary: { href: '/agenda', label: 'Ver agenda actual' },
+  },
+};
+
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
@@ -180,7 +220,7 @@ export default async function ArticlePage({ params }: PageProps) {
     .replace(/<script type="application\/json" id="interactive-data">[\s\S]*?<\/script>/g, '');
 
   const articleSchema = generateArticleSchema(article, slug);
-  const strategicGuideCta = STRATEGIC_GUIDE_CTAS[slug];
+  const strategicGuideCta = STRATEGIC_GUIDE_CTAS[slug] || CATEGORY_FALLBACK_CTAS[article.category];
 
   return (
     <>
