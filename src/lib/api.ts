@@ -1,6 +1,7 @@
 import { LOCAL_ARTICLES, LocalArticle } from '@/content/articles';
 import { CATEGORY_MAP } from './constants';
 import externalNewsData from '@/content/external-news.json';
+import { generateNewsArtDataUri } from './newsArt';
 
 const CATEGORY_FALLBACK_IMAGE: Record<string, string> = {
   'noticias': '/images/guides/huelva-muelle-tinto.jpg',
@@ -50,6 +51,10 @@ function ensureInlineImage(content: string | undefined, image: string, title: st
     </figure>
     ${safeContent}
   `;
+}
+
+function isDataUri(value: string | null | undefined): boolean {
+  return !!value && value.startsWith('data:image/');
 }
 
 export interface Article {
@@ -123,12 +128,13 @@ function mapArticle(article: LocalArticle): Article {
 function mapExternalNews(news: ExternalNewsItem): Article {
   const publishedAtISO = toSafeIso(news.publishedAt);
   const publishedLabel = formatHumanDate(news.publishedAt);
-  const fallbackImage = CATEGORY_FALLBACK_IMAGE['noticias'] || null;
-  const resolvedImage = news.image && !/^https?:\/\//i.test(news.image) ? news.image : fallbackImage;
+  const localImage = news.image && !/^https?:\/\//i.test(news.image) ? news.image : null;
+  const resolvedImage = localImage || generateNewsArtDataUri(news.title, news.source);
 
   // Usar content generado por IA si existe, sino fallback básico
   const bodyContent = news.content || `<p>${news.excerpt}</p>`;
-  const content = resolvedImage
+  const shouldInlineImage = !!localImage && !isDataUri(resolvedImage);
+  const content = shouldInlineImage
     ? ensureInlineImage(
         `${bodyContent}<p><strong>Fuente consultada:</strong> ${news.source} (${publishedLabel}).</p>`,
         resolvedImage,

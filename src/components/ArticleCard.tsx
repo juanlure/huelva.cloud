@@ -97,6 +97,8 @@ export default function ArticleCard({
     return <Link href={href} className={className} style={linkStyle}>{children}</Link>;
   };
 
+  const isGeneratedImage = !!imageUrl && imageUrl.startsWith('data:image/');
+
   return (
     <motion.article
       onHoverStart={() => setIsHovered(true)}
@@ -122,14 +124,23 @@ export default function ArticleCard({
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="w-full h-full will-change-transform"
           >
-            <Image
-              src={imageUrl}
-              alt={title}
-              fill
-              className="object-cover transition-opacity duration-300"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={featured}
-            />
+            {isGeneratedImage ? (
+              <img
+                src={imageUrl}
+                alt={title}
+                className="w-full h-full object-cover transition-opacity duration-300"
+                loading={featured ? 'eager' : 'lazy'}
+              />
+            ) : (
+              <Image
+                src={imageUrl}
+                alt={title}
+                fill
+                className="object-cover transition-opacity duration-300"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={featured}
+              />
+            )}
           </motion.div>
 
           <div className="absolute inset-0 bg-gradient-to-t from-navy/78 via-navy/18 to-transparent" />
