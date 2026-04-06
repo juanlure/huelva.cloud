@@ -62,6 +62,44 @@ Por eso esta guía no va de repetir que aquí hay arena fina y aguas bonitas. Va
 
 ---
 
+## Tabla rápida: cuál elegir según el tipo de día
+
+| Playa | Ambiente | Acceso | Parking | Mejor para |
+|---|---|---|---|---|
+| **Punta Umbría** | Vivo, urbano, familiar | Fácil | Regulado, conviene ir pronto | Día completo con comida y paseo |
+| **La Antilla** | Cómodo, amplio, familiar | Muy fácil | Bastante agradecido | Familias y escapadas sin fricción |
+| **Islantilla** | Cuidado, turístico, ordenado | Fácil | Correcto, pero con demanda | Servicios y comodidad |
+| **El Rompido** | Bonito, pausado, con encanto | Medio | Mejor organizado de lo que parece | Plan con más atmósfera |
+| **Matalascañas** | Clásico, práctico, conocido | Muy fácil | Se tensa en horas punta | Día fácil y directo |
+| **Isla Canela** | Amplio, luminoso, relajado | Fácil | Suele respirar mejor | Pasear, comer y bajar revoluciones |
+| **Mazagón / El Parador** | Natural, tranquilo | Medio-fácil | Razonable | Naturaleza sin castigo extremo |
+| **Cuesta Maneli** | Salvaje, silencioso | Exigente | Secundario, porque luego toca caminar | Desconexión y paisaje |
+
+---
+
+## Atajos útiles según tu plan
+
+### Si vas con niños
+- **La Antilla**
+- **Punta Umbría**
+- **Islantilla**
+
+### Si quieres comer bien sin complicarte
+- **Punta Umbría**
+- **El Rompido**
+- **Isla Canela**
+
+### Si buscas tranquilidad de verdad
+- **Cuesta Maneli**
+- **Mazagón / El Parador**
+
+### Si odias dar vueltas con el coche
+- **La Antilla**
+- **El Rompido**
+- **Isla Canela**
+
+---
+
 ## Qué esperar en Semana Santa, primavera y primeras escapadas de temporada
 
 La costa de Huelva en Semana Santa tiene una ventaja clara: aún no estás en agosto, pero ya empieza a sentirse que la temporada se mueve.
@@ -110,6 +148,8 @@ Existe estacionamiento regulado con **zonas azul, naranja, verde y roja**, publi
 ### Para quién la recomiendo
 Para quien quiere una playa que funcione fácil y no quiere jugar a la lotería del aislamiento bonito pero incómodo.
 
+> **Mi consejo:** si el plan es playa + arroz + paseo + sobremesa, Punta Umbría entra muy fuerte. Si el plan es silencio, no es aquí donde vas a encontrarlo.
+
 ---
 
 ## 2. La Antilla, probablemente la playa más agradecida para casi todo el mundo
@@ -137,6 +177,8 @@ Es una referencia real, consolidada, y además encaja perfecto con una guía que
 ### Para quién la recomiendo
 Para familias, grupos mezclados y gente que quiere una playa donde casi todo encaje sin fricción.
 
+> **Mi consejo:** si no quieres pensar demasiado y solo quieres que el día salga bien, La Antilla probablemente sea la apuesta más segura de toda la lista.
+
 ---
 
 ## 3. Islantilla, buena si priorizas servicios y sensación de destino cuidado
@@ -160,6 +202,8 @@ Aquí es mejor ser fino que barroco. La guía gana más recomendando poco y bien
 
 ### Para quién la recomiendo
 Para quien valora casi tanto los servicios como la playa.
+
+> **Mi consejo:** funciona mejor para quien quiere comodidad y orden que para quien busca una playa con carácter salvaje.
 
 ---
 
@@ -186,6 +230,8 @@ Aparece como una referencia clara para quien quiere comer bien sin salir del pla
 
 ### Para quién la recomiendo
 Para quien quiere una playa bonita, con más atmósfera y menos sensación de bloque turístico puro.
+
+> **Mi consejo:** si quieres una playa que además se sienta como escapada, El Rompido está por encima de muchas opciones más famosas.
 
 ---
 
@@ -214,6 +260,8 @@ Hay opciones, pero no merece la pena vender fantasías. **En momentos fuertes se
 ### Para quién la recomiendo
 Para quien quiere una playa fácil, conocida y con servicios sin darle demasiadas vueltas al asunto.
 
+> **Mi consejo:** merece más la pena de lo que parece cuando llegas temprano. Cuando llegas tarde, te puede castigar bastante el coche.
+
 ---
 
 ## 6. Isla Canela, amplitud, horizonte abierto y una sensación de respiro muy seria
@@ -240,6 +288,8 @@ Ambos se presentan como chiringuitos en pleno corazón de la playa de Isla Canel
 ### Para quién la recomiendo
 Para quien quiere amplitud, una playa muy agradecida para pasear y una experiencia menos apretada.
 
+> **Mi consejo:** si vas buscando horizonte abierto y menos sensación de embudo, Isla Canela juega muy bien esa partida.
+
 ---
 
 ## 7. Mazagón y El Parador, el punto medio entre naturaleza y comodidad
@@ -261,6 +311,8 @@ Suele permitir una experiencia razonable si llegas con un mínimo de previsión.
 ### Para quién la recomiendo
 Para quien busca playa con aire más natural sin renunciar del todo a la comodidad.
 
+> **Mi consejo:** gran opción para primavera, puentes y días de entretiempo donde apetece más paisaje que paseo abarrotado.
+
 ---
 
 ## 8. Cuesta Maneli, para quien quiere costa salvaje de verdad
@@ -281,6 +333,8 @@ Más que hablar de aparcamiento fácil o difícil, aquí importa entender que lu
 
 ### Para quién la recomiendo
 Para quien valora más la naturaleza que la comodidad.
+
+> **Mi consejo:** no vengas cargado como si te mudaras. Cuanto más ligero llegues, más la disfrutas.
 
 ---
 
@@ -308,6 +362,18 @@ La mejor para respirar y caminar sin sensación de agobio.
 - **No elijas playa por fama**, elígela por plan
 - si vas con niños, carrito o personas mayores, prioriza acceso cómodo y menos caminata
 - si tu prioridad es comer bien, muchas veces compensa más una playa urbana bien resuelta que la playa más salvaje del mapa
+
+---
+
+## Si tuviera que resumírtelo en una sola decisión
+
+- **Quiero comodidad total:** La Antilla
+- **Quiero plan completo y ambiente:** Punta Umbría
+- **Quiero una playa con encanto:** El Rompido
+- **Quiero amplitud y respirar:** Isla Canela
+- **Quiero naturaleza seria:** Cuesta Maneli
+
+Ese es el mapa real. Lo demás ya son matices.
 
 ---
 
