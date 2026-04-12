@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-12T07:00:39.968Z",
-  "count": 8,
+  "lastUpdated": "2026-04-12T18:00:55.970Z",
+  "count": 9,
   "news": [
+    {
+      "title": "El Ayuntamiento de Huelva reorganiza la recogida de muebles y voluminosos por barrios con días fijos",
+      "excerpt": "El nuevo sistema establece dos jornadas semanales de depósito por zona, mantiene la solicitud previa y refuerza la información ciudadana con una campaña en la calle El Ayuntamiento de Huelva... La ent...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Infonuba</p>\n<h1 class=\"news-title\">El Ayuntamiento de Huelva reorganiza la recogida de muebles y voluminosos por barrios con días fijos</h1>\n<p class=\"news-deck\">La entrada El Ayuntamiento de Huelva reorganiza la recogida de muebles y voluminosos por barrios con días fijos se publicó primero en Infonuba.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Como complemento a la medida, el Ayuntamiento ha diseñado una campaña de información y concienciación que se desarrollará durante cuatro semanas en todos los barrios.</p>\n<p class=\"\">De este modo, los enseres deberán depositarse exclusivamente en los días asignados a cada zona y dentro del horario autorizado, entre las 20:00 y las 00:00 horas, junto a la isla de contenedores indicada o la más próxima.</p>\n<p class=\"news-opening\">La medida mantiene el funcionamiento del servicio bajo demanda, que permite a la ciudadanía solicitar previamente la recogida indicando ubicación, volumen y características de los enseres.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Infonuba • <a href=\"https://infonuba.com/el-ayuntamiento-de-huelva-reorganiza-la-recogida-de-muebles-y-voluminosos-por-barrios-con-dias-fijos/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://infonuba.com/el-ayuntamiento-de-huelva-reorganiza-la-recogida-de-muebles-y-voluminosos-por-barrios-con-dias-fijos/",
+      "publishedAt": "Sat, 11 Apr 2026 08:38:33 +0000",
+      "source": "Infonuba",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "agenda_util"
+    },
     {
       "title": "Galería: El plan de asfaltado sigue en marcha en Punta Umbría",
       "excerpt": "Los trabajos ya se han ejecutado en varias avenidas del municipio",
