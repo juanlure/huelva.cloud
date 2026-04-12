@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-11T18:00:54.246Z",
-  "count": 7,
+  "lastUpdated": "2026-04-12T07:00:39.968Z",
+  "count": 8,
   "news": [
+    {
+      "title": "Galería: El plan de asfaltado sigue en marcha en Punta Umbría",
+      "excerpt": "Los trabajos ya se han ejecutado en varias avenidas del municipio",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Galería: El plan de asfaltado sigue en marcha en Punta Umbría</h1>\n<p class=\"news-deck\">A estas actuaciones se suma la incorporación de la calle Varaderos, que no estaba incluida inicialmente en el plan.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El Ayuntamiento de Punta Umbría continúa ejecutando su plan de asfaltados dentro del programa Recupera Punta Umbría, una iniciativa destinada a mejorar la seguridad vial y renovar el firme en distintas zonas del municipio.</p>\n<p class=\"\">En el núcleo de El Portil, las obras han comenzado con el fresado del firme, una fase previa necesaria antes del asfaltado.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/provincia/plan-asfaltado-sigue-marcha-punta-umbria/20260411114451387320.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/provincia/plan-asfaltado-sigue-marcha-punta-umbria/20260411114451387320.html",
+      "publishedAt": "Sat, 11 Apr 2026 11:44:51 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El derbi Cartaya-Moguer centra el domingo el interés de la jornada en una convulsa División de Honor Andaluza",
       "excerpt": "S. D. El Cartaya-Moguer del domingo va a centrar el interés de la 28ª jornada...",
