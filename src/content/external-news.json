@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-13T07:00:55.715Z",
-  "count": 10,
+  "lastUpdated": "2026-04-13T18:00:39.446Z",
+  "count": 11,
   "news": [
+    {
+      "title": "Detenido en Almonte por desobediencia y resistencia a la autoridad durante una intervención",
+      "excerpt": "La Policía Local actuó tras un aviso del 112 por una persona inconsciente en la vía pública",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Detenido en Almonte por desobediencia y resistencia a la autoridad durante una intervención</h1>\n<p class=\"news-deck\">Desde la Policía Local de Almonte han recordado la importancia de respetar las indicaciones de los agentes y colaborar con los cuerpos de seguridad para garantizar la convivencia y la seguridad ciudadana.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Agentes de la Policía Local de Almonte han detenido a un hombre por un presunto delito de desobediencia grave y resistencia a la autoridad durante una intervención realizada en la vía pública tras un aviso del servicio de emergencias 112.</p>\n<p class=\"\">Sin embargo, el hombre mostró una actitud reiteradamente negativa, desobedeciendo las indicaciones de los agentes y oponiendo resistencia activa a la actuación policial.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/sucesos/detenido-almonte-desobediencia-resistencia-autoridad-intervencion/20260413162824387555.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/sucesos/detenido-almonte-desobediencia-resistencia-autoridad-intervencion/20260413162824387555.html",
+      "publishedAt": "Mon, 13 Apr 2026 16:28:24 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El Moguer prácticamente amarró la permanencia tras ganar a domicilio al Cartaya en el derbi de la División de Honor Andaluza (0-1)",
       "excerpt": "S. D. Moguer, éste a costa del Cartaya, y La Palma fueron los grandes triunfadores...",
