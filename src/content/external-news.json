@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-14T18:00:26.771Z",
-  "count": 13,
+  "lastUpdated": "2026-04-15T07:00:47.882Z",
+  "count": 14,
   "news": [
+    {
+      "title": "Más médicos y enfermeros en Moguer para mejorar la atención sanitaria",
+      "excerpt": "HBN. El centro de salud de Moguer ha dado un paso importante para mejorar la...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">Más médicos y enfermeros en Moguer para mejorar la atención sanitaria</h1>\n<p class=\"news-deck\">se logra situar la ratio por debajo de los 1.500 usuarios por cupo, una cifra recomendada para garantizar una atención óptima.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Más médicos y enfermeros en Moguer para mejorar la atención sanitaria</p>\n<p class=\"\">En concreto, se logra situar la ratio por debajo de los 1.500 usuarios por cupo, una cifra recomendada para garantizar una atención óptima.</p>\n<p class=\"\">Con esta medida, Moguer refuerza su sistema sanitario de atención primaria, clave para el bienestar de la población.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/04/14/medicos-enfermeros-moguer-mejorar-la-atencion-sanitaria/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvabuenasnoticias.com/2026/04/14/medicos-enfermeros-moguer-mejorar-la-atencion-sanitaria/",
+      "publishedAt": "Tue, 14 Apr 2026 17:28:34 +0000",
+      "source": "HBN Provincia",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Condenada la portavoz de Vox en Lepe a pagar una multa por amenazas a una vecina: \"No te cruces conmigo por la calle\"",
       "excerpt": "La sentencia considera probado que Virginia Montero intimidó a la denunciante en un bar y posteriormente mediante audios y mensajes, en los que llegó a advertirle de posibles represalias laborales al ...",
