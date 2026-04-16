@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-15T07:00:47.882Z",
-  "count": 14,
+  "lastUpdated": "2026-04-16T18:00:48.953Z",
+  "count": 15,
   "news": [
+    {
+      "title": "Incautadas seis toneladas de cocaína y detenidas tres personas en una operación contra la droga en la costa",
+      "excerpt": "La Guardia Civil no descarta \"más consecuencias\"",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Costa</p>\n<h1 class=\"news-title\">Incautadas seis toneladas de cocaína y detenidas tres personas en una operación contra la droga en la costa</h1>\n<p class=\"news-deck\">el jefe de la IV Zona de la Guardia Civil en Andalucía ha explicado que la operación ha consistido en una aprehensión en alta mar por la que se ha incautado seis toneladas de cocaína y tres personas detenidas.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Incautadas seis toneladas de cocaína y detenidas tres personas en una operación contra la droga en la costa</p>\n<p class=\"\">En este sentido, el jefe de la IV Zona de la Guardia Civil en Andalucía ha explicado que la operación ha consistido en una aprehensión en alta mar por la que se ha incautado seis toneladas de cocaína y tres personas detenidas.</p>\n<p class=\"\">De este modo, una vez realizada la intervención de la droga, esta fue traslada en barco hasta el Muelle de Levante del Puerto de Huelva, donde este martes se desplegó un importante dispositivo policial.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Costa • <a href=\"https://huelvacosta.com/88719-2/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvacosta.com/88719-2/",
+      "publishedAt": "Thu, 16 Apr 2026 15:30:23 +0000",
+      "source": "Huelva Costa",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Más médicos y enfermeros en Moguer para mejorar la atención sanitaria",
       "excerpt": "HBN. El centro de salud de Moguer ha dado un paso importante para mejorar la...",
