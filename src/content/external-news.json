@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-18T07:00:56.044Z",
+  "lastUpdated": "2026-04-18T18:00:29.192Z",
   "count": 15,
   "news": [
+    {
+      "title": "Estas son las gasolineras más baratas para repostar en Huelva este sábado",
+      "excerpt": "Este sábado, el precio más elevado para el Gasóleo A se registra en Lepe, concretamente en la estación Primafrio de la carretera Lepe-Ayamonte (km 121), donde el litro alcanza los 2,099 euros El preci...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Estas son las gasolineras más baratas para repostar en Huelva este sábado</h1>\n<p class=\"news-deck\">Planificar la parada en el surtidor antes de salir de casa es, hoy más que nunca, la decisión más inteligente para disfrutar del sábado en Huelva sin sobresaltos en la tarjeta de crédito.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Este sábado, el precio más elevado para el Gasóleo A se registra en Lepe, concretamente en la estación Primafrio de la carretera Lepe-Ayamonte (km 121), donde el litro alcanza los 2,099 €.</p>\n<p class=\"\">Para quienes buscan el máximo ahorro este 18 de abril, las gasolineras &quot;low cost&quot; y las cooperativas locales lideran el ranking de precios bajos en la provincia.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/son-gasolineras-baratas-repostar-huelva-sabado_0_2006533942.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/huelva/son-gasolineras-baratas-repostar-huelva-sabado_0_2006533942.html",
+      "publishedAt": "Sat, 18 Apr 2026 09:01:51 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "La Feria de la Tapa de Lepe ya está en marcha hasta este domingo",
       "excerpt": "La feria cumple 16 años dentro del calendario de primavera",
@@ -169,17 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "‘Archivo para no desaparecer’, un proyecto sobre memoria popular en Huelva, en la Sierra de Aracena",
-      "excerpt": "La publicación, de Carlota Visier y Laura C. Vela, reconstruye la memoria colectiva de La Umbría a partir de fotografías domésticas y textos inéditos de María Sánchez y Alberto Conejero El Ayuntamient...",
-      "content": "<div class=\"news-synthesis\">\n<p class=\"lead font-bold text-lg mb-4\">‘Archivo para no desaparecer’, un proyecto sobre memoria popular en Huelva, en la Sierra de Aracena</p>\n<div class=\"body prose prose-sm mb-4\">\n<h2>Qué ha pasado</h2>\n<p>Se trata de una publicación que profundiza en la memoria visual y emocional de la comunidad de La Umbría, una aldea de la Sierra de Aracena en Huelva.</p>\n<p>El trabajo se ha realizado desde la convivencia con los habitantes de La Umbría, que han aportado sus fotografías personales y constituyen el núcleo del archivo popular de esta publicación. Archivo para no desaparecer se estructura en cinco partes que combinan ensayo, escritura literaria y archivo visual.</p>\n<h2>Por qué esto puede mover ciudad</h2>\n<p>Aquí el error sería tratarlo como agenda amable y ya. Si una propuesta cultural funciona en Huelva, lo que mueve no es solo cartel: también mueve calle, consumo local, conversación y ganas de quedarse o acercarse.</p>\n<p>La historia baja a tierra sobre todo en Huelva, Aracena, Sierra. Ahí es donde deja de ser titular y pasa a medirse en calle, agenda, negocio local o desgaste institucional. La buena lectura no es si suena bonito, sino si activa plan real para vecinos y visitantes y deja algo más que una foto institucional.</p>\n<p>La clave para Huelva.cloud es simple: esto vale si consigue convertir Huelva en plan real, no si se queda en agenda bonita y ya.</p>\n<p>Léelo así: si esto consigue mover gente, conversación y actividad en Huelva, vale. Si no, es agenda con maquillaje.</p>\n<h2>Qué medir ahora</h2>\n<p>El libro plantea el archivo no como un lugar estático, sino como una acción: archivar como verbo, como gesto frágil pero persistente frente al olvido.</p>\n<p>La agenda solo se convierte en periodismo útil cuando deja efecto real en calle, público y actividad local.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/archivo-no-desaparecer-proyecto-memoria_0_2006444734.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/archivo-no-desaparecer-proyecto-memoria_0_2006444734.html",
-      "publishedAt": "Thu, 09 Apr 2026 10:00:50 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false
     }
   ]
 }
