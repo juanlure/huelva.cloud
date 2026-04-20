@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-04-18T18:00:29.192Z",
+  "lastUpdated": "2026-04-19T18:00:29.329Z",
   "count": 15,
   "news": [
+    {
+      "title": "Una nueva etapa en Punta Umbría tras el carrusel de cierres de chiringuitos",
+      "excerpt": "El cierre de varios establecimientos tras las denuncias y la falta de licencias da paso a siete proyectos desmontables adaptados a la normativa y limitados a la temporada estival Los chiringuitos de l...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Una nueva etapa en Punta Umbría tras el carrusel de cierres de chiringuitos</h1>\n<p class=\"news-deck\">Por el momento serán siete chiringuitos desmontables, integrados en el entorno y diseñados como módulos de unos 20 metros cerrados para que los camareros sirvan los productos, y 50 metros de terraza para los clientes.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Punta Umbría encara ahora un verano completamente distinto en el que, como ocurre en la propia vida, los nuevos chiringuitos irán sustituyendo poco a poco a los antiguos.</p>\n<p class=\"\">Inicialmente estaba prevista la instalación de otros dos chiringuitos, uno en Los Enebrales y otro en La Bota, pero ambos proyectos no han obtenido el visto bueno de Costas.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/nueva-etapa-punta-umbria-carrusel_0_2006515048.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/huelva/nueva-etapa-punta-umbria-carrusel_0_2006515048.html",
+      "publishedAt": "Sun, 19 Apr 2026 03:03:29 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Estas son las gasolineras más baratas para repostar en Huelva este sábado",
       "excerpt": "Este sábado, el precio más elevado para el Gasóleo A se registra en Lepe, concretamente en la estación Primafrio de la carretera Lepe-Ayamonte (km 121), donde el litro alcanza los 2,099 euros El preci...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "Lluvia, polvo en suspensión y depósitos de barro: así será el tiempo en Huelva este fin de semana",
-      "excerpt": "El riesgo de lluvia será de entre el 90 y el 100% hasta el final del día en puntos como Aroche, Encinasola, Paymogo, Alosno, Riotinto, Almonte y Valverde Huelva lidera las lluvias en Andalucía: Moguer...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Lluvia, polvo en suspensión y depósitos de barro: así será el tiempo en Huelva este fin de semana</h1>\n<p class=\"news-deck\">Seguirá presente el polvo en suspensión, pudiendo producirse depósitos de barro.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El riesgo de lluvia será de entre el 90 y el 100% hasta el final del día en puntos como Aroche, Encinasola, Paymogo, Alosno, Riotinto, Almonte y Valverde.</p>\n<p class=\"\">Tendremos nubes bajas matinales en el entorno de Doñana y lo más llamativo será el polvo en suspensión.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/lluvia-polvo-suspension-depositos-barro-tiempo-huelva-fin-de-semana_0_2006453417.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/lluvia-polvo-suspension-depositos-barro-tiempo-huelva-fin-de-semana_0_2006453417.html",
-      "publishedAt": "Fri, 10 Apr 2026 09:40:00 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
