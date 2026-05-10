@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-05-09T07:00:58.090Z",
+  "lastUpdated": "2026-05-09T18:01:05.880Z",
   "count": 15,
   "news": [
+    {
+      "title": "Dos arrestados por su implicación en más de veinte robos y hurtos en coches de Moguer",
+      "excerpt": "Noticia destacada de Viva Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Viva Huelva</p>\n<h1 class=\"news-title\">Dos arrestados por su implicación en más de veinte robos y hurtos en coches de Moguer</h1>\n<p class=\"news-deck\">Las diligencias llevadas a cabo por la Guardia Civil evidencian el avance en la lucha contra la delincuencia en Moguer, reforzando la confianza en las fuerzas de seguridad locales.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Las investigaciones que desembocaron en estas detenciones se iniciaron a finales de marzo, motivadas por un incremento de robos de herramientas, objetos de valor y documentación en automóviles en la localidad de Moguer.</p>\n<p class=\"\">Ambos arrestados cuentan con un historial amplio por incidentes semejantes.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Viva Huelva • <a href=\"https://www.andaluciainformacion.es/articulo/huelva/dos-arrestados-implicacion-mas-veinte-robos-hurtos-coches-moguer/202605081432043256209.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.andaluciainformacion.es/articulo/huelva/dos-arrestados-implicacion-mas-veinte-robos-hurtos-coches-moguer/202605081432043256209.html",
+      "publishedAt": "2026-05-09T18:01:00.297Z",
+      "source": "Viva Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Conmoción en Huelva: mueren dos agentes de la Guardia Civil durante una persecución contra el narcotráfico entre Punta Umbría y Mazagón",
       "excerpt": "Hay otros dos agentes heridos. Uno de ellos, el más grave, se encuentra hospitalizado en Jerez Importante operación de la Guardia Civil contra el narcotráfico en Ayamonte",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/provincia/cuarenta-anos-despues-empezar-teologia-onubense-gradua-sobrevivir-tres-canceres_0_2006608447.html",
       "publishedAt": "Sat, 02 May 2026 05:00:43 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Punta Umbría, la Mar… y la Cocina",
-      "excerpt": "RFB. Punta Umbría es la mar, y su identitaria gastronomía tiene necesariamente que nutrirse de...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Buenas Noticias</p>\n<h1 class=\"news-title\">Punta Umbría, la Mar… y la Cocina</h1>\n<p class=\"news-deck\">Punta Umbría es la mar, y su identitaria gastronomía tiene necesariamente que nutrirse de ella.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Punta Umbría, la Mar… y la Cocina</p>\n<p class=\"\">Puntaumbrieños de raigambre los tres, que aman y conocen la cocina tradicional, algo que nos han demostrado con creces en la extensa charla disfrutada en esta visita a la localidad costera para hacer el reportaje.</p>\n<p class=\"news-opening\">Esa decisión y el entender su labor como una oportunidad de que la gente pueda disfrutar, y lo haga participando del arte de la cocina.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Buenas Noticias • <a href=\"https://huelvabuenasnoticias.com/2026/05/01/punta-umbria-la-mar-y-la-cocina/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/05/01/punta-umbria-la-mar-y-la-cocina/",
-      "publishedAt": "Fri, 01 May 2026 08:20:56 +0000",
-      "source": "Huelva Buenas Noticias",
       "category": "Noticias",
       "image": null,
       "external": false,
