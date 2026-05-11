@@ -1,7 +1,31 @@
 {
-  "lastUpdated": "2026-05-09T18:01:05.880Z",
+  "lastUpdated": "2026-05-11T07:00:44.511Z",
   "count": 15,
   "news": [
+    {
+      "title": "Desaparece Julián, un hombre de 82 años, en Ayamonte",
+      "excerpt": "La Policía Local solicita colaboración ciudadana para localizar al vecino, desaparecido desde la mañana del domingo en el barrio de Santa Cruz",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Qué se investiga en Ayamonte tras el último caso</h1>\n<p class=\"news-deck\">el hombre salió de su domicilio sobre las 8:00 horas por la zona del barrio de Santa Cruz y desde entonces no ha regresado, lo que ha motivado la activación de un aviso de búsqueda.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Asimismo, recuerdan que cualquier persona que pueda aportar información puede ponerse en contacto con la Policía Local de Ayamonte, la Guardia Civil o el servicio de emergencias 112.</p>\n<p class=\"\">Según la información difundida por los agentes, el hombre salió de su domicilio sobre las 8:00 horas por la zona del barrio de Santa Cruz y desde entonces no ha regresado, lo que ha motivado la activación de un aviso de búsqueda.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/sucesos/desaparece-julian-hombre-82-anos-ayamonte/20260511082643390577.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/sucesos/desaparece-julian-hombre-82-anos-ayamonte/20260511082643390577.html",
+      "publishedAt": "Mon, 11 May 2026 08:26:43 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
+    {
+      "title": "El Concurso de Fotografía ‘Miradas Erasmus’ premia imágenes del Río Tinto, Aracena e Isla Cristina",
+      "excerpt": "HBN. La Universidad de Huelva ya ha dado a conocer a los ganadores de la...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Buenas Noticias</p>\n<h1 class=\"news-title\">El Concurso de Fotografía ‘Miradas Erasmus’ premia imágenes del Río Tinto, Aracena e Isla Cristina</h1>\n<p class=\"news-deck\">El jurado ha concedido el primer premio, dotado con 500 euros, a la estudiante italiana Rita Clarissa Rosso por una fotografía tomada en el entorno del Río Tinto.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Por su parte, la estudiante italiana Emma Basso obtuvo el tercer premio, dotado con 200 euros, por una fotografía realizada en Isla Cristina.</p>\n<p class=\"\">El concurso forma parte de las iniciativas impulsadas por la Universidad de Huelva para fomentar la integración del alumnado internacional y promocionar los principales atractivos turísticos y culturales del territorio onubense.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Buenas Noticias • <a href=\"https://huelvabuenasnoticias.com/2026/05/10/el-concurso-de-fotografia-miradas-erasmus-premia-imagenes-del-rio-tinto-aracena-e-isla-cristina/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvabuenasnoticias.com/2026/05/10/el-concurso-de-fotografia-miradas-erasmus-premia-imagenes-del-rio-tinto-aracena-e-isla-cristina/",
+      "publishedAt": "Sun, 10 May 2026 13:32:53 +0000",
+      "source": "Huelva Buenas Noticias",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Dos arrestados por su implicación en más de veinte robos y hurtos en coches de Moguer",
       "excerpt": "Noticia destacada de Viva Huelva.",
@@ -153,30 +177,6 @@
       "url": "https://teleonuba.es/la-florida-adoratrices-y-el-centro-acogeran-81-nuevas-viviendas-en-huelva/",
       "publishedAt": "Mon, 20 Apr 2026 17:00:19 +0000",
       "source": "Teleonuba",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Olímpica Valverdeña-Isla Cristina y San Roque B-Ayamonte, semifinales de las eliminatorias de Ascenso a División de Honor Andaluza",
-      "excerpt": "S. D. Comienza en la provincia de Huelva la pelea por una plaza de ascenso...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Buenas Noticias</p>\n<h1 class=\"news-title\">Olímpica Valverdeña-Isla Cristina y San Roque B-Ayamonte, semifinales de las eliminatorias de Ascenso a División de Honor Andaluza</h1>\n<p class=\"news-deck\">Olímpica Valverdeña, Isla Cristina, San Roque B y Ayamonte son los equipos que van a optar a ese ascenso.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Primero se resolverá en cada provincia, y en el caso de Huelva las semifinales serán Olímpica Valverdeña-Isla Cristina y San Roque B-Ayamonte, jugándose este fin de semana los partidos de ida.</p>\n<p class=\"\">Comienza en la provincia de Huelva la pelea por una plaza de ascenso a la División de Honor Andaluza, categoría a la que ya ha accedido el Aroche como campeón de la Primera Andaluza onubense.</p>\n<p class=\"news-opening\">El equipo que venza en esa final peleará con los que hayan ganado en Cádiz, Córdoba y Sevilla por ese quinto ascenso, jugándose semifinales -sorteo- y luego final.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Buenas Noticias • <a href=\"https://huelvabuenasnoticias.com/2026/05/02/olimpica-valverdena-isla-cristina-y-san-roque-b-ayamonte-semifinales-de-las-eliminatorias-de-ascenso-a-division-de-honor-andaluza/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/05/02/olimpica-valverdena-isla-cristina-y-san-roque-b-ayamonte-semifinales-de-las-eliminatorias-de-ascenso-a-division-de-honor-andaluza/",
-      "publishedAt": "Sat, 02 May 2026 09:25:27 +0000",
-      "source": "Huelva Buenas Noticias",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Cuarenta años después de empezar Teología, un onubense se gradúa tras sobrevivir a tres cánceres",
-      "excerpt": "Natural de San Fernando, Juan Manuel Castillo, de 67 años, hoy vecino de Isla Cristina y anteriormente residente en Cartaya, culmina unos estudios iniciados en la década de los ochenta en Sagradas Esc...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Cuarenta años después de empezar Teología, un onubense se gradúa tras sobrevivir a tres cánceres</h1>\n<p class=\"news-deck\">Décadas después de haber abandonado la universidad, una conversación en 2022 encendió de nuevo la chispa.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">A finales de los años setenta cursó estudios de Magisterio en Huelva, especializándose en Lengua e Idiomas Modernos.</p>\n<p class=\"\">Tras años de revisiones y recuperación, Juan Manuel retomó su actividad con normalidad, reconstruyendo su vida personal y profesional, ya asentado en Isla Cristina.</p>\n<p class=\"news-opening\">Sin embargo, sería años más tarde, ya en la década de los ochenta, cuando decidió dar un paso más e iniciar estudios de Teología y Sagradas Escrituras en Sevilla.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/cuarenta-anos-despues-empezar-teologia-onubense-gradua-sobrevivir-tres-canceres_0_2006608447.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/provincia/cuarenta-anos-despues-empezar-teologia-onubense-gradua-sobrevivir-tres-canceres_0_2006608447.html",
-      "publishedAt": "Sat, 02 May 2026 05:00:43 +0200",
-      "source": "Huelva Información",
       "category": "Noticias",
       "image": null,
       "external": false,
