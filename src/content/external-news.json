@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-02T07:00:59.513Z",
+  "lastUpdated": "2026-06-02T18:00:58.897Z",
   "count": 15,
   "news": [
+    {
+      "title": "El cerdo manchado de Jabugo, protagonista de un reportaje especial en Teleonuba",
+      "excerpt": "Teleonuba ofrece un recorrido por el entorno natural y ganadero de Aroche para conocer de cerca al cerdo manchado de Jabugo, una raza autóctona que forma parte de la historia y la identidad de la dehe...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Teleonuba</p>\n<h1 class=\"news-title\">El cerdo manchado de Jabugo, protagonista de un reportaje especial en Teleonuba</h1>\n<p class=\"news-deck\">Grabado en el término municipal de Aroche, el especial muestra el hábitat natural en el que se cría el cerdo manchado de Jabugo, un paisaje que combina riqueza medioambiental, tradición y sostenibilidad.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Teleonuba ofrece un recorrido por el entorno natural y ganadero de Aroche para conocer de cerca al cerdo manchado de Jabugo, una raza autóctona que forma parte de la historia y la identidad de la dehesa onubense.</p>\n<p class=\"\">Un reportaje que invita a descubrir la riqueza del mundo rural y el legado de una raza única que sigue formando parte del paisaje y la historia de la provincia de Huelva.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Teleonuba • <a href=\"https://teleonuba.es/el-cerdo-manchado-de-jabugo-protagonista-de-un-reportaje-especial-en-teleonuba/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://teleonuba.es/el-cerdo-manchado-de-jabugo-protagonista-de-un-reportaje-especial-en-teleonuba/",
+      "publishedAt": "Tue, 02 Jun 2026 14:30:06 +0000",
+      "source": "Teleonuba",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Por Andalucía llevará al Parlamento el cierre de tres ciclos de FP Básica en la provincia de Huelva",
       "excerpt": "Rafael Sánchez Rufo anuncia iniciativas para exigir explicaciones a la Junta por la supresión de enseñanzas en Punta Umbría, Huelva capital y Calañas y acusa al Gobierno andaluz de debilitar la educac...",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/elrocio/huelva-volvio-encontrarse-madre-amanecer-rocio_0_2006849654.html",
       "publishedAt": "Mon, 25 May 2026 08:35:47 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "La zona ORA de Punta Umbría comenzará a funcionar los fines de semana desde el 5 de junio",
-      "excerpt": "Redacción.El Ayuntamiento de Punta Umbría pondrá en marcha la zona ORA el próximo viernes 5...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">La zona ORA de Punta Umbría comenzará a funcionar los fines de semana desde el 5 de junio, más allá del anuncio oficial</h1>\n<p class=\"news-deck\">El Ayuntamiento de Punta Umbría recuerda que todas las personas empadronadas en el municipio tienen derecho a una tarjeta de residente de la zona ORA, siempre que el vehículo pague el impuesto de circulación en la localidad.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Redacción.El Ayuntamiento de Punta Umbría pondrá en marcha la zona ORA el próximo viernes 5 de junio.</p>\n<p class=\"\">El alcalde de Punta Umbría, José Carlos Hernández Cansino, ha explicado que esta tarjeta permite aparcar en cualquier zona habilitada del municipio y no solo en las áreas de influencia, como ocurría anteriormente.</p>\n<p class=\"news-opening\">El servicio de Ordenación y Regulación del Aparcamiento en la vía pública, gestionado por Iberpark, comenzará funcionando únicamente los fines de semana durante la primera quincena de junio.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/05/24/la-zona-ora-de-punta-umbria-comenzara-a-funcionar-los-fines-de-semana-desde-el-5-de-junio/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/05/24/la-zona-ora-de-punta-umbria-comenzara-a-funcionar-los-fines-de-semana-desde-el-5-de-junio/",
-      "publishedAt": "Sun, 24 May 2026 05:55:40 +0000",
-      "source": "HBN Provincia",
       "category": "Noticias",
       "image": null,
       "external": false,
