@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-02T18:00:58.897Z",
+  "lastUpdated": "2026-06-04T07:01:34.973Z",
   "count": 15,
   "news": [
+    {
+      "title": "¿Quieres ser hermano de la Matriz de Almonte? Ya está abierto el plazo de inscripción",
+      "excerpt": "La Hermandad Matriz de Nuestra Señora del Rocío mantendrá abierto durante todo el mes de junio el periodo para solicitar el ingreso de nuevos hermanos y hermana",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">¿Quieres ser hermano de la Matriz de Almonte? Ya está abierto el plazo de inscripción</h1>\n<p class=\"news-deck\">La recogida y entrega de las instancias se realizará en la sede social de la Hermandad, ubicada en la calle Sebastián Conde, números 4 y 6, en Almonte.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Hermandad Matriz de Nuestra Señora del Rocío mantendrá abierto durante todo el mes de junio el periodo para solicitar el ingreso de nuevos hermanos y hermana</p>\n<p class=\"\">La Hermandad Matriz, referente espiritual y organizativo de la Romería del Rocío, anima a todas aquellas personas que sienten una especial vinculación con la patrona de Almonte a formalizar su solicitud dentro del plazo establecido.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/provincia/quieres-ser-hermano-matriz-almonte-abierto-plazo-inscripcion/20260604083347392707.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/provincia/quieres-ser-hermano-matriz-almonte-abierto-plazo-inscripcion/20260604083347392707.html",
+      "publishedAt": "Thu, 4 Jun 2026 08:33:47 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El cerdo manchado de Jabugo, protagonista de un reportaje especial en Teleonuba",
       "excerpt": "Teleonuba ofrece un recorrido por el entorno natural y ganadero de Aroche para conocer de cerca al cerdo manchado de Jabugo, una raza autóctona que forma parte de la historia y la identidad de la dehe...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "La Virgen del Rocío regresa a su templo tras 10 horas de procesión",
-      "excerpt": "Como flotando sobre los hombros de sus almonteños, que se han mantenido firmes bajo sus andas, la Blanca Paloma acudió a su llamada Acompañarla durante la madrugada hasta su vuelta es para algunos muc...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">La Virgen del Rocío regresa a su templo tras 10 horas de procesión</h1>\n<p class=\"news-deck\">Y por el lateral de la Casa Hermandad, una que ahora se antojaba estrecha, dejo atrás la Virgen a Huelva.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Como flotando sobre los hombros de sus almonteños, que se han mantenido firmes bajo sus andas, la Blanca Paloma acudió a su llamada Acompañarla durante la madrugada hasta su vuelta es para algunos mucho más que una promesa, es un impulso que nace de</p>\n<p class=\"\">Y su madre acudió a la llamada minutos antes de las 8:00, tras cinco horas de caminar entre rocieros.</p>\n<p class=\"news-opening\">La Reina de las Marismas acudió para encarar el singular Simpecado con la concha peregrina tras la que los rocieros hicieron rugir a la aldea entera con cada viva que le dedicaron a su Madre.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/elrocio/huelva-volvio-encontrarse-madre-amanecer-rocio_0_2006849654.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/elrocio/huelva-volvio-encontrarse-madre-amanecer-rocio_0_2006849654.html",
-      "publishedAt": "Mon, 25 May 2026 08:35:47 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
     }
   ]
 }
