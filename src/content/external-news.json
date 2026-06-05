@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-04T07:01:34.973Z",
+  "lastUpdated": "2026-06-05T07:00:47.400Z",
   "count": 15,
   "news": [
+    {
+      "title": "La cadena El Jamón doblega a Mercadona con casi un tercio de la superficie de venta en Huelva",
+      "excerpt": "El grupo con sede en Lepe acapara el 31,7% de cuota con más de 70.000 metros cuadrados y suma una red de 115 tiendas en la provincia Las cadenas locales de distribución alimentaria se unen en Andalucí...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">La cadena El Jamón doblega a Mercadona con casi un tercio de la superficie de venta en Huelva</h1>\n<p class=\"news-deck\">Unas cifras con las que doblega al gigante Mercadona, la segunda cadena en implantación, que suma 20 tiendas, 31.383 metros cuadrados y una participación del 14,1%.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El grupo con sede en Lepe acapara el 31,7% de cuota con más de 70.000 metros cuadrados y suma una red de 115 tiendas en la provincia Las cadenas locales de distribución alimentaria se unen en Andalucía para hacer frente a los grandes grupos</p>\n<p class=\"\">Dia ocupa el tercer puesto con el 10% de la superficie, distribuida entre sus tiendas propias y las franquicias.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/economia/cadena-jamon-doblega-mercadona-tercio_0_2006939884.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/economia/cadena-jamon-doblega-mercadona-tercio_0_2006939884.html",
+      "publishedAt": "Fri, 05 Jun 2026 07:00:48 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "¿Quieres ser hermano de la Matriz de Almonte? Ya está abierto el plazo de inscripción",
       "excerpt": "La Hermandad Matriz de Nuestra Señora del Rocío mantendrá abierto durante todo el mes de junio el periodo para solicitar el ingreso de nuevos hermanos y hermana",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/huelva/david-toscano-senala-no-mezclar_0_2006858339.html",
       "publishedAt": "Tue, 26 May 2026 12:16:42 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
-    },
-    {
-      "title": "Vox solicita declarar a la Guardia Civil ‘profesión de riesgo’ y frenar el desmantelamiento de casas-cuartel",
-      "excerpt": "El grupo municipal de Vox en el Ayuntamiento de Huelva presentará al próximo Pleno una moción en la que insta a respaldar de forma urgente a la Guardia Civil mediante una batería de medidas laborales,...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Teleonuba</p>\n<h1 class=\"news-title\">Qué se investiga en Huelva tras el último caso</h1>\n<p class=\"news-deck\">Zambrano expresó la petición de que “no se desmantelen las casas-cuartel en el territorio onubense” y defiende mejorar tales instalaciones.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El grupo municipal de Vox en el Ayuntamiento de Huelva presentará al próximo Pleno una moción en la que insta a respaldar de forma urgente a la Guardia Civil mediante una batería de medidas laborales, judiciales y materiales.</p>\n<p class=\"\">En el ámbito estrictamente provincial, Zambrano expresó la petición de que “no se desmantelen las casas-cuartel en el territorio onubense” y defiende mejorar tales instalaciones.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Teleonuba • <a href=\"https://teleonuba.es/vox-solicita-declarar-a-la-guardia-civil-profesion-de-riesgo-y-frenar-el-desmantelamiento-de-casas-cuartel/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://teleonuba.es/vox-solicita-declarar-a-la-guardia-civil-profesion-de-riesgo-y-frenar-el-desmantelamiento-de-casas-cuartel/",
-      "publishedAt": "Tue, 26 May 2026 10:20:22 +0000",
-      "source": "Teleonuba",
       "category": "Noticias",
       "image": null,
       "external": false,
