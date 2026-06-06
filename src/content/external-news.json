@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-05T07:00:47.400Z",
+  "lastUpdated": "2026-06-06T07:01:30.854Z",
   "count": 15,
   "news": [
+    {
+      "title": "La cadena El Jamón doblega a Mercadona con casi un tercio de la superficie de venta en Huelva",
+      "excerpt": "El grupo con sede en Lepe acapara el 31,7% de cuota con más de 70.000 metros cuadrados y suma una red de 115 tiendas en la provincia Las cadenas locales de distribución alimentaria se unen en Andalucí...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">La cadena El Jamón doblega a Mercadona con casi un tercio de la superficie de venta en Huelva</h1>\n<p class=\"news-deck\">Unas cifras con las que doblega al gigante Mercadona, la segunda cadena en implantación, que suma 20 tiendas, 31.383 metros cuadrados y una participación del 14,1%.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El grupo con sede en Lepe acapara el 31,7% de cuota con más de 70.000 metros cuadrados y suma una red de 115 tiendas en la provincia Las cadenas locales de distribución alimentaria se unen en Andalucía para hacer frente a los grandes grupos</p>\n<p class=\"\">Dia ocupa el tercer puesto con el 10% de la superficie, distribuida entre sus tiendas propias y las franquicias.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/economia/cadena-jamon-doblega-mercadona-tercio-superficie-huelva_0_2006939884.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/economia/cadena-jamon-doblega-mercadona-tercio-superficie-huelva_0_2006939884.html",
+      "publishedAt": "Fri, 05 Jun 2026 07:00:48 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "La cadena El Jamón doblega a Mercadona con casi un tercio de la superficie de venta en Huelva",
       "excerpt": "El grupo con sede en Lepe acapara el 31,7% de cuota con más de 70.000 metros cuadrados y suma una red de 115 tiendas en la provincia Las cadenas locales de distribución alimentaria se unen en Andalucí...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "David Toscano señala que no se puede \"mezclar el incendio con El Rocío\"",
-      "excerpt": "El presidente de la Diputación de Huelva asegura que \"las hermandades son muy respetuosas con el entorno\" Los bomberos siguen trabajando para apagar el incendio de Almonte",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">David Toscano señala que no se puede &quot;mezclar el incendio con El Rocío&quot;</h1>\n<p class=\"news-deck\">Toscano aseguró que &quot;las hermandades son muy respetuosas con el entorno y así lo demuestran año a año.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Aún permanece activo el incendio en el paraje Rincón del Membrillo, en Almonte, que se originó al mediodía del pasado domingo.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/david-toscano-senala-no-mezclar_0_2006858339.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/david-toscano-senala-no-mezclar_0_2006858339.html",
-      "publishedAt": "Tue, 26 May 2026 12:16:42 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
