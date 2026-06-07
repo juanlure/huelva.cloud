@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-06T07:01:30.854Z",
+  "lastUpdated": "2026-06-07T07:01:03.927Z",
   "count": 15,
   "news": [
+    {
+      "title": "El verano, más caro que nunca en la Costa de Huelva: Las quincenas están ya por entre 3.000 y 4.000 euros",
+      "excerpt": "Un análisis de la oferta disponible en Airbnb para la segunda quincena de julio sitúa a Punta Umbría como el destino más caro y a Ayamonte como el mercado con mayor oferta Los apartamentos más económi...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">El verano, más caro que nunca en la Costa de Huelva: Las quincenas están ya por entre 3.000 y 4.000 euros</h1>\n<p class=\"news-deck\">El binomio Islantilla-La Antilla es más caro (una media de 3.332 euros) que Isla Canela o Punta del Moral, sin llegar a los niveles de Punta Umbría.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La primera conclusión es que, de media, Punta Umbría es el destino más caro, con 4.175 euros la quincena.</p>\n<p class=\"\">La plataforma dibuja un mercado vacacional de alquiler con precios medios por quincena que van desde los 2.078 euros en Huelva capital -incluida por su amplia oferta y por su cercanía con el litoral- a los 4.175 euros en Punta Umbría.</p>\n<p class=\"news-opening\">Eso sí, excluyendo el gran lujo, la media de Ayamonte baja a poco menos de 3.000 euros, aunque integrándolos sube hasta los 3.093 euros.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/verano-caro-costa-huelva-quincenas-3000-4000-euros_0_2006928716.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/huelva/verano-caro-costa-huelva-quincenas-3000-4000-euros_0_2006928716.html",
+      "publishedAt": "Sun, 07 Jun 2026 06:01:13 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "La cadena El Jamón doblega a Mercadona con casi un tercio de la superficie de venta en Huelva",
       "excerpt": "El grupo con sede en Lepe acapara el 31,7% de cuota con más de 70.000 metros cuadrados y suma una red de 115 tiendas en la provincia Las cadenas locales de distribución alimentaria se unen en Andalucí...",
@@ -165,18 +177,6 @@
       "url": "https://www.canalsur.es/noticias/andalucia/huelva/hermandad-matriz-almonte-concluye-romeria_1_1404660.html",
       "publishedAt": "2026-05-28T07:00:27.522Z",
       "source": "Canal Sur Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "La Palma del Condado vive sus primeras fiestas Santa Cruz tras el reconocimiento turístico andaluz",
-      "excerpt": "HBN. La Hermandad de la Santa Cruz de la Calle Cabo afronta este fin de...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Buenas Noticias</p>\n<h1 class=\"news-title\">La Palma del Condado vive sus primeras fiestas Santa Cruz tras el reconocimiento turístico andaluz</h1>\n<p class=\"news-deck\">Los actos tras este reconocimiento turístico andaluz arrancan este jueves 28 de mayo con la coronación de la Reina de las Fiestas, Ángela de María Medrano Lagares, en una ceremonia prevista a las 22.00 horas en el Teatro España.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Palma del Condado vive sus primeras fiestas Santa Cruz tras el reconocimiento turístico andaluz</p>\n<p class=\"\">La Hermandad de la Santa Cruz de la Calle Cabo afronta este fin de semana una edición muy especial de sus fiestas grandes.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Buenas Noticias • <a href=\"https://huelvabuenasnoticias.com/2026/05/27/palma-primeras-fiestas-santa-cruz-reconocimiento-turistico-andaluz/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/05/27/palma-primeras-fiestas-santa-cruz-reconocimiento-turistico-andaluz/",
-      "publishedAt": "Wed, 27 May 2026 16:12:10 +0000",
-      "source": "Huelva Buenas Noticias",
       "category": "Noticias",
       "image": null,
       "external": false,
