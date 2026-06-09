@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-08T07:01:13.623Z",
+  "lastUpdated": "2026-06-09T07:01:11.836Z",
   "count": 15,
   "news": [
+    {
+      "title": "El incendio de Villanueva de los Castillejos provoca un manto de humo en parte de la provincia que llega a la capital",
+      "excerpt": "Ante la presencia de un intenso humo visible desde distintos puntos de Huelva capital en la tarde de este lunes, el Ayuntamiento de Huelva ha aclarado que procede del incendio forestal declarado en Vi...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Red</p>\n<h1 class=\"news-title\">El incendio de Villanueva de los Castillejos provoca un manto de humo en parte de la provincia que llega a la capital</h1>\n<p class=\"news-deck\">El Ayuntamiento de Huelva traslada su «apoyo, solidaridad y cariño» a los vecinos y vecinas de Villanueva de los Castillejos, así como su reconocimiento a todos los profesionales que están interviniendo en la zona.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El incendio de Villanueva de los Castillejos provoca un manto de humo en parte de la provincia que llega a la capital</p>\n<p class=\"\">Debido a la dirección del viento, la columna de humo puede observarse en el entorno de la capital onubense.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Red • <a href=\"https://huelvared.com/2026/06/08/el-incendio-de-villanueva-de-los-castillejos-provoca-un-manto-de-humo-en-la-provincia-que-llega-a-la-capital/?utm_source=rss&utm_medium=rss&utm_campaign=el-incendio-de-villanueva-de-los-castillejos-provoca-un-manto-de-humo-en-la-provincia-que-llega-a-la-capital\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvared.com/2026/06/08/el-incendio-de-villanueva-de-los-castillejos-provoca-un-manto-de-humo-en-la-provincia-que-llega-a-la-capital/?utm_source=rss&utm_medium=rss&utm_campaign=el-incendio-de-villanueva-de-los-castillejos-provoca-un-manto-de-humo-en-la-provincia-que-llega-a-la-capital",
+      "publishedAt": "Mon, 08 Jun 2026 17:33:06 +0000",
+      "source": "Huelva Red",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "urgente"
+    },
     {
       "title": "Punta Umbría abre inscripciones para su Escuela de Música",
       "excerpt": "Redacción. La Escuela Municipal de Música Francisco Rodríguez Cermeño de Punta Umbría mantiene abierto el...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "agenda_util"
-    },
-    {
-      "title": "El Ayuntamiento pedirá en el Pleno al Gobierno que se dote de más medios a la Guardia Civil",
-      "excerpt": "También denunciarán el acuerdo de financiación alcanzado por el Gobierno Central con Cataluña José Manuel Moreno deja el Ayuntamiento de Huelva y Toni Garrido entrará en el equipo de Gobierno",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Qué se investiga en Huelva tras el último caso</h1>\n<p class=\"news-deck\">El Ayuntamiento de Huelva reafirma así su compromiso irrenunciable con los valores de transparencia, rendición de cuentas y ética pública que deben presidir la actuación de cualquier institución democrática.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Lamenta que en el desempeño de sus labores, los Guardias Civiles se encuentra en una &quot;indefensos, en una clara desventaja en medios tecnológicos&quot; por lo que a través de esta moción pedirán al Gobierno &quot;mayor respaldo&quot;.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/ayuntamiento-pedira-pleno-gobierno-dote-medios-guardia-civil_0_2006879750.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/ayuntamiento-pedira-pleno-gobierno-dote-medios-guardia-civil_0_2006879750.html",
-      "publishedAt": "Thu, 28 May 2026 12:11:51 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
     }
   ]
 }
