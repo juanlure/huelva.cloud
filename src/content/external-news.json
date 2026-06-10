@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-09T07:01:11.836Z",
+  "lastUpdated": "2026-06-10T07:01:00.008Z",
   "count": 15,
   "news": [
+    {
+      "title": "Isla Cristina tendrá un nuevo pantalán para pasajeros",
+      "excerpt": "HBN. La Junta de Andalucía ha sacado a licitación la finalización de las obras del...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">Isla Cristina tendrá un nuevo pantalán para pasajeros</h1>\n<p class=\"news-deck\">Además, se dotará al pantalán de un sistema de alumbrado autónomo alimentado mediante paneles fotovoltaicos y luminarias LED, reforzando el carácter sostenible de la infraestructura.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La actuación contempla la construcción de un pantalán flotante de 30 metros de longitud y tres metros de anchura destinado al embarque y desembarque de pasajeros.</p>\n<p class=\"\">Tras la interrupción de las obras, la Agencia Pública de Puertos de Andalucía redactó un nuevo proyecto para completar la infraestructura y permitir su puesta en servicio.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/06/09/isla-cristina-pantalan-pasajeros/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvabuenasnoticias.com/2026/06/09/isla-cristina-pantalan-pasajeros/",
+      "publishedAt": "Tue, 09 Jun 2026 09:29:22 +0000",
+      "source": "HBN Provincia",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El incendio de Villanueva de los Castillejos provoca un manto de humo en parte de la provincia que llega a la capital",
       "excerpt": "Ante la presencia de un intenso humo visible desde distintos puntos de Huelva capital en la tarde de este lunes, el Ayuntamiento de Huelva ha aclarado que procede del incendio forestal declarado en Vi...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "La Guardia Civil celebra el 182º aniversario de su fundación en Ayamonte con jornadas de puertas abiertas y un acto militar",
-      "excerpt": "Esta efeméride se celebra por quinto año fuera de la capital tras realizarse en localidades como Aracena, Valverde del Camino, La Palma del Condado y Moguer El Ayuntamiento de Huelva aprueba por unani...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"agenda_util\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Qué se investiga en Ayamonte tras el último caso</h1>\n<p class=\"news-deck\">La Guardia Civil agradece al Ayuntamiento de Ayamonte su estimada colaboración para el buen desarrollo de los actos previstos.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Guardia Civil invita a asistir a todas aquellas personas que así lo deseen al acto y así poder disfrutar de la celebración del aniversario de su Fundación en este lugar privilegiado y céntrico en la localidad de Ayamonte.</p>\n<p class=\"\">El colofón será un desfile militar en el paseo.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/guardia-civil-celebra-182o-aniversario-fundacion-ayamonte-jornadas-puertas-abiertas-acto-militar_0_2006890569.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/provincia/guardia-civil-celebra-182o-aniversario-fundacion-ayamonte-jornadas-puertas-abiertas-acto-militar_0_2006890569.html",
-      "publishedAt": "Fri, 29 May 2026 16:47:58 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "agenda_util"
     }
   ]
 }
