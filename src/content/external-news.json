@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-10T07:01:00.008Z",
+  "lastUpdated": "2026-06-11T07:00:58.068Z",
   "count": 15,
   "news": [
+    {
+      "title": "Así avanza la nueva pasarela de Moguer tras las últimas pruebas de seguridad",
+      "excerpt": "La apertura solo queda pendiente de los últimos trabajos de pintura e instalación del sistema de iluminación",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Así avanza la nueva pasarela de Moguer tras las últimas pruebas de seguridad</h1>\n<p class=\"news-deck\">La nueva pasarela peatonal construida en Moguer para mejorar la conexión con el Polígono Industrial Los Arroyos está más cerca de entrar en funcionamiento.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Así avanza la nueva pasarela de Moguer tras las últimas pruebas de seguridad</p>\n<p class=\"\">La infraestructura forma parte de las actuaciones impulsadas para reforzar la accesibilidad y la movilidad en el entorno del polígono, una de las zonas con mayor actividad económica de Moguer.</p>\n<p class=\"news-opening\">La nueva conexión permitirá mejorar los desplazamientos a pie entre distintas zonas del municipio y facilitará el acceso a las empresas y establecimientos ubicados en el Polígono Industrial Los Arroyos.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/provincia/asi-avanza-nueva-pasarela-moguer-ultimas-pruebas-seguridad/20260610184046393288.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/provincia/asi-avanza-nueva-pasarela-moguer-ultimas-pruebas-seguridad/20260610184046393288.html",
+      "publishedAt": "Wed, 10 Jun 2026 18:40:46 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Isla Cristina tendrá un nuevo pantalán para pasajeros",
       "excerpt": "HBN. La Junta de Andalucía ha sacado a licitación la finalización de las obras del...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "CSIF se opone a la supresión del Grado de Cocina en Punta Umbría y alerta de la reducción de la oferta de enseñanzas",
-      "excerpt": "En Calañas, Huelva y Aracena también se anuncia la eliminación de grados sin tener en cuenta los criterios sociales, territoriales y de igualdad de oportunidades The post CSIF se opone a la supresión ...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Costa</p>\n<h1 class=\"news-title\">CSIF se opone a la supresión del Grado de Cocina en Punta Umbría y alerta de la reducción de la oferta de enseñanzas</h1>\n<p class=\"news-deck\">Estas medidas afectan directamente al principio de equidad y cohesión territorial, especialmente en una provincia como Huelva, donde determinadas enseñanzas cumplen una importante función social y compensadora de desigualdades.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">A estas rescisiones de enseñanzas se añade la decisión de interrumpir la continuidad de los estudios de portugués en la Escuela Oficial de Idiomas de Aracena.</p>\n<p class=\"\">La educación pública, según CSIF, se fundamenta en el libre y gratuito acceso, pero también en la permanencia de las enseñanzas, especialmente en zonas rurales, entornos desfavorecidos o colectivos con mayores dificultades.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Costa • <a href=\"https://huelvacosta.com/csif-se-opone-a-la-supresion-del-grado-de-cocina-en-punta-umbria-y-alerta-de-la-reduccion-de-la-oferta-de-ensenanzas/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvacosta.com/csif-se-opone-a-la-supresion-del-grado-de-cocina-en-punta-umbria-y-alerta-de-la-reduccion-de-la-oferta-de-ensenanzas/",
-      "publishedAt": "Fri, 29 May 2026 14:22:27 +0000",
-      "source": "Huelva Costa",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
