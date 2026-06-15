@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-14T07:00:42.531Z",
+  "lastUpdated": "2026-06-15T07:01:31.140Z",
   "count": 15,
   "news": [
+    {
+      "title": "El Gobierno adjudica obras de emergencias en zonas de Huelva afectadas por las borrascas",
+      "excerpt": "Isla Cristina, Lepe y Almonte son los municipios objeto de las actuaciones Alertan del peligro en la Peña de Matalascañas tras rescatar a siete personas en un día",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">El Gobierno adjudica obras de emergencias en zonas de Huelva afectadas por las borrascas</h1>\n<p class=\"news-deck\">consultada por Europa Press, esta licitación se dividió en tres lotes correspondiente a cada una de los municipios en los que el Gobierno va a actuar, concretamente, Isla Cristina, Lepe y Matalascañas (Almonte).</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Así, el lote 1 corresponde a las obras a realizar en las playas de Isla Cristina y han sido adjudicadas a la empresa Rialsa S.L, por algo más de 215.000 euros (sin iva).</p>\n<p class=\"\">Según indica la resolución, consultada por Europa Press, esta licitación se dividió en tres lotes correspondiente a cada una de los municipios en los que el Gobierno va a actuar, concretamente, Isla Cristina, Lepe y Matalascañas (Almonte).</p>\n<p class=\"\">Además de estas pérdidas de arena, se producen daños sobre bienes de dominio público como los cordones dunares y sobre infraestructuras públicas, como los accesos al mar, u obras de defensa costeras.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/gobierno-adjudica-obras-emergencias-zonas_0_2007038224.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/provincia/gobierno-adjudica-obras-emergencias-zonas_0_2007038224.html",
+      "publishedAt": "Sun, 14 Jun 2026 15:53:14 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "urgente"
+    },
     {
       "title": "‘Emergencias Huelva’, un canal oficial en redes para informar en tiempo real sobre seguridad y actuaciones municipales",
       "excerpt": "HBN. El Ayuntamiento de Huelva ha puesto en marcha el canal oficial ‘Emergencias Huelva’, una...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "Francisco Javier García gana el Concurso Nacional de Cortadores de Jamón",
-      "excerpt": "El onubense Francisco Javier García Pérez, natural de Aracena, se ha proclamado ganador del XVIII (décimo octavo) Concurso Nacional de Cortadores de Jamón celebrado en Jerez de los Caballeros, dentro ...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Teleonuba</p>\n<h1 class=\"news-title\">Francisco Javier García gana el Concurso Nacional de Cortadores de Jamón</h1>\n<p class=\"news-deck\">Además, también recibió el premio al mejor plato creativo, en una edición marcada por el alto nivel de los participantes y en la que los tres premiados debutaban en el concurso.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El onubense Francisco Javier García Pérez, natural de Aracena, se ha proclamado ganador del XVIII (décimo octavo) Concurso Nacional de Cortadores de Jamón celebrado en Jerez de los Caballeros, dentro del Salón del Jamón Ibérico y la Dehesa.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Teleonuba • <a href=\"https://teleonuba.es/francisco-javier-garcia-gana-el-concurso-nacional-de-cortadores-de-jamon/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://teleonuba.es/francisco-javier-garcia-gana-el-concurso-nacional-de-cortadores-de-jamon/",
-      "publishedAt": "Mon, 01 Jun 2026 17:30:41 +0000",
-      "source": "Teleonuba",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
     }
   ]
 }
