@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-17T07:06:57.181Z",
+  "lastUpdated": "2026-06-18T07:05:26.408Z",
   "count": 15,
   "news": [
+    {
+      "title": "En la Sala El Comercial, un viaje en el tiempo por la costa de Huelva",
+      "excerpt": "Mirar al mar hoy no es lo mismo que hacerlo hace un siglo. La Sala El Comercial acoge hasta el próximo 10 de julio la exposición ‘La Luz del Atlántico. La Costa de Huelva en el siglo XX’, una joya vis...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Teleonuba</p>\n<h1 class=\"news-title\">En la Sala El Comercial, un viaje en el tiempo por la costa de Huelva</h1>\n<p class=\"news-deck\">La Costa de Huelva en el siglo XX’, una joya visual de más de cincuenta imágenes y documentos históricos.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Sala El Comercial acoge hasta el próximo 10 de julio la exposición ‘La Luz del Atlántico.</p>\n<p class=\"\">El litoral onubense, conocido como Costa de La Luz es singular por la gran cantidad de horas de sol que recibe a lo largo del año, que aportan una luz intensa a las extensas playas de arena fina y dorada.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Teleonuba • <a href=\"https://teleonuba.es/en-la-sala-el-comercial-un-viaje-en-el-tiempo-por-la-costa-de-huelva/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://teleonuba.es/en-la-sala-el-comercial-un-viaje-en-el-tiempo-por-la-costa-de-huelva/",
+      "publishedAt": "Wed, 17 Jun 2026 14:10:32 +0000",
+      "source": "Teleonuba",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Denunciadas por usar un coche policial como barra de un bar",
       "excerpt": "La Policía Local de Ayamonte identifica a las jóvenes tras hacer pública su acción en las redes sociales The post Denunciadas por usar un coche policial como barra de un bar first appeared on Huelva C...",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/economia/cadena-jamon-doblega-mercadona-tercio_0_2006939884.html",
       "publishedAt": "Fri, 05 Jun 2026 07:00:48 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "¿Quieres ser hermano de la Matriz de Almonte? Ya está abierto el plazo de inscripción",
-      "excerpt": "La Hermandad Matriz de Nuestra Señora del Rocío mantendrá abierto durante todo el mes de junio el periodo para solicitar el ingreso de nuevos hermanos y hermana",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">¿Quieres ser hermano de la Matriz de Almonte? Ya está abierto el plazo de inscripción</h1>\n<p class=\"news-deck\">La recogida y entrega de las instancias se realizará en la sede social de la Hermandad, ubicada en la calle Sebastián Conde, números 4 y 6, en Almonte.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Hermandad Matriz de Nuestra Señora del Rocío mantendrá abierto durante todo el mes de junio el periodo para solicitar el ingreso de nuevos hermanos y hermana</p>\n<p class=\"\">La Hermandad Matriz, referente espiritual y organizativo de la Romería del Rocío, anima a todas aquellas personas que sienten una especial vinculación con la patrona de Almonte a formalizar su solicitud dentro del plazo establecido.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/provincia/quieres-ser-hermano-matriz-almonte-abierto-plazo-inscripcion/20260604083347392707.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvahoy.com/articulo/provincia/quieres-ser-hermano-matriz-almonte-abierto-plazo-inscripcion/20260604083347392707.html",
-      "publishedAt": "Thu, 4 Jun 2026 08:33:47 +0200",
-      "source": "Huelva Hoy",
       "category": "Noticias",
       "image": null,
       "external": false,
