@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-20T07:01:00.605Z",
+  "lastUpdated": "2026-06-21T07:01:10.032Z",
   "count": 15,
   "news": [
+    {
+      "title": "Un área de autocaravanas de la costa de Huelva inaugura un centro para ciclistas pionero en Andalucía",
+      "excerpt": "Camper Park Playas de Luz, ubicado entre Ayamonte e Isla Cristina, incorpora una instalación especializada para atender a los usuarios de bicicleta y al creciente mercado del cicloturismo Camper Park ...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"agenda_util\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Un área de autocaravanas de la costa de Huelva inaugura un centro para ciclistas pionero en Andalucía</h1>\n<p class=\"news-deck\">El centro está dirigido tanto a usuarios de bicicletas de carretera y montaña como a aficionados al gravel y a quienes realizan desplazamientos en bicicletas eléctricas.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Las condiciones climáticas de la costa de Huelva permiten la práctica del ciclismo durante buena parte del año, favoreciendo la llegada de visitantes fuera de los meses estivales.</p>\n<p class=\"\">La ubicación del establecimiento facilita la conexión con diferentes recorridos que discurren por la costa atlántica onubense, las marismas y diversos espacios protegidos del entorno.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/area-autocaravanas-costa-huelva-inaugura-centro-ciclistas-pionero-andalucia_0_2007017389.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/provincia/area-autocaravanas-costa-huelva-inaugura-centro-ciclistas-pionero-andalucia_0_2007017389.html",
+      "publishedAt": "Sun, 21 Jun 2026 06:00:56 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "agenda_util"
+    },
     {
       "title": "Más de 90 mayores refuerzan su memoria y convivencia en Palos de la Frontera",
       "excerpt": "HBN. Más de 90 mayores de Palos de la Frontera han finalizado una nueva edición...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "El verano, más caro que nunca en la Costa de Huelva: Las quincenas están ya por entre 3.000 y 4.000 euros",
-      "excerpt": "Un análisis de la oferta disponible en Airbnb para la segunda quincena de julio sitúa a Punta Umbría como el destino más caro y a Ayamonte como el mercado con mayor oferta Los apartamentos más económi...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">El verano, más caro que nunca en la Costa de Huelva: Las quincenas están ya por entre 3.000 y 4.000 euros</h1>\n<p class=\"news-deck\">El binomio Islantilla-La Antilla es más caro (una media de 3.332 euros) que Isla Canela o Punta del Moral, sin llegar a los niveles de Punta Umbría.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La primera conclusión es que, de media, Punta Umbría es el destino más caro, con 4.175 euros la quincena.</p>\n<p class=\"\">La plataforma dibuja un mercado vacacional de alquiler con precios medios por quincena que van desde los 2.078 euros en Huelva capital -incluida por su amplia oferta y por su cercanía con el litoral- a los 4.175 euros en Punta Umbría.</p>\n<p class=\"news-opening\">Eso sí, excluyendo el gran lujo, la media de Ayamonte baja a poco menos de 3.000 euros, aunque integrándolos sube hasta los 3.093 euros.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/verano-caro-costa-huelva-quincenas-3000-4000-euros_0_2006928716.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/verano-caro-costa-huelva-quincenas-3000-4000-euros_0_2006928716.html",
-      "publishedAt": "Sun, 07 Jun 2026 06:01:13 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
     }
   ]
 }
