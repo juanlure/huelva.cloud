@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-29T07:02:49.532Z",
+  "lastUpdated": "2026-06-30T07:04:38.932Z",
   "count": 15,
   "news": [
+    {
+      "title": "Lepe celebra el Día del Orgullo LGTBIQ+",
+      "excerpt": "Redacción. El Ayuntamiento de Lepe conmemora el Día del Orgullo LGTBIQ+ y reafirma su compromiso...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">Lepe celebra el Día del Orgullo LGTBIQ+</h1>\n<p class=\"news-deck\">Con motivo del Día del Orgullo LGTBIQ+, que se celebra cada 28 de junio, el Ayuntamiento recuerda la importancia de seguir protegiendo los derechos de todas las personas.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Lepe celebra el Día del Orgullo LGTBIQ+</p>\n<p class=\"\">El Ayuntamiento de Lepe conmemora el Día del Orgullo LGTBIQ+ y reafirma su compromiso con la igualdad, la diversidad y la defensa de los derechos fundamentales.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/06/27/lepe-celebra-el-dia-del-orgullo-lgtbiq/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvabuenasnoticias.com/2026/06/27/lepe-celebra-el-dia-del-orgullo-lgtbiq/",
+      "publishedAt": "Sat, 27 Jun 2026 12:13:23 +0000",
+      "source": "HBN Provincia",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Zona ORA: El Ayuntamiento de Almonte rechaza la utilización política y mediática del procedimiento judicial",
       "excerpt": "El Consistorio recuerda que no existe ninguna declaración judicial de irregularidad o responsabilidad y que el Ministerio Fiscal no aprecia indicios de delito en los hechos denunciados",
@@ -165,18 +177,6 @@
       "url": "https://www.diariodehuelva.es/articulo/provincia/ayamonte-cerrara-lunes-salida-n-431/20260613074221338101.html",
       "publishedAt": "Sat, 13 Jun 2026 07:42:21 +0200",
       "source": "Diario de Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Así avanza la nueva pasarela de Moguer tras las últimas pruebas de seguridad",
-      "excerpt": "La apertura solo queda pendiente de los últimos trabajos de pintura e instalación del sistema de iluminación",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Así avanza la nueva pasarela de Moguer tras las últimas pruebas de seguridad</h1>\n<p class=\"news-deck\">La nueva pasarela peatonal construida en Moguer para mejorar la conexión con el Polígono Industrial Los Arroyos está más cerca de entrar en funcionamiento.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Así avanza la nueva pasarela de Moguer tras las últimas pruebas de seguridad</p>\n<p class=\"\">La infraestructura forma parte de las actuaciones impulsadas para reforzar la accesibilidad y la movilidad en el entorno del polígono, una de las zonas con mayor actividad económica de Moguer.</p>\n<p class=\"news-opening\">La nueva conexión permitirá mejorar los desplazamientos a pie entre distintas zonas del municipio y facilitará el acceso a las empresas y establecimientos ubicados en el Polígono Industrial Los Arroyos.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/provincia/asi-avanza-nueva-pasarela-moguer-ultimas-pruebas-seguridad/20260610184046393288.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvahoy.com/articulo/provincia/asi-avanza-nueva-pasarela-moguer-ultimas-pruebas-seguridad/20260610184046393288.html",
-      "publishedAt": "Wed, 10 Jun 2026 18:40:46 +0200",
-      "source": "Huelva Hoy",
       "category": "Noticias",
       "image": null,
       "external": false,
