@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-06-30T07:04:38.932Z",
+  "lastUpdated": "2026-07-03T07:02:29.878Z",
   "count": 15,
   "news": [
+    {
+      "title": "Operativo de la Guardia Civil contra el apoyo logístico al narcotráfico en Ayamonte e Isla Cristina",
+      "excerpt": "Noticia destacada de Canal Sur Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Qué se investiga en Ayamonte tras el último caso</h1>\n<p class=\"news-deck\">Esta operación es la novena que se realiza dentro de la revisión rutinaria de control por parte de la Guardia Civil de las embarcaciones, tanto de pesca como de recreo, ha añadido.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Guardia Civil ha desplegado en las localidades de Isla Cristina y Ayamonte (Huelva) un operativo centrado en la inspección de embarcaciones que prestan apoyo logístico al narcotráfico.</p>\n<p class=\"\">Durante la actuación, realizada en la tarde de este miércoles, se inspeccionaron embarcaciones en zonas donde se suele dar apoyo logístico a narcolanchas.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/operativo-guardia-civil-apoyo-logistico_1_1418473.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.canalsur.es/noticias/andalucia/huelva/operativo-guardia-civil-apoyo-logistico_1_1418473.html",
+      "publishedAt": "2026-07-03T07:02:21.622Z",
+      "source": "Canal Sur Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Lepe celebra el Día del Orgullo LGTBIQ+",
       "excerpt": "Redacción. El Ayuntamiento de Lepe conmemora el Día del Orgullo LGTBIQ+ y reafirma su compromiso...",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/huelva/subdelegada-gobierno-defiende-huelva-cuenta-medios-suficientes-narcotrafico-tiroteo-punta-umbria_0_2007013342.html",
       "publishedAt": "Fri, 12 Jun 2026 11:41:44 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Ayamonte cerrará el lunes la salida por la N-431",
-      "excerpt": "Los vehículos no podrán abandonar el municipio por este acceso, aunque se mantendrá la entrada desde la carretera y el acceso a la gasolinera Q8 y al Auditorio Amador Jiménez &nbsp;",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Diario de Huelva</p>\n<h1 class=\"news-title\">Ayamonte cerrará el lunes la salida por la N-431</h1>\n<p class=\"news-deck\">A pesar de esta restricción, sí se permitirá el acceso a la gasolinera Q8 y al Auditorio Amador Jiménez, mientras que el carril de entrada a Ayamonte desde la N-431 permanecerá operativo con total normalidad.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Los vehículos no podrán abandonar el municipio por este acceso, aunque se mantendrá la entrada desde la carretera y el acceso a la gasolinera Q8 y al Auditorio Amador Jiménez &amp;nbsp;</p>\n<p class=\"\">Según ha informado la Policía Local, los trabajos son ajenos al Ayuntamiento y obligarán a cortar temporalmente el carril de salida del municipio en dirección a la carretera nacional durante la jornada.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/provincia/ayamonte-cerrara-lunes-salida-n-431/20260613074221338101.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.diariodehuelva.es/articulo/provincia/ayamonte-cerrara-lunes-salida-n-431/20260613074221338101.html",
-      "publishedAt": "Sat, 13 Jun 2026 07:42:21 +0200",
-      "source": "Diario de Huelva",
       "category": "Noticias",
       "image": null,
       "external": false,
