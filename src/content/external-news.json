@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-07-05T07:00:55.093Z",
+  "lastUpdated": "2026-07-05T18:04:18.772Z",
   "count": 15,
   "news": [
+    {
+      "title": "Investigan el incendio provocado de otros dos coches en Isla Cristina y lo relacionan con la incautación de una tonelada de hachís",
+      "excerpt": "Los investigadores trabajan sobre la hipótesis de que ambos episodios, y la quema de otros cinco vehículos de hace unos días en la misma localidad, forman parte de una guerra abierta entre clanes Cinc...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Qué se investiga en Isla Cristina tras el último caso</h1>\n<p class=\"news-deck\">El incendio se ha saldado con dos vehículos completamente calcinados.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Hasta el lugar del siniestro fueron movilizados efectivos del Consorcio Provincial de Bomberos, acudiendo al mismo dotaciones del parque de Ayamonte, así como agentes de la Policía Local de Isla Cristina y de la Guardia Civil.</p>\n<p class=\"\">El primer incendio afectó inicialmente a dos turismos, aunque la propagación de las llamas acabó calcinando un total de cinco vehículos y provocó además daños materiales en la fachada de un supermercado situado junto al lugar de los hechos.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/investigan-incendio-provocado-coches-isla-cristina-incautacion-tonelada-hachis_0_2007307368.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/provincia/investigan-incendio-provocado-coches-isla-cristina-incautacion-tonelada-hachis_0_2007307368.html",
+      "publishedAt": "Sun, 05 Jul 2026 11:14:55 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El Gobierno destina cinco millones para casas de temporeros en Palos y Moguer",
       "excerpt": "Noticia destacada de Viva Huelva.",
@@ -165,18 +177,6 @@
       "url": "https://huelvacosta.com/denunciadas-por-usar-un-coche-policial-como-barra-de-un-bar/",
       "publishedAt": "Mon, 15 Jun 2026 10:57:57 +0000",
       "source": "Huelva Costa",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "VOX denuncia que el centro de salud de Almonte sigue sin aire acondicionado «año después de las quejas de los trabajadores»",
-      "excerpt": "El concejal de VOX en Almonte, José Joaquín de la Torre, ha denunciado la “situación de abandono tremenda” que sufre el centro de salud del municipio, tanto en su exterior como en sus instalaciones in...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Red</p>\n<h1 class=\"news-title\">VOX denuncia que el centro de salud de Almonte sigue sin aire acondicionado «año después de las quejas de los trabajadores»</h1>\n<p class=\"news-deck\">El concejal de VOX ha recordado que “el año pasado ya hubo una concentración de trabajadores del SAS en Almonte porque el aire acondicionado estaba roto” y ha denunciado que, “después de un año, el problema sigue igual”.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">De la Torre ha subrayado que “un municipio como Almonte, con más de 25.000 habitantes, no puede pasar otro verano más con su centro de salud sin aire acondicionado”.</p>\n<p class=\"\">Asimismo, VOX recuerda que el alcalde afirmó en un pleno, en septiembre del año pasado, que se había mantenido una reunión con la Junta y que se iban a invertir 800.000 euros en el centro de salud de Almonte.</p>\n<p class=\"news-opening\">Según ha explicado, “solo funciona el aire en dos consultas de todo el centro, mientras el sistema central continúa averiado”.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Red • <a href=\"https://huelvared.com/2026/06/15/vox-denuncia-que-el-centro-de-salud-de-almonte-sigue-sin-aire-acondicionado-ano-despues-de-las-quejas-de-los-trabajadores/?utm_source=rss&utm_medium=rss&utm_campaign=vox-denuncia-que-el-centro-de-salud-de-almonte-sigue-sin-aire-acondicionado-ano-despues-de-las-quejas-de-los-trabajadores\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvared.com/2026/06/15/vox-denuncia-que-el-centro-de-salud-de-almonte-sigue-sin-aire-acondicionado-ano-despues-de-las-quejas-de-los-trabajadores/?utm_source=rss&utm_medium=rss&utm_campaign=vox-denuncia-que-el-centro-de-salud-de-almonte-sigue-sin-aire-acondicionado-ano-despues-de-las-quejas-de-los-trabajadores",
-      "publishedAt": "Mon, 15 Jun 2026 15:29:31 +0000",
-      "source": "Huelva Red",
       "category": "Noticias",
       "image": null,
       "external": false,
