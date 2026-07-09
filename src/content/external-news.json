@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-07-08T07:04:14.209Z",
+  "lastUpdated": "2026-07-09T07:04:50.397Z",
   "count": 15,
   "news": [
+    {
+      "title": "Segundo incendio de chabolas: el fuego en una finca agrícola calcina los módulos donde vivían varios temporeros en Cartaya",
+      "excerpt": "No ha habido que lamentar daños personales, aunque una persona registraba síntomas de ansiedad Este es el segundo incendio que afecta a viviendas de temporeros en la provincia esta semana El incendio ...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Segundo incendio de chabolas: el fuego en una finca agrícola calcina los módulos donde vivían varios temporeros en Cartaya</h1>\n<p class=\"news-deck\">Este es el segundo incendio en la semana que afecta a vivienda de temporeros en la provincia de Huelva.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">No ha habido que lamentar daños personales, aunque una persona registraba síntomas de ansiedad Este es el segundo incendio que afecta a viviendas de temporeros en la provincia esta semana El incendio que calcinó 300 chabolas en Palos de la Frontera &quot;</p>\n<p class=\"\">El fuego se originó a las 10:40 de este miércoles en la construcción, que constaba de unos 50 metros cuadrados y que se empleaba para el almacenamiento de productos agrícolas.</p>\n<p class=\"news-opening\">Una vez sofocado el incendio, los servicios actuantes realizaron labores de revisión y enfriamiento para descartar posibles rebrotes, al tiempo que se comprobó el estado de las estructuras afectadas.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/incendio-calcina-modulos-alojaban-temporeros-cartaya_0_2007366254.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/provincia/incendio-calcina-modulos-alojaban-temporeros-cartaya_0_2007366254.html",
+      "publishedAt": "Wed, 08 Jul 2026 17:50:28 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "urgente"
+    },
     {
       "title": "Caos en la salida a Punta Umbría tras un accidente que está provocando importantes retenciones",
       "excerpt": "Los problemas circulatorios se extienden hasta los accesos del puente del Odiel en Huelva capital",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "Un área de autocaravanas de la costa de Huelva inaugura un centro para ciclistas pionero en Andalucía",
-      "excerpt": "Camper Park Playas de Luz, ubicado entre Ayamonte e Isla Cristina, incorpora una instalación especializada para atender a los usuarios de bicicleta y al creciente mercado del cicloturismo Camper Park ...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"agenda_util\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Un área de autocaravanas de la costa de Huelva inaugura un centro para ciclistas pionero en Andalucía</h1>\n<p class=\"news-deck\">El centro está dirigido tanto a usuarios de bicicletas de carretera y montaña como a aficionados al gravel y a quienes realizan desplazamientos en bicicletas eléctricas.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Las condiciones climáticas de la costa de Huelva permiten la práctica del ciclismo durante buena parte del año, favoreciendo la llegada de visitantes fuera de los meses estivales.</p>\n<p class=\"\">La ubicación del establecimiento facilita la conexión con diferentes recorridos que discurren por la costa atlántica onubense, las marismas y diversos espacios protegidos del entorno.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/area-autocaravanas-costa-huelva-inaugura-centro-ciclistas-pionero-andalucia_0_2007017389.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/provincia/area-autocaravanas-costa-huelva-inaugura-centro-ciclistas-pionero-andalucia_0_2007017389.html",
-      "publishedAt": "Sun, 21 Jun 2026 06:00:56 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "agenda_util"
     }
   ]
 }
