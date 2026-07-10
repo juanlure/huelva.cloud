@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-07-09T07:04:50.397Z",
+  "lastUpdated": "2026-07-10T07:03:28.740Z",
   "count": 15,
   "news": [
+    {
+      "title": "El chiringuito de Isla Cristina que ha conquistado a Gloria Camila a un paso del mar y rodeado de pinares",
+      "excerpt": "La hija de Rocío Jurado compartió su visita con su novio, Álvaro García, a uno de los chiringuitos mejor valorados de Isla Cristina, famoso por su cocina marinera y su privilegiada ubicación junto a l...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">El chiringuito de Isla Cristina que ha conquistado a Gloria Camila a un paso del mar y rodeado de pinares</h1>\n<p class=\"news-deck\">Esa combinación de buena cocina, cercanía y ubicación ha hecho que tanto vecinos como visitantes lo sitúen entre los establecimientos mejor valorados de Isla Cristina.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La hija de Rocío Jurado visitó Los Jardines de la Playa, un establecimiento situado a escasos metros del mar que se ha convertido en uno de los grandes referentes gastronómicos de Isla Cristina.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/destino-huelva/chiringuito-isla-cristina-gloria-camila_0_2007375393.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/destino-huelva/chiringuito-isla-cristina-gloria-camila_0_2007375393.html",
+      "publishedAt": "Fri, 10 Jul 2026 06:30:07 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Segundo incendio de chabolas: el fuego en una finca agrícola calcina los módulos donde vivían varios temporeros en Cartaya",
       "excerpt": "No ha habido que lamentar daños personales, aunque una persona registraba síntomas de ansiedad Este es el segundo incendio que afecta a viviendas de temporeros en la provincia esta semana El incendio ...",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/provincia/huelva-ilumina-hogueras-san-juan-guia-completa-horarios-programacion-playas-2026_0_2007148751.html",
       "publishedAt": "Tue, 23 Jun 2026 05:00:43 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Cartaya recibirá 6,2 millones para reparar daños de las borrascas",
-      "excerpt": "El PSOE destaca que el Gobierno de España destinará más de 4,8 millones de euros a la reconstrucción de infraestructuras municipales y otros 1,34 millones al sector agrícola y ganadero.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Diario de Huelva</p>\n<h1 class=\"news-title\">Cartaya recibirá 6,2 millones para reparar daños de las borrascas</h1>\n<p class=\"news-deck\">Cartaya recibirá cerca de 6,2 millones de euros procedentes del Gobierno de España para hacer frente a los daños ocasionados por las borrascas que afectaron a la provincia durante los últimos meses.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El PSOE destaca que el Gobierno de España destinará más de 4,8 millones de euros a la reconstrucción de infraestructuras municipales y otros 1,34 millones al sector agrícola y ganadero.</p>\n<p class=\"\">Gabriel Cruz ha enmarcado estas ayudas dentro del paquete de más de 118 millones de euros que el Ejecutivo central está movilizando en la provincia de Huelva.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/politica/cartaya-recibira-62-millones-reparar-danos-borrascas/20260619133111338385.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.diariodehuelva.es/articulo/politica/cartaya-recibira-62-millones-reparar-danos-borrascas/20260619133111338385.html",
-      "publishedAt": "Fri, 19 Jun 2026 13:31:11 +0200",
-      "source": "Diario de Huelva",
       "category": "Noticias",
       "image": null,
       "external": false,
