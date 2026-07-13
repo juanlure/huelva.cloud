@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-07-12T07:00:54.310Z",
+  "lastUpdated": "2026-07-13T07:02:52.206Z",
   "count": 15,
   "news": [
+    {
+      "title": "Los Bomberos intervienen en un incendio de pastos en la A-494, en Palos de la Frontera",
+      "excerpt": "Los bomberos del Consorcio Provincial de Huelva han intervenido en la extinción de un incendio de pastos en el municipio de Palos de Moguer, en una cuneta de la carretera A-494, cerca de la gasolinera...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Red</p>\n<h1 class=\"news-title\">Los bomberos del Consorcio Provincial de Huelva han intervenido en la extinción de un incendio de pastos en el municipio de Palos de Moguer, en una cuneta de la carretera A-494, cerca de la gasolinera BP.</h1>\n<p class=\"news-deck\">El fuego se inició sobre las 19.30 horas de este pasado sábado y hasta esa zona se desplazaron cuatro bomberos del parque de San Juan del Puerto con dos vehículos de intervención.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Los bomberos del Consorcio Provincial de Huelva han intervenido en la extinción de un incendio de pastos en el municipio de Palos de Moguer, en una cuneta de la carretera A-494, cerca de la gasolinera BP.</p>\n<p class=\"\">Por el momento se desconocen las causas de este incendio que ya se está investigando.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Red • <a href=\"https://huelvared.com/2026/07/12/los-bomberos-intervienen-en-un-incendio-de-pastos-en-la-a-494-en-palos-de-la-frontera/?utm_source=rss&utm_medium=rss&utm_campaign=los-bomberos-intervienen-en-un-incendio-de-pastos-en-la-a-494-en-palos-de-la-frontera\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvared.com/2026/07/12/los-bomberos-intervienen-en-un-incendio-de-pastos-en-la-a-494-en-palos-de-la-frontera/?utm_source=rss&utm_medium=rss&utm_campaign=los-bomberos-intervienen-en-un-incendio-de-pastos-en-la-a-494-en-palos-de-la-frontera",
+      "publishedAt": "Sun, 12 Jul 2026 09:59:15 +0000",
+      "source": "Huelva Red",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "La UHU participa en un proyecto internacional vinculado al CERN para desarrollar nuevas tecnologías de física nuclear",
       "excerpt": "HBN. La Universidad de Huelva refuerza su presencia en la investigación científica internacional con su...",
@@ -165,18 +177,6 @@
       "url": "https://www.canalsur.es/noticias/andalucia/huelva/operativo-guardia-civil-apoyo-logistico_1_1418473.html",
       "publishedAt": "2026-07-03T07:02:21.622Z",
       "source": "Canal Sur Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Lepe celebra el Día del Orgullo LGTBIQ+",
-      "excerpt": "Redacción. El Ayuntamiento de Lepe conmemora el Día del Orgullo LGTBIQ+ y reafirma su compromiso...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">Lepe celebra el Día del Orgullo LGTBIQ+</h1>\n<p class=\"news-deck\">Con motivo del Día del Orgullo LGTBIQ+, que se celebra cada 28 de junio, el Ayuntamiento recuerda la importancia de seguir protegiendo los derechos de todas las personas.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Lepe celebra el Día del Orgullo LGTBIQ+</p>\n<p class=\"\">El Ayuntamiento de Lepe conmemora el Día del Orgullo LGTBIQ+ y reafirma su compromiso con la igualdad, la diversidad y la defensa de los derechos fundamentales.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/06/27/lepe-celebra-el-dia-del-orgullo-lgtbiq/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/06/27/lepe-celebra-el-dia-del-orgullo-lgtbiq/",
-      "publishedAt": "Sat, 27 Jun 2026 12:13:23 +0000",
-      "source": "HBN Provincia",
       "category": "Noticias",
       "image": null,
       "external": false,
