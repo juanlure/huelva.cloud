@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-07-13T07:02:52.206Z",
+  "lastUpdated": "2026-07-14T07:02:37.103Z",
   "count": 15,
   "news": [
+    {
+      "title": "Fallece un joven de 16 años en un accidente entre un coche y una moto en Moguer",
+      "excerpt": "Una mujer de 44 años resulta herida Muere un ciclista tras chocar contra un camión en Almonte",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Un joven de 16 años ha fallecido a causa de un accidente de tráfico registrado anoche en la carretera A-494 de Moguer, según ha informado el servicio de emergencias 112 Andalucía.</h1>\n<p class=\"news-deck\">Los servicios sanitarios han confirmado el fallecimiento de un joven de 16 años.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Un joven de 16 años ha fallecido a causa de un accidente de tráfico registrado anoche en la carretera A-494 de Moguer, según ha informado el servicio de emergencias 112 Andalucía.</p>\n<p class=\"\">El teléfono 112 atendió a las 22:30 de este domingo varios avisos de testigos que alertaban de una colisión entre un coche y una moto en la carretera A-494, en el kilómetro 21, en sentido Palos, con una persona gravemente herida.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/fallece-joven-16-anos-accidente_0_2007426837.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/provincia/fallece-joven-16-anos-accidente_0_2007426837.html",
+      "publishedAt": "Mon, 13 Jul 2026 09:16:36 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Los Bomberos intervienen en un incendio de pastos en la A-494, en Palos de la Frontera",
       "excerpt": "Los bomberos del Consorcio Provincial de Huelva han intervenido en la extinción de un incendio de pastos en el municipio de Palos de Moguer, en una cuneta de la carretera A-494, cerca de la gasolinera...",
@@ -165,18 +177,6 @@
       "url": "https://www.diariodehuelva.es/articulo/sucesos/guardia-civil-interviene-once-embarcaciones-operativo-apoyo-logistico-narcotrafico/20260703130548338804.html",
       "publishedAt": "Fri, 3 Jul 2026 13:05:48 +0200",
       "source": "Diario de Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Operativo de la Guardia Civil contra el apoyo logístico al narcotráfico en Ayamonte e Isla Cristina",
-      "excerpt": "Noticia destacada de Canal Sur Huelva.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Qué se investiga en Ayamonte tras el último caso</h1>\n<p class=\"news-deck\">Esta operación es la novena que se realiza dentro de la revisión rutinaria de control por parte de la Guardia Civil de las embarcaciones, tanto de pesca como de recreo, ha añadido.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Guardia Civil ha desplegado en las localidades de Isla Cristina y Ayamonte (Huelva) un operativo centrado en la inspección de embarcaciones que prestan apoyo logístico al narcotráfico.</p>\n<p class=\"\">Durante la actuación, realizada en la tarde de este miércoles, se inspeccionaron embarcaciones en zonas donde se suele dar apoyo logístico a narcolanchas.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/operativo-guardia-civil-apoyo-logistico_1_1418473.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.canalsur.es/noticias/andalucia/huelva/operativo-guardia-civil-apoyo-logistico_1_1418473.html",
-      "publishedAt": "2026-07-03T07:02:21.622Z",
-      "source": "Canal Sur Huelva",
       "category": "Noticias",
       "image": null,
       "external": false,
