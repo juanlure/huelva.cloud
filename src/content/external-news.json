@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-07-16T07:07:16.002Z",
+  "lastUpdated": "2026-07-17T07:01:23.097Z",
   "count": 15,
   "news": [
+    {
+      "title": "La canoa de Punta Umbría vuelve a navegar un verano más por las Marismas del Odiel",
+      "excerpt": "Noticia destacada de Canal Sur Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">La canoa de Punta Umbría vuelve a navegar un verano más por las Marismas del Odiel</h1>\n<p class=\"news-deck\">Con más de un siglo de historia, la canoa de Punta Umbría es ya más que un barco.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La canoa de Punta Umbría vuelve a unir un verano más la localidad con la capital llevando a miles de personas a la playa.</p>\n<p class=\"\">Este barco comenzó a funcionar hace más de un siglo para suplir la falta de comunicación por carretera entre Punta Umbría pero con el paso de los años se ha convertido en todo un atractivo turístico.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/canoa-punta-umbria-vuelve-navegar_1_1422200.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.canalsur.es/noticias/andalucia/huelva/canoa-punta-umbria-vuelve-navegar_1_1422200.html",
+      "publishedAt": "2026-07-17T07:01:01.293Z",
+      "source": "Canal Sur Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Almonte 100x100 pide revisar el contrato de la zona azul de Matalascañas",
       "excerpt": "La formación llevará una moción al Pleno para solicitar la revisión de oficio de la adjudicación de la ORA y que el Consejo Consultivo de Andalucía determine si el contrato es válido o nulo.",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/provincia/investigan-incendio-provocado-coches-isla-cristina-incautacion-tonelada-hachis_0_2007307368.html",
       "publishedAt": "Sun, 05 Jul 2026 11:14:55 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "El Gobierno destina cinco millones para casas de temporeros en Palos y Moguer",
-      "excerpt": "Noticia destacada de Viva Huelva.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Viva Huelva</p>\n<h1 class=\"news-title\">El Gobierno destina cinco millones para casas de temporeros en Palos y Moguer</h1>\n<p class=\"news-deck\">Para afrontar esta situación, el Ministerio impulsa un plan específico destinado principalmente a Moguer, Palos de la Frontera y Lucena del Puerto, municipios donde el problema es más grave.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">En 2025, el Ministerio ya había invertido cinco millones de euros para el mismo tipo de proyectos en Palos de la Frontera, Moguer y también en Lucena del Puerto.</p>\n<p class=\"\">La iniciativa apuesta por la construcción y rehabilitación de viviendas para temporeros durante las campañas agrícolas y por el desarrollo de una red de albergues y alojamientos diseñados para ellos.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Viva Huelva • <a href=\"https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-gobierno-habilita-cinco-millones-euros-garantizar-vivienda-temporeros-palos-moguer/202607031351073421088.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-gobierno-habilita-cinco-millones-euros-garantizar-vivienda-temporeros-palos-moguer/202607031351073421088.html",
-      "publishedAt": "2026-07-05T07:00:46.681Z",
-      "source": "Viva Huelva",
       "category": "Noticias",
       "image": null,
       "external": false,
