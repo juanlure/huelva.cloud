@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-04T07:02:51.300Z",
+  "lastUpdated": "2026-08-04T07:08:22.700Z",
   "count": 15,
   "news": [
+    {
+      "title": "El alcalde de Punta acusa al Gobierno de abandonar El Portil tras descartar aportes de arena",
+      "excerpt": "El alcalde de Punta Umbría, José Carlos Hernández Cansino, ha mostrado su indignación tras las declaraciones de la subdelegada del Gobierno en Huelva, María José Rico, sobre la playa de El Portil, en ...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Red</p>\n<h1 class=\"news-title\">El alcalde de Punta acusa al Gobierno de abandonar El Portil tras descartar aportes de arena, más allá del anuncio oficial</h1>\n<p class=\"news-deck\">“¿Y qué pasa con los más de 800 metros de playa que cada verano utilizan miles de vecinos y visitantes?, ¿cuál es la solución para ellos?”, se pregunta el alcalde.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El alcalde recuerda además que el Ayuntamiento lleva reclamando desde 2018 la regeneración de la playa mediante aportes de arena, a través de acuerdos plenarios y numerosas iniciativas institucionales, «sin obtener respuesta».</p>\n<p class=\"\">“Ahora solo falta que el Gobierno de España asuma su responsabilidad y ejecute el aporte de arena necesario para recuperar la playa de El Portil”, concluye el alcalde.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Red • <a href=\"https://huelvared.com/2026/08/03/el-alcalde-de-punta-acusa-al-gobierno-de-abandonar-el-portil-tras-descartar-aportes-de-arena/?utm_source=rss&utm_medium=rss&utm_campaign=el-alcalde-de-punta-acusa-al-gobierno-de-abandonar-el-portil-tras-descartar-aportes-de-arena\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvared.com/2026/08/03/el-alcalde-de-punta-acusa-al-gobierno-de-abandonar-el-portil-tras-descartar-aportes-de-arena/?utm_source=rss&utm_medium=rss&utm_campaign=el-alcalde-de-punta-acusa-al-gobierno-de-abandonar-el-portil-tras-descartar-aportes-de-arena",
+      "publishedAt": "Mon, 03 Aug 2026 12:43:32 +0000",
+      "source": "Huelva Red",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El Ayuntamiento de Huelva recepciona las obras de rehabilitación en viviendas municipales de la calle Jesús Hermida",
       "excerpt": "La actuación, con una inversión municipal de más de 364.000 euros, ha permitido reparar las graves deficiencias que afectaban a las viviendas del portal 5 y a una vivienda del... La entrada El Ayuntam...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "La Policía desmantela una plantación de marihuana donde vivían dos onubenses menores de edad en una conocida barriada de Huelva capital",
-      "excerpt": "La pareja ha sido detenida y se enfrenta a un delito contra la salud pública y otro por defraudación de fluido eléctrico Denuncian a TikTok por contenidos violentos tras la presunta agresión a la meno...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Las dos personas investigadas, se encargaban del cultivo de marihuana en el domicilio familiar, donde además residían con dos menores de edad, uno de ellos lactante.</h1>\n<p class=\"news-deck\">Fruto de esta intervención se han decomisado diferentes tipos de sustancias como marihuana, hachís y cocaína, abundante material destinado al cultivo de marihuana, así como balanzas de precisión para la venta al por menor.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Las dos personas investigadas, se encargaban del cultivo de marihuana en el domicilio familiar, donde además residían con dos menores de edad, uno de ellos lactante.</p>\n<p class=\"\">Durante el operativo, los agentes comprobaron que el domicilio contaba con un enganche ilegal a la red eléctrica con el objetivo de abastecer la plantación.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/policia-desmantela-plantacion-marihuana-vivian-onubenses-menores-edad-huelva-capital_0_2007608126.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/policia-desmantela-plantacion-marihuana-vivian-onubenses-menores-edad-huelva-capital_0_2007608126.html",
-      "publishedAt": "Wed, 29 Jul 2026 09:17:56 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
     }
   ]
 }
