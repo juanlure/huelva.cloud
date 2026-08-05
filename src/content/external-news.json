@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-04T07:08:22.700Z",
+  "lastUpdated": "2026-08-05T07:03:21.370Z",
   "count": 15,
   "news": [
+    {
+      "title": "Punta Umbría regulariza casi todos los chiringuitos fijos y desmontables: solo uno permanece cerrado",
+      "excerpt": "Todos los chiringuitos de Punta Umbría&nbsp;fijos y desmontables que han tramitado sus expedientes de actividad, tras adaptar sus instalaciones a la normativa vigente, están abiertos, así como los que...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Punta Umbría regulariza casi todos los chiringuitos fijos y desmontables: solo uno permanece cerrado</h1>\n<p class=\"news-deck\">El único establecimiento que permanece cerrado es Casa Diego, al &quot;no ajustarse a los parámetros legales de ubicación y dimensiones exigidos&quot;.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Todos los chiringuitos de Punta Umbría&amp;nbsp;fijos y desmontables que han tramitado sus expedientes de actividad, tras adaptar sus instalaciones a la normativa vigente, están abiertos, así como los que estaban en trámites judiciales.</p>\n<p class=\"\">Además, algunos de ellos, tanto fijos como desmontables, han obtenido también la licencia de actividad ocasional que les permite celebrar actuaciones musicales con todas las autorizaciones preceptivas.</p>\n<p class=\"news-opening\">El primer edil ha recordado que los chiringuitos constituyen uno de los principales motores económicos del municipio.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/punta-umbria/punta-umbria-regulariza-casi-todos-chiringuitos-fijos-desmontables-solo-uno-permanece-cerrado/20260804172128398043.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/punta-umbria/punta-umbria-regulariza-casi-todos-chiringuitos-fijos-desmontables-solo-uno-permanece-cerrado/20260804172128398043.html",
+      "publishedAt": "Tue, 4 Aug 2026 17:21:28 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "El alcalde de Punta acusa al Gobierno de abandonar El Portil tras descartar aportes de arena",
       "excerpt": "El alcalde de Punta Umbría, José Carlos Hernández Cansino, ha mostrado su indignación tras las declaraciones de la subdelegada del Gobierno en Huelva, María José Rico, sobre la playa de El Portil, en ...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "agenda_util"
-    },
-    {
-      "title": "Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe",
-      "excerpt": "Noticia destacada de Canal Sur Huelva.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe</h1>\n<p class=\"news-deck\">Tremendo susto el que pasaron la noche de este lunes los vecinos de Lepe (Huelva) por un incendio forestal que se declaró a última hora de la tarde.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe</p>\n<p class=\"\">Debido a la cercanía de estas casas, el incendio obligó a elevar a fase de emergencia, situación operativa 1, el plan contra incendios de la provincia de Huelva.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/incendio-forestal-controlado-pone-alerta_1_1425733.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.canalsur.es/noticias/andalucia/huelva/incendio-forestal-controlado-pone-alerta_1_1425733.html",
-      "publishedAt": "2026-07-29T18:09:51.373Z",
-      "source": "Canal Sur Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
