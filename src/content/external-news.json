@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-05T07:08:19.533Z",
+  "lastUpdated": "2026-08-05T07:14:10.644Z",
   "count": 15,
   "news": [
+    {
+      "title": "Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe",
+      "excerpt": "Noticia destacada de Canal Sur Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe</h1>\n<p class=\"news-deck\">Tremendo susto el que pasaron la noche de este lunes los vecinos de Lepe (Huelva) por un incendio forestal que se declaró a última hora de la tarde.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe</p>\n<p class=\"\">Debido a la cercanía de estas casas, el incendio obligó a elevar a fase de emergencia, situación operativa 1, el plan contra incendios de la provincia de Huelva.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/incendio-forestal-controlado-pone-alerta_1_1425733.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.canalsur.es/noticias/andalucia/huelva/incendio-forestal-controlado-pone-alerta_1_1425733.html",
+      "publishedAt": "2026-08-05T07:14:01.889Z",
+      "source": "Canal Sur Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "urgente"
+    },
     {
       "title": "La UHU impulsará un proyecto para reforzar la cohesión social en el Distrito 3 de Huelva",
       "excerpt": "HBN. La Universidad de Huelva pondrá en marcha durante 2026 un proyecto de innovación social...",
@@ -165,18 +177,6 @@
       "url": "https://huelvared.com/2026/07/30/la-ue-aprueba-al-fin-el-reglamento-que-obliga-a-formalizar-contratos-en-la-cadena-alimentaria/?utm_source=rss&utm_medium=rss&utm_campaign=la-ue-aprueba-al-fin-el-reglamento-que-obliga-a-formalizar-contratos-en-la-cadena-alimentaria",
       "publishedAt": "Thu, 30 Jul 2026 12:41:03 +0000",
       "source": "Huelva Red",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Venida de la Virgen del Rocío llena Almonte",
-      "excerpt": "Redacción. Almonte vive ya los preparativos de la Venida de la Virgen del Rocío, una...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">Venida de la Virgen del Rocío llena Almonte</h1>\n<p class=\"news-deck\">Tras escuchar a sus vecinos, el Ayuntamiento de Almonte ha realizado un importante esfuerzo para devolver al municipio una de sus señas de identidad.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Almonte vive ya los preparativos de la Venida de la Virgen del Rocío, una cita histórica que cada siete años transforma la vida del municipio.</p>\n<p class=\"\">Esta imagen acompañó durante décadas a la Venida de la Virgen del Rocío.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/07/30/venida-de-la-virgen-del-rocio-llena-almonte/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/07/30/venida-de-la-virgen-del-rocio-llena-almonte/",
-      "publishedAt": "Thu, 30 Jul 2026 10:31:26 +0000",
-      "source": "HBN Provincia",
       "category": "Noticias",
       "image": null,
       "external": false,
