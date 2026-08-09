@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-09T07:03:10.656Z",
+  "lastUpdated": "2026-08-09T07:06:54.231Z",
   "count": 15,
   "news": [
+    {
+      "title": "La Virgen de Los Milagros vuelve a Palos de la Frontera para sus festejos",
+      "excerpt": "Noticia destacada de Viva Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Viva Huelva</p>\n<h1 class=\"news-title\">La Virgen de Los Milagros vuelve a Palos de la Frontera para sus festejos</h1>\n<p class=\"news-deck\">La Virgen de los Milagros, patrona de Palos de la Frontera (Huelva), ya está de regreso en su localidad tras haber salido el pasado 4 de agosto del Monasterio de Santa María de La Rábida.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La Virgen de Los Milagros vuelve a Palos de la Frontera para sus festejos</p>\n<p class=\"\">A hombros de los vecinos y seguida por numerosos fieles, la Virgen recorrió las calles en un traslado multitudinario que permitió a la comunidad reunirse y recibir a su patrona, según informó el Ayuntamiento.</p>\n<p class=\"news-opening\">Por la noche, desde las 21:00 horas, la patrona recorrerá las calles de Palos de la Frontera en procesión, que cada año atrae a miles de personas.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Viva Huelva • <a href=\"https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-virgen-milagros-regresa-palos-frontera-presidir-cultos-festejos-honor/202608061703423450024.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-virgen-milagros-regresa-palos-frontera-presidir-cultos-festejos-honor/202608061703423450024.html",
+      "publishedAt": "2026-08-09T07:06:46.753Z",
+      "source": "Viva Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "En Moguer, sin fuegos artificiales en su fiestas por el riesgo de incendios",
       "excerpt": "Noticia destacada de Canal Sur Huelva.",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "El Plan Infoca despliega cinco medios aéreos para controlar incendio en Moguer",
-      "excerpt": "Noticia destacada de Viva Huelva.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Viva Huelva</p>\n<h1 class=\"news-title\">El Plan Infoca despliega cinco medios aéreos para controlar incendio en Moguer</h1>\n<p class=\"news-deck\">El incendio fue detectado a las 11:53 horas y se ubica cerca de una área agrícola de Moguer, tal como comunicaron a través de la cuenta oficial de &#39;X&#39; del Infoca, consultada por Europa Press.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El Plan Infoca, servicio encargado de la extinción de incendios forestales en Andalucía, ha informado de un incendio activo este domingo por la mañana en el paraje El Reventón, dentro del término municipal de Moguer (Huelva).</p>\n<p class=\"\">Para combatirlo, se han movilizado cinco medios aéreos en la zona.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Viva Huelva • <a href=\"https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-sucesos-plan-infoca-moviliza-cinco-medios-aereos-extinguir-incendio-declarado-moguer/202608021413273447313.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-sucesos-plan-infoca-moviliza-cinco-medios-aereos-extinguir-incendio-declarado-moguer/202608021413273447313.html",
-      "publishedAt": "2026-08-03T07:10:16.953Z",
-      "source": "Viva Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
