@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-12T07:07:23.191Z",
+  "lastUpdated": "2026-08-13T07:02:16.985Z",
   "count": 15,
   "news": [
+    {
+      "title": "Punta Umbría impulsa la construcción de 48 viviendas protegidas en régimen de alquiler",
+      "excerpt": "El Ayuntamiento de Punta Umbría continúa trabajando para hacer realidad la construcción de las 48 viviendas protegidas en régimen de alquiler previstas en la avenida de la Libertad, junto a la calle J...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Red</p>\n<h1 class=\"news-title\">Punta Umbría impulsa la construcción de 48 viviendas protegidas en régimen de alquiler</h1>\n<p class=\"news-deck\">El alcalde recuerda que en Punta Umbría «hace más de veinte años que no se construyen viviendas sociales de estas características» y subraya el compromiso municipal con el incremento de la oferta de vivienda pública.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El Ayuntamiento de Punta Umbría continúa trabajando para hacer realidad la construcción de las 48 viviendas protegidas en régimen de alquiler previstas en la avenida de la Libertad, junto a la calle Juan Hernández González.</p>\n<p class=\"\">Las personas interesadas deberán estar inscritas en el Registro Municipal de Demandantes de Vivienda Protegida y empadronadas en Punta Umbría.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Red • <a href=\"https://huelvared.com/2026/08/12/punta-umbria-impulsa-la-construccion-de-48-viviendas-protegidas-en-regimen-de-alquiler/?utm_source=rss&utm_medium=rss&utm_campaign=punta-umbria-impulsa-la-construccion-de-48-viviendas-protegidas-en-regimen-de-alquiler\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvared.com/2026/08/12/punta-umbria-impulsa-la-construccion-de-48-viviendas-protegidas-en-regimen-de-alquiler/?utm_source=rss&utm_medium=rss&utm_campaign=punta-umbria-impulsa-la-construccion-de-48-viviendas-protegidas-en-regimen-de-alquiler",
+      "publishedAt": "Wed, 12 Aug 2026 16:28:06 +0000",
+      "source": "Huelva Red",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "La Guardia Civil intercepta una narcolancha con 800 kilos de cocaína en Punta Umbría",
       "excerpt": "Noticia destacada de Canal Sur Huelva.",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe",
-      "excerpt": "Noticia destacada de Canal Sur Huelva.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe</h1>\n<p class=\"news-deck\">Tremendo susto el que pasaron la noche de este lunes los vecinos de Lepe (Huelva) por un incendio forestal que se declaró a última hora de la tarde.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Un incendio forestal, ya controlado, pone en alerta a los vecinos de Lepe</p>\n<p class=\"\">Debido a la cercanía de estas casas, el incendio obligó a elevar a fase de emergencia, situación operativa 1, el plan contra incendios de la provincia de Huelva.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/incendio-forestal-controlado-pone-alerta_1_1425733.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.canalsur.es/noticias/andalucia/huelva/incendio-forestal-controlado-pone-alerta_1_1425733.html",
-      "publishedAt": "2026-08-05T07:14:01.889Z",
-      "source": "Canal Sur Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
