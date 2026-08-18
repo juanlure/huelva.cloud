@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-18T07:09:28.046Z",
+  "lastUpdated": "2026-08-18T07:15:12.054Z",
   "count": 15,
   "news": [
+    {
+      "title": "Fuerte despliegue policial en Isla Cristina y el Torrejón tras el trágico tiroteo",
+      "excerpt": "Noticia destacada de Canal Sur Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Qué se investiga en Isla Cristina tras el último caso</h1>\n<p class=\"news-deck\">El alcalde de Isla, Jenaro Orta, ha calificado lo ocurrido anoche en Isla Cristina , lo que el mismo se encontró al llegar a la Barriada del Rocio, como escena dantesca&quot; y difícil de olvidar , en una barriada de gente humilde y pacífica.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Fuerte despliegue policial en Isla Cristina y el Torrejón tras el trágico tiroteo</p>\n<p class=\"\">El Ayuntamiento de Isla Cristina y la Subdelegación del Gobierno en Huelva han hecho un llamamiento a la &quot;calma &quot;.</p>\n<p class=\"news-opening\">Es una de las hipótesis que baraja la investigación policial, ya que en la localidad isleña se habrían habrían refugiado familiares del autor de los disparos mortales de El Torrejón.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/fuerte-despliegue-policial-isla-cristina_1_1429586.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.canalsur.es/noticias/andalucia/huelva/fuerte-despliegue-policial-isla-cristina_1_1429586.html",
+      "publishedAt": "2026-08-18T07:15:02.000Z",
+      "source": "Canal Sur Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "La escapada a Huelva que puede salirte gratis: Entradas para visitar tres de los grandes tesoros de Aracena",
       "excerpt": "Cinco personas podrán ganar una tarjeta turística para dos que incluye la Gruta de las Maravillas, el Museo del Jamón y el Castillo de Aracena",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "urgente"
-    },
-    {
-      "title": "Los propietarios cambian de estrategia en Huelva y el alquiler de temporada avanza mientras cae el permanente",
-      "excerpt": "El arrendamiento para unos días o semanas resulta más lucrativo y aumenta en Huelva capital un 16% en el último año, mientras que la oferta para larga estancia baja un 24% Tres de cada cuatro pisos pa...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Los propietarios cambian de estrategia en Huelva y el alquiler de temporada avanza mientras cae el permanente</h1>\n<p class=\"news-deck\">Los datos de Idealista se circunscriben al segundo trimestre de este año, y los mismos arrojan que en aquel momento dos de cada tres viviendas puestas en alquiler en Huelva capital son para arrendamiento estacional.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Mientras este tipo de oferta se desmorona en Huelva -y en toda España-, los propietarios reorientan sus inversiones hacia los alquileres de temporada que, mucho más lucrativos, crecen en dobles dígitos en el último año -un 16% más-.</p>\n<p class=\"\">Apenas medio centenar de hogares de la capital onubense están disponibles para un arrendamiento permanente en el portal inmobiliario Idealista, que cifra en un 24% la caída de la oferta en cuestión de un año, cuando había unas 65.</p>\n<p class=\"news-opening\">La oferta de alquiler estacional en este portal inmobiliario está cada vez más pareja a la de larga estancia.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/propietarios-cambian-estrategia-huelva-alquiler-temporada-avanza-permanente_0_2007545651.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/huelva/propietarios-cambian-estrategia-huelva-alquiler-temporada-avanza-permanente_0_2007545651.html",
-      "publishedAt": "Mon, 10 Aug 2026 03:21:14 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
     }
   ]
 }
