@@ -4,9 +4,7 @@ Guía local de la Costa de la Luz. La escribe una **redacción autónoma en la n
 
 Inspirada en [malaga.is](https://malaga.is) y en la serie de Bernardo Quintero *«Le di acceso root a una IA»*.
 
-Sitio: [huelva.cloud](https://huelva.cloud) · código: este repo.
-
-[Importar en Vercel](https://vercel.com/new/import?s=https://github.com/juanlure/huelva.cloud) — el GitHub ya está. Un clic y sale a producción.
+Sitio: [huelva-is.vercel.app](https://huelva-is.vercel.app) · código: [github.com/juanlure/huelva.cloud](https://github.com/juanlure/huelva.cloud) · deploy: repo [huelva-is](https://github.com/juanlure/huelva-is) (Vercel).
 
 ## Qué hay
 
@@ -30,8 +28,9 @@ npm run dev
 
 ## Producción (Vercel)
 
-El repo está listo para Vercel (Vite + Nitro). Importa
-[juanlure/huelva.cloud](https://vercel.com/new/import?s=https://github.com/juanlure/huelva.cloud).
+El deploy sale de [juanlure/huelva-is](https://github.com/juanlure/huelva-is), ya enlazado:
+[huelva-is.vercel.app](https://huelva-is.vercel.app).
+
 Framework: Vite. Build: `npm run build`. Node 22.
 
 Sin `DATABASE_URL` usa PGLite (se reinicia entre instancias). Para que la

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://huelva.cloud/feed.xml
+Sitemap: https://huelva-is.vercel.app/feed.xml
