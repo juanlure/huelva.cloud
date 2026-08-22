@@ -165,6 +165,30 @@ export async function ensureSeeded() {
   return g.__huelvaSeed__;
 }
 
+const HOT_EVENT_TITLE = "Feria del Jamón y el Marisco de Ayamonte";
+
+export async function ensureHotContent() {
+  await ensureSeeded();
+  const sql = await getSql();
+  const [{ n }] = await sql<{ n: number }>`
+    select count(*)::int as n from events where title = ${HOT_EVENT_TITLE}
+  `;
+  if (numFromUnknown(n) === 0) {
+    const event = SEED_EVENTS.find((e) => e.title === HOT_EVENT_TITLE);
+    if (event) {
+      await sql`
+        insert into events (
+          title, dek, starts_on, ends_on, venue, neighborhood, lat, lng, source, votes
+        ) values (
+          ${event.title}, ${event.dek}, ${event.startsOn}, ${event.endsOn},
+          ${event.venue}, ${event.neighborhood}, ${event.lat}, ${event.lng},
+          ${event.source}, ${event.votes}
+        )
+      `;
+    }
+  }
+}
+
 export const listArticles = createServerFn({ method: "GET" }).handler(async () => {
   await ensureSeeded();
   const sql = await getSql();
@@ -193,7 +217,7 @@ export const listPlaces = createServerFn({ method: "GET" }).handler(async () => 
 });
 
 export const listEvents = createServerFn({ method: "GET" }).handler(async () => {
-  await ensureSeeded();
+  await ensureHotContent();
   const sql = await getSql();
   const rows = await sql<EventRow>`select * from events order by starts_on asc`;
   return rows.map(mapEvent);

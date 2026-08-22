@@ -558,6 +558,16 @@ export const PLAYAS = [
     lat: 37.216,
     lng: -7.05,
   },
+  {
+    id: "maneli",
+    name: "Cuesta Maneli",
+    dek: "La que buscan los foros. Pasarela, duna, Doñana. Salvaje, entre Mazagón y Matalascañas.",
+    image: "/media/mazagon.jpg",
+    tags: ["duna", "quieta"] as PlayaTag[],
+    wind: "Abierta. El parque manda más que el chiringuito.",
+    lat: 37.058,
+    lng: -6.55,
+  },
 ];
 
 export const DONANA_SEASONS = [

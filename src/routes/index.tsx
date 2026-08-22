@@ -11,19 +11,8 @@ import { HERO_IMAGE } from "@/data/covers";
 import { LIVE_GUIDES } from "@/data/live-guides";
 import { RECURSOS } from "@/data/recursos";
 import { cn } from "@/lib/utils";
-
-const TICKER = [
-  "Gamba blanca",
-  "Choco",
-  "Río Tinto",
-  "Poniente",
-  "La Rábida",
-  "Doñana",
-  "Jabugo",
-  "Muelle",
-  "Colombinas",
-  "Onuba",
-];
+import { TICKER_NOW } from "@/data/tendencias";
+import { TendenciasRail } from "@/components/tendencias";
 
 const ESSAY = [
   { src: "/media/muelle.jpg", cap: "01 · El muelle", alt: "Muelle de Riotinto al atardecer, Huelva" },
@@ -108,7 +97,7 @@ function Home() {
 
       <div className="overflow-hidden border-y border-line bg-paper py-3">
         <div className="marquee-track flex w-max gap-10 pr-10 text-kicker text-faint">
-          {[...TICKER, ...TICKER].map((word, i) => (
+          {[...TICKER_NOW, ...TICKER_NOW].map((word, i) => (
             <span key={`${word}-${i}`} className="flex items-center gap-10">
               {word}
               <span className="text-tinto">/</span>
@@ -136,6 +125,8 @@ function Home() {
           </span>
         </Link>
       ) : null}
+
+      <TendenciasRail limit={5} />
 
       <section className="border-b border-line bg-paper">
         <dl className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-line">

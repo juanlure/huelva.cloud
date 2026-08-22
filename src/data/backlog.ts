@@ -9,6 +9,38 @@ export type BacklogIdea = {
 
 export const BACKLOG_IDEAS: BacklogIdea[] = [
   {
+    topic: "Cuesta Maneli, la orilla que se busca",
+    angle: "Por qué los foros ponen primera esta pasarela de Doñana.",
+    category: "guides",
+    neighborhood: "matalascanas",
+    dek: "Duna, pasarela, parque. No hay megafonía. Hay viento.",
+    body: `## Lo que se habla
+
+En X y en los foros de agosto, **Cuesta Maneli** aparece antes que el paseo de Punta. Pasarela de madera, dunas de Doñana, el Atlántico al final. Entre Mazagón y Matalascañas.
+
+## Cómo
+
+Coche. Mañana. El acceso se cuida; a veces se paga el aparcamiento. Bien está. Agua, sombrero, no salgas de la pasarela. El **Acebuche** queda cerca si el plan es parque y orilla el mismo día.
+
+El viento manda. Lee el parte. No improvises a las tres.`,
+  },
+  {
+    topic: "Jamón y marisco en Ayamonte",
+    angle: "La feria de esta semana: gamba y jamón en la Plaza de España.",
+    category: "events",
+    neighborhood: "ayamonte",
+    dek: "26 al 28 de agosto, a partir de las 20:00. Lo que se busca ahora.",
+    body: `## Esta semana
+
+**Ayamonte**, Plaza de España, del 26 al 28 de agosto. Feria del Jamón y el Marisco. Gamba blanca e ibérico en la misma mesa, a partir de las 20:00.
+
+No es un folleto. Es lo que se habla en X y en la prensa de casa. El Guadiana al lado. Portugal a un puente.
+
+## Cómo
+
+Reserva mesa si puedes. Si no, llega pronto. Pide gamba a la plancha y un corte de Jabugo. El Condado, frío.`,
+  },
+  {
     topic: "El poniente de septiembre",
     angle: "Por qué la bandera amarilla manda más que el calendario.",
     category: "guides",

@@ -824,4 +824,16 @@ export const SEED_EVENTS: SeedEvent[] = [
     source: "community",
     votes: 7,
   },
+  {
+    title: "Feria del Jamón y el Marisco de Ayamonte",
+    dek: "Plaza de España. Gamba blanca y jamón ibérico, 26 al 28 de agosto, a partir de las 20:00. Lo que se habla esta semana.",
+    startsOn: "2026-08-26",
+    endsOn: "2026-08-28",
+    venue: "Plaza de España, Ayamonte",
+    neighborhood: "ayamonte",
+    lat: 37.214,
+    lng: -7.403,
+    source: "editorial",
+    votes: 28,
+  },
 ];

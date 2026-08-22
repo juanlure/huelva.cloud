@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ESCUCHA, TOPIC_HUB } from "@/data/seo-topics";
+import { TOPIC_HUB } from "@/data/seo-topics";
 import { SEO_LANDINGS } from "@/data/seo-landings";
+import { TendenciasRail } from "@/components/tendencias";
 import { DEFAULT_KEYWORDS, seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/temas")({
@@ -63,33 +64,7 @@ function TemasPage() {
         ))}
       </ol>
 
-      <section className="mt-24">
-        <p className="text-kicker text-tinto">Lo que se habla</p>
-        <h2 className="mt-3 font-display text-edition tracking-tight">Foros, X, la prensa de casa</h2>
-        <p className="mt-4 max-w-xl text-muted">
-          Síntesis editorial de la conversación pública de hoy. No citamos
-          cuentas: apuntamos el tema y te llevamos a la guía.
-        </p>
-        <ul className="mt-10 divide-y divide-line border-y border-line">
-          {ESCUCHA.map((item) => (
-            <li key={item.id} className="py-8">
-              {item.href === "/g/$id" && item.idGuide ? (
-                <Link to="/g/$id" params={{ id: item.idGuide }} className="block hover:text-tinto">
-                  <p className="text-kicker text-faint">{item.where}</p>
-                  <p className="mt-2 font-display text-2xl tracking-tight">{item.title}</p>
-                  <p className="mt-2 max-w-2xl text-muted">{item.dek}</p>
-                </Link>
-              ) : (
-                <Link to="/barrios" className="block hover:text-tinto">
-                  <p className="text-kicker text-faint">{item.where}</p>
-                  <p className="mt-2 font-display text-2xl tracking-tight">{item.title}</p>
-                  <p className="mt-2 max-w-2xl text-muted">{item.dek}</p>
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <TendenciasRail />
     </main>
   );
 }

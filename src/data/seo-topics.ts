@@ -5,7 +5,7 @@ export const FAQ_HUELVA = [
   },
   {
     q: "¿Cuál es la mejor playa de Huelva?",
-    a: "Depende del viento. Punta Umbría es la de los onubenses; Mazagón, pino y duna; Isla Cristina, lonja y gamba; Matalascañas, la orilla de Doñana. La guía viva de la orilla usa el parte real.",
+    a: "Depende del viento. Punta Umbría es la de los onubenses; Mazagón, pino y duna; Cuesta Maneli, la que buscan los foros, al borde de Doñana; Isla Cristina, lonja y gamba. La guía viva de la orilla usa el parte real.",
   },
   {
     q: "¿Dónde comer gamba blanca de Huelva?",

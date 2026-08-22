@@ -449,6 +449,50 @@ export const SEO_LANDINGS: SeoLanding[] = [
       },
     ],
   },
+  {
+    slug: "cuesta-maneli",
+    h1: "Cuesta Maneli",
+    title: "Cuesta Maneli, Huelva: la playa de dunas de Doñana que buscan los foros",
+    description:
+      "Cuesta Maneli es la playa salvaje entre Mazagón y Matalascañas: pasarela, dunas y Doñana. La orilla que TripAdvisor y los foros ponen primera.",
+    kicker: "Doñana · duna",
+    lede: "Cuesta Maneli es la playa que se busca ahora: pasarela de madera, dunas de Doñana y una orilla salvaje entre Mazagón y Matalascañas. Los foros la ponen primera. Huelva.cloud te dice cómo ir.",
+    image: "/media/mazagon.jpg",
+    imageAlt: "Dunas y pino en la Costa de la Luz, Huelva",
+    keywords: [
+      "Cuesta Maneli",
+      "playa Cuesta Maneli",
+      "mejores playas Huelva",
+      "Doñana playa",
+      "Matalascañas",
+      "Mazagón playa",
+    ],
+    guideId: "orilla",
+    sections: [
+      {
+        h: "Qué es Cuesta Maneli",
+        p: "Una pasarela entre pinar y duna que acaba en el Atlántico, en el borde de Doñana. No hay chiringuito de megafonía. Hay arena, viento y el parque al lado. Por eso los foros la ponen primera.",
+      },
+      {
+        h: "Cómo ir",
+        p: "Entre Mazagón y Matalascañas. Coche. El acceso se cuida; a veces se paga el aparcamiento. Bien está si se cuida la duna. Agua, sombrero, respetar la pasarela. El Acebuche queda cerca si el plan es parque y playa el mismo día.",
+      },
+      {
+        h: "Cuándo",
+        p: "Mañana. Fuera de agosto, todavía más. Con levante fuerte, el baño cambia: lee el parte en la guía viva de la orilla.",
+      },
+    ],
+    faqs: [
+      {
+        q: "¿Dónde está Cuesta Maneli?",
+        a: "En la Costa de la Luz de Huelva, entre Mazagón y Matalascañas, al borde de Doñana. Pasarela de dunas hasta el Atlántico.",
+      },
+      {
+        q: "¿Es la mejor playa de Huelva?",
+        a: "Es la que más buscan los foros ahora: salvaje, de duna, sin escena. Punta Umbría es la de casa; Maneli es la de Doñana.",
+      },
+    ],
+  },
 ];
 
 export function landingBySlug(slug: string) {

@@ -8,6 +8,7 @@ import { getLivePulse } from "@/lib/server/live";
 import { seoHead } from "@/lib/seo";
 import { PLACE_KIND_LABEL, PLACE_KINDS, type PlaceKind } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { TendenciasRail } from "@/components/tendencias";
 
 export const Route = createFileRoute("/pulse")({
   loader: async () => {
@@ -57,8 +58,8 @@ function PulsePage() {
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">El pulso de la provincia</h1>
       <p className="mt-3 max-w-2xl text-muted">
-        Parte del cielo, ocaso, cámaras DGT y sitios de la calle. Lo que está
-        pasando ahora en la provincia.
+        Parte del cielo, ocaso, cámaras DGT y lo que se habla ahora en X y en
+        los foros. El pulso de la provincia.
       </p>
       {live.advice ? (
         <Link
@@ -158,6 +159,10 @@ function PulsePage() {
           ))}
         </ul>
       </section>
+
+      <div className="-mx-4 sm:-mx-6">
+        <TendenciasRail limit={6} />
+      </div>
 
       {events.length ? (
         <section className="mt-12">
