@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from "react";
-import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { PulseMap } from "@/components/pulse-map";
 import { Badge } from "@/components/ui/badge";
 import { VoteButton } from "@/components/vote-button";
@@ -51,9 +51,23 @@ function PulsePage() {
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">El pulso de la provincia</h1>
       <p className="mt-3 max-w-2xl text-muted">
-        Del marco al mapa: sitios de la calle, parte del cielo y cámaras de la
-        DGT. El pulso se construye en ciclos, no de una sentada.
+        Parte del cielo, ocaso, cámaras DGT y sitios de la calle. Lo que está
+        pasando ahora en la provincia.
       </p>
+      {live.advice ? (
+        <Link
+          to="/g/$id"
+          params={{ id: live.advice.guide }}
+          className="mt-6 block bg-iron px-5 py-5 text-iron-fg"
+        >
+          <span className="text-kicker text-tinto">{live.advice.title}</span>
+          <span className="mt-2 block font-display text-2xl tracking-tight">
+            {live.sun.past ? `Sol puesto a las ${live.sun.sunset}` : `Ocaso ${live.sun.sunset}`}
+            {live.weather[0]?.tempC != null ? ` · ${live.weather[0].tempC}°` : ""}
+          </span>
+          <span className="mt-2 block text-sm text-foam">{live.advice.dek}</span>
+        </Link>
+      ) : null}
 
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
         {live.weather.map((w) => (

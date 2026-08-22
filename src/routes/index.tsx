@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { ArticleCard } from "@/components/article-card";
 import { Button } from "@/components/ui/button";
 import { listArticles } from "@/lib/server/content";
+import { getLiveCoast } from "@/lib/server/coast";
 import { getNewsroomStatus } from "@/lib/server/newsroom";
 import { SITE } from "@/lib/brand";
 import { HERO_IMAGE } from "@/data/covers";
@@ -33,21 +34,23 @@ const ESSAY = [
 
 export const Route = createFileRoute("/")({
   loader: async () => {
-    const [articles, newsroom] = await Promise.all([
+    const [articles, newsroom, live] = await Promise.all([
       listArticles(),
       getNewsroomStatus(),
+      getLiveCoast(),
     ]);
-    return { articles, newsroom };
+    return { articles, newsroom, live };
   },
   component: Home,
 });
 
 function Home() {
-  const { articles, newsroom } = Route.useLoaderData();
+  const { articles, newsroom, live } = Route.useLoaderData();
   const featured = articles.filter((a) => a.featured)[0];
   const latest = [...articles]
     .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
     .slice(0, 5);
+  const punta = live.stations.find((s) => s.id === "punta") ?? live.stations[0];
 
   return (
     <main>
@@ -103,6 +106,26 @@ function Home() {
           ))}
         </div>
       </div>
+
+      {punta ? (
+        <Link
+          to="/g/$id"
+          params={{ id: "ahora" }}
+          className="block border-b border-line bg-iron px-4 py-4 text-iron-fg sm:px-8"
+        >
+          <span className="mx-auto flex max-w-7xl flex-wrap items-baseline justify-between gap-3">
+            <span className="text-kicker text-tinto">En vivo</span>
+            <span className="font-display text-xl tracking-tight sm:text-2xl">
+              {punta.tempC != null ? `${punta.tempC}°` : "—"} {punta.regime}
+              {punta.windKmh != null ? ` · ${punta.windKmh} km/h` : ""}
+              {live.sun.past
+                ? ` · sol puesto ${live.sun.sunset}`
+                : ` · ocaso ${live.sun.sunset}`}
+            </span>
+            <span className="text-kicker text-foam">{live.advice.title}</span>
+          </span>
+        </Link>
+      ) : null}
 
       <section className="border-b border-line bg-paper">
         <dl className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-line">
@@ -162,7 +185,7 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-8">
-        <SectionHead kicker="01 — Guías vivas" title="Diez maneras de estar aquí." href="/guides" linkLabel="Todas" />
+        <SectionHead kicker="01 — Guías vivas" title="Once maneras de estar aquí." href="/guides" linkLabel="Todas" />
         <ul className="mt-10 grid gap-px overflow-hidden rounded-lg bg-line md:grid-cols-2">
           {LIVE_GUIDES.map((guide, i) => (
             <li key={guide.id} className={i === 0 ? "md:col-span-2" : ""}>

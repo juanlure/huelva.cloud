@@ -8,7 +8,8 @@ export type LiveGuideId =
   | "cafe"
   | "ocaso"
   | "cuenca"
-  | "almanaque";
+  | "almanaque"
+  | "ahora";
 
 export type LiveGuide = {
   id: LiveGuideId;
@@ -20,6 +21,14 @@ export type LiveGuide = {
 };
 
 export const LIVE_GUIDES: LiveGuide[] = [
+  {
+    id: "ahora",
+    title: "Ahora mismo",
+    dek: "Viento, temperatura, ocaso y el consejo de esta hora. Datos reales, provincia en vivo.",
+    image: "/media/muelle.jpg",
+    minutes: "En vivo",
+    articleSlug: "ocaso-en-huelva",
+  },
   {
     id: "marea",
     title: "48 horas al ritmo de la marea",

@@ -1,10 +1,12 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Check, Navigation } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StopMap } from "@/components/stop-map";
+import { CAMERAS } from "@/data/cameras";
 import { useChecked } from "@/lib/checked";
+import { useLiveCoast } from "@/lib/live-coast";
 import { cn } from "@/lib/utils";
 import {
   buildMarea,
@@ -30,6 +32,24 @@ import {
   type PlanStop,
   type PlayaTag,
 } from "@/data/live-guides";
+
+function LiveStrip() {
+  const live = useLiveCoast();
+  if (!live) return null;
+  const p = live.stations.find((s) => s.id === "punta") ?? live.stations[0];
+  if (!p) return null;
+  const temp = p.tempC != null ? `${p.tempC}°` : "—";
+  const wind =
+    p.windKmh != null ? `${p.regime} ${p.windKmh} km/h` : p.desc;
+  const sun = live.sun.past
+    ? `sol puesto · sale ${live.sun.sunrise}`
+    : `ocaso ${live.sun.sunset} · ${live.sun.minutesToSunset} min`;
+  return (
+    <p className="mb-10 text-kicker text-tinto">
+      En vivo · {p.name} {temp} · {wind} · {sun}
+    </p>
+  );
+}
 
 function Chip({
   active,
@@ -108,6 +128,8 @@ export function MareaGuide() {
   const doneCount = stops.filter((s) => checked.has(s.id)).length;
 
   return (
+    <>
+    <LiveStrip />
     <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
       <div>
         <p className="text-kicker text-tinto">Días</p>
@@ -168,6 +190,7 @@ export function MareaGuide() {
         </button>
       </div>
     </div>
+    </>
   );
 }
 
@@ -353,7 +376,19 @@ const PLAYA_FILTERS: { id: PlayaTag; label: string }[] = [
 ];
 
 export function OrillaGuide() {
-  const [wind, setWind] = useState<"levante" | "poniente" | "calma">("calma");
+  const live = useLiveCoast();
+  const punta = live?.stations.find((s) => s.id === "punta");
+  const liveWind: "levante" | "poniente" | "calma" =
+    punta?.regime === "levante"
+      ? "levante"
+      : punta?.regime === "poniente"
+        ? "poniente"
+        : "calma";
+  const [wind, setWind] = useState<"levante" | "poniente" | "calma">(liveWind);
+  const [manual, setManual] = useState(false);
+  useEffect(() => {
+    if (!manual) setWind(liveWind);
+  }, [liveWind, manual]);
   const [filters, setFilters] = useState<PlayaTag[]>([]);
   const list = PLAYAS.filter((p) => filters.every((f) => p.tags.includes(f)));
   const pick =
@@ -363,13 +398,52 @@ export function OrillaGuide() {
         ? PLAYAS.find((p) => p.id === "elportil")
         : list[0];
 
+  function stationFor(lat: number, lng: number) {
+    const stations = live?.stations ?? [];
+    if (!stations.length) return null;
+    return stations.reduce((best, s) => {
+      const d = (s.lat - lat) ** 2 + (s.lng - lng) ** 2;
+      const bd = (best.lat - lat) ** 2 + (best.lng - lng) ** 2;
+      return d < bd ? s : best;
+    });
+  }
+
   return (
     <div>
-      <p className="text-kicker text-tinto">El viento de hoy</p>
+      <LiveStrip />
+      <p className="text-kicker text-tinto">
+        {punta && !manual
+          ? `El viento de ahora · ${punta.regime} ${punta.windKmh ?? "—"} km/h`
+          : "El viento de hoy"}
+      </p>
       <div className="mt-2 flex flex-wrap gap-2">
-        <Chip active={wind === "calma"} onClick={() => setWind("calma")}>Calma / no sé</Chip>
-        <Chip active={wind === "levante"} onClick={() => setWind("levante")}>Levante</Chip>
-        <Chip active={wind === "poniente"} onClick={() => setWind("poniente")}>Poniente</Chip>
+        <Chip
+          active={wind === "calma"}
+          onClick={() => {
+            setManual(true);
+            setWind("calma");
+          }}
+        >
+          Calma
+        </Chip>
+        <Chip
+          active={wind === "levante"}
+          onClick={() => {
+            setManual(true);
+            setWind("levante");
+          }}
+        >
+          Levante
+        </Chip>
+        <Chip
+          active={wind === "poniente"}
+          onClick={() => {
+            setManual(true);
+            setWind("poniente");
+          }}
+        >
+          Poniente
+        </Chip>
       </div>
       <p className="mt-6 text-kicker text-tinto">Filtros</p>
       <div className="mt-2 flex flex-wrap gap-2">
@@ -388,22 +462,31 @@ export function OrillaGuide() {
         ))}
       </div>
       {pick ? (
-        <p className="mt-6 rounded-lg bg-iron px-5 py-5 text-iron-fg">
-          Hoy, con este viento: <span className="font-display text-2xl">{pick.name}.</span>{" "}
+        <p className="mt-6 bg-iron px-5 py-5 text-iron-fg">
+          Ahora, con este viento: <span className="font-display text-2xl">{pick.name}.</span>{" "}
           {pick.wind}
         </p>
       ) : null}
       <ul className="mt-6 grid gap-4 md:grid-cols-2">
-        {list.map((p) => (
-          <li key={p.id} className="overflow-hidden rounded-xl bg-paper shadow-border">
-            <img src={p.image} alt="" className="aspect-video w-full object-cover" />
-            <div className="p-5">
-              <h2 className="font-display text-2xl tracking-tight">{p.name}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{p.dek}</p>
-              <p className="mt-2 text-sm text-tide">{p.wind}</p>
-            </div>
-          </li>
-        ))}
+        {list.map((p) => {
+          const st = stationFor(p.lat, p.lng);
+          return (
+            <li key={p.id} className="overflow-hidden bg-paper shadow-border">
+              <img src={p.image} alt="" className="aspect-video w-full object-cover" />
+              <div className="p-5">
+                <h2 className="font-display text-2xl tracking-tight">{p.name}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{p.dek}</p>
+                {st?.tempC != null ? (
+                  <p className="mt-2 text-kicker text-tinto">
+                    {st.tempC}° · {st.regime} {st.windKmh ?? "—"} km/h · {st.desc}
+                  </p>
+                ) : (
+                  <p className="mt-2 text-sm text-tide">{p.wind}</p>
+                )}
+              </div>
+            </li>
+          );
+        })}
       </ul>
       {list.length === 0 ? (
         <p className="mt-6 text-muted">Esa combinación no existe en esta costa. Suelta un filtro.</p>
@@ -502,12 +585,23 @@ export function CafeGuide() {
 }
 
 export function OcasoGuide() {
+  const live = useLiveCoast();
   const [tag, setTag] = useState<"all" | "capital" | "costa" | "frontera">("all");
   const list = tag === "all" ? OCASO_SPOTS : OCASO_SPOTS.filter((s) => s.tag === tag);
   const [active, setActive] = useState(OCASO_SPOTS[0]!.id);
   const spot = list.find((s) => s.id === active) ?? list[0] ?? OCASO_SPOTS[0]!;
+  const sun = live?.sun;
 
   return (
+    <div>
+      <LiveStrip />
+      {sun ? (
+        <p className="mb-8 font-display text-edition leading-tight tracking-tight">
+          {sun.past
+            ? `Hoy se puso a las ${sun.sunset}. Sale a las ${sun.sunrise}.`
+            : `Hoy se pone a las ${sun.sunset}. Quedan ${sun.minutesToSunset} min. Hora dorada, ${sun.goldenHour}.`}
+        </p>
+      ) : null}
     <div className="grid gap-10 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <div className="flex flex-wrap gap-x-4">
@@ -548,6 +642,7 @@ export function OcasoGuide() {
         <p className="mt-6 text-kicker text-tinto">{spot.when}</p>
         <p className="mt-3 max-w-lg font-display text-edition leading-tight tracking-tight">{spot.note}</p>
       </div>
+    </div>
     </div>
   );
 }
@@ -592,11 +687,15 @@ export function CuencaGuide() {
 }
 
 export function AlmanaqueGuide() {
+  const live = useLiveCoast();
   const now = new Date().getMonth();
   const [open, setOpen] = useState(ALMANAQUE[now]?.id ?? "09");
   const month = ALMANAQUE.find((m) => m.id === open) ?? ALMANAQUE[8]!;
+  const capital = live?.stations.find((s) => s.id === "capital");
 
   return (
+    <div>
+      <LiveStrip />
     <div className="grid gap-10 lg:grid-cols-12">
       <ol className="lg:col-span-4">
         {ALMANAQUE.map((m) => (
@@ -633,6 +732,83 @@ export function AlmanaqueGuide() {
           </div>
         </dl>
       </div>
+    </div>
+    </div>
+  );
+}
+
+export function AhoraGuide() {
+  const live = useLiveCoast();
+  const capital = live?.stations.find((s) => s.id === "capital");
+  const punta = live?.stations.find((s) => s.id === "punta");
+  const sun = live?.sun;
+  const advice = live?.advice;
+
+  return (
+    <div className="grid gap-12">
+      <div className="bg-iron px-6 py-10 text-iron-fg sm:px-10">
+        <p className="text-kicker text-tinto">En vivo · Europe/Madrid</p>
+        <p className="mt-4 font-display text-display leading-display tracking-display">
+          {capital?.tempC != null ? `${capital.tempC}°` : "—"}
+          <span className="italic text-tinto">
+            {" "}
+            {punta ? punta.regime : ""}
+          </span>
+        </p>
+        <p className="mt-4 max-w-lg text-lg text-foam">
+          {punta?.desc ?? "Cargando el parte"}
+          {punta?.windKmh != null ? ` · ${punta.windKmh} km/h` : ""}
+          {sun
+            ? sun.past
+              ? ` · sol puesto a las ${sun.sunset}`
+              : ` · ocaso ${sun.sunset} (${sun.minutesToSunset} min)`
+            : ""}
+        </p>
+        {advice ? (
+          <div className="mt-8 border-t border-iron-fg/10 pt-6">
+            <p className="text-kicker text-tinto">{advice.title}</p>
+            <p className="mt-2 max-w-lg text-iron-fg/80">{advice.dek}</p>
+            <Button asChild size="lg" className="mt-6 bg-iron-fg text-iron hover:bg-foam">
+              <Link to="/g/$id" params={{ id: advice.guide }}>
+                Abrir la guía
+              </Link>
+            </Button>
+          </div>
+        ) : null}
+      </div>
+
+      <ul className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+        {(live?.stations ?? []).map((s) => (
+          <li key={s.id} className="bg-bg px-5 py-6">
+            <p className="text-kicker text-faint">{s.name}</p>
+            <p className="mt-2 font-display text-4xl tracking-tight">
+              {s.tempC != null ? `${s.tempC}°` : "—"}
+            </p>
+            <p className="mt-2 text-sm text-muted">
+              {s.regime} {s.windKmh ?? "—"} km/h
+              {s.humidity != null ? ` · ${s.humidity}%` : ""}
+            </p>
+            <p className="mt-1 text-sm text-faint">{s.desc}</p>
+          </li>
+        ))}
+      </ul>
+
+      <section>
+        <p className="text-kicker text-tinto">Cámaras DGT</p>
+        <ul className="mt-4 grid gap-4 md:grid-cols-3">
+          {CAMERAS.map((cam) => (
+            <li key={cam.id}>
+              <img
+                src={`${cam.src}?t=${live?.fetchedAt ?? ""}`}
+                alt={cam.name}
+                className="aspect-video w-full object-cover"
+              />
+              <p className="mt-2 text-kicker text-faint">{cam.name}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-3 text-xs text-faint">Imagen de la DGT. Se actualiza en origen.</p>
+      </section>
     </div>
   );
 }

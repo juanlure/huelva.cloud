@@ -25,7 +25,7 @@ function GuidesPage() {
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
         Itinerario que se arma, carta que responde, playa según el viento.
-        Diez guías para estar en Huelva — no solo para leerla.
+        Once  guías para estar en Huelva.
       </p>
 
       <ol className="mt-16">
