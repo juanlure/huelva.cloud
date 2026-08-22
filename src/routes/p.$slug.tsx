@@ -8,6 +8,7 @@ import { getArticleBySlug, listArticles, voteArticle } from "@/lib/server/conten
 import { CATEGORY_LABEL } from "@/lib/types";
 import { SITE } from "@/lib/brand";
 import { BARRIOS } from "@/data/barrios";
+import { liveGuideByArticle } from "@/data/live-guides";
 
 export const Route = createFileRoute("/p/$slug")({
   loader: async ({ params }) => {
@@ -36,6 +37,7 @@ function ArticlePage() {
   const { article, related } = Route.useLoaderData();
   const router = useRouter();
   const barrio = BARRIOS.find((b) => b.id === article.neighborhood);
+  const live = liveGuideByArticle(article.slug);
   const jsonLd =
     article.source === "community"
       ? null
@@ -78,6 +80,19 @@ function ArticlePage() {
         {article.title}
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-muted">{article.dek}</p>
+      {live ? (
+        <Link
+          to="/g/$id"
+          params={{ id: live.id }}
+          className="mt-5 flex items-center justify-between gap-3 rounded-xl bg-tide px-4 py-3 text-tide-fg"
+        >
+          <span>
+            <span className="block text-xs uppercase tracking-widest text-foam">Guía viva</span>
+            <span className="font-display text-lg tracking-tight">{live.title}</span>
+          </span>
+          <span className="text-sm text-foam">Usar</span>
+        </Link>
+      ) : null}
       {article.source === "community" ? (
         <p className="mt-3 text-sm text-faint">Aporte de la calle. No lo ha escrito la redacción.</p>
       ) : (

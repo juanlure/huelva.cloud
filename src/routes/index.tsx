@@ -6,6 +6,7 @@ import { listArticles } from "@/lib/server/content";
 import { getNewsroomStatus } from "@/lib/server/newsroom";
 import { SITE } from "@/lib/brand";
 import { HERO_IMAGE } from "@/data/covers";
+import { LIVE_GUIDES } from "@/data/live-guides";
 import { RECURSOS } from "@/data/recursos";
 
 export const Route = createFileRoute("/")({
@@ -100,6 +101,34 @@ function Home() {
             </span>
           </span>
         </Link>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <SectionHead
+          kicker="Guías vivas"
+          title="Se arman, se tachan, se recorren. No son un PDF con alma."
+          href="/guides"
+          linkLabel="Abrir las seis"
+        />
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {LIVE_GUIDES.slice(0, 3).map((guide) => (
+            <li key={guide.id}>
+              <Link
+                to="/g/$id"
+                params={{ id: guide.id }}
+                className="group flex h-full flex-col overflow-hidden rounded-xl bg-paper shadow-border hover:ring-1 hover:ring-tide/40"
+              >
+                <img src={guide.image} alt="" className="aspect-video w-full object-cover" />
+                <div className="p-4">
+                  <p className="font-display text-xl tracking-tight group-hover:text-tide">
+                    {guide.title}
+                  </p>
+                  <p className="mt-1 text-sm text-muted">{guide.dek}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">

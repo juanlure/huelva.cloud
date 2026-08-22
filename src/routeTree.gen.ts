@@ -25,6 +25,7 @@ import { Route as RecursosRouteImport } from './routes/recursos'
 import { Route as RedaccionRouteImport } from './routes/redaccion'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TestRouteImport } from './routes/test'
+import { Route as GIdRouteImport } from './routes/g.$id'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
@@ -108,6 +109,11 @@ const TestRoute = TestRouteImport.update({
   path: '/test',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GIdRoute = GIdRouteImport.update({
+  id: '/g/$id',
+  path: '/g/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PSlugRoute = PSlugRouteImport.update({
   id: '/p/$slug',
   path: '/p/$slug',
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/redaccion': typeof RedaccionRoute
   '/sobre': typeof SobreRoute
   '/test': typeof TestRoute
+  '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -156,6 +163,7 @@ export interface FileRoutesByTo {
   '/redaccion': typeof RedaccionRoute
   '/sobre': typeof SobreRoute
   '/test': typeof TestRoute
+  '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -177,6 +185,7 @@ export interface FileRoutesById {
   '/redaccion': typeof RedaccionRoute
   '/sobre': typeof SobreRoute
   '/test': typeof TestRoute
+  '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/redaccion'
     | '/sobre'
     | '/test'
+    | '/g/$id'
     | '/p/$slug'
     | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
@@ -219,6 +229,7 @@ export interface FileRouteTypes {
     | '/redaccion'
     | '/sobre'
     | '/test'
+    | '/g/$id'
     | '/p/$slug'
     | '/api/auth/$'
   id:
@@ -239,6 +250,7 @@ export interface FileRouteTypes {
     | '/redaccion'
     | '/sobre'
     | '/test'
+    | '/g/$id'
     | '/p/$slug'
     | '/api/auth/$'
   fileRoutesById: FileRoutesById
@@ -260,6 +272,7 @@ export interface RootRouteChildren {
   RedaccionRoute: typeof RedaccionRoute
   SobreRoute: typeof SobreRoute
   TestRoute: typeof TestRoute
+  GIdRoute: typeof GIdRoute
   PSlugRoute: typeof PSlugRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
@@ -378,6 +391,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/g/$id': {
+      id: '/g/$id'
+      path: '/g/$id'
+      fullPath: '/g/$id'
+      preLoaderRoute: typeof GIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/p/$slug': {
       id: '/p/$slug'
       path: '/p/$slug'
@@ -412,6 +432,7 @@ const rootRouteChildren: RootRouteChildren = {
   RedaccionRoute: RedaccionRoute,
   SobreRoute: SobreRoute,
   TestRoute: TestRoute,
+  GIdRoute: GIdRoute,
   PSlugRoute: PSlugRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
