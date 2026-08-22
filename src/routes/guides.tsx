@@ -2,13 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArticleCard } from "@/components/article-card";
 import { LIVE_GUIDES } from "@/data/live-guides";
 import { listArticles } from "@/lib/server/content";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/guides")({
   loader: () => listArticles(),
   component: GuidesPage,
-  head: () => ({
-    meta: [{ title: "Guías · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Guías de Huelva: 48 horas, playas, gamba blanca, Doñana y Colón",
+      description:
+        "Guías vivas de Huelva: itinerario de 48 horas, carta de la lonja, playas según el viento, Doñana, lugares colombinos, Riotinto y el ocaso de hoy.",
+      path: "/guides",
+    }),
 });
 
 function GuidesPage() {

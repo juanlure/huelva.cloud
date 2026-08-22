@@ -3,6 +3,7 @@ import { ArticleCard } from "@/components/article-card";
 import { listArticles, listPlaces } from "@/lib/server/content";
 import { Badge } from "@/components/ui/badge";
 import { PLACE_KIND_LABEL } from "@/lib/types";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/comer")({
   loader: async () => {
@@ -13,9 +14,14 @@ export const Route = createFileRoute("/comer")({
     };
   },
   component: ComerPage,
-  head: () => ({
-    meta: [{ title: "Comer y beber · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Dónde comer en Huelva: gamba blanca, choco y Condado",
+      description:
+        "Lonja, gamba blanca de Huelva, choco de Punta Umbría, jamón de Jabugo y vino del Condado. La mesa de la Costa de la Luz.",
+      path: "/comer",
+      keywords: ["dónde comer en Huelva", "gamba blanca", "choco Punta Umbría", "restaurantes Huelva"],
+    }),
 });
 
 function ComerPage() {

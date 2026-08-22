@@ -4,14 +4,19 @@ import { ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { RECURSOS, RECURSO_KIND_LABEL, type RecursoKind } from "@/data/recursos";
 import { cn } from "@/lib/utils";
+import { seoHead } from "@/lib/seo";
 
 const KINDS: Array<RecursoKind | "all"> = ["all", "mar", "sierra", "camino", "ciudad", "urgencia"];
 
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
-  head: () => ({
-    meta: [{ title: "Recursos · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Recursos oficiales de Huelva: AEMET, DGT, Doñana, 112",
+      description:
+        "Enlaces oficiales de Huelva: AEMET, DGT, Parque Nacional de Doñana, Puerto, 112. La guía no sustituye a la fuente.",
+      path: "/recursos",
+    }),
 });
 
 function RecursosPage() {

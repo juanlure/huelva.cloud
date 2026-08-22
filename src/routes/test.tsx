@@ -3,12 +3,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { QUIZ, rankForScore } from "@/data/quiz";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/test")({
   component: TestPage,
-  head: () => ({
-    meta: [{ title: "¿Onubense o aprendiz? · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Test: ¿cuánto sabes de Huelva? Gamba, Colón, Onuba",
+      description:
+        "Diez preguntas sobre Huelva: gamba blanca, choco, Palos de la Frontera, Jabugo y Doñana. El test del onubense.",
+      path: "/test",
+    }),
 });
 
 function TestPage() {

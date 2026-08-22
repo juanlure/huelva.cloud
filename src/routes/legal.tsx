@@ -1,11 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalDoc } from "@/components/legal-doc";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/legal")({
   component: LegalPage,
-  head: () => ({
-    meta: [{ title: "Aviso legal · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Aviso legal",
+      description: "Aviso legal de Huelva.cloud, guía de Huelva y la Costa de la Luz.",
+      path: "/legal",
+    }),
 });
 
 function LegalPage() {

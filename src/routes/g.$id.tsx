@@ -15,6 +15,9 @@ import {
   RabidaGuide,
 } from "@/components/live-guide";
 import { LIVE_GUIDES, type LiveGuideId } from "@/data/live-guides";
+import { GUIDE_SEO } from "@/data/seo-topics";
+import { SITE } from "@/lib/brand";
+import { breadcrumbJsonLd, seoHead } from "@/lib/seo";
 import { LiveCoastProvider } from "@/lib/live-coast";
 import { getLiveCoast } from "@/lib/server/coast";
 
@@ -48,9 +51,17 @@ export const Route = createFileRoute("/g/$id")({
     </main>
   ),
   component: LiveGuidePage,
-  head: ({ loaderData }) => ({
-    meta: [{ title: `${loaderData?.guide.title ?? "Guía"} · Huelva.cloud` }],
-  }),
+  head: ({ loaderData }) => {
+    const g = loaderData?.guide;
+    const extra = g ? GUIDE_SEO[g.id] : undefined;
+    return seoHead({
+      title: extra?.title ?? g?.title ?? "Guía",
+      description: extra?.description ?? g?.dek ?? SITE.description,
+      path: `/g/${g?.id ?? ""}`,
+      image: g ? `${SITE.url}${g.image}` : undefined,
+      keywords: extra?.keywords,
+    });
+  },
 });
 
 function LiveGuidePage() {
@@ -59,6 +70,18 @@ function LiveGuidePage() {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Huelva.cloud", path: "/" },
+              { name: "Guías", path: "/guides" },
+              { name: guide.title, path: `/g/${guide.id}` },
+            ]),
+          ),
+        }}
+      />
       <section className="relative h-80 overflow-hidden bg-iron sm:h-96">
         <img src={guide.image} alt="" className="film size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-iron via-iron/50 to-iron/20" />

@@ -5,7 +5,7 @@ export const SITE = {
   github: "https://github.com/juanlure/huelva.cloud",
   tagline: "La Costa de la Luz, bien escrita",
   description:
-    "Guía de Huelva y la Costa de la Luz: gamba blanca, Doñana, Colón, sierra y Atlántico. Una redacción en la nube, con criterio de aquí.",
+    "Guía de referencia de Huelva y la Costa de la Luz: qué ver, playas, gamba blanca, Doñana, lugares colombinos, Riotinto y Jabugo. Redacción local en la nube.",
   theme: "#14110f",
 } as const;
 

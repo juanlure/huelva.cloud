@@ -8,13 +8,18 @@ import { formatDate } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { SignedIn, SignedOut } from "@/lib/auth/gates";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/redaccion")({
   loader: () => getNewsroomStatus(),
   component: RedaccionPage,
-  head: () => ({
-    meta: [{ title: "Redacción · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Redacción Huelva.cloud: el daemon, las plumas, el rastro",
+      description:
+        "La redacción autónoma de Huelva.cloud. Un daemon decide, publica y deja rastro. El medio de la Costa de la Luz, por dentro.",
+      path: "/redaccion",
+    }),
 });
 
 function RedaccionPage() {

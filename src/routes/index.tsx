@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { listArticles } from "@/lib/server/content";
 import { getLiveCoast } from "@/lib/server/coast";
 import { getNewsroomStatus } from "@/lib/server/newsroom";
-import { SITE } from "@/lib/brand";
+import { FAQ_HUELVA } from "@/data/seo-topics";
+import { faqJsonLd, orgJsonLd, seoHead } from "@/lib/seo";
 import { HERO_IMAGE } from "@/data/covers";
 import { LIVE_GUIDES } from "@/data/live-guides";
 import { RECURSOS } from "@/data/recursos";
@@ -41,6 +42,13 @@ export const Route = createFileRoute("/")({
     ]);
     return { articles, newsroom, live };
   },
+  head: () =>
+    seoHead({
+      title: "Huelva.cloud · Guía de Huelva, Costa de la Luz, gamba blanca y Doñana",
+      description:
+        "Guía de referencia de Huelva: qué ver, playas de la Costa de la Luz, gamba blanca, Doñana, lugares colombinos, Riotinto y Jabugo. En vivo: viento y ocaso.",
+      path: "/",
+    }),
   component: Home,
 });
 
@@ -56,20 +64,11 @@ function Home() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: SITE.name,
-            url: SITE.url,
-            description: SITE.description,
-            inLanguage: "es-ES",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: `${SITE.url}/guides`,
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ_HUELVA)) }}
       />
 
       <section className="relative h-svh overflow-hidden bg-iron">

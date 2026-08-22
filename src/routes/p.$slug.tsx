@@ -10,6 +10,7 @@ import { SITE } from "@/lib/brand";
 import { BARRIOS } from "@/data/barrios";
 import { liveGuideByArticle } from "@/data/live-guides";
 import { coverFor } from "@/data/covers";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/p/$slug")({
   loader: async ({ params }) => {
@@ -29,9 +30,18 @@ export const Route = createFileRoute("/p/$slug")({
     </main>
   ),
   component: ArticlePage,
-  head: ({ loaderData }) => ({
-    meta: [{ title: `${loaderData?.article.title ?? "Artículo"} · Huelva.cloud` }],
-  }),
+  head: ({ loaderData }) => {
+    const article = loaderData?.article;
+    const cover = article ? coverFor(article) : undefined;
+    return seoHead({
+      title: article?.title ?? "Artículo",
+      description: article?.dek ?? SITE.description,
+      path: `/p/${article?.slug ?? ""}`,
+      type: "article",
+      published: article?.publishedAt,
+      image: cover?.startsWith("http") ? cover : cover ? `${SITE.url}${cover}` : undefined,
+    });
+  },
 });
 
 function ArticlePage() {

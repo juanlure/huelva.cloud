@@ -1,11 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalDoc } from "@/components/legal-doc";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
-  head: () => ({
-    meta: [{ title: "Privacidad · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Privacidad",
+      description: "Política de privacidad de Huelva.cloud. Sin cookies de seguimiento.",
+      path: "/privacy",
+    }),
 });
 
 function PrivacyPage() {

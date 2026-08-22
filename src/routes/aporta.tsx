@@ -14,12 +14,17 @@ import {
 } from "@/lib/server/content";
 import { CATEGORIES, CATEGORY_LABEL, PLACE_KINDS, PLACE_KIND_LABEL } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/aporta")({
   component: AportaPage,
-  head: () => ({
-    meta: [{ title: "Aporta · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Aporta a Huelva.cloud: la calle escribe",
+      description:
+        "Envía un sitio, una fecha o un texto. Huelva.cloud publica la calle. La guía de la Costa de la Luz se hace entre todos.",
+      path: "/aporta",
+    }),
 });
 
 type Kind = "article" | "place" | "event";

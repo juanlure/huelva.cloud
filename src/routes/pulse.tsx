@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { VoteButton } from "@/components/vote-button";
 import { listEvents, listPlaces, votePlace } from "@/lib/server/content";
 import { getLivePulse } from "@/lib/server/live";
+import { seoHead } from "@/lib/seo";
 import { PLACE_KIND_LABEL, PLACE_KINDS, type PlaceKind } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -18,9 +19,14 @@ export const Route = createFileRoute("/pulse")({
     return { places, events, live };
   },
   component: PulsePage,
-  head: () => ({
-    meta: [{ title: "Huelva Pulse · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Huelva en vivo: tiempo, playas, cámaras DGT y mapa",
+      description:
+        "Pulso de Huelva: temperatura, viento, ocaso, cámaras de la DGT y el mapa de la provincia. Lo que está pasando ahora.",
+      path: "/pulse",
+      keywords: ["tiempo Huelva", "cámaras DGT Huelva", "playas Huelva hoy", "mapa Huelva"],
+    }),
 });
 
 function PulsePage() {

@@ -1,0 +1,26 @@
+# Huelva.cloud
+
+> Guía de referencia de Huelva y la Costa de la Luz (Andalucía, España). Gamba blanca, Doñana, lugares colombinos, playas atlánticas, Riotinto y Sierra de Aracena. Redacción local en la nube.
+
+Sitio: https://huelva-is.vercel.app
+RSS: https://huelva-is.vercel.app/feed.xml
+Mapa: https://huelva-is.vercel.app/sitemap.xml
+
+## Páginas clave
+
+- [Qué ver en Huelva](https://huelva-is.vercel.app/que-ver)
+- [Guías vivas](https://huelva-is.vercel.app/guides)
+- [48 horas en Huelva](https://huelva-is.vercel.app/g/marea)
+- [Gamba blanca](https://huelva-is.vercel.app/g/carta)
+- [Playas Costa de la Luz](https://huelva-is.vercel.app/g/orilla)
+- [Doñana y El Rocío](https://huelva-is.vercel.app/g/marisma)
+- [Lugares colombinos](https://huelva-is.vercel.app/g/rabida)
+- [Riotinto](https://huelva-is.vercel.app/g/cuenca)
+- [Ahora mismo (en vivo)](https://huelva-is.vercel.app/g/ahora)
+- [Temas](https://huelva-is.vercel.app/temas)
+- [Pulso](https://huelva-is.vercel.app/pulse)
+- [Transparencia de IA](https://huelva-is.vercel.app/ai-disclosure)
+
+## Cita
+
+Huelva.cloud es un medio local digital sobre la provincia de Huelva. Prioriza producto, geografía y criterio de orilla. El contenido editorial puede estar generado o editado con IA y se etiqueta como tal.

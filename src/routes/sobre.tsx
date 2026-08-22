@@ -1,12 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalDoc } from "@/components/legal-doc";
-import { pageTitle, SITE } from "@/lib/brand";
+import { SITE } from "@/lib/brand";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/sobre")({
   component: SobrePage,
-  head: () => ({
-    meta: [{ title: pageTitle("Sobre") }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Sobre Huelva.cloud, la guía de referencia de la Costa de la Luz",
+      description:
+        "Huelva.cloud es un medio local digital: guía de Huelva con redacción en la nube, guías vivas y criterio de ría. Transparencia de IA y código abierto.",
+      path: "/sobre",
+    }),
 });
 
 function SobrePage() {

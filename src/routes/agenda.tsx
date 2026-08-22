@@ -5,6 +5,7 @@ import { VoteButton } from "@/components/vote-button";
 import { formatDate } from "@/lib/format";
 import { listArticles, listEvents, voteEvent } from "@/lib/server/content";
 import { ArticleCard } from "@/components/article-card";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/agenda")({
   loader: async () => {
@@ -15,9 +16,14 @@ export const Route = createFileRoute("/agenda")({
     };
   },
   component: AgendaPage,
-  head: () => ({
-    meta: [{ title: "Agenda · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Agenda Huelva: Colombinas, Fiestas de la Cinta, El Rocío",
+      description:
+        "Qué hacer ahora en Huelva: Colombinas, Fiestas de la Cinta, ferias, El Rocío y el calendario onubense.",
+      path: "/agenda",
+      keywords: ["agenda Huelva", "Colombinas", "Fiestas de la Cinta", "eventos Huelva", "El Rocío"],
+    }),
 });
 
 function AgendaPage() {

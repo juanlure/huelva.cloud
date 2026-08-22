@@ -9,12 +9,26 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/barrios")({
   component: BarriosPage,
-  head: () => ({
-    meta: [{ title: "Barrios · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Barrios y pueblos de Huelva: Conquero, Punta Umbría, Isla Cristina, Aracena",
+      description:
+        "Centro, El Conquero, Reina Victoria, Punta Umbría, Mazagón, Isla Cristina, Moguer, Palos y Sierra de Aracena. Dónde quedarse y qué pedir.",
+      path: "/barrios",
+      keywords: [
+        "barrios de Huelva",
+        "El Conquero",
+        "Punta Umbría",
+        "Isla Cristina",
+        "Mazagón",
+        "Aracena",
+        "Moguer",
+      ],
+    }),
 });
 
 const TAGS = Object.keys(BARRIO_TAG_LABEL) as BarrioTag[];

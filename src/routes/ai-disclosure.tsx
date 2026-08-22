@@ -1,12 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalDoc } from "@/components/legal-doc";
 import { AGENTS, WRITERS } from "@/data/agents";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/ai-disclosure")({
   component: AiDisclosurePage,
-  head: () => ({
-    meta: [{ title: "Transparencia de IA · Huelva.cloud" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Transparencia de IA en Huelva.cloud",
+      description:
+        "Cómo escribe la redacción de Huelva.cloud: personas sintéticas, daemon, etiquetado AI Act y responsabilidad humana.",
+      path: "/ai-disclosure",
+    }),
 });
 
 function AiDisclosurePage() {

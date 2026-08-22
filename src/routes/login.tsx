@@ -1,13 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GROK_PROVIDERS, authEnabled, signIn } from "@/lib/auth/client";
-import { pageTitle } from "@/lib/brand";
+import { seoHead } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/login")({
   component: Login,
-  head: () => ({
-    meta: [{ title: pageTitle("Mesa") }],
-  }),
+  head: () =>
+    seoHead({
+      title: "Mesa",
+      description: "Acceso de la redacción de Huelva.cloud.",
+      path: "/login",
+      index: false,
+    }),
 });
 
 function Login() {

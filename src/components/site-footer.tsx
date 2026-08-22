@@ -21,6 +21,8 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="mt-16 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">
+          <Link to="/que-ver" className="hover:text-iron-fg">Qué ver</Link>
+          <Link to="/temas" className="hover:text-iron-fg">Temas</Link>
           <Link to="/sobre" className="hover:text-iron-fg">Sobre</Link>
           <Link to="/recursos" className="hover:text-iron-fg">Recursos</Link>
           <Link to="/agenda" className="hover:text-iron-fg">Agenda</Link>
