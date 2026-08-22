@@ -8,7 +8,16 @@ Mapa: https://huelva-is.vercel.app/sitemap.xml
 
 ## Páginas clave
 
-- [Qué ver en Huelva](https://huelva-is.vercel.app/que-ver)
+- [Gamba blanca de Huelva](https://huelva-is.vercel.app/gamba-blanca-de-huelva)
+- [Playas de Huelva](https://huelva-is.vercel.app/playas-de-huelva)
+- [Doñana](https://huelva-is.vercel.app/donana)
+- [Lugares colombinos](https://huelva-is.vercel.app/lugares-colombinos)
+- [Minas de Riotinto](https://huelva-is.vercel.app/minas-de-riotinto)
+- [Jamón de Jabugo](https://huelva-is.vercel.app/jamon-de-jabugo)
+- [El Rocío](https://huelva-is.vercel.app/el-rocio)
+- [Punta Umbría](https://huelva-is.vercel.app/punta-umbria)
+- [48 horas en Huelva](https://huelva-is.vercel.app/48-horas-en-huelva)
+- [Costa de la Luz](https://huelva-is.vercel.app/costa-de-la-luz)
 - [Guías vivas](https://huelva-is.vercel.app/guides)
 - [48 horas en Huelva](https://huelva-is.vercel.app/g/marea)
 - [Gamba blanca](https://huelva-is.vercel.app/g/carta)

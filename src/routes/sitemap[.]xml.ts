@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LIVE_GUIDES } from "@/data/live-guides";
+import { SEO_LANDINGS } from "@/data/seo-landings";
 import { SITE } from "@/lib/brand";
 import { listArticles } from "@/lib/server/content";
 
@@ -28,14 +29,18 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const articles = await listArticles();
+        const now = new Date().toISOString();
         const urls = [
-          ...STATIC.map((path) => loc(path, path === "/" || path === "/que-ver" ? "daily" : "weekly", path === "/" ? "1.0" : "0.8")),
-          ...LIVE_GUIDES.map((g) => loc(`/g/${g.id}`, "hourly", "0.9")),
-          ...articles.map((a) => loc(`/p/${a.slug}`, "weekly", a.featured ? "0.8" : "0.6")),
+          ...STATIC.map((path) =>
+            loc(path, now, path === "/" || path === "/que-ver" ? "1.0" : "0.8", undefined),
+          ),
+          ...SEO_LANDINGS.map((l) => loc(`/${l.slug}`, now, "0.9", l.image)),
+          ...LIVE_GUIDES.map((g) => loc(`/g/${g.id}`, now, "0.9", g.image)),
+          ...articles.map((a) => loc(`/p/${a.slug}`, a.publishedAt, a.featured ? "0.8" : "0.6", undefined)),
         ].join("");
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls}
 </urlset>`;
 
@@ -50,7 +55,10 @@ ${urls}
   },
 });
 
-function loc(path: string, changefreq: string, priority: string) {
+function loc(path: string, lastmod: string, priority: string, image?: string) {
   const href = path === "/" ? SITE.url : `${SITE.url}${path}`;
-  return `<url><loc>${href}</loc><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>\n`;
+  const img = image
+    ? `<image:image><image:loc>${SITE.url}${image}</image:loc></image:image>`
+    : "";
+  return `<url><loc>${href}</loc><lastmod>${lastmod}</lastmod><priority>${priority}</priority>${img}</url>\n`;
 }

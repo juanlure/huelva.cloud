@@ -45,13 +45,21 @@ export const Route = createFileRoute("/")({
     ]);
     return { articles, newsroom, live };
   },
-  head: () =>
-    seoHead({
-      title: "Huelva.cloud · Guía de Huelva, Costa de la Luz, gamba blanca y Doñana",
+  head: () => {
+    const base = seoHead({
+      title: "Huelva.cloud · Guía de referencia de Huelva, Costa de la Luz, gamba blanca y Doñana",
       description:
         "Guía de referencia de Huelva: qué ver, playas de la Costa de la Luz, gamba blanca, Doñana, lugares colombinos, Riotinto y Jabugo. En vivo: viento y ocaso.",
       path: "/",
-    }),
+    });
+    return {
+      ...base,
+      links: [
+        ...base.links,
+        { rel: "preload", as: "image", href: HERO_IMAGE },
+      ],
+    };
+  },
   component: Home,
 });
 
@@ -85,15 +93,15 @@ function Home() {
           Costa de la Luz · Onuba · 2026
         </p>
         <div className="relative flex h-full flex-col justify-end px-4 pb-20 sm:px-8 sm:pb-24">
-          <p className="text-kicker reveal text-tinto-fg/80">Hierro · sal · gamba</p>
+          <p className="text-kicker reveal text-tinto-fg/80">Guía de referencia de Huelva</p>
           <h1 className="reveal-2 mt-5 max-w-[18ch] font-display text-display leading-display tracking-display text-iron-fg">
             Huelva
             <span className="italic text-tinto">.cloud</span>
           </h1>
           <p className="reveal-3 mt-6 max-w-md text-base leading-relaxed text-iron-fg/80 sm:text-lg">
-            Tres mil horas de sol, ciento veintidós kilómetros de Atlántico y
-            la mejor gamba blanca del mundo. La guía de Huelva, escrita con
-            el pulso de la ría.
+            Qué ver en Huelva, playas de la Costa de la Luz, gamba blanca,
+            Doñana, lugares colombinos, Riotinto y Jabugo. La guía de la
+            provincia, escrita con el pulso de la ría.
           </p>
         </div>
       </section>
@@ -140,8 +148,8 @@ function Home() {
       <section className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-8 lg:grid-cols-12 lg:py-28">
         <blockquote className="font-display text-edition leading-tight tracking-tight text-ink lg:col-span-7">
           Huelva es luz atlántica, gamba de cristal y un muelle de hierro
-          sobre el Tinto. Una provincia entera —costa, marisma, sierra—
-          cabida en el mismo mapa.
+          sobre el Tinto. Huelva.cloud es la guía de referencia de la Costa
+          de la Luz: costa, marisma, sierra, en el mismo mapa.
         </blockquote>
         <div className="flex flex-col justify-between gap-8 lg:col-span-5">
           <p className="text-base leading-relaxed text-muted">

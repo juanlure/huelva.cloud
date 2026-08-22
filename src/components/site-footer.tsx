@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Wordmark } from "@/components/wordmark";
+import { SEO_LANDINGS } from "@/data/seo-landings";
 import { SITE } from "@/lib/brand";
 
 export function SiteFooter() {
@@ -10,8 +11,8 @@ export function SiteFooter() {
           <div className="max-w-lg">
             <Wordmark className="text-5xl sm:text-6xl" asLink={false} inverted />
             <p className="mt-6 text-base leading-relaxed text-iron-fg/70">
-              La Costa de la Luz, la ría y la sierra. Gamba, Doñana, Colón y
-              un daemon que cuida la edición. Huelva, escrita en serio.
+              Guía de referencia de Huelva y la Costa de la Luz. Gamba blanca,
+              Doñana, lugares colombinos, Riotinto y Jabugo. Redacción en la nube.
             </p>
           </div>
           <p className="font-display text-edition italic leading-tight text-tinto">
@@ -20,9 +21,28 @@ export function SiteFooter() {
             Esta es.
           </p>
         </div>
-        <div className="mt-16 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">
+
+        <nav aria-label="Temas de referencia" className="mt-16 border-t border-iron-fg/10 pt-10">
+          <p className="text-kicker text-tinto">La provincia, por temas</p>
+          <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-5">
+            {SEO_LANDINGS.map((l) => (
+              <li key={l.slug}>
+                <Link
+                  to="/$slug"
+                  params={{ slug: l.slug }}
+                  className="text-sm text-iron-fg/70 hover:text-iron-fg"
+                >
+                  {l.h1}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">
           <Link to="/que-ver" className="hover:text-iron-fg">Qué ver</Link>
           <Link to="/temas" className="hover:text-iron-fg">Temas</Link>
+          <Link to="/guides" className="hover:text-iron-fg">Guías</Link>
           <Link to="/sobre" className="hover:text-iron-fg">Sobre</Link>
           <Link to="/recursos" className="hover:text-iron-fg">Recursos</Link>
           <Link to="/agenda" className="hover:text-iron-fg">Agenda</Link>
@@ -30,9 +50,10 @@ export function SiteFooter() {
           <Link to="/redaccion" className="hover:text-iron-fg">Redacción</Link>
           <Link to="/ai-disclosure" className="hover:text-iron-fg">IA</Link>
           <a href="/feed.xml" className="hover:text-iron-fg">RSS</a>
+          <a href="/sitemap.xml" className="hover:text-iron-fg">Sitemap</a>
           <Link to="/legal" className="hover:text-iron-fg">Aviso</Link>
           <Link to="/privacy" className="hover:text-iron-fg">Privacidad</Link>
-          <a href={SITE.github} rel="noreferrer" className="hover:text-iron-fg">GitHub</a>
+          <a href={SITE.github} rel="noreferrer me" className="hover:text-iron-fg">GitHub</a>
           <Link to="/login" className="hover:text-iron-fg/80">Mesa</Link>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ESCUCHA, TOPIC_HUB } from "@/data/seo-topics";
+import { SEO_LANDINGS } from "@/data/seo-landings";
 import { DEFAULT_KEYWORDS, seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/temas")({
@@ -25,6 +26,18 @@ function TemasPage() {
         Las búsquedas reales de quien quiere Huelva, y la conversación pública
         de la provincia. De aquí salen las guías.
       </p>
+
+      <ol className="mt-16 grid gap-10 md:grid-cols-2">
+        {SEO_LANDINGS.map((l) => (
+          <li key={l.slug} className="border-t border-line pt-6">
+            <Link to="/$slug" params={{ slug: l.slug }} className="group block">
+              <h2 className="font-display text-3xl tracking-tight group-hover:text-tinto">{l.h1}</h2>
+              <p className="mt-3 text-muted">{l.lede}</p>
+              <p className="mt-3 text-kicker text-faint">{l.keywords.slice(0, 4).join(" · ")}</p>
+            </Link>
+          </li>
+        ))}
+      </ol>
 
       <ol className="mt-16 grid gap-10 md:grid-cols-2">
         {TOPIC_HUB.map((topic) => (

@@ -55,9 +55,12 @@ function ArticlePage() {
       ? null
       : {
           "@context": "https://schema.org",
-          "@type": "Article",
+          "@type": "NewsArticle",
           headline: article.title,
+          description: article.dek,
+          image: `${SITE.url}${cover}`,
           datePublished: article.publishedAt,
+          dateModified: article.publishedAt,
           isAccessibleForFree: true,
           creativeWorkStatus: "Published",
           inLanguage: "es",
@@ -80,7 +83,7 @@ function ArticlePage() {
         />
       ) : null}
       <figure className="relative h-72 overflow-hidden bg-iron sm:h-96">
-        <img src={cover} alt="" className="film size-full object-cover" />
+        <img src={cover} alt={article.title} className="film size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-iron via-iron/20 to-transparent" />
       </figure>
       <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-8 sm:py-16">
