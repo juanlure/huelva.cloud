@@ -3,9 +3,11 @@ import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { getNewsroomStatus, runEditorialCycle } from "@/lib/server/newsroom";
+import { getMesaAccess, getNewsroomStatus, runEditorialCycle } from "@/lib/server/newsroom";
 import { formatDate } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { SignedIn, SignedOut } from "@/lib/auth/gates";
+import { useCurrentUserState } from "@/lib/auth/use-current-user";
 
 export const Route = createFileRoute("/redaccion")({
   loader: () => getNewsroomStatus(),
@@ -29,13 +31,13 @@ function RedaccionPage() {
   useEffect(() => {
     if (!armed) return;
     const id = window.setInterval(() => {
-      void wake("intervalo");
+      void wake();
     }, 8 * 60 * 1000);
     return () => window.clearInterval(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [armed]);
 
-  async function wake(_reason: string) {
+  async function wake() {
     if (pending) return;
     setPending(true);
     try {
@@ -52,6 +54,8 @@ function RedaccionPage() {
       await router.invalidate();
       const next = await getNewsroomStatus();
       setStatus(next);
+    } catch (err) {
+      toast.message(err instanceof Error ? err.message : "La mesa no te reconoce.");
     } finally {
       setPending(false);
     }
@@ -63,37 +67,35 @@ function RedaccionPage() {
         El loop
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight sm:text-5xl">
-        La redacción no duerme
+        La redacción se ve. No se toca.
       </h1>
       <p className="mt-4 max-w-2xl text-muted leading-relaxed">
         Un daemon despierta, decide si publicar o esperar, respeta ventana y
-        cuota. Alrededor, agentes: editor, siete plumas, exploradora, diversidad,
-        SRE, analítica, seguridad. No escriben folleto. Dejan rastro.
+        cuota. Tú ves el rastro. Operar la mesa no es de la calle.
       </p>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
-        <Stat
-          kicker="Decisión"
-          value={status.lastDecision}
-        />
-        <Stat
-          kicker="Cuota de hoy"
-          value={`${status.publishesToday} / ${status.quota}`}
-        />
+        <Stat kicker="Decisión" value={status.lastDecision} />
+        <Stat kicker="Cuota de hoy" value={`${status.publishesToday} / ${status.quota}`} />
         <Stat
           kicker="Ventana 8:00–23:00"
           value={status.windowOpen ? `Abierta (${status.hour}:00)` : `Cerrada (${status.hour}:00)`}
         />
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Button size="lg" disabled={pending} onClick={() => void wake("manual")}>
-          {pending ? "Despertando…" : "Despertar al daemon"}
-        </Button>
-        <Button
-          size="lg"
-          variant={armed ? "default" : "outline"}
-          onClick={() => {
+      <SignedOut>
+        <p className="mt-6 text-sm text-faint">
+          {status.backlogOpen} ideas en cola. El daemon no se despierta con un
+          clic de visitante.
+        </p>
+      </SignedOut>
+      <SignedIn>
+        <MesaControls
+          pending={pending}
+          armed={armed}
+          backlog={status.backlogOpen}
+          onWake={() => void wake()}
+          onArm={() => {
             setArmed((v) => !v);
             toast.message(
               !armed
@@ -101,22 +103,14 @@ function RedaccionPage() {
                 : "Daemon en pausa.",
             );
           }}
-        >
-          {armed ? "En marcha" : "Dejar en marcha"}
-        </Button>
-        <p className="text-sm text-faint">
-          {status.backlogOpen} ideas en cola · root simbólico, cuota real
-        </p>
-      </div>
+        />
+      </SignedIn>
 
       <section className="mt-12">
         <h2 className="font-display text-2xl tracking-tight">La red</h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {status.agents.map((agent) => (
-            <li
-              key={agent.name}
-              className="rounded-xl bg-paper p-4 shadow-border"
-            >
+            <li key={agent.name} className="rounded-xl bg-paper p-4 shadow-border">
               <div className="flex items-center justify-between gap-2">
                 <p className="font-display text-lg tracking-tight">{agent.name}</p>
                 <Badge variant="muted">{agent.title}</Badge>
@@ -154,6 +148,51 @@ function RedaccionPage() {
         </ol>
       </section>
     </main>
+  );
+}
+
+function MesaControls({
+  pending,
+  armed,
+  backlog,
+  onWake,
+  onArm,
+}: {
+  pending: boolean;
+  armed: boolean;
+  backlog: number;
+  onWake: () => void;
+  onArm: () => void;
+}) {
+  const { user, isPending } = useCurrentUserState();
+  const [access, setAccess] = useState<{ canOperate: boolean; vacant: boolean } | null>(null);
+
+  useEffect(() => {
+    if (!user) return;
+    void getMesaAccess()
+      .then(setAccess)
+      .catch(() => setAccess({ canOperate: false, vacant: false }));
+  }, [user]);
+
+  if (isPending || !user) return <div className="mt-6 h-12 animate-pulse rounded-xl bg-paper" />;
+  if (!access?.canOperate) {
+    return (
+      <p className="mt-6 text-sm text-faint">
+        Sesión vista. La mesa ya tiene operador. Puedes leer el rastro.
+      </p>
+    );
+  }
+
+  return (
+    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <Button size="lg" disabled={pending} onClick={onWake}>
+        {pending ? "Despertando…" : access.vacant ? "Tomar la mesa y despertar" : "Despertar al daemon"}
+      </Button>
+      <Button size="lg" variant={armed ? "default" : "outline"} onClick={onArm}>
+        {armed ? "En marcha" : "Dejar en marcha"}
+      </Button>
+      <p className="text-sm text-faint">{backlog} ideas en cola · solo la mesa</p>
+    </div>
   );
 }
 

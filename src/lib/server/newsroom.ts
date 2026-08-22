@@ -6,6 +6,7 @@ import { AGENTS, AUTHOR_BY_SLUG, writerForCategory } from "@/data/agents";
 import { BACKLOG_IDEAS } from "@/data/backlog";
 import { ensureSeeded } from "@/lib/server/content";
 import { CATEGORIES, type Category } from "@/lib/types";
+import { authMiddleware } from "@/lib/auth/middleware";
 
 export type OpsEntry = {
   id: number;
@@ -208,7 +209,8 @@ async function getState() {
     publishes_today: number;
     quota_day: string | null;
     last_decision: string | null;
-  }>`select last_wake, last_publish, publishes_today, quota_day, last_decision from daemon_state where id = 1`;
+    operator_user_id: string | null;
+  }>`select last_wake, last_publish, publishes_today, quota_day, last_decision, operator_user_id from daemon_state where id = 1`;
   const row = rows[0];
   const today = madridDate();
   let publishes = numFromUnknown(row?.publishes_today);
@@ -226,6 +228,38 @@ async function getState() {
     lastDecision: row?.last_decision ?? "arrancando",
   };
 }
+
+async function assertOperator(userId: string) {
+  const sql = await getSql();
+  const [row] = await sql<{ operator_user_id: string | null }>`
+    select operator_user_id from daemon_state where id = 1
+  `;
+  if (!row?.operator_user_id) {
+    await sql`
+      update daemon_state
+      set operator_user_id = ${userId}
+      where id = 1 and operator_user_id is null
+    `;
+    await log("La Rábida", "mesa", "La mesa tiene operador. El resto mira el rastro.");
+    return;
+  }
+  if (row.operator_user_id !== userId) {
+    throw new Error("La mesa ya tiene operador.");
+  }
+}
+
+export const getMesaAccess = createServerFn({ method: "GET" })
+  .middleware([authMiddleware])
+  .handler(async ({ context }) => {
+    await seedNewsroom();
+    const sql = await getSql();
+    const [row] = await sql<{ operator_user_id: string | null }>`
+      select operator_user_id from daemon_state where id = 1
+    `;
+    const vacant = !row?.operator_user_id;
+    const mine = row?.operator_user_id === context.userId;
+    return { canOperate: vacant || mine, isOperator: mine, vacant };
+  });
 
 export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async () => {
   await ensureSeeded();
@@ -291,9 +325,12 @@ export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async
   } satisfies NewsroomStatus;
 });
 
-export const runEditorialCycle = createServerFn({ method: "POST" }).handler(async () => {
+export const runEditorialCycle = createServerFn({ method: "POST" })
+  .middleware([authMiddleware])
+  .handler(async ({ context }) => {
   await ensureSeeded();
   await seedNewsroom();
+  await assertOperator(context.userId);
   const sql = await getSql();
   const hour = madridHour();
   const state = await getState();

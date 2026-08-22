@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Fish, MapPinned, Radio } from "lucide-react";
+import { ArrowRight, BookOpen, Fish, MapPinned, Radio } from "lucide-react";
 import { ArticleCard } from "@/components/article-card";
 import { Button } from "@/components/ui/button";
 import { listArticles } from "@/lib/server/content";
 import { getNewsroomStatus } from "@/lib/server/newsroom";
 import { SITE } from "@/lib/brand";
+import { HERO_IMAGE } from "@/data/covers";
+import { RECURSOS } from "@/data/recursos";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -44,12 +46,23 @@ function Home() {
           }),
         }}
       />
-      <section className="mx-auto max-w-6xl px-4 pb-12 pt-10 sm:px-6 sm:pt-16">
-        <p className="text-sm font-medium tracking-wide text-tide">Costa de la Luz</p>
-        <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink sm:text-6xl">
-          Huelva <span className="italic text-tide">.cloud</span> auténtica
-        </h1>
-        <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+      <section className="relative overflow-hidden">
+        <img
+          src={HERO_IMAGE}
+          alt="Muelle del Tinto al atardecer"
+          className="aspect-video w-full object-cover sm:h-96 sm:aspect-auto"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-4 pb-8 sm:px-6 sm:pb-12">
+          <p className="text-sm font-medium tracking-wide text-foam">Costa de la Luz</p>
+          <h1 className="mt-2 max-w-3xl font-display text-4xl leading-tight tracking-tight text-paper sm:text-6xl">
+            Huelva <span className="italic text-foam">.cloud</span> auténtica
+          </h1>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 pt-10 sm:px-6">
+        <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
           Guía local para viajeros, vecinos y quien llega a la ría sin mapa de
           souvenir. La redacción vive en la nube. El criterio, si hay, es de
           aquí: gamba, choco, Colón sin placa.
@@ -67,6 +80,12 @@ function Home() {
               Huelva Pulse
             </Link>
           </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link to="/recursos">
+              <BookOpen />
+              Recursos
+            </Link>
+          </Button>
         </div>
         <Link
           to="/redaccion"
@@ -77,7 +96,7 @@ function Home() {
             <span className="font-medium text-ink">Daemon · {newsroom.lastDecision}</span>
             <span className="mt-1 block text-muted">
               Cuota {newsroom.publishesToday}/{newsroom.quota} ·{" "}
-              {newsroom.windowOpen ? "ventana abierta" : "ventana cerrada"} · ver rastro
+              {newsroom.windowOpen ? "ventana abierta" : "ventana cerrada"} · rastro público
             </span>
           </span>
         </Link>
@@ -111,6 +130,29 @@ function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <SectionHead
+          kicker="Fuentes"
+          title="AEMET, DGT, Doñana, el 112. La guía no sustituye a la fuente."
+          href="/recursos"
+          linkLabel="Todos los recursos"
+        />
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {RECURSOS.slice(0, 4).map((item) => (
+            <li key={item.id}>
+              <a
+                href={item.href}
+                rel="noreferrer"
+                className="block h-full rounded-xl bg-paper p-4 shadow-border transition-colors hover:bg-foam"
+              >
+                <p className="font-display text-lg tracking-tight">{item.name}</p>
+                <p className="mt-1 text-sm text-muted">{item.dek}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-8 pb-16 sm:px-6">
         <SectionHead
           kicker="Tendencia"
@@ -134,7 +176,7 @@ function SectionHead({
 }: {
   kicker: string;
   title: string;
-  href?: "/guides" | "/aporta";
+  href?: "/guides" | "/aporta" | "/recursos";
   linkLabel?: string;
 }) {
   return (

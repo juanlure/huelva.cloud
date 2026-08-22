@@ -17,6 +17,9 @@ export function SiteFooter() {
           <Link to="/sobre" className="hover:text-ink">
             Sobre
           </Link>
+          <Link to="/recursos" className="hover:text-ink">
+            Recursos
+          </Link>
           <Link to="/redaccion" className="hover:text-ink">
             Redacción
           </Link>
@@ -35,6 +38,9 @@ export function SiteFooter() {
           <a href={SITE.github} rel="noreferrer" className="hover:text-ink">
             GitHub
           </a>
+          <Link to="/login" className="text-faint hover:text-muted">
+            Mesa
+          </Link>
         </div>
       </div>
     </footer>

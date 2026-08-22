@@ -3,6 +3,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Wordmark } from "@/components/wordmark";
+import { UserButton } from "@/lib/auth/gates";
+import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -11,6 +13,7 @@ const LINKS = [
   { to: "/pulse", label: "Pulso" },
   { to: "/comer", label: "Comer" },
   { to: "/agenda", label: "Agenda" },
+  { to: "/recursos", label: "Recursos" },
   { to: "/redaccion", label: "Redacción" },
   { to: "/test", label: "Test" },
 ] as const;
@@ -40,6 +43,7 @@ export function SiteHeader() {
           <Button asChild size="sm" className="ml-2">
             <Link to="/aporta">Aporta</Link>
           </Button>
+          <AuthChip />
         </nav>
 
         <Button
@@ -74,9 +78,19 @@ export function SiteHeader() {
                 Aporta
               </Link>
             </Button>
+            <div className="px-3 py-2">
+              <AuthChip />
+            </div>
           </div>
         </nav>
       ) : null}
     </header>
   );
+}
+
+function AuthChip() {
+  const { user, isPending } = useCurrentUserState();
+  if (isPending) return <div className="h-8 w-8 animate-pulse rounded-full bg-line" />;
+  if (!user) return null;
+  return <UserButton />;
 }

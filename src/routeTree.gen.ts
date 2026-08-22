@@ -18,12 +18,15 @@ import { Route as ComerRouteImport } from './routes/comer'
 import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PulseRouteImport } from './routes/pulse'
+import { Route as RecursosRouteImport } from './routes/recursos'
 import { Route as RedaccionRouteImport } from './routes/redaccion'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -70,6 +73,11 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -78,6 +86,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PulseRoute = PulseRouteImport.update({
   id: '/pulse',
   path: '/pulse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecursosRoute = RecursosRouteImport.update({
+  id: '/recursos',
+  path: '/recursos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RedaccionRoute = RedaccionRouteImport.update({
@@ -100,6 +113,11 @@ const PSlugRoute = PSlugRouteImport.update({
   path: '/p/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -111,12 +129,15 @@ export interface FileRoutesByFullPath {
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
   '/legal': typeof LegalRoute
+  '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/pulse': typeof PulseRoute
+  '/recursos': typeof RecursosRoute
   '/redaccion': typeof RedaccionRoute
   '/sobre': typeof SobreRoute
   '/test': typeof TestRoute
   '/p/$slug': typeof PSlugRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -128,12 +149,15 @@ export interface FileRoutesByTo {
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
   '/legal': typeof LegalRoute
+  '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/pulse': typeof PulseRoute
+  '/recursos': typeof RecursosRoute
   '/redaccion': typeof RedaccionRoute
   '/sobre': typeof SobreRoute
   '/test': typeof TestRoute
   '/p/$slug': typeof PSlugRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -146,12 +170,15 @@ export interface FileRoutesById {
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
   '/legal': typeof LegalRoute
+  '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/pulse': typeof PulseRoute
+  '/recursos': typeof RecursosRoute
   '/redaccion': typeof RedaccionRoute
   '/sobre': typeof SobreRoute
   '/test': typeof TestRoute
   '/p/$slug': typeof PSlugRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -165,12 +192,15 @@ export interface FileRouteTypes {
     | '/feed.xml'
     | '/guides'
     | '/legal'
+    | '/login'
     | '/privacy'
     | '/pulse'
+    | '/recursos'
     | '/redaccion'
     | '/sobre'
     | '/test'
     | '/p/$slug'
+    | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -182,12 +212,15 @@ export interface FileRouteTypes {
     | '/feed.xml'
     | '/guides'
     | '/legal'
+    | '/login'
     | '/privacy'
     | '/pulse'
+    | '/recursos'
     | '/redaccion'
     | '/sobre'
     | '/test'
     | '/p/$slug'
+    | '/api/auth/$'
   id:
     | '__root__'
     | '/'
@@ -199,12 +232,15 @@ export interface FileRouteTypes {
     | '/feed.xml'
     | '/guides'
     | '/legal'
+    | '/login'
     | '/privacy'
     | '/pulse'
+    | '/recursos'
     | '/redaccion'
     | '/sobre'
     | '/test'
     | '/p/$slug'
+    | '/api/auth/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -217,12 +253,15 @@ export interface RootRouteChildren {
   FeedDotxmlRoute: typeof FeedDotxmlRoute
   GuidesRoute: typeof GuidesRoute
   LegalRoute: typeof LegalRoute
+  LoginRoute: typeof LoginRoute
   PrivacyRoute: typeof PrivacyRoute
   PulseRoute: typeof PulseRoute
+  RecursosRoute: typeof RecursosRoute
   RedaccionRoute: typeof RedaccionRoute
   SobreRoute: typeof SobreRoute
   TestRoute: typeof TestRoute
   PSlugRoute: typeof PSlugRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -290,6 +329,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -302,6 +348,13 @@ declare module '@tanstack/react-router' {
       path: '/pulse'
       fullPath: '/pulse'
       preLoaderRoute: typeof PulseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recursos': {
+      id: '/recursos'
+      path: '/recursos'
+      fullPath: '/recursos'
+      preLoaderRoute: typeof RecursosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/redaccion': {
@@ -332,6 +385,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -345,12 +405,15 @@ const rootRouteChildren: RootRouteChildren = {
   FeedDotxmlRoute: FeedDotxmlRoute,
   GuidesRoute: GuidesRoute,
   LegalRoute: LegalRoute,
+  LoginRoute: LoginRoute,
   PrivacyRoute: PrivacyRoute,
   PulseRoute: PulseRoute,
+  RecursosRoute: RecursosRoute,
   RedaccionRoute: RedaccionRoute,
   SobreRoute: SobreRoute,
   TestRoute: TestRoute,
   PSlugRoute: PSlugRoute,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
