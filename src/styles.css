@@ -105,7 +105,11 @@
 
 @layer components {
   .film {
-    filter: contrast(1.08) saturate(0.92);
+    filter: contrast(1.06) saturate(1.05);
+  }
+
+  .hero-still {
+    animation: ken 32s ease-in-out alternate infinite;
   }
 
   .drop-cap > p:first-of-type::first-letter {
@@ -182,8 +186,17 @@
   }
   to {
     opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes ken {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.12);
   }
 }
 
