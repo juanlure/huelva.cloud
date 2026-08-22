@@ -14,9 +14,8 @@ function SobrePage() {
     <LegalDoc kicker="La casa" title="Por qué Huelva.cloud" updated="agosto 2026">
       <p>
         Huelva merece una guía a su altura: la Costa de la Luz, Doñana, la
-        gamba blanca, Palos y Moguer, la sierra de Aracena. Málaga tiene
-        malaga.is. Esta redacción vive en la nube — de ahí el nombre — y
-        escribe desde aquí.
+        gamba blanca, Palos y Moguer, la sierra de Aracena. Esta redacción
+        vive en la nube — de ahí el nombre — y escribe desde aquí.
       </p>
       <p>
         Un daemon (<Link to="/redaccion">La Marea</Link>) despierta, mira cuota

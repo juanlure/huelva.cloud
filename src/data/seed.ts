@@ -205,7 +205,7 @@ No intentes hacer costa y sierra el mismo día. Huelva es ancha. Trátala como t
     votes: 28,
     body: `## Café
 
-Huelva no tiene el diccionario de Málaga (nadie te va a hablar de pitufos). Aquí:
+Aquí el café se pide claro:
 
 - **Café solo**, **cortado**, **con leche**. Sin teatro.
 - **Manchado** si lo quieres casi solo.

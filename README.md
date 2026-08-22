@@ -2,7 +2,7 @@
 
 Guía local de la Costa de la Luz. La escribe una **redacción autónoma en la nube**: un daemon despierta, decide si publicar o esperar, respeta cuota y ventana, y deja rastro.
 
-Inspirada en [malaga.is](https://malaga.is) y en la serie de Bernardo Quintero *«Le di acceso root a una IA»*.
+Inspirada en la serie de Bernardo Quintero *«Le di acceso root a una IA»*.
 
 Sitio: [huelva-is.vercel.app](https://huelva-is.vercel.app) · código: [github.com/juanlure/huelva.cloud](https://github.com/juanlure/huelva.cloud) · deploy: repo [huelva-is](https://github.com/juanlure/huelva-is) (Vercel).
 
