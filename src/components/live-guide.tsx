@@ -8,14 +8,20 @@ import { useChecked } from "@/lib/checked";
 import { cn } from "@/lib/utils";
 import {
   buildMarea,
+  ALMANAQUE,
+  CAFE_BREAD,
+  CAFE_DRINKS,
+  cafePhrase,
   cartaAdvice,
   CARTA_PLACES,
   CARTA_WANT,
   COLON_STOPS,
+  CUENCA_STOPS,
   DESTINOS,
   DONANA_PATHS,
   DONANA_SEASONS,
   GAMBA_SPECIES,
+  OCASO_SPOTS,
   PLAYAS,
   SLANG,
   type MareaDays,
@@ -455,6 +461,177 @@ export function MarismaGuide() {
             />
           ))}
         </ol>
+      </div>
+    </div>
+  );
+}
+
+export function CafeGuide() {
+  const [drink, setDrink] = useState<(typeof CAFE_DRINKS)[number]["id"]>("leche");
+  const [bread, setBread] = useState<(typeof CAFE_BREAD)[number]["id"]>("manteca");
+  const phrase = cafePhrase(drink, bread);
+
+  return (
+    <div className="grid gap-10 lg:grid-cols-12">
+      <div className="lg:col-span-5">
+        <p className="text-kicker text-tinto">Bebida</p>
+        <div className="mt-2 flex flex-wrap gap-x-4">
+          {CAFE_DRINKS.map((d) => (
+            <Chip key={d.id} active={drink === d.id} onClick={() => setDrink(d.id)}>
+              {d.label}
+            </Chip>
+          ))}
+        </div>
+        <p className="mt-8 text-kicker text-tinto">Tostada</p>
+        <div className="mt-2 flex flex-wrap gap-x-4">
+          {CAFE_BREAD.map((b) => (
+            <Chip key={b.id} active={bread === b.id} onClick={() => setBread(b.id)}>
+              {b.label}
+            </Chip>
+          ))}
+        </div>
+      </div>
+      <div className="bg-iron px-6 py-10 text-iron-fg sm:px-8 lg:col-span-7">
+        <p className="text-kicker text-tinto">Dile esto</p>
+        <p className="mt-3 font-display text-edition leading-tight tracking-tight">{phrase.say}</p>
+        <p className="mt-6 max-w-md text-sm text-foam">{phrase.where}</p>
+        <p className="mt-2 max-w-md text-sm text-foam">{phrase.note}</p>
+      </div>
+    </div>
+  );
+}
+
+export function OcasoGuide() {
+  const [tag, setTag] = useState<"all" | "capital" | "costa" | "frontera">("all");
+  const list = tag === "all" ? OCASO_SPOTS : OCASO_SPOTS.filter((s) => s.tag === tag);
+  const [active, setActive] = useState(OCASO_SPOTS[0]!.id);
+  const spot = list.find((s) => s.id === active) ?? list[0] ?? OCASO_SPOTS[0]!;
+
+  return (
+    <div className="grid gap-10 lg:grid-cols-12">
+      <div className="lg:col-span-5">
+        <div className="flex flex-wrap gap-x-4">
+          {(["all", "capital", "costa", "frontera"] as const).map((t) => (
+            <Chip
+              key={t}
+              active={tag === t}
+              onClick={() => {
+                setTag(t);
+                const next = t === "all" ? OCASO_SPOTS[0] : OCASO_SPOTS.find((s) => s.tag === t);
+                if (next) setActive(next.id);
+              }}
+            >
+              {t === "all" ? "Todos" : t === "capital" ? "Capital" : t === "costa" ? "Costa" : "Frontera"}
+            </Chip>
+          ))}
+        </div>
+        <ol className="mt-8">
+          {list.map((s) => (
+            <li key={s.id}>
+              <button
+                type="button"
+                onClick={() => setActive(s.id)}
+                className={cn(
+                  "w-full border-b border-line py-5 text-left",
+                  active === s.id && "text-tinto",
+                )}
+              >
+                <span className="font-display text-xl tracking-tight">{s.title}</span>
+                <span className="mt-1 block text-sm text-muted">{s.area}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div className="lg:col-span-7">
+        <StopMap stops={[{ id: spot.id, name: spot.title, lat: spot.lat, lng: spot.lng, blurb: spot.note }]} />
+        <p className="mt-6 text-kicker text-tinto">{spot.when}</p>
+        <p className="mt-3 max-w-lg font-display text-edition leading-tight tracking-tight">{spot.note}</p>
+      </div>
+    </div>
+  );
+}
+
+export function CuencaGuide() {
+  const checked = useChecked("cuenca");
+  const done = CUENCA_STOPS.filter((s) => checked.has(s.id)).length;
+  return (
+    <div className="grid gap-10 lg:grid-cols-12">
+      <div className="lg:col-span-5">
+        <p className="text-kicker text-tinto">
+          {done} / {CUENCA_STOPS.length} · un día, sin playa
+        </p>
+        <ol className="mt-6">
+          {CUENCA_STOPS.map((stop) => (
+            <StopRow
+              key={stop.id}
+              stop={stop}
+              done={checked.has(stop.id)}
+              onToggle={() => checked.toggle(stop.id)}
+            />
+          ))}
+        </ol>
+      </div>
+      <div className="lg:col-span-7">
+        <StopMap
+          stops={CUENCA_STOPS.map((s) => ({
+            id: s.id,
+            name: s.title,
+            lat: s.lat,
+            lng: s.lng,
+            blurb: s.note,
+          }))}
+        />
+        <p className="mt-4 text-sm leading-relaxed text-muted">
+          Coche. Agua. Calzado cerrado. El rojo mancha y merece la pena. No lo
+          combines con baño el mismo día: son dos Huelvas.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function AlmanaqueGuide() {
+  const now = new Date().getMonth();
+  const [open, setOpen] = useState(ALMANAQUE[now]?.id ?? "09");
+  const month = ALMANAQUE.find((m) => m.id === open) ?? ALMANAQUE[8]!;
+
+  return (
+    <div className="grid gap-10 lg:grid-cols-12">
+      <ol className="lg:col-span-4">
+        {ALMANAQUE.map((m) => (
+          <li key={m.id}>
+            <button
+              type="button"
+              onClick={() => setOpen(m.id)}
+              className={cn(
+                "flex w-full items-baseline justify-between border-b border-line py-3 text-left",
+                open === m.id ? "text-tinto" : "text-ink hover:text-tinto",
+              )}
+            >
+              <span className="font-display text-xl tracking-tight">{m.month}</span>
+              <span className="text-kicker text-faint">{m.id}</span>
+            </button>
+          </li>
+        ))}
+      </ol>
+      <div className="lg:col-span-8">
+        <p className="text-kicker text-tinto">Este mes</p>
+        <h2 className="mt-3 font-display text-display leading-display tracking-display">{month.month}</h2>
+        <dl className="mt-10 grid gap-8 sm:grid-cols-3">
+          <div>
+            <dt className="text-kicker text-faint">Mesa</dt>
+            <dd className="mt-2 font-display text-2xl leading-snug tracking-tight">{month.table}</dd>
+          </div>
+          <div>
+            <dt className="text-kicker text-faint">Luz</dt>
+            <dd className="mt-2 font-display text-2xl leading-snug tracking-tight">{month.light}</dd>
+          </div>
+          <div>
+            <dt className="text-kicker text-faint">Rito</dt>
+            <dd className="mt-2 font-display text-2xl leading-snug tracking-tight">{month.rite}</dd>
+          </div>
+        </dl>
       </div>
     </div>
   );

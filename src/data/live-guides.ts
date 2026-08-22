@@ -1,4 +1,14 @@
-export type LiveGuideId = "marea" | "carta" | "kit" | "rabida" | "orilla" | "marisma";
+export type LiveGuideId =
+  | "marea"
+  | "carta"
+  | "kit"
+  | "rabida"
+  | "orilla"
+  | "marisma"
+  | "cafe"
+  | "ocaso"
+  | "cuenca"
+  | "almanaque";
 
 export type LiveGuide = {
   id: LiveGuideId;
@@ -57,6 +67,38 @@ export const LIVE_GUIDES: LiveGuide[] = [
     image: "/media/donana.jpg",
     minutes: "Media jornada",
     articleSlug: "donana-sin-calor",
+  },
+  {
+    id: "cafe",
+    title: "El café de las Monjas",
+    dek: "Cómo se pide el café, la tostada y la caña en Huelva. La frase de la casa, lista para decir.",
+    image: "/media/muelle.jpg",
+    minutes: "2 min de barra",
+    articleSlug: "traductor-bar-huelva",
+  },
+  {
+    id: "ocaso",
+    title: "Dónde se pone el sol",
+    dek: "Muelle, flecha, Conquero, Guadiana. Elige hora y orilla: Huelva mira al oeste de verdad.",
+    image: "/media/muelle.jpg",
+    minutes: "Al atardecer",
+    articleSlug: "ocaso-en-huelva",
+  },
+  {
+    id: "cuenca",
+    title: "La cuenca roja",
+    dek: "Riotinto: el río, el tren, el pueblo británico. Un paisaje que parece de otro planeta y es de aquí.",
+    image: "/media/aracena.jpg",
+    minutes: "Un día",
+    articleSlug: "riotinto-la-cuenca",
+  },
+  {
+    id: "almanaque",
+    title: "El año onubense",
+    dek: "Fresas, Colombinas, la Cinta, gurumelos, el primer baño. Qué toca cada mes.",
+    image: "/media/rocio.jpg",
+    minutes: "Consulta",
+    articleSlug: "almanaque-onubense",
   },
 ];
 
@@ -539,3 +581,249 @@ export const DONANA_PATHS = [
     lng: -6.45,
   },
 ];
+
+export const CAFE_DRINKS = [
+  { id: "solo", label: "Solo", say: "un café solo" },
+  { id: "cortado", label: "Cortado", say: "un cortado" },
+  { id: "leche", label: "Con leche", say: "un café con leche" },
+  { id: "manchado", label: "Manchado", say: "un manchado" },
+  { id: "hielo", label: "Con hielo", say: "un café con hielo" },
+] as const;
+
+export const CAFE_BREAD = [
+  { id: "aceite", label: "Aceite", say: "tostada de aceite" },
+  { id: "tomate", label: "Tomate", say: "tostada de tomate" },
+  { id: "manteca", label: "Manteca colorá", say: "tostada de manteca colorá" },
+  { id: "lomo", label: "Lomo", say: "tostada de lomo" },
+  { id: "nada", label: "Sin tostada", say: null },
+] as const;
+
+export function cafePhrase(drink: string, bread: string) {
+  const d = CAFE_DRINKS.find((x) => x.id === drink) ?? CAFE_DRINKS[2];
+  const b = CAFE_BREAD.find((x) => x.id === bread) ?? CAFE_BREAD[0];
+  const ice =
+    drink === "hielo"
+      ? " El hielo viene aparte: lo tiras tú. Es el rito, no un olvido."
+      : "";
+  if (!b.say) {
+    return {
+      say: `«${d.say.charAt(0).toUpperCase()}${d.say.slice(1)}.»`,
+      where: "Plaza de las Monjas, o cualquier barra que abra con la ciudad.",
+      note: `En Huelva el café se pide por su nombre.${ice}`,
+    };
+  }
+  return {
+    say: `«${d.say.charAt(0).toUpperCase()}${d.say.slice(1)} y una ${b.say}.»`,
+    where:
+      bread === "manteca"
+        ? "Las Monjas, por la mañana. La manteca colorá es de esta tierra."
+        : "Plaza de las Monjas, kiosco, sombra. El desayuno de la capital.",
+    note:
+      drink === "hielo"
+        ? "Vaso de hielo aparte. Lo tiras tú. Un rito andaluz, bien hecho."
+        : "Caña corta si es mediodía. Condado si la mesa ya es de verdad.",
+  };
+}
+
+export const OCASO_SPOTS = [
+  {
+    id: "muelle",
+    title: "Muelle de Riotinto",
+    area: "Capital",
+    when: "Todo el año. En verano, a partir de las 20:30; en invierno, a las 18:00 ya es cobre.",
+    note: "Hierro sobre el Tinto. El atardecer más noble de la ciudad. Veinte minutos a pie desde las Monjas.",
+    lat: 37.2618,
+    lng: -6.9415,
+    tag: "capital" as const,
+  },
+  {
+    id: "conquero",
+    title: "El Conquero / Parque Moret",
+    area: "Capital",
+    when: "Mejor de octubre a mayo, cuando el aire está limpio.",
+    note: "La ría entera, pino y altura. Huelva se entiende desde aquí, con el sol cayendo al oeste.",
+    lat: 37.2705,
+    lng: -6.955,
+    tag: "capital" as const,
+  },
+  {
+    id: "flecha",
+    title: "Flecha del Portil",
+    area: "Costa",
+    when: "De abril a octubre. El poniente a veces ayuda; a veces tumba.",
+    note: "Arena, marisma y agua a ambos lados. Anda desde Punta cuando caiga el viento.",
+    lat: 37.21,
+    lng: -7.045,
+    tag: "costa" as const,
+  },
+  {
+    id: "mazagon",
+    title: "Mazagón, hacia el este",
+    area: "Costa",
+    when: "Todo el año. Las noches de septiembre son las más largas de luz.",
+    note: "Pinos hasta la duna. Camina hasta que se acaben las toallas. El sol se pone en el mar.",
+    lat: 37.137,
+    lng: -6.83,
+    tag: "costa" as const,
+  },
+  {
+    id: "guadiana",
+    title: "Ferry de Ayamonte",
+    area: "Frontera",
+    when: "La tabla del ferry manda. El atardecer sobre el Guadiana es un privilegio breve.",
+    note: "Cinco minutos y Portugal. La luz del río es otra: ancha, lenta, de frontera.",
+    lat: 37.213,
+    lng: -7.403,
+    tag: "frontera" as const,
+  },
+  {
+    id: "isla",
+    title: "Lonja de Isla Cristina",
+    area: "Costa oeste",
+    when: "Tardes de mar en calma. El puerto se dora.",
+    note: "No es un mirador de postal: es una flota que vuelve. El sol, el cobre de los barcos, la gamba que entra.",
+    lat: 37.199,
+    lng: -7.321,
+    tag: "costa" as const,
+  },
+];
+
+export const CUENCA_STOPS: PlanStop[] = [
+  {
+    id: "museo",
+    title: "Museo Minero",
+    slot: "Mañana",
+    minutes: 75,
+    note: "La compañía británica, el ferrocarril, la cuenca explicada. Empieza aquí: el paisaje luego se lee solo.",
+    lat: 37.694,
+    lng: -6.593,
+    car: true,
+  },
+  {
+    id: "tren",
+    title: "Ferrocarril turístico",
+    slot: "Mediodía",
+    minutes: 90,
+    note: "Un tren viejo en tierra colorada. Reserva en temporada. Agua, sombrero, calzado cerrado. El rojo mancha.",
+    lat: 37.696,
+    lng: -6.594,
+    car: true,
+  },
+  {
+    id: "pena",
+    title: "Peña del Hierro",
+    slot: "Tarde",
+    minutes: 60,
+    note: "El corte en la tierra. Corta y enorme. NASA estudió estas aguas; tú, míralas con respeto.",
+    lat: 37.726,
+    lng: -6.557,
+    car: true,
+  },
+  {
+    id: "bella",
+    title: "Bella Vista",
+    slot: "Tarde",
+    minutes: 40,
+    note: "El barrio inglés de la cuenca. Porches, césped, otra arquitectura. El mismo linaje que Reina Victoria, en su origen.",
+    lat: 37.691,
+    lng: -6.599,
+    car: true,
+  },
+  {
+    id: "rio",
+    title: "El cauce del Tinto",
+    slot: "Cierre",
+    minutes: 30,
+    note: "El río baja rojo hacia Huelva. No es un vino: es hierro, bacterias, geología viva. La postal más extraña de Europa.",
+    lat: 37.68,
+    lng: -6.56,
+    car: true,
+  },
+];
+
+export const ALMANAQUE = [
+  {
+    id: "01",
+    month: "Enero",
+    table: "Jamón de Jabugo, gurumelos si el año acompaña",
+    light: "Sierra fría, capital clara",
+    rite: "Gruta de las Maravillas. Chimenea. Pocas toallas.",
+  },
+  {
+    id: "02",
+    month: "Febrero",
+    table: "Fresón temprano, todavía de olor",
+    light: "Días que se alargan",
+    rite: "Carnaval de Isla Cristina. La costa oeste se disfraza con oficio.",
+  },
+  {
+    id: "03",
+    month: "Marzo",
+    table: "Primeras coquinas, si el mar quiere",
+    light: "Equinoccio sobre la ría",
+    rite: "Semana Santa en la capital. Silencio, incienso, la Cinta al fondo.",
+  },
+  {
+    id: "04",
+    month: "Abril",
+    table: "Fresa en su punto. Condado nuevo",
+    light: "Doñana se llena de aves",
+    rite: "Acebuche al amanecer. La marisma, verde.",
+  },
+  {
+    id: "05",
+    month: "Mayo",
+    table: "Fresa y gamba, ya juntas",
+    light: "El primer baño serio",
+    rite: "El Rocío, cuando cae. Fe, arena, hermandad. Un país aparte.",
+  },
+  {
+    id: "06",
+    month: "Junio",
+    table: "Choco de Punta, gamba a la plancha",
+    light: "San Juan, hogueras en la orilla",
+    rite: "La costa se enciende. Reserva si vienes a Punta.",
+  },
+  {
+    id: "07",
+    month: "Julio",
+    table: "Lonja a pleno. Condado frío",
+    light: "Tres mil horas, en su mitad",
+    rite: "Colombinas: casetas, Recinto Ferial, la ciudad de gala.",
+  },
+  {
+    id: "08",
+    month: "Agosto",
+    table: "Gamba, choco, helado de la casa",
+    light: "El poniente manda la playa",
+    rite: "Atlántico de verdad. Mazagón si buscas orilla ancha.",
+  },
+  {
+    id: "09",
+    month: "Septiembre",
+    table: "El mejor mes de mesa y baño",
+    light: "El agua sigue; la toalla, no tanto",
+    rite: "Fiestas de la Cinta. La virgen de Huelva, el santuario, la loma.",
+  },
+  {
+    id: "10",
+    month: "Octubre",
+    table: "Setas, castaña, jamón de nuevo",
+    light: "Riotinto, suave. Doñana, clara",
+    rite: "Sube a la cuenca o a Aracena. La provincia se abre hacia el norte.",
+  },
+  {
+    id: "11",
+    month: "Noviembre",
+    table: "Gurumelos, caza de temporada, Condado de guarda",
+    light: "Playas vacías, luz baja",
+    rite: "Paseo en el Muelle con abrigo. Huelva, íntima.",
+  },
+  {
+    id: "12",
+    month: "Diciembre",
+    table: "Jamón, marisco de fiesta, manteca",
+    light: "Noches tempranas, ría en calma",
+    rite: "Navidad en las Monjas. La sierra, si quieres frío limpio.",
+  },
+] as const;

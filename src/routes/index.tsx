@@ -162,7 +162,7 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-8">
-        <SectionHead kicker="01 — Guías vivas" title="Seis maneras de estar aquí." href="/guides" linkLabel="Las seis" />
+        <SectionHead kicker="01 — Guías vivas" title="Diez maneras de estar aquí." href="/guides" linkLabel="Todas" />
         <ul className="mt-10 grid gap-px overflow-hidden rounded-lg bg-line md:grid-cols-2">
           {LIVE_GUIDES.map((guide, i) => (
             <li key={guide.id} className={i === 0 ? "md:col-span-2" : ""}>

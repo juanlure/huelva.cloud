@@ -421,6 +421,93 @@ Pide ración para compartir. Si está en su punto, pide otra. El choco de Punta,
 
 Firmado: alguien que vive aquí y guarda las horas buenas para quien las merece.`,
   },
+  {
+    slug: "ocaso-en-huelva",
+    title: "Dónde se pone el sol",
+    dek: "Huelva mira al oeste de verdad. Seis orillas para verlo caer: hierro, flecha, pino, frontera.",
+    category: "guides",
+    readMinutes: 6,
+    featured: true,
+    source: "editorial",
+    neighborhood: "pescaderia",
+    publishedAt: "2026-08-22T18:00:00Z",
+    votes: 18,
+    body: `El Atlántico de Huelva no es un fondo de pantalla: el sol se pone en el mar, y hay que elegir desde dónde.
+
+## El Muelle de Riotinto
+
+Veinte minutos desde las Monjas. Hierro, el Tinto debajo, el cielo de cobre. Es el atardecer de la capital. En invierno, a las seis ya es hora; en agosto, espera a las nueve.
+
+## El Conquero
+
+Altura y pino. La ría se entiende de un vistazo. Mejor de octubre a mayo, cuando el aire está limpio.
+
+## La flecha del Portil
+
+Anda desde Punta cuando caiga el viento. Arena, marisma, agua a ambos lados. El poniente a veces ayuda; a veces tumba la sombrilla y te deja el cielo entero.
+
+## Mazagón
+
+Pinos hasta la duna. Camina hacia el este hasta que se acaben las toallas. Las noches de septiembre son las más largas de luz.
+
+## Ayamonte
+
+El ferry sobre el Guadiana. Cinco minutos y Portugal. Una luz ancha, de frontera.
+
+## Isla Cristina
+
+No es un mirador: es una flota que vuelve. El cobre de los barcos, la gamba que entra, el sol en el puerto.
+
+Elige un solo ocaso por tarde. Huelva da para una semana de ellos.`,
+  },
+  {
+    slug: "riotinto-la-cuenca",
+    title: "La cuenca roja",
+    dek: "El río, el tren, Bella Vista. Un paisaje que parece de otro planeta y es de esta provincia.",
+    category: "guides",
+    readMinutes: 8,
+    featured: true,
+    source: "editorial",
+    neighborhood: null,
+    publishedAt: "2026-08-22T10:00:00Z",
+    votes: 15,
+    body: `Riotinto no es un desvío: es una de las geografías más extrañas de Europa. El río baja rojo por el hierro y por una vida microbiana que ha interesado hasta a la NASA. El paisaje es de aquí.
+
+## El orden del día
+
+Empieza en el **Museo Minero**. La compañía británica, el ferrocarril, la cuenca explicada. Luego el **tren turístico**: reserva en temporada, agua, sombrero, calzado cerrado. El rojo mancha.
+
+**Peña del Hierro** es el corte en la tierra. **Bella Vista**, el barrio inglés: porches, césped, el mismo linaje que el Reina Victoria de la capital.
+
+Cierra en el **cauce**. No es un vino. Es geología viva.
+
+## Cómo ir
+
+Coche. Un día entero. No lo combines con baño: son dos Huelvas, y las dos merecen su luz.
+
+Octubre y primavera son los meses dulces. En agosto, madruga.`,
+  },
+  {
+    slug: "almanaque-onubense",
+    title: "El año onubense",
+    dek: "Doce meses, una provincia: fresa, Colombinas, la Cinta, gurumelos, el primer baño.",
+    category: "guides",
+    readMinutes: 7,
+    featured: false,
+    source: "editorial",
+    neighborhood: null,
+    publishedAt: "2026-08-22T11:00:00Z",
+    votes: 12,
+    body: `Huelva no es un verano. Es un año.
+
+**Enero** es sierra y jamón. **Febrero**, el fresón y el Carnaval de Isla Cristina. **Marzo**, Semana Santa y el equinoccio sobre la ría. **Abril** llena Doñana de aves. **Mayo** junta fresa y gamba, y a veces El Rocío.
+
+**Junio** enciende Punta. **Julio**, las Colombinas. **Agosto**, el poniente y la orilla ancha. **Septiembre** es el mes feliz: Fiestas de la Cinta, agua todavía, toalla ya no tanto.
+
+**Octubre** abre el norte: castaña, cuenca, setas. **Noviembre**, el Muelle con abrigo. **Diciembre**, las Monjas de fiesta y, si quieres frío limpio, Aracena.
+
+Elige el mes. La provincia cambia de plato y de luz, y las dos cosas se comen.`,
+  },
 ];
 
 export const SEED_PLACES: SeedPlace[] = [

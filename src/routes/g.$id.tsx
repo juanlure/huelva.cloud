@@ -1,11 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import {
+  AlmanaqueGuide,
+  CafeGuide,
   CartaGuide,
+  CuencaGuide,
   GuideFooter,
   KitGuide,
   MarismaGuide,
   MareaGuide,
+  OcasoGuide,
   OrillaGuide,
   RabidaGuide,
 } from "@/components/live-guide";
@@ -18,6 +22,10 @@ const VIEWS: Record<LiveGuideId, () => ReactNode> = {
   rabida: () => <RabidaGuide />,
   orilla: () => <OrillaGuide />,
   marisma: () => <MarismaGuide />,
+  cafe: () => <CafeGuide />,
+  ocaso: () => <OcasoGuide />,
+  cuenca: () => <CuencaGuide />,
+  almanaque: () => <AlmanaqueGuide />,
 };
 
 export const Route = createFileRoute("/g/$id")({
