@@ -9,6 +9,7 @@ import { CATEGORY_LABEL } from "@/lib/types";
 import { SITE } from "@/lib/brand";
 import { BARRIOS } from "@/data/barrios";
 import { liveGuideByArticle } from "@/data/live-guides";
+import { coverFor } from "@/data/covers";
 
 export const Route = createFileRoute("/p/$slug")({
   loader: async ({ params }) => {
@@ -38,6 +39,7 @@ function ArticlePage() {
   const router = useRouter();
   const barrio = BARRIOS.find((b) => b.id === article.neighborhood);
   const live = liveGuideByArticle(article.slug);
+  const cover = coverFor(article);
   const jsonLd =
     article.source === "community"
       ? null
@@ -60,13 +62,18 @@ function ArticlePage() {
         };
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-8 sm:py-20">
+    <main>
       {jsonLd ? (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       ) : null}
+      <figure className="relative h-72 overflow-hidden bg-iron sm:h-96">
+        <img src={cover} alt="" className="film size-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-iron via-iron/20 to-transparent" />
+      </figure>
+      <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-8 sm:py-16">
       <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
         <Badge>{CATEGORY_LABEL[article.category]}</Badge>
         {article.source === "community" ? <Badge variant="solid">La calle</Badge> : null}
@@ -121,7 +128,7 @@ function ArticlePage() {
         </p>
       ) : null}
 
-      <div className="mt-8">
+      <div className="drop-cap mt-10">
         <ArticleBody markdown={article.body} />
       </div>
 
@@ -146,6 +153,7 @@ function ArticlePage() {
           </div>
         </section>
       ) : null}
+      </div>
     </main>
   );
 }

@@ -8,6 +8,7 @@ import { SITE } from "@/lib/brand";
 import { HERO_IMAGE } from "@/data/covers";
 import { LIVE_GUIDES } from "@/data/live-guides";
 import { RECURSOS } from "@/data/recursos";
+import { cn } from "@/lib/utils";
 
 const TICKER = [
   "Gamba blanca",
@@ -20,6 +21,14 @@ const TICKER = [
   "Muelle",
   "Colombinas",
   "Onuba",
+];
+
+const ESSAY = [
+  { src: "/media/muelle.jpg", cap: "01 · El muelle" },
+  { src: "/media/donana.jpg", cap: "02 · La marisma" },
+  { src: "/media/playa.jpg", cap: "03 · La orilla" },
+  { src: "/media/aracena.jpg", cap: "04 · La sierra" },
+  { src: "/media/rocio.jpg", cap: "05 · El Rocío" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -64,21 +73,21 @@ function Home() {
         <img
           src={HERO_IMAGE}
           alt="Muelle del Tinto al atardecer"
-          className="absolute inset-0 size-full object-cover"
+          className="film absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-iron/55" />
-        <p className="writing-vertical text-kicker absolute right-4 top-1/2 hidden -translate-y-1/2 text-foam/80 sm:right-8 sm:block">
-          Costa de la Luz · Onuba
+        <div className="absolute inset-0 bg-iron/50" />
+        <p className="writing-vertical text-kicker absolute right-4 top-1/2 hidden -translate-y-1/2 text-foam/70 sm:right-8 lg:block">
+          Costa de la Luz · Onuba · 2026
         </p>
-        <div className="relative flex h-full flex-col justify-end px-4 pb-16 sm:px-8 sm:pb-20">
-          <p className="text-kicker reveal text-foam">Hierro y sal</p>
-          <h1 className="reveal-2 mt-4 max-w-5xl font-display text-display leading-display tracking-display text-iron-fg">
+        <div className="relative flex h-full flex-col justify-end px-4 pb-20 sm:px-8 sm:pb-24">
+          <p className="text-kicker reveal text-tinto-fg/80">Hierro · sal · gamba</p>
+          <h1 className="reveal-2 mt-5 max-w-[18ch] font-display text-display leading-display tracking-display text-iron-fg">
             Huelva
             <span className="italic text-tinto">.cloud</span>
           </h1>
           <p className="reveal-3 mt-6 max-w-md text-base leading-relaxed text-iron-fg/80 sm:text-lg">
-            La guía que no pide perdón por el Polo. Gamba, choco, Colón sin placa.
-            La redacción vive en la nube. El criterio, si hay, es de aquí.
+            La guía que no pide perdón por el Polo. Colón sin placa. La redacción
+            vive en la nube. El criterio, si hay, es de aquí.
           </p>
         </div>
       </section>
@@ -93,6 +102,14 @@ function Home() {
           ))}
         </div>
       </div>
+
+      <section className="border-b border-line bg-paper">
+        <dl className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-line">
+          <Stat k="Sol" v="3.000 h" />
+          <Stat k="Costa" v="122 km" />
+          <Stat k="Redacción" v="1 daemon" />
+        </dl>
+      </section>
 
       <section className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-8 lg:grid-cols-12 lg:py-28">
         <blockquote className="font-display text-edition leading-tight tracking-tight text-ink lg:col-span-7">
@@ -123,6 +140,23 @@ function Home() {
             </span>
           </Link>
         </div>
+      </section>
+
+      <section className="overflow-x-auto">
+        <ul className="flex min-w-max gap-3 px-4 py-4 sm:px-8 lg:grid lg:min-w-0 lg:grid-cols-5 lg:gap-3">
+          {ESSAY.map((shot, i) => (
+            <li
+              key={shot.cap}
+              className={cn(
+                "w-56 shrink-0 overflow-hidden lg:w-auto",
+                i % 2 === 1 ? "lg:mt-10" : "lg:mb-10",
+              )}
+            >
+              <img src={shot.src} alt="" className="film h-80 w-full object-cover" />
+              <p className="mt-3 text-kicker text-faint">{shot.cap}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-8">
@@ -254,6 +288,15 @@ function SectionHead({
           <ArrowRight className="size-3.5" />
         </Link>
       ) : null}
+    </div>
+  );
+}
+
+function Stat({ k, v }: { k: string; v: string }) {
+  return (
+    <div className="px-4 py-8 text-center sm:px-8 sm:py-10">
+      <dt className="text-kicker text-faint">{k}</dt>
+      <dd className="mt-2 font-display text-2xl tracking-tight sm:text-3xl">{v}</dd>
     </div>
   );
 }

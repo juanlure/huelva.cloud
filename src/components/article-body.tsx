@@ -19,7 +19,7 @@ export function ArticleBody({ markdown }: { markdown: string }) {
         const lines = block.split("\n");
         if (lines[0]?.startsWith("## ")) {
           return (
-            <h2 key={i} className="font-display text-2xl tracking-tight">
+            <h2 key={i} className="pt-4 font-display text-3xl tracking-tight">
               {lines[0].slice(3)}
             </h2>
           );
@@ -44,7 +44,7 @@ export function ArticleBody({ markdown }: { markdown: string }) {
           return (
             <blockquote
               key={i}
-              className="border-l-2 border-tide pl-4 text-muted italic"
+              className="font-display text-edition italic leading-tight tracking-tight text-tinto"
             >
               {inlineFormat(lines.map((l) => l.replace(/^>\s?/, "")).join(" "))}
             </blockquote>

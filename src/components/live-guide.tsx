@@ -39,8 +39,8 @@ function Chip({
       type="button"
       onClick={onClick}
       className={cn(
-        "rounded-full px-4 py-2 text-sm transition-colors",
-        active ? "bg-iron text-iron-fg" : "bg-paper text-muted shadow-border hover:text-ink",
+        "min-h-11 border-b py-3 text-kicker transition-colors",
+        active ? "border-tinto text-tinto" : "border-transparent text-muted hover:text-ink",
       )}
     >
       {children}
@@ -63,8 +63,8 @@ function StopRow({
         type="button"
         onClick={onToggle}
         className={cn(
-          "flex w-full items-start gap-3 rounded-xl px-4 py-3 text-left shadow-border transition-colors",
-          done ? "bg-foam" : "bg-paper hover:bg-foam",
+          "flex w-full items-start gap-4 border-b border-line py-4 text-left transition-colors",
+          done ? "opacity-50" : "hover:text-tinto",
         )}
       >
         <span
@@ -203,7 +203,7 @@ export function CartaGuide() {
             <button
               type="button"
               onClick={() => setOpen(open === s.id ? null : s.id)}
-              className="w-full rounded-xl bg-paper px-4 py-4 text-left shadow-border"
+              className="w-full border-b border-line py-5 text-left"
             >
               <span className="font-display text-xl tracking-tight">{s.name}</span>
               {open === s.id ? (
@@ -270,7 +270,7 @@ export function KitGuide() {
               <button
                 type="button"
                 onClick={() => setWord(word === s.word ? null : s.word)}
-                className="w-full rounded-xl bg-paper px-4 py-4 text-left shadow-border"
+                className="w-full border-b border-line py-5 text-left"
               >
                 <span className="font-display text-lg tracking-tight">{s.word}</span>
                 {word === s.word ? (

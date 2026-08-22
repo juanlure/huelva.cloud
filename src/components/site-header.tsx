@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,12 +17,40 @@ const LINKS = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const home = pathname === "/";
+  const floating = home && !scrolled && !open;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-bg/80 backdrop-blur-md">
+    <>
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,backdrop-filter] duration-300 ease-out",
+        floating
+          ? "border-b border-transparent bg-transparent"
+          : "border-b border-line/80 bg-bg/85 backdrop-blur-md",
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:h-20 sm:px-8">
-        <Wordmark className="text-2xl sm:text-3xl" />
+        <div className="flex items-baseline gap-4">
+          <Wordmark className="text-2xl sm:text-3xl" inverted={floating} />
+          <span
+            className={cn(
+              "hidden text-kicker sm:inline",
+              floating ? "text-foam/70" : "text-faint",
+            )}
+          >
+            Nº 01
+          </span>
+        </div>
 
         <nav className="hidden items-center gap-7 xl:flex">
           {LINKS.map((link) => (
@@ -30,14 +58,22 @@ export function SiteHeader() {
               key={link.to}
               to={link.to}
               className={cn(
-                "text-kicker text-muted transition-colors duration-150 hover:text-ink",
-                pathname === link.to && "text-tinto",
+                "text-kicker transition-colors duration-150",
+                floating
+                  ? "text-iron-fg/90 hover:text-iron-fg"
+                  : "text-muted hover:text-ink",
+                pathname === link.to && (floating ? "text-tinto-fg" : "text-tinto"),
               )}
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild size="sm">
+          <Button
+            asChild
+            size="sm"
+            variant={floating ? "outline" : "default"}
+            className={floating ? "border-foam/40 text-iron-fg hover:bg-iron-fg/10" : undefined}
+          >
             <Link to="/aporta">Aporta</Link>
           </Button>
           <AuthChip />
@@ -46,7 +82,7 @@ export function SiteHeader() {
         <Button
           variant="ghost"
           size="icon"
-          className="xl:hidden"
+          className={cn("xl:hidden", floating && "text-iron-fg hover:bg-iron-fg/10")}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           onClick={() => setOpen((v) => !v)}
         >
@@ -63,7 +99,7 @@ export function SiteHeader() {
                 to={link.to}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-md px-3 py-3 font-display text-2xl tracking-tight text-muted hover:text-ink",
+                  "rounded-sm px-3 py-3 font-display text-2xl tracking-tight text-muted hover:text-ink",
                   pathname === link.to && "text-tinto",
                 )}
               >
@@ -82,6 +118,8 @@ export function SiteHeader() {
         </nav>
       ) : null}
     </header>
+    {!home ? <div className="h-16 sm:h-20" aria-hidden="true" /> : null}
+    </>
   );
 }
 
