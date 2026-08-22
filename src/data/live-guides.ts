@@ -339,9 +339,9 @@ export const GAMBA_SPECIES = [
   {
     id: "gamba",
     name: "Gamba blanca",
-    when: "Todo el año; el banco, entre siete y treinta millas.",
+    when: "Todo el año. Lonjas de Isla Cristina, Ayamonte, Punta Umbría y la capital. FAO 27.9.a.",
     order: "A la plancha, sal. Cocida si es del día. Gabardina es fiesta, no dogma.",
-    flag: "La blanca de Huelva es pálida, de cristal. Pídela por su nombre.",
+    flag: "Rosa claro parduzco, casi transparente. Bigote largo, veta oscura. Pídela por su nombre.",
     pair: "Condado de Huelva, blanco, frío.",
   },
   {
@@ -371,7 +371,7 @@ export const GAMBA_SPECIES = [
   {
     id: "urta",
     name: "Urta",
-    when: "Se cuela de Cádiz; aquí también se come.",
+    when: "Golfo de Cádiz. En las lonjas onubenses también entra.",
     order: "A la roteña, para compartir.",
     flag: "Comparte mesa. Gamba y urta pueden convivir; el ritmo, no la prisa.",
     pair: "Un tinto ligero o el Condado con cuerpo.",
@@ -383,6 +383,22 @@ export const GAMBA_SPECIES = [
     order: "Loncha fina, a temperatura de sala. No de nevera.",
     flag: "La sierra es otra mesa. Loncha fina, temperatura de sala. El jamón se basta.",
     pair: "Un vino de la sierra, o nada. El jamón se basta.",
+  },
+  {
+    id: "mojama",
+    name: "Mojama de Isla Cristina",
+    when: "Todo el año. IGP de esta lonja.",
+    order: "Loncha fina, aceite, tomate. No es un adorno: es atún curado al aire.",
+    flag: "La IGP es de Isla Cristina. Pídela por su pueblo.",
+    pair: "Condado, o una caña corta.",
+  },
+  {
+    id: "gurumelo",
+    name: "Gurumelo",
+    when: "Primavera, si el año acompaña. Sierra de Aracena.",
+    order: "Revuelto o a la plancha. Pregunta si han salido.",
+    flag: "La seta de esta sierra. No se improvisan en agosto.",
+    pair: "Un tinto de guarda, o el vino de la casa serrana.",
   },
 ] as const;
 
@@ -447,13 +463,17 @@ export const DESTINOS = [
 ] as const;
 
 export const SLANG = [
-  { word: "Onubense", sense: "De Huelva. De Onuba, el nombre romano. El gentilicio de la casa." },
+  { word: "Onubense", sense: "De Huelva. De Onuba, el nombre fenicio y romano. El gentilicio de la casa." },
+  { word: "Onuba", sense: "Onoba, Onuba Aestuaria. Fortaleza de Baal, puerto entre Tinto y Odiel." },
+  { word: "El Decano", sense: "El Recreativo de Huelva, 1889, Casa Colón. El club de fútbol más antiguo de España." },
+  { word: "Zalema", sense: "La uva del Condado. El blanco que va con la gamba." },
+  { word: "Gurumelo", sense: "Amanita ponderosa. La seta de la sierra, en primavera." },
+  { word: "Mojama", sense: "Atún curado. En Isla Cristina tiene IGP." },
   { word: "Choco", sense: "Sepia. En Punta es institución. En la capital, también se celebra." },
   { word: "Gamba blanca", sense: "La de estos bancos de arena. Pálida, de cristal, única." },
   { word: "La Cinta", sense: "La virgen, el santuario, septiembre. La fiesta que mira a la ría." },
   { word: "Colombinas", sense: "La feria de Huelva. Alegre, de casa, a finales de julio." },
   { word: "Illó / miarma", sense: "Se oyen. Llegan solas, con los días y la mesa." },
-  { word: "Onuba", sense: "El nombre antiguo. Sale en el escudo, en el equipo, en el orgullo." },
   { word: "Poniente", sense: "El viento que ordena la playa. Pregunta en el chiringuito: es la meteorología local." },
 ] as const;
 
@@ -463,7 +483,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Monasterio de La Rábida",
     slot: "Parada 1",
     minutes: 50,
-    note: "Mudéjar, íntimo, suficiente. El claustro y el pinar. Colón durmió aquí.",
+    note: "Mudéjar, íntimo, suficiente. El claustro y el pinar. Colón durmió aquí antes de zarpar.",
     lat: 37.207,
     lng: -6.923,
   },
@@ -481,7 +501,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Palos · San Jorge",
     slot: "Parada 3",
     minutes: 40,
-    note: "De esta iglesia salió la expedición. Palos sigue siendo pueblo, y se come bien.",
+    note: "De esta iglesia salió la expedición, el 3 de agosto de 1492. Martín Alonso Pinzón, la Fontanilla, el pueblo. Palos no es un anexo.",
     lat: 37.2276,
     lng: -6.8932,
   },
@@ -490,7 +510,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Moguer · Juan Ramón",
     slot: "Parada 4",
     minutes: 55,
-    note: "Casa-museo. Una hora. Platero, la plaza, el silencio que le sienta a Juan Ramón.",
+    note: "Casa-museo. Una hora. Nobel de 1956, nacido en 1881. Platero, la plaza, el silencio que le sienta.",
     lat: 37.2744,
     lng: -6.8386,
   },
@@ -713,7 +733,7 @@ export const CUENCA_STOPS: PlanStop[] = [
     title: "Museo Minero",
     slot: "Mañana",
     minutes: 75,
-    note: "La compañía británica, el ferrocarril, la cuenca explicada. Empieza aquí: el paisaje luego se lee solo.",
+    note: "La compañía británica, 1873. El ferrocarril, la cuenca explicada. Empieza aquí: el paisaje luego se lee solo.",
     lat: 37.694,
     lng: -6.593,
     car: true,
@@ -743,7 +763,7 @@ export const CUENCA_STOPS: PlanStop[] = [
     title: "Bella Vista",
     slot: "Tarde",
     minutes: 40,
-    note: "El barrio inglés de la cuenca. Porches, césped, otra arquitectura. El mismo linaje que Reina Victoria, en su origen.",
+    note: "El barrio inglés de la cuenca. Porches, césped. El mismo linaje que Reina Victoria (1916), en su origen.",
     lat: 37.691,
     lng: -6.599,
     car: true,

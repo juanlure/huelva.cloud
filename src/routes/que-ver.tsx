@@ -44,9 +44,9 @@ const PILLARS = [
   },
   {
     title: "La mesa",
-    body: "Gamba blanca a la plancha, choco de Punta, jamón de Jabugo, Condado frío. Dos geografías, dos platos.",
-    to: "/g/$id" as const,
-    id: "carta",
+    body: "Gamba blanca a la plancha, choco de Punta, mojama de Isla, jamón de Jabugo, Condado frío. Costa, Condado y sierra.",
+    to: "/mesa" as const,
+    id: undefined,
   },
   {
     title: "Doñana y El Rocío",
@@ -65,6 +65,12 @@ const PILLARS = [
     body: "El río rojo, el tren minero, Bella Vista. Más al norte, Aracena, la Gruta y el jamón.",
     to: "/g/$id" as const,
     id: "cuenca",
+  },
+  {
+    title: "Historia",
+    body: "Onuba, Tartessos, Palos de 1492, el hierro británico, el Decano, Juan Ramón. Tres mil años mirando al agua.",
+    to: "/historia" as const,
+    id: undefined,
   },
 ];
 
@@ -102,7 +108,7 @@ function QueVerPage() {
           <li key={item.title}>
             <Link
               to={item.to}
-              params={{ id: item.id }}
+              params={item.to === "/g/$id" && item.id ? { id: item.id } : undefined}
               className="group grid gap-4 py-10 md:grid-cols-12"
             >
               <span className="text-kicker text-tinto md:col-span-2">

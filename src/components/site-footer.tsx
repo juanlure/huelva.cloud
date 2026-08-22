@@ -41,6 +41,8 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">
           <Link to="/que-ver" className="hover:text-iron-fg">Qué ver</Link>
+          <Link to="/mesa" className="hover:text-iron-fg">Mesa</Link>
+          <Link to="/historia" className="hover:text-iron-fg">Historia</Link>
           <Link to="/temas" className="hover:text-iron-fg">Temas</Link>
           <Link to="/guides" className="hover:text-iron-fg">Guías</Link>
           <Link to="/sobre" className="hover:text-iron-fg">Sobre</Link>

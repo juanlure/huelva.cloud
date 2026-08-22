@@ -7,6 +7,8 @@ import { listArticles } from "@/lib/server/content";
 const STATIC = [
   "/",
   "/que-ver",
+  "/mesa",
+  "/historia",
   "/temas",
   "/guides",
   "/pulse",

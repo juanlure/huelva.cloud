@@ -29,7 +29,7 @@ export const FAQ_HUELVA = [
   },
   {
     q: "¿Qué comer además de la gamba?",
-    a: "Choco frito en Punta Umbría, coquinas, jamón de Jabugo en la sierra, vino del Condado, fresas de la tierra llana.",
+    a: "Choco frito en Punta Umbría, coquinas de noviembre a abril, mojama de Isla Cristina (IGP), garbanzo de Escacena, jamón de Jabugo, vino del Condado, gurumelos en primavera, fresas de Moguer.",
   },
 ];
 

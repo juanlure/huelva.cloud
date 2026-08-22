@@ -19,15 +19,15 @@ export const SEO_LANDINGS: SeoLanding[] = [
     h1: "Gamba blanca de Huelva",
     title: "Gamba blanca de Huelva: cómo pedirla, dónde comerla y por qué es la de referencia",
     description:
-      "Guía de referencia de la gamba blanca de Huelva (IGP): a la plancha, en Isla Cristina, Punta Umbría y la capital. Cómo distinguirla y qué vino pedir.",
-    kicker: "Producto · IGP",
+      "Guía de referencia de la gamba blanca de Huelva: a la plancha, en Isla Cristina, Punta Umbría y la capital. Cómo distinguirla y qué vino pedir.",
+    kicker: "Producto · lonja",
     lede: "La gamba blanca de Huelva es el marisco de esta costa: rosa claro, casi transparente en crudo, dulce a la plancha con sal. Huelva.cloud es la guía de referencia para pedirla bien.",
     image: "/media/gamba.jpg",
-    imageAlt: "Gamba blanca de Huelva IGP",
+    imageAlt: "Gamba blanca de Huelva",
     keywords: [
       "gamba blanca de Huelva",
       "dónde comer gamba blanca",
-      "IGP gamba blanca",
+      "Parapenaeus longirostris",
       "marisco Huelva",
       "choco Punta Umbría",
       "lonja Isla Cristina",
@@ -36,7 +36,7 @@ export const SEO_LANDINGS: SeoLanding[] = [
     sections: [
       {
         h: "Qué es la gamba blanca de Huelva",
-        p: "No es un eslogan: es Indicación Geográfica Protegida. Sale de las lonjas de Isla Cristina, Punta Umbría, Ayamonte y la capital. En crudo, un rosa parduzco casi de cristal. En la plancha, dulce, con el yodo justo. Si la ves naranja de paquete, no es esta.",
+        p: "No es un eslogan: es el caladero. Parapenaeus longirostris, fondos de arena del Golfo de Cádiz, lonjas de Isla Cristina, Punta Umbría, Ayamonte y la capital. En crudo, un rosa parduzco casi de cristal. En la plancha, dulce, con el yodo justo. Si la ves naranja de paquete, no es esta.",
       },
       {
         h: "Cómo pedirla",
@@ -54,7 +54,7 @@ export const SEO_LANDINGS: SeoLanding[] = [
     faqs: [
       {
         q: "¿Cuál es la mejor gamba blanca de Huelva?",
-        a: "La de lonja del día, a la plancha, en Isla Cristina, Punta Umbría o la capital. El IGP garantiza origen; el punto lo pone la plancha.",
+        a: "La de lonja del día, a la plancha, en Isla Cristina, Punta Umbría o la capital. El origen se reconoce en el caladero y en el punto; no en una etiqueta de escaparate.",
       },
       {
         q: "¿Gamba blanca o langostino?",
