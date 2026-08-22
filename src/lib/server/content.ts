@@ -115,45 +115,54 @@ function mapEvent(row: EventRow): CityEvent {
 }
 
 export async function ensureSeeded() {
-  const sql = await getSql();
-  const [{ n }] = await sql<{ n: number }>`select count(*)::int as n from articles`;
-  if (numFromUnknown(n) > 0) return;
+  const g = globalThis as typeof globalThis & { __huelvaSeed__?: Promise<void> };
+  g.__huelvaSeed__ ??= (async () => {
+    const sql = await getSql();
+    const [{ n }] = await sql<{ n: number }>`select count(*)::int as n from articles`;
+    if (numFromUnknown(n) > 0) return;
 
-  for (const article of SEED_ARTICLES) {
-    await sql`
-      insert into articles (
-        slug, title, dek, body, category, read_minutes, featured, source,
-        neighborhood, published_at, votes
-      ) values (
-        ${article.slug}, ${article.title}, ${article.dek}, ${article.body},
-        ${article.category}, ${article.readMinutes}, ${article.featured},
-        ${article.source}, ${article.neighborhood}, ${article.publishedAt},
-        ${article.votes}
-      )
-    `;
-  }
+    for (const article of SEED_ARTICLES) {
+      await sql`
+        insert into articles (
+          slug, title, dek, body, category, read_minutes, featured, source,
+          neighborhood, published_at, votes
+        ) values (
+          ${article.slug}, ${article.title}, ${article.dek}, ${article.body},
+          ${article.category}, ${article.readMinutes}, ${article.featured},
+          ${article.source}, ${article.neighborhood}, ${article.publishedAt},
+          ${article.votes}
+        )
+        on conflict (slug) do nothing
+      `;
+    }
 
-  for (const place of SEED_PLACES) {
-    await sql`
-      insert into places (name, kind, lat, lng, blurb, neighborhood, hours, votes)
-      values (
-        ${place.name}, ${place.kind}, ${place.lat}, ${place.lng}, ${place.blurb},
-        ${place.neighborhood}, ${place.hours}, ${place.votes}
-      )
-    `;
-  }
+    for (const place of SEED_PLACES) {
+      await sql`
+        insert into places (name, kind, lat, lng, blurb, neighborhood, hours, votes)
+        values (
+          ${place.name}, ${place.kind}, ${place.lat}, ${place.lng}, ${place.blurb},
+          ${place.neighborhood}, ${place.hours}, ${place.votes}
+        )
+      `;
+    }
 
-  for (const event of SEED_EVENTS) {
-    await sql`
-      insert into events (
-        title, dek, starts_on, ends_on, venue, neighborhood, lat, lng, source, votes
-      ) values (
-        ${event.title}, ${event.dek}, ${event.startsOn}, ${event.endsOn},
-        ${event.venue}, ${event.neighborhood}, ${event.lat}, ${event.lng},
-        ${event.source}, ${event.votes}
-      )
-    `;
-  }
+    for (const event of SEED_EVENTS) {
+      await sql`
+        insert into events (
+          title, dek, starts_on, ends_on, venue, neighborhood, lat, lng, source, votes
+        ) values (
+          ${event.title}, ${event.dek}, ${event.startsOn}, ${event.endsOn},
+          ${event.venue}, ${event.neighborhood}, ${event.lat}, ${event.lng},
+          ${event.source}, ${event.votes}
+        )
+      `;
+    }
+  })().catch((err) => {
+    const g2 = globalThis as typeof globalThis & { __huelvaSeed__?: Promise<void> };
+    g2.__huelvaSeed__ = undefined;
+    throw err;
+  });
+  return g.__huelvaSeed__;
 }
 
 export const listArticles = createServerFn({ method: "GET" }).handler(async () => {
