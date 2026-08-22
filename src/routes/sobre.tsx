@@ -38,7 +38,8 @@ function SobrePage() {
         <a href={SITE.github} rel="noreferrer">
           github.com/juanlure/huelva.cloud
         </a>
-        . Sin cookies. Sin anuncio. Sin NIF, porque no hay negocio.
+        . Sin cookies. Sin anuncio. Sin NIF, porque no hay negocio. Las fotos
+        son del territorio: muelle, gamba, Doñana, Rábida, Riotinto, Aracena.
       </p>
     </LegalDoc>
   );

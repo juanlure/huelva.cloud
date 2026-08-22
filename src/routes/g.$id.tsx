@@ -83,7 +83,7 @@ function LiveGuidePage() {
         }}
       />
       <section className="relative h-80 overflow-hidden bg-iron sm:h-96">
-        <img src={guide.image} alt="" className="film size-full object-cover" />
+        <img src={guide.image} alt={guide.title} className="film size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-iron via-iron/50 to-iron/20" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-4 pb-10 sm:px-8 sm:pb-14">
           <p className="text-kicker text-foam">

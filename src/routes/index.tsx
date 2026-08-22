@@ -26,11 +26,14 @@ const TICKER = [
 ];
 
 const ESSAY = [
-  { src: "/media/muelle.jpg", cap: "01 · El muelle" },
-  { src: "/media/donana.jpg", cap: "02 · La marisma" },
-  { src: "/media/playa.jpg", cap: "03 · La orilla" },
-  { src: "/media/aracena.jpg", cap: "04 · La sierra" },
-  { src: "/media/rocio.jpg", cap: "05 · El Rocío" },
+  { src: "/media/muelle.jpg", cap: "01 · El muelle", alt: "Muelle de Riotinto al atardecer, Huelva" },
+  { src: "/media/gamba.jpg", cap: "02 · La gamba", alt: "Gamba blanca de Huelva" },
+  { src: "/media/donana.jpg", cap: "03 · La marisma", alt: "Caballos en las marismas de Doñana" },
+  { src: "/media/mazagon.jpg", cap: "04 · La orilla", alt: "Playa de la Costa de la Luz, pinos y duna" },
+  { src: "/media/rabida.jpg", cap: "05 · La Rábida", alt: "Monasterio de La Rábida, Palos de la Frontera" },
+  { src: "/media/riotinto.jpg", cap: "06 · La cuenca", alt: "Corta minera de Riotinto" },
+  { src: "/media/aracena.jpg", cap: "07 · La sierra", alt: "Castillo de Aracena y el pueblo blanco" },
+  { src: "/media/rocio.jpg", cap: "08 · El Rocío", alt: "Ermita de El Rocío, Almonte" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -167,7 +170,7 @@ function Home() {
       </section>
 
       <section className="overflow-x-auto">
-        <ul className="flex min-w-max gap-3 px-4 py-4 sm:px-8 lg:grid lg:min-w-0 lg:grid-cols-5 lg:gap-3">
+        <ul className="flex min-w-max gap-3 px-4 py-4 sm:px-8 lg:grid lg:min-w-0 lg:grid-cols-4 lg:gap-3">
           {ESSAY.map((shot, i) => (
             <li
               key={shot.cap}
@@ -176,7 +179,7 @@ function Home() {
                 i % 2 === 1 ? "lg:mt-10" : "lg:mb-10",
               )}
             >
-              <img src={shot.src} alt="" className="film h-80 w-full object-cover" />
+              <img src={shot.src} alt={shot.alt} className="film h-80 w-full object-cover" />
               <p className="mt-3 text-kicker text-faint">{shot.cap}</p>
             </li>
           ))}
