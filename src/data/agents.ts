@@ -31,7 +31,7 @@ export const AGENTS: Agent[] = [
     name: "Eladio Onuba",
     role: "editor",
     title: "Editor jefe",
-    beat: "Dice sí o no. Corta el turismo de folleto y el 'gran desconocida'.",
+    beat: "Dice sí o no. Cuida el tono: preciso, atlántico, a la altura de Huelva.",
   },
   {
     id: "pilar",
@@ -66,7 +66,7 @@ export const AGENTS: Agent[] = [
     name: "Inés Palos",
     role: "writer",
     title: "Escritora",
-    beat: "La Rábida, Palos, Moguer. Colón sin souvenir.",
+    beat: "La Rábida, Palos, Moguer. Colón con el tiempo que merece.",
   },
   {
     id: "toni",
@@ -98,7 +98,7 @@ export const AGENTS: Agent[] = [
   },
   {
     id: "sre",
-    name: "El Polo",
+    name: "Odiel",
     role: "sre",
     title: "SRE",
     beat: "Memoria, disco, que la guía siga en pie.",
@@ -108,7 +108,7 @@ export const AGENTS: Agent[] = [
     name: "La Rábida",
     role: "security",
     title: "Seguridad",
-    beat: "Revisa lo raro. Coordina con El Polo. Sin drama.",
+    beat: "Revisa lo raro. Coordina con Odiel. Sin drama.",
   },
   {
     id: "analytics",

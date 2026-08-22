@@ -127,7 +127,7 @@ export function MareaGuide() {
         </div>
         {pace === "pie" && (flavor === "colon" || flavor === "sierra") ? (
           <p className="mt-4 text-sm text-warn">
-            Colón y la sierra no se hacen a pie desde la capital. El plan se queda en la ría, o coge el mixto.
+            Colón y la sierra piden coche. Elige mixto y te abrimos la provincia.
           </p>
         ) : null}
       </div>
@@ -428,10 +428,10 @@ export function MarismaGuide() {
           {season.note}
         </p>
         <ul className="mt-6 space-y-2 text-sm text-ink">
-          <li>No sales de la senda. La foto no vale un nido.</li>
-          <li>No hay drones. El lince no posa.</li>
+          <li>Permanece en la senda. El parque se cuida así.</li>
+          <li>Sin drones. La fauna manda.</li>
           <li>Agua, sombrero, madrugón en verano.</li>
-          <li>El Rocío en romería no es el Rocío de un martes. Elige.</li>
+          <li>El Rocío en romería es un país; un martes, otro. Elige el que buscas.</li>
         </ul>
       </div>
       <div>

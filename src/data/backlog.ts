@@ -132,7 +132,7 @@ No es para el crucerista. Es para quien tiene abuela en Isla Chica. Si estás de
 
 A pie o en el bus de siempre. Agua. Respeto cuando hay misa. Foto del estuario, no del selfie con la virgen.
 
-Luego baja. Cena en la capital. El Polo al fondo, encendido. Esa es la postal honesta.`,
+Luego baja. Cena en la capital. La ría al fondo, encendida. Esa es la postal.`,
   },
   {
     topic: "Riotinto en octubre, no en agosto",

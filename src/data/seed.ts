@@ -42,7 +42,7 @@ export const SEED_ARTICLES: SeedArticle[] = [
   {
     slug: "48-horas-en-huelva",
     title: "48 horas en Huelva (al ritmo de la marea)",
-    dek: "Dos días de ría, gamba, Colón sin prisa y una playa elegida con criterio. Sin autobús turístico.",
+    dek: "Dos días de ría, gamba blanca, Colón y una playa elegida con criterio. El ritmo de Huelva, no el del autobús.",
     category: "guides",
     readMinutes: 10,
     featured: true,
@@ -52,32 +52,32 @@ export const SEED_ARTICLES: SeedArticle[] = [
     votes: 42,
     body: `## Día 1 — La ciudad que mira al río
 
-Empieza en la **Plaza de las Monjas**. Café con leche, tostada de tomate si insistes, o manteca colorá si quieres entrar en materia. Huelva no es una ciudad de casco medieval de postal: es un puerto que se ha ido haciendo a sí mismo. Eso se entiende andando hacia el **Muelle de Riotinto**, la pasarela de hierro sobre el Tinto. Ve al atardecer. No hace falta filtro.
+Empieza en la **Plaza de las Monjas**. Café con leche, tostada de tomate o manteca colorá: el primer gesto de la casa. Huelva es un puerto atlántico que se ha ido haciendo a sí mismo, con luz de estuario y una capital que se recorre a pie. Anda hacia el **Muelle de Riotinto**, la pasarela de hierro sobre el Tinto. Reserva el atardecer. El río baja rojo del norte; el cielo, de cobre. No hay filtro que lo mejore.
 
-Antes, un desvío al **Barrio Reina Victoria** (Barrio Obrero). Casas inglesas de las minas, porches y verjas. Diez minutos y otra provincia. Luego **Casa Colón** por fuera —el interior cuando hay exposición— y a comer.
+Antes, un desvío al **Barrio Reina Victoria** (Barrio Obrero). Casas inglesas de las minas, porches y verjas: el legado británico de Riotinto, diez minutos y otra arquitectura. Luego **Casa Colón** —el pabellón, las exposiciones— y a la mesa.
 
 ## Dónde comer el primer día
 
-Pide **gamba blanca a la plancha**. Si te la ponen a la gabardina, estás en el sitio equivocado o es un capricho, no un rito. Acompañamiento: pimientos asados o nada. El vino: un Condado de Huelva, blanco, frío. Si el camarero te recomienda el de la casa y no es un tetrabrik, hazle caso.
+Pide **gamba blanca a la plancha**. Es el producto que da nombre a esta costa: pálida, de cristal, sal y fuego. La gabardina es fiesta; la plancha es el rito. Acompañamiento: pimientos asados, o nada. El vino: un **Condado de Huelva**, blanco, frío. Si la casa recomienda el suyo, escúchala.
 
-Por la tarde, **El Conquero** y el Parque Moret. Sube. Mira la ría, el Polo, las marismas. Huelva se explica desde arriba: industria y marisma en la misma frase, sin complejos. Baja cuando se enciendan las luces.
+Por la tarde, **El Conquero** y el Parque Moret. Sube. Desde la loma se entiende la ría: marisma, pino, el Atlántico al fondo. Baja cuando se enciendan las luces.
 
-## Día 2 — Palos, La Rábida, y una playa
+## Día 2 — Palos, La Rábida y una playa
 
-Coche o bus hacia **La Rábida**. El monasterio es pequeño y basta. Al lado, las réplicas de las carabelas: ve si viajas con niños; si no, el estuario te sobra. **Palos de la Frontera** para la iglesia de San Jorge y el ambiente de pueblo. **Moguer** si te queda Juan Ramón: la casa-museo se visita en una hora y deja mejor sabor que cualquier placa.
+Coche o bus hacia **La Rábida**. El monasterio mudéjar es íntimo y basta: claustro, pinar, el estuario. **Palos de la Frontera**, la iglesia de San Jorge, el pueblo desde el que zarparon las naves. **Moguer** si te queda Juan Ramón: la casa-museo se visita en una hora y deja el sabor exacto.
 
 Por la tarde, elige playa:
 
-- **Punta Umbría** si quieres choco, paseo y gente.
-- **Mazagón** si quieres pino, duna y menos altavoz.
-- **Isla Cristina** si tu plan es lonja y gamba con apellido.
+- **Punta Umbría** si quieres choco, paseo y el verano onubense.
+- **Mazagón** si quieres pino, duna y una orilla más ancha.
+- **Isla Cristina** si el plan es lonja y gamba con apellido.
 
-Duerme pronto. El Atlántico madruga y el primer baño, en septiembre, todavía es de verdad.`,
+Duerme pronto. El Atlántico madruga, y el primer baño de septiembre todavía es de verdad.`,
   },
   {
     slug: "manual-supervivencia-onubense",
-    title: "Manual de supervivencia onubense",
-    dek: "Transporte, horarios, viento, slang y cómo no parecer que llegas de Málaga con la maleta equivocada.",
+    title: "Manual onubense",
+    dek: "Cómo moverse, a qué hora sentarse, qué viento sopla y las palabras de la casa.",
     category: "guides",
     readMinutes: 9,
     featured: true,
@@ -87,37 +87,35 @@ Duerme pronto. El Atlántico madruga y el primer baño, en septiembre, todavía 
     votes: 37,
     body: `## Moverse
 
-La capital se anda. El área metropolitana, no. Para **Punta Umbría** hay bus y, en verano, más frecuencia de la que crees. Para **Mazagón, Isla Cristina, Aracena, Riotinto**: coche. El tren te deja en Huelva y se acaba el cuento. El aeropuerto «de Huelva» no existe; se vuela a Sevilla y se baja en bus o se alquila.
+La capital se anda, y se anda bien. El área metropolitana pide otro ritmo: para **Punta Umbría** hay bus, con más frecuencia en verano; para **Mazagón, Isla Cristina, Aracena y Riotinto**, el coche abre la provincia. El tren llega a Huelva; el vuelo, a Sevilla, y de ahí un traslado fácil.
 
-Aparcar en el centro es un deporte de agosto. El Muelle y los parkings cubiertos evitan la discusión de pareja.
+En agosto, los parkings cubiertos y el entorno del Muelle ahorran tiempo. Reserva esa energía para la mesa.
 
 ## Horarios
 
-Comida: 14:00, no 13:00. Cena: 21:30. Los chiringuitos de playa se adelantan un poco. Los domingos por la tarde la ciudad se apaga; la costa, no.
+Comida: **14:00**. Cena: **21:30**. Los chiringuitos de playa se adelantan un poco; la capital, no. El domingo por la tarde la ciudad descansa; la costa sigue encendida.
 
-Agosto es Colombinas y calor. Septiembre es el mes secreto: el agua sigue, las toallas se van.
+Agosto es Colombinas y luz alta. Septiembre es el mes feliz: el agua todavía caliente, la orilla más ancha.
 
-## El viento y el Polo
+## El viento
 
-Huelva huele, a veces, a industria. Es el Polo Químico, está a la vista, y los onubenses lo tienen integrado en la biografía. No hace falta un discurso. Si el viento viene de levante, la playa de Punta cambia; si es poniente, otra. Pregunta en el chiringuito, no en el hotel.
+El Atlántico manda. **Levante** y **poniente** cambian el baño, la bandera y el sitio de la sombrilla. Pregunta en el chiringuito: es la meteorología local, más fina que el parte. La Costa de la Luz se llama así por algo — tres mil horas de sol — y el viento es parte del paisaje, no un fastidio.
 
 ## Palabras
 
-- **Onubense**: de Huelva. De Onuba.
-- **Choco**: sepia.
-- **Gamba blanca**: la de aquí. La roja es de otro sitio.
-- **La Cinta**: la virgen, el santuario, la fiesta de septiembre.
-- **Colombinas**: la feria. No es la Feria de Abril.
-- **Miarma, illo**: se oyen, sí. No hace falta que los estrenes el primer día.
+- **Onubense**: de Huelva. De Onuba, el nombre romano.
+- **Choco**: sepia. En Punta, una institución.
+- **Gamba blanca**: la de estos bancos de arena. Única.
+- **La Cinta**: la virgen, el santuario, septiembre.
+- **Colombinas**: la feria de la capital. Alegre, de casa.
+- **Miarma, illó**: se oyen. Llegan solas, con los días.
 
-## Lo que no hace falta
-
-No hace falta decir que Huelva es «la gran desconocida». Se sabe. Tampoco hace falta comparar cada plaza con Sevilla. Sevilla queda a una hora y tiene otro trabajo.`,
+Huelva no necesita compararse. Tiene ría, marisma, sierra y una mesa que se defiende sola.`,
   },
   {
     slug: "recetario-gamba-choco",
     title: "El recetario de la gamba blanca (y del choco)",
-    dek: "Qué pedir, cómo se come, dónde no engañan y por qué la gabardina no es un sacramento.",
+    dek: "Qué pedir, cómo se come y por qué la gamba blanca de Huelva es un producto de lujo que se sirve con sal.",
     category: "eat",
     readMinutes: 8,
     featured: true,
@@ -127,34 +125,32 @@ No hace falta decir que Huelva es «la gran desconocida». Se sabe. Tampoco hace
     votes: 55,
     body: `## La gamba
 
-La **gamba blanca de Huelva** vive en un banco de arena atlántico, entre siete y treinta millas. Sale por las lonjas de **Isla Cristina, Punta Umbría, Ayamonte y Huelva**. En crudo es pálida, casi de cristal. En cocida, se pone firme y rosa suave. Si es roja y te la venden como «de Huelva», estás comprando un apellido.
+La **gamba blanca de Huelva** vive en un banco de arena atlántico, entre siete y treinta millas. Sale por las lonjas de **Isla Cristina, Punta Umbría, Ayamonte y Huelva**. En crudo es pálida, casi de cristal. En cocida, firme y rosa suave. Es una de las piezas más finas del marisco europeo: hay que pedirla por su nombre.
 
 ### Cómo pedirla
 
-- **A la plancha**, con sal. Fin.
+- **A la plancha**, con sal. El clásico.
 - **Cocida**, si es del día y el punto es el de la casa.
-- **Gabardina** (rebozada) es fiesta, no dogma.
+- **Gabardina** (rebozada) cuando apetece fiesta.
 
-Se pelan en la mesa. Las cabezas se chupan. Nadie te mira. El pan está para eso.
+Se pelan en la mesa. Las cabezas se chupan. El pan está para el jugo. Es etiqueta de lonja, no de prisa.
 
 ### Dónde
 
-En **Isla Cristina** pregunta qué ha entrado en lonja. En **Punta Umbría**, el paseo en temporada. En la capital, sitios de toda la vida alrededor de Concepción y Pablo Rada. Si el precio parece de gala y el camarero no sabe de dónde sale, sal.
+En **Isla Cristina**, pregunta qué ha entrado. En **Punta Umbría**, el paseo en temporada. En la capital, las casas de toda la vida alrededor de Concepción y Pablo Rada. Una buena mesa sabe decirte el origen.
 
 ## El choco
 
-El choco es sepia. En Punta se fríe y se pone en el centro de la mesa como si fuera el motivo del viaje, que lo es. Tierno, sin pasta de harina. Si está goma, cambia de mesa.
-
-Hay choco en salsa, hay huevas, hay puntillitas. Empieza por el frito. Bebe vino blanco del Condado o una caña. No pidas sangría.
+El choco es sepia. En Punta se fríe y se pone en el centro como si fuera el motivo del viaje — y a menudo lo es. Tierno, limpio, sin harina de más. Empieza por el frito. Hay choco en salsa, huevas, puntillitas. Bebe **Condado** o una caña bien tirada.
 
 ## Lo demás que importa
 
-**Coquinas** a la marinera, cuando hay. **Choquitos**, **acedías**, **urta** a la roteña (sí, se cuela de Cádiz, y aquí también se come). **Mojama** como tapa, no como souvenir. Y el **jamón de Jabugo** cuando subas a la sierra: no lo pidas junto a la gamba en el mismo acto. Son dos religiones. Respétalas por separado.`,
+**Coquinas** a la marinera, en su temporada. **Choquitos**, **acedías**, **urta**. **Mojama** como tapa noble. Y el **jamón de Jabugo** cuando subas a la sierra: dos geografías, dos mesas. La gamba por la mañana; el jamón, con la encina.`,
   },
   {
     slug: "barrios-explicados",
     title: "Barrios, explicados (y pueblos que importan)",
-    dek: "Centro, Conquero, Reina Victoria, Punta, Mazagón, Isla Cristina. Elige Huelva con criterio.",
+    dek: "Centro, Conquero, Reina Victoria, Punta, Mazagón, Isla Cristina. Elige tu Huelva.",
     category: "guides",
     readMinutes: 10,
     featured: true,
@@ -172,7 +168,7 @@ Hay choco en salsa, hay huevas, hay puntillitas. Empieza por el frito. Bebe vino
 
 **Pescadería.** La Huelva de la ría y el muelle. Viento, atardecer, menos postal.
 
-**Isla Chica.** La más poblada, la más cotidiana. Ven a desayunar como la gente; no vengas buscando boutique.
+**Isla Chica.** La más vivida, la cotidiana. Desayuna como la ciudad: café, tostada, el día por delante.
 
 ## En la costa
 
@@ -180,7 +176,7 @@ Hay choco en salsa, hay huevas, hay puntillitas. Empieza por el frito. Bebe vino
 
 **Mazagón** es pino y duna. Más quieta. El Parador existe por una razón.
 
-**Matalascañas** es extraña y útil: urbanización pegada a Doñana. Fuera de temporada, un pueblo fantasma con toalla.
+**Matalascañas** es la orilla de Doñana: playa servida y, al otro lado, el parque. Fuera de temporada, una calma rara y preciosa.
 
 **Isla Cristina** es flota pesquera. Si vienes por la gamba, ven aquí.
 
@@ -199,7 +195,7 @@ No intentes hacer costa y sierra el mismo día. Huelva es ancha. Trátala como t
   {
     slug: "traductor-bar-huelva",
     title: "Traductor del bar onubense",
-    dek: "Cómo pedir el café, la caña y el pescado sin que te expliquen el menú como a un crucerista.",
+    dek: "Café, caña y pescado: cómo pedir en Huelva con la naturalidad de la casa.",
     category: "guides",
     readMinutes: 7,
     featured: true,
@@ -229,7 +225,7 @@ Caña corta. Doble si tienes sed de verdad. El vino blanco del **Condado de Huel
 - **Una ración de jamón** (cuando toque sierra).
 - **Para picar**: aceitunas, mojama, queso.
 
-«El menú del día» en un sitio de pescado suele ser una trampa de turista. Carta corta, pizarra, lo que ha entrado.
+«El menú del día» en un sitio de pescado rara vez supera a la pizarra. Carta corta, lo que ha entrado, el camarero como guía.
 
 ## La cuenta
 
@@ -237,8 +233,8 @@ Se pide en barra o al camarero, sin palmas. En muchos bares todavía se fía el 
   },
   {
     slug: "colon-sin-placa",
-    title: "Colón sin placa: La Rábida, Palos y el estuario",
-    dek: "La ruta colombina hecha con respeto y sin souvenir de carabela. Qué ver de verdad y qué saltarte.",
+    title: "Colón, Palos y el estuario",
+    dek: "La Rábida, Palos y Moguer: el paisaje desde el que zarparon las naves, con el tiempo que merece.",
     category: "guides",
     readMinutes: 9,
     featured: true,
@@ -246,30 +242,30 @@ Se pide en barra o al camarero, sin palmas. En muchos bares todavía se fía el 
     neighborhood: "moguer-palos",
     publishedAt: "2026-07-28T08:00:00Z",
     votes: 24,
-    body: `Huelva no es «el sitio de Colón» como un parque temático. Es el estuario desde el que un puñado de marineros de Palos y Moguer se echaron al mar. La diferencia se nota si vas sin prisa.
+    body: `Huelva es el estuario desde el que un puñado de marineros de Palos y Moguer se echaron al mar. La historia se entiende si se recorre sin prisa: monasterio, pueblo, palabra, ría.
 
 ## La Rábida
 
-El monasterio es pequeño, mudéjar, silencioso. Basta. El error es tratarlo como un check-in entre dos playas. Entra, mira el claustro, sal al pinar. El monumento a Colón del otro lado de la ría (la «estatua colosal») se ve mejor de lejos que de cerca.
+El monasterio es mudéjar, íntimo, silencioso. El claustro, el pinar, la luz del Odiel. El monumento a Colón, al otro lado de la ría, se contempla mejor de lejos, como una figura sobre el agua.
 
-Las **réplicas de las carabelas** (Muelle de las Carabelas) funcionan con niños. Con adultos, depende de tu tolerancia a la madera barnizada. El paisaje del estuario —el Odiel, los eucaliptos, la luz— es el verdadero decorado.
+Las **réplicas de las carabelas** (Muelle de las Carabelas) emocionan con niños y cierran bien una mañana. El verdadero decorado es el estuario: eucaliptos, marisma, una luz que no se fabrica.
 
 ## Palos de la Frontera
 
-La iglesia de **San Jorge**. La fuente de la Fontanilla. Un pueblo que sigue siendo pueblo. Come aquí, no en el parking del monasterio.
+La iglesia de **San Jorge**. La Fontanilla. Un pueblo que sigue siendo pueblo, y desde el que salió el viaje. Come aquí: plaza, Condado, tiempo.
 
 ## Moguer
 
-Juan Ramón Jiménez no es un extra del folleto. La **casa-museo** y el recinto de Platero se visitan en una hora. Moguer tiene plaza, vino y menos colas. Si te interesa la palabra más que la carabela, quédate aquí.
+Juan Ramón Jiménez no es un apéndice. La **casa-museo** y Platero se visitan en una hora. Moguer tiene plaza, vino y una calma que le sienta a la literatura. Si te interesa la palabra, quédate.
 
-## Cómo no hacerlo
+## El ritmo
 
-No hagas «ruta colombina express» en 90 minutos con autobús. No compres una carabela de plástico. No intentes un atardecer en La Rábida y cena en Punta Umbría y copa en la capital. Elige un eje y camínalo.`,
+Reserva medio día, o el día entero. Un eje —Rábida y Palos, o Moguer— bien andado vale más que tres sellos. Cierra, si puedes, en el **Muelle del Tinto**, cuando el hierro se enciende.`,
   },
   {
     slug: "playas-costa-de-la-luz",
     title: "Playas de la Costa de la Luz: cuál elegir",
-    dek: "Punta, Portil, Mazagón, Matalascañas, Isla Cristina, Canela. Atlántico, no Mediterráneo: el agua está más fría y más honesta.",
+    dek: "Punta, Portil, Mazagón, Matalascañas, Isla Cristina, Canela. Atlántico fino: agua viva, viento noble, luz larga.",
     category: "guides",
     readMinutes: 8,
     featured: false,
@@ -277,36 +273,36 @@ No hagas «ruta colombina express» en 90 minutos con autobús. No compres una c
     neighborhood: "punta-umbria",
     publishedAt: "2026-08-15T08:00:00Z",
     votes: 41,
-    body: `El Atlántico de Huelva no es la Costa del Sol. El agua está más fría, el viento manda, y la toalla no se clava a dos metros de un chiringuito de DJ. Eso es el encanto.
+    body: `El Atlántico de Huelva es otra costa: agua viva, viento que ordena el día, toallas con espacio. Tres mil horas de sol. La Costa de la Luz no es un eslogan; es el clima.
 
 ## Punta Umbría
 
-La de los onubenses. Paseo, choco, familia, agosto al límite. La flecha hacia El Portil es el paseo que hay que hacer.
+La playa de los onubenses. Paseo, choco, familia, un verano que empieza en mayo. La flecha hacia El Portil es el paseo que hay que hacerse.
 
 ## El Portil
 
-Más bajo, más duna, el lagoon detrás. Buena para quien huye del paseo sin irse a otra comarca.
+Más bajo, más duna, la laguna detrás. Ideal si buscas calma sin cambiar de comarca.
 
 ## Mazagón
 
-Pinos hasta la arena. Playa ancha. Elige este si tu idea de vacaciones incluye silencio después de las 23:00.
+Pinos hasta la arena. Playa ancha, de las que respiran. Elige este si las noches las quieres quietas.
 
 ## Matalascañas
 
-Larga, servida, extraña. Detrás, Doñana. Úsala como cama de parque nacional, no como destino en sí.
+Larga, servida, con Doñana a la espalda. Duerme aquí si el parque es el plan; báñate y entra al Acebuche al amanecer.
 
 ## Isla Cristina / Punta del Moral / Isla Canela
 
-Gamba, marisma, urbanizaciones de distinto grado de alma. Isla Cristina gana en carácter. Canela gana en toalla nueva.
+Gamba, marisma, orillas distintas. Isla Cristina gana en carácter marinero. Canela, en arena ancha y confort.
 
-## Normas no escritas
+## Lo que conviene saber
 
-Bandera roja se respeta: hay corriente. El poniente tumba sombrillas. No hay espeto de sardina como religión (eso es Málaga). Hay choco y hay gamba. El atardecer se mira al oeste, que es donde se pone el sol de verdad.`,
+La bandera se respeta: hay corriente de verdad. El poniente tumba sombrillas y también limpia el cielo. El atardecer se mira al oeste. Aquí el sol se pone en el mar.`,
   },
   {
     slug: "donana-sin-calor",
-    title: "Doñana sin morir de calor",
-    dek: "Cuándo ir, por qué puerta entrar y cómo no convertir el parque en un safari de autobús.",
+    title: "Doñana, a su hora",
+    dek: "Cuándo ir, por qué puerta entrar y cómo visitar el parque con el respeto que pide.",
     category: "guides",
     readMinutes: 8,
     featured: false,
@@ -314,28 +310,28 @@ Bandera roja se respeta: hay corriente. El poniente tumba sombrillas. No hay esp
     neighborhood: "matalascanas",
     publishedAt: "2026-08-10T08:00:00Z",
     votes: 19,
-    body: `Doñana en agosto a las 13:00 es una mala idea. Doñana al amanecer en mayo, octubre o un invierno claro es otra cosa.
+    body: `Doñana pide hora. Al amanecer, en mayo, octubre o un invierno claro, el parque se abre: aves, luz baja, marisma. El mediodía de agosto es para la playa; el parque, para el fresco.
 
 ## Puertas
 
-**El Acebuche** (Matalascañas) es la entrada clásica, con centro de visitantes y linces en cautela (los de la exposición, no los del monte). **El Rocío** es el pueblo-santuario: arena en las calles, hermandades y marisma. **La aldea** en palo y caballo no se entiende en una mañana de julio entre helados.
+**El Acebuche** (Matalascañas) es la entrada clásica, con centro de visitantes y una introducción seria al territorio. **El Rocío** es el pueblo-santuario: arena en las calles, hermandades, marisma a un paso. La aldea se entiende mejor un laborable que una mañana de julio entre prisas.
 
-## Cómo entrar al parque
+## Cómo entrar
 
-Visitas concertadas, 4x4, pasarelas públicas. No se entra «a ver qué hay» con el coche de alquiler. Reserva. Lleva agua, sombrero, prismáticos. El lince no sale a saludar. Los ciervos, a veces sí, al atardecer.
+Visitas concertadas, 4x4, pasarelas públicas. Reserva. Agua, sombrero, prismáticos. El lince es un privilegio, no una cita. Los ciervos, a veces, al atardecer.
 
 ## El Rocío
 
-Si no vas a la romería, ve un día laborable. La ermita, la marisma, un café. La romería es un país aparte: milonga, polvo, fe y logística. No se improvisa.
+Si no vas a la romería, ve un día sereno. La ermita, la marisma, un café. La romería es un país aparte —fe, polvo, hermandad— y merece su propio viaje.
 
 ## Combinar
 
-Duerme en Mazagón o Matalascañas. Playa por la tarde, parque por la mañana. No hagas Doñana + Riotinto + Jabugo. Huelva se merece tres viajes, no un infarto.`,
+Duerme en Mazagón o Matalascañas. Parque por la mañana, playa por la tarde. Costa, marisma y sierra son tres Huelvas: dales tres tiempos.`,
   },
   {
     slug: "vino-condado-huelva",
-    title: "Condado de Huelva: el vino que nadie pide (y debería)",
-    dek: "Blancos atlánticos, naranja histórico y bodegas de pueblo. Una guía corta para beber aquí, no para coleccionar.",
+    title: "Condado de Huelva: el blanco de esta mesa",
+    dek: "Blancos atlánticos, vinos de naranja y bodegas de pueblo. Para beberse con la gamba, no para coleccionar.",
     category: "eat",
     readMinutes: 7,
     featured: false,
@@ -343,16 +339,16 @@ Duerme en Mazagón o Matalascañas. Playa por la tarde, parque por la mañana. N
     neighborhood: "moguer-palos",
     publishedAt: "2026-08-21T08:00:00Z",
     votes: 16,
-    body: `El Condado no es Jerez, y no tiene que serlo. Hay **blancos jóvenes** que aguantan una gamba mejor que muchos albariños de carta. Hay vinos históricos de naranja y hay bodegas en Bollullos, Rociana, Moguer, Palos.
+    body: `El Condado es el vino de esta tierra llana: **blancos jóvenes** que sostienen una gamba con más gracia que muchos nombres de carta. Hay vinos históricos de naranja y bodegas en Bollullos, Rociana, Moguer, Palos.
 
-Pide el blanco de la casa en un sitio que no sea una cadena. Si está frío y huele a algo, adelante. Si quieres ir un paso más allá, una visita a bodega en la tierra llana se hace en una mañana, entre fresas y moscatel.
+Pide el blanco de la casa en un sitio que quiera a su provincia. Frío, limpio, de aquí. Una visita a bodega se hace en una mañana, entre fresas y moscatel.
 
-No hace falta hablar de maridajes. Gamba y blanco. Jamón y un trago más serio, ya en la sierra. Dos geografías, dos copas.`,
+Gamba y blanco. Jamón y un trago más serio, ya en la sierra. Dos geografías, dos copas. Huelva bebe lo que cultiva.`,
   },
   {
     slug: "colombinas-2026",
     title: "Colombinas 2026: cómo entrar y cómo salir",
-    dek: "La feria de Huelva no es la de Sevilla. Casetas, calor, Recinto Ferial y un centro que se enciende.",
+    dek: "La feria de Huelva: casetas, Recinto Ferial y un centro que se enciende. Cómo vivirla bien.",
     category: "events",
     readMinutes: 6,
     featured: false,
@@ -360,19 +356,19 @@ No hace falta hablar de maridajes. Gamba y blanco. Jamón y un trago más serio,
     neighborhood: "centro",
     publishedAt: "2026-07-22T08:00:00Z",
     votes: 22,
-    body: `Las **Colombinas** cierran julio y abren agosto. El Recinto Ferial es el de siempre: casetas, rebujito, polvo y familia. El centro se llena de veladores. No esperes el glamour de la Feria de Abril; espera una feria de capital de provincia que se quiere mucho.
+    body: `Las **Colombinas** cierran julio y abren agosto. El Recinto Ferial es el de siempre: casetas, rebujito, familia, una feria de capital que se quiere mucho. El centro se llena de veladores. Es la fiesta de la casa.
 
 ## Cómo ir
 
-A pie o en bus lanzadera. El coche es un error. Reserva restaurante si quieres gamba esa semana: la ciudad está en otra frecuencia.
+A pie o en bus lanzadera. Reserva mesa si quieres gamba esa semana: la ciudad está de gala.
 
 ## Qué vestir
 
-Gente de traje de flamenca, gente de camisa, gente de chándal. Nadie te echa. El calor, sí.
+Traje de flamenca, camisa, lo que apetezca. El calor es el único protocolo.
 
-## Qué no hacer
+## El ritmo
 
-No intentes «hacer Colombinas» y «hacer Doñana» el mismo fin de semana. Elige.`,
+Colombinas es un tiempo. Doñana, otro. Elige y honra el que toque.`,
   },
   {
     slug: "huelva-reabre-playas-poniente",
@@ -421,9 +417,9 @@ Agua, sombrero, calzado cerrado. El rojo mancha.`,
     votes: 27,
     body: `Va en serio: el choco de **Punta Umbría** el sábado a las 15:30 es una cola y un aceite cansado. El miércoles a las 17:30, con el paseo a media máquina, es otra cosa.
 
-Pide ración para compartir. Si está tierno, pide otra. Si está goma, cambia. No hay lealtad que justifique un choco malo.
+Pide ración para compartir. Si está en su punto, pide otra. El choco de Punta, bien frito, es motivo suficiente.
 
-Firmado: alguien que vive aquí y está harto de ver a la gente sentarse en el primer velador.`,
+Firmado: alguien que vive aquí y guarda las horas buenas para quien las merece.`,
   },
 ];
 
@@ -433,7 +429,7 @@ export const SEED_PLACES: SeedPlace[] = [
     kind: "mirador",
     lat: 37.2618,
     lng: -6.9415,
-    blurb: "La pasarela de hierro sobre el Tinto. Atardecer obligatorio, selfie opcional.",
+    blurb: "La pasarela de hierro sobre el Tinto. El atardecer más noble de la capital.",
     neighborhood: "pescaderia",
     hours: "Siempre abierto",
     votes: 48,
@@ -633,7 +629,7 @@ export const SEED_PLACES: SeedPlace[] = [
     kind: "comer",
     lat: 37.77,
     lng: -6.729,
-    blurb: "El pueblo del jamón. Ve temprano, antes del souvenir.",
+    blurb: "El pueblo del jamón. Ve temprano, cuando el secadero todavía habla.",
     neighborhood: "aracena",
     hours: "Comercios de mañana",
     votes: 40,

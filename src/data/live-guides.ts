@@ -21,23 +21,23 @@ export const LIVE_GUIDES: LiveGuide[] = [
   {
     id: "carta",
     title: "La carta de la lonja",
-    dek: "Qué pedir, dónde no engañan, con qué vino. Un recetario que responde.",
+    dek: "Qué pedir, con qué vino, en qué mesa. El recetario de la gamba blanca.",
     image: "/media/playa.jpg",
     minutes: "5 min de mesa",
     articleSlug: "recetario-gamba-choco",
   },
   {
     id: "kit",
-    title: "Kit de supervivencia onubense",
-    dek: "Bus, viento, slang, horarios. Si vienes de Málaga con la maleta equivocada.",
+    title: "Manual onubense",
+    dek: "Cómo moverse, a qué hora sentarse, qué viento sopla y las palabras de la casa.",
     image: "/media/aracena.jpg",
     minutes: "Consulta",
     articleSlug: "manual-supervivencia-onubense",
   },
   {
     id: "rabida",
-    title: "El camino de Colón, sin placa",
-    dek: "Rábida, Palos, Moguer, el muelle. Un recorrido con paradas, no un folleto.",
+    title: "El camino de Colón",
+    dek: "Rábida, Palos, Moguer y el muelle. Un recorrido con el tiempo que merece.",
     image: "/media/rocio.jpg",
     minutes: "Medio día",
     articleSlug: "colon-sin-placa",
@@ -45,15 +45,15 @@ export const LIVE_GUIDES: LiveGuide[] = [
   {
     id: "orilla",
     title: "Qué playa, con este viento",
-    dek: "Punta, Mazagón, Isla, Matalascañas. Filtros de verdad, no de folleto.",
+    dek: "Punta, Mazagón, Isla, Matalascañas. Elige orilla según el viento y el día.",
     image: "/media/playa.jpg",
     minutes: "2 min",
     articleSlug: "playas-costa-de-la-luz",
   },
   {
     id: "marisma",
-    title: "Doñana, sin calor de más",
-    dek: "Época, aves, El Rocío, lo que no se pisa. La marisma se visita con regla.",
+    title: "Doñana, a su hora",
+    dek: "Época, aves, El Rocío, las sendas. La marisma se visita con respeto y con luz.",
     image: "/media/donana.jpg",
     minutes: "Media jornada",
     articleSlug: "donana-sin-calor",
@@ -96,7 +96,7 @@ const STOP = {
     title: "Mercado del Carmen",
     slot: "Mañana",
     minutes: 35,
-    note: "Pescado del día. Pregunta, no señales con el dedo al escaparate de Instagram.",
+    note: "Pescado del día. Pregunta qué ha entrado. El mercado es la primera mesa.",
     lat: 37.2591,
     lng: -6.9472,
   },
@@ -105,7 +105,7 @@ const STOP = {
     title: "Barrio Reina Victoria",
     slot: "Mediodía",
     minutes: 30,
-    note: "Diez minutos de Inglaterra minera. Se visita; no se busca hotel.",
+    note: "Diez minutos de Inglaterra minera. Un damero único, para recorrerlo despacio.",
     lat: 37.2646,
     lng: -6.9412,
   },
@@ -114,7 +114,7 @@ const STOP = {
     title: "Gamba a la plancha",
     slot: "Comida",
     minutes: 90,
-    note: "Plancha y sal. Si te la ponen a la gabardina como dogma, cambia de mesa.",
+    note: "Plancha y sal. El producto que da nombre a esta costa.",
     lat: 37.2562,
     lng: -6.9518,
   },
@@ -123,7 +123,7 @@ const STOP = {
     title: "Muelle de Riotinto",
     slot: "Atardecer",
     minutes: 50,
-    note: "Hierro sobre el Tinto. El selfie es opcional; el silencio, no.",
+    note: "Hierro sobre el Tinto. El atardecer más noble de la capital.",
     lat: 37.2618,
     lng: -6.9415,
   },
@@ -132,7 +132,7 @@ const STOP = {
     title: "El Conquero / Moret",
     slot: "Tarde",
     minutes: 70,
-    note: "Sube. Industria y marisma en la misma frase. Baja cuando se encienda el Polo.",
+    note: "Sube. Marisma, pino y la ría en una sola mirada. Baja cuando se enciendan las luces.",
     lat: 37.2705,
     lng: -6.955,
   },
@@ -290,7 +290,7 @@ export const GAMBA_SPECIES = [
     name: "Gamba blanca",
     when: "Todo el año; el banco, entre siete y treinta millas.",
     order: "A la plancha, sal. Cocida si es del día. Gabardina es fiesta, no dogma.",
-    flag: "Si es roja y te la venden «de Huelva», estás comprando un apellido.",
+    flag: "La blanca de Huelva es pálida, de cristal. Pídela por su nombre.",
     pair: "Condado de Huelva, blanco, frío.",
   },
   {
@@ -298,7 +298,7 @@ export const GAMBA_SPECIES = [
     name: "Choco",
     when: "La costa, sobre todo Punta.",
     order: "Frito, en el centro de la mesa. Tierno, sin pasta de harina.",
-    flag: "Si está goma, cambia de mesa. No es negociable.",
+    flag: "Pídelo tierno, limpio, sin harina de más. El punto se nota al primer bocado.",
     pair: "Caña o el mismo Condado.",
   },
   {
@@ -306,7 +306,7 @@ export const GAMBA_SPECIES = [
     name: "Coquinas",
     when: "Mejor de noviembre a abril.",
     order: "A la marinera, cuando hay. Pregunta si han entrado.",
-    flag: "Fuera de temporada, no insistas. El congelador se nota.",
+    flag: "En su temporada, no hay mejor tapa. Pregunta si han entrado.",
     pair: "Manzanilla o Condado joven.",
   },
   {
@@ -314,7 +314,7 @@ export const GAMBA_SPECIES = [
     name: "Acedías",
     when: "Lonja de Isla y Punta.",
     order: "Fritas, enteras. Se comen con los dedos.",
-    flag: "Si el tamaño es de sello y el precio de gala, sal.",
+    flag: "El tamaño y el brillo lo dicen todo. Una buena casa te las pone con orgullo.",
     pair: "Blanco del Condado.",
   },
   {
@@ -322,7 +322,7 @@ export const GAMBA_SPECIES = [
     name: "Urta",
     when: "Se cuela de Cádiz; aquí también se come.",
     order: "A la roteña, para compartir.",
-    flag: "No la pidas el mismo día que la gamba de culto. Elige religión.",
+    flag: "Comparte mesa. Gamba y urta pueden convivir; el ritmo, no la prisa.",
     pair: "Un tinto ligero o el Condado con cuerpo.",
   },
   {
@@ -330,7 +330,7 @@ export const GAMBA_SPECIES = [
     name: "Jamón de Jabugo",
     when: "Cuando subas a la sierra.",
     order: "Loncha fina, a temperatura de sala. No de nevera.",
-    flag: "No lo pidas junto a la gamba en el mismo acto.",
+    flag: "La sierra es otra mesa. Loncha fina, temperatura de sala. El jamón se basta.",
     pair: "Un vino de la sierra, o nada. El jamón se basta.",
   },
 ] as const;
@@ -352,58 +352,58 @@ export const CARTA_WANT = [
 export function cartaAdvice(place: string, want: string) {
   if (place === "isla" && want === "plancha") {
     return {
-      say: "«La gamba que ha entrado hoy, a la plancha. De la lonja, no de la cámara.»",
-      where: "Isla Cristina. Pregunta lonja antes de sentarte.",
-      skip: "La carta plastificada con foto. Si el camarero no sabe el barco, hay otra mesa.",
+      say: "«La gamba que ha entrado hoy, a la plancha. De la lonja.»",
+      where: "Isla Cristina. Pregunta qué barco, siéntate con calma.",
+      skip: "La pizarra corta gana a cualquier carta ilustrada.",
     };
   }
   if (place === "punta" && want === "choco") {
     return {
       say: "«Un choco frito para el centro y una caña.»",
-      where: "Paseo de Punta, temporada. Fuera de agosto, todavía hay sitio.",
-      skip: "El sitio con menú de paella en tres idiomas.",
+      where: "Paseo de Punta, en temporada. Entre semana, todavía mejor.",
+      skip: "El Condado o la caña: déjales el maridaje a ellos.",
     };
   }
   if (place === "mercado") {
     return {
-      say: "«¿Qué ha entrado? Para llevar, sin adorno.»",
+      say: "«¿Qué ha entrado? Para llevar, así, sin adorno.»",
       where: "Mercado del Carmen. Mañana. Domingo, cerrado.",
-      skip: "Comprar gamba ya cocida a precio de gala a las 13:30.",
+      skip: "La gamba se elige con luz. Madruga un poco.",
     };
   }
   if (want === "fiesta") {
     return {
       say: "«Gabardina, pero que se vea la gamba. Y un Condado.»",
-      where: "Vale en feria y en antojo. No es el rito diario.",
-      skip: "Hacer de la gabardina tu única anécdota de Huelva.",
+      where: "Vale en feria y en antojo. Un capricho bien hecho.",
+      skip: "Después, vuelve a la plancha. Es el rito de esta costa.",
     };
   }
   return {
-    say: "«Gamba blanca a la plancha. Si no hay, choco. Nada de sangría.»",
-    where: "Alrededor de Concepción y Pablo Rada, o donde el precio no sea de gala.",
-    skip: "Comparar con Málaga. El camarero ya lo ha oído.",
+    say: "«Gamba blanca a la plancha. Si no hay, choco. Un Condado, frío.»",
+    where: "Concepción, Pablo Rada, o cualquier casa que nombre el origen.",
+    skip: "Huelva se defiende sola. No hace falta comparar.",
   };
 }
 
 export const DESTINOS = [
-  { id: "punta", name: "Punta Umbría", how: "Bus urbano/metropolitano en temporada. En agosto, más frecuencia de la que crees. Coche si vas con nevera.", time: "25 min" },
-  { id: "mazagon", name: "Mazagón", how: "Coche. El bus existe, pero el pino pide maletero.", time: "35 min" },
-  { id: "isla", name: "Isla Cristina", how: "Coche por la A-49. Tren, no.", time: "50 min" },
-  { id: "aracena", name: "Aracena", how: "Coche. Curvas y castaño. En invierno, madruga.", time: "1 h 10" },
-  { id: "rabida", name: "La Rábida / Palos", how: "Coche o bus comarcal. A pie desde la capital, no.", time: "20 min" },
-  { id: "sevilla", name: "Sevilla (aeropuerto)", how: "El aeropuerto «de Huelva» no existe. Vuelas a SVQ y bajas en bus o alquilas.", time: "1 h 15" },
-  { id: "centro", name: "Moverse por la capital", how: "Se anda. Aparcar en agosto es deporte. Parkings cubiertos y el Muelle evitan la discusión.", time: "a pie" },
+  { id: "punta", name: "Punta Umbría", how: "Bus metropolitano en temporada, con buena frecuencia en verano. Coche si vas con nevera y tiempo.", time: "25 min" },
+  { id: "mazagon", name: "Mazagón", how: "Coche, por pinos. El bus existe; el maletero ayuda.", time: "35 min" },
+  { id: "isla", name: "Isla Cristina", how: "Coche por la A-49. Un trayecto de costa oeste, cómodo.", time: "50 min" },
+  { id: "aracena", name: "Aracena", how: "Coche. Curvas, castaño, otra temperatura. En invierno, madruga.", time: "1 h 10" },
+  { id: "rabida", name: "La Rábida / Palos", how: "Coche o bus comarcal. Veinte minutos y el estuario.", time: "20 min" },
+  { id: "sevilla", name: "Aeropuerto de Sevilla", how: "Se vuela a SVQ y se baja a Huelva en bus o con coche de alquiler. Un traslado sencillo.", time: "1 h 15" },
+  { id: "centro", name: "Moverse por la capital", how: "Se anda, y se anda bien. Parkings cubiertos junto al Muelle si vienes en coche.", time: "a pie" },
 ] as const;
 
 export const SLANG = [
-  { word: "Onubense", sense: "De Huelva. De Onuba. No «huelveño» en voz alta el primer día." },
-  { word: "Choco", sense: "Sepia. En Punta es religión. En la capital también, un poco menos ruidosa." },
-  { word: "Gamba blanca", sense: "La de aquí. La roja es de otro sitio, aunque el cartel mienta." },
-  { word: "La Cinta", sense: "La virgen, el santuario, septiembre. No es un adorno." },
-  { word: "Colombinas", sense: "La feria de Huelva. No es la Feria de Abril. No lo mezcles." },
-  { word: "Illó / miarma", sense: "Se oyen. No hace falta que los estrenes el primer café." },
-  { word: "El Polo", sense: "El Polo Químico. Se ve, se huele a veces, está en la biografía. Sin discurso." },
-  { word: "Poniente", sense: "El viento que arregla o estropea la playa. Pregunta en el chiringuito, no en el hotel." },
+  { word: "Onubense", sense: "De Huelva. De Onuba, el nombre romano. El gentilicio de la casa." },
+  { word: "Choco", sense: "Sepia. En Punta es institución. En la capital, también se celebra." },
+  { word: "Gamba blanca", sense: "La de estos bancos de arena. Pálida, de cristal, única." },
+  { word: "La Cinta", sense: "La virgen, el santuario, septiembre. La fiesta que mira a la ría." },
+  { word: "Colombinas", sense: "La feria de Huelva. Alegre, de casa, a finales de julio." },
+  { word: "Illó / miarma", sense: "Se oyen. Llegan solas, con los días y la mesa." },
+  { word: "Onuba", sense: "El nombre antiguo. Sale en el escudo, en el equipo, en el orgullo." },
+  { word: "Poniente", sense: "El viento que ordena la playa. Pregunta en el chiringuito: es la meteorología local." },
 ] as const;
 
 export const COLON_STOPS: PlanStop[] = [
@@ -412,7 +412,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Monasterio de La Rábida",
     slot: "Parada 1",
     minutes: 50,
-    note: "Pequeño, blanco, suficiente. Colón durmió aquí; tú no hace falta que te eternices.",
+    note: "Mudéjar, íntimo, suficiente. El claustro y el pinar. Colón durmió aquí.",
     lat: 37.207,
     lng: -6.923,
   },
@@ -421,7 +421,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Muelle de las Carabelas",
     slot: "Parada 2",
     minutes: 40,
-    note: "Réplicas. Ve si viajas con niños. Si no, el estuario te sobra y está bien.",
+    note: "Réplicas de las naves. Con niños, emocionan. El estuario es el decorado de todos.",
     lat: 37.2095,
     lng: -6.926,
   },
@@ -430,7 +430,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Palos · San Jorge",
     slot: "Parada 3",
     minutes: 40,
-    note: "De esta iglesia salió la expedición. El pueblo sigue siendo pueblo.",
+    note: "De esta iglesia salió la expedición. Palos sigue siendo pueblo, y se come bien.",
     lat: 37.2276,
     lng: -6.8932,
   },
@@ -439,7 +439,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Moguer · Juan Ramón",
     slot: "Parada 4",
     minutes: 55,
-    note: "Casa-museo. Una hora. Platero está en la estatua; tú, en la sombra.",
+    note: "Casa-museo. Una hora. Platero, la plaza, el silencio que le sienta a Juan Ramón.",
     lat: 37.2744,
     lng: -6.8386,
   },
@@ -448,7 +448,7 @@ export const COLON_STOPS: PlanStop[] = [
     title: "Vuelta · Muelle del Tinto",
     slot: "Cierre",
     minutes: 40,
-    note: "El hierro, el atardecer. Colón ya no está. La ría sí.",
+    note: "El hierro, el atardecer. La ría, todavía. El cierre que merece el día.",
     lat: 37.2618,
     lng: -6.9415,
   },
@@ -480,7 +480,7 @@ export const PLAYAS = [
   {
     id: "matalascanas",
     name: "Matalascañas",
-    dek: "Urbanización pegada a Doñana. Fuera de temporada, pueblo fantasma con toalla.",
+    dek: "La orilla de Doñana. Fuera de temporada, una calma rara y preciosa.",
     image: "/media/donana.jpg",
     tags: ["familias", "duna"] as PlayaTag[],
     wind: "Abierta, atlántica, sin privilegios.",

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/test")({
   component: TestPage,
   head: () => ({
-    meta: [{ title: "¿Onubense o guiri? · Huelva.cloud" }],
+    meta: [{ title: "¿Onubense o aprendiz? · Huelva.cloud" }],
   }),
 });
 

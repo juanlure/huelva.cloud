@@ -136,13 +136,13 @@ async function seedNewsroom() {
   const [{ n }] = await sql<{ n: number }>`select count(*)::int as n from ops_log`;
   if (numFromUnknown(n) === 0) {
     const seeds: { agent: string; action: string; detail: string; hours: number }[] = [
-      { agent: "El Polo", action: "heartbeat", detail: "Contenedores en pie. Memoria estable. Nada que reiniciar.", hours: 14 },
+      { agent: "Odiel", action: "heartbeat", detail: "Contenedores en pie. Memoria estable. Nada que reiniciar.", hours: 14 },
       { agent: "La Vigía", action: "backlog", detail: "Cargadas 8 ideas. Prioridad: septiembre, Cinta, Condado.", hours: 13 },
       { agent: "El Condado", action: "diversity", detail: "Hay demasiada gamba en portada. Siguiente pieza: barrio o sierra.", hours: 11 },
       { agent: "Eladio Onuba", action: "assign", detail: "Encarga a Toni Portil el poniente de septiembre.", hours: 10 },
-      { agent: "Toni Portil", action: "draft", detail: "Borrador del poniente. Sin 'gran desconocida'.", hours: 10 },
+      { agent: "Toni Portil", action: "draft", detail: "Borrador del poniente. Luz, bandera, orilla.", hours: 10 },
       { agent: "Eladio Onuba", action: "publish", detail: "Publicado. Entra en Lo último.", hours: 9 },
-      { agent: "La Rábida", action: "scan", detail: "SSH y tráfico: nada raro. Coordinado con El Polo.", hours: 6 },
+      { agent: "La Rábida", action: "scan", detail: "SSH y tráfico: nada raro. Coordinado con Odiel.", hours: 6 },
       { agent: "El Muelle", action: "analytics", detail: "Lo más leído: gamba y 48 horas. El test convierte.", hours: 4 },
       { agent: "La Marea", action: "wait", detail: "Cuota de ayer cerrada. Duermo hasta la ventana de las 8.", hours: 3 },
       { agent: "La Marea", action: "wake", detail: "Ventana abierta. Decido si publicar o esperar.", hours: 1 },
@@ -279,11 +279,11 @@ export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async
     select count(*)::int as open from idea_backlog where status = 'open'
   `;
 
-  const lastSre = logRows.find((r) => r.agent === "El Polo");
+  const lastSre = logRows.find((r) => r.agent === "Odiel");
   const sreAge = lastSre ? Date.now() - new Date(isoFromUnknown(lastSre.at)).getTime() : Infinity;
   if (sreAge > 10 * 60 * 1000) {
     const mem = Math.round(process.memoryUsage().rss / 1024 / 1024);
-    await log("El Polo", "heartbeat", `Proceso en pie. RSS ${mem} MB. Nada que parchear.`);
+    await log("Odiel", "heartbeat", `Proceso en pie. RSS ${mem} MB. Nada que parchear.`);
     await log("La Rábida", "scan", "Sin patrones raros en este ciclo. Sigo.");
   }
 
@@ -423,7 +423,7 @@ export const runEditorialCycle = createServerFn({ method: "POST" })
           {
             role: "system",
             content:
-              `Eres ${writer.name}, ${writer.beat} Escribes para Huelva.cloud. Español de España, tono de vecino honesto, sin marketing, sin emojis, sin decir 'gran desconocida'. Eladio Onuba (editor) ya aprobó el tema. Devuelve SOLO JSON: title, dek, body, category, neighborhood. body en markdown ligero (## y **negrita**), 3-5 párrafos. category uno de guides, news, events, eat. neighborhood: centro, conquero, reina-victoria, punta-umbria, mazagon, isla-cristina, moguer-palos, aracena, o null. No inventes restaurantes concretos ni horarios precisos.`,
+              `Eres ${writer.name}, ${writer.beat} Escribes para Huelva.cloud. Español de España, tono de revista de viajes seria: cálido, preciso, orgulloso de Huelva. Luz atlántica, gamba blanca, Doñana, Colón, sierra. Sin marketing vacío, sin emojis, sin complejos, sin industria ni olores. Eladio Onuba (editor) ya aprobó el tema. Devuelve SOLO JSON: title, dek, body, category, neighborhood. body en markdown ligero (## y **negrita**), 3-5 párrafos. category uno de guides, news, events, eat. neighborhood: centro, conquero, reina-victoria, punta-umbria, mazagon, isla-cristina, moguer-palos, aracena, o null. No inventes restaurantes concretos ni horarios precisos.`,
           },
           {
             role: "user",

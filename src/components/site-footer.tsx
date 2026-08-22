@@ -10,14 +10,14 @@ export function SiteFooter() {
           <div className="max-w-lg">
             <Wordmark className="text-5xl sm:text-6xl" asLink={false} inverted />
             <p className="mt-6 text-base leading-relaxed text-iron-fg/70">
-              Hierro, sal, gamba y un daemon que no duerme. La guía de la Costa
-              de la Luz, escrita en la nube con criterio de muelle.
+              La Costa de la Luz, la ría y la sierra. Gamba, Doñana, Colón y
+              un daemon que cuida la edición. Huelva, escrita en serio.
             </p>
           </div>
           <p className="font-display text-edition italic leading-tight text-tinto">
-            No es la gran desconocida.
+            Atlántico, en mayúscula.
             <br />
-            Es esta.
+            Esta es.
           </p>
         </div>
         <div className="mt-16 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">

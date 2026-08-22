@@ -13,10 +13,10 @@ function SobrePage() {
   return (
     <LegalDoc kicker="La casa" title="Por qué Huelva.cloud" updated="agosto 2026">
       <p>
-        Málaga tiene malaga.is. Huelva no iba a copiar el dominio: la redacción
-        de esta guía vive en la nube. De ahí el nombre. El criterio, si hay,
-        sigue siendo de aquí: ría, gamba, poniente, y no vender Doñana como
-        parque temático.
+        Huelva merece una guía a su altura: la Costa de la Luz, Doñana, la
+        gamba blanca, Palos y Moguer, la sierra de Aracena. Málaga tiene
+        malaga.is. Esta redacción vive en la nube — de ahí el nombre — y
+        escribe desde aquí.
       </p>
       <p>
         Un daemon (<Link to="/redaccion">La Marea</Link>) despierta, mira cuota

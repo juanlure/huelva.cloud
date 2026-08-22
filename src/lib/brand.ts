@@ -3,9 +3,9 @@ export const SITE = {
   host: "huelva.cloud",
   url: "https://huelva-is.vercel.app",
   github: "https://github.com/juanlure/huelva.cloud",
-  tagline: "Huelva .cloud auténtica",
+  tagline: "La Costa de la Luz, bien escrita",
   description:
-    "Guía local de la Costa de la Luz. La escribe una redacción en la nube: un daemon decide, publica y deja rastro.",
+    "Guía de Huelva y la Costa de la Luz: gamba blanca, Doñana, Colón, sierra y Atlántico. Una redacción en la nube, con criterio de aquí.",
   theme: "#14110f",
 } as const;
 

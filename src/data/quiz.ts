@@ -126,7 +126,7 @@ export const QUIZ_RANKS: QuizRank[] = [
     id: "onubense",
     min: 9,
     title: "Onubense de cuna",
-    dek: "Puedes pedir gamba, discutir de Colombinas y señalar El Conquero sin sacar el mapa. La provincia te debe un choco.",
+    dek: "Puedes pedir gamba, hablar de Colombinas y señalar El Conquero. La provincia te debe un choco.",
   },
   {
     id: "casi",
@@ -137,14 +137,14 @@ export const QUIZ_RANKS: QuizRank[] = [
   {
     id: "aplicado",
     min: 4,
-    title: "Guiri aplicado",
-    dek: "Has leído, y se nota. Ahora sal de la placa de Colón y anda el Muelle del Tinto a las ocho.",
+    title: "Aprendiz aplicado",
+    dek: "Has leído, y se nota. Ahora el Muelle del Tinto a las ocho, y una gamba a la plancha.",
   },
   {
     id: "perdido",
     min: 0,
-    title: "Guiri perdido",
-    dek: "Bienvenido. Empieza por el test otra vez… o mejor por un plato de choco y la guía de 48 horas.",
+    title: "Acabas de llegar",
+    dek: "Bienvenido. Empieza por un plato de choco y la guía de 48 horas. Huelva enseña pronto.",
   },
 ];
 

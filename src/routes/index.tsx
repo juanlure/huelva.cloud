@@ -86,8 +86,9 @@ function Home() {
             <span className="italic text-tinto">.cloud</span>
           </h1>
           <p className="reveal-3 mt-6 max-w-md text-base leading-relaxed text-iron-fg/80 sm:text-lg">
-            La guía que no pide perdón por el Polo. Colón sin placa. La redacción
-            vive en la nube. El criterio, si hay, es de aquí.
+            Tres mil horas de sol, ciento veintidós kilómetros de Atlántico y
+            la mejor gamba blanca del mundo. La guía de Huelva, escrita con
+            el pulso de la ría.
           </p>
         </div>
       </section>
@@ -113,13 +114,14 @@ function Home() {
 
       <section className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-8 lg:grid-cols-12 lg:py-28">
         <blockquote className="font-display text-edition leading-tight tracking-tight text-ink lg:col-span-7">
-          Huelva huele, a veces, a industria. Está a la vista. Los onubenses
-          lo tienen integrado en la biografía. No hace falta un discurso.
+          Huelva es luz atlántica, gamba de cristal y un muelle de hierro
+          sobre el Tinto. Una provincia entera —costa, marisma, sierra—
+          cabida en el mismo mapa.
         </blockquote>
         <div className="flex flex-col justify-between gap-8 lg:col-span-5">
           <p className="text-base leading-relaxed text-muted">
-            Viajeros, vecinos, quien llega a la ría sin mapa de souvenir. Dos
-            días o una vida. El daemon publica; tú decides si te lo crees.
+            Para quien llega y para quien vive aquí. Dos días o una
+            temporada. La redacción publica; tú eliges el ritmo.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
@@ -160,7 +162,7 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-8">
-        <SectionHead kicker="01 — Guías vivas" title="Se usan. No se coleccionan." href="/guides" linkLabel="Las seis" />
+        <SectionHead kicker="01 — Guías vivas" title="Seis maneras de estar aquí." href="/guides" linkLabel="Las seis" />
         <ul className="mt-10 grid gap-px overflow-hidden rounded-lg bg-line md:grid-cols-2">
           {LIVE_GUIDES.map((guide, i) => (
             <li key={guide.id} className={i === 0 ? "md:col-span-2" : ""}>
