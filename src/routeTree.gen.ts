@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SlugRouteImport } from './routes/$slug'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AiDisclosureRouteImport } from './routes/ai-disclosure'
 import { Route as AportaRouteImport } from './routes/aporta'
@@ -17,13 +18,18 @@ import { Route as BarriosRouteImport } from './routes/barrios'
 import { Route as ComerRouteImport } from './routes/comer'
 import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as GuidesRouteImport } from './routes/guides'
+import { Route as HistoriaRouteImport } from './routes/historia'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as MesaRouteImport } from './routes/mesa'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PulseRouteImport } from './routes/pulse'
+import { Route as QueVerRouteImport } from './routes/que-ver'
 import { Route as RecursosRouteImport } from './routes/recursos'
 import { Route as RedaccionRouteImport } from './routes/redaccion'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TemasRouteImport } from './routes/temas'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as GIdRouteImport } from './routes/g.$id'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
@@ -32,6 +38,11 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlugRoute = SlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgendaRoute = AgendaRouteImport.update({
@@ -69,6 +80,11 @@ const GuidesRoute = GuidesRouteImport.update({
   path: '/guides',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoriaRoute = HistoriaRouteImport.update({
+  id: '/historia',
+  path: '/historia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LegalRoute = LegalRouteImport.update({
   id: '/legal',
   path: '/legal',
@@ -77,6 +93,11 @@ const LegalRoute = LegalRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MesaRoute = MesaRouteImport.update({
+  id: '/mesa',
+  path: '/mesa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -89,6 +110,11 @@ const PulseRoute = PulseRouteImport.update({
   path: '/pulse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QueVerRoute = QueVerRouteImport.update({
+  id: '/que-ver',
+  path: '/que-ver',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RecursosRoute = RecursosRouteImport.update({
   id: '/recursos',
   path: '/recursos',
@@ -99,9 +125,19 @@ const RedaccionRoute = RedaccionRouteImport.update({
   path: '/redaccion',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemasRoute = TemasRouteImport.update({
+  id: '/temas',
+  path: '/temas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TestRoute = TestRouteImport.update({
@@ -127,6 +163,7 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
   '/agenda': typeof AgendaRoute
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
@@ -134,13 +171,18 @@ export interface FileRoutesByFullPath {
   '/comer': typeof ComerRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
+  '/historia': typeof HistoriaRoute
   '/legal': typeof LegalRoute
   '/login': typeof LoginRoute
+  '/mesa': typeof MesaRoute
   '/privacy': typeof PrivacyRoute
   '/pulse': typeof PulseRoute
+  '/que-ver': typeof QueVerRoute
   '/recursos': typeof RecursosRoute
   '/redaccion': typeof RedaccionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/temas': typeof TemasRoute
   '/test': typeof TestRoute
   '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
@@ -148,6 +190,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
   '/agenda': typeof AgendaRoute
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
@@ -155,13 +198,18 @@ export interface FileRoutesByTo {
   '/comer': typeof ComerRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
+  '/historia': typeof HistoriaRoute
   '/legal': typeof LegalRoute
   '/login': typeof LoginRoute
+  '/mesa': typeof MesaRoute
   '/privacy': typeof PrivacyRoute
   '/pulse': typeof PulseRoute
+  '/que-ver': typeof QueVerRoute
   '/recursos': typeof RecursosRoute
   '/redaccion': typeof RedaccionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/temas': typeof TemasRoute
   '/test': typeof TestRoute
   '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
@@ -170,6 +218,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
   '/agenda': typeof AgendaRoute
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
@@ -177,13 +226,18 @@ export interface FileRoutesById {
   '/comer': typeof ComerRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
+  '/historia': typeof HistoriaRoute
   '/legal': typeof LegalRoute
   '/login': typeof LoginRoute
+  '/mesa': typeof MesaRoute
   '/privacy': typeof PrivacyRoute
   '/pulse': typeof PulseRoute
+  '/que-ver': typeof QueVerRoute
   '/recursos': typeof RecursosRoute
   '/redaccion': typeof RedaccionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/temas': typeof TemasRoute
   '/test': typeof TestRoute
   '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
@@ -193,6 +247,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$slug'
     | '/agenda'
     | '/ai-disclosure'
     | '/aporta'
@@ -200,13 +255,18 @@ export interface FileRouteTypes {
     | '/comer'
     | '/feed.xml'
     | '/guides'
+    | '/historia'
     | '/legal'
     | '/login'
+    | '/mesa'
     | '/privacy'
     | '/pulse'
+    | '/que-ver'
     | '/recursos'
     | '/redaccion'
+    | '/sitemap.xml'
     | '/sobre'
+    | '/temas'
     | '/test'
     | '/g/$id'
     | '/p/$slug'
@@ -214,6 +274,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$slug'
     | '/agenda'
     | '/ai-disclosure'
     | '/aporta'
@@ -221,13 +282,18 @@ export interface FileRouteTypes {
     | '/comer'
     | '/feed.xml'
     | '/guides'
+    | '/historia'
     | '/legal'
     | '/login'
+    | '/mesa'
     | '/privacy'
     | '/pulse'
+    | '/que-ver'
     | '/recursos'
     | '/redaccion'
+    | '/sitemap.xml'
     | '/sobre'
+    | '/temas'
     | '/test'
     | '/g/$id'
     | '/p/$slug'
@@ -235,6 +301,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$slug'
     | '/agenda'
     | '/ai-disclosure'
     | '/aporta'
@@ -242,13 +309,18 @@ export interface FileRouteTypes {
     | '/comer'
     | '/feed.xml'
     | '/guides'
+    | '/historia'
     | '/legal'
     | '/login'
+    | '/mesa'
     | '/privacy'
     | '/pulse'
+    | '/que-ver'
     | '/recursos'
     | '/redaccion'
+    | '/sitemap.xml'
     | '/sobre'
+    | '/temas'
     | '/test'
     | '/g/$id'
     | '/p/$slug'
@@ -257,6 +329,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SlugRoute: typeof SlugRoute
   AgendaRoute: typeof AgendaRoute
   AiDisclosureRoute: typeof AiDisclosureRoute
   AportaRoute: typeof AportaRoute
@@ -264,13 +337,18 @@ export interface RootRouteChildren {
   ComerRoute: typeof ComerRoute
   FeedDotxmlRoute: typeof FeedDotxmlRoute
   GuidesRoute: typeof GuidesRoute
+  HistoriaRoute: typeof HistoriaRoute
   LegalRoute: typeof LegalRoute
   LoginRoute: typeof LoginRoute
+  MesaRoute: typeof MesaRoute
   PrivacyRoute: typeof PrivacyRoute
   PulseRoute: typeof PulseRoute
+  QueVerRoute: typeof QueVerRoute
   RecursosRoute: typeof RecursosRoute
   RedaccionRoute: typeof RedaccionRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  TemasRoute: typeof TemasRoute
   TestRoute: typeof TestRoute
   GIdRoute: typeof GIdRoute
   PSlugRoute: typeof PSlugRoute
@@ -284,6 +362,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$slug': {
+      id: '/$slug'
+      path: '/$slug'
+      fullPath: '/$slug'
+      preLoaderRoute: typeof SlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agenda': {
@@ -335,6 +420,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/historia': {
+      id: '/historia'
+      path: '/historia'
+      fullPath: '/historia'
+      preLoaderRoute: typeof HistoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/legal': {
       id: '/legal'
       path: '/legal'
@@ -347,6 +439,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mesa': {
+      id: '/mesa'
+      path: '/mesa'
+      fullPath: '/mesa'
+      preLoaderRoute: typeof MesaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -363,6 +462,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PulseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/que-ver': {
+      id: '/que-ver'
+      path: '/que-ver'
+      fullPath: '/que-ver'
+      preLoaderRoute: typeof QueVerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recursos': {
       id: '/recursos'
       path: '/recursos'
@@ -377,11 +483,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RedaccionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/temas': {
+      id: '/temas'
+      path: '/temas'
+      fullPath: '/temas'
+      preLoaderRoute: typeof TemasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/test': {
@@ -417,6 +537,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SlugRoute: SlugRoute,
   AgendaRoute: AgendaRoute,
   AiDisclosureRoute: AiDisclosureRoute,
   AportaRoute: AportaRoute,
@@ -424,13 +545,18 @@ const rootRouteChildren: RootRouteChildren = {
   ComerRoute: ComerRoute,
   FeedDotxmlRoute: FeedDotxmlRoute,
   GuidesRoute: GuidesRoute,
+  HistoriaRoute: HistoriaRoute,
   LegalRoute: LegalRoute,
   LoginRoute: LoginRoute,
+  MesaRoute: MesaRoute,
   PrivacyRoute: PrivacyRoute,
   PulseRoute: PulseRoute,
+  QueVerRoute: QueVerRoute,
   RecursosRoute: RecursosRoute,
   RedaccionRoute: RedaccionRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  TemasRoute: TemasRoute,
   TestRoute: TestRoute,
   GIdRoute: GIdRoute,
   PSlugRoute: PSlugRoute,
