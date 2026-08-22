@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArticleCard } from "@/components/article-card";
+import { FilmHero } from "@/components/film-hero";
 import { LIVE_GUIDES } from "@/data/live-guides";
 import { listArticles } from "@/lib/server/content";
 import { seoHead } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/guides")({
   loader: () => listArticles(),
@@ -20,55 +22,83 @@ function GuidesPage() {
   const articles = Route.useLoaderData().filter(
     (a) => a.category === "guides" || a.featured,
   );
+  const [first, ...rest] = LIVE_GUIDES;
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-8 sm:py-20">
-      <p className="text-kicker text-tinto">Índice</p>
-      <h1 className="mt-4 max-w-3xl font-display text-display leading-display tracking-display">
-        Guías
-        <span className="italic text-tinto"> vivas</span>
-      </h1>
-      <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        Itinerario que se arma, carta que responde, playa según el viento.
-        Once  guías para estar en Huelva.
-      </p>
+    <main>
+      <FilmHero
+        image="/media/muelle.jpg"
+        alt="Muelle de Riotinto, Huelva"
+        kicker="Once maneras"
+        title="Guías vivas"
+        tall
+      >
+        <p className="mt-5 max-w-xl text-lg text-iron-fg/80">
+          Itinerario que se arma. Carta que responde. Playa según el viento.
+        </p>
+      </FilmHero>
 
-      <ol className="mt-16">
-        {LIVE_GUIDES.map((guide, i) => (
-          <li key={guide.id} className="border-t border-line">
-            <Link
-              to="/g/$id"
-              params={{ id: guide.id }}
-              className="group grid items-center gap-6 py-8 md:grid-cols-12 md:py-10"
-            >
-              <span className="text-kicker text-tinto md:col-span-1">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="md:col-span-4">
+      {first ? (
+        <Link
+          to="/g/$id"
+          params={{ id: first.id }}
+          className="group grid border-b border-line md:grid-cols-2"
+        >
+          <div className="overflow-hidden">
+            <img
+              src={first.image}
+              alt=""
+              className="film h-80 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 md:h-full"
+            />
+          </div>
+          <div className="flex flex-col justify-end px-6 py-10 sm:px-12">
+            <p className="text-kicker text-tinto">01 · {first.minutes}</p>
+            <h2 className="mt-3 font-display text-4xl tracking-tight group-hover:text-tinto sm:text-5xl">
+              {first.title}
+            </h2>
+            <p className="mt-4 max-w-md text-muted">{first.dek}</p>
+          </div>
+        </Link>
+      ) : null}
+
+      <ul className="grid md:grid-cols-2 lg:grid-cols-3">
+        {rest.map((guide, i) => (
+          <li
+            key={guide.id}
+            className={cn("border-b border-line", (i + 1) % 3 !== 0 && "lg:border-r", i % 2 === 0 && "md:border-r lg:border-r")}
+          >
+            <Link to="/g/$id" params={{ id: guide.id }} className="group block">
+              <div className="overflow-hidden">
                 <img
                   src={guide.image}
                   alt=""
-                  className="aspect-video w-full rounded-md object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="film h-56 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-              </span>
-              <span className="md:col-span-7">
-                <span className="block font-display text-3xl tracking-tight group-hover:text-tinto sm:text-4xl">
+              </div>
+              <div className="px-6 py-8">
+                <p className="text-kicker text-tinto">
+                  {String(i + 2).padStart(2, "0")} · {guide.minutes}
+                </p>
+                <h2 className="mt-2 font-display text-2xl tracking-tight group-hover:text-tinto">
                   {guide.title}
-                </span>
-                <span className="mt-2 block max-w-md text-muted">{guide.dek}</span>
-                <span className="mt-3 block text-kicker text-faint">{guide.minutes}</span>
-              </span>
+                </h2>
+                <p className="mt-2 text-sm text-muted">{guide.dek}</p>
+              </div>
             </Link>
           </li>
         ))}
-      </ol>
+      </ul>
 
-      <h2 className="mt-20 font-display text-edition tracking-tight">También en texto</h2>
-      <div className="mt-8 grid gap-8 md:grid-cols-2">
-        {articles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
-      </div>
+      {articles.length ? (
+        <section className="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+          <h2 className="font-display text-edition tracking-tight">También en texto</h2>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            {articles.map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MESA_PRODUCTOS, MESA_TERRITORIOS, SELLOS } from "@/data/atlas";
 import { seoHead } from "@/lib/seo";
+import { FilmHero } from "@/components/film-hero";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/mesa")({
@@ -33,24 +34,20 @@ function MesaPage() {
 
   return (
     <main>
-      <section className="relative h-80 overflow-hidden bg-iron sm:h-96">
-        <img src={hero.image} alt={hero.imageAlt} className="film size-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-iron via-iron/50 to-iron/20" />
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-4 pb-10 sm:px-8 sm:pb-14">
-          <p className="text-kicker text-foam">Costa · Condado · Sierra</p>
-          <h1 className="mt-3 font-display text-display leading-display tracking-display text-iron-fg">
-            La mesa
-          </h1>
-        </div>
-      </section>
+      <FilmHero
+        image={hero.image}
+        alt={hero.imageAlt}
+        kicker="Costa · Condado · Sierra"
+        title="La mesa"
+        tall
+      >
+        <p className="mt-5 max-w-xl text-lg text-iron-fg/80">
+          Huelva se come en tres geografías. El mar, la tierra llana, la dehesa.
+        </p>
+      </FilmHero>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-8 sm:py-16">
-        <p className="max-w-2xl text-xl leading-relaxed">
-          Huelva se come en tres geografías. El mar, la tierra llana, la dehesa.
-          Seis sellos de calidad. Una sola provincia.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {(["all", ...MESA_TERRITORIOS.map((t) => t.id)] as const).map((id) => (
             <button
               key={id}

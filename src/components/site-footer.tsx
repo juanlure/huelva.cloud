@@ -1,7 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { Wordmark } from "@/components/wordmark";
-import { SEO_LANDINGS } from "@/data/seo-landings";
 import { SITE } from "@/lib/brand";
+
+const PRIMARY = [
+  { to: "/guides" as const, label: "Guías" },
+  { to: "/mesa" as const, label: "Mesa" },
+  { to: "/historia" as const, label: "Onuba" },
+  { to: "/pulse" as const, label: "Ahora" },
+  { to: "/que-ver" as const, label: "Qué ver" },
+  { to: "/recursos" as const, label: "Fuentes" },
+];
+
+const HOUSE = [
+  { to: "/sobre" as const, label: "Sobre" },
+  { to: "/redaccion" as const, label: "Redacción" },
+  { to: "/ai-disclosure" as const, label: "IA" },
+  { to: "/legal" as const, label: "Aviso" },
+  { to: "/privacy" as const, label: "Privacidad" },
+];
 
 export function SiteFooter() {
   return (
@@ -11,8 +27,8 @@ export function SiteFooter() {
           <div className="max-w-lg">
             <Wordmark className="text-5xl sm:text-6xl" asLink={false} inverted />
             <p className="mt-6 text-base leading-relaxed text-iron-fg/70">
-              Guía de referencia de Huelva y la Costa de la Luz. Gamba blanca,
-              Doñana, lugares colombinos, Riotinto y Jabugo. Redacción en la nube.
+              La Costa de la Luz, bien escrita. Gamba de cristal, Doñana,
+              Palos, Riotinto, Jabugo.
             </p>
           </div>
           <p className="font-display text-edition italic leading-tight text-tinto">
@@ -22,42 +38,44 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <nav aria-label="Temas de referencia" className="mt-16 border-t border-iron-fg/10 pt-10">
-          <p className="text-kicker text-tinto">La provincia, por temas</p>
-          <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-5">
-            {SEO_LANDINGS.map((l) => (
-              <li key={l.slug}>
-                <Link
-                  to="/$slug"
-                  params={{ slug: l.slug }}
-                  className="text-sm text-iron-fg/70 hover:text-iron-fg"
-                >
-                  {l.h1}
-                </Link>
+        <nav className="mt-16 grid gap-10 border-t border-iron-fg/10 pt-10 sm:grid-cols-2">
+          <div>
+            <p className="text-kicker text-tinto">La provincia</p>
+            <ul className="mt-5 flex flex-col gap-3">
+              {PRIMARY.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-iron-fg/75 hover:text-iron-fg">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-kicker text-tinto">La casa</p>
+            <ul className="mt-5 flex flex-col gap-3">
+              {HOUSE.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-iron-fg/75 hover:text-iron-fg">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a href="/feed.xml" className="text-iron-fg/75 hover:text-iron-fg">
+                  RSS
+                </a>
               </li>
-            ))}
-          </ul>
+              <li>
+                <a href={SITE.github} rel="noreferrer me" className="text-iron-fg/75 hover:text-iron-fg">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
-        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">
-          <Link to="/que-ver" className="hover:text-iron-fg">Qué ver</Link>
-          <Link to="/mesa" className="hover:text-iron-fg">Mesa</Link>
-          <Link to="/historia" className="hover:text-iron-fg">Historia</Link>
-          <Link to="/temas" className="hover:text-iron-fg">Temas</Link>
-          <Link to="/guides" className="hover:text-iron-fg">Guías</Link>
-          <Link to="/sobre" className="hover:text-iron-fg">Sobre</Link>
-          <Link to="/recursos" className="hover:text-iron-fg">Recursos</Link>
-          <Link to="/agenda" className="hover:text-iron-fg">Agenda</Link>
-          <Link to="/test" className="hover:text-iron-fg">Test</Link>
-          <Link to="/redaccion" className="hover:text-iron-fg">Redacción</Link>
-          <Link to="/ai-disclosure" className="hover:text-iron-fg">IA</Link>
-          <a href="/feed.xml" className="hover:text-iron-fg">RSS</a>
-          <a href="/sitemap.xml" className="hover:text-iron-fg">Sitemap</a>
-          <Link to="/legal" className="hover:text-iron-fg">Aviso</Link>
-          <Link to="/privacy" className="hover:text-iron-fg">Privacidad</Link>
-          <a href={SITE.github} rel="noreferrer me" className="hover:text-iron-fg">GitHub</a>
-          <Link to="/login" className="hover:text-iron-fg/80">Mesa</Link>
-        </div>
+        <p className="mt-16 text-kicker text-iron-fg/40">{SITE.host}</p>
       </div>
     </footer>
   );

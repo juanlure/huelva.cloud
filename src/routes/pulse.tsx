@@ -9,6 +9,7 @@ import { seoHead } from "@/lib/seo";
 import { PLACE_KIND_LABEL, PLACE_KINDS, type PlaceKind } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { TendenciasRail } from "@/components/tendencias";
+import { FilmHero } from "@/components/film-hero";
 
 export const Route = createFileRoute("/pulse")({
   loader: async () => {
@@ -52,20 +53,28 @@ function PulsePage() {
   );
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-kicker text-tinto">
-        Huelva Pulse
-      </p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">El pulso de la provincia</h1>
-      <p className="mt-3 max-w-2xl text-muted">
-        Parte del cielo, ocaso, cámaras DGT y lo que se habla ahora en X y en
-        los foros. El pulso de la provincia.
-      </p>
+    <main>
+      <FilmHero
+        image="/media/muelle.jpg"
+        alt="Ría de Huelva"
+        kicker="En vivo"
+        title="El pulso"
+      >
+        <p className="mt-5 max-w-xl text-lg text-iron-fg/80">{moment}</p>
+        {live.weather[0]?.tempC != null ? (
+          <p className="mt-4 font-display text-3xl text-iron-fg">
+            {live.weather[0].tempC}° · {live.weather[0].desc}
+            {live.sun.past ? ` · sol puesto ${live.sun.sunset}` : ` · ocaso ${live.sun.sunset}`}
+          </p>
+        ) : null}
+      </FilmHero>
+
+      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-8">
       {live.advice ? (
         <Link
           to="/g/$id"
           params={{ id: live.advice.guide }}
-          className="mt-6 block bg-iron px-5 py-5 text-iron-fg"
+          className="block bg-iron px-5 py-5 text-iron-fg"
         >
           <span className="text-kicker text-tinto">{live.advice.title}</span>
           <span className="mt-2 block font-display text-2xl tracking-tight">
@@ -185,6 +194,7 @@ function PulsePage() {
           </ul>
         </section>
       ) : null}
+      </div>
     </main>
   );
 }

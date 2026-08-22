@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HISTORIA, HISTORIA_LUGARES } from "@/data/atlas";
+import { FilmHero } from "@/components/film-hero";
 import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/historia")({
@@ -27,20 +28,17 @@ export const Route = createFileRoute("/historia")({
 function HistoriaPage() {
   return (
     <main>
-      <section className="relative h-80 overflow-hidden bg-iron sm:h-96">
-        <img
-          src="/media/rabida.jpg"
-          alt="Monasterio de La Rábida, Palos de la Frontera"
-          className="film size-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-iron via-iron/50 to-iron/20" />
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-4 pb-10 sm:px-8 sm:pb-14">
-          <p className="text-kicker text-foam">Onuba · 3.000 años</p>
-          <h1 className="mt-3 font-display text-display leading-display tracking-display text-iron-fg">
-            Historia
-          </h1>
-        </div>
-      </section>
+      <FilmHero
+        image="/media/rabida.jpg"
+        alt="Monasterio de La Rábida, Palos de la Frontera"
+        kicker="Onuba · 3.000 años"
+        title="Historia"
+        tall
+      >
+        <p className="mt-5 max-w-xl text-lg text-iron-fg/80">
+          Fenicia, tartesia, colombina. Una ría que no ha dejado de ser puerto.
+        </p>
+      </FilmHero>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-8 sm:py-16">
         <p className="max-w-2xl text-xl leading-relaxed">
