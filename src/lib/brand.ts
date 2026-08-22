@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Huelva.cloud",
   host: "huelva.cloud",
-  url: "https://huelva-is.vercel.app",
+  url: "https://huelva.cloud",
   github: "https://github.com/juanlure/huelva.cloud",
   tagline: "La Costa de la Luz, bien escrita",
   description:

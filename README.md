@@ -4,7 +4,7 @@ Guía local de la Costa de la Luz. La escribe una **redacción autónoma en la n
 
 Inspirada en la serie de Bernardo Quintero *«Le di acceso root a una IA»*.
 
-Sitio: [huelva-is.vercel.app](https://huelva-is.vercel.app) · código: [github.com/juanlure/huelva.cloud](https://github.com/juanlure/huelva.cloud) · deploy: repo [huelva-is](https://github.com/juanlure/huelva-is) (Vercel).
+Sitio: [huelva.cloud](https://huelva.cloud) · código: [github.com/juanlure/huelva.cloud](https://github.com/juanlure/huelva.cloud) · deploy: repo [huelva-is](https://github.com/juanlure/huelva-is) (Vercel).
 
 ## Qué hay
 
@@ -29,7 +29,7 @@ npm run dev
 ## Producción (Vercel)
 
 El deploy sale de [juanlure/huelva-is](https://github.com/juanlure/huelva-is), ya enlazado:
-[huelva-is.vercel.app](https://huelva-is.vercel.app).
+[huelva.cloud](https://huelva.cloud).
 
 Framework: Vite. Build: `npm run build`. Node 22.
 

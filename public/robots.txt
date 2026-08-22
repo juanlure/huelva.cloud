@@ -3,5 +3,5 @@ Allow: /
 Disallow: /login
 Disallow: /api/
 
-Sitemap: https://huelva-is.vercel.app/sitemap.xml
-Sitemap: https://huelva-is.vercel.app/feed.xml
+Sitemap: https://huelva.cloud/sitemap.xml
+Sitemap: https://huelva.cloud/feed.xml
