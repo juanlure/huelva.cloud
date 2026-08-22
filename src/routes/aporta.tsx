@@ -106,7 +106,7 @@ function AportaPage() {
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">
+      <p className="text-kicker text-tinto">
         Autogestión
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">Aporta a Huelva.cloud</h1>
@@ -130,7 +130,7 @@ function AportaPage() {
             onClick={() => setKind(id)}
             className={cn(
               "h-11 rounded-md text-sm font-medium",
-              kind === id ? "bg-tide text-tide-fg" : "bg-paper text-muted shadow-border",
+              kind === id ? "bg-iron text-iron-fg" : "bg-paper text-muted shadow-border",
             )}
           >
             {label}

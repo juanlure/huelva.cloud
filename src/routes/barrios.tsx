@@ -29,11 +29,11 @@ function BarriosPage() {
   );
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">
-        El mapa de onda
-      </p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">Barrios, explicados</h1>
+    <main className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-8 sm:py-20">
+      <p className="text-kicker text-tinto">El mapa de onda</p>
+      <h1 className="mt-4 font-display text-display leading-display tracking-display">
+        Barrios
+      </h1>
       <p className="mt-3 max-w-2xl text-muted">
         Centro, Conquero, Reina Victoria, Punta, Mazagón, Isla Cristina… cada uno
         tiene su hora y su plato. Elige para qué vienes.
@@ -59,14 +59,14 @@ function BarriosPage() {
                 onClick={() => setActive(barrio)}
                 className={cn(
                   "w-full rounded-xl px-4 py-4 text-left shadow-border transition-colors duration-150",
-                  active.id === barrio.id ? "bg-tide text-tide-fg" : "bg-paper text-ink hover:bg-foam",
+                  active.id === barrio.id ? "bg-iron text-iron-fg" : "bg-paper text-ink hover:bg-foam",
                 )}
               >
                 <span className="block font-display text-lg tracking-tight">{barrio.name}</span>
                 <span
                   className={cn(
                     "mt-1 block text-sm",
-                    active.id === barrio.id ? "text-tide-fg/80" : "text-muted",
+                    active.id === barrio.id ? "text-iron-fg/80" : "text-muted",
                   )}
                 >
                   {barrio.area}
@@ -127,7 +127,7 @@ function FilterChip({
       onClick={onClick}
       className={cn(
         "shrink-0 rounded-full px-3 py-2 text-sm transition-colors duration-150",
-        active ? "bg-tide text-tide-fg" : "bg-paper text-muted shadow-border",
+        active ? "bg-iron text-iron-fg" : "bg-paper text-muted shadow-border",
       )}
     >
       {children}

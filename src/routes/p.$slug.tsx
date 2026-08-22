@@ -60,7 +60,7 @@ function ArticlePage() {
         };
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
+    <main className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-8 sm:py-20">
       {jsonLd ? (
         <script
           type="application/ld+json"
@@ -76,21 +76,21 @@ function ArticlePage() {
         <span aria-hidden="true">·</span>
         <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
       </div>
-      <h1 className="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
+      <h1 className="mt-6 font-display text-display leading-display tracking-display">
         {article.title}
       </h1>
-      <p className="mt-4 text-lg leading-relaxed text-muted">{article.dek}</p>
+      <p className="mt-6 text-xl leading-relaxed text-muted">{article.dek}</p>
       {live ? (
         <Link
           to="/g/$id"
           params={{ id: live.id }}
-          className="mt-5 flex items-center justify-between gap-3 rounded-xl bg-tide px-4 py-3 text-tide-fg"
+          className="mt-8 flex items-center justify-between gap-3 rounded-md bg-iron px-5 py-4 text-iron-fg"
         >
           <span>
-            <span className="block text-xs uppercase tracking-widest text-foam">Guía viva</span>
-            <span className="font-display text-lg tracking-tight">{live.title}</span>
+            <span className="text-kicker block text-tinto">Guía viva</span>
+            <span className="mt-1 block font-display text-xl tracking-tight">{live.title}</span>
           </span>
-          <span className="text-sm text-foam">Usar</span>
+          <span className="text-kicker text-foam">Usar</span>
         </Link>
       ) : null}
       {article.source === "community" ? (

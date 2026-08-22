@@ -45,13 +45,13 @@ function LiveGuidePage() {
   const View = VIEWS[guide.id];
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">Guía viva</p>
-      <h1 className="mt-2 max-w-3xl font-display text-4xl tracking-tight sm:text-5xl">
+    <main className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-8 sm:py-20">
+      <p className="text-kicker text-tinto">Guía viva</p>
+      <h1 className="mt-4 max-w-4xl font-display text-display leading-display tracking-display">
         {guide.title}
       </h1>
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{guide.dek}</p>
-      <div className="mt-10">
+      <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{guide.dek}</p>
+      <div className="mt-14 border-t border-line pt-12">
         <View />
       </div>
       <GuideFooter articleSlug={guide.articleSlug} />

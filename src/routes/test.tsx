@@ -22,7 +22,7 @@ function TestPage() {
   if (done) {
     return (
       <main className="mx-auto w-full max-w-2xl px-4 py-12 sm:px-6">
-        <p className="text-xs font-medium uppercase tracking-widest text-tide">
+        <p className="text-kicker text-tinto">
           {score} / {QUIZ.length}
         </p>
         <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl">{rank.title}</h1>
@@ -50,7 +50,7 @@ function TestPage() {
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-12 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">
+      <p className="text-kicker text-tinto">
         El test del onubense · {step + 1} / {QUIZ.length}
       </p>
       <h1 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">

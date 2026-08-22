@@ -9,13 +9,10 @@ import { cn } from "@/lib/utils";
 
 const LINKS = [
   { to: "/guides", label: "Guías" },
-  { to: "/barrios", label: "Barrios" },
   { to: "/pulse", label: "Pulso" },
-  { to: "/comer", label: "Comer" },
-  { to: "/agenda", label: "Agenda" },
-  { to: "/recursos", label: "Recursos" },
+  { to: "/comer", label: "Lonja" },
+  { to: "/barrios", label: "Barrios" },
   { to: "/redaccion", label: "Redacción" },
-  { to: "/test", label: "Test" },
 ] as const;
 
 export function SiteHeader() {
@@ -23,24 +20,24 @@ export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Wordmark className="text-xl" />
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-bg/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:h-20 sm:px-8">
+        <Wordmark className="text-2xl sm:text-3xl" />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-7 xl:flex">
           {LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={cn(
-                "rounded-md px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink",
-                pathname === link.to && "text-ink",
+                "text-kicker text-muted transition-colors duration-150 hover:text-ink",
+                pathname === link.to && "text-tinto",
               )}
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="ml-2">
+          <Button asChild size="sm">
             <Link to="/aporta">Aporta</Link>
           </Button>
           <AuthChip />
@@ -49,7 +46,7 @@ export function SiteHeader() {
         <Button
           variant="ghost"
           size="icon"
-          className="lg:hidden"
+          className="xl:hidden"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           onClick={() => setOpen((v) => !v)}
         >
@@ -58,7 +55,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav className="border-t border-line bg-bg px-4 py-3 lg:hidden">
+        <nav className="border-t border-line bg-bg px-4 py-6 xl:hidden">
           <div className="flex flex-col gap-1">
             {LINKS.map((link) => (
               <Link
@@ -66,19 +63,19 @@ export function SiteHeader() {
                 to={link.to}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-md px-3 py-3 text-base text-muted hover:bg-paper hover:text-ink",
-                  pathname === link.to && "text-ink",
+                  "rounded-md px-3 py-3 font-display text-2xl tracking-tight text-muted hover:text-ink",
+                  pathname === link.to && "text-tinto",
                 )}
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="mt-2 w-full">
+            <Button asChild className="mt-4 w-full">
               <Link to="/aporta" onClick={() => setOpen(false)}>
                 Aporta
               </Link>
             </Button>
-            <div className="px-3 py-2">
+            <div className="px-3 py-3">
               <AuthChip />
             </div>
           </div>

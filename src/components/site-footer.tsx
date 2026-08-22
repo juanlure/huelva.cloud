@@ -4,43 +4,34 @@ import { SITE } from "@/lib/brand";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-line bg-paper">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-end md:justify-between">
-        <div>
-          <Wordmark className="text-2xl" asLink={false} />
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">
-            Guía local de la Costa de la Luz. La escribe una redacción en la
-            nube — y quien vive aquí, si aporta.
+    <footer className="mt-auto bg-iron text-iron-fg">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-8 sm:py-24">
+        <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-lg">
+            <Wordmark className="text-5xl sm:text-6xl" asLink={false} inverted />
+            <p className="mt-6 text-base leading-relaxed text-iron-fg/70">
+              Hierro, sal, gamba y un daemon que no duerme. La guía de la Costa
+              de la Luz, escrita en la nube con criterio de muelle.
+            </p>
+          </div>
+          <p className="font-display text-edition italic leading-tight text-tinto">
+            No es la gran desconocida.
+            <br />
+            Es esta.
           </p>
         </div>
-        <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
-          <Link to="/sobre" className="hover:text-ink">
-            Sobre
-          </Link>
-          <Link to="/recursos" className="hover:text-ink">
-            Recursos
-          </Link>
-          <Link to="/redaccion" className="hover:text-ink">
-            Redacción
-          </Link>
-          <Link to="/ai-disclosure" className="hover:text-ink">
-            IA
-          </Link>
-          <a href="/feed.xml" className="hover:text-ink">
-            RSS
-          </a>
-          <Link to="/legal" className="hover:text-ink">
-            Aviso
-          </Link>
-          <Link to="/privacy" className="hover:text-ink">
-            Privacidad
-          </Link>
-          <a href={SITE.github} rel="noreferrer" className="hover:text-ink">
-            GitHub
-          </a>
-          <Link to="/login" className="text-faint hover:text-muted">
-            Mesa
-          </Link>
+        <div className="mt-16 flex flex-wrap gap-x-6 gap-y-3 border-t border-iron-fg/10 pt-8 text-kicker text-iron-fg/55">
+          <Link to="/sobre" className="hover:text-iron-fg">Sobre</Link>
+          <Link to="/recursos" className="hover:text-iron-fg">Recursos</Link>
+          <Link to="/agenda" className="hover:text-iron-fg">Agenda</Link>
+          <Link to="/test" className="hover:text-iron-fg">Test</Link>
+          <Link to="/redaccion" className="hover:text-iron-fg">Redacción</Link>
+          <Link to="/ai-disclosure" className="hover:text-iron-fg">IA</Link>
+          <a href="/feed.xml" className="hover:text-iron-fg">RSS</a>
+          <Link to="/legal" className="hover:text-iron-fg">Aviso</Link>
+          <Link to="/privacy" className="hover:text-iron-fg">Privacidad</Link>
+          <a href={SITE.github} rel="noreferrer" className="hover:text-iron-fg">GitHub</a>
+          <Link to="/login" className="hover:text-iron-fg/80">Mesa</Link>
         </div>
       </div>
     </footer>

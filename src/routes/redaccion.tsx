@@ -63,10 +63,10 @@ function RedaccionPage() {
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">
+      <p className="text-kicker text-tinto">
         El loop
       </p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight sm:text-5xl">
+      <h1 className="mt-4 font-display text-display leading-display tracking-display">
         La redacción se ve. No se toca.
       </h1>
       <p className="mt-4 max-w-2xl text-muted leading-relaxed">

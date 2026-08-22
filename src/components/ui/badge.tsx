@@ -6,9 +6,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-foam text-tide",
+        default: "bg-foam text-ink",
         muted: "bg-paper text-muted shadow-[0_0_0_1px_var(--color-line)]",
-        solid: "bg-tide text-tide-fg",
+        solid: "bg-tinto text-tinto-fg",
       },
     },
     defaultVariants: { variant: "default" },

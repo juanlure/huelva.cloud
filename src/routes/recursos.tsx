@@ -22,9 +22,11 @@ function RecursosPage() {
   );
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">La caja de herramientas</p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight sm:text-5xl">Recursos de la provincia</h1>
+    <main className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-8 sm:py-20">
+      <p className="text-kicker text-tinto">La caja de herramientas</p>
+      <h1 className="mt-4 font-display text-display leading-display tracking-display">
+        Recursos
+      </h1>
       <p className="mt-4 max-w-2xl text-muted leading-relaxed">
         Enlaces oficiales. El parte, el puerto, Doñana, el 112. Sin pixel, sin
         intermediario. Si el dato importa, ve a la fuente.
@@ -38,7 +40,7 @@ function RecursosPage() {
             onClick={() => setKind(item)}
             className={cn(
               "rounded-full px-4 py-2 text-sm transition-colors",
-              kind === item ? "bg-tide text-tide-fg" : "bg-paper text-muted shadow-border hover:text-ink",
+              kind === item ? "bg-iron text-iron-fg" : "bg-paper text-muted shadow-border hover:text-ink",
             )}
           >
             {item === "all" ? "Todo" : RECURSO_KIND_LABEL[item]}

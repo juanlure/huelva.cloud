@@ -46,7 +46,7 @@ function PulsePage() {
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">
+      <p className="text-kicker text-tinto">
         Huelva Pulse
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">El pulso de la provincia</h1>
@@ -188,7 +188,7 @@ function KindChip({
       onClick={onClick}
       className={cn(
         "shrink-0 rounded-full px-3 py-2 text-sm",
-        active ? "bg-tide text-tide-fg" : "bg-paper text-muted shadow-border",
+        active ? "bg-iron text-iron-fg" : "bg-paper text-muted shadow-border",
       )}
     >
       {children}

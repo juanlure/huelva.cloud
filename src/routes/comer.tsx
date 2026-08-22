@@ -23,7 +23,7 @@ function ComerPage() {
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">
+      <p className="text-kicker text-tinto">
         Comer y beber
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">Gamba, choco, jamón</h1>

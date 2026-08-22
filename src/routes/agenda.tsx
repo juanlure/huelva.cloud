@@ -28,7 +28,7 @@ function AgendaPage() {
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs font-medium uppercase tracking-widest text-tide">Agenda</p>
+          <p className="text-kicker text-tinto">Agenda</p>
           <h1 className="mt-2 font-display text-4xl tracking-tight">Lo que se celebra</h1>
           <p className="mt-3 max-w-xl text-muted">
             Colombinas, La Cinta, la gamba, el jamón. Y lo que cuelgue un vecino.

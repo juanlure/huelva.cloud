@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArticleCard } from "@/components/article-card";
-import { Badge } from "@/components/ui/badge";
 import { LIVE_GUIDES } from "@/data/live-guides";
 import { listArticles } from "@/lib/server/content";
 
@@ -18,40 +17,49 @@ function GuidesPage() {
   );
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">Guías vivas</p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">No se leen. Se usan.</h1>
-      <p className="mt-3 max-w-2xl text-muted">
+    <main className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-8 sm:py-20">
+      <p className="text-kicker text-tinto">Índice</p>
+      <h1 className="mt-4 max-w-3xl font-display text-display leading-display tracking-display">
+        Guías
+        <span className="italic text-tinto"> vivas</span>
+      </h1>
+      <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
         Itinerario que se arma, carta que responde, playa según el viento.
-        Malaga.is tiene textos honestos. Esto se tacha, se filtra y se recorre.
+        El texto es para el tren. Esto es para estar aquí.
       </p>
 
-      <ul className="mt-8 grid gap-4 md:grid-cols-2">
-        {LIVE_GUIDES.map((guide) => (
-          <li key={guide.id}>
+      <ol className="mt-16">
+        {LIVE_GUIDES.map((guide, i) => (
+          <li key={guide.id} className="border-t border-line">
             <Link
               to="/g/$id"
               params={{ id: guide.id }}
-              className="group flex h-full flex-col overflow-hidden rounded-xl bg-paper shadow-border transition-shadow hover:ring-1 hover:ring-tide/40"
+              className="group grid items-center gap-6 py-8 md:grid-cols-12 md:py-10"
             >
-              <img src={guide.image} alt="" className="aspect-video w-full object-cover" />
-              <div className="flex flex-1 flex-col p-5">
-                <div className="flex items-center gap-2">
-                  <Badge>Interactiva</Badge>
-                  <span className="text-xs text-faint">{guide.minutes}</span>
-                </div>
-                <h2 className="mt-3 font-display text-2xl tracking-tight group-hover:text-tide">
+              <span className="text-kicker text-tinto md:col-span-1">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="md:col-span-4">
+                <img
+                  src={guide.image}
+                  alt=""
+                  className="aspect-video w-full rounded-md object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+              </span>
+              <span className="md:col-span-7">
+                <span className="block font-display text-3xl tracking-tight group-hover:text-tinto sm:text-4xl">
                   {guide.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{guide.dek}</p>
-              </div>
+                </span>
+                <span className="mt-2 block max-w-md text-muted">{guide.dek}</span>
+                <span className="mt-3 block text-kicker text-faint">{guide.minutes}</span>
+              </span>
             </Link>
           </li>
         ))}
-      </ul>
+      </ol>
 
-      <h2 className="mt-14 font-display text-2xl tracking-tight">También en texto</h2>
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+      <h2 className="mt-20 font-display text-edition tracking-tight">También en texto</h2>
+      <div className="mt-8 grid gap-8 md:grid-cols-2">
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />
         ))}

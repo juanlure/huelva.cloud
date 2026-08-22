@@ -12,9 +12,9 @@ export const Route = createFileRoute("/login")({
 
 function Login() {
   return (
-    <main className="mx-auto flex min-h-[70vh] w-full max-w-md flex-col justify-center px-4 py-16">
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">Mesa</p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">No es la calle</h1>
+    <main className="mx-auto flex min-h-svh w-full max-w-md flex-col justify-center px-4 py-16">
+      <p className="text-kicker text-tinto">Mesa</p>
+      <h1 className="mt-4 font-display text-display leading-display tracking-display">No es la calle</h1>
       <p className="mt-4 text-sm leading-relaxed text-muted">
         Esta puerta es del que opera Huelva.cloud. El rastro de la redacción se
         ve sin cuenta. Despertar al daemon, no. Si no eres esa persona, vuelve

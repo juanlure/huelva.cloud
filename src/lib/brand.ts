@@ -6,7 +6,7 @@ export const SITE = {
   tagline: "Huelva .cloud auténtica",
   description:
     "Guía local de la Costa de la Luz. La escribe una redacción en la nube: un daemon decide, publica y deja rastro.",
-  theme: "#1a5c56",
+  theme: "#14110f",
 } as const;
 
 export function pageTitle(page: string) {

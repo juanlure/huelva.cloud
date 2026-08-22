@@ -40,7 +40,7 @@ function Chip({
       onClick={onClick}
       className={cn(
         "rounded-full px-4 py-2 text-sm transition-colors",
-        active ? "bg-tide text-tide-fg" : "bg-paper text-muted shadow-border hover:text-ink",
+        active ? "bg-iron text-iron-fg" : "bg-paper text-muted shadow-border hover:text-ink",
       )}
     >
       {children}
@@ -70,7 +70,7 @@ function StopRow({
         <span
           className={cn(
             "mt-0.5 grid size-6 shrink-0 place-items-center rounded-full",
-            done ? "bg-tide text-tide-fg" : "bg-line text-faint",
+            done ? "bg-tinto text-tinto-fg" : "bg-line text-faint",
           )}
         >
           <Check className="size-3.5" />
@@ -104,7 +104,7 @@ export function MareaGuide() {
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
       <div>
-        <p className="text-xs font-medium uppercase tracking-widest text-tide">Días</p>
+        <p className="text-kicker text-tinto">Días</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {([1, 2, 3] as const).map((n) => (
             <Chip key={n} active={days === n} onClick={() => { setDays(n); setDayIdx(0); }}>
@@ -112,13 +112,13 @@ export function MareaGuide() {
             </Chip>
           ))}
         </div>
-        <p className="mt-6 text-xs font-medium uppercase tracking-widest text-tide">Ritmo</p>
+        <p className="mt-6 text-kicker text-tinto">Ritmo</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Chip active={pace === "pie"} onClick={() => setPace("pie")}>A pie</Chip>
           <Chip active={pace === "mixto"} onClick={() => setPace("mixto")}>Mixto</Chip>
           <Chip active={pace === "coche"} onClick={() => setPace("coche")}>Coche</Chip>
         </div>
-        <p className="mt-6 text-xs font-medium uppercase tracking-widest text-tide">Sabor</p>
+        <p className="mt-6 text-kicker text-tinto">Sabor</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Chip active={flavor === "ria"} onClick={() => setFlavor("ria")}>Ría y ciudad</Chip>
           <Chip active={flavor === "playa"} onClick={() => setFlavor("playa")}>Playa</Chip>
@@ -174,7 +174,7 @@ export function CartaGuide() {
   return (
     <div className="grid gap-8 lg:grid-cols-2">
       <div>
-        <p className="text-xs font-medium uppercase tracking-widest text-tide">Estoy en</p>
+        <p className="text-kicker text-tinto">Estoy en</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {CARTA_PLACES.map((p) => (
             <Chip key={p.id} active={place === p.id} onClick={() => setPlace(p.id)}>
@@ -182,7 +182,7 @@ export function CartaGuide() {
             </Chip>
           ))}
         </div>
-        <p className="mt-6 text-xs font-medium uppercase tracking-widest text-tide">Quiero</p>
+        <p className="mt-6 text-kicker text-tinto">Quiero</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {CARTA_WANT.map((w) => (
             <Chip key={w.id} active={want === w.id} onClick={() => setWant(w.id)}>
@@ -190,11 +190,11 @@ export function CartaGuide() {
             </Chip>
           ))}
         </div>
-        <div className="mt-8 rounded-xl bg-tide px-5 py-6 text-tide-fg">
-          <p className="text-xs uppercase tracking-widest text-foam">Dile esto</p>
-          <p className="mt-2 font-display text-2xl leading-snug tracking-tight">{advice.say}</p>
-          <p className="mt-4 text-sm text-foam">{advice.where}</p>
-          <p className="mt-2 text-sm text-foam">Evita: {advice.skip}</p>
+        <div className="mt-8 rounded-lg bg-iron px-6 py-8 text-iron-fg">
+          <p className="text-kicker text-tinto">Dile esto</p>
+          <p className="mt-3 font-display text-3xl leading-snug tracking-tight">{advice.say}</p>
+          <p className="mt-5 text-sm text-iron-fg/70">{advice.where}</p>
+          <p className="mt-2 text-sm text-iron-fg/70">Evita: {advice.skip}</p>
         </div>
       </div>
       <ul className="grid gap-2">
@@ -240,23 +240,23 @@ export function KitGuide() {
           ))}
         </div>
         <div className="mt-4 rounded-xl bg-paper p-5 shadow-border">
-          <p className="text-xs uppercase tracking-widest text-tide">{dest.time}</p>
+          <p className="text-kicker text-tinto">{dest.time}</p>
           <p className="mt-2 text-base leading-relaxed text-ink">{dest.how}</p>
         </div>
       </section>
       <section className="grid gap-4 md:grid-cols-3">
         <div className="rounded-xl bg-paper p-5 shadow-border">
-          <p className="text-xs uppercase tracking-widest text-tide">Comida</p>
+          <p className="text-kicker text-tinto">Comida</p>
           <p className="mt-2 font-display text-3xl tracking-tight">14:00</p>
           <p className="mt-1 text-sm text-muted">No a las 13:00. El camarero no está listo y tú pareces de paso.</p>
         </div>
         <div className="rounded-xl bg-paper p-5 shadow-border">
-          <p className="text-xs uppercase tracking-widest text-tide">Cena</p>
+          <p className="text-kicker text-tinto">Cena</p>
           <p className="mt-2 font-display text-3xl tracking-tight">21:30</p>
           <p className="mt-1 text-sm text-muted">Los chiringuitos se adelantan un poco. La ciudad, no.</p>
         </div>
         <div className="rounded-xl bg-paper p-5 shadow-border">
-          <p className="text-xs uppercase tracking-widest text-tide">Domingo tarde</p>
+          <p className="text-kicker text-tinto">Domingo tarde</p>
           <p className="mt-2 font-display text-3xl tracking-tight">Apagada</p>
           <p className="mt-1 text-sm text-muted">La capital se cierra. La costa, no. Elige orilla.</p>
         </div>
@@ -359,13 +359,13 @@ export function OrillaGuide() {
 
   return (
     <div>
-      <p className="text-xs font-medium uppercase tracking-widest text-tide">El viento de hoy</p>
+      <p className="text-kicker text-tinto">El viento de hoy</p>
       <div className="mt-2 flex flex-wrap gap-2">
         <Chip active={wind === "calma"} onClick={() => setWind("calma")}>Calma / no sé</Chip>
         <Chip active={wind === "levante"} onClick={() => setWind("levante")}>Levante</Chip>
         <Chip active={wind === "poniente"} onClick={() => setWind("poniente")}>Poniente</Chip>
       </div>
-      <p className="mt-6 text-xs font-medium uppercase tracking-widest text-tide">Filtros</p>
+      <p className="mt-6 text-kicker text-tinto">Filtros</p>
       <div className="mt-2 flex flex-wrap gap-2">
         {PLAYA_FILTERS.map((f) => (
           <Chip
@@ -382,8 +382,8 @@ export function OrillaGuide() {
         ))}
       </div>
       {pick ? (
-        <p className="mt-6 rounded-xl bg-tide px-5 py-4 text-tide-fg">
-          Hoy, con este viento: <span className="font-display text-xl">{pick.name}.</span>{" "}
+        <p className="mt-6 rounded-lg bg-iron px-5 py-5 text-iron-fg">
+          Hoy, con este viento: <span className="font-display text-2xl">{pick.name}.</span>{" "}
           {pick.wind}
         </p>
       ) : null}
@@ -416,7 +416,7 @@ export function MarismaGuide() {
   return (
     <div className="grid gap-8 lg:grid-cols-2">
       <div>
-        <p className="text-xs font-medium uppercase tracking-widest text-tide">Época</p>
+        <p className="text-kicker text-tinto">Época</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {DONANA_SEASONS.map((s) => (
             <Chip key={s.id} active={season.id === s.id} onClick={() => setSeason(s)}>
