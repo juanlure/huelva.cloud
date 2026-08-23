@@ -15,6 +15,7 @@ import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AiDisclosureRouteImport } from './routes/ai-disclosure'
 import { Route as AportaRouteImport } from './routes/aporta'
 import { Route as BarriosRouteImport } from './routes/barrios'
+import { Route as ColaboraRouteImport } from './routes/colabora'
 import { Route as ComerRouteImport } from './routes/comer'
 import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as GuidesRouteImport } from './routes/guides'
@@ -63,6 +64,11 @@ const AportaRoute = AportaRouteImport.update({
 const BarriosRoute = BarriosRouteImport.update({
   id: '/barrios',
   path: '/barrios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColaboraRoute = ColaboraRouteImport.update({
+  id: '/colabora',
+  path: '/colabora',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComerRoute = ComerRouteImport.update({
@@ -168,6 +174,7 @@ export interface FileRoutesByFullPath {
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
   '/barrios': typeof BarriosRoute
+  '/colabora': typeof ColaboraRoute
   '/comer': typeof ComerRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
@@ -195,6 +202,7 @@ export interface FileRoutesByTo {
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
   '/barrios': typeof BarriosRoute
+  '/colabora': typeof ColaboraRoute
   '/comer': typeof ComerRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
@@ -223,6 +231,7 @@ export interface FileRoutesById {
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
   '/barrios': typeof BarriosRoute
+  '/colabora': typeof ColaboraRoute
   '/comer': typeof ComerRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/guides': typeof GuidesRoute
@@ -252,6 +261,7 @@ export interface FileRouteTypes {
     | '/ai-disclosure'
     | '/aporta'
     | '/barrios'
+    | '/colabora'
     | '/comer'
     | '/feed.xml'
     | '/guides'
@@ -279,6 +289,7 @@ export interface FileRouteTypes {
     | '/ai-disclosure'
     | '/aporta'
     | '/barrios'
+    | '/colabora'
     | '/comer'
     | '/feed.xml'
     | '/guides'
@@ -306,6 +317,7 @@ export interface FileRouteTypes {
     | '/ai-disclosure'
     | '/aporta'
     | '/barrios'
+    | '/colabora'
     | '/comer'
     | '/feed.xml'
     | '/guides'
@@ -334,6 +346,7 @@ export interface RootRouteChildren {
   AiDisclosureRoute: typeof AiDisclosureRoute
   AportaRoute: typeof AportaRoute
   BarriosRoute: typeof BarriosRoute
+  ColaboraRoute: typeof ColaboraRoute
   ComerRoute: typeof ComerRoute
   FeedDotxmlRoute: typeof FeedDotxmlRoute
   GuidesRoute: typeof GuidesRoute
@@ -397,6 +410,13 @@ declare module '@tanstack/react-router' {
       path: '/barrios'
       fullPath: '/barrios'
       preLoaderRoute: typeof BarriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/colabora': {
+      id: '/colabora'
+      path: '/colabora'
+      fullPath: '/colabora'
+      preLoaderRoute: typeof ColaboraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/comer': {
@@ -542,6 +562,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiDisclosureRoute: AiDisclosureRoute,
   AportaRoute: AportaRoute,
   BarriosRoute: BarriosRoute,
+  ColaboraRoute: ColaboraRoute,
   ComerRoute: ComerRoute,
   FeedDotxmlRoute: FeedDotxmlRoute,
   GuidesRoute: GuidesRoute,

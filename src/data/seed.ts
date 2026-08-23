@@ -38,6 +38,15 @@ export type SeedEvent = {
   votes: number;
 };
 
+export type SeedCollabSpot = {
+  name: string;
+  blurb: string;
+  photoUrl: string | null;
+  linkUrl: string | null;
+  linkType: "web" | "whatsapp";
+  activeUntil: string;
+};
+
 export const SEED_ARTICLES: SeedArticle[] = [
   {
     slug: "48-horas-en-huelva",
@@ -835,5 +844,16 @@ export const SEED_EVENTS: SeedEvent[] = [
     lng: -7.403,
     source: "editorial",
     votes: 28,
+  },
+];
+
+export const SEED_COLLAB_SPOTS: SeedCollabSpot[] = [
+  {
+    name: "Casa Cinta",
+    blurb: "Barrio Isidro. La de siempre está al fondo, junto a la ventana que da al caño. Pedir la gamba a la plancha cuando la hay (preguntad; si no hay, chocos) y un Condado joven. Servilleta de papel, cuenta corta, nadie os saca la foto del plato.",
+    photoUrl: null,
+    linkUrl: null,
+    linkType: "web",
+    activeUntil: "2020-01-01",
   },
 ];

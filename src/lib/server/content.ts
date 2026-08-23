@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { getSql } from "@/lib/db";
 import { isoFromUnknown, numFromUnknown } from "@/lib/format";
 import { slugify } from "@/lib/utils";
-import { SEED_ARTICLES, SEED_EVENTS, SEED_PLACES } from "@/data/seed";
+import { SEED_ARTICLES, SEED_EVENTS, SEED_PLACES, SEED_COLLAB_SPOTS } from "@/data/seed";
 import { NEIGHBORHOOD_COORDS } from "@/data/barrios";
 import {
   CATEGORIES,
@@ -10,6 +10,7 @@ import {
   type Article,
   type Category,
   type CityEvent,
+  type CollabSpot,
   type Place,
   type PlaceKind,
 } from "@/lib/types";
@@ -54,6 +55,16 @@ type EventRow = {
   lng: unknown;
   source: string;
   votes: number;
+};
+
+type CollabSpotRow = {
+  id: number;
+  name: string;
+  blurb: string;
+  photo_url: string | null;
+  link_url: string | null;
+  link_type: string;
+  active_until: unknown;
 };
 
 function mapArticle(row: ArticleRow): Article {
@@ -114,6 +125,18 @@ function mapEvent(row: EventRow): CityEvent {
   };
 }
 
+function mapCollabSpot(row: CollabSpotRow): CollabSpot {
+  return {
+    id: numFromUnknown(row.id),
+    name: row.name,
+    blurb: row.blurb,
+    photoUrl: row.photo_url,
+    linkUrl: row.link_url,
+    linkType: row.link_type === "whatsapp" ? "whatsapp" : "web",
+    activeUntil: isoFromUnknown(row.active_until).slice(0, 10),
+  };
+}
+
 export async function ensureSeeded() {
   const g = globalThis as typeof globalThis & { __huelvaSeed__?: Promise<void> };
   g.__huelvaSeed__ ??= (async () => {
@@ -154,6 +177,17 @@ export async function ensureSeeded() {
           ${event.title}, ${event.dek}, ${event.startsOn}, ${event.endsOn},
           ${event.venue}, ${event.neighborhood}, ${event.lat}, ${event.lng},
           ${event.source}, ${event.votes}
+        )
+      `;
+    }
+
+    for (const spot of SEED_COLLAB_SPOTS) {
+      await sql`
+        insert into collab_spots (
+          name, blurb, photo_url, link_url, link_type, active_until
+        ) values (
+          ${spot.name}, ${spot.blurb}, ${spot.photoUrl}, ${spot.linkUrl},
+          ${spot.linkType}, ${spot.activeUntil}
         )
       `;
     }
@@ -421,3 +455,15 @@ export const draftWithAi = createServerFn({ method: "POST" })
       return { ok: false as const, error: "No se ha podido leer el borrador." };
     }
   });
+
+export const getActiveCollabSpot = createServerFn({ method: "GET" }).handler(async () => {
+  await ensureSeeded();
+  const sql = await getSql();
+  const rows = await sql<CollabSpotRow>`
+    select * from collab_spots
+    where active_until >= current_date
+    order by created_at desc
+    limit 1
+  `;
+  return rows[0] ? mapCollabSpot(rows[0]) : null;
+});

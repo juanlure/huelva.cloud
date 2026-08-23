@@ -81,3 +81,13 @@ export type CityEvent = {
   source: "editorial" | "community";
   votes: number;
 };
+
+export type CollabSpot = {
+  id: number;
+  name: string;
+  blurb: string;
+  photoUrl: string | null;
+  linkUrl: string | null;
+  linkType: "web" | "whatsapp";
+  activeUntil: string;
+};
