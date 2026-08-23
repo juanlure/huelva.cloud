@@ -30,6 +30,7 @@ export type NewsroomStatus = {
   backlogOpen: number;
   agents: { name: string; title: string; beat: string; role: string }[];
   dbSource: "neon" | "pglite";
+  isProduction: boolean;
 };
 
 const QUOTA = 3;
@@ -268,6 +269,7 @@ export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async
   const sql = await getSql();
   const hour = madridHour();
   const state = await getState();
+  const isProduction = process.env.VERCEL === "1" || process.env.NODE_ENV === "production";
   const logRows = await sql<{
     id: number;
     at: unknown;
@@ -306,6 +308,10 @@ export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async
     publishedSlug: r.published_slug,
   }));
 
+  if (isProduction && dbSource === "pglite") {
+    console.warn("[newsroom] ⚠️  Producción sin DATABASE_URL: corriendo en PGLite in-memory. Los datos no persisten.");
+  }
+
   return {
     lastWake: state.lastWake,
     lastPublish: state.lastPublish,
@@ -324,6 +330,7 @@ export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async
       role: a.role,
     })),
     dbSource,
+    isProduction,
   } satisfies NewsroomStatus;
 });
 

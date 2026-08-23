@@ -86,8 +86,11 @@ function RedaccionPage() {
               Base de datos en memoria
             </Badge>
             <p className="text-sm text-amber-900 dark:text-amber-100">
-              La mesa no persiste. Las ideas, aportes y votos viven solo en esta instancia. 
-              Falta Postgres real. La configuración va en Vercel, no en el repo.
+              La mesa no persiste. Las ideas, aportes y votos viven solo en esta instancia.
+              {status.isProduction 
+                ? " Producción sin DATABASE_URL: falta Postgres real." 
+                : " Falta Postgres real en este entorno."}
+              {" "}La configuración va en Vercel, no en el repo.
             </p>
           </div>
         </div>
