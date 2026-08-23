@@ -79,6 +79,23 @@ function RedaccionPage() {
         cuota. Tú ves el rastro. Operar la mesa no es de la calle.
       </p>
 
+      {status.dbSource === "pglite" && (
+        <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/30 dark:bg-amber-950/20">
+          <div className="flex items-start gap-3">
+            <Badge className="mt-0.5 border-amber-300 bg-amber-100 text-amber-900 dark:border-amber-800 dark:bg-amber-900/40 dark:text-amber-200">
+              Base de datos en memoria
+            </Badge>
+            <p className="text-sm text-amber-900 dark:text-amber-100">
+              La mesa no persiste. Las ideas, aportes y votos viven solo en esta instancia.
+              {status.isProduction 
+                ? " Producción sin DATABASE_URL: falta Postgres real." 
+                : " Falta Postgres real en este entorno."}
+              {" "}La configuración va en Vercel, no en el repo.
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
         <Stat kicker="Decisión" value={status.lastDecision} />
         <Stat kicker="Cuota de hoy" value={`${status.publishesToday} / ${status.quota}`} />
