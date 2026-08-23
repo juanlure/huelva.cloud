@@ -38,18 +38,18 @@ Solo se renderiza UNA mesa activa a la vez. Si no hay mesa activa (fecha pasada)
 
 ### Mesa de demo
 
-El seed incluye una mesa de demo (`Taberna El Hierro`) con `active_until: '2099-12-31'` para verificar el diseño.
+El seed incluye una mesa de demo (`Casa Cinta`, INVENTADA, no es un local real) con `active_until: '2099-12-31'` para verificar el diseño.
 
 **Para desactivarla:**
 
 ```sql
-UPDATE collab_spots SET active_until = '2020-01-01' WHERE name = 'Taberna El Hierro';
+UPDATE collab_spots SET active_until = '2020-01-01' WHERE name = 'Casa Cinta';
 ```
 
 **Para reactivarla:**
 
 ```sql
-UPDATE collab_spots SET active_until = '2099-12-31' WHERE name = 'Taberna El Hierro';
+UPDATE collab_spots SET active_until = '2099-12-31' WHERE name = 'Casa Cinta';
 ```
 
 ### Crear una nueva mesa
