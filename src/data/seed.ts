@@ -38,6 +38,15 @@ export type SeedEvent = {
   votes: number;
 };
 
+export type SeedCollabSpot = {
+  name: string;
+  blurb: string;
+  photoUrl: string | null;
+  linkUrl: string | null;
+  linkType: "web" | "whatsapp";
+  activeUntil: string;
+};
+
 export const SEED_ARTICLES: SeedArticle[] = [
   {
     slug: "48-horas-en-huelva",
@@ -835,5 +844,16 @@ export const SEED_EVENTS: SeedEvent[] = [
     lng: -7.403,
     source: "editorial",
     votes: 28,
+  },
+];
+
+export const SEED_COLLAB_SPOTS: SeedCollabSpot[] = [
+  {
+    name: "Taberna El Hierro",
+    blurb: "Gamba a la plancha, choco de Punta y Condado frío. Mesa de toda la vida, sin altavoz ni marketing.",
+    photoUrl: "/media/gamba.jpg",
+    linkUrl: "https://huelva.cloud",
+    linkType: "web",
+    activeUntil: "2099-12-31",
   },
 ];

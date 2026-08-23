@@ -4,9 +4,11 @@ import { Check, Navigation } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StopMap } from "@/components/stop-map";
+import { CollabMesa } from "@/components/collab-mesa";
 import { CAMERAS } from "@/data/cameras";
 import { useChecked } from "@/lib/checked";
 import { useLiveCoast } from "@/lib/live-coast";
+import { getActiveCollabSpot } from "@/lib/server/content";
 import { cn } from "@/lib/utils";
 import {
   buildMarea,
@@ -198,10 +200,17 @@ export function CartaGuide() {
   const [place, setPlace] = useState("capital");
   const [want, setWant] = useState("plancha");
   const [open, setOpen] = useState<string | null>("gamba");
+  const [collabSpot, setCollabSpot] = useState<Awaited<ReturnType<typeof getActiveCollabSpot>> | null>(null);
   const advice = cartaAdvice(place, want);
 
+  useEffect(() => {
+    getActiveCollabSpot().then(setCollabSpot);
+  }, []);
+
   return (
-    <div className="grid gap-8 lg:grid-cols-2">
+    <>
+      {collabSpot ? <CollabMesa spot={collabSpot} /> : null}
+      <div className="grid gap-8 lg:grid-cols-2">
       <div>
         <p className="text-kicker text-tinto">Estoy en</p>
         <div className="mt-2 flex flex-wrap gap-2">
@@ -250,6 +259,7 @@ export function CartaGuide() {
         ))}
       </ul>
     </div>
+    </>
   );
 }
 
