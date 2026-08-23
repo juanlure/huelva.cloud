@@ -367,7 +367,7 @@ export const runEditorialCycle = createServerFn({ method: "POST" })
     neighborhood: string | null;
   }>`select id, topic, angle, category, neighborhood from idea_backlog where status = 'open' order by id asc`;
 
-  const idea =
+  let idea =
     (tooMuch
       ? openIdeas.find((i) => i.category !== cats[0] && !tooSimilar(i.topic, recentTitles))
       : openIdeas.find((i) => !tooSimilar(i.topic, recentTitles))) ?? undefined;

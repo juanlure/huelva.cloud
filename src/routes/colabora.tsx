@@ -82,11 +82,10 @@ function ColaboraPage() {
         <h3 className="font-display text-xl tracking-tight">Contacto</h3>
         <p className="text-muted">
           Mándanos un email a{" "}
-          <a href="mailto:colabora@huelva.cloud" className="text-tide hover:underline">
-            colabora@huelva.cloud
+          <a href="mailto:esquinaseo@gmail.com" className="text-tide hover:underline">
+            esquinaseo@gmail.com
           </a>{" "}
-          con el nombre del local, qué queréis destacar, y si preferís mesa o bodega. Escribe y te
-          pasamos el pago.
+          con el nombre del local, qué queréis destacar, y si preferís mesa o bodega. Escribe a esquinaseo@gmail.com y te pasamos el pago.
         </p>
         <p className="text-sm text-faint">
           Respondemos en 24 horas. Sin gestores, sin agencia. De la redacción directamente.
@@ -104,7 +103,7 @@ function ColaboraPage() {
         <p className="mt-4">
           Esto es una mesa en una guía local. Dos semanas de presencia donde buscan los que
           vienen a comer gamba, beber Condado, o dormir cerca de Doñana. Si eso encaja con tu
-          casa, <a href="mailto:colabora@huelva.cloud" className="text-tide hover:underline">escribe</a>.
+          casa, <a href="mailto:esquinaseo@gmail.com" className="text-tide hover:underline">escribe</a>.
         </p>
       </section>
 
