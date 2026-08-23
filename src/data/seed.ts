@@ -40,6 +40,122 @@ export type SeedEvent = {
 
 export const SEED_ARTICLES: SeedArticle[] = [
   {
+    slug: "ayamonte-feria-jamon-marisco-2026",
+    title: "Ayamonte arranca este martes su Feria del Jamón y el Marisco",
+    dek: "Plaza de España, del 26 al 28 de agosto. Gamba blanca, jamón ibérico y vino del Condado desde las 20:00. Entrada libre.",
+    category: "news",
+    readMinutes: 4,
+    featured: true,
+    source: "editorial",
+    neighborhood: "ayamonte",
+    publishedAt: "2026-08-23T08:00:00Z",
+    votes: 34,
+    body: `La **Feria del Jamón y el Marisco de Ayamonte** vuelve este martes 26 de agosto a la Plaza de España. Tres días de gamba blanca, jamón ibérico y producto onubense, con casetas que abren a partir de las 20:00.
+
+## El plato fuerte
+
+Gamba blanca de Isla Cristina, jamón de Jabugo, vino del Condado. La feria es un muestrario accesible de lo que da esta provincia: costa y sierra en la misma mesa.
+
+Música en vivo cada noche. La Plaza de España se llena, así que conviene llegar temprano si quieres mesa cerca.
+
+## Horario
+
+Martes 26 a jueves 28 de agosto, desde las 20:00 hasta cierre. Entrada libre. Ayamonte está a 55 km de la capital.`,
+  },
+  {
+    slug: "recre-arranca-temporada-septiembre",
+    title: "El Recre arranca en casa el 1 de septiembre",
+    dek: "Primera jornada del Decano en el Nuevo Colombino frente al Real Murcia. Domingo a las 18:00, con el calor ya bajando.",
+    category: "news",
+    readMinutes: 3,
+    featured: false,
+    source: "editorial",
+    neighborhood: "centro",
+    publishedAt: "2026-08-22T18:30:00Z",
+    votes: 28,
+    body: `El **Recreativo de Huelva** debuta en casa este domingo 1 de septiembre a las 18:00 frente al Real Murcia. Primera jornada de liga, Nuevo Colombino, y ganas de empezar bien.
+
+El Decano viene de una pretemporada correcta y una plantilla que apunta a pelear arriba. El domingo, con el calor de agosto ya aflojando, el estadio espera el primer lleno de la temporada.
+
+Entradas en taquilla y online. Si eres de los que vuelven en septiembre, este es el ritual de vuelta.`,
+  },
+  {
+    slug: "doñana-nivel-marisma-preocupa",
+    title: "El nivel de la marisma en Doñana sigue bajo tras el verano seco",
+    dek: "Las lluvias de primavera no bastaron. El Acebuche y El Rocío registran lagunas con menos agua que en años anteriores.",
+    category: "news",
+    readMinutes: 5,
+    featured: false,
+    source: "editorial",
+    neighborhood: "matalascanas",
+    publishedAt: "2026-08-21T10:00:00Z",
+    votes: 17,
+    body: `El verano seco deja huella en **Doñana**. Las lagunas del entorno del Acebuche y El Rocío presentan niveles de agua más bajos de lo habitual para esta época, según los últimos registros del parque.
+
+## Qué dicen los técnicos
+
+La primavera trajo lluvias, pero no fueron suficientes para recargar la marisma como en años anteriores. El calor de julio y agosto ha evaporado más rápido de lo esperado.
+
+El parque sigue abierto y las rutas concertadas continúan, pero los expertos insisten: Doñana necesita un otoño húmedo. El equilibrio del ecosistema depende del agua, y el cambio climático se nota aquí antes que en otros puntos.
+
+## Para el visitante
+
+Las rutas siguen operativas. El amanecer sigue siendo el mejor momento para ver fauna. Los ciervos y las aves aún están, pero la marisma pide respeto y prudencia. No es alarmismo: es la realidad de un parque que vive del ciclo del agua.`,
+  },
+  {
+    slug: "punta-umbria-cierra-verano-lleno",
+    title: "Punta Umbría cierra agosto con las terrazas a tope",
+    dek: "Los chiringuitos mantienen el ritmo hasta el 31. Choco, gamba y una última semana de agosto que sigue siendo verano onubense.",
+    category: "news",
+    readMinutes: 4,
+    featured: false,
+    source: "editorial",
+    neighborhood: "punta-umbria",
+    publishedAt: "2026-08-21T12:00:00Z",
+    votes: 19,
+    body: `Agosto no ha terminado en **Punta Umbría**. Las terrazas del Paseo de la Ribera siguen llenas, el choco se fríe a todas horas y la gamba blanca mantiene el tipo. El último fin de semana promete ser de los buenos.
+
+Los chiringuitos alargan horarios hasta el lunes 31. Septiembre es otra cosa, pero esta semana todavía es verano onubense de verdad: agua a 22°, poniente moderado y mesas al aire libre hasta tarde.
+
+Si vuelves a la capital después de agosto, este es el último tramo. Punta no se apaga de golpe: se va despidiendo con la misma gamba de siempre.`,
+  },
+  {
+    slug: "cinta-2026-programa-confirmado",
+    title: "Las Fiestas de la Cinta arrancan el 8 de septiembre",
+    dek: "Romería chica al Santuario, ofrenda floral y una semana de celebración. Septiembre onubense por excelencia.",
+    category: "news",
+    readMinutes: 4,
+    featured: false,
+    source: "editorial",
+    neighborhood: "conquero",
+    publishedAt: "2026-08-20T09:00:00Z",
+    votes: 21,
+    body: `Las **Fiestas de la Cinta** vuelven el domingo 8 de septiembre con la romería chica al Santuario del Conquero. Ofrenda floral, misa solemne y una semana de actos que cierran el verano y abren el otoño onubense.
+
+## Qué es La Cinta
+
+La patrona de Huelva. No es Colombinas: es más íntima, más de barrio, más septiembre. El santuario se llena, la gente sube al Conquero y la ciudad para un día. Es una fiesta que no necesita aspas ni megafonía: funciona con la devoción y el paisaje.
+
+El programa completo se publica la primera semana de septiembre. La romería es el 8, domingo. Si vives aquí, ya lo sabes. Si vienes de fuera, es una buena excusa para ver Huelva en su día.`,
+  },
+  {
+    slug: "riotinto-temporada-otono",
+    title: "El tren minero de Riotinto alarga temporada hasta octubre",
+    dek: "Más salidas los sábados. La cuenca colorada en otoño, sin el calor de agosto. Reserva con antelación.",
+    category: "news",
+    readMinutes: 3,
+    featured: false,
+    source: "editorial",
+    neighborhood: null,
+    publishedAt: "2026-08-20T11:00:00Z",
+    votes: 13,
+    body: `El **ferrocarril turístico de Riotinto** amplía horarios de cara a septiembre y octubre, los dos mejores meses para subir a la cuenca minera. Sin el calor de agosto, el paisaje rojo se entiende mejor y el viaje se hace más cómodo.
+
+Sábados con más salidas. Reserva online o en el Museo Minero. Agua, sombrero y calzado cerrado: el rojo mancha, pero merece la pena.
+
+Octubre es el mes dulce para Riotinto. Anótalo.`,
+  },
+  {
     slug: "48-horas-en-huelva",
     title: "48 horas en Huelva (al ritmo de la marea)",
     dek: "Dos días de ría, gamba blanca, Colón y una playa elegida con criterio. El ritmo de Huelva, no el del autobús.",
@@ -345,169 +461,6 @@ Pide el blanco de la casa en un sitio que quiera a su provincia. Frío, limpio, 
 
 Gamba y blanco. Jamón y un trago más serio, ya en la sierra. Dos geografías, dos copas. Huelva bebe lo que cultiva.`,
   },
-  {
-    slug: "colombinas-2026",
-    title: "Colombinas 2026: cómo entrar y cómo salir",
-    dek: "La feria de Huelva: casetas, Recinto Ferial y un centro que se enciende. Cómo vivirla bien.",
-    category: "events",
-    readMinutes: 6,
-    featured: false,
-    source: "editorial",
-    neighborhood: "centro",
-    publishedAt: "2026-07-22T08:00:00Z",
-    votes: 22,
-    body: `Las **Colombinas** cierran julio y abren agosto. El Recinto Ferial es el de siempre: casetas, rebujito, familia, una feria de capital que se quiere mucho. El centro se llena de veladores. Es la fiesta de la casa.
-
-## Cómo ir
-
-A pie o en bus lanzadera. Reserva mesa si quieres gamba esa semana: la ciudad está de gala.
-
-## Qué vestir
-
-Traje de flamenca, camisa, lo que apetezca. El calor es el único protocolo.
-
-## El ritmo
-
-Colombinas es un tiempo. Doñana, otro. Elige y honra el que toque.`,
-  },
-  {
-    slug: "huelva-reabre-playas-poniente",
-    title: "Las playas del poniente, a pleno agosto",
-    dek: "Punta Umbría, El Portil y la flecha siguen en bandera verde la mayor parte del día. El viento, como siempre, manda más que el ayuntamiento.",
-    category: "news",
-    readMinutes: 4,
-    featured: false,
-    source: "editorial",
-    neighborhood: "punta-umbria",
-    publishedAt: "2026-08-22T07:30:00Z",
-    votes: 14,
-    body: `Agosto en la costa onubense es una negociación con el poniente. Este fin de semana las banderas en **Punta Umbría** y **El Portil** han salido verdes por la mañana y amarillas cuando ha picao el viento, que es el patrón de siempre.
-
-No hay cierre generalizado. Hay sentido común: si el chiringuito recoge sombrillas, tú también. El agua sigue fría para quien viene del Mediterráneo y perfecta para quien se ha criado aquí.
-
-Si buscas menos gente, **Mazagón** hacia el este, andando, sigue siendo la válvula. Lleva agua. No hay kiosco en la duna.`,
-  },
-  {
-    slug: "riotinto-tren-temporada",
-    title: "El tren de Riotinto mantiene la temporada hasta octubre",
-    dek: "El ferrocarril turístico de las minas alarga horarios de sábado. El paisaje rojo no necesita filtro. El casco, sí necesita agua.",
-    category: "news",
-    readMinutes: 4,
-    featured: false,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-20T09:00:00Z",
-    votes: 11,
-    body: `El **ferrocarril turístico minero** de Riotinto sigue con plazas de cara a septiembre y octubre, los dos mejores meses para subir a la cuenca: menos calor, misma tierra colorada.
-
-El viaje no es un documental: es un tren viejo en un paisaje que parece de otro planeta y fue de una compañía británica. Combínalo con el museo minero. No lo combies con playa el mismo día.
-
-Agua, sombrero, calzado cerrado. El rojo mancha.`,
-  },
-  {
-    slug: "choco-en-la-ribera",
-    title: "El choco de las cinco en la Ribera",
-    dek: "Un vecino de Punta avisa: entre semana, a media tarde, el frito sale mejor que el sábado a las tres.",
-    category: "community",
-    readMinutes: 3,
-    featured: false,
-    source: "community",
-    neighborhood: "punta-umbria",
-    publishedAt: "2026-08-19T16:20:00Z",
-    votes: 27,
-    body: `Va en serio: el choco de **Punta Umbría** el sábado a las 15:30 es una cola y un aceite cansado. El miércoles a las 17:30, con el paseo a media máquina, es otra cosa.
-
-Pide ración para compartir. Si está en su punto, pide otra. El choco de Punta, bien frito, es motivo suficiente.
-
-Firmado: alguien que vive aquí y guarda las horas buenas para quien las merece.`,
-  },
-  {
-    slug: "ocaso-en-huelva",
-    title: "Dónde se pone el sol",
-    dek: "Huelva mira al oeste de verdad. Seis orillas para verlo caer: hierro, flecha, pino, frontera.",
-    category: "guides",
-    readMinutes: 6,
-    featured: true,
-    source: "editorial",
-    neighborhood: "pescaderia",
-    publishedAt: "2026-08-22T18:00:00Z",
-    votes: 18,
-    body: `El Atlántico de Huelva no es un fondo de pantalla: el sol se pone en el mar, y hay que elegir desde dónde.
-
-## El Muelle de Riotinto
-
-Veinte minutos desde las Monjas. Hierro, el Tinto debajo, el cielo de cobre. Es el atardecer de la capital. En invierno, a las seis ya es hora; en agosto, espera a las nueve.
-
-## El Conquero
-
-Altura y pino. La ría se entiende de un vistazo. Mejor de octubre a mayo, cuando el aire está limpio.
-
-## La flecha del Portil
-
-Anda desde Punta cuando caiga el viento. Arena, marisma, agua a ambos lados. El poniente a veces ayuda; a veces tumba la sombrilla y te deja el cielo entero.
-
-## Mazagón
-
-Pinos hasta la duna. Camina hacia el este hasta que se acaben las toallas. Las noches de septiembre son las más largas de luz.
-
-## Ayamonte
-
-El ferry sobre el Guadiana. Cinco minutos y Portugal. Una luz ancha, de frontera.
-
-## Isla Cristina
-
-No es un mirador: es una flota que vuelve. El cobre de los barcos, la gamba que entra, el sol en el puerto.
-
-Elige un solo ocaso por tarde. Huelva da para una semana de ellos.`,
-  },
-  {
-    slug: "riotinto-la-cuenca",
-    title: "La cuenca roja",
-    dek: "El río, el tren, Bella Vista. Un paisaje que parece de otro planeta y es de esta provincia.",
-    category: "guides",
-    readMinutes: 8,
-    featured: true,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-22T10:00:00Z",
-    votes: 15,
-    body: `Riotinto no es un desvío: es una de las geografías más extrañas de Europa. El río baja rojo por el hierro y por una vida microbiana que ha interesado hasta a la NASA. El paisaje es de aquí.
-
-## El orden del día
-
-Empieza en el **Museo Minero**. La compañía británica, el ferrocarril, la cuenca explicada. Luego el **tren turístico**: reserva en temporada, agua, sombrero, calzado cerrado. El rojo mancha.
-
-**Peña del Hierro** es el corte en la tierra. **Bella Vista**, el barrio inglés: porches, césped, el mismo linaje que el Reina Victoria de la capital.
-
-Cierra en el **cauce**. No es un vino. Es geología viva.
-
-## Cómo ir
-
-Coche. Un día entero. No lo combines con baño: son dos Huelvas, y las dos merecen su luz.
-
-Octubre y primavera son los meses dulces. En agosto, madruga.`,
-  },
-  {
-    slug: "almanaque-onubense",
-    title: "El año onubense",
-    dek: "Doce meses, una provincia: fresa, Colombinas, la Cinta, gurumelos, el primer baño.",
-    category: "guides",
-    readMinutes: 7,
-    featured: false,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-22T11:00:00Z",
-    votes: 12,
-    body: `Huelva no es un verano. Es un año.
-
-**Enero** es sierra y jamón. **Febrero**, el fresón y el Carnaval de Isla Cristina. **Marzo**, Semana Santa y el equinoccio sobre la ría. **Abril** llena Doñana de aves. **Mayo** junta fresa y gamba, y a veces El Rocío.
-
-**Junio** enciende Punta. **Julio**, las Colombinas. **Agosto**, el poniente y la orilla ancha. **Septiembre** es el mes feliz: Fiestas de la Cinta, agua todavía, toalla ya no tanto.
-
-**Octubre** abre el norte: castaña, cuenca, setas. **Noviembre**, el Muelle con abrigo. **Diciembre**, las Monjas de fiesta y, si quieres frío limpio, Aracena.
-
-Elige el mes. La provincia cambia de plato y de luz, y las dos cosas se comen.`,
-  },
 ];
 
 export const SEED_PLACES: SeedPlace[] = [
@@ -765,6 +718,42 @@ export const SEED_PLACES: SeedPlace[] = [
 
 export const SEED_EVENTS: SeedEvent[] = [
   {
+    title: "Feria del Jamón y el Marisco de Ayamonte",
+    dek: "Plaza de España. Gamba blanca y jamón ibérico, 26 al 28 de agosto, a partir de las 20:00. Lo que se habla esta semana.",
+    startsOn: "2026-08-26",
+    endsOn: "2026-08-28",
+    venue: "Plaza de España, Ayamonte",
+    neighborhood: "ayamonte",
+    lat: 37.214,
+    lng: -7.403,
+    source: "editorial",
+    votes: 28,
+  },
+  {
+    title: "Mercadillo de atardecer en El Conquero",
+    dek: "Propuesta vecinal: bancos, vinilo y vista a la ría. Si cuaja, se queda.",
+    startsOn: "2026-08-29",
+    endsOn: null,
+    venue: "Parque Moret",
+    neighborhood: "conquero",
+    lat: 37.2705,
+    lng: -6.955,
+    source: "community",
+    votes: 7,
+  },
+  {
+    title: "Último fin de semana de agosto en Punta Umbría",
+    dek: "Chiringuitos a tope, gamba plancha hasta tarde. El verano onubense cierra con las terrazas llenas.",
+    startsOn: "2026-08-30",
+    endsOn: "2026-08-31",
+    venue: "Paseo de la Ribera, Punta Umbría",
+    neighborhood: "punta-umbria",
+    lat: 37.181,
+    lng: -6.966,
+    source: "editorial",
+    votes: 15,
+  },
+  {
     title: "Veladas de septiembre en el Muelle",
     dek: "Música al aire libre cuando el hierro todavía está caliente y el Tinto ya no ciega.",
     startsOn: "2026-09-05",
@@ -789,6 +778,18 @@ export const SEED_EVENTS: SeedEvent[] = [
     votes: 18,
   },
   {
+    title: "Recreativo de Huelva vs. Real Murcia",
+    dek: "Primera jornada en casa. El Decano recibe al Murcia en el Nuevo Colombino, domingo 1 de septiembre a las 18:00.",
+    startsOn: "2026-09-01",
+    endsOn: null,
+    venue: "Estadio Nuevo Colombino",
+    neighborhood: "centro",
+    lat: 37.258,
+    lng: -6.962,
+    source: "editorial",
+    votes: 22,
+  },
+  {
     title: "Feria de la gamba en Punta Umbría",
     dek: "El santo extraoficial de la costa. Plancha, cola y poco romanticismo: se viene a comer.",
     startsOn: "2026-09-12",
@@ -811,29 +812,5 @@ export const SEED_EVENTS: SeedEvent[] = [
     lng: -6.729,
     source: "editorial",
     votes: 12,
-  },
-  {
-    title: "Mercadillo de atardecer en El Conquero",
-    dek: "Propuesta vecinal: bancos, vinilo y vista a la ría. Si cuaja, se queda.",
-    startsOn: "2026-08-29",
-    endsOn: null,
-    venue: "Parque Moret",
-    neighborhood: "conquero",
-    lat: 37.2705,
-    lng: -6.955,
-    source: "community",
-    votes: 7,
-  },
-  {
-    title: "Feria del Jamón y el Marisco de Ayamonte",
-    dek: "Plaza de España. Gamba blanca y jamón ibérico, 26 al 28 de agosto, a partir de las 20:00. Lo que se habla esta semana.",
-    startsOn: "2026-08-26",
-    endsOn: "2026-08-28",
-    venue: "Plaza de España, Ayamonte",
-    neighborhood: "ayamonte",
-    lat: 37.214,
-    lng: -7.403,
-    source: "editorial",
-    votes: 28,
   },
 ];

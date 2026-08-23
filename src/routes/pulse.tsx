@@ -8,7 +8,6 @@ import { getLivePulse } from "@/lib/server/live";
 import { seoHead } from "@/lib/seo";
 import { PLACE_KIND_LABEL, PLACE_KINDS, type PlaceKind } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { TendenciasRail } from "@/components/tendencias";
 import { FilmHero } from "@/components/film-hero";
 
 export const Route = createFileRoute("/pulse")({
@@ -168,10 +167,6 @@ function PulsePage() {
           ))}
         </ul>
       </section>
-
-      <div className="-mx-4 sm:-mx-6">
-        <TendenciasRail limit={6} />
-      </div>
 
       {events.length ? (
         <section className="mt-12">

@@ -1,187 +1,53 @@
+import type { Category } from "@/lib/types";
+
 export type BacklogIdea = {
   topic: string;
   angle: string;
-  category: "guides" | "news" | "events" | "eat";
+  category: Category;
   neighborhood: string | null;
-  body?: string;
   dek?: string;
+  body?: string;
 };
 
 export const BACKLOG_IDEAS: BacklogIdea[] = [
   {
-    topic: "Cuesta Maneli, la orilla que se busca",
-    angle: "Por qué los foros ponen primera esta pasarela de Doñana.",
-    category: "guides",
-    neighborhood: "matalascanas",
-    dek: "Duna, pasarela, parque. No hay megafonía. Hay viento.",
-    body: `## Lo que se habla
-
-En X y en los foros de agosto, **Cuesta Maneli** aparece antes que el paseo de Punta. Pasarela de madera, dunas de Doñana, el Atlántico al final. Entre Mazagón y Matalascañas.
-
-## Cómo
-
-Coche. Mañana. El acceso se cuida; a veces se paga el aparcamiento. Bien está. Agua, sombrero, no salgas de la pasarela. El **Acebuche** queda cerca si el plan es parque y orilla el mismo día.
-
-El viento manda. Lee el parte. No improvises a las tres.`,
-  },
-  {
-    topic: "Jamón y marisco en Ayamonte",
-    angle: "La feria de esta semana: gamba y jamón en la Plaza de España.",
-    category: "events",
-    neighborhood: "ayamonte",
-    dek: "26 al 28 de agosto, a partir de las 20:00. Lo que se busca ahora.",
-    body: `## Esta semana
-
-**Ayamonte**, Plaza de España, del 26 al 28 de agosto. Feria del Jamón y el Marisco. Gamba blanca e ibérico en la misma mesa, a partir de las 20:00.
-
-No es un folleto. Es lo que se habla en X y en la prensa de casa. El Guadiana al lado. Portugal a un puente.
-
-## Cómo
-
-Reserva mesa si puedes. Si no, llega pronto. Pide gamba a la plancha y un corte de Jabugo. El Condado, frío.`,
-  },
-  {
-    topic: "El poniente de septiembre",
-    angle: "Por qué la bandera amarilla manda más que el calendario.",
-    category: "guides",
-    neighborhood: "punta-umbria",
-    dek: "El agua sigue. El viento, también. Septiembre es el mes que los onubenses no regalan.",
-    body: `## El truco no es agosto
-
-Agosto es ruido. Septiembre es el pacto: el agua todavía está, las toallas se van, el poniente sigue mandando.
-
-En **Punta Umbría** la bandera pasa a amarilla cuando pica el viento, no cuando lo dice un cartel de temporada. Si el chiringuito recoge sombrillas, tú también. No es drama. Es Atlántico.
-
-## Dónde ir
-
-- **Mazagón** hacia el este, andando, cuando Punta se llena de fin de semana.
-- **El Portil** a última hora, la flecha sin megafonía.
-- La capital, el **Muelle del Tinto**, si el mar no deja.
-
-No hace falta despedirse del verano el 31. Aquí el verano se despide cuando el agua lo dice.`,
-  },
-  {
-    topic: "Coquinas de primera hora",
-    angle: "El chiringuito a las diez no es el de las tres.",
+    topic: "Apertura de la temporada de gurumelos",
+    angle: "Sierra, primavera, producto de temporada",
     category: "eat",
-    neighborhood: "punta-umbria",
-    dek: "Las coquinas no esperan. Ni el aceite nuevo tampoco.",
-    body: `## A las diez
-
-Si llegas a **El Portil** o a la Ribera de Punta a las diez de un septiembre laborable, pide **coquinas**. El aceite está nuevo y la marisma todavía huele a marea.
-
-A las tres, a veces, ya no quedan. O quedan y el aceite no. No hay lealtad que justifique una coquina pasada.
-
-## Cómo
-
-A la marinera, pan, vino blanco del Condado. Fin. Si te ofrecen un menú del día con paella, estás en el sitio equivocado.
-
-Firmado desde la mesa de las diez, no desde la cola de las tres.`,
+    neighborhood: "aracena",
+    dek: "Marzo y abril: el gurumelo sube con la lluvia. Guía de dónde pedirlos y cómo se comen.",
+    body: "",
   },
   {
-    topic: "El kiosco de las Monjas",
-    angle: "El rito que no sale en la guía de Colón.",
+    topic: "Ruta de bares de la capital",
+    angle: "Concepción, Pablo Rada, zona centro",
+    category: "eat",
+    neighborhood: "centro",
+    dek: "El tapeo onubense: dónde, a qué hora y qué pedir.",
+    body: "",
+  },
+  {
+    topic: "Calendario de mareas y pesca",
+    angle: "Lonja, temporadas, producto del día",
+    category: "eat",
+    neighborhood: "isla-cristina",
+    dek: "Cómo leer la lonja y saber qué ha entrado hoy.",
+    body: "",
+  },
+  {
+    topic: "Mercado del Carmen en la capital",
+    angle: "Producto fresco, puestos, horarios",
     category: "guides",
     neighborhood: "centro",
-    dek: "Café, sombra y el salón de estar de la capital. Sin placa.",
-    body: `## Plaza de las Monjas
-
-No es un monumento. Es donde Huelva se sienta. El kiosco, la sombra, las abuelas, el trámite a diez metros.
-
-Pide el café sin diccionario. Tostada de tomate o manteca. Mira. Eso es el centro: no la catedral, el velador.
-
-Si tu plan es «hacer Huelva» en dos horas, empieza aquí y resiste la tentación de irte a La Rábida antes de haber entendido la plaza.
-
-La Rábida espera. El café, no tanto.`,
+    dek: "El mercado de la capital: qué comprar y cuándo ir.",
+    body: "",
   },
   {
-    topic: "Bus a Punta sin coche",
-    angle: "Se puede. No es un mito urbano de Aljaraque.",
-    category: "guides",
-    neighborhood: "punta-umbria",
-    dek: "La capital se anda. Punta se bus. El resto, se piensa.",
-    body: `## Sí hay bus
-
-De la estación de Huelva a **Punta Umbría** hay línea regular. En verano, más. En septiembre, suficiente si no viajas con tres hamacas y un perro.
-
-Consulta la hora de vuelta **antes** del segundo choco. El último bus no espera a tu ración.
-
-## Lo que no hay
-
-No improvises Mazagón, Isla Cristina o Aracena en transporte público como si fuera el metro de Madrid. Coche, o un plan más corto.
-
-Aparcar en Punta en agosto es un deporte. En septiembre, un trámite.`,
-  },
-  {
-    topic: "Blanco del Condado con la gamba",
-    angle: "La caña está bien. El blanco está mejor.",
-    category: "eat",
-    neighborhood: "moguer-palos",
-    dek: "El Condado no es Jerez. No tiene que serlo. Está para la gamba.",
-    body: `## La copa que casi nadie pide
-
-En muchos veladores la gamba llega con caña por inercia. Pide un **blanco del Condado**, frío. Si el de la casa no es un brick, hazle caso.
-
-No hay que hablar de maridaje. Hay que beber lo que crece a treinta kilómetros de la lonja.
-
-## Dónde
-
-Bollullos, Rociana, Moguer, Palos. Una mañana de bodega cabe entre la fresa y La Rábida. El jamón, ya en la sierra, es otra copa y otra geografía.
-
-Dos provincias en una. Dos tragos. No los mezcles en el mismo acto.`,
-  },
-  {
-    topic: "Reina Victoria sin filtro inglés",
-    angle: "El barrio obrero es de aquí, aunque parezca de Gales.",
-    category: "guides",
-    neighborhood: "reina-victoria",
-    dek: "Porches, verjas, damero. Diez minutos y otra provincia. Sigue siendo Huelva.",
-    body: `## Barrio Obrero
-
-Las casas las levantó el capital británico de Riotinto. El nombre oficial es **Reina Victoria**. Aquí se dice Barrio Obrero.
-
-Entra por la calle A y recorre el damero. No hay boutique. No hay hotel dentro. Hay porche y una idea de pueblo metida en la ciudad.
-
-## Cómo usarlo
-
-Se visita. Se fotografía sin palo. Se baja a Concepción a comer. No se «elige para alojarse».
-
-Si solo tienes un hueco entre el Muelle y El Conquero, este es el hueco correcto.`,
-  },
-  {
-    topic: "La Cinta en septiembre",
-    angle: "La feria grande ya pasó. La de verdad, para los de aquí, es esta.",
+    topic: "Conciertos de verano en la provincia",
+    angle: "Agenda cultural, pueblos, fechas",
     category: "events",
-    neighborhood: "conquero",
-    dek: "Santuario, cuesta y virgen. Colombinas es ruido. La Cinta es Huelva.",
-    body: `## 8 de septiembre
-
-Las Colombinas cierran julio. **La Cinta** abre el otoño. El santuario arriba, la ciudad abajo, la cuesta en medio.
-
-No es para el crucerista. Es para quien tiene abuela en Isla Chica. Si estás de visita, sube igual: el mirador vale la pena aunque no sepas la letanía.
-
-## Cómo
-
-A pie o en el bus de siempre. Agua. Respeto cuando hay misa. Foto del estuario, no del selfie con la virgen.
-
-Luego baja. Cena en la capital. La ría al fondo, encendida. Esa es la postal.`,
-  },
-  {
-    topic: "Riotinto en octubre, no en agosto",
-    angle: "El rojo mancha. El calor, también.",
-    category: "guides",
     neighborhood: null,
-    dek: "El tren minero aguanta hasta octubre. Es el mes correcto.",
-    body: `## El paisaje no necesita filtro
-
-La cuenca de **Riotinto** parece de otro planeta y fue de una compañía británica. El tren turístico es un vagón viejo, no un documental.
-
-Agosto allí es un error. **Octubre** es agua, sombrero todavía, y menos cola.
-
-## Cómo
-
-Reserva el tren. Museo minero. Calzado cerrado: el rojo mancha. No lo combines con playa el mismo día. Huelva es ancha. Trátala como tal.
-
-Si te queda Jabugo, es otra noche y otra temperatura.`,
+    dek: "Música al aire libre en la provincia: de la capital a la sierra.",
+    body: "",
   },
 ];
