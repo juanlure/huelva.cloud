@@ -36,9 +36,17 @@ Solo se renderiza UNA mesa activa a la vez. Si no hay mesa activa (fecha pasada)
 
 ## Gestión de mesas
 
-### Mesa de demo
+### Mesa de demo (INVENTADA, desactivada por defecto)
 
-El seed incluye una mesa de demo (`Casa Cinta`, INVENTADA, no es un local real) con `active_until: '2099-12-31'` para verificar el diseño.
+El seed incluye una mesa de demo (`Casa Cinta`, INVENTADA, no es un local real) con `active_until: '2020-01-01'` (en el pasado).
+
+**Por defecto NO está activa** — `getActiveCollabSpot()` devuelve `null` y el bloque NO se renderiza en producción.
+
+**Para activarla en desarrollo/testing:**
+
+```sql
+UPDATE collab_spots SET active_until = '2099-12-31' WHERE name = 'Casa Cinta';
+```
 
 **Para desactivarla:**
 
@@ -46,11 +54,7 @@ El seed incluye una mesa de demo (`Casa Cinta`, INVENTADA, no es un local real) 
 UPDATE collab_spots SET active_until = '2020-01-01' WHERE name = 'Casa Cinta';
 ```
 
-**Para reactivarla:**
-
-```sql
-UPDATE collab_spots SET active_until = '2099-12-31' WHERE name = 'Casa Cinta';
-```
+⚠️ **IMPORTANTE**: Casa Cinta NO debe estar activa en producción. Es una fixture de preview/testing.
 
 ### Crear una nueva mesa
 

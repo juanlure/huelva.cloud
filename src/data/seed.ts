@@ -854,6 +854,6 @@ export const SEED_COLLAB_SPOTS: SeedCollabSpot[] = [
     photoUrl: null,
     linkUrl: null,
     linkType: "web",
-    activeUntil: "2099-12-31",
+    activeUntil: "2020-01-01",
   },
 ];
