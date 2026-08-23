@@ -41,119 +41,92 @@ export type SeedEvent = {
 export const SEED_ARTICLES: SeedArticle[] = [
   {
     slug: "ayamonte-feria-jamon-marisco-2026",
-    title: "Ayamonte arranca este martes su Feria del Jamón y el Marisco",
-    dek: "Plaza de España, del 26 al 28 de agosto. Gamba blanca, jamón ibérico y vino del Condado desde las 20:00. Entrada libre.",
+    title: "Ayamonte vuelve a poner jamón y marisco en la Plaza de España",
+    dek: "Del 26 al 28 de agosto, desde las 20:00. Gamba blanca y jamón ibérico. Huelva Información, 22 ago 2026.",
     category: "news",
-    readMinutes: 4,
+    readMinutes: 3,
     featured: true,
     source: "editorial",
     neighborhood: "ayamonte",
-    publishedAt: "2026-08-23T08:00:00Z",
+    publishedAt: "2026-08-22T08:00:00Z",
     votes: 34,
     body: `La **Feria del Jamón y el Marisco de Ayamonte** vuelve este martes 26 de agosto a la Plaza de España. Tres días de gamba blanca, jamón ibérico y producto onubense, con casetas que abren a partir de las 20:00.
 
-## El plato fuerte
+Gamba blanca de Isla Cristina, jamón de Jabugo, vino del Condado. La feria es un muestrario de lo que da esta provincia: costa y sierra en la misma mesa.
 
-Gamba blanca de Isla Cristina, jamón de Jabugo, vino del Condado. La feria es un muestrario accesible de lo que da esta provincia: costa y sierra en la misma mesa.
+Música en vivo cada noche. La Plaza de España se llena, así que conviene llegar temprano.
 
-Música en vivo cada noche. La Plaza de España se llena, así que conviene llegar temprano si quieres mesa cerca.
-
-## Horario
-
-Martes 26 a jueves 28 de agosto, desde las 20:00 hasta cierre. Entrada libre. Ayamonte está a 55 km de la capital.`,
+**Fuente:** Huelva Información, 22 agosto 2026.`,
   },
   {
-    slug: "recre-arranca-temporada-septiembre",
-    title: "El Recre arranca en casa el 1 de septiembre",
-    dek: "Primera jornada del Decano en el Nuevo Colombino frente al Real Murcia. Domingo a las 18:00, con el calor ya bajando.",
+    slug: "wwf-deslinde-donana-marismas",
+    title: "WWF pide rehacer el deslinde de las marismas de Doñana",
+    dek: "El MITECO delimita 118.772 m² de DPMT en Hinojos, Almonte y Aznalcázar. Juanjo Carmona (WWF) lo considera una amenaza mayor y pide un comité científico. EFE / La Razón, 22 ago 2026.",
+    category: "news",
+    readMinutes: 4,
+    featured: false,
+    source: "editorial",
+    neighborhood: "matalascanas",
+    publishedAt: "2026-08-22T10:00:00Z",
+    votes: 28,
+    body: `**WWF** ha pedido al Ministerio para la Transición Ecológica (MITECO) que rehaga el deslinde de las marismas de **Doñana**. El organismo ha delimitado 118.772 metros cuadrados de Dominio Público Marítimo-Terrestre (DPMT) en los términos de Hinojos, Almonte y Aznalcázar.
+
+Juanjo Carmona, responsable de WWF, considera el deslinde una amenaza mayor para el parque y ha solicitado la creación de un comité científico que revise el proceso.
+
+El debate sobre los límites del parque y su zona de influencia sigue abierto.
+
+**Fuente:** EFE / La Razón, 22 agosto 2026.`,
+  },
+  {
+    slug: "recre-apura-mercado-septiembre",
+    title: "El Recre apura el mercado hasta el 1 de septiembre",
+    dek: "Luci Martín busca refuerzo; objetivo ascenso a Primera Federación. La liga arranca el primer fin de semana de septiembre. Huelva Red, 19 ago 2026.",
     category: "news",
     readMinutes: 3,
     featured: false,
     source: "editorial",
     neighborhood: "centro",
-    publishedAt: "2026-08-22T18:30:00Z",
-    votes: 28,
-    body: `El **Recreativo de Huelva** debuta en casa este domingo 1 de septiembre a las 18:00 frente al Real Murcia. Primera jornada de liga, Nuevo Colombino, y ganas de empezar bien.
+    publishedAt: "2026-08-19T12:00:00Z",
+    votes: 22,
+    body: `El **Recreativo de Huelva** apura los últimos días del mercado de fichajes hasta el 1 de septiembre. Luci Martín, técnico del Decano, busca reforzar la plantilla de cara al objetivo del ascenso a Primera Federación.
 
-El Decano viene de una pretemporada correcta y una plantilla que apunta a pelear arriba. El domingo, con el calor de agosto ya aflojando, el estadio espera el primer lleno de la temporada.
+La liga arranca el primer fin de semana de septiembre. El Recre afronta la temporada con una plantilla que apunta a pelear arriba, pero el entrenador quiere cerrar alguna incorporación más antes del cierre del mercado.
 
-Entradas en taquilla y online. Si eres de los que vuelven en septiembre, este es el ritual de vuelta.`,
+**Fuente:** Huelva Red, 19 agosto 2026.`,
   },
   {
-    slug: "doñana-nivel-marisma-preocupa",
-    title: "El nivel de la marisma en Doñana sigue bajo tras el verano seco",
-    dek: "Las lluvias de primavera no bastaron. El Acebuche y El Rocío registran lagunas con menos agua que en años anteriores.",
+    slug: "punta-zona-azul-septiembre",
+    title: "En Punta la zona azul sigue hasta mediados de septiembre",
+    dek: "Julio y agosto: azul y naranja de 10:30–13:30 y 18:00–23:00. aparcarpuntaumbria.com",
     category: "news",
-    readMinutes: 5,
-    featured: false,
-    source: "editorial",
-    neighborhood: "matalascanas",
-    publishedAt: "2026-08-21T10:00:00Z",
-    votes: 17,
-    body: `El verano seco deja huella en **Doñana**. Las lagunas del entorno del Acebuche y El Rocío presentan niveles de agua más bajos de lo habitual para esta época, según los últimos registros del parque.
-
-## Qué dicen los técnicos
-
-La primavera trajo lluvias, pero no fueron suficientes para recargar la marisma como en años anteriores. El calor de julio y agosto ha evaporado más rápido de lo esperado.
-
-El parque sigue abierto y las rutas concertadas continúan, pero los expertos insisten: Doñana necesita un otoño húmedo. El equilibrio del ecosistema depende del agua, y el cambio climático se nota aquí antes que en otros puntos.
-
-## Para el visitante
-
-Las rutas siguen operativas. El amanecer sigue siendo el mejor momento para ver fauna. Los ciervos y las aves aún están, pero la marisma pide respeto y prudencia. No es alarmismo: es la realidad de un parque que vive del ciclo del agua.`,
-  },
-  {
-    slug: "punta-umbria-cierra-verano-lleno",
-    title: "Punta Umbría cierra agosto con las terrazas a tope",
-    dek: "Los chiringuitos mantienen el ritmo hasta el 31. Choco, gamba y una última semana de agosto que sigue siendo verano onubense.",
-    category: "news",
-    readMinutes: 4,
+    readMinutes: 2,
     featured: false,
     source: "editorial",
     neighborhood: "punta-umbria",
-    publishedAt: "2026-08-21T12:00:00Z",
-    votes: 19,
-    body: `Agosto no ha terminado en **Punta Umbría**. Las terrazas del Paseo de la Ribera siguen llenas, el choco se fríe a todas horas y la gamba blanca mantiene el tipo. El último fin de semana promete ser de los buenos.
+    publishedAt: "2026-08-19T09:00:00Z",
+    votes: 15,
+    body: `La zona azul y naranja de **Punta Umbría** se mantiene hasta mediados de septiembre. Durante julio y agosto, el horario es de 10:30 a 13:30 y de 18:00 a 23:00.
 
-Los chiringuitos alargan horarios hasta el lunes 31. Septiembre es otra cosa, pero esta semana todavía es verano onubense de verdad: agua a 22°, poniente moderado y mesas al aire libre hasta tarde.
+El sistema de pago y las zonas están disponibles en aparcarpuntaumbria.com.
 
-Si vuelves a la capital después de agosto, este es el último tramo. Punta no se apaga de golpe: se va despidiendo con la misma gamba de siempre.`,
+**Fuente:** aparcarpuntaumbria.com`,
   },
   {
-    slug: "cinta-2026-programa-confirmado",
-    title: "Las Fiestas de la Cinta arrancan el 8 de septiembre",
-    dek: "Romería chica al Santuario, ofrenda floral y una semana de celebración. Septiembre onubense por excelencia.",
-    category: "news",
-    readMinutes: 4,
-    featured: false,
-    source: "editorial",
-    neighborhood: "conquero",
-    publishedAt: "2026-08-20T09:00:00Z",
-    votes: 21,
-    body: `Las **Fiestas de la Cinta** vuelven el domingo 8 de septiembre con la romería chica al Santuario del Conquero. Ofrenda floral, misa solemne y una semana de actos que cierran el verano y abren el otoño onubense.
-
-## Qué es La Cinta
-
-La patrona de Huelva. No es Colombinas: es más íntima, más de barrio, más septiembre. El santuario se llena, la gente sube al Conquero y la ciudad para un día. Es una fiesta que no necesita aspas ni megafonía: funciona con la devoción y el paisaje.
-
-El programa completo se publica la primera semana de septiembre. La romería es el 8, domingo. Si vives aquí, ya lo sabes. Si vienes de fuera, es una buena excusa para ver Huelva en su día.`,
-  },
-  {
-    slug: "riotinto-temporada-otono",
-    title: "El tren minero de Riotinto alarga temporada hasta octubre",
-    dek: "Más salidas los sábados. La cuenca colorada en otoño, sin el calor de agosto. Reserva con antelación.",
+    slug: "bota-no-playa-canina-canaleta",
+    title: "La Bota ya no es playa canina. La urbana es La Canaleta",
+    dek: "El alcalde lo cerró a principios de agosto. En Mazagón: Vigía y La Estrella. El Correo Web, 4 ago 2026.",
     category: "news",
     readMinutes: 3,
     featured: false,
     source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-20T11:00:00Z",
-    votes: 13,
-    body: `El **ferrocarril turístico de Riotinto** amplía horarios de cara a septiembre y octubre, los dos mejores meses para subir a la cuenca minera. Sin el calor de agosto, el paisaje rojo se entiende mejor y el viaje se hace más cómodo.
+    neighborhood: "punta-umbria",
+    publishedAt: "2026-08-04T10:00:00Z",
+    votes: 11,
+    body: `La playa de **La Bota** ya no es playa canina en Punta Umbría. El alcalde cerró el espacio a principios de agosto. La playa canina urbana ahora es **La Canaleta**.
 
-Sábados con más salidas. Reserva online o en el Museo Minero. Agua, sombrero y calzado cerrado: el rojo mancha, pero merece la pena.
+En **Mazagón**, las playas caninas habilitadas son **Vigía** y **La Estrella**.
 
-Octubre es el mes dulce para Riotinto. Anótalo.`,
+**Fuente:** El Correo Web, 4 agosto 2026.`,
   },
   {
     slug: "48-horas-en-huelva",
@@ -718,8 +691,44 @@ export const SEED_PLACES: SeedPlace[] = [
 
 export const SEED_EVENTS: SeedEvent[] = [
   {
+    title: "Bajada de la Cinta",
+    dek: "Misa del Alba 6:00, Santuario del Conquero; salida ~6:30; Catedral de la Merced ~11:30. Buses Zafra desde 5:30. Hermandad / Huelva Ya 19 ago.",
+    startsOn: "2026-08-23",
+    endsOn: null,
+    venue: "Santuario de la Cinta → Catedral",
+    neighborhood: "conquero",
+    lat: 37.2732,
+    lng: -6.9381,
+    source: "editorial",
+    votes: 42,
+  },
+  {
+    title: "XXIII Travesía Solidaria Fundación Vicente Ferrer",
+    dek: "Playa PuntaMar (junto al Camarón): 3.000 m 10:00; 1.500 m 11:30; 750 m popular. Huelva Buenas Noticias 18 ago.",
+    startsOn: "2026-08-23",
+    endsOn: null,
+    venue: "Playa PuntaMar, Punta Umbría",
+    neighborhood: "punta-umbria",
+    lat: 37.181,
+    lng: -6.966,
+    source: "editorial",
+    votes: 18,
+  },
+  {
+    title: "Presentación cartel Cinta 2026 y campanilleros",
+    dek: "Catedral de la Merced, 21:30, tras la misa. Cartel de David Morales Benito. Huelva Hoy / Hermandad.",
+    startsOn: "2026-08-24",
+    endsOn: null,
+    venue: "Catedral de la Merced",
+    neighborhood: "centro",
+    lat: 37.2575,
+    lng: -6.9528,
+    source: "editorial",
+    votes: 14,
+  },
+  {
     title: "Feria del Jamón y el Marisco de Ayamonte",
-    dek: "Plaza de España. Gamba blanca y jamón ibérico, 26 al 28 de agosto, a partir de las 20:00. Lo que se habla esta semana.",
+    dek: "Plaza de España, desde las 20:00. Jamón, gamba blanca y producto onubense. Huelva Información 22 ago 2026.",
     startsOn: "2026-08-26",
     endsOn: "2026-08-28",
     venue: "Plaza de España, Ayamonte",
@@ -730,87 +739,51 @@ export const SEED_EVENTS: SeedEvent[] = [
     votes: 28,
   },
   {
-    title: "Mercadillo de atardecer en El Conquero",
-    dek: "Propuesta vecinal: bancos, vinilo y vista a la ría. Si cuaja, se queda.",
-    startsOn: "2026-08-29",
-    endsOn: null,
-    venue: "Parque Moret",
-    neighborhood: "conquero",
-    lat: 37.2705,
-    lng: -6.955,
-    source: "community",
-    votes: 7,
-  },
-  {
-    title: "Último fin de semana de agosto en Punta Umbría",
-    dek: "Chiringuitos a tope, gamba plancha hasta tarde. El verano onubense cierra con las terrazas llenas.",
-    startsOn: "2026-08-30",
-    endsOn: "2026-08-31",
-    venue: "Paseo de la Ribera, Punta Umbría",
-    neighborhood: "punta-umbria",
-    lat: 37.181,
-    lng: -6.966,
-    source: "editorial",
-    votes: 15,
-  },
-  {
-    title: "Veladas de septiembre en el Muelle",
-    dek: "Música al aire libre cuando el hierro todavía está caliente y el Tinto ya no ciega.",
-    startsOn: "2026-09-05",
-    endsOn: "2026-09-07",
-    venue: "Muelle de Riotinto",
-    neighborhood: "pescaderia",
-    lat: 37.2618,
-    lng: -6.9415,
-    source: "editorial",
-    votes: 9,
-  },
-  {
-    title: "Fiestas de la Cinta",
-    dek: "La virgen de Huelva, romería chica y el santuario lleno. Septiembre onubense de verdad.",
-    startsOn: "2026-09-08",
-    endsOn: "2026-09-08",
-    venue: "Santuario de la Cinta",
-    neighborhood: "conquero",
-    lat: 37.2732,
-    lng: -6.9381,
-    source: "editorial",
-    votes: 18,
-  },
-  {
-    title: "Recreativo de Huelva vs. Real Murcia",
-    dek: "Primera jornada en casa. El Decano recibe al Murcia en el Nuevo Colombino, domingo 1 de septiembre a las 18:00.",
-    startsOn: "2026-09-01",
-    endsOn: null,
-    venue: "Estadio Nuevo Colombino",
+    title: "Novena de la Cinta en la Merced",
+    dek: "Arranca el viernes 28 y va hasta el 5 de septiembre. Diario de Huelva / Hermandad.",
+    startsOn: "2026-08-28",
+    endsOn: "2026-09-05",
+    venue: "Catedral de la Merced",
     neighborhood: "centro",
-    lat: 37.258,
-    lng: -6.962,
+    lat: 37.2575,
+    lng: -6.9528,
     source: "editorial",
     votes: 22,
   },
   {
-    title: "Feria de la gamba en Punta Umbría",
-    dek: "El santo extraoficial de la costa. Plancha, cola y poco romanticismo: se viene a comer.",
-    startsOn: "2026-09-12",
-    endsOn: "2026-09-14",
-    venue: "Paseo de la Ribera",
-    neighborhood: "punta-umbria",
-    lat: 37.181,
-    lng: -6.966,
+    title: "Tren de la Luna",
+    dek: "Parque Minero de Riotinto, viernes 28 y sábado 29. Reserva solo en la web del parque. parquemineroderiotinto.es",
+    startsOn: "2026-08-28",
+    endsOn: "2026-08-29",
+    venue: "Parque Minero de Riotinto",
+    neighborhood: null,
+    lat: 37.696,
+    lng: -6.594,
     source: "editorial",
-    votes: 21,
+    votes: 16,
   },
   {
-    title: "Jornadas del jamón en la sierra",
-    dek: "Jabugo y alrededores cuando el turista de playa ya se ha ido. Mejor momento para un secadero.",
-    startsOn: "2026-10-03",
-    endsOn: "2026-10-05",
-    venue: "Jabugo / Aracena",
-    neighborhood: "aracena",
-    lat: 37.77,
-    lng: -6.729,
+    title: "Estrellas y eclipse parcial de Luna en Cuesta Maneli",
+    dek: "Viernes 28 de agosto. Platalea organiza noche de observación. platalea.com",
+    startsOn: "2026-08-28",
+    endsOn: null,
+    venue: "Cuesta Maneli (Platalea)",
+    neighborhood: "mazagon",
+    lat: 37.137,
+    lng: -6.83,
     source: "editorial",
-    votes: 12,
+    votes: 19,
+  },
+  {
+    title: "Día grande de la Cinta",
+    dek: "9:00 misa votiva Santuario; 12:00 Función Principal Merced; 19:00 subida popular Catedral–Santuario. Huelva Buenas Noticias 29 jul; Diario de Huelva 15 ago.",
+    startsOn: "2026-09-08",
+    endsOn: null,
+    venue: "Santuario de la Cinta / Catedral",
+    neighborhood: "conquero",
+    lat: 37.2732,
+    lng: -6.9381,
+    source: "editorial",
+    votes: 35,
   },
 ];

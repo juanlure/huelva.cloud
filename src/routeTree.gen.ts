@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SlugRouteImport } from './routes/$slug'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AiDisclosureRouteImport } from './routes/ai-disclosure'
 import { Route as AportaRouteImport } from './routes/aporta'
@@ -29,8 +28,6 @@ import { Route as RecursosRouteImport } from './routes/recursos'
 import { Route as RedaccionRouteImport } from './routes/redaccion'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as TemasRouteImport } from './routes/temas'
-import { Route as TestRouteImport } from './routes/test'
 import { Route as GIdRouteImport } from './routes/g.$id'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -38,11 +35,6 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SlugRoute = SlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgendaRoute = AgendaRouteImport.update({
@@ -135,16 +127,6 @@ const SobreRoute = SobreRouteImport.update({
   path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TemasRoute = TemasRouteImport.update({
-  id: '/temas',
-  path: '/temas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TestRoute = TestRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const GIdRoute = GIdRouteImport.update({
   id: '/g/$id',
   path: '/g/$id',
@@ -163,7 +145,6 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$slug': typeof SlugRoute
   '/agenda': typeof AgendaRoute
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
@@ -182,15 +163,12 @@ export interface FileRoutesByFullPath {
   '/redaccion': typeof RedaccionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/temas': typeof TemasRoute
-  '/test': typeof TestRoute
   '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$slug': typeof SlugRoute
   '/agenda': typeof AgendaRoute
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
@@ -209,8 +187,6 @@ export interface FileRoutesByTo {
   '/redaccion': typeof RedaccionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/temas': typeof TemasRoute
-  '/test': typeof TestRoute
   '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -218,7 +194,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$slug': typeof SlugRoute
   '/agenda': typeof AgendaRoute
   '/ai-disclosure': typeof AiDisclosureRoute
   '/aporta': typeof AportaRoute
@@ -237,8 +212,6 @@ export interface FileRoutesById {
   '/redaccion': typeof RedaccionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/temas': typeof TemasRoute
-  '/test': typeof TestRoute
   '/g/$id': typeof GIdRoute
   '/p/$slug': typeof PSlugRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -247,7 +220,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/$slug'
     | '/agenda'
     | '/ai-disclosure'
     | '/aporta'
@@ -266,15 +238,12 @@ export interface FileRouteTypes {
     | '/redaccion'
     | '/sitemap.xml'
     | '/sobre'
-    | '/temas'
-    | '/test'
     | '/g/$id'
     | '/p/$slug'
     | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/$slug'
     | '/agenda'
     | '/ai-disclosure'
     | '/aporta'
@@ -293,15 +262,12 @@ export interface FileRouteTypes {
     | '/redaccion'
     | '/sitemap.xml'
     | '/sobre'
-    | '/temas'
-    | '/test'
     | '/g/$id'
     | '/p/$slug'
     | '/api/auth/$'
   id:
     | '__root__'
     | '/'
-    | '/$slug'
     | '/agenda'
     | '/ai-disclosure'
     | '/aporta'
@@ -320,8 +286,6 @@ export interface FileRouteTypes {
     | '/redaccion'
     | '/sitemap.xml'
     | '/sobre'
-    | '/temas'
-    | '/test'
     | '/g/$id'
     | '/p/$slug'
     | '/api/auth/$'
@@ -329,7 +293,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  SlugRoute: typeof SlugRoute
   AgendaRoute: typeof AgendaRoute
   AiDisclosureRoute: typeof AiDisclosureRoute
   AportaRoute: typeof AportaRoute
@@ -348,8 +311,6 @@ export interface RootRouteChildren {
   RedaccionRoute: typeof RedaccionRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
-  TemasRoute: typeof TemasRoute
-  TestRoute: typeof TestRoute
   GIdRoute: typeof GIdRoute
   PSlugRoute: typeof PSlugRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
@@ -362,13 +323,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/$slug': {
-      id: '/$slug'
-      path: '/$slug'
-      fullPath: '/$slug'
-      preLoaderRoute: typeof SlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agenda': {
@@ -497,20 +451,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/temas': {
-      id: '/temas'
-      path: '/temas'
-      fullPath: '/temas'
-      preLoaderRoute: typeof TemasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/g/$id': {
       id: '/g/$id'
       path: '/g/$id'
@@ -537,7 +477,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  SlugRoute: SlugRoute,
   AgendaRoute: AgendaRoute,
   AiDisclosureRoute: AiDisclosureRoute,
   AportaRoute: AportaRoute,
@@ -556,8 +495,6 @@ const rootRouteChildren: RootRouteChildren = {
   RedaccionRoute: RedaccionRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
-  TemasRoute: TemasRoute,
-  TestRoute: TestRoute,
   GIdRoute: GIdRoute,
   PSlugRoute: PSlugRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
