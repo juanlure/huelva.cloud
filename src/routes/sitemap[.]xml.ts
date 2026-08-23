@@ -1,25 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LIVE_GUIDES } from "@/data/live-guides";
-import { SEO_LANDINGS } from "@/data/seo-landings";
 import { SITE } from "@/lib/brand";
 import { listArticles } from "@/lib/server/content";
 
 const STATIC = [
   "/",
+  "/agenda",
   "/que-ver",
   "/mesa",
-  "/historia",
-  "/temas",
   "/guides",
   "/pulse",
   "/barrios",
   "/comer",
-  "/agenda",
+  "/historia",
   "/recursos",
   "/sobre",
   "/redaccion",
   "/aporta",
-  "/test",
   "/ai-disclosure",
   "/legal",
   "/privacy",
@@ -34,9 +31,8 @@ export const Route = createFileRoute("/sitemap.xml")({
         const now = new Date().toISOString();
         const urls = [
           ...STATIC.map((path) =>
-            loc(path, now, path === "/" || path === "/que-ver" ? "1.0" : "0.8", undefined),
+            loc(path, now, path === "/" || path === "/agenda" ? "1.0" : "0.8", undefined),
           ),
-          ...SEO_LANDINGS.map((l) => loc(`/${l.slug}`, now, "0.9", l.image)),
           ...LIVE_GUIDES.map((g) => loc(`/g/${g.id}`, now, "0.9", g.image)),
           ...articles.map((a) => loc(`/p/${a.slug}`, a.publishedAt, a.featured ? "0.8" : "0.6", undefined)),
         ].join("");

@@ -40,6 +40,103 @@ export type SeedEvent = {
 
 export const SEED_ARTICLES: SeedArticle[] = [
   {
+    slug: "ayamonte-feria-jamon-marisco-2026",
+    title: "Ayamonte vuelve a poner jamón y marisco en la Plaza de España",
+    dek: "Del 26 al 28 de agosto, desde las 20:00. Gamba blanca y jamón ibérico. Huelva Información, 22 ago 2026.",
+    category: "news",
+    readMinutes: 3,
+    featured: true,
+    source: "editorial",
+    neighborhood: "ayamonte",
+    publishedAt: "2026-08-22T08:00:00Z",
+    votes: 34,
+    body: `La **Feria del Jamón y el Marisco de Ayamonte** vuelve este martes 26 de agosto a la Plaza de España. Tres días de gamba blanca, jamón ibérico y producto onubense, con casetas que abren a partir de las 20:00.
+
+Gamba blanca de Isla Cristina, jamón de Jabugo, vino del Condado. La feria es un muestrario de lo que da esta provincia: costa y sierra en la misma mesa.
+
+Música en vivo cada noche. La Plaza de España se llena, así que conviene llegar temprano.
+
+**Fuente:** Huelva Información, 22 agosto 2026.`,
+  },
+  {
+    slug: "wwf-deslinde-donana-marismas",
+    title: "WWF pide rehacer el deslinde de las marismas de Doñana",
+    dek: "El MITECO delimita 118.772 m² de DPMT en Hinojos, Almonte y Aznalcázar. Juanjo Carmona (WWF) lo considera una amenaza mayor y pide un comité científico. EFE / La Razón, 22 ago 2026.",
+    category: "news",
+    readMinutes: 4,
+    featured: false,
+    source: "editorial",
+    neighborhood: "matalascanas",
+    publishedAt: "2026-08-22T10:00:00Z",
+    votes: 28,
+    body: `**WWF** ha pedido al Ministerio para la Transición Ecológica (MITECO) que rehaga el deslinde de las marismas de **Doñana**. El organismo ha delimitado 118.772 metros cuadrados de Dominio Público Marítimo-Terrestre (DPMT) en los términos de Hinojos, Almonte y Aznalcázar.
+
+Juanjo Carmona, responsable de WWF, considera el deslinde una amenaza mayor para el parque y ha solicitado la creación de un comité científico que revise el proceso.
+
+El debate sobre los límites del parque y su zona de influencia sigue abierto.
+
+**Fuente:** EFE / La Razón, 22 agosto 2026.`,
+  },
+  {
+    slug: "recre-apura-mercado-septiembre",
+    title: "El Recre apura el mercado hasta el 1 de septiembre",
+    dek: "Luci Martín busca refuerzo; objetivo ascenso a Primera Federación. La liga arranca el primer fin de semana de septiembre. Huelva Red, 19 ago 2026.",
+    category: "news",
+    readMinutes: 3,
+    featured: false,
+    source: "editorial",
+    neighborhood: "centro",
+    publishedAt: "2026-08-19T12:00:00Z",
+    votes: 22,
+    body: `El **Recreativo de Huelva** apura los últimos días del mercado de fichajes hasta el 1 de septiembre. Luci Martín, técnico del Decano, busca reforzar la plantilla de cara al objetivo del ascenso a Primera Federación.
+
+La liga arranca el primer fin de semana de septiembre. El Recre afronta la temporada con una plantilla que apunta a pelear arriba, pero el entrenador quiere cerrar alguna incorporación más antes del cierre del mercado.
+
+**Fuente:** Huelva Red, 19 agosto 2026.`,
+  },
+  {
+    slug: "punta-zona-azul-septiembre",
+    title: "En Punta la zona azul sigue hasta mediados de septiembre",
+    dek: "Julio y agosto: azul y naranja de 10:30–13:30 y 18:00–23:00. aparcarpuntaumbria.com",
+    category: "news",
+    readMinutes: 2,
+    featured: false,
+    source: "editorial",
+    neighborhood: "punta-umbria",
+    publishedAt: "2026-08-19T09:00:00Z",
+    votes: 15,
+    body: `La zona azul y naranja de **Punta Umbría** se mantiene hasta mediados de septiembre. Durante julio y agosto, el horario es de 10:30 a 13:30 y de 18:00 a 23:00.
+
+El sistema de pago y las zonas están disponibles en aparcarpuntaumbria.com.
+
+**Fuente:** aparcarpuntaumbria.com`,
+  },
+  {
+    slug: "bota-no-playa-canina-canaleta",
+    title: "La Bota ya no es playa canina. La urbana es La Canaleta",
+    dek: "La Bota dejó el estatus canino en 2024 (Ayto nota 15 jul 2024: solo autorizada es La Canaleta, junto al espigón). Plan de Playas 2026 (19 jun) lo mantiene. El Correo 4 ago 2026 recircula la nota de 2024.",
+    category: "news",
+    readMinutes: 3,
+    featured: false,
+    source: "editorial",
+    neighborhood: "punta-umbria",
+    publishedAt: "2026-08-04T10:00:00Z",
+    votes: 11,
+    body: `La playa de **La Bota** dejó el estatus de playa canina en Punta Umbría en 2024. El Ayuntamiento especificó el 15 de julio de 2024 que la única playa canina autorizada en la zona urbana es **La Canaleta**, junto al espigón.
+
+El **Plan de Playas 2026**, presentado el 19 de junio, mantiene esta designación. El Correo del 4 de agosto de 2026 recirculó la nota de 2024; no se trata de un cierre nuevo en 2026.
+
+## La Canaleta
+
+15.000 m², acceso por el espigón. Correa obligatoria. Prohibido el baño de personas en ese tramo.
+
+## Mazagón 2026
+
+Las playas caninas autorizadas con escrito son: **Palos - Vigía** (del primer al segundo espigón) y **bajada del Arroyo Julianejo** (600 m hacia Matalascañas).
+
+**Fuentes:** Ayto Punta Umbría 15/07/2024; El Correo 19/06/2026 (Plan Playas); Europa Press 09/07/2026 (Palos).`,
+  },
+  {
     slug: "48-horas-en-huelva",
     title: "48 horas en Huelva (al ritmo de la marea)",
     dek: "Dos días de ría, gamba blanca, Colón y una playa elegida con criterio. El ritmo de Huelva, no el del autobús.",
@@ -148,51 +245,6 @@ El choco es sepia. En Punta se fríe y se pone en el centro como si fuera el mot
 **Coquinas** a la marinera, en su temporada. **Choquitos**, **acedías**, **urta**. **Mojama** como tapa noble. Y el **jamón de Jabugo** cuando subas a la sierra: dos geografías, dos mesas. La gamba por la mañana; el jamón, con la encina.`,
   },
   {
-    slug: "barrios-explicados",
-    title: "Barrios, explicados (y pueblos que importan)",
-    dek: "Centro, Conquero, Reina Victoria, Punta, Mazagón, Isla Cristina. Elige tu Huelva.",
-    category: "guides",
-    readMinutes: 10,
-    featured: true,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-05T08:00:00Z",
-    votes: 33,
-    body: `## En la capital
-
-**Centro.** Para vivir la ciudad a pie. Terrazas, trámites, el primer tapeo. Ruido de verano.
-
-**El Conquero.** La loma. Vistas, pinos, Parque Moret. Dormir mejor, cenar abajo.
-
-**Reina Victoria.** El barrio inglés de Riotinto. Se visita, no se «elige para alojarse» — no hay hoteles dentro, y mejor.
-
-**Pescadería.** La Huelva de la ría y el muelle. Viento, atardecer, menos postal.
-
-**Isla Chica.** La más vivida, la cotidiana. Desayuna como la ciudad: café, tostada, el día por delante.
-
-## En la costa
-
-**Punta Umbría** es la playa de los onubenses. Choco, gamba, paseo, agosto imposible sin reserva.
-
-**Mazagón** es pino y duna. Más quieta. El Parador existe por una razón.
-
-**Matalascañas** es la orilla de Doñana: playa servida y, al otro lado, el parque. Fuera de temporada, una calma rara y preciosa.
-
-**Isla Cristina** es flota pesquera. Si vienes por la gamba, ven aquí.
-
-**Ayamonte** es frontera. El Guadiana, el ferry, Portugal a cinco minutos.
-
-## Tierra adentro
-
-**Moguer y Palos** son Colón y Juan Ramón y fresas. Una mañana.
-
-**Aracena y Jabugo** son la otra provincia: jamón, castaño, frío de verdad en enero.
-
-**Riotinto** es el paisaje que parece de Marte y fue de Gales. El ferrocarril turístico, si te gusta el hierro.
-
-No intentes hacer costa y sierra el mismo día. Huelva es ancha. Trátala como tal.`,
-  },
-  {
     slug: "traductor-bar-huelva",
     title: "Traductor del bar onubense",
     dek: "Café, caña y pescado: cómo pedir en Huelva con la naturalidad de la casa.",
@@ -261,252 +313,6 @@ Juan Ramón Jiménez no es un apéndice. La **casa-museo** y Platero se visitan 
 ## El ritmo
 
 Reserva medio día, o el día entero. Un eje —Rábida y Palos, o Moguer— bien andado vale más que tres sellos. Cierra, si puedes, en el **Muelle del Tinto**, cuando el hierro se enciende.`,
-  },
-  {
-    slug: "playas-costa-de-la-luz",
-    title: "Playas de la Costa de la Luz: cuál elegir",
-    dek: "Punta, Portil, Mazagón, Matalascañas, Isla Cristina, Canela. Atlántico fino: agua viva, viento noble, luz larga.",
-    category: "guides",
-    readMinutes: 8,
-    featured: false,
-    source: "editorial",
-    neighborhood: "punta-umbria",
-    publishedAt: "2026-08-15T08:00:00Z",
-    votes: 41,
-    body: `El Atlántico de Huelva es otra costa: agua viva, viento que ordena el día, toallas con espacio. Tres mil horas de sol. La Costa de la Luz no es un eslogan; es el clima.
-
-## Punta Umbría
-
-La playa de los onubenses. Paseo, choco, familia, un verano que empieza en mayo. La flecha hacia El Portil es el paseo que hay que hacerse.
-
-## El Portil
-
-Más bajo, más duna, la laguna detrás. Ideal si buscas calma sin cambiar de comarca.
-
-## Mazagón
-
-Pinos hasta la arena. Playa ancha, de las que respiran. Elige este si las noches las quieres quietas.
-
-## Matalascañas
-
-Larga, servida, con Doñana a la espalda. Duerme aquí si el parque es el plan; báñate y entra al Acebuche al amanecer.
-
-## Isla Cristina / Punta del Moral / Isla Canela
-
-Gamba, marisma, orillas distintas. Isla Cristina gana en carácter marinero. Canela, en arena ancha y confort.
-
-## Lo que conviene saber
-
-La bandera se respeta: hay corriente de verdad. El poniente tumba sombrillas y también limpia el cielo. El atardecer se mira al oeste. Aquí el sol se pone en el mar.`,
-  },
-  {
-    slug: "donana-sin-calor",
-    title: "Doñana, a su hora",
-    dek: "Cuándo ir, por qué puerta entrar y cómo visitar el parque con el respeto que pide.",
-    category: "guides",
-    readMinutes: 8,
-    featured: false,
-    source: "editorial",
-    neighborhood: "matalascanas",
-    publishedAt: "2026-08-10T08:00:00Z",
-    votes: 19,
-    body: `Doñana pide hora. Al amanecer, en mayo, octubre o un invierno claro, el parque se abre: aves, luz baja, marisma. El mediodía de agosto es para la playa; el parque, para el fresco.
-
-## Puertas
-
-**El Acebuche** (Matalascañas) es la entrada clásica, con centro de visitantes y una introducción seria al territorio. **El Rocío** es el pueblo-santuario: arena en las calles, hermandades, marisma a un paso. La aldea se entiende mejor un laborable que una mañana de julio entre prisas.
-
-## Cómo entrar
-
-Visitas concertadas, 4x4, pasarelas públicas. Reserva. Agua, sombrero, prismáticos. El lince es un privilegio, no una cita. Los ciervos, a veces, al atardecer.
-
-## El Rocío
-
-Si no vas a la romería, ve un día sereno. La ermita, la marisma, un café. La romería es un país aparte —fe, polvo, hermandad— y merece su propio viaje.
-
-## Combinar
-
-Duerme en Mazagón o Matalascañas. Parque por la mañana, playa por la tarde. Costa, marisma y sierra son tres Huelvas: dales tres tiempos.`,
-  },
-  {
-    slug: "vino-condado-huelva",
-    title: "Condado de Huelva: el blanco de esta mesa",
-    dek: "Blancos atlánticos, vinos de naranja y bodegas de pueblo. Para beberse con la gamba, no para coleccionar.",
-    category: "eat",
-    readMinutes: 7,
-    featured: false,
-    source: "editorial",
-    neighborhood: "moguer-palos",
-    publishedAt: "2026-08-21T08:00:00Z",
-    votes: 16,
-    body: `El Condado es el vino de esta tierra llana: **blancos jóvenes** que sostienen una gamba con más gracia que muchos nombres de carta. Hay vinos históricos de naranja y bodegas en Bollullos, Rociana, Moguer, Palos.
-
-Pide el blanco de la casa en un sitio que quiera a su provincia. Frío, limpio, de aquí. Una visita a bodega se hace en una mañana, entre fresas y moscatel.
-
-Gamba y blanco. Jamón y un trago más serio, ya en la sierra. Dos geografías, dos copas. Huelva bebe lo que cultiva.`,
-  },
-  {
-    slug: "colombinas-2026",
-    title: "Colombinas 2026: cómo entrar y cómo salir",
-    dek: "La feria de Huelva: casetas, Recinto Ferial y un centro que se enciende. Cómo vivirla bien.",
-    category: "events",
-    readMinutes: 6,
-    featured: false,
-    source: "editorial",
-    neighborhood: "centro",
-    publishedAt: "2026-07-22T08:00:00Z",
-    votes: 22,
-    body: `Las **Colombinas** cierran julio y abren agosto. El Recinto Ferial es el de siempre: casetas, rebujito, familia, una feria de capital que se quiere mucho. El centro se llena de veladores. Es la fiesta de la casa.
-
-## Cómo ir
-
-A pie o en bus lanzadera. Reserva mesa si quieres gamba esa semana: la ciudad está de gala.
-
-## Qué vestir
-
-Traje de flamenca, camisa, lo que apetezca. El calor es el único protocolo.
-
-## El ritmo
-
-Colombinas es un tiempo. Doñana, otro. Elige y honra el que toque.`,
-  },
-  {
-    slug: "huelva-reabre-playas-poniente",
-    title: "Las playas del poniente, a pleno agosto",
-    dek: "Punta Umbría, El Portil y la flecha siguen en bandera verde la mayor parte del día. El viento, como siempre, manda más que el ayuntamiento.",
-    category: "news",
-    readMinutes: 4,
-    featured: false,
-    source: "editorial",
-    neighborhood: "punta-umbria",
-    publishedAt: "2026-08-22T07:30:00Z",
-    votes: 14,
-    body: `Agosto en la costa onubense es una negociación con el poniente. Este fin de semana las banderas en **Punta Umbría** y **El Portil** han salido verdes por la mañana y amarillas cuando ha picao el viento, que es el patrón de siempre.
-
-No hay cierre generalizado. Hay sentido común: si el chiringuito recoge sombrillas, tú también. El agua sigue fría para quien viene del Mediterráneo y perfecta para quien se ha criado aquí.
-
-Si buscas menos gente, **Mazagón** hacia el este, andando, sigue siendo la válvula. Lleva agua. No hay kiosco en la duna.`,
-  },
-  {
-    slug: "riotinto-tren-temporada",
-    title: "El tren de Riotinto mantiene la temporada hasta octubre",
-    dek: "El ferrocarril turístico de las minas alarga horarios de sábado. El paisaje rojo no necesita filtro. El casco, sí necesita agua.",
-    category: "news",
-    readMinutes: 4,
-    featured: false,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-20T09:00:00Z",
-    votes: 11,
-    body: `El **ferrocarril turístico minero** de Riotinto sigue con plazas de cara a septiembre y octubre, los dos mejores meses para subir a la cuenca: menos calor, misma tierra colorada.
-
-El viaje no es un documental: es un tren viejo en un paisaje que parece de otro planeta y fue de una compañía británica. Combínalo con el museo minero. No lo combies con playa el mismo día.
-
-Agua, sombrero, calzado cerrado. El rojo mancha.`,
-  },
-  {
-    slug: "choco-en-la-ribera",
-    title: "El choco de las cinco en la Ribera",
-    dek: "Un vecino de Punta avisa: entre semana, a media tarde, el frito sale mejor que el sábado a las tres.",
-    category: "community",
-    readMinutes: 3,
-    featured: false,
-    source: "community",
-    neighborhood: "punta-umbria",
-    publishedAt: "2026-08-19T16:20:00Z",
-    votes: 27,
-    body: `Va en serio: el choco de **Punta Umbría** el sábado a las 15:30 es una cola y un aceite cansado. El miércoles a las 17:30, con el paseo a media máquina, es otra cosa.
-
-Pide ración para compartir. Si está en su punto, pide otra. El choco de Punta, bien frito, es motivo suficiente.
-
-Firmado: alguien que vive aquí y guarda las horas buenas para quien las merece.`,
-  },
-  {
-    slug: "ocaso-en-huelva",
-    title: "Dónde se pone el sol",
-    dek: "Huelva mira al oeste de verdad. Seis orillas para verlo caer: hierro, flecha, pino, frontera.",
-    category: "guides",
-    readMinutes: 6,
-    featured: true,
-    source: "editorial",
-    neighborhood: "pescaderia",
-    publishedAt: "2026-08-22T18:00:00Z",
-    votes: 18,
-    body: `El Atlántico de Huelva no es un fondo de pantalla: el sol se pone en el mar, y hay que elegir desde dónde.
-
-## El Muelle de Riotinto
-
-Veinte minutos desde las Monjas. Hierro, el Tinto debajo, el cielo de cobre. Es el atardecer de la capital. En invierno, a las seis ya es hora; en agosto, espera a las nueve.
-
-## El Conquero
-
-Altura y pino. La ría se entiende de un vistazo. Mejor de octubre a mayo, cuando el aire está limpio.
-
-## La flecha del Portil
-
-Anda desde Punta cuando caiga el viento. Arena, marisma, agua a ambos lados. El poniente a veces ayuda; a veces tumba la sombrilla y te deja el cielo entero.
-
-## Mazagón
-
-Pinos hasta la duna. Camina hacia el este hasta que se acaben las toallas. Las noches de septiembre son las más largas de luz.
-
-## Ayamonte
-
-El ferry sobre el Guadiana. Cinco minutos y Portugal. Una luz ancha, de frontera.
-
-## Isla Cristina
-
-No es un mirador: es una flota que vuelve. El cobre de los barcos, la gamba que entra, el sol en el puerto.
-
-Elige un solo ocaso por tarde. Huelva da para una semana de ellos.`,
-  },
-  {
-    slug: "riotinto-la-cuenca",
-    title: "La cuenca roja",
-    dek: "El río, el tren, Bella Vista. Un paisaje que parece de otro planeta y es de esta provincia.",
-    category: "guides",
-    readMinutes: 8,
-    featured: true,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-22T10:00:00Z",
-    votes: 15,
-    body: `Riotinto no es un desvío: es una de las geografías más extrañas de Europa. El río baja rojo por el hierro y por una vida microbiana que ha interesado hasta a la NASA. El paisaje es de aquí.
-
-## El orden del día
-
-Empieza en el **Museo Minero**. La compañía británica, el ferrocarril, la cuenca explicada. Luego el **tren turístico**: reserva en temporada, agua, sombrero, calzado cerrado. El rojo mancha.
-
-**Peña del Hierro** es el corte en la tierra. **Bella Vista**, el barrio inglés: porches, césped, el mismo linaje que el Reina Victoria de la capital.
-
-Cierra en el **cauce**. No es un vino. Es geología viva.
-
-## Cómo ir
-
-Coche. Un día entero. No lo combines con baño: son dos Huelvas, y las dos merecen su luz.
-
-Octubre y primavera son los meses dulces. En agosto, madruga.`,
-  },
-  {
-    slug: "almanaque-onubense",
-    title: "El año onubense",
-    dek: "Doce meses, una provincia: fresa, Colombinas, la Cinta, gurumelos, el primer baño.",
-    category: "guides",
-    readMinutes: 7,
-    featured: false,
-    source: "editorial",
-    neighborhood: null,
-    publishedAt: "2026-08-22T11:00:00Z",
-    votes: 12,
-    body: `Huelva no es un verano. Es un año.
-
-**Enero** es sierra y jamón. **Febrero**, el fresón y el Carnaval de Isla Cristina. **Marzo**, Semana Santa y el equinoccio sobre la ría. **Abril** llena Doñana de aves. **Mayo** junta fresa y gamba, y a veces El Rocío.
-
-**Junio** enciende Punta. **Julio**, las Colombinas. **Agosto**, el poniente y la orilla ancha. **Septiembre** es el mes feliz: Fiestas de la Cinta, agua todavía, toalla ya no tanto.
-
-**Octubre** abre el norte: castaña, cuenca, setas. **Noviembre**, el Muelle con abrigo. **Diciembre**, las Monjas de fiesta y, si quieres frío limpio, Aracena.
-
-Elige el mes. La provincia cambia de plato y de luz, y las dos cosas se comen.`,
   },
 ];
 
@@ -765,68 +571,44 @@ export const SEED_PLACES: SeedPlace[] = [
 
 export const SEED_EVENTS: SeedEvent[] = [
   {
-    title: "Veladas de septiembre en el Muelle",
-    dek: "Música al aire libre cuando el hierro todavía está caliente y el Tinto ya no ciega.",
-    startsOn: "2026-09-05",
-    endsOn: "2026-09-07",
-    venue: "Muelle de Riotinto",
-    neighborhood: "pescaderia",
-    lat: 37.2618,
-    lng: -6.9415,
-    source: "editorial",
-    votes: 9,
-  },
-  {
-    title: "Fiestas de la Cinta",
-    dek: "La virgen de Huelva, romería chica y el santuario lleno. Septiembre onubense de verdad.",
-    startsOn: "2026-09-08",
-    endsOn: "2026-09-08",
-    venue: "Santuario de la Cinta",
+    title: "Bajada de la Cinta",
+    dek: "Misa del Alba 6:00, Santuario del Conquero; salida ~6:30; Catedral de la Merced ~11:30. Buses Zafra desde 5:30. Hermandad / Huelva Ya 19 ago.",
+    startsOn: "2026-08-23",
+    endsOn: null,
+    venue: "Santuario de la Cinta → Catedral",
     neighborhood: "conquero",
     lat: 37.2732,
     lng: -6.9381,
     source: "editorial",
-    votes: 18,
+    votes: 42,
   },
   {
-    title: "Feria de la gamba en Punta Umbría",
-    dek: "El santo extraoficial de la costa. Plancha, cola y poco romanticismo: se viene a comer.",
-    startsOn: "2026-09-12",
-    endsOn: "2026-09-14",
-    venue: "Paseo de la Ribera",
+    title: "XXIII Travesía Solidaria Fundación Vicente Ferrer",
+    dek: "Playa PuntaMar (junto al Camarón): 3.000 m 10:00; 1.500 m 11:30; 750 m popular. Huelva Buenas Noticias 18 ago.",
+    startsOn: "2026-08-23",
+    endsOn: null,
+    venue: "Playa PuntaMar, Punta Umbría",
     neighborhood: "punta-umbria",
     lat: 37.181,
     lng: -6.966,
     source: "editorial",
-    votes: 21,
+    votes: 18,
   },
   {
-    title: "Jornadas del jamón en la sierra",
-    dek: "Jabugo y alrededores cuando el turista de playa ya se ha ido. Mejor momento para un secadero.",
-    startsOn: "2026-10-03",
-    endsOn: "2026-10-05",
-    venue: "Jabugo / Aracena",
-    neighborhood: "aracena",
-    lat: 37.77,
-    lng: -6.729,
-    source: "editorial",
-    votes: 12,
-  },
-  {
-    title: "Mercadillo de atardecer en El Conquero",
-    dek: "Propuesta vecinal: bancos, vinilo y vista a la ría. Si cuaja, se queda.",
-    startsOn: "2026-08-29",
+    title: "Presentación cartel Cinta 2026 y campanilleros",
+    dek: "Catedral de la Merced, 21:30, tras la misa. Cartel de David Morales Benito. Huelva Hoy / Hermandad.",
+    startsOn: "2026-08-24",
     endsOn: null,
-    venue: "Parque Moret",
-    neighborhood: "conquero",
-    lat: 37.2705,
-    lng: -6.955,
-    source: "community",
-    votes: 7,
+    venue: "Catedral de la Merced",
+    neighborhood: "centro",
+    lat: 37.2575,
+    lng: -6.9528,
+    source: "editorial",
+    votes: 14,
   },
   {
     title: "Feria del Jamón y el Marisco de Ayamonte",
-    dek: "Plaza de España. Gamba blanca y jamón ibérico, 26 al 28 de agosto, a partir de las 20:00. Lo que se habla esta semana.",
+    dek: "Plaza de España, desde las 20:00. Jamón, gamba blanca y producto onubense. Huelva Información 22 ago 2026.",
     startsOn: "2026-08-26",
     endsOn: "2026-08-28",
     venue: "Plaza de España, Ayamonte",
@@ -835,5 +617,53 @@ export const SEED_EVENTS: SeedEvent[] = [
     lng: -7.403,
     source: "editorial",
     votes: 28,
+  },
+  {
+    title: "Novena de la Cinta en la Merced",
+    dek: "Arranca el viernes 28 y va hasta el 5 de septiembre. Diario de Huelva / Hermandad.",
+    startsOn: "2026-08-28",
+    endsOn: "2026-09-05",
+    venue: "Catedral de la Merced",
+    neighborhood: "centro",
+    lat: 37.2575,
+    lng: -6.9528,
+    source: "editorial",
+    votes: 22,
+  },
+  {
+    title: "Tren de la Luna",
+    dek: "Parque Minero de Riotinto, viernes 28 y sábado 29. Reserva solo en la web del parque. parquemineroderiotinto.es",
+    startsOn: "2026-08-28",
+    endsOn: "2026-08-29",
+    venue: "Parque Minero de Riotinto",
+    neighborhood: null,
+    lat: 37.696,
+    lng: -6.594,
+    source: "editorial",
+    votes: 16,
+  },
+  {
+    title: "Estrellas y eclipse parcial de Luna en Cuesta Maneli",
+    dek: "Viernes 28 de agosto. Platalea organiza noche de observación. platalea.com",
+    startsOn: "2026-08-28",
+    endsOn: null,
+    venue: "Cuesta Maneli (Platalea)",
+    neighborhood: "mazagon",
+    lat: 37.137,
+    lng: -6.83,
+    source: "editorial",
+    votes: 19,
+  },
+  {
+    title: "Día grande de la Cinta",
+    dek: "9:00 misa votiva Santuario; 12:00 Función Principal Merced; 19:00 subida popular Catedral–Santuario. Huelva Buenas Noticias 29 jul; Diario de Huelva 15 ago.",
+    startsOn: "2026-09-08",
+    endsOn: null,
+    venue: "Santuario de la Cinta / Catedral",
+    neighborhood: "conquero",
+    lat: 37.2732,
+    lng: -6.9381,
+    source: "editorial",
+    votes: 35,
   },
 ];

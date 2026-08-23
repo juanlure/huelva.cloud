@@ -8,10 +8,11 @@ import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
-  { to: "/guides", label: "Guías" },
+  { to: "/", label: "Hoy" },
+  { to: "/agenda", label: "Agenda" },
   { to: "/mesa", label: "Mesa" },
-  { to: "/historia", label: "Onuba" },
-  { to: "/pulse", label: "Ahora" },
+  { to: "/pulse", label: "Pulso" },
+  { to: "/guides", label: "Guías" },
 ] as const;
 
 export function SiteHeader() {
