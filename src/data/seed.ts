@@ -849,10 +849,10 @@ export const SEED_EVENTS: SeedEvent[] = [
 
 export const SEED_COLLAB_SPOTS: SeedCollabSpot[] = [
   {
-    name: "Taberna El Hierro",
-    blurb: "Gamba a la plancha, choco de Punta y Condado frío. Mesa de toda la vida, sin altavoz ni marketing.",
-    photoUrl: "/media/gamba.jpg",
-    linkUrl: "https://huelva.cloud",
+    name: "Casa Cinta",
+    blurb: "Barrio Isidro. La de siempre está al fondo, junto a la ventana que da al caño. Pedir la gamba a la plancha cuando la hay (preguntad; si no hay, chocos) y un Condado joven. Servilleta de papel, cuenta corta, nadie os saca la foto del plato.",
+    photoUrl: null,
+    linkUrl: null,
     linkType: "web",
     activeUntil: "2099-12-31",
   },

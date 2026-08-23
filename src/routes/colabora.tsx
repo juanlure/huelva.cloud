@@ -46,22 +46,33 @@ function ColaboraPage() {
       </section>
 
       <section className="mt-12 rounded-xl bg-iron p-8 text-iron-fg">
+        <h2 className="font-display text-2xl tracking-tight">Qué es esto</h2>
+        <p className="mt-4 leading-relaxed text-iron-fg/90">
+          Si tu mesa o tu bodega cuenta algo que un onubense reconocería, la ficha la escribimos
+          nosotros y se ve Colabora.
+        </p>
+        <p className="mt-3 leading-relaxed text-iron-fg/90">
+          Si no encaja, no se publica. No hay anuncio disfrazado.
+        </p>
+      </section>
+
+      <section className="mt-8 rounded-xl bg-paper p-8">
         <h2 className="font-display text-2xl tracking-tight">Cómo se hace</h2>
-        <ol className="mt-4 space-y-3 text-iron-fg/80">
+        <ol className="mt-4 space-y-3 text-muted">
           <li>
-            <strong className="text-iron-fg">1.</strong> Escríbenos: el nombre del local, qué
+            <strong className="text-ink">1.</strong> Escríbenos: el nombre del local, qué
             servís, dónde estáis, un teléfono o email, y si es mesa (14 días) o bodega (21 días).
           </li>
           <li>
-            <strong className="text-iron-fg">2.</strong> Te mandamos un borrador del texto para
+            <strong className="text-ink">2.</strong> Te mandamos un borrador del texto para
             que revises. Si hay que cambiar algo, lo cambiamos.
           </li>
           <li>
-            <strong className="text-iron-fg">3.</strong> Pasamos el pago: transferencia o Bizum.
+            <strong className="text-ink">3.</strong> Escribe y te pasamos el pago.
             Te enviamos factura.
           </li>
           <li>
-            <strong className="text-iron-fg">4.</strong> Activamos la mesa. Dos semanas de
+            <strong className="text-ink">4.</strong> Activamos la mesa. Dos semanas de
             presencia en las guías más consultadas.
           </li>
         </ol>
@@ -74,7 +85,8 @@ function ColaboraPage() {
           <a href="mailto:colabora@huelva.cloud" className="text-tide hover:underline">
             colabora@huelva.cloud
           </a>{" "}
-          con el nombre del local, qué queréis destacar, y si preferís mesa o bodega.
+          con el nombre del local, qué queréis destacar, y si preferís mesa o bodega. Escribe y te
+          pasamos el pago.
         </p>
         <p className="text-sm text-faint">
           Respondemos en 24 horas. Sin gestores, sin agencia. De la redacción directamente.
