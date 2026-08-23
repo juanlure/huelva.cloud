@@ -114,7 +114,7 @@ El sistema de pago y las zonas están disponibles en aparcarpuntaumbria.com.
   {
     slug: "bota-no-playa-canina-canaleta",
     title: "La Bota ya no es playa canina. La urbana es La Canaleta",
-    dek: "El alcalde lo cerró a principios de agosto. En Mazagón: Vigía y La Estrella. El Correo Web, 4 ago 2026.",
+    dek: "La Bota dejó el estatus canino en 2024 (Ayto nota 15 jul 2024: solo autorizada es La Canaleta, junto al espigón). Plan de Playas 2026 (19 jun) lo mantiene. El Correo 4 ago 2026 recircula la nota de 2024.",
     category: "news",
     readMinutes: 3,
     featured: false,
@@ -122,11 +122,19 @@ El sistema de pago y las zonas están disponibles en aparcarpuntaumbria.com.
     neighborhood: "punta-umbria",
     publishedAt: "2026-08-04T10:00:00Z",
     votes: 11,
-    body: `La playa de **La Bota** ya no es playa canina en Punta Umbría. El alcalde cerró el espacio a principios de agosto. La playa canina urbana ahora es **La Canaleta**.
+    body: `La playa de **La Bota** dejó el estatus de playa canina en Punta Umbría en 2024. El Ayuntamiento especificó el 15 de julio de 2024 que la única playa canina autorizada en la zona urbana es **La Canaleta**, junto al espigón.
 
-En **Mazagón**, las playas caninas habilitadas son **Vigía** y **La Estrella**.
+El **Plan de Playas 2026**, presentado el 19 de junio, mantiene esta designación. El Correo del 4 de agosto de 2026 recirculó la nota de 2024; no se trata de un cierre nuevo en 2026.
 
-**Fuente:** El Correo Web, 4 agosto 2026.`,
+## La Canaleta
+
+15.000 m², acceso por el espigón. Correa obligatoria. Prohibido el baño de personas en ese tramo.
+
+## Mazagón 2026
+
+Las playas caninas autorizadas con escrito son: **Palos - Vigía** (del primer al segundo espigón) y **bajada del Arroyo Julianejo** (600 m hacia Matalascañas).
+
+**Fuentes:** Ayto Punta Umbría 15/07/2024; El Correo 19/06/2026 (Plan Playas); Europa Press 09/07/2026 (Palos).`,
   },
   {
     slug: "48-horas-en-huelva",
