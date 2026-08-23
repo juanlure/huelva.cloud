@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getSql } from "@/lib/db";
+import { getSql, dbSource } from "@/lib/db";
 import { isoFromUnknown, numFromUnknown } from "@/lib/format";
 import { slugify } from "@/lib/utils";
 import { AGENTS, AUTHOR_BY_SLUG, writerForCategory } from "@/data/agents";
@@ -29,6 +29,7 @@ export type NewsroomStatus = {
   logs: OpsEntry[];
   backlogOpen: number;
   agents: { name: string; title: string; beat: string; role: string }[];
+  dbSource: "neon" | "pglite";
 };
 
 const QUOTA = 3;
@@ -322,6 +323,7 @@ export const getNewsroomStatus = createServerFn({ method: "GET" }).handler(async
       beat: a.beat,
       role: a.role,
     })),
+    dbSource,
   } satisfies NewsroomStatus;
 });
 
@@ -367,7 +369,7 @@ export const runEditorialCycle = createServerFn({ method: "POST" })
     neighborhood: string | null;
   }>`select id, topic, angle, category, neighborhood from idea_backlog where status = 'open' order by id asc`;
 
-  let idea =
+  const idea =
     (tooMuch
       ? openIdeas.find((i) => i.category !== cats[0] && !tooSimilar(i.topic, recentTitles))
       : openIdeas.find((i) => !tooSimilar(i.topic, recentTitles))) ?? undefined;

@@ -19,7 +19,6 @@ const STATIC = [
   "/sobre",
   "/redaccion",
   "/aporta",
-  "/test",
   "/ai-disclosure",
   "/legal",
   "/privacy",
