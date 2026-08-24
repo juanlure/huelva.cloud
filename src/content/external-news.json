@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-23T07:08:14.239Z",
+  "lastUpdated": "2026-08-24T07:17:27.168Z",
   "count": 15,
   "news": [
+    {
+      "title": "Quique Bolsitas llama a los onubenses a limpiar este miércoles las Marismas del Tinto",
+      "excerpt": "El activista medioambiental convoca a los voluntarios a las 09.30 para retirar residuos de este espacio protegido de la Red Natura 2000 Quique Bolsitas denuncia el abandono de plásticos de cultivo en ...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Quique Bolsitas llama a los onubenses a limpiar este miércoles las Marismas del Tinto</h1>\n<p class=\"news-deck\">Ahora, el foco se traslada hasta las Marismas del Tinto, donde este miércoles los voluntarios volverán a coger bolsas y guantes con el objetivo de retirar los residuos acumulados y contribuir a la conservación de este espacio protegido.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">En esta ocasión, ha convocado una jornada de limpieza en las Marismas del Tinto para este miércoles 26 de agosto.</p>\n<p class=\"\">Durante los últimos meses, Quique Bolsitas ha participado en diferentes actuaciones en espacios naturales de la provincia, entre ellas varias jornadas en el entorno de Doñana.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/huelva/quique-bolsitas-plogging-basuraleza-espacio-natural-basura-ecoligismo-reciclaje-marismas-del-tinto-palos-de-la-frontera-huelva_0_2007771207.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvainformacion.es/huelva/quique-bolsitas-plogging-basuraleza-espacio-natural-basura-ecoligismo-reciclaje-marismas-del-tinto-palos-de-la-frontera-huelva_0_2007771207.html",
+      "publishedAt": "Sun, 23 Aug 2026 10:36:25 +0200",
+      "source": "Huelva Información",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Zenobia Camprubí: la mujer que cambió la vida de Juan Ramón Jiménez y rompió las barreras de su tiempo",
       "excerpt": "Empresaria, traductora, escritora y defensora de la educación y la igualdad, su figura fue mucho más que la de la esposa del Premio Nobel. Su historia está unida para siempre a Moguer y a Huelva. &nbs...",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/elrocio/almonte-prepara-sabado-apertura-ano-jubilar-rocio-chico-venida-virgen_0_2007716176.html",
       "publishedAt": "Fri, 14 Aug 2026 18:20:45 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Fuerte accidente en Huelva capital: aparece un vehículo volcado en la Calle Argonautas",
-      "excerpt": "Hasta el lugar se desplazaron dos vehículos de bomberos: un Vehículo Bomba Urbana Ligera (BUL) y un Furgón de Salvamentos Varios (FSV)",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Durante la madrugada del sábado 15 de agosto se recibió un aviso por el vuelco de un vehículo en la calle Argonautas.</h1>\n<p class=\"news-deck\">A la llegada, los trabajos se centraron en proteger y asegurar la zona de intervención y en realizar el volteo del vehículo de forma segura.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Durante la madrugada del sábado 15 de agosto se recibió un aviso por el vuelco de un vehículo en la calle Argonautas.</p>\n<p class=\"\">Según afirman, no fue necesario realizar ningún tipo de labores de descarcelación, ya que no había personas en el interior del vehículo.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/sucesos/aparatoso-accidente/20260815160215398963.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvahoy.com/articulo/sucesos/aparatoso-accidente/20260815160215398963.html",
-      "publishedAt": "Sat, 15 Aug 2026 16:02:15 +0200",
-      "source": "Huelva Hoy",
       "category": "Noticias",
       "image": null,
       "external": false,
