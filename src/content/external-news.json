@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-24T07:17:27.168Z",
+  "lastUpdated": "2026-08-24T07:23:16.375Z",
   "count": 15,
   "news": [
+    {
+      "title": "Una semana después, no hay detenidos por el crimen de Isla Cristina",
+      "excerpt": "Noticia destacada de Canal Sur Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Una semana después, no hay detenidos por el crimen de Isla Cristina</h1>\n<p class=\"news-deck\">Una semana después, se sigue buscando a los autores del crimen, que la Guardia Civil sigue investigando como un ajuste de cuentas por rencillas entre familias rivales vinculadas al narcotráfico, aunque sin descartar ninguna hipótesis.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Una semana después, no hay detenidos por el crimen de Isla Cristina</p>\n<p class=\"\">La Guardia Civil y la Policía Nacional continúan buscando a los autores del tiroteo que acabó con la vida de tres personas en Isla Cristina.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/semana-despues-no-hay-detenidos_1_1430974.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.canalsur.es/noticias/andalucia/huelva/semana-despues-no-hay-detenidos_1_1430974.html",
+      "publishedAt": "2026-08-24T07:23:10.349Z",
+      "source": "Canal Sur Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Quique Bolsitas llama a los onubenses a limpiar este miércoles las Marismas del Tinto",
       "excerpt": "El activista medioambiental convoca a los voluntarios a las 09.30 para retirar residuos de este espacio protegido de la Red Natura 2000 Quique Bolsitas denuncia el abandono de plásticos de cultivo en ...",
@@ -165,18 +177,6 @@
       "url": "https://www.andaluciainformacion.es/articulo/huelva/andalucia-huelva-rocio-inicia-ano-jubilar-visperas-venida-virgen-almonte/202608151956073455584.html",
       "publishedAt": "2026-08-16T18:01:54.778Z",
       "source": "Viva Huelva",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Almonte se prepara este sábado para la apertura del Año Jubilar, el Rocío Chico y la Venida de la Virgen",
-      "excerpt": "Una eucaristía presidida por el obispo de Huelva, Santiago Gómez Sierra, abre el que es el tercer año jubilar que la Santa Sede concede a la devoción rociera El domingo comienzan los cultos del Rocío ...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Almonte se prepara este sábado para la apertura del Año Jubilar, el Rocío Chico y la Venida de la Virgen</h1>\n<p class=\"news-deck\">A partir del domingo comenzarán los cultos del Rocío Chico, la celebración con la que Almonte renueva cada mes de agosto el voto de acción de gracias realizado hace 213 años.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Este acontecimiento dará paso al Rocío Chico, que comenzará este domingo, 16 de agosto, y a la tradicional Venida de la Virgen a Almonte, prevista para el próximo miércoles, 19 de agosto.</p>\n<p class=\"\">Será el tercer Año Jubilar concedido por la Santa Sede a la devoción rociera y el primero otorgado expresamente con motivo de la Venida de la Virgen a Almonte.</p>\n<p class=\"news-opening\">Las eucaristías del triduo estarán presididas por el párroco de Almonte y rector del Santuario, Francisco M.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/elrocio/almonte-prepara-sabado-apertura-ano-jubilar-rocio-chico-venida-virgen_0_2007716176.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/elrocio/almonte-prepara-sabado-apertura-ano-jubilar-rocio-chico-venida-virgen_0_2007716176.html",
-      "publishedAt": "Fri, 14 Aug 2026 18:20:45 +0200",
-      "source": "Huelva Información",
       "category": "Noticias",
       "image": null,
       "external": false,
