@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-28T07:08:12.991Z",
+  "lastUpdated": "2026-08-28T07:17:22.402Z",
   "count": 15,
   "news": [
+    {
+      "title": "Ayamonte: Combaten un incendio declarado en la zona de Costa Esuri",
+      "excerpt": "El Infoca ha desplegado un dispositivo en la zona",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Hoy</p>\n<h1 class=\"news-title\">Ayamonte: Combaten un incendio declarado en la zona de Costa Esuri</h1>\n<p class=\"news-deck\">El Servicio de Extinción de Incendios Forestales, Plan Infoca, ha desplegado un dispositivo para luchar contra un incendio forestal declarado en la tarde de este jueves en la zona de Costa Esuri, en el término municipal de Ayamonte.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Ayamonte: Combaten un incendio declarado en la zona de Costa Esuri</p>\n<p class=\"\">Según ha indicado el Plan Infoca en su cuenta de redes sociales, el incendio, que se encuentra activo, ha sido declarado a las 18,15 horas y para extinguirlo trabajan por tierra y aire.</p>\n<p class=\"news-opening\">Según las primeras informaciones, afecta a una zona de pastizal y marismas.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Hoy • <a href=\"https://www.huelvahoy.com/articulo/sucesos/ayamonte-combaten-incendio-declarado-zona-costa-esuri/20260827193400400182.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.huelvahoy.com/articulo/sucesos/ayamonte-combaten-incendio-declarado-zona-costa-esuri/20260827193400400182.html",
+      "publishedAt": "Thu, 27 Aug 2026 19:34:00 +0200",
+      "source": "Huelva Hoy",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "urgente"
+    },
     {
       "title": "Siete espectáculos de teatro, música, danza y circo recorrerán Huelva en septiembre",
       "excerpt": "La Red Andaluza de Teatros Públicos llevará su programación a Lepe, La Palma del Condado, Valverde, Almonte, Aljaraque y Cortegana El OCIb lleva su programación cultural a Argentina de la mano de José...",
@@ -165,18 +177,6 @@
       "url": "https://huelvabuenasnoticias.com/2026/08/18/huelva-adjudica-la-nueva-plataforma-de-gestion-integral-de-la-policia-local/",
       "publishedAt": "Tue, 18 Aug 2026 09:53:36 +0000",
       "source": "Huelva Buenas Noticias",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Fuerte despliegue policial en Isla Cristina y el Torrejón tras el trágico tiroteo",
-      "excerpt": "Noticia destacada de Canal Sur Huelva.",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Qué se investiga en Isla Cristina tras el último caso</h1>\n<p class=\"news-deck\">El alcalde de Isla, Jenaro Orta, ha calificado lo ocurrido anoche en Isla Cristina , lo que el mismo se encontró al llegar a la Barriada del Rocio, como escena dantesca&quot; y difícil de olvidar , en una barriada de gente humilde y pacífica.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Fuerte despliegue policial en Isla Cristina y el Torrejón tras el trágico tiroteo</p>\n<p class=\"\">El Ayuntamiento de Isla Cristina y la Subdelegación del Gobierno en Huelva han hecho un llamamiento a la &quot;calma &quot;.</p>\n<p class=\"news-opening\">Es una de las hipótesis que baraja la investigación policial, ya que en la localidad isleña se habrían habrían refugiado familiares del autor de los disparos mortales de El Torrejón.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/fuerte-despliegue-policial-isla-cristina_1_1429586.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.canalsur.es/noticias/andalucia/huelva/fuerte-despliegue-policial-isla-cristina_1_1429586.html",
-      "publishedAt": "2026-08-18T07:15:02.000Z",
-      "source": "Canal Sur Huelva",
       "category": "Noticias",
       "image": null,
       "external": false,
