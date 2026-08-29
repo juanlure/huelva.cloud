@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-29T07:03:18.544Z",
+  "lastUpdated": "2026-08-29T07:08:26.800Z",
   "count": 15,
   "news": [
+    {
+      "title": "Aprobados dos convenios con Cáritas y Betania por 89.000€ para atender a personas sin hogar en la capital",
+      "excerpt": "La Junta de Gobierno Local del Ayuntamiento de Huelva ha aprobado este viernes dos convenios de colaboración con Cáritas Diocesanas de Huelva y la Asociación Nuevo Hogar Betania, con una aportación mu...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Red</p>\n<h1 class=\"news-title\">Aprobados dos convenios con Cáritas y Betania por 89.000€ para atender a personas sin hogar en la capital</h1>\n<p class=\"news-deck\">La actuación de Betania se basa en un modelo de atención centrado en la persona, desde la proximidad, la baja exigencia, la generación de vínculo y el acompañamiento profesional, en coordinación con la red pública y social existente.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El convenio con Cáritas Diocesanas de Huelva contempla una subvención municipal de 45.000 euros para el desarrollo del Proyecto de Acogida de Baja Exigencia para Personas sin Hogar.</p>\n<p class=\"\">Se presta una atención especialmente adaptada a personas que pernoctan en la vía pública o en espacios inadecuados y que, por diferentes circunstancias de vulnerabilidad, precisan una respuesta inmediata y flexible.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Red • <a href=\"https://huelvared.com/2026/08/28/aprobados-dos-convenios-con-caritas-y-betania-por-89-000e-para-atender-a-personas-sin-hogar-en-la-capital/?utm_source=rss&utm_medium=rss&utm_campaign=aprobados-dos-convenios-con-caritas-y-betania-por-89-000e-para-atender-a-personas-sin-hogar-en-la-capital\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://huelvared.com/2026/08/28/aprobados-dos-convenios-con-caritas-y-betania-por-89-000e-para-atender-a-personas-sin-hogar-en-la-capital/?utm_source=rss&utm_medium=rss&utm_campaign=aprobados-dos-convenios-con-caritas-y-betania-por-89-000e-para-atender-a-personas-sin-hogar-en-la-capital",
+      "publishedAt": "Fri, 28 Aug 2026 16:44:53 +0000",
+      "source": "Huelva Red",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Cae una red de narcotráfico que utilizaba el Guadiana para introducir hachís en España y Portugal",
       "excerpt": "La Guardia Civil y la GNR intervienen 10.600 kilos de droga en dos guarderías, una de ellas en Ayamonte, y detienen a diez personas Un detenido por intentar introducir cocaína impregnada en una almoha...",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "Un incendio calcina completamente un coche en Cartaya",
-      "excerpt": "Tuvo lugar sobre las 16:30 en una zona compleja por la presencia de viviendas, naves y fincas aledañas Sin detenciones todavía por el tiroteo en Isla Cristina: continúa el despliegue policial en el mu...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">Afortunadamente, las llamas no se extendieron hacia las infraestructuras cercanas y los daños materiales han quedado únicamente en el coche en cuestión.</h1>\n<p class=\"news-deck\">Desde el Consorcio Provincial de Bomberos onubense aseguran que por el momento no se ha podido conocer la causa que originó el incendio.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Afortunadamente, las llamas no se extendieron hacia las infraestructuras cercanas y los daños materiales han quedado únicamente en el coche en cuestión.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/provincia/incendio-calcina-completamente-coche-cartaya_0_2007743514.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/provincia/incendio-calcina-completamente-coche-cartaya_0_2007743514.html",
-      "publishedAt": "Wed, 19 Aug 2026 08:31:38 +0200",
-      "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
