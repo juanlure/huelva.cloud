@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-08-30T07:02:43.859Z",
+  "lastUpdated": "2026-08-30T07:07:37.238Z",
   "count": 15,
   "news": [
+    {
+      "title": "El Ayuntamiento de Huelva clausura sus campamentos de verano",
+      "excerpt": "Un total de 120 niños y niñas han participado en ‘Verano en tu barrio 2026’ durante los meses de julio y agosto",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Diario de Huelva</p>\n<h1 class=\"news-title\">El Ayuntamiento de Huelva clausura sus campamentos de verano</h1>\n<p class=\"news-deck\">Tras la clausura de los campamentos municipales, la alcaldesa ha visitado también los organizados por Fundación Valdocco y Asociación Hispanidad Avanza, en los que han participado otros 80 niños y niñas del Distrito V.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El Ayuntamiento de Huelva clausura sus campamentos de verano</p>\n<p class=\"\">Durante el verano se han desarrollado semanas temáticas sobre ciencia, circo y profesiones, junto a visitas a la Policía, Bomberos, mercados, medios de comunicación y comercios de barrio.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/area-metropolitana/ayuntamiento-huelva-clausura-campamentos-verano/20260828134408340404.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.diariodehuelva.es/articulo/area-metropolitana/ayuntamiento-huelva-clausura-campamentos-verano/20260828134408340404.html",
+      "publishedAt": "Fri, 28 Aug 2026 13:44:08 +0200",
+      "source": "Diario de Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "seguimiento"
+    },
     {
       "title": "Palos acompañó a su patrona hasta La Rábida",
       "excerpt": "Redacción. Palos de la Frontera vivió su tradicional Romería este viernes con el regreso de la...",
@@ -165,18 +177,6 @@
       "url": "https://huelvacosta.com/localizadas-las-armas-usadas-en-el-tiroteo-mortal-de-isla-cristina/",
       "publishedAt": "Wed, 19 Aug 2026 16:59:58 +0000",
       "source": "Huelva Costa",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Andalucía concentra el 77% de todo el hachís incautado en España",
-      "excerpt": "La comunidad registra más denuncias que antaño, pero se han producido menos detenciones relacionadas con la droga Tiroteo en Isla Cristina: número de víctimas, principales hipótesis y su relación con ...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Huelva Información</p>\n<h1 class=\"news-title\">La comunidad registra más denuncias que antaño, pero se han producido menos detenciones relacionadas con la droga Tiroteo en Isla Cristina: número de víctimas, principales hipótesis y su relación con otros sucesos similares</h1>\n<p class=\"news-deck\">Es más, Andalucía concentró el 77% de todo el hachís incautado en España –257 toneladas–, lo que cifra el mayor peso relativo del lustro.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">La comunidad registra más denuncias que antaño, pero se han producido menos detenciones relacionadas con la droga Tiroteo en Isla Cristina: número de víctimas, principales hipótesis y su relación con otros sucesos similares</p>\n<p class=\"\">Concretamente, en 2025 se interceptaron en Andalucía más de 198 toneladas de hachís, frente a las 143 de 2024.</p>\n<p class=\"news-opening\">En 2025 hubo cerca de 5.000 arrestos en Andalucía, un 22% menos que en 2024.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Huelva Información • <a href=\"https://www.huelvainformacion.es/andalucia/andalucia-concentra-77-hachis-incautado_0_2007749486.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.huelvainformacion.es/andalucia/andalucia-concentra-77-hachis-incautado_0_2007749486.html",
-      "publishedAt": "Thu, 20 Aug 2026 05:06:31 +0200",
-      "source": "Huelva Información",
       "category": "Noticias",
       "image": null,
       "external": false,
