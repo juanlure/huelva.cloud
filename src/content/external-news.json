@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-09-08T07:05:50.474Z",
+  "lastUpdated": "2026-09-08T07:10:24.454Z",
   "count": 15,
   "news": [
+    {
+      "title": "El Parque Acuático Municipal de Palos se disfruta desde ‘Al Sol del Sur’",
+      "excerpt": "El escenario itinerante de nuestro magacín de verano, Al Sol del Sur, ha aterrizado en Palos de la Frontera, para disfrutar de las bondades de su Parque Acuático Municipal. Un entorno donde la capitan...",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"agenda_util\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Teleonuba</p>\n<h1 class=\"news-title\">El Parque Acuático Municipal de Palos se disfruta desde ‘Al Sol del Sur’</h1>\n<p class=\"news-deck\">Una parada obligatoria en uno de los rincones más emblemáticos de la provincia, Palos de la Frontera, que ofrece a sus vecinos unas instalaciones municipales donde disfrutar del verano de la manera más refrescante.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El escenario itinerante de nuestro magacín de verano, Al Sol del Sur, ha aterrizado en Palos de la Frontera, para disfrutar de las bondades de su Parque Acuático Municipal.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Teleonuba • <a href=\"https://teleonuba.es/el-parque-acuatico-municipal-dre-palos-se-disfruta-desde-al-sol-del-sur/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://teleonuba.es/el-parque-acuatico-municipal-dre-palos-se-disfruta-desde-al-sol-del-sur/",
+      "publishedAt": "Fri, 04 Sep 2026 20:00:01 +0000",
+      "source": "Teleonuba",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "agenda_util"
+    },
     {
       "title": "Huelva capital se suma a las zonas en alerta por el virus del Nilo",
       "excerpt": "Noticia destacada de Canal Sur Huelva.",
@@ -165,18 +177,6 @@
       "url": "https://www.huelvainformacion.es/huelva/quique-bolsitas-plogging-basuraleza-espacio-natural-basura-ecoligismo-reciclaje-marismas-del-tinto-palos-de-la-frontera-huelva_0_2007771207.html",
       "publishedAt": "Sun, 23 Aug 2026 10:36:25 +0200",
       "source": "Huelva Información",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "seguimiento"
-    },
-    {
-      "title": "Zenobia Camprubí: la mujer que cambió la vida de Juan Ramón Jiménez y rompió las barreras de su tiempo",
-      "excerpt": "Empresaria, traductora, escritora y defensora de la educación y la igualdad, su figura fue mucho más que la de la esposa del Premio Nobel. Su historia está unida para siempre a Moguer y a Huelva. &nbs...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"seguimiento\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Diario de Huelva</p>\n<h1 class=\"news-title\">Zenobia Camprubí: la mujer que cambió la vida de Juan Ramón Jiménez y rompió las barreras de su tiempo</h1>\n<p class=\"news-deck\">Zenobia Camprubí nació en Malgrat de Mar (Barcelona) en 1887, aunque pasó buena parte de su infancia entre España, Suiza y Estados Unidos.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Durante décadas, el nombre de Zenobia Camprubí apareció casi siempre acompañado de una frase: la esposa de Juan Ramón Jiménez.</p>\n<p class=\"\">Sin ella, probablemente, nunca habría existido el Juan Ramón que hoy conoce el mundo.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Diario de Huelva • <a href=\"https://www.diariodehuelva.es/articulo/cultura/zenobia-camprubi-mujer-que-cambio-vida-juan-ramon-jimenez-rompio-barreras-tiempo/20260823000007340205.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://www.diariodehuelva.es/articulo/cultura/zenobia-camprubi-mujer-que-cambio-vida-juan-ramon-jimenez-rompio-barreras-tiempo/20260823000007340205.html",
-      "publishedAt": "Sun, 23 Aug 2026 00:00:07 +0200",
-      "source": "Diario de Huelva",
       "category": "Noticias",
       "image": null,
       "external": false,
