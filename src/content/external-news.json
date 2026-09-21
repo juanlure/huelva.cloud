@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-09-20T07:00:58.673Z",
+  "lastUpdated": "2026-09-20T18:01:02.844Z",
   "count": 15,
   "news": [
+    {
+      "title": "Estabilizado un nuevo incendio forestal en Huelva, entre Ayamonte y Villablanca",
+      "excerpt": "Noticia destacada de Canal Sur Huelva.",
+      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">Canal Sur Huelva</p>\n<h1 class=\"news-title\">Estabilizado un nuevo incendio forestal en Huelva, entre Ayamonte y Villablanca</h1>\n<p class=\"news-deck\">El fuego, en cuyas labores de extinción también participó el Consorcio Provincial de Bomberos de Huelva, motivó además el corte de la A-499 entre Ayamonte y Villablanca entre los kilómetros 1 y 17.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">Estabilizado un nuevo incendio forestal en Huelva, entre Ayamonte y Villablanca</p>\n<p class=\"\">Este incendio obligó al Ayuntamiento de Ayamonte ha activar este sábado el Plan de Emergencia Municipal, aunque la zona afectada está alejada de viviendas, aunque sí con mucha masa forestal e invernaderos.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: Canal Sur Huelva • <a href=\"https://www.canalsur.es/noticias/andalucia/huelva/estabilizado-nuevo-incendio-forestal-huelva_1_1437268.html\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
+      "url": "https://www.canalsur.es/noticias/andalucia/huelva/estabilizado-nuevo-incendio-forestal-huelva_1_1437268.html",
+      "publishedAt": "2026-09-20T18:00:54.972Z",
+      "source": "Canal Sur Huelva",
+      "category": "Noticias",
+      "image": null,
+      "external": false,
+      "pieceType": "urgente"
+    },
     {
       "title": "Dos detenidos tras una persecución a una narcolancha frente a Isla Cristina",
       "excerpt": "La Guardia Civil interceptó la embarcación después de que su patrón emprendiera una fuga a gran velocidad ante la presencia de los agentes &nbsp;",
@@ -169,18 +181,6 @@
       "image": null,
       "external": false,
       "pieceType": "seguimiento"
-    },
-    {
-      "title": "Lepe limpia sus cinco regajos urbanos antes de la llegada de las lluvias",
-      "excerpt": "Redacción. El Ayuntamiento de Lepe está llevando a cabo trabajos de limpieza y mantenimiento de...",
-      "content": "<div class=\"news-synthesis\" data-piece-type=\"urgente\">\n<div class=\"news-header\">\n<p class=\"news-kicker\">HBN Provincia</p>\n<h1 class=\"news-title\">Lepe limpia sus cinco regajos urbanos antes de la llegada de las lluvias</h1>\n<p class=\"news-deck\">El alcalde de Lepe ha destacado que el mantenimiento de los regajos se desarrolla durante todo el año, aunque se refuerza antes de la temporada de lluvias.</p>\n</div>\n<div class=\"body prose prose-sm mb-4\">\n<p class=\"news-opening\">El Ayuntamiento de Lepe está llevando a cabo trabajos de limpieza y mantenimiento de los cinco regajos urbanos del municipio como medida preventiva ante la llegada de las primeras lluvias de otoño.</p>\n<p class=\"\">Los trabajos se están desarrollando en las zonas próximas a los cauces de los regajos que atraviesan el casco urbano de Lepe.</p>\n</div>\n<div class=\"future border-t border-navy-10 pt-4 mt-6\">\n<p class=\"text-xs text-navy-40 italic\">Fuente original consultada: HBN Provincia • <a href=\"https://huelvabuenasnoticias.com/2026/09/13/limpieza-regajos-lepe-lluvias/\" target=\"_blank\" rel=\"noopener\" class=\"underline hover:text-terracotta\">Leer original →</a></p>\n</div>\n</div>",
-      "url": "https://huelvabuenasnoticias.com/2026/09/13/limpieza-regajos-lepe-lluvias/",
-      "publishedAt": "Sun, 13 Sep 2026 05:47:06 +0000",
-      "source": "HBN Provincia",
-      "category": "Noticias",
-      "image": null,
-      "external": false,
-      "pieceType": "urgente"
     }
   ]
 }
